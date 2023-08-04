@@ -1,8 +1,10 @@
 import React from 'react';
-import './main.scss';
-
+import './Main.scss';
+import IconChatFill from '../Icon/Icon_chat-fill';
 const Main = () => {
-  return <div className="main"></div>;
+  return <div className="main">
+    <IconChatFill />
+  </div>;
 };
 
 export default Main;
