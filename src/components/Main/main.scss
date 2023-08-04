@@ -1,3 +1,9 @@
-.main {
-
+.main__icons-profile {
+  color: red;
+  width: 100px;
+  height: 100px;
+  transition: opacity linear .3s;
+  &:hover{
+    opacity: .8;
+  }
 }
