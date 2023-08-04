@@ -1,3 +1,4 @@
+import Button from '../Button/Button';
 import CommentsCount from '../CommentsCount/CommentsCount';
 import IconHearth from '../Icon/Icon_hearth';
 import IconScales from '../Icon/Icon_scales';
@@ -24,7 +25,8 @@ function ProductCard() {
         </div>
         <p className="card-code">1234567</p>
         <p className="card-description">
-          Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...
+          Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...уртка
+          зимняя, утепленная, выполнена из прочной, износостойкой, влагосто
         </p>
         <div className="card-shipper">
           <p className="card-shipper__title">Поставщик: </p>
@@ -40,7 +42,8 @@ function ProductCard() {
             <ProductRating />
             <CommentsCount />
           </div>
-          <button className="card-btn-detail">Подробнее</button>
+          {/* <button className="card-btn-detail">Подробнее</button> */}
+          <Button className={'btn btn_size_middle btn_color_light btn_color_light_border'} text="Подробнее" />
         </div>
       </div>
       {/* <div className="icons"></div> */}

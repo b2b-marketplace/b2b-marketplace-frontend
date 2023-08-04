@@ -85,6 +85,9 @@
     text-align: left;
     height: 54px;
     max-width: 295px;
+    text-overflow: ellipsis;
+    // white-space: nowrap;
+    overflow: hidden;
   }
 
   &-bottom {
@@ -147,23 +150,12 @@
     }
   }
 
-  &-btn-detail {
-    width: 172px;
-    height: 38px;
-
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
   &-statistics {
-    display: flex; 
+    display: flex;
     flex-direction: row;
     column-gap: 32px;
     justify-content: space-between;
     align-items: center;
     max-width: 142px;
-   
   }
 }
