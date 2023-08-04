@@ -24,10 +24,10 @@ function ProductCard() {
           <p className="card-price">4000 р</p>
         </div>
         <p className="card-code">1234567</p>
-        <p className="card-description">
+        <div className="card-description">
           Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...уртка
           зимняя, утепленная, выполнена из прочной, износостойкой, влагосто
-        </p>
+        </div>
         <div className="card-shipper">
           <p className="card-shipper__title">Поставщик: </p>
           <p className="card-shipper__shipper">Название поставщика</p>

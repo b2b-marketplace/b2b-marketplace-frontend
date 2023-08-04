@@ -85,9 +85,11 @@
     text-align: left;
     height: 54px;
     max-width: 295px;
-    text-overflow: ellipsis;
-    // white-space: nowrap;
+
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   &-bottom {
