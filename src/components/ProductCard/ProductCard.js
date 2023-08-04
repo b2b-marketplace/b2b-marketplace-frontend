@@ -42,8 +42,10 @@ function ProductCard() {
             <ProductRating />
             <CommentsCount />
           </div>
-          {/* <button className="card-btn-detail">Подробнее</button> */}
-          <Button className={'btn btn_size_middle btn_color_light btn_color_light_border'} text="Подробнее" />
+          <Button
+            className={'btn btn_size_m btn_color_light btn_color_light_border'}
+            text="Подробнее"
+          />
         </div>
       </div>
       {/* <div className="icons"></div> */}

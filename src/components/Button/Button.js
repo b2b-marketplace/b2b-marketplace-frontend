@@ -1,5 +1,10 @@
 import './Button.scss';
 
-export default function Button({ className, text }) {
-  return <button className={className}>{text}</button>;
+export default function Button({ className, text, children }) {
+  return (
+    <button className={className}>
+      {children}
+      {text}
+    </button>
+  );
 }
