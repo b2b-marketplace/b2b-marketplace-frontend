@@ -4,4 +4,76 @@
   font-weight: $fontWeight;
   font-size: $fontSize;
   color: $fontColor;
+
+  border: 1px solid red;
+  height: 88px;
+  max-width: 1440px;
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__location {
+    padding: 0;
+    max-width: 185px;
+    width: 100%;
+    max-height: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-style: none;
+    margin-top: 35px;
+    justify-content: space-between;
+  }
+
+  &__location-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  &__location-text {
+    text-align: center;
+    align-content: center;
+    max-width: 155px;
+    font-size: 18px;
+  }
+
+  &__container-logo {
+    max-width: 315px;
+    height: 88px;
+    margin-top: 25px;
+  }
+
+  &__logo {
+  }
+
+  &__navigation {
+    max-width: 200px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+
+    list-style-type: none;
+    padding: 0;
+    margin-top: 35px;
+  }
+
+  &__navigation-item {
+    height: 30px;
+    width: 30px;
+    margin-right: 25px;
+    padding: 0;
+  }
+
+  &__navigation-link {
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
 }

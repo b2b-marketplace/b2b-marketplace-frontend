@@ -1,0 +1,39 @@
+.promo {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+
+  height: 360px;
+  max-width: 1320px;
+  width: 100%;
+  border: 1px solid black;
+
+  &__title-block {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    max-width: 650px;
+    height: 220px;
+    z-index: 1;
+  }
+  &__title {
+    color: #000;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+
+    align-self: center;
+  }
+
+  &__image{
+    margin-left: -80px;
+    margin-top: -65px;
+    width: 762px;
+    height: 452px;
+
+  }
+}
