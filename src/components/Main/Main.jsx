@@ -1,5 +1,5 @@
 import React from 'react';
-import './main.scss';
+import './Main.scss';
 const Main = () => {
   return <div className="main">
   </div>;
