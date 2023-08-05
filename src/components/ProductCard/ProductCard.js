@@ -1,12 +1,11 @@
-import Button from '../Button/Button';
+import{ Button }from '../Button/Button';
 import CommentsCount from '../CommentsCount/CommentsCount';
 import IconHearth from '../Icon/Icon_hearth';
 import IconScales from '../Icon/Icon_scales';
 import ProductRating from '../ProductRating/ProductRating';
 import './ProductCard.scss';
 // import Slider from '../Slider/Slider';
-// import { ReactComponent as Icon } from '../../images/icons/basket.svg';
-// import icon from '../../images/icons/basket.svg';
+
 
 function ProductCard() {
   return (
@@ -25,8 +24,8 @@ function ProductCard() {
         </div>
         <p className="card-code">1234567</p>
         <div className="card-description">
-          Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...уртка
-          зимняя, утепленная, выполнена из прочной, износостойкой, влагосто
+          Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой
+          ткани...
         </div>
         <div className="card-shipper">
           <p className="card-shipper__title">Поставщик: </p>
@@ -42,10 +41,7 @@ function ProductCard() {
             <ProductRating />
             <CommentsCount />
           </div>
-          <Button
-            className={'btn btn_size_m btn_color_light btn_color_light_border'}
-            text="Подробнее"
-          />
+          <Button size='m' primary={true} border={true} label={'Подробнее'} />         
         </div>
       </div>
       {/* <div className="icons"></div> */}
