@@ -54,6 +54,7 @@
     "react/react-in-jsx-scope": "off",
     "arrow-body-style": "off",
     "react/self-closing-comp": "off",
+    "jsx-a11y/anchor-is-valid":  "off",
     "react/jsx-max-props-per-line": [
       1,
       {
