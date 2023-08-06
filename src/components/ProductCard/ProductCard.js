@@ -1,17 +1,16 @@
-import{ Button }from '../Button/Button';
+import { Button } from '../Button/Button';
 import CommentsCount from '../CommentsCount/CommentsCount';
 import IconHearth from '../Icon/Icon_hearth';
 import IconScales from '../Icon/Icon_scales';
 import ProductRating from '../ProductRating/ProductRating';
+import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
-// import Slider from '../Slider/Slider';
-
 
 function ProductCard() {
   return (
     <div className="card">
-      {/* <Slider /> */}
-      <img className="card-image" src="" alt="" />
+      <SliderImage />
+      {/* <img className="card-image" src="" alt="" /> */}
       <div className="card-icons">
         <IconScales />
         <IconHearth />
@@ -24,8 +23,7 @@ function ProductCard() {
         </div>
         <p className="card-code">1234567</p>
         <div className="card-description">
-          Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой
-          ткани...
+          Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...
         </div>
         <div className="card-shipper">
           <p className="card-shipper__title">Поставщик: </p>
@@ -41,10 +39,9 @@ function ProductCard() {
             <ProductRating />
             <CommentsCount />
           </div>
-          <Button size='m' primary={true} border={true} label={'Подробнее'} />         
+          <Button size="m" primary={true} border={true} label={'Подробнее'} > </Button>
         </div>
       </div>
-      {/* <div className="icons"></div> */}
     </div>
   );
 }
