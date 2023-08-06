@@ -8,7 +8,8 @@ export default {
   },
   tags: ['autodocs'],
   argTypes: {
-    border: {control: 'boolean'},
+    primary: {description: 'Светлая или темная заливка кнопки'},
+    border: { control: 'boolean', default: true, description: 'Рамка вокруг кнопки' },
     backgroundColor: { control: 'color' },
   },
 };
@@ -16,6 +17,7 @@ export default {
 export const Primary = {
   args: {
     primary: true,
+    border: true,
     label: 'Button',
   },
 };
@@ -29,33 +31,32 @@ export const Secondary = {
 export const ExtraExtraLarge = {
   args: {
     size: 'xxl',
-    label: 'Button',
+    label: 'Зарегистрироваться',
   },
 };
 export const ExtraLarge = {
   args: {
     size: 'xl',
-    label: 'Button',
+    label: 'В корзину',
   },
 };
 export const Large = {
   args: {
     size: 'l',
-    label: 'Button',
+    label: 'Меню',
   },
 };
 
 export const Medium = {
   args: {
     size: 'm',
-    label: 'Button',
+    label: 'Подробнее',
   },
 };
-
 
 export const Small = {
   args: {
     size: 's',
-    label: 'Button',
+    label: 'Найти',
   },
 };
