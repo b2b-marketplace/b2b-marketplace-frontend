@@ -1,5 +1,5 @@
 import './SliderImage.scss';
-import Dot from './Dot.js';
+import Dot from '../Dot/Dot.js';
 import { useEffect } from 'react';
 
 export default function SliderImage({ images }) {

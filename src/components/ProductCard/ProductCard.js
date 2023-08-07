@@ -5,7 +5,7 @@ import IconScales from '../Icon/Icon_scales';
 import ProductRating from '../ProductRating/ProductRating';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
-import { images } from '../SliderImage/images';
+import { images } from '../../utils/images';
 
 function ProductCard() {
   return (
