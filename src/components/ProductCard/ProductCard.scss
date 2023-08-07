@@ -14,21 +14,22 @@
     border: 1px solid #000;
   }
 
-  &-info {
+  &__info {
     margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  &-top {
+  &__info_top {
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  &-title {
+  &__title {
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
@@ -37,26 +38,7 @@
     padding: 0;
   }
 
-  &-compare {
-    position: absolute;
-    top: 20px;
-    right: 70px;
-    width: 30px;
-    height: 30px;
-  }
-  &-like {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-  }
-
-  &-top {
-    margin-bottom: 10px;
-  }
-
-  &-price {
+  &__price {
     color: #000;
     font-size: 24px;
     font-weight: 600;
@@ -65,7 +47,7 @@
     padding: 0;
   }
 
-  &-code {
+  &__code {
     margin: 0 0 16px;
     padding: 0;
     color: #000;
@@ -75,7 +57,7 @@
     text-align: left;
   }
 
-  &-description {
+  &__description {
     margin: 0;
     padding: 0;
     color: #686868;
@@ -92,7 +74,7 @@
     -webkit-line-clamp: 3;
   }
 
-  &-bottom {
+  &__info_bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -100,13 +82,7 @@
     margin: 28px 0 0;
   }
 
-  &-btn-detail {
-    border-radius: 20px;
-    border: 1px solid #000;
-    background-color: transparent;
-  }
-
-  &-icons {
+  &__icons {
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -116,7 +92,7 @@
     gap: 20px;
   }
 
-  &-shipper {
+  &__shipper {
     display: flex;
     flex-direction: row;
     color: #000;
@@ -124,17 +100,17 @@
     font-style: normal;
     line-height: normal;
     margin: 20px 0 0;
-    &__title {
+    &_title {
       margin: 0;
       font-weight: 500;
     }
-    &__shipper {
+    &_shipper {
       font-weight: 400;
       margin: 0 0 0 7px;
     }
   }
 
-  &-min-order {
+  &__min-order {
     display: flex;
     flex-direction: row;
     color: #000;
@@ -142,17 +118,17 @@
     font-style: normal;
     line-height: normal;
     margin: 10px 0 0;
-    &__title {
+    &_title {
       margin: 0;
       font-weight: 500;
     }
-    &__quantity {
+    &_quantity {
       font-weight: 400;
       margin: 0 0 0 7px;
     }
   }
 
-  &-statistics {
+  &__statistics {
     display: flex;
     flex-direction: row;
     column-gap: 32px;
