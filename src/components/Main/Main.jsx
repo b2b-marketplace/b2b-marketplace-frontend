@@ -1,9 +1,9 @@
 import React from 'react';
-import './main.scss';
-import ProductCard from '../ProductCard/ProductCard';
+import './Main.scss';
+
 const Main = () => {
   return <div className="main">
-    <ProductCard/>
+    
   </div>;
 };
 
