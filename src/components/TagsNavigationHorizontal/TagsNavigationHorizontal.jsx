@@ -131,7 +131,7 @@ const TagsNavigationHorizontal = () => {
 
 
   return (
-    <div className="tags-navigation-horizontal scrollbar-dark">
+    <section className="tags-navigation-horizontal scrollbar-dark">
       <ul className="tags-navigation-horizontal__list">
         {tagList.map((item) => (
           <li key={item.key} className="tags-navigation-horizontal__item">
@@ -142,7 +142,7 @@ const TagsNavigationHorizontal = () => {
       <div className="tags-navigation-horizontal__track">
         <div className="tags-navigation-horizontal__thumb scrollbar-dark"></div>
       </div>
-    </div>
+    </section>
   );
 };
 
