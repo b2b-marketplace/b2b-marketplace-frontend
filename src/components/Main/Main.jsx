@@ -1,10 +1,10 @@
 import React from 'react';
 import './Main.scss';
-import Registration from "../Registration/Registration";
+import PromoRegistration from "../PromoRegistration/PromoRegistration";
 
 const Main = () => {
   return <div className="main">
-    <Registration/>
+    <PromoRegistration/>
   </div>;
 };
 
