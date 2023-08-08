@@ -1,9 +1,5 @@
 .footer {
-  padding-top: 60px;
-  padding-bottom: 91px;
-  max-width: 1440px;
-  width: calc(100% - 120px);
-  margin: 0 auto;
+  padding: 60px 60px 91px; 
   display: flex;
   background: $blackColor;
   color: $whiteColor;
@@ -12,29 +8,37 @@
   &__title {
     margin: 30px 0 50px;
     font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
+    font-style: $mainStyle;
+    font-weight: $mainWeight;
   }
 
   &__text {
     margin-bottom: 15px;
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
+    font-style: $mainStyle;
+    font-weight: $mainWeight;
   }
 
   &__link {
     color: $whiteColor;
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
+    font-style: $mainStyle;
+    font-weight: $mainWeight;
     text-decoration-line: underline;
   }
 
   &__menu {
+    max-width: 316px;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__menu-list {
+    max-width: 335px;
     margin: 0;
     list-style-type: none;
     padding: 0;
@@ -43,9 +47,9 @@
   &__menu-item {
     margin-bottom: 15px;
     font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
+    font-style: $mainStyle;
+    font-weight: $mainWeight;
   }
 
   &__links {
