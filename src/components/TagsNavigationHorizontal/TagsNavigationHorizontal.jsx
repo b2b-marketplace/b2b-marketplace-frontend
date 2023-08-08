@@ -18,7 +18,6 @@ const TagsNavigationHorizontal = () => {
     const changeNumberWithPercentage = (number, percent, isAppend = true) => {
       // Преобразование процента в десятичную дробь
       const decimal = percent / 100;
-
       // Вычисление измененного числа
       const operation = isAppend ? 1 + decimal : 1 - decimal;
       return number * operation;
@@ -26,7 +25,7 @@ const TagsNavigationHorizontal = () => {
 
 
     /**
-     * Пересчет ширины контейнера
+     * Пересчет ширины контейнера и позиции скрола
      */
     const updateScrollTrackWidth = () => {
       const oldScrollTrackThumbWidth = scrollTrackThumbWidth;
@@ -75,6 +74,7 @@ const TagsNavigationHorizontal = () => {
       isDragging = true;
       startX = e.clientX;
       offsetX = getOffset();
+      console.log(scrollThumb);
       document.addEventListener('mousemove', onMouseMove);
       document.addEventListener('mouseup', onMouseUp);
     };
@@ -89,9 +89,7 @@ const TagsNavigationHorizontal = () => {
       } else if (newX > scrollTrackThumbWidth) {
         newX = scrollTrackThumbWidth;
       }
-
       const contentStartX = (newX / scrollTrackThumbWidth) * (tagsElement.offsetWidth - tagsElement.scrollWidth);
-      console.log(contentStartX);
       tagsElement.style.transform = `translateX(${contentStartX}px)`; // Прокручиваем контент
       scrollThumb.style.left = `${newX}px`;
     }
@@ -127,26 +125,6 @@ const TagsNavigationHorizontal = () => {
   const tagList = [
     { key: 0, name: 'Оптовые поставщики обуви', link: '#' },
     { key: 1, name: 'Китайские поставщики', link: '#' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
-    { key: 2, name: 'Оптовые поставщики обуви', link: '' },
     { key: 2, name: 'Оптовые поставщики обуви', link: '' },
     { key: 3, name: 'Еще тэги', link: '#' }
   ];
