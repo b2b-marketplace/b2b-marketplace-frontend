@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container-logo">
-        <img className="footer__logo" src={logo} alt="Логотип." />
+        <img className="footer__logo" src={logo} alt="Логотип."/>
         <h2 className="footer__title">ООО «ОПТ»</h2>
         <p className="footer__text">Все права защищены</p>
         <a className="footer__link" href="#" target="_blank">
@@ -20,46 +20,46 @@ const Footer = () => {
       <nav className="footer__links">
         <ul className="footer__menu">
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Каталог товаров</Link>
+            <Link className="footer__menu-link" to="#">Каталог товаров</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Поставщики</Link>
+            <Link className="footer__menu-link" to="#">Поставщики</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Заявки на закупки</Link>
+            <Link className="footer__menu-link" to="#">Заявки на закупки</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Оплата и доставка</Link>
+            <Link className="footer__menu-link" to="#">Оплата и доставка</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Возврат</Link>
+            <Link className="footer__menu-link" to="#">Возврат</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Акции</Link>
+            <Link className="footer__menu-link" to="#">Акции</Link>
           </li>
         </ul>
         <ul className="footer__menu-list">
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Правила портала</Link>
+            <Link className="footer__menu-link" to="#">Правила портала</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Служба поддержки</Link>
+            <Link className="footer__menu-link" to="#">Служба поддержки</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Часто задаваемые вопросы</Link>
+            <Link className="footer__menu-link" to="#">Часто задаваемые вопросы</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">Контакты</Link>
+            <Link className="footer__menu-link" to="#">Контакты</Link>
           </li>
           <li className="footer__menu-item">
-            <Link className="footer__menu-link">О нас</Link>
+            <Link className="footer__menu-link" to="#">О нас</Link>
           </li>
           <li className="footer__icon-links">
             <a className="footer__icon-link" href="#" target="_blank">
-              <IconVk />
+              <IconVk/>
             </a>
             <a className="footer__icon-link" href="#" target="_blank">
-              <IconTelegram />
+              <IconTelegram/>
             </a>
           </li>
         </ul>
