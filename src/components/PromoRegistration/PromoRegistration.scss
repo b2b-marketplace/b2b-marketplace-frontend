@@ -1,0 +1,57 @@
+.promo-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-bottom: 160px;
+  font-family: $fontFamily;
+
+
+  &__navigation-button {
+    display: flex;
+    width: 92px;
+    height: 92px;
+    background: $blackColor;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    color: $whiteColor;
+  }
+
+  &__conteiner {
+    display: flex;
+    flex-shrink: 0;
+    max-width: 1320px;
+    max-height: 553px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 150px;
+    padding: 120px 112px;
+    margin-top: 8px;
+  }
+
+  &__title {
+    max-width: 755px;
+    margin: 0 0 100px;
+    font-size: 40px;
+    font-style: $mainStyle;
+    font-weight: $mainWeight;
+    line-height: 120%;
+  }
+
+  &__logo {
+    width: 132px;
+    height: 132px;
+    margin-top: 110px;
+    margin-left: 90px;
+  }
+
+  &__button {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.wwww {
+  width: 42.75px;
+height: 42.75px;
+}
