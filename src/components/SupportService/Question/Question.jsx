@@ -1,0 +1,146 @@
+import { Link } from 'react-router-dom';
+import './Question.scss';
+
+const Question = () => {
+  return (
+    <section className="question">
+      <div className="question__menu">
+        <h2 className="question__title">
+          Часто задаваемые вопросы
+        </h2>
+        <div className="question__menu-conteiner">
+          <ul className="question__lists">
+            <h3 className="question__paragraph">Мой заказ</h3>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Как посмотреть статус заказа
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Как редактировать заказ
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Как отменить заказ
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Как получить заказ
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Не получается сделать заказ
+              </Link>
+            </li>
+          </ul>
+
+          <ul className="question__lists">
+            <h3 className="question__paragraph">Доставка</h3>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Способы доставки
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Стоимость доставки
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Варианты доставки
+              </Link>
+            </li>
+          </ul>
+
+          <ul className="question__lists">
+            <h3 className="question__paragraph">Оплата</h3>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Способы оплаты
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Ошибки про оплате
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Чеки и документы
+              </Link>
+            </li>
+          </ul>
+
+          <ul className="question__lists">
+            <h3 className="question__paragraph">Возвраты и отмены</h3>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Как вернуть товар
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Условие и сроки возврата
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Почему мой заказ отменили
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Когда вернуться деньги за отмену или возврат
+              </Link>
+            </li>
+          </ul>
+
+          <ul className="question__lists">
+            <h3 className="question__paragraph">Акции и бонусы</h3>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Акции
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Бонусы
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Программа лояльности
+              </Link>
+            </li>
+          </ul>
+
+          <ul className="question__lists">
+            <h3 className="question__paragraph">О сервисе</h3>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Как работает сервис
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Поставщикам
+              </Link>
+            </li>
+            <li className="question__list">
+              <Link className="question__link" to="#">
+                Покупателям
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Question;

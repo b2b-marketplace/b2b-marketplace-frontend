@@ -1,0 +1,76 @@
+.support-service {
+  max-width: 1247px;
+  max-height: 900px;
+  font-family: $fontFamily;
+
+  &__conteiner {
+    display: flex;
+  }
+
+  &__menu {
+    max-width: 315px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #000;
+    padding: 40px 38px;
+  }
+
+  &__title {
+    margin: 0 0 50px;
+    font-size: 24px;
+    font-style: $mainStyle;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__lists {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 21px;
+  }
+
+  &__list:last-child {
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    margin-right: 20px;
+  }
+
+  &__link {
+    color: #686868;
+    text-decoration: none;
+    font-size: 24px;
+    font-style: $mainStyle;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__contact {
+    text-align: center;
+    margin: 563px 0 0;
+    color: #686868;
+    font-size: 20px;
+    font-style: $mainStyle;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  &__text {
+    text-align: center;
+    margin: 0;
+    color: #686868;
+    font-size: 20px;
+    font-style: $mainStyle;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
