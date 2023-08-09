@@ -3,10 +3,10 @@ import IconHearth from '../Icon/Icon_hearth';
 import IconScales from '../Icon/Icon_scales';
 import IconBasket from '../Icon/Icon_basket';
 import ProductRating from '../ProductRating/ProductRating';
-import ProductComments from '../ProductComments/ProductComments';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
 import { images } from '../../utils/images';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
   return (
@@ -19,11 +19,10 @@ function ProductCard({ product }) {
 
       <div className="card__info">
         <div className="card__info_top">
-          <h3 className="card__title">{product.title}</h3>
-          <div className="card__statistics">
-            <ProductRating rating={product.rating} />
-            <ProductComments commentsCount={product.commentsCount} />
-          </div>
+          <Link to={`/product/${product.id}`} className="card__title">
+            {product.title}
+          </Link>
+          <ProductRating rating={product.rating} />
         </div>
         <p className="card__shipper">{product.shipper}</p>
 
@@ -34,13 +33,11 @@ function ProductCard({ product }) {
           <p className="card__min-order_quantity">{`от ${product.orderQuantity} шт`}</p>
         </div>
 
-        <div className="card__info_bottom">
-          <Button size="xs" primary={true} border={true}>
-            +
-            <IconBasket />
-          </Button>
-          <p className="card__price">{`${product.price} р`}</p>
-        </div>
+        <p className="card__price">{`${product.price} р`}</p>
+
+        <Button size="m" primary={true} border={true}>
+          В корзину
+        </Button>
       </div>
     </div>
   );

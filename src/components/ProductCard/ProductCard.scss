@@ -1,6 +1,6 @@
 .card {
-  width: 427px;
-  height: 560px;
+  width: 315px;
+  height: 598px;
   border-radius: 20px;
   border: 1px solid $darkColor;
   font-family: $fontFamily;
@@ -8,7 +8,7 @@
   position: relative;
 
   &__info {
-    margin: 20px 15px 24px 20px;
+    margin: 20px 20px 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,7 +16,7 @@
 
   &__info_top {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,38 +24,42 @@
   }
 
   &__title {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 32px;
     color: $darkColor;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
   }
 
   &__price {
     color: $darkColor;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
+    font-style: normal;
     line-height: normal;
-    margin: 0 9px 0 0;
+    margin: 0 0 24px;
     padding: 0;
   }
 
   &__description {
-    margin: 0 0 20px;
+    margin: 0 0 11px;
     padding: 0;
     color: $grayColor;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: normal;
     text-align: left;
-    height: 36px;
-    max-width:382px;
+    height: 60px;
+    max-width: 275px;
+    font-style: normal;
+    line-height: 20px; /* 142.857% */
 
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
 
   &__info_bottom {
@@ -80,21 +84,22 @@
     display: flex;
     flex-direction: row;
     color: $grayColor;
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
-    line-height: normal;
-    margin: 0 0 20px;
-   
+    margin: 0 0 17px;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    text-decoration-line: underline;
   }
 
   &__min-order {
     display: flex;
     flex-direction: row;
     color: $darkColor;
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
     line-height: normal;
-    margin: 0 0 20px;
+    margin: 0 0 17px;
     &_title {
       margin: 0;
       font-weight: 500;
@@ -103,14 +108,5 @@
       font-weight: 400;
       margin: 0 0 0 7px;
     }
-  }
-
-  &__statistics {
-    display: flex;
-    flex-direction: row;
-    column-gap: 15px;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 107px;
   }
 }

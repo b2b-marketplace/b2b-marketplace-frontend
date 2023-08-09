@@ -3,11 +3,11 @@ import './ProductCardContainer.scss';
 import IconFilter from './../Icon/Icon_filter';
 import { PRODUCT_CARD } from '../../utils/productCardExample';
 
-export default function ProductCardContainer() {
+export default function ProductCardContainer({ title, products }) {
   return (
-    <div className="container">
+    <section className="container">
       <div className="container__top">
-        <h3 className="container__title">Новые товары</h3>
+        <h3 className="container__title">{title}</h3>
         <IconFilter />
       </div>
       <div className="container__cards">
@@ -21,7 +21,6 @@ export default function ProductCardContainer() {
         <ProductCard product={PRODUCT_CARD} />
         <ProductCard product={PRODUCT_CARD} />
       </div>
-      
-    </div>
+    </section>
   );
 }
