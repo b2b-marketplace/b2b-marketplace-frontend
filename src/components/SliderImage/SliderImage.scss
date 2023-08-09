@@ -1,9 +1,9 @@
 .slider {
-    width: 427px;
-    max-height: 288px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
+  width: 427px;
+  max-height: 288px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
   &__images {
     display: flex;
     flex-direction: row;
@@ -30,7 +30,6 @@
     height: 100%;
     background-color: #fff;
     opacity: 0.2;
-
   }
 
   &__dots {

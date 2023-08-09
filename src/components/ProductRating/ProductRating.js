@@ -1,20 +1,28 @@
 import './ProductRating.scss';
 
-export default function ProductRating() {
+export default function ProductRating({ rating }) {
   return (
     <div className="product-rating">
       <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M14.43 10L12 2L9.57 10H2L8.18 14.41L5.83 22L12 17.31L18.18 22L15.83 14.41L22 10H14.43Z"
-          fill="currentColor"
-        />
+        <g clipPath="url(#clip0_976_8229)">
+          <path
+            d="M12.0248 8.33317L9.99984 1.6665L7.97484 8.33317H1.6665L6.8165 12.0082L4.85817 18.3332L9.99984 14.4248L15.1498 18.3332L13.1915 12.0082L18.3332 8.33317H12.0248Z"
+            fill="currentColor"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_976_8229">
+            <rect width="20" height="20" fill="white" />
+          </clipPath>
+        </defs>
       </svg>
-      <span className="product-rating__text">4.8</span>
+
+      <span className="product-rating__text">{rating}</span>
     </div>
   );
 }
