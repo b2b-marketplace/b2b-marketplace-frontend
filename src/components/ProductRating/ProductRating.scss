@@ -1,13 +1,12 @@
 .product-rating {
   display: flex;
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: 5px;
   justify-content: space-between;
-  align-items: center;
-  //   margin: 0 auto;
-  max-width: 57px;
-  max-height: 24px;
-//   color: $redColor;
+  align-items: flex-end;
+  max-width: 48px;
+  max-height: 20px;
+  color: $darkColor;
 
   &__text {
     font-size: 15px;

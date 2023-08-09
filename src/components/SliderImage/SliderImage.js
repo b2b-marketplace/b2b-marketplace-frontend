@@ -1,6 +1,5 @@
 import './SliderImage.scss';
 import Dot from '../Dot/Dot.js';
-import { useEffect } from 'react';
 
 export default function SliderImage({ images }) {
   const width = 100 / images.length;
@@ -14,8 +13,7 @@ export default function SliderImage({ images }) {
     card.querySelector('.slider__images').style.transform = `translateX(${
       -100 * event.target.id
     }%)`;
-    [...card.querySelectorAll('.dot')]
-      .map((item) => item.classList.remove('dot_fill'));
+    [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
     [...card.querySelectorAll('.dot')]
       .filter((item) => item.id === event.target.id)[0]
       .classList.add('dot_fill');

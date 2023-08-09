@@ -1,0 +1,32 @@
+.container {
+  max-width: 1321px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    color: $darkColor;
+    font-family: $fontFamily;
+    font-size: 30px;
+    font-style: $mainStyle;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__cards {
+    max-width: 1321px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(427px, 1fr));
+    gap: 20px;
+  }
+}

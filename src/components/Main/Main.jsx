@@ -1,10 +1,10 @@
 import React from 'react';
 import './Main.scss';
-import ProductCard from '../ProductCard/ProductCard';
+import ProductCardContainer from '../ProductCardContainer/ProductCardContainer';
 
 const Main = () => {
   return <div className="main">
-    <ProductCard/>
+    <ProductCardContainer/>
   </div>;
 };
 

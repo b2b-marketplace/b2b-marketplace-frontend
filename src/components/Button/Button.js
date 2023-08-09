@@ -1,25 +1,24 @@
 import PropTypes from 'prop-types';
 import './Button.scss';
 
-export const Button = ({ primary, border, size, label, iconType, ...props }) => {
+export const Button = ({ primary, border, size, type, children, ...props }) => {
   const mode = primary ? 'button__primary' : 'button__secondary';
   const isBorder = border ? `${mode}_border` : '';
-  // (size === 'l') ?
   return (
     <button
-      type="button"
+      type={type}
       className={['button', `button_size_${size}`, mode, isBorder].join(' ')}
       {...props}>
-      {label}
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
   primary: PropTypes.bool,
-  size: PropTypes.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
-  label: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['xs','s', 'm', 'l', 'xl', 'xxl']),
   border: PropTypes.bool,
+  type: PropTypes.oneOf(['button', 'submit']),
   onClick: PropTypes.func,
 };
 

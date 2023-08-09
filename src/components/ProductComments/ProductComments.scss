@@ -1,13 +1,12 @@
 .comments-count {
   display: flex;
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: 5px;
   justify-content: space-between;
   align-items: center;
-  //   margin: 0 auto;
   max-width: 53px;
   max-height: 24px;
-  // color: $redColor;
+  color: $darkColor;
 
   &__text {
     font-size: 15px;

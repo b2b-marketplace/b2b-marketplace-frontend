@@ -1,8 +1,21 @@
 @import './../../styles/_vars.scss';
 .button {
   cursor: pointer;
-  font-style: normal;
+  font-style: $mainStyle;
   line-height: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  gap: 10px;
+
+  &_size_xs {
+    width: 88px;
+    height: 54px;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: 600;
+  }
 
   &_size_s {
     width: 121px;
