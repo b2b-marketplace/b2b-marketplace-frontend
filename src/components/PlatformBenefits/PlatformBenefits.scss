@@ -4,15 +4,17 @@
   font-weight: 400;
   margin: 20px 0;
   position: relative;
-  overflow-x: hidden;
+
+  //overflow-x: hidden;
 
   &__list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    column-gap: 20px;
-    justify-content: space-between;
+    gap: 20px;
+    //justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__item {
