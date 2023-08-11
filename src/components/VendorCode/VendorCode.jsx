@@ -8,5 +8,4 @@ const VendorCode = ({ vendorCode }) => {
     </div>
   );
 };
-
 export default VendorCode;
