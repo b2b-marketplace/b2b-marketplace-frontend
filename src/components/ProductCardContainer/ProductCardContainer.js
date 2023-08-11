@@ -1,25 +1,17 @@
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductCardContainer.scss';
 import IconFilter from './../Icon/Icon_filter';
-import { PRODUCT_CARD } from '../../utils/productCardExample';
+// import { PRODUCT_CARD } from '../../utils/productCardExample';
 
 export default function ProductCardContainer({ title, products }) {
   return (
     <section className="container">
-      <div className="container__top">
-        <h3 className="container__title">{title}</h3>
-        <IconFilter />
-      </div>
+      <h3 className="container__title">{title}</h3>
+
       <div className="container__cards">
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id}/>
+        ))}
       </div>
     </section>
   );

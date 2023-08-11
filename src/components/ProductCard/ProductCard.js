@@ -1,17 +1,16 @@
 import { Button } from '../Button/Button';
 import IconHearth from '../Icon/Icon_hearth';
 import IconScales from '../Icon/Icon_scales';
-import IconBasket from '../Icon/Icon_basket';
 import ProductRating from '../ProductRating/ProductRating';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
-import { images } from '../../utils/images';
+// import { images } from '../../utils/images';
 import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
   return (
     <div className="card">
-      <SliderImage images={images} />
+      <SliderImage images={product.images} />
       <div className="card__icons">
         <IconScales />
         <IconHearth />

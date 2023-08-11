@@ -6,6 +6,7 @@
   font-family: $fontFamily;
   font-style: $mainStyle;
   position: relative;
+  box-sizing: border-box;
 
   &__info {
     margin: 20px 20px 25px;

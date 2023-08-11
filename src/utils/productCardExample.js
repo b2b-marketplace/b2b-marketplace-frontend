@@ -1,3 +1,9 @@
+import img1 from './../images/1.jpg';
+import img2 from './../images/2.jpg';
+import img3 from './../images/3.jpg';
+import img4 from './../images/4.jpg';
+import img5 from './../images/5.jpg';
+
 export const PRODUCT_CARD = {
   id: '1',
   title: 'Детская зимняя куртка',
@@ -8,6 +14,7 @@ export const PRODUCT_CARD = {
   price: 4000,
   commentsCount: 20,
   rating: 4.8,
+  images: [img1, img3, img5, img2],
 };
 
 export const PRODUCTS = [
@@ -21,6 +28,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img4, img3, img5, img2],
   },
   {
     id: '3',
@@ -32,6 +40,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img1, img3, img2, img1],
   },
   {
     id: '4',
@@ -43,6 +52,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img1, img3, img2],
   },
   {
     id: '5',
@@ -54,6 +64,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img1, img3],
   },
   {
     id: '6',
@@ -65,6 +76,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img1, img3, img5, img2, img4],
   },
   {
     id: '7',
@@ -76,6 +88,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img1, img2, img4],
   },
   {
     id: '8',
@@ -87,6 +100,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img2, img4],
   },
   {
     id: '9',
@@ -98,6 +112,7 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img1, img3, img5, img2, img4],
   },
   {
     id: '10',
@@ -109,5 +124,6 @@ export const PRODUCTS = [
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
+    images: [img1],
   },
 ];
