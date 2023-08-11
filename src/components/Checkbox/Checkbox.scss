@@ -19,15 +19,15 @@
 
   /* создание в label псевдоэлемента before со следующими стилями */
   &__span::before {
+    box-sizing: border-box;
     content: '';
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;
-    border-radius: 0.25em;
-    margin-right: 0.5em;
+    border-radius: 5px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
