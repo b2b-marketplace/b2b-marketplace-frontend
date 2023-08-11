@@ -73,12 +73,18 @@
 
   &__icons {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     position: absolute;
     justify-content: space-between;
-    right: 20px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
     top: 20px;
-    gap: 20px;
+    &_right {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
   }
 
   &__shipper {

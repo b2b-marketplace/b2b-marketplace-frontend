@@ -1,7 +1,5 @@
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductCardContainer.scss';
-import IconFilter from './../Icon/Icon_filter';
-// import { PRODUCT_CARD } from '../../utils/productCardExample';
 
 export default function ProductCardContainer({ title, products }) {
   return (
