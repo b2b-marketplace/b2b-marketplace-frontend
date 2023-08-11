@@ -4,10 +4,10 @@
   border-radius: 20px;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid $darkColor;
   &__images {
     display: flex;
     flex-direction: row;
-    border: 1px solid $darkColor;
     transform: translateX(000%);
   }
 
@@ -15,7 +15,6 @@
     object-fit: cover;
     max-width: 315px;
     height: 280px;
-
   }
 
   &__nav {
@@ -30,8 +29,9 @@
 
   &__nav_column {
     height: 100%;
-    background-color: #fff;
-    opacity: 0.2;
+    // background-color: #fff;
+    // opacity: 0.2;
+    z-index: 2;
   }
 
   &__dots {
@@ -43,5 +43,6 @@
     top: 248px;
     left: 0;
     right: 0;
+    z-index: 1;
   }
 }

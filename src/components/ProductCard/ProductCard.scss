@@ -6,8 +6,6 @@
   font-family: $fontFamily;
   font-style: $mainStyle;
   position: relative;
-  box-sizing: border-box;
-
   &__info {
     margin: 20px 20px 25px;
     display: flex;
@@ -80,6 +78,7 @@
     width: 100%;
     box-sizing: border-box;
     top: 20px;
+    z-index: 10;
     &_right {
       display: flex;
       flex-direction: row;

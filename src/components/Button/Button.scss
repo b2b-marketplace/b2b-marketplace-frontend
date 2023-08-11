@@ -2,6 +2,7 @@
 .button {
   cursor: pointer;
   font-style: $mainStyle;
+  font-family: $fontFamily;
   line-height: normal;
   display: flex;
   flex-direction: row;
