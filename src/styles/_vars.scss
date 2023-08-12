@@ -14,8 +14,11 @@ $darkColor: #000;
 $inactiveColor: #A3A3A3;  
 
 
+
 $fontFamily: "Inter", Arial, sans-serif; // Семейство шрифта по умолчанию
-$fontColor: $whiteColor; // Цвет шрифта по умолчанию
+$fontColor: $blackColor; // Цвет шрифта по умолчанию
 $fontSize: $mainFontSize; // Размер шрифта по умолчанию
 $fontWeight: $mainWeight; // Жирность шрифта по умолчанию
 $fontStyle: $mainStyle; // Начертание шрифта по умолчанию
+
+$linkFontColor: $blackColor; // Цвет ссылок
