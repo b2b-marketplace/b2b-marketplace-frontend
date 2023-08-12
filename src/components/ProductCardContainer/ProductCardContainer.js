@@ -1,27 +1,35 @@
 import ProductCard from '../ProductCard/ProductCard';
+import { Button } from '../Button/Button';
 import './ProductCardContainer.scss';
-import IconFilter from './../Icon/Icon_filter';
-import { PRODUCT_CARD } from '../../utils/productCardExample';
+import { useEffect, useState } from 'react';
 
-export default function ProductCardContainer() {
+export default function ProductCardContainer({ title, products }) {
+  const [displayCards, setDisplayCards] = useState([]);
+  const [cardsQuantity, setCardsQuantity] = useState(4);
+
+  const handleAddCards = () => {
+    setCardsQuantity(cardsQuantity + 4);
+  };
+
+  useEffect(() => {
+    setDisplayCards(products.slice(0, cardsQuantity));
+  }, [cardsQuantity, products]);
   return (
-    <div className="container">
-      <div className="container__top">
-        <h3 className="container__title">Новые товары</h3>
-        <IconFilter />
+    <section className="cards-container">
+      <h3 className="cards-container__title">{title}</h3>
+
+      <div className="cards-container__cards">
+        {displayCards.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
       </div>
-      <div className="container__cards">
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-        <ProductCard product={PRODUCT_CARD} />
-      </div>
-      
-    </div>
+      {cardsQuantity >= products.length ? (
+        <></>
+      ) : (
+        <Button primary size="l" onClick={handleAddCards}>
+          Смотреть ещё
+        </Button>
+      )}
+    </section>
   );
 }

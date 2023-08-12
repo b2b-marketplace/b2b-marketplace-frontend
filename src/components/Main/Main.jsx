@@ -4,7 +4,7 @@ import ProductCardContainer from '../ProductCardContainer/ProductCardContainer';
 
 const Main = () => {
   return <div className="main">
-    <ProductCardContainer/>
+    <ProductCardContainer />
   </div>;
 };
 

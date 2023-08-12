@@ -2,56 +2,70 @@
 .button {
   cursor: pointer;
   font-style: $mainStyle;
+  font-family: $fontFamily;
   line-height: normal;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items:center;
-  gap: 10px;
+  align-items: center;
+  gap: 20px;
 
   &_size_xs {
-    width: 88px;
-    height: 54px;
-    border-radius: 20px;
-    font-size: 24px;
-    font-weight: 600;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 500;
   }
-
   &_size_s {
-    width: 121px;
-    height: 50px;
+    width: 127px;
+    height: 40px;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
   }
   &_size_m {
-    width: 172px;
-    height: 38px;
-    border-radius: 20px;
-    font-size: 15px;
-    font-weight: 400;
+    width: 203px;
+    height: 65px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
   }
   &_size_l {
-    width: 315px;
-    height: 65px;
-    border-radius: 30px;
-    font-size: 24px;
-    font-weight: 400;
+    width: 244px;
+    height: 56px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 500;
   }
   &_size_xl {
-    width: 335px;
-    height: 65px;
-    border-radius: 30px;
-    font-weight: 400;
-    font-size: 24px;
+    width: 275px;
+    height: 44px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 20px;
   }
 
   &_size_xxl {
+    width: 315px;
+    height: 65px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  &_size_xxxl {
+    width: 348px;
+    height: 64px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  &_size_xxxxl {
     width: 427px;
     height: 69px;
     border-radius: 30px;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   &__primary {
@@ -70,5 +84,9 @@
     &_border {
       border: 1px solid $lightColor;
     }
+  }
+
+  &_rotate {
+    transform: rotate(90deg);
   }
 }

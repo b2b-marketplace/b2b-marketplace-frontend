@@ -1,23 +1,24 @@
 .slider {
-  width: 427px;
-  max-height: 288px;
+  width: 315px;
+  max-height: 280px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid $darkColor;
   &__images {
     display: flex;
     flex-direction: row;
-    border: 1px solid $darkColor;
     transform: translateX(000%);
   }
 
   &__image {
     object-fit: cover;
-    max-width: 427px;
+    max-width: 315px;
+    height: 280px;
   }
 
   &__nav {
-    height: 288px;
+    height: 280px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -28,8 +29,9 @@
 
   &__nav_column {
     height: 100%;
-    background-color: #fff;
-    opacity: 0.2;
+    // background-color: #fff;
+    // opacity: 0.2;
+    z-index: 2;
   }
 
   &__dots {
@@ -38,8 +40,9 @@
     justify-content: center;
     position: absolute;
     column-gap: 10px;
-    top: 252px;
+    top: 248px;
     left: 0;
     right: 0;
+    z-index: 1;
   }
 }

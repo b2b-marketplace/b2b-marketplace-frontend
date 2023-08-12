@@ -1,29 +1,55 @@
 import { Button } from '../Button/Button';
 import IconHearth from '../Icon/Icon_hearth';
 import IconScales from '../Icon/Icon_scales';
-import IconBasket from '../Icon/Icon_basket';
+import IconVerified from '../Icon/Icon_verified';
+import IconNotVerified from '../Icon/Icon_not-verified';
+import IconEdit from '../Icon/Icon_edit';
+import IconDelete from '../Icon/Icon_delete';
 import ProductRating from '../ProductRating/ProductRating';
-import ProductComments from '../ProductComments/ProductComments';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
-import { images } from '../../utils/images';
+// import { images } from '../../utils/images';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
+  const isOwnProduct = true;
+  const isVerified = false;
   return (
     <div className="card">
-      <SliderImage images={images} />
+      <SliderImage images={product.images} />
       <div className="card__icons">
-        <IconScales />
-        <IconHearth />
+        {isOwnProduct ? (
+          isVerified ? (
+            <>
+              <div className="card__icons_right">
+                <IconDelete />
+                <IconEdit />
+              </div>
+              <IconVerified />
+            </>
+          ) : (
+            <>
+              <div className="card__icons_right">
+                <IconDelete />
+                <IconEdit />
+              </div>
+              <IconNotVerified />
+            </>
+          )
+        ) : (
+          <div className="card__icons_right">
+            <IconScales />
+            <IconHearth />
+          </div>
+        )}
       </div>
 
       <div className="card__info">
         <div className="card__info_top">
-          <h3 className="card__title">{product.title}</h3>
-          <div className="card__statistics">
-            <ProductRating rating={product.rating} />
-            <ProductComments commentsCount={product.commentsCount} />
-          </div>
+          <Link to={`/product/${product.id}`} className="card__title">
+            {product.title}
+          </Link>
+          <ProductRating rating={product.rating} />
         </div>
         <p className="card__shipper">{product.shipper}</p>
 
@@ -34,13 +60,11 @@ function ProductCard({ product }) {
           <p className="card__min-order_quantity">{`от ${product.orderQuantity} шт`}</p>
         </div>
 
-        <div className="card__info_bottom">
-          <Button size="xs" primary={true} border={true}>
-            +
-            <IconBasket />
-          </Button>
-          <p className="card__price">{`${product.price} р`}</p>
-        </div>
+        <p className="card__price">{`${product.price} р`}</p>
+
+        <Button size="xl" primary={true} border={true}>
+          В корзину
+        </Button>
       </div>
     </div>
   );
