@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Promo from '../Promo/Promo';
+import Catalog from '../Catalog/Catalog.jsx';
 
 function App() {
   return (
