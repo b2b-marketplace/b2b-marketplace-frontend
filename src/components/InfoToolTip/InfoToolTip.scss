@@ -1,0 +1,40 @@
+.info-tooltip {
+  &__conteiner {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__conteiner &__text {
+    width: 169px;
+    height: 72px;
+    padding: 13px 7px 13px 20px;
+    background: url(../../image/tooltip.svg);
+    background-repeat: no-repeat;
+
+    color: $whiteColor;
+    font-family: $fontFamily;
+    font-size: 12px;
+    font-style: $mainStyle;
+    font-weight: 500;
+    line-height: normal;
+
+    position: absolute;
+    top: -23px;
+    left: 125%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+  }
+
+  &__conteiner &__text::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+  }
+
+  &__conteiner:hover &__text {
+    visibility: visible;
+    opacity: 1;
+  }
+}
