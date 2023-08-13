@@ -25,59 +25,6 @@
     row-gap: 28px;
   }
 
-  &__label-file {
-    width: 183px;
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
-  }
-
-  &__input-file {
-    width: 204px;
-    height: 158px;
-    border-radius: 20px;
-    border: 1px solid #000;
-    margin-right: 20px;
-    padding: 0;
-    grid-area: file;
-  }
-
-  &__field-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'file comment'
-      'file comment2';
-  }
-
-  &__comment {
-    display: flex;
-    align-items: center;
-    max-width: 223px;
-
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px;
-    grid-area: comment;
-    margin: 0;
-  }
-
-  &__comment2 {
-    max-width: 223px;
-    color: #686868;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    grid-area: comment2;
-    margin: 0;
-  }
-
   &__label {
     width: 183px;
     display: flex;
@@ -90,10 +37,11 @@
 
   &__input {
     width: 626px;
+    height: 60px;
     flex-shrink: 0;
     border-radius: 20px;
     border: 1px solid #000;
-    padding: 18px 0 18px 20px;
+   padding: 0;
     color: #686868;
     font-size: 20px;
     font-style: normal;

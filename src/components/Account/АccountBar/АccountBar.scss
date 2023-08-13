@@ -3,6 +3,7 @@
   max-width: 315px;
   max-height: 720px;
   flex-shrink: 0;
+  box-sizing: border-box;
   border-radius: 30px;
   border: 1px solid #000;
   font-family: Inter;
@@ -15,6 +16,7 @@
   &__conteiner {
     display: flex;
     flex-direction: column;
+    max-height: 640px;
   }
 
   &__items {
@@ -26,7 +28,8 @@
 
   &__item {
     display: flex;
-    margin-bottom: 25px;
+    height: 29px;
+    margin-bottom: 24px;
   }
 
   &__item:last-child {
@@ -40,6 +43,7 @@
   }
 
   &__button {
+    height: 29px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -48,13 +52,11 @@
     padding: 0;
     color: #686868;
     margin-bottom: 25px;
-  }
-
-  &__button:last-child {
-    margin-bottom: 40px;
+    background: $whiteColor;
   }
 
   &__contact {
+    margin-top: 15px;
     text-decoration: none;
     color: #686868;
     font-size: 20px;
