@@ -8,7 +8,6 @@ import IconDelete from '../Icon/Icon_delete';
 import ProductRating from '../ProductRating/ProductRating';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
-// import { images } from '../../utils/images';
 import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
