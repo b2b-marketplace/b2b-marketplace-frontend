@@ -5,7 +5,6 @@
 
   &__section {
     max-width: 877px;
-
     display: flex;
     flex-direction: column;
     font-family: $fontFamily;
@@ -19,9 +18,9 @@
   }
 
   &__field {
+    width: 853px;
     display: flex;
     flex-wrap: wrap;
-    gap: 44px;
     row-gap: 28px;
   }
 
@@ -35,13 +34,22 @@
     line-height: normal;
   }
 
-  &__input {
+  &__label-textarea {
+    width: 183px;
+    margin-right: 44px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__textarea {
+    box-sizing: border-box;
     width: 626px;
-    height: 60px;
-    flex-shrink: 0;
+    height: 237px;
     border-radius: 20px;
     border: 1px solid #000;
-   padding: 0;
+    padding: 18px 25px;
     color: #686868;
     font-size: 20px;
     font-style: normal;
@@ -49,18 +57,26 @@
     line-height: normal;
   }
 
-  &__field-counter {
+  &__conteiner {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 28px;
     gap: 52px;
   }
 
+  &__field-counter {
+    display: flex;
+    gap: 25px;
+  }
+
   &__input-status {
-    width: 200px;
+    width: 203px;
     height: 65px;
-    flex-shrink: 0;
+    box-sizing: border-box;
     border-radius: 20px;
     border: 1px solid #000;
 
+    padding: 18px 16px;
     color: #686868;
     font-size: 24px;
     font-style: normal;
@@ -68,8 +84,8 @@
     line-height: normal;
   }
 
-  &__title-text {
-    margin: 52px auto 0;
+  &__text {
+    margin: 24px auto 0;
     text-align: center;
     max-width: 398px;
     color: #686868;

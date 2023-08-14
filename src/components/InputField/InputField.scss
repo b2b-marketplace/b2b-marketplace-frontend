@@ -1,12 +1,12 @@
 .input-field {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 44px;
-  row-gap: 28px;
 
   &__label {
-    width: 183px;
+    max-width: 183px;
     display: flex;
+    margin-right: 44px;
     align-items: center;
     font-size: 20px;
     font-style: normal;
@@ -17,10 +17,10 @@
   &__input {
     width: 626px;
     height: 60px;
-    flex-shrink: 0;
+    box-sizing: border-box;
     border-radius: 20px;
     border: 1px solid #000;
-    padding: 0;
+    padding: 0 0 0 20px;
     color: #686868;
     font-size: 20px;
     font-style: normal;

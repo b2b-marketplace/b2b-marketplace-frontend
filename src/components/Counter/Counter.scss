@@ -3,8 +3,11 @@
   align-items: center;
 
   &__button {
+    width: 15px;
+    height: 15px;
     border: none;
     padding: 0;
+    background: $whiteColor;
   }
 
   &__count-conteiner {
@@ -24,7 +27,11 @@
     line-height: normal;
   }
 
-  &__icon-button {
-    transform: rotate(180deg);
+  &__icon-left {
+    transform: rotate(90deg);
+  }
+
+  &__icon-right {
+    transform: rotate(-90deg);
   }
 }

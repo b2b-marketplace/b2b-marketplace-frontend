@@ -34,21 +34,31 @@ const AccountProductAdd = () => {
             <DropDown title="Размер" text="Выберите из списка" />
             <DropDown title="Цвет" text="Выберите из списка" />
             <DropDown title="Описание товара" text="Добавьте описание товара" />
+            <label className="account-product-add__label-textarea">Большое текстовое поле:</label>
+            <textarea
+              className="account-product-add__textarea"
+              placeholder="Добавьте описание товара"></textarea>
           </div>
-          <div className="account-product-add__field-counter">
-            <label className="account-product-add__label">Кол-во товара</label>
-            <Counter />
-            <label className="account-product-add__label">Цена/за единицу товара</label>
-            <Counter />
-          </div>
-          <div className="account-product-add__field-counter">
-            <label className="account-product-add__label">Мин. объем заказа</label>
-            <Counter />
-            <label className="account-product-add__label">Статус заказа</label>
-            <input className="account-product-add__input-status" type="" placeholder="В наличии" />
+          <div className="account-product-add__conteiner">
+            <div className="account-product-add__field-counter">
+              <label className="account-product-add__label">Кол-во товара</label>
+              <Counter />
+            </div>
+            <div className="account-product-add__field-counter">
+              <label className="account-product-add__label">Цена/за единицу товара</label>
+              <Counter />
+            </div>
+            <div className="account-product-add__field-counter">
+              <label className="account-product-add__label">Мин. объем заказа</label>
+              <Counter />
+            </div>
+            <div className="account-product-add__field-counter">
+              <label className="account-product-add__label">Статус заказа</label>
+              <input className="account-product-add__input-status" placeholder="В наличии" />
+            </div>
           </div>
 
-          <p className="account-product-add__title-text">
+          <p className="account-product-add__text">
             Каждый товар проходит модерацию. В&nbsp;среднем проверка занимает 30 минут
           </p>
           <div className="account-product-add__button-conteiner">
