@@ -26,15 +26,15 @@ const AccountProductAdd = () => {
             comet="1 видео длительностью не более 3 мин"
           />
           <div className="account-product-add__field">
-            <DropDown title="Категория товара" text="Выберите из списка" />
+            <DropDown label="Категория товара" placeholder="Выберите из списка" />
             <InputField label="Название товара" placeholder="Кожаная мужская куртка" type="text" />
             <InputField label="Артикул" placeholder="000 000" type="number" />
-            <DropDown title="Бренд" text="Выберите из списка" />
+            <DropDown label="Бренд" placeholder="Выберите из списка" />
             <InputField label="Производитель" placeholder="Страна производитель" type="text" />
-            <DropDown title="Размер" text="Выберите из списка" />
-            <DropDown title="Цвет" text="Выберите из списка" />
-            <DropDown title="Описание товара" text="Добавьте описание товара" />
-            <label className="account-product-add__label-textarea">Большое текстовое поле:</label>
+            <DropDown label="Размер" placeholder="Выберите из списка" />
+            <DropDown label="Цвет" placeholder="Выберите из списка" />
+
+            <label className="account-product-add__label-textarea">Описание товара</label>
             <textarea
               className="account-product-add__textarea"
               placeholder="Добавьте описание товара"></textarea>
