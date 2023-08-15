@@ -52,10 +52,10 @@ export default function ProductPage({ product }) {
         <div className="product-page__images">
           <div className="product-page__images-column">
             {product.images.map((image) => (
-              <img className="product-page__image" src={image} />
+              <img className="product-page__image" src={image} alt='Изображение товара'/>
             ))}
           </div>
-          <img className="product-page__main-image" src={product.images[0]} />
+          <img className="product-page__main-image" src={product.images[0]} alt='Крупное фото товара'/>
         </div>
         <div className="product-page__info">
           <div className="product-page__title-line">
