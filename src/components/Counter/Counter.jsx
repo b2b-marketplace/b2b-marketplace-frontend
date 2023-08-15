@@ -18,7 +18,7 @@ const Counter = () => {
       <button className="counter__button" onClick={handleLeft}>
         <IconArrowCounter className={'counter__icon-left'}/>
       </button>
-      <div className='counter__count-conteiner'>{count}</div>
+      <span className='counter__count-conteiner'>{count}</span>
       <button className="counter__button" onClick={handleRight}>
         <IconArrowCounter className={'counter__icon-right'} />
       </button>
