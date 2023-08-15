@@ -1,5 +1,5 @@
 import './AccountCompanyBuyer.scss';
-import AccountBar from '../АccountBar/АccountBar';
+import АccountBar from '../AccountBar/AccountBar';
 import AccountTitle from '../AccountTitle/AccountTitle';
 import IconPencil from '../../Icon/Icon_pencil';
 import IconStarAccount from '../../Icon/Icon_star-account';
@@ -7,11 +7,24 @@ import AccountField from '../AccountField/AccountField';
 import InfoToolTip from '../../InfoToolTip/InfoToolTip';
 import IconPhone from '../../Icon/Icon_phone';
 import IconMail from '../../Icon/Icon_mail';
+import BiBag from '../../Icon/Icon_bibag';
+import IconPackage from '../../Icon/Icon_package';
+import IconBag from '../../Icon/Icon_bag';
+import IconMessage from '../../Icon/Icon_message';
+import IconLock from '../../Icon/Icon_lock';
 
 const AccountCompanyBuyer = () => {
+  const menuItems = [
+    { icon: <BiBag />, link: '#', label: 'Моя компания' },
+    { icon: <IconPackage />, link: '#', label: 'Товары' },
+    { icon: <IconBag />, link: '#', label: 'Заказы' },
+    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
+    { icon: <IconLock />, link: '#', label: 'Безопасность' },
+  ];
+
   return (
     <section className="account-company-buyer">
-      <AccountBar />
+      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
       <div>
         <div className="account-company-buyer__conteiner">
           <AccountTitle title="Продавец" icon={<IconPencil />} />

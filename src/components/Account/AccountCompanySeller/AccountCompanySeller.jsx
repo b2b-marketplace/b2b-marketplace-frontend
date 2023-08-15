@@ -1,5 +1,11 @@
+import React from 'react';
 import './AccountCompanySeller.scss';
-import AccountBar from '../АccountBar/АccountBar';
+import АccountBar from '../AccountBar/AccountBar';
+import BiBag from '../../Icon/Icon_bibag';
+import IconPackage from '../../Icon/Icon_package';
+import IconBag from '../../Icon/Icon_bag';
+import IconMessage from '../../Icon/Icon_message';
+import IconLock from '../../Icon/Icon_lock';
 import IconMail from '../../Icon/Icon_mail';
 import IconPhone from '../../Icon/Icon_phone';
 import AccountTitle from '../AccountTitle/AccountTitle';
@@ -9,9 +15,17 @@ import AccountField from '../AccountField/AccountField';
 import IconPencil from '../../Icon/Icon_pencil';
 
 const AccountCompanySeller = () => {
+  const menuItems = [
+    { icon: <BiBag />, link: '#', label: 'Моя компания' },
+    { icon: <IconPackage />, link: '#', label: 'Товары' },
+    { icon: <IconBag />, link: '#', label: 'Заказы' },
+    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
+    { icon: <IconLock />, link: '#', label: 'Безопасность' },
+  ];
+
   return (
     <section className="account-company-seller">
-      <AccountBar />
+      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
 
       <div>
         <div className="account-company-seller__conteiner">

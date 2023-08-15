@@ -2,16 +2,29 @@ import React from 'react';
 import Counter from '../../Counter/Counter';
 import './AccountProductAdd.scss';
 import { Button } from '../../Button/Button';
-import АccountBar from '../АccountBar/АccountBar';
+import BiBag from '../../Icon/Icon_bibag';
+import IconPackage from '../../Icon/Icon_package';
+import IconBag from '../../Icon/Icon_bag';
+import IconMessage from '../../Icon/Icon_message';
+import IconLock from '../../Icon/Icon_lock';
+import АccountBar from '../AccountBar/AccountBar';
 import AccountTitle from '../AccountTitle/AccountTitle';
 import InputField from '../../InputField/InputField';
 import FileUpload from '../../FileUpload/FileUpload';
 import DropDown from '../DropDown/DropDown';
 
 const AccountProductAdd = () => {
+  const menuItems = [
+    { icon: <BiBag />, link: '#', label: 'Моя компания' },
+    { icon: <IconPackage />, link: '#', label: 'Товары' },
+    { icon: <IconBag />, link: '#', label: 'Заказы' },
+    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
+    { icon: <IconLock />, link: '#', label: 'Безопасность' },
+  ];
+
   return (
     <section className="account-product-add">
-      <АccountBar />
+      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
       <div className="account-product-add__section">
         <AccountTitle title="Продавец" />
         <form className="account-product-add__form">
