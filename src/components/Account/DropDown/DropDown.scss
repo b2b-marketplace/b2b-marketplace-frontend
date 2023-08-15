@@ -16,7 +16,8 @@
 
   &__select {
     width: 626px;
-    position: relative;
+    display: flex;
+    flex-direction: column; 
     font-family: $fontFamily;
     font-size: 20px;
     font-style: $mainStyle;
@@ -52,10 +53,14 @@
     border: 1px solid $darkColor;
     border-radius: 20px;
     border-top: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
     display: none;
+    transition: all 0.3s ease; /*анимация при изменении высоты элемента */
+  }
+
+  &__select.is-active .drop-down__body {
+    display: block;
+    max-height: 200px; /*  максимальная высота меню */
+    overflow: auto; /* прокрутка, если меню слишком длинное */
   }
 
   &__item {
@@ -68,6 +73,4 @@
   }
 }
 
-.drop-down__select.is-active .drop-down__body {
-  display: block;
-}
+
