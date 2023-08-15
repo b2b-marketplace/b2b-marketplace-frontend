@@ -16,11 +16,11 @@ const Counter = () => {
   return (
     <div className="counter">
       <button className="counter__button" onClick={handleLeft}>
-        <IconArrowCounter />
+        <IconArrowCounter className={'counter__icon-left'}/>
       </button>
       <div className='counter__count-conteiner'>{count}</div>
       <button className="counter__button" onClick={handleRight}>
-        <IconArrowCounter className={'counter__icon-button'} />
+        <IconArrowCounter className={'counter__icon-right'} />
       </button>
     </div>
   );

@@ -1,0 +1,30 @@
+.input-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__label {
+    max-width: 183px;
+    display: flex;
+    margin-right: 44px;
+    align-items: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__input {
+    width: 626px;
+    height: 60px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 0 0 0 20px;
+    color: #686868;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

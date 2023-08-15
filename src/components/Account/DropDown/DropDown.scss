@@ -1,0 +1,29 @@
+.drop-down {
+  width: 877px;
+  display: flex;
+  justify-content: space-between;
+
+  &__label {
+    max-width: 183px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 626px;
+    height: 60px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 0 0 0 20px;
+    color: #686868;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
