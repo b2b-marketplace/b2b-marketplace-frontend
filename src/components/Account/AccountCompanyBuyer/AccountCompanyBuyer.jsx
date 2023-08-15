@@ -13,11 +13,13 @@ import IconBag from '../../Icon/Icon_bag';
 import IconMessage from '../../Icon/Icon_message';
 import IconLock from '../../Icon/Icon_lock';
 
+
 const AccountCompanyBuyer = () => {
   const menuItems = [
     { icon: <BiBag />, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Товары' },
-    { icon: <IconBag />, link: '#', label: 'Заказы' },
+    { icon: <IconPackage />, link: '#', label: 'Закупки' },
+    { icon: <IconBag />, link: '#', label: 'Избранное' },
+    { icon: <IconBag />, link: '#', label: 'Корзина' },
     { icon: <IconMessage />, link: '#', label: 'Сообщения' },
     { icon: <IconLock />, link: '#', label: 'Безопасность' },
   ];

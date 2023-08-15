@@ -20,7 +20,9 @@ const AccountBar = ({ menuItems, phone }) => {
             </li>
           ))}
         </ul>
+      </div>
 
+      <div className="account-bar__container">
         <button className="account-bar__button">
           <IconExit />
           Выйти
