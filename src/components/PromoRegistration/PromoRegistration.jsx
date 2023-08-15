@@ -7,7 +7,7 @@ import { Button } from '../Button/Button';
 const PromoRegistration = () => {
   return (
     <section className="promo-registration">
-      
+
       <div className="promo-registration__conteiner">
         <div>
           <h2 className="promo-registration__title">Хотите закупаться дешевле?</h2>
@@ -15,15 +15,16 @@ const PromoRegistration = () => {
             Зарегистрируйтесь на нашем портале и найдите новых клиентов, заказчиков и партнёров!
           </p>
           <div className="promo-registration__button">
-            <Button size="l" primary={false} border={true} label={'Зарегистрироваться'} />
-            <Button size="l" primary={true} border={true} label={'Войти'} />
+            <Button size="xxl" primary={false} border={true} >Зарегистрироваться</Button>
+            <Button size="xxl" primary={true} border={true} >Войти</Button>
           </div>
         </div>
         <img className="promo-registration__logo" src={logo} alt="Логотип." />
       </div>
-      <button className="promo-registration__navigation-button">
+      <Button size='xs' primary={false} border={true} >
         <IconArrowUp />
-      </button>
+      </Button>
+
     </section>
   );
 };

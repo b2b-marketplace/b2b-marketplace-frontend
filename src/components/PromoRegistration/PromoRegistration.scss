@@ -1,22 +1,11 @@
 .promo-registration {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: flex-end;
   gap: 20px;
   padding-bottom: 160px;
   font-family: $fontFamily;
-
-  &__navigation-button {
-    margin-top: 133px;
-    padding: 0;
-    display: flex;
-    width: 92px;
-    height: 92px;
-    background: $blackColor;
-    border-radius: 50px;
-    align-items: center;
-    justify-content: center;
-    color: $whiteColor;
-  }
 
   &__conteiner {
     display: flex;
