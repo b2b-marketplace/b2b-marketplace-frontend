@@ -1,0 +1,160 @@
+.basket {
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 60px;
+
+  &__header {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  &__title-product-count {
+    margin: 0;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__panel-checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &__panel {
+    box-sizing: border-box;
+    border: 1px solid $blackColor;
+    border-radius: 20px;
+    height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 89px 0 30px;
+  }
+
+  &__panel-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    transition: opacity linear .5s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__panel-checkbox {
+    display: flex;
+    gap: 20px;
+  }
+
+
+  &__checkbox-text {
+    font-size: 20px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    column-gap: 20px;
+    position: relative;
+  }
+
+  &__order-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0;
+  }
+
+  &__order-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__product {
+  }
+
+  &__icon-info {
+    width: 16.667px;
+    height: 16.667px;
+  }
+
+  &__order-detail-container {
+    position: relative;
+  }
+
+  &__order-detail {
+    box-sizing: border-box;
+    top: 40px;
+    right: 0;
+    width: 427px;
+    height: 573px;
+    border: 1px solid $blackColor;
+    border-radius: 20px;
+    position: sticky;
+    padding: 40px;
+  }
+
+  &__order-detail-header {
+    display: flex;
+    column-gap: 32px;
+    align-items: center;
+  }
+
+  &__order-detail-title {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__total-label {
+    font-size: 20px;
+    margin-top: 25px;
+
+  }
+
+  &__total-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  &__total-suppliers {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__total-product {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__price-total {
+    margin-top: 67px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
