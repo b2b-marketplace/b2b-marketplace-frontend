@@ -1,0 +1,70 @@
+.account-bar {
+  display: flex;
+  max-width: 315px;
+  max-height: 720px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 30px;
+  border: 1px solid #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 40px 26px;
+
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    max-height: 640px;
+  }
+
+  &__items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 223px;
+  }
+
+  &__item {
+    display: flex;
+    height: 29px;
+    margin-bottom: 24px;
+  }
+
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
+  &__link {
+    margin-left: 20px;
+    color: #686868;
+    text-decoration: none;
+  }
+
+  &__button {
+    height: 29px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    color: #686868;
+    margin-bottom: 25px;
+    background: $whiteColor;
+  }
+
+  &__contact {
+    margin-top: 15px;
+    text-decoration: none;
+    color: #686868;
+    font-size: 20px;
+  }
+
+  &__text {
+    margin: 0;
+    color: #686868;
+    font-size: 20px;
+  }
+}
