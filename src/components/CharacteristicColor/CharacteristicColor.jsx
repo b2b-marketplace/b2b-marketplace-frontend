@@ -3,19 +3,27 @@ import "./CharacteristicColor.scss";
 
 const CharacteristicColor = ({ className, colorList, ...props }) => {
 
-  // const colorList = [
-  //   { key: 1, color: 'red' },
-  //   { key: 2, color: 'blue' },
-  // ];
+  const arrayColors = (colors) => {
+    return (
+      <div className={`characteristic-color ${className ? className : ""}`}>
+        {colorList?.map((color) => (
+          <div className="characteristic-color__color" key={color.key} style={color.color ? { backgroundColor: color.color } : { backgroundColor: `white` }}></div>
+        ))}
+      </div>
 
-  return (
-    <div className={`characteristic-color ${className ? className : ""}`}>
-      {colorList?.map((color) => (
-        <div className="characteristic-color__color" key={color.key} style={color.color ? { backgroundColor: color.color } : { backgroundColor: `white` }}></div>
-      ))}
-    </div>
+    );
+  };
 
-  );
+  const singleColor = (color) => {
+    return (
+      <div className={`characteristic-color ${className ? className : ""}`}>
+        <div className="characteristic-color__color" style={color ? { backgroundColor: color } : { backgroundColor: `white` }}></div>
+      </div>
+
+    );
+  };
+
+  return (colorList.isArray) ? arrayColors(colorList) : singleColor(colorList);
 };
 
 export default CharacteristicColor;
