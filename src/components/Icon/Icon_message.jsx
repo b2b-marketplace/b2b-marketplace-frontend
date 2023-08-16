@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const Message = ({ className, ...props }) => {
+const IconMessage = ({ className, ...props }) => {
   return (
     <Icon {...props} className={`${className}`}>
       <svg
@@ -20,4 +20,4 @@ const Message = ({ className, ...props }) => {
   );
 };
 
-export default Message;
+export default IconMessage;

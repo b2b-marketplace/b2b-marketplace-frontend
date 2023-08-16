@@ -1,5 +1,6 @@
 .question {
-  padding: 0 60px;
+  display: flex;
+  gap: 60px;
   font-family: $fontFamily;
 
   &__menu-conteiner {
@@ -42,7 +43,7 @@
   }
 
   &__link {
-    color: #000;
+    color: $darkColor;
     font-size: 20px;
     font-style: $mainStyle;
     font-weight: $mainWeight;

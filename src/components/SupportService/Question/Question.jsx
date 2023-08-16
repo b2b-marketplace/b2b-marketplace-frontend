@@ -1,13 +1,23 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Question.scss';
+import АccountBar from '../../Account/AccountBar/AccountBar';
+import IconQuestion from '../../Icon/Icon_question';
+import IconMail from '../../Icon/Icon_mail';
+import IconCommunication from '../../Icon/Icon_communication';
 
 const Question = () => {
+  const menuItems = [
+    { icon: <IconQuestion />, link: '#', label: 'Вопросы' },
+    { icon: <IconMail />, link: '#', label: 'Напишите нам' },
+    { icon: <IconCommunication />, link: '#', label: 'Чат' },
+  ];
+
   return (
     <section className="question">
+      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
       <div className="question__menu">
-        <h2 className="question__title">
-          Часто задаваемые вопросы
-        </h2>
+        <h2 className="question__title">Часто задаваемые вопросы</h2>
         <div className="question__menu-conteiner">
           <ul className="question__lists">
             <h3 className="question__paragraph">Мой заказ</h3>
