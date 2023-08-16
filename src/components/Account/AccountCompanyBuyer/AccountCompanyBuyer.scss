@@ -26,4 +26,12 @@
     flex-direction: column;
     max-width: 610px;
   }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    color:  #686868;
+    display: flex;
+    align-items: center;
+  }
 }

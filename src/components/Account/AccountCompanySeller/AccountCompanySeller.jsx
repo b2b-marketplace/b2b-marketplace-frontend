@@ -10,11 +10,12 @@ import IconMail from '../../Icon/Icon_mail';
 import IconPhone from '../../Icon/Icon_phone';
 import AccountTitle from '../AccountTitle/AccountTitle';
 import IconStarAccount from '../../Icon/Icon_star-account';
-import InfoToolTip from '../../InfoToolTip/InfoToolTip';
+import Tooltip from '../../Tooltip/Tooltip';
 import AccountField from '../AccountField/AccountField';
 import IconPencil from '../../Icon/Icon_pencil';
 import IconTrash from '../../Icon/Icon_trash';
 import IconExit from '../../Icon/Icon_exit';
+import IconInfoFil from '../../Icon/Icon_info_fill';
 
 const AccountCompanySeller = () => {
   const menuItems = [
@@ -38,7 +39,7 @@ const AccountCompanySeller = () => {
 
       <div>
         <div className="account-company-seller__conteiner">
-          <AccountTitle title="Продавец" icon={<IconPencil />} />
+          <AccountTitle name="ООО «Компания»" title="Продавец" icon={<IconPencil />} />
           <IconStarAccount />
           <span className="account-company-seller__rating">5,0</span>
         </div>
@@ -57,7 +58,13 @@ const AccountCompanySeller = () => {
 
           <h2 className="account-company-seller__title">
             Контакты
-            <InfoToolTip />
+            <Tooltip
+              position="right"
+              tooltipContent={
+                <>Эти данные видите только&nbsp;вы, они скрыты от&nbsp;покупателей</>
+              }>
+              <IconInfoFil />
+            </Tooltip>
           </h2>
           <AccountField label="Почта" placeholder="Почта" type="email" icon={<IconMail />} />
           <AccountField label="Телефон" placeholder="Телефон" type="tel" icon={<IconPhone />} />
