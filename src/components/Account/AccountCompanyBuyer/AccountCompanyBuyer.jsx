@@ -12,7 +12,8 @@ import IconPackage from '../../Icon/Icon_package';
 import IconBag from '../../Icon/Icon_bag';
 import IconMessage from '../../Icon/Icon_message';
 import IconLock from '../../Icon/Icon_lock';
-
+import IconTrash from '../../Icon/Icon_trash';
+import IconExit from '../../Icon/Icon_exit';
 
 const AccountCompanyBuyer = () => {
   const menuItems = [
@@ -26,7 +27,14 @@ const AccountCompanyBuyer = () => {
 
   return (
     <section className="account-company-buyer">
-      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
+      <АccountBar
+        icon1={<IconTrash />}
+        text1={'Выйти'}
+        menuItems={menuItems}
+        icon2={<IconExit />}
+        text2={'Удалить аккаунт'}
+        phone="8-800-800-00-00"
+      />
       <div>
         <div className="account-company-buyer__conteiner">
           <AccountTitle title="Продавец" icon={<IconPencil />} />

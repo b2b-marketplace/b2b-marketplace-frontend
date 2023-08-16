@@ -13,6 +13,8 @@ import IconStarAccount from '../../Icon/Icon_star-account';
 import InfoToolTip from '../../InfoToolTip/InfoToolTip';
 import AccountField from '../AccountField/AccountField';
 import IconPencil from '../../Icon/Icon_pencil';
+import IconTrash from '../../Icon/Icon_trash';
+import IconExit from '../../Icon/Icon_exit';
 
 const AccountCompanySeller = () => {
   const menuItems = [
@@ -25,7 +27,14 @@ const AccountCompanySeller = () => {
 
   return (
     <section className="account-company-seller">
-      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
+      <АccountBar
+        icon1={<IconTrash />}
+        text1={'Выйти'}
+        menuItems={menuItems}
+        icon2={<IconExit />}
+        text2={'Удалить аккаунт'}
+        phone="8-800-800-00-00"
+      />
 
       <div>
         <div className="account-company-seller__conteiner">

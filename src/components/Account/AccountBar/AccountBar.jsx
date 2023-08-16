@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import './АccountBar.scss';
 import PropTypes from 'prop-types';
 
-import IconExit from '../../Icon/Icon_exit';
-import IconTrash from '../../Icon/Icon_trash';
-
-const AccountBar = ({ menuItems, phone }) => {
+const AccountBar = ({ menuItems, phone, icon1, icon2, text1, text2 }) => {
   return (
     <section className="account-bar">
       <div className="account-bar__container">
@@ -24,14 +21,13 @@ const AccountBar = ({ menuItems, phone }) => {
 
       <div className="account-bar__container">
         <button className="account-bar__button">
-          <IconExit />
-          Выйти
+          {icon1} {text1}
         </button>
 
         <button className="account-bar__button">
-          <IconTrash />
-          Удалить аккаунт
+          {icon2} {text2}
         </button>
+
         <a className="account-bar__contact" href={`tel:${phone}`}>
           {phone}
         </a>

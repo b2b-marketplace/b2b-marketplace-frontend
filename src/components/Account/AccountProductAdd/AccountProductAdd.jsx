@@ -12,6 +12,8 @@ import AccountTitle from '../AccountTitle/AccountTitle';
 import InputField from '../../InputField/InputField';
 import FileUpload from '../../FileUpload/FileUpload';
 import DropDown from '../DropDown/DropDown';
+import IconTrash from '../../Icon/Icon_trash';
+import IconExit from '../../Icon/Icon_exit';
 
 const AccountProductAdd = () => {
   const menuItems = [
@@ -24,7 +26,14 @@ const AccountProductAdd = () => {
 
   return (
     <section className="account-product-add">
-      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
+      <АccountBar
+        icon1={<IconTrash />}
+        text1={'Выйти'}
+        menuItems={menuItems}
+        icon2={<IconExit />}
+        text2={'Удалить аккаунт'}
+        phone="8-800-800-00-00"
+      />
       <div className="account-product-add__section">
         <AccountTitle title="Продавец" />
         <form className="account-product-add__form">
