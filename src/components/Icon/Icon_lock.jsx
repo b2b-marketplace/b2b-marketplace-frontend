@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const Lock = ({ className, ...props }) => {
+const IconLock = ({ className, ...props }) => {
   return (
     <Icon {...props} className={`${className}`}>
       <svg
@@ -19,4 +19,4 @@ const Lock = ({ className, ...props }) => {
   );
 };
 
-export default Lock;
+export default IconLock;

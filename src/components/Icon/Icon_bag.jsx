@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const Bag = ({ className, ...props }) => {
+const IconBag = ({ className, ...props }) => {
   return (
     <Icon {...props} className={`${className}`}>
       <svg
@@ -39,4 +39,4 @@ const Bag = ({ className, ...props }) => {
   );
 };
 
-export default Bag;
+export default IconBag;
