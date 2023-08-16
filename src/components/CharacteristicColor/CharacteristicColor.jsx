@@ -1,29 +1,25 @@
 import React from 'react';
 import "./CharacteristicColor.scss";
 
-const CharacteristicColor = ({ className, colorList, ...props }) => {
+const CharacteristicColor = ({ className, characteristicValue }) => {
+  const renderColor = (color) => {
+    const backgroundColor = color ? color : 'white';
+    return <div className="characteristic-color__color" style={{ backgroundColor }}/>;
+  };
 
-  const arrayColors = (colors) => {
+  const renderColors = (colors) => {
     return (
-      <div className={`characteristic-color ${className ? className : ""}`}>
-        {colorList?.map((color) => (
-          <div className="characteristic-color__color" key={color.key} style={color.color ? { backgroundColor: color.color } : { backgroundColor: `white` }}></div>
-        ))}
-      </div>
-
+      colors.map((color) => (
+        <div key={color.key}>{renderColor(color.color)}</div>
+      ))
     );
   };
 
-  const singleColor = (color) => {
-    return (
-      <div className={`characteristic-color ${className ? className : ""}`}>
-        <div className="characteristic-color__color" style={color ? { backgroundColor: color } : { backgroundColor: `white` }}></div>
-      </div>
-
-    );
-  };
-
-  return (colorList.isArray) ? arrayColors(colorList) : singleColor(colorList);
+  return (
+    <div className={`characteristic-color ${className || ""}`}>
+      {Array.isArray(characteristicValue) ? renderColors(characteristicValue) : renderColor(characteristicValue)}
+    </div>
+  );
 };
 
 export default CharacteristicColor;

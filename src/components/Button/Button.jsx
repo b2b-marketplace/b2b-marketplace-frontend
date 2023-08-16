@@ -17,7 +17,7 @@ export const Button = ({ primary, border, rotate, size, type, children, ...props
 
 Button.propTypes = {
   primary: PropTypes.bool,
-  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxx', 'xxxxl']),
+  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxx','xxxl', 'xxxxl']),
   border: PropTypes.bool,
   rotate: PropTypes.bool,
   type: PropTypes.oneOf(['button', 'submit']),
