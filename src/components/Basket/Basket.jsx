@@ -3,13 +3,180 @@ import "./Basket.scss";
 import Checkbox from "../Checkbox/Checkbox";
 import IconTrash from "../Icon/Icon_trash";
 import ProductHorizontal from "../ProductHorizontal/ProductHorizontal";
-import IconInfoFill from "../Icon/Icon_info_fill";
-import Tooltip from "../Tooltip/Tooltip";
+import OrderDetail from "./OrderDetail/OrderDetail";
 
-const Basket = () => {
+
+const Basket = ({ className }) => {
+  const productsList = [
+    {
+      "id": 3,
+      "products": [
+        {
+          "product": {
+            "id": 0,
+            "sku": "1234567",
+            "name": "Детская зимняя куртка",
+            "brand": "Бренд",
+            "price": "40 000",
+            "wholesale_quantity": 0,
+            "video": "string",
+            "quantity_in_stock": 0,
+            "description": "Описание",
+            "manufacturer_country": "Россия",
+            "user": {
+              "id": 0,
+              "username": "string"
+            },
+            "category": {
+              "id": 10,
+              "name": "Куртки",
+              "slug": "kurtki",
+              "parent_id": 123
+            },
+            "images": [
+              {
+                "image": "http://example.org/images/image.jpeg"
+              }
+            ],
+            //Добавлено
+            "suppliers": [
+              {
+                "id": 0,
+                "email": "user@example.com",
+                "username": "@hqWgF4c2V+KytAySz",
+                "company": {
+                  "company_id": 0,
+                  "company_name": "ООО «Компания»",
+                  "inn": 0,
+                  "ogrn": 0,
+                  "phone_numbers": [
+                    "string"
+                  ],
+                  "addresses": [
+                    "string"
+                  ]
+                }
+              }
+            ],
+            "characteristic": [
+              { "size": "10-12 лет" },
+              { "color": 'red' },
+            ],
+          },
+          "quantity": 1000
+        }, {
+          "product": {
+            "id": 1,
+            "sku": "1234567",
+            "name": "Детская зимняя куртка",
+            "brand": "Бренд",
+            "price": "40 000",
+            "wholesale_quantity": 0,
+            "video": "string",
+            "quantity_in_stock": 0,
+            "description": "Описание",
+            "manufacturer_country": "Россия",
+            "user": {
+              "id": 0,
+              "username": "string"
+            },
+            "category": {
+              "id": 10,
+              "name": "Куртки",
+              "slug": "kurtki",
+              "parent_id": 123
+            },
+            "images": [
+              {
+                "image": "http://example.org/images/image.jpeg"
+              }
+            ],
+            //Добавлено
+            "suppliers": [
+              {
+                "id": 0,
+                "email": "user@example.com",
+                "username": "@hqWgF4c2V+KytAySz",
+                "company": {
+                  "company_id": 0,
+                  "company_name": "ООО «Компания»",
+                  "inn": 0,
+                  "ogrn": 0,
+                  "phone_numbers": [
+                    "string"
+                  ],
+                  "addresses": [
+                    "string"
+                  ]
+                }
+              }
+            ],
+            "characteristic": [
+              { "size": "10-12 лет" },
+              { "color": 'red' },
+            ],
+          },
+          "quantity": 1000
+        }, {
+          "product": {
+            "id": 3,
+            "sku": "1234567",
+            "name": "Детская зимняя куртка",
+            "brand": "Бренд",
+            "price": "40 000",
+            "wholesale_quantity": 0,
+            "video": "string",
+            "quantity_in_stock": 0,
+            "description": "Описание",
+            "manufacturer_country": "Россия",
+            "user": {
+              "id": 0,
+              "username": "string"
+            },
+            "category": {
+              "id": 10,
+              "name": "Куртки",
+              "slug": "kurtki",
+              "parent_id": 123
+            },
+            "images": [
+              {
+                "image": "http://example.org/images/image.jpeg"
+              }
+            ],
+            //Добавлено
+            "suppliers": [
+              {
+                "id": 0,
+                "email": "user@example.com",
+                "username": "@hqWgF4c2V+KytAySz",
+                "company": {
+                  "company_id": 0,
+                  "company_name": "ООО «Компания»",
+                  "inn": 0,
+                  "ogrn": 0,
+                  "phone_numbers": [
+                    "string"
+                  ],
+                  "addresses": [
+                    "string"
+                  ]
+                }
+              }
+            ],
+            "characteristic": [
+              { "size": "10-12 лет" },
+              { "color": 'red' },
+            ],
+          },
+          "quantity": 1000
+        }
+      ]
+    }
+  ];
 
   return (
-    <section className="basket">
+    <section className={`basket ${className ? className : ''}`}>
       <header className="basket__header ">
         <h1 className="basket__title">Корзина</h1>
         <p className="basket__title-product-count">2</p>
@@ -26,30 +193,15 @@ const Basket = () => {
           </button>
         </div>
         <div className="basket__container">
-          <ul className="basket__order-list">
-            <li className="basket__order-item">
-              <ProductHorizontal className="basket__product"/>
-            </li>
+          <ul className="basket__product-list">
+            {productsList[ 0 ]?.products?.map((product, id) => (
+              <li className="basket__order-item" key={product.product.id}>
+                <ProductHorizontal product={product.product} className="basket__product"/>
+              </li>
+            ))}
           </ul>
           <div className="basket__order-detail-container">
-            <div className="basket__order-detail">
-              <div className="basket__order-detail-header">
-                <h3 className="basket__order-detail-title">Детали заказа</h3>
-                <Tooltip position="top" tooltipContent={<>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>}>
-                  <IconInfoFill className="basket__icon-info"/>
-                </Tooltip>
-              </div>
-              <div className="basket__total">
-                <div className="basket__total-label">
-                  Итого:
-                </div>
-                <div className="basket__total-content">
-                  <p className="basket__total-suppliers">2 поставщика</p>
-                  <p className="basket__total-product">20 товаров</p>
-                </div>
-              </div>
-              <div className="basket__price-total">80 000 ₽</div>
-            </div>
+            <OrderDetail className="basket__order-detail-sticky"/>
           </div>
         </div>
       </main>
