@@ -19,11 +19,12 @@
   }
 
   &__cards {
-    max-width: 1320px;
+    width: 100%;
     margin: 0 auto 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
-
-    grid-gap: 20px;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
