@@ -1,9 +1,8 @@
 import React from 'react';
-import './AccountCompanyBuyer.scss';
+import './AccountCompanyIndividual.scss';
 import АccountBar from '../AccountBar/AccountBar';
 import AccountTitle from '../AccountTitle/AccountTitle';
 import IconPencil from '../../Icon/Icon_pencil';
-import IconStarAccount from '../../Icon/Icon_star-account';
 import AccountField from '../AccountField/AccountField';
 import Tooltip from '../../Tooltip/Tooltip';
 import IconPhone from '../../Icon/Icon_phone';
@@ -44,9 +43,7 @@ const AccountCompanyBuyer = () => {
       />
       <div>
         <div className="account-company-buyer__conteiner">
-          <AccountTitle name="ООО «Компания»" title="Покупатель" icon={<IconPencil />} />
-          <IconStarAccount />
-          <span className="account-company-buyer__rating">5,0</span>
+          <AccountTitle name="Иванов Иван Иванович" title="Покупатель" icon={<IconPencil />} />
         </div>
         <form className="account-company-buyer__form">
           <h2 className="account-company-buyer__title">Данные покупателя</h2>

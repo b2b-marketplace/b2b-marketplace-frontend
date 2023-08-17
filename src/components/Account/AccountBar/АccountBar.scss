@@ -13,6 +13,7 @@
   font-weight: 500;
   line-height: normal;
   padding: 40px 26px;
+  flex-shrink: 0;
 
   &__conteiner {
     display: flex;

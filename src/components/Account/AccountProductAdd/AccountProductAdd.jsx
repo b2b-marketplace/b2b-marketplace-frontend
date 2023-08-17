@@ -35,7 +35,7 @@ const AccountProductAdd = () => {
         phone="8-800-800-00-00"
       />
       <div className="account-product-add__section">
-        <AccountTitle title="Продавец" />
+        <AccountTitle name="ООО «Компания»" title="Продавец" />
         <form className="account-product-add__form">
           <FileUpload
             label="Добавить изображение"
@@ -84,8 +84,12 @@ const AccountProductAdd = () => {
             Каждый товар проходит модерацию. В&nbsp;среднем проверка занимает 30 минут
           </p>
           <div className="account-product-add__button-conteiner">
-            <Button size="xxl" primary={false} border={true} label={'Опубликовать'} />
-            <Button size="xxl" primary={true} border={true} label={'Отмена'} />
+            <Button size="xxxxl" primary={false} border={true}>
+              Опубликовать
+            </Button>
+            <Button size="xxxxl" primary={true} border={true}>
+              Отмена
+            </Button>
           </div>
         </form>
       </div>
