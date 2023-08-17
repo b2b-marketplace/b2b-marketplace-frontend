@@ -5,10 +5,10 @@ import IconRuble from "../Icon/Icon_ruble";
 import IconTimer from "../Icon/Icon_timer";
 import IconDiscountLight from "../Icon/Icon_discount_light";
 
-const PlatformBenefits = () => {
+const PlatformBenefits = ({ className }) => {
 
   return (
-    <section className="platform-benefits">
+    <section className={`platform-benefits ${className ? className : ''}`}>
       <ul className="platform-benefits__list">
         <li className="platform-benefits__item">
           <IconSafety className="platform-benefits__icon"/>
