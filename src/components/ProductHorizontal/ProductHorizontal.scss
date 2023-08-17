@@ -45,7 +45,7 @@
   &__container {
     display: flex;
     flex-direction: row;
-
+    justify-content: space-between;
     column-gap: 32px;
     flex-shrink: 0;
   }

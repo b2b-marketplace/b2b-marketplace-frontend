@@ -3,7 +3,7 @@ import { Button } from '../Button/Button';
 import './ProductCardContainer.scss';
 import { useEffect, useState } from 'react';
 
-export default function ProductCardContainer({ title, products }) {
+export default function ProductCardContainer({ title, products, className }) {
   const [displayCards, setDisplayCards] = useState([]);
   const [cardsQuantity, setCardsQuantity] = useState(4);
 
@@ -12,18 +12,19 @@ export default function ProductCardContainer({ title, products }) {
   };
 
   useEffect(() => {
-    setDisplayCards(products.slice(0, cardsQuantity));
+    setDisplayCards(products?.slice(0, cardsQuantity));
   }, [cardsQuantity, products]);
+
   return (
-    <section className="cards-container">
+    <section className={`cards-container ${className ? className : ''}`}>
       <h3 className="cards-container__title">{title}</h3>
 
       <div className="cards-container__cards">
         {displayCards.map((product) => (
-          <ProductCard product={product} key={product.id} />
+          <ProductCard product={product} key={product.id}/>
         ))}
       </div>
-      {cardsQuantity >= products.length ? (
+      {cardsQuantity >= products?.length ? (
         <></>
       ) : (
         <Button primary size="l" onClick={handleAddCards}>
