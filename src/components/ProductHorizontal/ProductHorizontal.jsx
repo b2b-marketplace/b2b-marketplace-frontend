@@ -4,14 +4,11 @@ import Checkbox from "../Checkbox/Checkbox";
 import IconTrash from "../Icon/Icon_trash";
 import VendorCode from "../VendorCode/VendorCode";
 import imageStub from "../../image/basket/Stub_132_128.jpg";
-import CharacteristicColor from "../CharacteristicColor/CharacteristicColor";
 import IconHearth from "../Icon/Icon_hearth";
+import Counter from "../Counter/Counter";
+import ProductCharacteristicsList from "../ProductCharacteristic/ProductCharacteristic";
 
-const ProductHorizontal = ({ className, ...props }) => {
-  const colorList = [
-    { key: 1, color: 'red' },
-    { key: 2, color: 'blue' },
-  ];
+const ProductHorizontal = ({ className, product, ...props }) => {
 
   return (
     <div className={`product-horizontal ${className ? className : ""}`}>
@@ -28,24 +25,17 @@ const ProductHorizontal = ({ className, ...props }) => {
           </div>
           <div className="product-horizontal__details">
             <div className="product-horizontal__details-header">
-              <h3 className="product-horizontal__product-title">Детская зимняя куртка</h3>
-              <h4 className="product-horizontal__product-company">ООО «Компания»</h4>
+              <h3 className="product-horizontal__product-title">{product.name}</h3>
+              <h4 className="product-horizontal__product-company">{product.suppliers[ 0 ].company.company_name}</h4>
             </div>
-            <div className="product-horizontal__options">
-              <div className="product-horizontal__options-size">
-                <div className="product-horizontal__options-size-label">Размер</div>
-                <div className="product-horizontal__options-size-value">10-12 лет</div>
-              </div>
-              <div className="product-horizontal__options-color">
-                <div className="product-horizontal__options-color-label">Цвет</div>
-                <CharacteristicColor colorList={colorList}/>
-              </div>
+            <div className="product-horizontal__characteristics">
+              <ProductCharacteristicsList characteristics={product.characteristic} />
             </div>
           </div>
         </div>
         <div className="product-horizontal__price-count">
           <div className="product-horizontal__product-count">
-
+            <Counter/>
           </div>
           <div className="product-horizontal__product-price">
             40 000 ₽

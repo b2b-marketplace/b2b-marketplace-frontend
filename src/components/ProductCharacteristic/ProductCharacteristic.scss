@@ -1,0 +1,24 @@
+.product-characteristic {
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: $fontColor;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__value {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+}
