@@ -1,8 +1,8 @@
 import React from 'react';
 import './PromoRegistration.scss';
 import logo from '../../image/logo-registration.svg';
-import { Button } from '../Button/Button';
-import NavigationArrow from '../NavigationArrow/NavigationArrow';
+import { Button } from '../UI/Button/Button';
+import ButtonScrollUp from '../ButtonScrollUp/ButtonScrollUp';
 
 const PromoRegistration = ({ className }) => {
   return (
@@ -24,7 +24,7 @@ const PromoRegistration = ({ className }) => {
         </div>
         <img className="promo-registration__logo" src={logo} alt="Логотип." />
       </div>
-      <NavigationArrow />
+      <ButtonScrollUp />
     </section>
   );
 };

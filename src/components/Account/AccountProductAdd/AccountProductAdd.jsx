@@ -1,16 +1,16 @@
 import React from 'react';
-import Counter from '../../Counter/Counter';
+import Counter from '../../UI/Counter/Counter';
 import './AccountProductAdd.scss';
-import { Button } from '../../Button/Button';
+import { Button } from '../../UI/Button/Button';
 import BiBag from '../../Icon/Icon_bibag';
 import IconPackage from '../../Icon/Icon_package';
 import IconBag from '../../Icon/Icon_bag';
 import IconMessage from '../../Icon/Icon_message';
 import IconLock from '../../Icon/Icon_lock';
-import АccountBar from '../AccountBar/AccountBar';
+import AccountBar from '../AccountBar/AccountBar';
 import AccountTitle from '../AccountTitle/AccountTitle';
-import InputField from '../../InputField/InputField';
-import FileUpload from '../../FileUpload/FileUpload';
+import InputField from '../../UI/InputField/InputField';
+import FileUpload from '../../UI/FileUpload/FileUpload';
 import DropDown from '../DropDown/DropDown';
 import IconTrash from '../../Icon/Icon_trash';
 import IconExit from '../../Icon/Icon_exit';
@@ -26,7 +26,7 @@ const AccountProductAdd = () => {
 
   return (
     <section className="account-product-add">
-      <АccountBar
+      <AccountBar
         icon1={<IconTrash />}
         text1={'Выйти'}
         menuItems={menuItems}

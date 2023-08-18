@@ -1,5 +1,5 @@
 import ProductCard from '../ProductCard/ProductCard';
-import { Button } from '../Button/Button';
+import { Button } from '../UI/Button/Button';
 import './ProductCardContainer.scss';
 import { useEffect, useState } from 'react';
 

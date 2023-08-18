@@ -1,4 +1,4 @@
-import { Button } from '../Button/Button';
+import { Button } from '../UI/Button/Button';
 import IconHearth from '../Icon/Icon_hearth';
 import IconScales from '../Icon/Icon_scales';
 import IconVerified from '../Icon/Icon_verified';
