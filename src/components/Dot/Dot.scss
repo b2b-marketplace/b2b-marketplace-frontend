@@ -1,8 +1,8 @@
 .dot {
-  background-image: url('./../Icon/dotNoFill.svg');
+  background-image: url('./../../image/dotNoFill.svg');
   width: 12px;
   height: 12px;
   &_fill {
-    background-image: url('./../Icon/dotFill.svg');
+    background-image: url('./../../image/dotFill.svg');
   }
 }
