@@ -1,10 +1,10 @@
+import './ProductPage.scss';
 import { Button } from '../../UI/Button/Button';
 import IconVerified from '../../UI/Icon/Icon_verified';
-import ProductRating from '../../ProductRating/ProductRating';
-import ColorCharacteristic from '../ColorValues/ColorCharacteristic';
-import './ProductPage.scss';
 import IconScales from '../../UI/Icon/Icon_scales';
 import IconHearth from '../../UI/Icon/Icon_hearth';
+import ProductRating from '../../ProductRating/ProductRating';
+import CharacteristicColor from "../../CharacteristicColor/CharacteristicColor";
 import { useEffect, useState } from 'react';
 
 export default function ProductPage({ product }) {
@@ -29,20 +29,20 @@ export default function ProductPage({ product }) {
     ].map((item) => item.classList.remove('product-page__navigation-item_checked'));
     event.target.classList.add('product-page__navigation-item_checked');
     switch (event.target.textContent) {
-    case 'Характеристики':
-      setText(char);
-      break;
-    case 'Описание':
-      setText(descr);
-      break;
-    case 'Отзывы':
-      setText(otz);
-      break;
-    case 'Доставка':
-      setText(dost);
-      break;
-    default:
-      setText('');
+      case 'Характеристики':
+        setText(char);
+        break;
+      case 'Описание':
+        setText(descr);
+        break;
+      case 'Отзывы':
+        setText(otz);
+        break;
+      case 'Доставка':
+        setText(dost);
+        break;
+      default:
+        setText('');
     }
   };
 
@@ -52,27 +52,27 @@ export default function ProductPage({ product }) {
         <div className="product-page__images">
           <div className="product-page__images-column">
             {product.images.map((image) => (
-              <img className="product-page__image" src={image} alt='Изображение товара'/>
+              <img className="product-page__image" src={image} alt="Изображение товара"/>
             ))}
           </div>
-          <img className="product-page__main-image" src={product.images[0]} alt='Крупное фото товара'/>
+          <img className="product-page__main-image" src={product.images[ 0 ]} alt="Крупное фото товара"/>
         </div>
         <div className="product-page__info">
           <div className="product-page__title-line">
             <h2 className="product-page__title">{product.title}</h2>
-            <ProductRating rating={product.rating} />
+            <ProductRating rating={product.rating}/>
           </div>
           <p className="product-page__shipper">{product.shipper}</p>
           <p className="product-page__code">{`Арт. ${product.productCode}`}</p>
           <div className="product-page__status-line">
             {product.availableStatus ? (
               <>
-                <IconVerified />
+                <IconVerified/>
                 <p className="product-page__status">В наличии</p>
               </>
             ) : (
               <>
-                <IconVerified />
+                <IconVerified/>
                 <p className="product-page__status">Не в наличии</p>
               </>
             )}
@@ -82,7 +82,7 @@ export default function ProductPage({ product }) {
           </div>
           <div className="product-page__color-line">
             <p className="product-page__subtitle">Цвет</p>
-            <ColorCharacteristic colorList={product.colors} />
+            <CharacteristicColor characteristicValue={product.colors}/>
           </div>
           <div className="product-page__quantity-line">
             <p className="product-page__subtitle">Кол-во</p>
@@ -93,8 +93,8 @@ export default function ProductPage({ product }) {
               В корзину
             </Button>
             <div className="product-page__icons">
-              <IconScales />
-              <IconHearth />
+              <IconScales/>
+              <IconHearth/>
             </div>
           </div>
         </div>
