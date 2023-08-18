@@ -4,10 +4,11 @@ import './AccountField.scss';
 const AccountField = ({ label, placeholder, type, icon }) => {
   return (
     <div className="account-field">
+      {icon}
       <label className="account-field__label">
-        {icon} {label}
+        {label}
+        <input className="account-field__input" type={type} placeholder={placeholder} />
       </label>
-      <input className="account-field__input" type={type} placeholder={placeholder} />
     </div>
   );
 };

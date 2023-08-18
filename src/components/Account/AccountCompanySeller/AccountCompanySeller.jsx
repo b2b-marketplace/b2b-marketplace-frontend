@@ -29,9 +29,9 @@ const AccountCompanySeller = () => {
   return (
     <section className="account-company-seller">
       <АccountBar
+        menuItems={menuItems}
         icon1={<IconTrash />}
         text1={'Выйти'}
-        menuItems={menuItems}
         icon2={<IconExit />}
         text2={'Удалить аккаунт'}
         phone="8-800-800-00-00"
