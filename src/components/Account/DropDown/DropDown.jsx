@@ -18,29 +18,30 @@ const DropDown = ({ label, placeholder }) => {
 
   return (
     <div className="drop-down">
-      <label className="drop-down__label">{label}</label>
-      <div className={`drop-down__select ${isMenuOpen ? 'is-active' : ''}`}>
-        <div className="drop-down__header" onClick={toggleMenu}>
-          <span className="drop-down__current">{selectedOption || placeholder}</span>
-          <div className="drop-down__icon">
-            <IconArrowCounter />
+      <label className="drop-down__label">
+        {label}
+        <div className={`drop-down__select ${isMenuOpen ? 'is-active' : ''}`}>
+          <div className="drop-down__header" onClick={toggleMenu}>
+            <span className="drop-down__current">{selectedOption || placeholder}</span>
+            <div className="drop-down__icon">
+              <IconArrowCounter />
+            </div>
           </div>
-        </div>
 
-        {isMenuOpen && (
-          <div className="drop-down__body">
-            {options.map((option, index) => (
-              <div
-                key={index}
-                className="drop-down__item"
-                onClick={() => handleOptionChange(option)}
-              >
-                {option}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+          {isMenuOpen && (
+            <div className="drop-down__body">
+              {options.map((option, index) => (
+                <div
+                  key={index}
+                  className="drop-down__item"
+                  onClick={() => handleOptionChange(option)}>
+                  {option}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </label>
     </div>
   );
 };

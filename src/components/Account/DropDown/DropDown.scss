@@ -1,12 +1,9 @@
 .drop-down {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 
   &__label {
-    max-width: 183px;
     display: flex;
-    margin-right: 44px;
+    justify-content: space-between;
     align-items: center;
     font-size: 20px;
     font-style: normal;
@@ -17,7 +14,7 @@
   &__select {
     width: 626px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     font-family: $fontFamily;
     font-size: 20px;
     font-style: $mainStyle;
@@ -72,5 +69,3 @@
     background-color: #f2f2f2;
   }
 }
-
-
