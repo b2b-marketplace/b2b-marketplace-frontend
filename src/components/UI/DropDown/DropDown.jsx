@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './DropDown.scss';
-import IconArrowCounter from '../../Icon/Icon_arrow-counter';
+import IconArrowCounter from '../Icon/Icon_arrow-counter';
 
 const DropDown = ({ label, placeholder }) => {
   const options = ['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5'];

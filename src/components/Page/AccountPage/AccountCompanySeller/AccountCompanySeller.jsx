@@ -1,21 +1,21 @@
 import React from 'react';
 import './AccountCompanySeller.scss';
 import АccountBar from '../../../Account/AccountBar/AccountBar';
-import BiBag from '../../../Icon/Icon_bibag';
-import IconPackage from '../../../Icon/Icon_package';
-import IconBag from '../../../Icon/Icon_bag';
-import IconMessage from '../../../Icon/Icon_message';
-import IconLock from '../../../Icon/Icon_lock';
-import IconMail from '../../../Icon/Icon_mail';
-import IconPhone from '../../../Icon/Icon_phone';
+import BiBag from '../../../UI/Icon/Icon_bibag';
+import IconPackage from '../../../UI/Icon/Icon_package';
+import IconBag from '../../../UI/Icon/Icon_bag';
+import IconMessage from '../../../UI/Icon/Icon_message';
+import IconLock from '../../../UI/Icon/Icon_lock';
+import IconMail from '../../../UI/Icon/Icon_mail';
+import IconPhone from '../../../UI/Icon/Icon_phone';
 import AccountTitle from '../../../Account/AccountTitle/AccountTitle';
-import IconStarAccount from '../../../Icon/Icon_star-account';
+import IconStarAccount from '../../../UI/Icon/Icon_star-account';
 import Tooltip from '../../../UI/Tooltip/Tooltip';
 import AccountField from '../../../Account/AccountField/AccountField';
-import IconPencil from '../../../Icon/Icon_pencil';
-import IconTrash from '../../../Icon/Icon_trash';
-import IconExit from '../../../Icon/Icon_exit';
-import IconInfoFil from '../../../Icon/Icon_info_fill';
+import IconPencil from '../../../UI/Icon/Icon_pencil';
+import IconTrash from '../../../UI/Icon/Icon_trash';
+import IconExit from '../../../UI/Icon/Icon_exit';
+import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
 
 const AccountCompanySeller = () => {
   const menuItems = [

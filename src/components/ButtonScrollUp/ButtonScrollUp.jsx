@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ButtonScrollUp.scss';
-import IconArrowUp from '../Icon/Icon_arrow';
+import IconArrowUp from '../UI/Icon/Icon_arrow';
 import { Button } from '../UI/Button/Button';
 
 const ButtonScrollUp = () => {

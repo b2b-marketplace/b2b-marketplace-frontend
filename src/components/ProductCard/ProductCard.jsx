@@ -1,10 +1,10 @@
 import { Button } from '../UI/Button/Button';
-import IconHearth from '../Icon/Icon_hearth';
-import IconScales from '../Icon/Icon_scales';
-import IconVerified from '../Icon/Icon_verified';
-import IconNotVerified from '../Icon/Icon_not-verified';
-import IconEdit from '../Icon/Icon_edit';
-import IconDelete from '../Icon/Icon_delete';
+import IconHearth from '../UI/Icon/Icon_hearth';
+import IconScales from '../UI/Icon/Icon_scales';
+import IconVerified from '../UI/Icon/Icon_verified';
+import IconNotVerified from '../UI/Icon/Icon_not-verified';
+import IconEdit from '../UI/Icon/Icon_edit';
+import IconDelete from '../UI/Icon/Icon_delete';
 import ProductRating from '../ProductRating/ProductRating';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';

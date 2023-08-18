@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Question.scss';
 import АccountBar from '../../../Account/AccountBar/AccountBar';
-import IconQuestion from '../../../Icon/Icon_question';
-import IconMail from '../../../Icon/Icon_mail';
-import IconCommunication from '../../../Icon/Icon_communication';
+import IconQuestion from '../../../UI/Icon/Icon_question';
+import IconMail from '../../../UI/Icon/Icon_mail';
+import IconCommunication from '../../../UI/Icon/Icon_communication';
 
 const Question = () => {
   const menuItems = [

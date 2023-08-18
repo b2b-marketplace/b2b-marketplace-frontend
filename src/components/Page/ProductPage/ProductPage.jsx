@@ -1,10 +1,10 @@
 import { Button } from '../../UI/Button/Button';
-import IconVerified from '../../Icon/Icon_verified';
+import IconVerified from '../../UI/Icon/Icon_verified';
 import ProductRating from '../../ProductRating/ProductRating';
 import ColorCharacteristic from '../ColorValues/ColorCharacteristic';
 import './ProductPage.scss';
-import IconScales from '../../Icon/Icon_scales';
-import IconHearth from '../../Icon/Icon_hearth';
+import IconScales from '../../UI/Icon/Icon_scales';
+import IconHearth from '../../UI/Icon/Icon_hearth';
 import { useEffect, useState } from 'react';
 
 export default function ProductPage({ product }) {

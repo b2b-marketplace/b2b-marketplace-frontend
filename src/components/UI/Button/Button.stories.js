@@ -1,5 +1,5 @@
-import IconArrowUp from '../../Icon/Icon_arrow-up';
-import IconBurger from '../../Icon/Icon_burger';
+import IconArrowUp from '../Icon/Icon_arrow-up';
+import IconBurger from '../Icon/Icon_burger';
 import { Button } from './Button';
 
 export default {

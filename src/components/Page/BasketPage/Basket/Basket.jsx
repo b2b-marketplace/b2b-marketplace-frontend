@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Basket.scss";
 import Checkbox from "../../../UI/Checkbox/Checkbox";
-import IconTrash from "../../../Icon/Icon_trash";
+import IconTrash from "../../../UI/Icon/Icon_trash";
 import ProductHorizontal from "../../../ProductHorizontal/ProductHorizontal";
 import OrderDetail from "./OrderDetail/OrderDetail";
 

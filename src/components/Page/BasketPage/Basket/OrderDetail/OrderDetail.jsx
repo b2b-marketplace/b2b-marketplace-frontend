@@ -1,6 +1,6 @@
 import React from 'react';
 import Tooltip from "../../../../UI/Tooltip/Tooltip";
-import IconInfoFill from "../../../../Icon/Icon_info_fill";
+import IconInfoFill from "../../../../UI/Icon/Icon_info_fill";
 import { Button } from "../../../../UI/Button/Button";
 import "./OrderDetail.scss";
 

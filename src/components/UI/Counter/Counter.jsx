@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from "react";
-import IconArrowCounter from '../../Icon/Icon_arrow-counter';
+import IconArrowCounter from '../Icon/Icon_arrow-counter';
 import './Counter.scss';
 
 const Counter = () => {

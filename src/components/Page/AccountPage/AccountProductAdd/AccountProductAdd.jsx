@@ -1,19 +1,19 @@
 import React from 'react';
-import Counter from '../../UI/Counter/Counter';
+import Counter from '../../../UI/Counter/Counter';
 import './AccountProductAdd.scss';
-import { Button } from '../../UI/Button/Button';
-import BiBag from '../../Icon/Icon_bibag';
-import IconPackage from '../../Icon/Icon_package';
-import IconBag from '../../Icon/Icon_bag';
-import IconMessage from '../../Icon/Icon_message';
-import IconLock from '../../Icon/Icon_lock';
-import AccountBar from '../AccountBar/AccountBar';
-import AccountTitle from '../AccountTitle/AccountTitle';
-import InputField from '../../UI/InputField/InputField';
-import FileUpload from '../../UI/FileUpload/FileUpload';
-import DropDown from '../DropDown/DropDown';
-import IconTrash from '../../Icon/Icon_trash';
-import IconExit from '../../Icon/Icon_exit';
+import { Button } from '../../../UI/Button/Button';
+import BiBag from '../../../UI/Icon/Icon_bibag';
+import IconPackage from '../../../UI/Icon/Icon_package';
+import IconBag from '../../../UI/Icon/Icon_bag';
+import IconMessage from '../../../UI/Icon/Icon_message';
+import IconLock from '../../../UI/Icon/Icon_lock';
+import AccountBar from '../../../Account/AccountBar/AccountBar';
+import AccountTitle from '../../../Account/AccountTitle/AccountTitle';
+import InputField from '../../../UI/InputField/InputField';
+import FileUpload from '../../../UI/FileUpload/FileUpload';
+import DropDown from '../../../UI/DropDown/DropDown';
+import IconTrash from '../../../UI/Icon/Icon_trash';
+import IconExit from '../../../UI/Icon/Icon_exit';
 
 const AccountProductAdd = () => {
   const menuItems = [
