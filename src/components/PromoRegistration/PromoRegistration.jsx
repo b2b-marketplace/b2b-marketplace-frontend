@@ -1,8 +1,8 @@
 import React from 'react';
 import './PromoRegistration.scss';
 import logo from '../../image/logo-registration.svg';
-import IconArrowUp from '../Icon/Icon_arrow';
 import { Button } from '../Button/Button';
+import NavigationArrow from '../NavigationArrow/NavigationArrow';
 
 const PromoRegistration = ({ className }) => {
   return (
@@ -14,15 +14,17 @@ const PromoRegistration = ({ className }) => {
             Зарегистрируйтесь на нашем портале и найдите новых клиентов, заказчиков и партнёров!
           </p>
           <div className="promo-registration__button">
-            <Button size="xxl" primary={false} border={true}>Зарегистрироваться</Button>
-            <Button size="xxl" primary={true} border={true}>Войти</Button>
+            <Button size="xxl" primary={false} border={true}>
+              Зарегистрироваться
+            </Button>
+            <Button size="xxl" primary={true} border={true}>
+              Войти
+            </Button>
           </div>
         </div>
-        <img className="promo-registration__logo" src={logo} alt="Логотип."/>
+        <img className="promo-registration__logo" src={logo} alt="Логотип." />
       </div>
-      <Button size="xs" primary={false} border={true}>
-        <IconArrowUp/>
-      </Button>
+      <NavigationArrow />
     </section>
   );
 };
