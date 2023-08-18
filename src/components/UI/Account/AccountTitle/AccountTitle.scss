@@ -1,0 +1,51 @@
+.account-title {
+  display: flex;
+  font-family: $fontFamily;
+
+  &__logo {
+    width: 92px;
+    height: 92px;
+    border-radius: 50px;
+    border: 1px solid $blackColor;
+
+    background-image: url(../../../../images/logo-registration.svg);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__conteiner {
+    padding: 7px 0 7px 20px;
+  }
+
+  &__description {
+    margin: 0 0 9px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__text {
+    display: flex;
+    width: 129px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: $blackColor;
+    color: $whiteColor;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+
+  &__button {
+    margin: 0 265px 0 77px;
+    border: none;
+    padding: 0;
+    background: $whiteColor;
+  }
+}

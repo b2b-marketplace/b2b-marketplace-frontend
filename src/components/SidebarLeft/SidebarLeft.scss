@@ -1,0 +1,70 @@
+.sidebar-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 315px;
+  height: 720px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  border: 1px solid $darkColor;
+  font-family: $fontFamily;
+  font-size: 24px;
+  font-style: $mainStyle;
+  font-weight: 500;
+  line-height: normal;
+  padding: 40px 26px;
+  flex-shrink: 0;
+
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    height: 29px;
+    margin-bottom: 24px;
+  }
+
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
+  &__link {
+    margin-left: 20px;
+    color: #686868;
+    text-decoration: none;
+  }
+
+  &__button {
+    height: 29px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    color: #686868;
+    margin-bottom: 25px;
+    background: $whiteColor;
+  }
+
+  &__contact {
+    margin-top: 15px;
+    text-decoration: none;
+    color: #686868;
+    font-size: 20px;
+  }
+
+  &__text {
+    margin: 0;
+    color: #686868;
+    font-size: 20px;
+  }
+}

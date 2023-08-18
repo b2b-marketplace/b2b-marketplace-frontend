@@ -1,9 +1,9 @@
 import React from 'react';
-import IconSafety from "../Icon/Icon_safety";
+import IconSafety from "../UI/Icon/Icon_safety";
 import "./PlatformBenefits.scss";
-import IconRuble from "../Icon/Icon_ruble";
-import IconTimer from "../Icon/Icon_timer";
-import IconDiscountLight from "../Icon/Icon_discount_light";
+import IconRuble from "../UI/Icon/Icon_ruble";
+import IconTimer from "../UI/Icon/Icon_timer";
+import IconDiscountLight from "../UI/Icon/Icon_discount_light";
 
 const PlatformBenefits = ({ className }) => {
 
