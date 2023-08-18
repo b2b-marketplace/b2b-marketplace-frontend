@@ -29,20 +29,20 @@ export default function ProductPage({ product }) {
     ].map((item) => item.classList.remove('product-page__navigation-item_checked'));
     event.target.classList.add('product-page__navigation-item_checked');
     switch (event.target.textContent) {
-      case 'Характеристики':
-        setText(char);
-        break;
-      case 'Описание':
-        setText(descr);
-        break;
-      case 'Отзывы':
-        setText(otz);
-        break;
-      case 'Доставка':
-        setText(dost);
-        break;
-      default:
-        setText('');
+    case 'Характеристики':
+      setText(char);
+      break;
+    case 'Описание':
+      setText(descr);
+      break;
+    case 'Отзывы':
+      setText(otz);
+      break;
+    case 'Доставка':
+      setText(dost);
+      break;
+    default:
+      setText('');
     }
   };
 

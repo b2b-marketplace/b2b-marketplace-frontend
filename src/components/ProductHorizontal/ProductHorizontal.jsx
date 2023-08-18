@@ -2,7 +2,7 @@ import React from 'react';
 import "./ProductHorizontal.scss";
 import Checkbox from "../UI/Checkbox/Checkbox";
 import IconTrash from "../UI/Icon/Icon_trash";
-import VendorCode from "../VendorCode/VendorCode";
+import VendorCode from "../UI/VendorCode/VendorCode";
 import imageStub from "../../images/basket/Stub_132_128.jpg";
 import IconHearth from "../UI/Icon/Icon_hearth";
 import Counter from "../UI/Counter/Counter";

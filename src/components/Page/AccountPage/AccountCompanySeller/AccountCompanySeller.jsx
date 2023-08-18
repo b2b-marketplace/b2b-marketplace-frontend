@@ -8,10 +8,10 @@ import IconMessage from '../../../UI/Icon/Icon_message';
 import IconLock from '../../../UI/Icon/Icon_lock';
 import IconMail from '../../../UI/Icon/Icon_mail';
 import IconPhone from '../../../UI/Icon/Icon_phone';
-import AccountTitle from '../../../Account/AccountTitle/AccountTitle';
+import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import IconStarAccount from '../../../UI/Icon/Icon_star-account';
 import Tooltip from '../../../UI/Tooltip/Tooltip';
-import AccountField from '../../../Account/AccountField/AccountField';
+import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
 import IconPencil from '../../../UI/Icon/Icon_pencil';
 import IconTrash from '../../../UI/Icon/Icon_trash';
 import IconExit from '../../../UI/Icon/Icon_exit';
@@ -51,10 +51,10 @@ const AccountCompanySeller = () => {
             rows="3"
             placeholder="Описание компании"></textarea>
           <h2 className="account-company-seller__title">Данные продавец</h2>
-          <AccountField label="Счет" placeholder="000000000 0000" type="number" />
-          <AccountField label="ИНН" placeholder="000000000 0000" type="number" />
-          <AccountField label="ОГРН" placeholder="000000000 0000" type="number" />
-          <AccountField label="Регион доставки" placeholder="Город" type="text" />
+          <AccountInputField label="Счет" placeholder="000000000 0000" type="number" />
+          <AccountInputField label="ИНН" placeholder="000000000 0000" type="number" />
+          <AccountInputField label="ОГРН" placeholder="000000000 0000" type="number" />
+          <AccountInputField label="Регион доставки" placeholder="Город" type="text" />
 
           <h2 className="account-company-seller__title">
             Контакты
@@ -66,8 +66,8 @@ const AccountCompanySeller = () => {
               <IconInfoFil />
             </Tooltip>
           </h2>
-          <AccountField label="Почта" placeholder="Почта" type="email" icon={<IconMail />} />
-          <AccountField label="Телефон" placeholder="Телефон" type="tel" icon={<IconPhone />} />
+          <AccountInputField label="Почта" placeholder="Почта" type="email" icon={<IconMail />} />
+          <AccountInputField label="Телефон" placeholder="Телефон" type="tel" icon={<IconPhone />} />
         </form>
       </div>
     </section>

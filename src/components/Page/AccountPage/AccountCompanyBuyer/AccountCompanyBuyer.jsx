@@ -1,10 +1,10 @@
 import React from 'react';
 import './AccountCompanyBuyer.scss';
 import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
-import AccountTitle from '../../../Account/AccountTitle/AccountTitle';
+import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import IconPencil from '../../../UI/Icon/Icon_pencil';
 import IconStarAccount from '../../../UI/Icon/Icon_star-account';
-import AccountField from '../../../Account/AccountField/AccountField';
+import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
 import Tooltip from '../../../UI/Tooltip/Tooltip';
 import IconPhone from '../../../UI/Icon/Icon_phone';
 import IconMail from '../../../UI/Icon/Icon_mail';
@@ -50,10 +50,10 @@ const AccountCompanyBuyer = () => {
         </div>
         <form className="account-company-buyer__form">
           <h2 className="account-company-buyer__title">Данные покупателя</h2>
-          <AccountField label="Способ оплаты" />
-          <AccountField label="Счет" placeholder="000000000 0000" type="number" />
-          <AccountField label="ИНН" placeholder="000000000 0000" type="number" />
-          <AccountField label="Регион доставки" placeholder="Город" type="text" />
+          <AccountInputField label="Способ оплаты" />
+          <AccountInputField label="Счет" placeholder="000000000 0000" type="number" />
+          <AccountInputField label="ИНН" placeholder="000000000 0000" type="number" />
+          <AccountInputField label="Регион доставки" placeholder="Город" type="text" />
           <h2 className="account-company-buyer__title">
             Контакты
             <Tooltip
@@ -64,8 +64,8 @@ const AccountCompanyBuyer = () => {
               <IconInfoFil />
             </Tooltip>
           </h2>
-          <AccountField label="Почта" placeholder="Почта" type="email" icon={<IconMail />} />
-          <AccountField label="Телефон" placeholder="Телефон" type="tel" icon={<IconPhone />} />
+          <AccountInputField label="Почта" placeholder="Почта" type="email" icon={<IconMail />} />
+          <AccountInputField label="Телефон" placeholder="Телефон" type="tel" icon={<IconPhone />} />
         </form>
       </div>
     </section>

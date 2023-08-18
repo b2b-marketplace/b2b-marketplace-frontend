@@ -8,7 +8,7 @@ import IconBag from '../../../UI/Icon/Icon_bag';
 import IconMessage from '../../../UI/Icon/Icon_message';
 import IconLock from '../../../UI/Icon/Icon_lock';
 import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
-import AccountTitle from '../../../Account/AccountTitle/AccountTitle';
+import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import InputField from '../../../UI/InputField/InputField';
 import FileUpload from '../../../UI/FileUpload/FileUpload';
 import DropDown from '../../../UI/DropDown/DropDown';

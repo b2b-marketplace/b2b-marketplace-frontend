@@ -7,7 +7,7 @@ const ButtonScrollUp = () => {
   const [showArrow, setShowArrow] = useState(false);
 
   const handleScroll = () => {
-    if (window.pageYOffset > 200) {
+    if (window.scrollY > 200) {
       setShowArrow(true);
     } else {
       setShowArrow(false);
