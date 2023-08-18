@@ -1,6 +1,6 @@
 import React from 'react';
 import './AccountCompanyBuyer.scss';
-import AccountBar from '../../../Account/AccountBar/AccountBar';
+import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
 import AccountTitle from '../../../Account/AccountTitle/AccountTitle';
 import IconPencil from '../../../UI/Icon/Icon_pencil';
 import IconStarAccount from '../../../UI/Icon/Icon_star-account';
@@ -34,7 +34,7 @@ const AccountCompanyBuyer = () => {
 
   return (
     <section className="account-company-buyer">
-      <AccountBar
+      <SidebarLeft
         icon1={<IconTrash />}
         text1={'Выйти'}
         menuItems={menuItems}

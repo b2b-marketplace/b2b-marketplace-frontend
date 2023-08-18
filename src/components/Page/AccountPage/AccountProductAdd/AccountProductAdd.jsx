@@ -7,7 +7,7 @@ import IconPackage from '../../../UI/Icon/Icon_package';
 import IconBag from '../../../UI/Icon/Icon_bag';
 import IconMessage from '../../../UI/Icon/Icon_message';
 import IconLock from '../../../UI/Icon/Icon_lock';
-import AccountBar from '../../../Account/AccountBar/AccountBar';
+import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
 import AccountTitle from '../../../Account/AccountTitle/AccountTitle';
 import InputField from '../../../UI/InputField/InputField';
 import FileUpload from '../../../UI/FileUpload/FileUpload';
@@ -26,7 +26,7 @@ const AccountProductAdd = () => {
 
   return (
     <section className="account-product-add">
-      <AccountBar
+      <SidebarLeft
         icon1={<IconTrash />}
         text1={'Выйти'}
         menuItems={menuItems}

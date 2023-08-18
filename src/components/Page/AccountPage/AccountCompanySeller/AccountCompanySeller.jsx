@@ -1,6 +1,6 @@
 import React from 'react';
 import './AccountCompanySeller.scss';
-import AccountBar from '../../../Account/AccountBar/AccountBar';
+import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
 import BiBag from '../../../UI/Icon/Icon_bibag';
 import IconPackage from '../../../UI/Icon/Icon_package';
 import IconBag from '../../../UI/Icon/Icon_bag';
@@ -28,7 +28,7 @@ const AccountCompanySeller = () => {
 
   return (
     <section className="account-company-seller">
-      <AccountBar
+      <SidebarLeft
         menuItems={menuItems}
         icon1={<IconTrash />}
         text1={'Выйти'}

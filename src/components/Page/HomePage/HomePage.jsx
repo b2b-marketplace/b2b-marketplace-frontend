@@ -13,7 +13,7 @@ const HomePage = () => {
       <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
       <Banner className="home-page__banner"/>
       <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
-      <PromoRegistration className="main__promo-registration" />
+      <PromoRegistration className="home-page__promo-registration" />
     </div>
   );
 };
