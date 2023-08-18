@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Question.scss';
-import АccountBar from '../../../Account/AccountBar/AccountBar';
+import AccountBar from '../../../Account/AccountBar/AccountBar';
 import IconQuestion from '../../../UI/Icon/Icon_question';
 import IconMail from '../../../UI/Icon/Icon_mail';
 import IconCommunication from '../../../UI/Icon/Icon_communication';
@@ -15,7 +15,7 @@ const Question = () => {
 
   return (
     <section className="question">
-      <АccountBar menuItems={menuItems} phone="8-800-800-00-00" />
+      <AccountBar menuItems={menuItems} phone="8-800-800-00-00" />
       <div className="question__menu">
         <h2 className="question__title">Часто задаваемые вопросы</h2>
         <div className="question__menu-conteiner">
