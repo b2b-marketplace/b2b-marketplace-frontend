@@ -1,8 +1,7 @@
 import React from 'react';
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import "./AccountPage.scss";
 import SidebarLeft from '../../SidebarLeft/SidebarLeft';
-import AccountBuyerCompany from './AccountBuyerCompany/AccountBuyerCompany';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import IconExit from '../../UI/Icon/Icon_exit';
 import BiBag from '../../UI/Icon/Icon_bibag';
@@ -12,8 +11,6 @@ import IconBag from '../../UI/Icon/Icon_bag';
 import IconMessage from '../../UI/Icon/Icon_message';
 import IconLock from '../../UI/Icon/Icon_lock';
 import IconBasket from '../../UI/Icon/Icon_basket';
-import AccountSellerProductAdd from "./AccountSellerProductAdd/AccountSellerProductAdd";
-
 const AccountPage = () => {
   const menuItemsBuyer = [
     { icon: <BiBag/>, link: '#', label: 'Моя компания' },
