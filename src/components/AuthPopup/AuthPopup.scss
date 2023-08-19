@@ -1,0 +1,83 @@
+$white: #fff;
+$black: #000;
+%tpbutton {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	box-sizing: border-box;
+}
+@mixin marginTopAuto($top) {
+	margin: $top auto 0;
+}
+@mixin text($weight, $lh, $fz) {
+	font-weight: $weight;
+	line-height: $lh;
+	letter-spacing: 0;
+	color: $white;
+	font-size: $fz;
+}
+
+.auth {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	inset: 0;
+	z-index: 200;
+
+	// общие стили текста для попапа
+	color: $white;
+	font-family: Inter;
+	text-align: center;
+	.popup {
+		position: relative;
+		max-width: 1320px;
+		min-height: 692px;
+		width: 100%;
+		background-color: #000;
+		border-radius: 150px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		&__close {
+			position: absolute;
+			top: 80px;
+			right: 80px;
+			@extend %tpbutton;
+			&-icon {
+				box-sizing: border-box;
+				width: 19px;
+				height: 19px;
+			}
+		}
+		&__container {
+			display: flex;
+			flex-direction: column;
+			width: 874px;
+		}
+		&__title {
+			@include marginTopAuto(130px);
+			@include text(500, 61px, 50px);
+			width: fit-content;
+		}
+		&__subtitle {
+			@include marginTopAuto(70px);
+			@include text(500, 36px, 30px);
+			max-width: 650px;
+		}
+		&__socials {
+			@include marginTopAuto(70px);
+			display: flex;
+			gap: 0 15px;
+		}
+		&__social {
+			@extend %tpbutton;
+		}
+		&__buttons {
+			margin-top: 40px;
+			display: flex;
+			gap: 0 20px;
+		}
+	}
+}
