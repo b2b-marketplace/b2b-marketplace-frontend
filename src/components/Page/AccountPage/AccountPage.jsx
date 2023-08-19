@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SidebarLeft from '../../SidebarLeft/SidebarLeft';
 import AccountBuyerCompany from './AccountBuyerCompany/AccountBuyerCompany';
-import AccountCompanyIndividual from './@AccountCompanyIndividual/AccountCompanyIndividual';
 import AccountSellerCompany from './AccountSellerCompany/AccountSellerCompany';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import IconExit from '../../UI/Icon/Icon_exit';
@@ -28,18 +27,18 @@ const AccountPage = () => {
     { icon: <IconLock />, link: '#', label: 'Безопасность' },
   ];
 
-  const menuItemsIndividual = [
-    { icon: <BiBag />, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Закупки' },
-    {
-      icon: <IconHearth className={'account-company-buyer__icon'} />,
-      link: '#',
-      label: 'Избранное',
-    },
-    { icon: <IconBag />, link: '#', label: 'Корзина' },
-    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
-    { icon: <IconLock />, link: '#', label: 'Безопасность' },
-  ];
+  // const menuItemsIndividual = [
+  //   { icon: <BiBag />, link: '#', label: 'Моя компания' },
+  //   { icon: <IconPackage />, link: '#', label: 'Закупки' },
+  //   {
+  //     icon: <IconHearth className={'account-company-buyer__icon'} />,
+  //     link: '#',
+  //     label: 'Избранное',
+  //   },
+  //   { icon: <IconBag />, link: '#', label: 'Корзина' },
+  //   { icon: <IconMessage />, link: '#', label: 'Сообщения' },
+  //   { icon: <IconLock />, link: '#', label: 'Безопасность' },
+  // ];
 
   const menuItemsSeller = [
     { icon: <BiBag />, link: '#', label: 'Моя компания' },
@@ -63,17 +62,17 @@ const AccountPage = () => {
           />
           <AccountBuyerCompany />
         </Route>
-        <Route path="/individual">
-          <SidebarLeft
-            menuItems={menuItemsIndividual}
-            icon1={<IconTrash />}
-            text1={'Выйти'}
-            icon2={<IconExit />}
-            text2={'Удалить аккаунт'}
-            phone="8-800-800-00-00"
-          />
-          <AccountCompanyIndividual />
-        </Route>
+        {/*<Route path="/individual">*/}
+        {/*  <SidebarLeft*/}
+        {/*    menuItems={menuItemsIndividual}*/}
+        {/*    icon1={<IconTrash />}*/}
+        {/*    text1={'Выйти'}*/}
+        {/*    icon2={<IconExit />}*/}
+        {/*    text2={'Удалить аккаунт'}*/}
+        {/*    phone="8-800-800-00-00"*/}
+        {/*  />*/}
+        {/*  <AccountCompanyIndividual />*/}
+        {/*</Route>*/}
         <Route path="/seller">
           <SidebarLeft
             menuItems={menuItemsSeller}
