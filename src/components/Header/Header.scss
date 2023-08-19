@@ -99,6 +99,7 @@
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    column-gap: 80px;
   }
 
   &__container-logo {
@@ -108,8 +109,6 @@
     align-self: center;
     align-content: center;
     justify-content: center;
-
-    margin-right: 20px;
   }
 
   &__search {
@@ -119,18 +118,30 @@
     height: 60px;
     border-radius: 30px;
     border: 1px solid #000;
-    margin-right: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
     &-input {
-      max-width: 126px;
+      max-width: 530px;
       width: 100%;
       height: 19px;
+      text-align: left;
       align-self: center;
+      margin-left: 10px;
+    }
 
-      all: unset;
+    &-textarea {
+      background: none;
+      text-align: left;
+      border: 2px solid black;
+      padding: 20px;
+      width: 490px;
+      height: 400px;
+      outline: none;
+      color: black;
+      border-radius: 60px;
+      transition: 0.5s;
     }
 
     &-button {
