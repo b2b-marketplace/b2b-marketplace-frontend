@@ -3,10 +3,10 @@ import { useState } from 'react';
 import IconArrowCounter from '../Icon/Icon_arrow-counter';
 import './Counter.scss';
 
-const Counter = () => {
-  const [count, setCount] = useState(2000);
+const Counter = ({ initCount=2000 }) => {
+  const [count, setCount] = useState(initCount);
   const handleLeft = () => {
-    setCount(count - 1);
+    count - 1 === 0 ? setCount(count) : setCount(count - 1);
   };
 
   const handleRight = () => {
@@ -18,7 +18,7 @@ const Counter = () => {
       <button className="counter__button" onClick={handleLeft}>
         <IconArrowCounter className={'counter__icon-left'} />
       </button>
-      <input className="counter__count-conteiner">{count}</input>
+      <input type='number' className="counter__count-conteiner" value={count} onChange={(event) => { setCount(+event.target.value); }} />
       <button className="counter__button" onClick={handleRight}>
         <IconArrowCounter className={'counter__icon-right'} />
       </button>
