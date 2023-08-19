@@ -38,6 +38,7 @@ const Footer = () => {
             <Link className="footer__menu-link" to="#">Акции</Link>
           </li>
         </ul>
+        
         <ul className="footer__menu-list">
           <li className="footer__menu-item">
             <Link className="footer__menu-link" to="#">Правила портала</Link>

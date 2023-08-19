@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState } from 'react';
 import IconArrowCounter from '../Icon/Icon_arrow-counter';
 import './Counter.scss';
 
@@ -16,9 +16,9 @@ const Counter = () => {
   return (
     <div className="counter">
       <button className="counter__button" onClick={handleLeft}>
-        <IconArrowCounter className={'counter__icon-left'}/>
+        <IconArrowCounter className={'counter__icon-left'} />
       </button>
-      <span className='counter__count-conteiner'>{count}</span>
+      <input className="counter__count-conteiner">{count}</input>
       <button className="counter__button" onClick={handleRight}>
         <IconArrowCounter className={'counter__icon-right'} />
       </button>
