@@ -1,30 +1,37 @@
 import React from 'react';
-import './AccountCompanyBuyer.scss';
-import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
-import IconPencil from '../../../UI/Icon/Icon_pencil';
-import IconStarAccount from '../../../UI/Icon/Icon_star-account';
-import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
-import Tooltip from '../../../UI/Tooltip/Tooltip';
-import IconPhone from '../../../UI/Icon/Icon_phone';
+import './AccountSellerCompany.scss';
 import IconMail from '../../../UI/Icon/Icon_mail';
+import IconPhone from '../../../UI/Icon/Icon_phone';
+import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
+import IconStarAccount from '../../../UI/Icon/Icon_star-account';
+import Tooltip from '../../../UI/Tooltip/Tooltip';
+import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
+import IconPencil from '../../../UI/Icon/Icon_pencil';
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
 
-const AccountCompanyBuyer = () => {
+const AccountSellerCompany = () => {
   return (
-    <section className="account-company-buyer">
+    <section className="account-seller-company">
       <div>
-        <div className="account-company-buyer__conteiner">
-          <AccountTitle name="ООО «Компания»" title="Покупатель" icon={<IconPencil />} />
+        <div className="account-seller-company__conteiner">
+          <AccountTitle name="ООО «Компания»" title="Продавец" icon={<IconPencil />} />
           <IconStarAccount />
-          <span className="account-company-buyer__rating">5,0</span>
+          <span className="account-seller-company__rating">5,0</span>
         </div>
-        <form className="account-company-buyer__form">
-          <h2 className="account-company-buyer__title">Данные покупателя</h2>
-          <AccountInputField label="Способ оплаты" />
+        <form className="account-seller-company__form">
+          <textarea
+            className="account-seller-company__description"
+            name="comment"
+            cols="40"
+            rows="3"
+            placeholder="Описание компании"></textarea>
+          <h2 className="account-seller-company__title">Данные продавец</h2>
           <AccountInputField label="Счет" placeholder="000000000 0000" type="number" />
           <AccountInputField label="ИНН" placeholder="000000000 0000" type="number" />
+          <AccountInputField label="ОГРН" placeholder="000000000 0000" type="number" />
           <AccountInputField label="Регион доставки" placeholder="Город" type="text" />
-          <h2 className="account-company-buyer__title">
+
+          <h2 className="account-seller-company__title">
             Контакты
             <Tooltip
               position="right"
@@ -47,4 +54,4 @@ const AccountCompanyBuyer = () => {
   );
 };
 
-export default AccountCompanyBuyer;
+export default AccountSellerCompany;
