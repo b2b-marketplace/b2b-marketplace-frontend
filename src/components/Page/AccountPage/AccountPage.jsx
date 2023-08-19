@@ -46,10 +46,7 @@ const AccountPage = () => {
         text2={'Удалить аккаунт'}
         phone="8-800-800-00-00"
       />
-      <Routes>
-        <Route path="profile" element={<AccountBuyerCompany/>}/>
-        <Route path="add" element={<AccountSellerProductAdd/>}/>
-      </Routes>
+      <Outlet/>
     </div>
   );
 };
