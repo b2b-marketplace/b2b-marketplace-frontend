@@ -2,9 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
-import logo from '../../image/logofooter.svg';
-import IconVk from '../Icon/Icon_vk';
-import IconTelegram from '../Icon/Icon_telegram';
+import logo from '../../images/logofooter.svg';
+import IconVk from '../UI/Icon/Icon_vk';
+import IconTelegram from '../UI/Icon/Icon_telegram';
 
 const Footer = () => {
   return (
@@ -38,6 +38,7 @@ const Footer = () => {
             <Link className="footer__menu-link" to="#">Акции</Link>
           </li>
         </ul>
+        
         <ul className="footer__menu-list">
           <li className="footer__menu-item">
             <Link className="footer__menu-link" to="#">Правила портала</Link>

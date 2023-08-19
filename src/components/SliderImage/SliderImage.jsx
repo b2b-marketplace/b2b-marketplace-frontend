@@ -1,5 +1,5 @@
 import './SliderImage.scss';
-import Dot from '../Dot/Dot';
+import Dot from './Dot/Dot';
 
 export default function SliderImage({ images }) {
   const width = 100 / images.length;
