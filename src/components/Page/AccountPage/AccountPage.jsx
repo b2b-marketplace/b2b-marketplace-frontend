@@ -11,18 +11,16 @@ import IconBag from '../../UI/Icon/Icon_bag';
 import IconMessage from '../../UI/Icon/Icon_message';
 import IconLock from '../../UI/Icon/Icon_lock';
 import IconBasket from '../../UI/Icon/Icon_basket';
-const AccountPage = () => {
+
+const AccountPage = ({role="seller"}) => {
+
   const menuItemsBuyer = [
-    { icon: <BiBag/>, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage/>, link: '#', label: 'Закупки' },
-    {
-      icon: <IconHearth className={'account-company-buyer__icon'}/>,
-      link: '#',
-      label: 'Избранное',
-    },
-    { icon: <IconBasket/>, link: '#', label: 'Корзина' },
-    { icon: <IconMessage/>, link: '#', label: 'Сообщения' },
-    { icon: <IconLock/>, link: '#', label: 'Безопасность' },
+    { icon: <BiBag/>, link: 'profile', label: 'Моя компания' },
+    { icon: <IconPackage/>, link: 'orders', label: 'Закупки' },
+    { icon: <IconHearth className={'account-company-buyer__icon'}/>, link: 'favorites', label: 'Избранное', },
+    { icon: <IconBasket/>, link: 'basket', label: 'Корзина' },
+    { icon: <IconMessage/>, link: 'message', label: 'Сообщения' },
+    { icon: <IconLock/>, link: 'secure', label: 'Безопасность' },
   ];
 
   const menuItemsSeller = [
@@ -34,9 +32,9 @@ const AccountPage = () => {
   ];
 
   return (
-    <div className="account-page">
+    <main className="account-page">
       <SidebarLeft
-        menuItems={menuItemsSeller}
+        menuItems={menuItemsBuyer}
         icon1={<IconTrash/>}
         text1={'Выйти'}
         icon2={<IconExit/>}
@@ -44,7 +42,7 @@ const AccountPage = () => {
         phone="8-800-800-00-00"
       />
       <Outlet/>
-    </div>
+    </main>
   );
 };
 
