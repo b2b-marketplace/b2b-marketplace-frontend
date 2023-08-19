@@ -11,7 +11,7 @@ const AccountSellerProductAdd = () => {
   return (
     <section className="account-seller-product-add">
       <div className="account-seller-product-add__section">
-        <AccountTitle name="ООО «Компания»" title="Продавец" />
+        <AccountTitle name="ООО «Компания»" title="Продавец"/>
         <form className="account-seller-product-add__form">
           <FileUpload
             label="Добавить изображение"
@@ -24,35 +24,33 @@ const AccountSellerProductAdd = () => {
             comet="1 видео длительностью не более 3 мин"
           />
           <div className="account-seller-product-add__field">
-            <DropDown label="Категория товара" placeholder="Выберите из списка" />
-            <InputField label="Название товара" placeholder="Кожаная мужская куртка" type="text" />
-            <InputField label="Артикул" placeholder="000 000" type="number" />
-            <DropDown label="Бренд" placeholder="Выберите из списка" />
-            <InputField label="Производитель" placeholder="Страна производитель" type="text" />
-            <DropDown label="Размер" placeholder="Выберите из списка" />
-            <DropDown label="Цвет" placeholder="Выберите из списка" />
+            <DropDown label="Категория товара" placeholder="Выберите из списка"/>
+            <InputField label="Название товара" placeholder="Кожаная мужская куртка" type="text"/>
+            <InputField label="Артикул" placeholder="000 000" type="number"/>
+            <DropDown label="Бренд" placeholder="Выберите из списка"/>
+            <InputField label="Производитель" placeholder="Страна производитель" type="text"/>
+            <DropDown label="Размер" placeholder="Выберите из списка"/>
+            <DropDown label="Цвет" placeholder="Выберите из списка"/>
 
             <label className="account-seller-product-add__label-textarea">Описание товара</label>
-            <textarea
-              className="account-seller-product-add__textarea"
-              placeholder="Добавьте описание товара"></textarea>
+            <textarea className="account-seller-product-add__textarea" placeholder="Добавьте описание товара"></textarea>
           </div>
           <div className="account-seller-product-add__conteiner">
             <div className="account-seller-product-add__field-counter">
               <label className="account-seller-product-add__label">Кол-во товара</label>
-              <Counter />
+              <Counter/>
             </div>
             <div className="account-seller-product-add__field-counter">
               <label className="account-seller-product-add__label">Цена/за единицу товара</label>
-              <Counter />
+              <Counter/>
             </div>
             <div className="account-seller-product-add__field-counter">
               <label className="account-seller-product-add__label">Мин. объем заказа</label>
-              <Counter />
+              <Counter/>
             </div>
             <div className="account-seller-product-add__field-counter">
               <label className="account-seller-product-add__label">Статус заказа</label>
-              <input className="account-seller-product-add__input-status" placeholder="В наличии" />
+              <input className="account-seller-product-add__input-status" placeholder="В наличии"/>
             </div>
           </div>
 
