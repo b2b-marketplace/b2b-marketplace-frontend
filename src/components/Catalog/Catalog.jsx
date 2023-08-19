@@ -7,11 +7,10 @@ import IconChat from '../UI/Icon/Icon_chat';
 import IconScales from '../UI/Icon/Icon_scales';
 import IconBasket from '../UI/Icon/Icon_basket';
 import IconProfile from '../UI/Icon/Icon_profile';
-
-const Catalog = () => {
+const Catalog = ({ catalogPopup }) => {
   return (
     <div className="catalog">
-      <button className="catalog__button">
+      <button className="catalog__button" onClick={catalogPopup}>
         <IconBurger /> <span className="catalog__button-text">Каталог</span>
       </button>
       <ul className="catalog__list">
