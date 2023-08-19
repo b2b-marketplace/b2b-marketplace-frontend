@@ -1,8 +1,6 @@
 .account-input-field {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   gap: 20px;
-  margin-top: 30px;
 
   &__label {
     width: 610px;

@@ -23,13 +23,13 @@ const SidebarLeft = ({ menuItems, phone, icon1, icon2, text1, text2 }) => {
 
       <div className="sidebar-left__conteiner sidebar-left__conteiner_bottom">
         <div className="sidebar-left__profile-control">
-          <button className="sidebar-left__button">
+          <Link className="sidebar-left__link">
             {icon1} {text1}
-          </button>
+          </Link>
 
-          <button className="sidebar-left__button">
+          <Link className="sidebar-left__link">
             {icon2} {text2}
-          </button>
+          </Link>
         </div>
 
         <a className="sidebar-left__contact" href={`tel:${phone}`}>
