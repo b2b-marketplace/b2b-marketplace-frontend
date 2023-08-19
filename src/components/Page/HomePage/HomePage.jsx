@@ -9,14 +9,14 @@ import Promo from "../../Promo/Promo";
 
 const HomePage = () => {
   return (
-    <div className="home-page">
+    <main className="home-page">
       <Promo/>
       <PlatformBenefits className="home-page__platform-benefits"/>
       <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
       <Banner className="home-page__banner"/>
       <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
       <PromoRegistration className="home-page__promo-registration"/>
-    </div>
+    </main>
   );
 };
 
