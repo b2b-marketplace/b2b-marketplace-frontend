@@ -1,8 +1,8 @@
 import './AuthPopup.scss';
 import IconClose from '../UI/Icon/IconClose';
-import SelectPopupType from './SelectPopupType/SelectPopupType';
+import SelectPopup from './SelectPopup/SelectPopup';
 
-const AuthPopup = ({ isOpen, authPopupType, onClose }) => {
+const AuthPopup = ({ isOpen, onClose, children }) => {
   const isOpenPopupTypeClass = `auth${isOpen ? ' auth_opened' : ''}`;
   return (
     <section className={isOpenPopupTypeClass}>
@@ -10,8 +10,7 @@ const AuthPopup = ({ isOpen, authPopupType, onClose }) => {
         <button type="button" onClick={onClose} className="popup__close">
           <IconClose className="popup__close-icon" />
         </button>
-        <SelectPopupType />
-        
+        {children}
       </div>
     </section>
   );

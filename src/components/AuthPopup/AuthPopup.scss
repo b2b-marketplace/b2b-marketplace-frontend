@@ -50,8 +50,8 @@ $black: #000;
 		flex-direction: column;
 		&__close {
 			position: absolute;
-			top: 80px;
-			right: 80px;
+			top: 90px;
+			right: 90px;
 			@extend %tpbutton;
 			&-icon {
 				box-sizing: border-box;
