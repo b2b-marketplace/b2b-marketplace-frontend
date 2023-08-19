@@ -1,11 +1,5 @@
 import React from 'react';
 import './AccountCompanySeller.scss';
-import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
-import BiBag from '../../../UI/Icon/Icon_bibag';
-import IconPackage from '../../../UI/Icon/Icon_package';
-import IconBag from '../../../UI/Icon/Icon_bag';
-import IconMessage from '../../../UI/Icon/Icon_message';
-import IconLock from '../../../UI/Icon/Icon_lock';
 import IconMail from '../../../UI/Icon/Icon_mail';
 import IconPhone from '../../../UI/Icon/Icon_phone';
 import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
@@ -13,30 +7,11 @@ import IconStarAccount from '../../../UI/Icon/Icon_star-account';
 import Tooltip from '../../../UI/Tooltip/Tooltip';
 import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
 import IconPencil from '../../../UI/Icon/Icon_pencil';
-import IconTrash from '../../../UI/Icon/Icon_trash';
-import IconExit from '../../../UI/Icon/Icon_exit';
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
 
 const AccountCompanySeller = () => {
-  const menuItems = [
-    { icon: <BiBag />, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Товары' },
-    { icon: <IconBag />, link: '#', label: 'Заказы' },
-    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
-    { icon: <IconLock />, link: '#', label: 'Безопасность' },
-  ];
-
   return (
     <section className="account-company-seller">
-      <SidebarLeft
-        menuItems={menuItems}
-        icon1={<IconTrash />}
-        text1={'Выйти'}
-        icon2={<IconExit />}
-        text2={'Удалить аккаунт'}
-        phone="8-800-800-00-00"
-      />
-
       <div>
         <div className="account-company-seller__conteiner">
           <AccountTitle name="ООО «Компания»" title="Продавец" icon={<IconPencil />} />
@@ -67,7 +42,12 @@ const AccountCompanySeller = () => {
             </Tooltip>
           </h2>
           <AccountInputField label="Почта" placeholder="Почта" type="email" icon={<IconMail />} />
-          <AccountInputField label="Телефон" placeholder="Телефон" type="tel" icon={<IconPhone />} />
+          <AccountInputField
+            label="Телефон"
+            placeholder="Телефон"
+            type="tel"
+            icon={<IconPhone />}
+          />
         </form>
       </div>
     </section>

@@ -2,38 +2,14 @@ import React from 'react';
 import Counter from '../../../UI/Counter/Counter';
 import './AccountProductAdd.scss';
 import { Button } from '../../../UI/Button/Button';
-import BiBag from '../../../UI/Icon/Icon_bibag';
-import IconPackage from '../../../UI/Icon/Icon_package';
-import IconBag from '../../../UI/Icon/Icon_bag';
-import IconMessage from '../../../UI/Icon/Icon_message';
-import IconLock from '../../../UI/Icon/Icon_lock';
-import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
 import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import InputField from '../../../UI/InputField/InputField';
 import FileUpload from '../../../UI/FileUpload/FileUpload';
 import DropDown from '../../../UI/DropDown/DropDown';
-import IconTrash from '../../../UI/Icon/Icon_trash';
-import IconExit from '../../../UI/Icon/Icon_exit';
 
 const AccountProductAdd = () => {
-  const menuItems = [
-    { icon: <BiBag />, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Товары' },
-    { icon: <IconBag />, link: '#', label: 'Заказы' },
-    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
-    { icon: <IconLock />, link: '#', label: 'Безопасность' },
-  ];
-
   return (
     <section className="account-product-add">
-      <SidebarLeft
-        icon1={<IconTrash />}
-        text1={'Выйти'}
-        menuItems={menuItems}
-        icon2={<IconExit />}
-        text2={'Удалить аккаунт'}
-        phone="8-800-800-00-00"
-      />
       <div className="account-product-add__section">
         <AccountTitle name="ООО «Компания»" title="Продавец" />
         <form className="account-product-add__form">
