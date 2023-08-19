@@ -2,11 +2,11 @@ import IconYandex from "../../UI/Icon/IconYandex";
 import IconVK from '../../UI/Icon/IconVK';
 import IconGmail from '../../UI/Icon/IconGmail';
 import { Button } from '../../UI/Button/Button';
-import AuthPopup from "../AuthPopup";
+import Popup from "../Popup";
 
 const SelectPopup = ({ onSelectType, isOpen, onClose }) => {
   return (
-    <AuthPopup isOpen={isOpen} onClose={onClose}>
+    <Popup isOpen={isOpen} onClose={onClose}>
       <div className="popup__container">
         <h2 className="popup__title">Добро пожаловать!</h2>
         <p className="popup__subtitle">Войдите в личный кабинет и&nbsp;попробуйте&nbsp;больше возможностей сайта</p>
@@ -26,7 +26,7 @@ const SelectPopup = ({ onSelectType, isOpen, onClose }) => {
           <Button value="login" onClick={onSelectType} type="button" size="xxxxl">Войти</Button>
         </div>
       </div>
-    </AuthPopup>
+    </Popup>
   );
 };
 
