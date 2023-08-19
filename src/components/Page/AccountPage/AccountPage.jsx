@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SidebarLeft from '../../SidebarLeft/SidebarLeft';
-import AccountCompanyBuyer from './AccountCompanyBuyer/AccountCompanyBuyer';
-import AccountCompanyIndividual from './AccountCompanyIndividual/AccountCompanyIndividual';
-import AccountCompanySeller from './AccountCompanySeller/AccountCompanySeller';
+import AccountBuyerCompany from './AccountBuyerCompany/AccountBuyerCompany';
+import AccountCompanyIndividual from './@AccountCompanyIndividual/AccountCompanyIndividual';
+import AccountSellerCompany from './AccountSellerCompany/AccountSellerCompany';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import IconExit from '../../UI/Icon/Icon_exit';
 import BiBag from '../../UI/Icon/Icon_bibag';
@@ -61,7 +61,7 @@ const AccountPage = () => {
             text2={'Удалить аккаунт'}
             phone="8-800-800-00-00"
           />
-          <AccountCompanyBuyer />
+          <AccountBuyerCompany />
         </Route>
         <Route path="/individual">
           <SidebarLeft
@@ -83,7 +83,7 @@ const AccountPage = () => {
             text2={'Удалить аккаунт'}
             phone="8-800-800-00-00"
           />
-          <AccountCompanySeller />
+          <AccountSellerCompany />
         </Route>
       </Routes>
     </div>

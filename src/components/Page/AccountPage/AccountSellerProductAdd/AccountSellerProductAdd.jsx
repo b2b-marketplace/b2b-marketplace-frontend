@@ -1,18 +1,18 @@
 import React from 'react';
 import Counter from '../../../UI/Counter/Counter';
-import './AccountProductAdd.scss';
+import './AccountSellerProductAdd.scss';
 import { Button } from '../../../UI/Button/Button';
 import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import InputField from '../../../UI/InputField/InputField';
 import FileUpload from '../../../UI/FileUpload/FileUpload';
 import DropDown from '../../../UI/DropDown/DropDown';
 
-const AccountProductAdd = () => {
+const AccountSellerProductAdd = () => {
   return (
-    <section className="account-product-add">
-      <div className="account-product-add__section">
+    <section className="account-seller-product-add">
+      <div className="account-seller-product-add__section">
         <AccountTitle name="ООО «Компания»" title="Продавец" />
-        <form className="account-product-add__form">
+        <form className="account-seller-product-add__form">
           <FileUpload
             label="Добавить изображение"
             text="Нажмите на «+» или перетащите фото в эту область"
@@ -23,7 +23,7 @@ const AccountProductAdd = () => {
             text="Нажмите на «+» или перетащите видео в эту область"
             comet="1 видео длительностью не более 3 мин"
           />
-          <div className="account-product-add__field">
+          <div className="account-seller-product-add__field">
             <DropDown label="Категория товара" placeholder="Выберите из списка" />
             <InputField label="Название товара" placeholder="Кожаная мужская куртка" type="text" />
             <InputField label="Артикул" placeholder="000 000" type="number" />
@@ -32,34 +32,34 @@ const AccountProductAdd = () => {
             <DropDown label="Размер" placeholder="Выберите из списка" />
             <DropDown label="Цвет" placeholder="Выберите из списка" />
 
-            <label className="account-product-add__label-textarea">Описание товара</label>
+            <label className="account-seller-product-add__label-textarea">Описание товара</label>
             <textarea
-              className="account-product-add__textarea"
+              className="account-seller-product-add__textarea"
               placeholder="Добавьте описание товара"></textarea>
           </div>
-          <div className="account-product-add__conteiner">
-            <div className="account-product-add__field-counter">
-              <label className="account-product-add__label">Кол-во товара</label>
+          <div className="account-seller-product-add__conteiner">
+            <div className="account-seller-product-add__field-counter">
+              <label className="account-seller-product-add__label">Кол-во товара</label>
               <Counter />
             </div>
-            <div className="account-product-add__field-counter">
-              <label className="account-product-add__label">Цена/за единицу товара</label>
+            <div className="account-seller-product-add__field-counter">
+              <label className="account-seller-product-add__label">Цена/за единицу товара</label>
               <Counter />
             </div>
-            <div className="account-product-add__field-counter">
-              <label className="account-product-add__label">Мин. объем заказа</label>
+            <div className="account-seller-product-add__field-counter">
+              <label className="account-seller-product-add__label">Мин. объем заказа</label>
               <Counter />
             </div>
-            <div className="account-product-add__field-counter">
-              <label className="account-product-add__label">Статус заказа</label>
-              <input className="account-product-add__input-status" placeholder="В наличии" />
+            <div className="account-seller-product-add__field-counter">
+              <label className="account-seller-product-add__label">Статус заказа</label>
+              <input className="account-seller-product-add__input-status" placeholder="В наличии" />
             </div>
           </div>
 
-          <p className="account-product-add__text">
+          <p className="account-seller-product-add__text">
             Каждый товар проходит модерацию. В&nbsp;среднем проверка занимает 30 минут
           </p>
-          <div className="account-product-add__button-conteiner">
+          <div className="account-seller-product-add__button-conteiner">
             <Button size="xxxxl" primary={false} border={true}>
               Опубликовать
             </Button>
@@ -73,4 +73,4 @@ const AccountProductAdd = () => {
   );
 };
 
-export default AccountProductAdd;
+export default AccountSellerProductAdd;
