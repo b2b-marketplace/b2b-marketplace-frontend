@@ -14,7 +14,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/account/*" element={<AccountPage/>}>
+        <Route path="/account" element={<AccountPage/>}>
           <Route path="profile" element={<AccountBuyerCompany/>}/>
           <Route path="add" element={<AccountSellerProductAdd/>}/>
         </Route>
