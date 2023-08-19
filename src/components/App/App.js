@@ -1,13 +1,13 @@
 import './App.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import AccountBuyerCompany from "../Page/AccountPage/AccountBuyerCompany/AccountBuyerCompany";
+import HomePage from "../Page/HomePage/HomePage";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <AccountBuyerCompany />
+      <HomePage />
       <Footer />
     </div>
   );
