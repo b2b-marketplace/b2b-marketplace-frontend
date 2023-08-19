@@ -25,10 +25,18 @@ $black: #000;
 	inset: 0;
 	z-index: 200;
 
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity, visibility .4s  ease;
+
 	// общие стили текста для попапа
 	color: $white;
 	font-family: Inter;
 	text-align: center;
+	&_opened {
+		visibility: visible;
+		opacity: 1;	
+	}
 	.popup {
 		position: relative;
 		max-width: 1320px;
