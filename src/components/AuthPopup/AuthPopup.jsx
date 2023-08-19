@@ -1,5 +1,5 @@
 import './AuthPopup.scss';
-import IconClose from "../Icon/IconClose";
+import IconClose from '../UI/Icon/IconClose';
 import SelectPopupType from './SelectPopupType/SelectPopupType';
 
 const AuthPopup = ({ isOpen }) => {

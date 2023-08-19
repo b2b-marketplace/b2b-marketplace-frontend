@@ -1,7 +1,7 @@
-import IconYandex from "../../Icon/IconYandex";
-import IconVK from '../../Icon/IconVK';
-import IconGmail from '../../Icon/IconGmail';
-import { Button } from '../../Button/Button';
+import IconYandex from "../../UI/Icon/IconYandex";
+import IconVK from '../../UI/Icon/IconVK';
+import IconGmail from '../../UI/Icon/IconGmail';
+import { Button } from '../../UI/Button/Button';
 
 const SelectPopupType = () => {
   return (
@@ -20,8 +20,8 @@ const SelectPopupType = () => {
         </button>
       </div>
       <div className="popup__buttons">
-        <Button name="register" type="type" size="xxxxl">Зарегистрироваться</Button>
-        <Button name="login" type="type" size="xxxxl">Войти</Button>
+        <Button name="register" type="button" size="xxxxl">Зарегистрироваться</Button>
+        <Button name="login" type="button" size="xxxxl">Войти</Button>
       </div>
     </div>
   );
