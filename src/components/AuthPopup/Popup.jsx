@@ -25,7 +25,7 @@ const Popup = ({ isOpen, onClose, children }) => {
   }, []);
   
   return (
-    <section className={isOpenPopupTypeClass} onClick={closeByEvent}>
+    <section className={isOpenPopupTypeClass} onMouseDown={closeByEvent}>
       <div className="popup">
         <button type="button" onClick={onClose} className="popup__close">
           <IconClose className="popup__close-icon" />
