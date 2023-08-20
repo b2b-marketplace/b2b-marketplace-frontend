@@ -1,5 +1,4 @@
-$white: #fff;
-$black: #000;
+@import '../../styles/vars';
 
 %tpbutton {
 	padding: 0;
@@ -16,7 +15,7 @@ $black: #000;
 	font-weight: $weight;
 	line-height: $lh;
 	letter-spacing: 0;
-	color: $white;
+	color: $lightColor;
 	font-size: $fz;
 }
 
@@ -35,8 +34,8 @@ $black: #000;
 	transition: opacity .4s, visibility .4s ease;
 
 	// общие стили текста для попапа
-	color: $white;
-	font-family: Inter;
+	color: $lightColor;
+	font-family: $fontFamily;
 	text-align: center;
 
 	&_opened {
@@ -47,7 +46,6 @@ $black: #000;
 	.popup {
 		position: relative;
 		max-width: 1320px;
-		// min-height: 692px;
 		width: 100%;
 		background-color: #000;
 		border-radius: 150px;
@@ -128,7 +126,7 @@ $black: #000;
 		}
 
 		&__step {
-			border: 1px solid $white;
+			border: 1px solid $lightColor;
 			width: 12px;
 			height: 12px;
 			border-radius: 50%;
@@ -136,7 +134,7 @@ $black: #000;
 			transition: background-color .3s ease;
 
 			&_active {
-				background-color: $white;
+				background-color: $lightColor;
 			}
 		}
 
@@ -174,7 +172,7 @@ $black: #000;
 
 			&::before,
 			&::after {
-				background-color: $white;
+				background-color: $lightColor;
 			}
 
 			&::after {
