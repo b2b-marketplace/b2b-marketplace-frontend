@@ -8,6 +8,7 @@ import AccountSellerProductAdd from "../Page/AccountPage/AccountSellerProductAdd
 import React from "react";
 import AccountBuyerPurchase from "../Page/AccountPage/AccountBuyerPurchase/AccountBuyerPurchase";
 import AccountBuyerProfile from '../Page/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
+import BasketPage from "../Page/BasketPage/BasketPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
+        <Route path="/basket" element={<BasketPage/>}/>
         <Route path="/account" element={<AccountPage/>}>
           <Route path="profile" element={<AccountBuyerProfile/>}/>
           <Route path="add" element={<AccountSellerProductAdd/>}/>
