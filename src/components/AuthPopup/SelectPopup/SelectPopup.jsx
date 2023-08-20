@@ -3,6 +3,7 @@ import IconVK from '../../UI/Icon/IconVK';
 import IconGmail from '../../UI/Icon/IconGmail';
 import { Button } from '../../UI/Button/Button';
 import Popup from "../Popup";
+import PopupButtons from "../PopupButtons/PopupButtons";
 
 const SelectPopup = ({ onSelectType, isOpen, onClose }) => {
   return (
@@ -21,10 +22,13 @@ const SelectPopup = ({ onSelectType, isOpen, onClose }) => {
             <IconVK />
           </button>
         </div>
-        <div className="popup__buttons">
-          <Button value="register" onClick={onSelectType} type="button" size="xxxxl">Зарегистрироваться</Button>
-          <Button value="login" onClick={onSelectType} type="button" size="xxxxl">Войти</Button>
-        </div>
+        <PopupButtons
+          onClick={onSelectType}
+          value1="register"
+          value2="login"
+          buttonText1="Зарегистрироваться"
+          buttonText2="Войти"
+        />
       </div>
     </Popup>
   );
