@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import './Button.scss';
 
-export const Button = ({ primary, border, rotate, size, type, children, ...props }) => {
+export const Button = ({ primary, border, rotate, size, type, children, className, ...props }) => {
   const mode = primary ? 'button__primary' : 'button__secondary';
   const isBorder = border ? `${mode}_border` : '';
   const isRotate = rotate && size === 'xs' ? 'button_rotate' : '';
   return (
     <button
       type={type}
-      className={['button', `button_size_${size}`, mode, isBorder, isRotate].join(' ')}
+      className={['button', `button_size_${size}`, mode, isBorder, isRotate, className].join(' ')}
       {...props}>
       {children}
     </button>
