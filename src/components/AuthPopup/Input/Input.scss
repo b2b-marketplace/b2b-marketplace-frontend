@@ -1,0 +1,62 @@
+@import '../../../styles/vars';
+
+.input {
+	background-color: $lightColor;
+	border-radius: 20px;
+	color: black;
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 20px;
+	box-sizing: border-box;
+
+
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 29px;
+	letter-spacing: 0;
+	text-align: left;
+
+	&_size {
+		&_l {
+			max-width: 968px;
+		}
+
+		&_m {
+			max-width: 600px;
+		}
+
+		&_s {
+			max-width: 476px;
+		}
+	}
+
+	&_type {
+		&_select {
+			appearance: none;
+			background-image: url("../../../images/select-icon.svg");
+			background-repeat: no-repeat;
+			background-position: right 20px;
+			background-repeat: no-repeat;
+			background-position: calc(100% - 23px) 26px;
+		}
+	}
+}
+
+.input-label {
+	width: 100%;
+
+	&__span {
+		display: inline-block;
+		width: 100%;
+		text-align: left;
+		margin-top: 10px;
+		min-height: 22px;
+		
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 22px;
+		letter-spacing: 0;
+		color: $grayColor;
+	}
+}
