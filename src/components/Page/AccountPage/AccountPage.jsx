@@ -18,7 +18,7 @@ const AccountPage = ({role="seller"}) => {
     { icon: <BiBag/>, link: 'profile', label: 'Моя компания' },
     { icon: <IconPackage/>, link: 'orders', label: 'Закупки' },
     { icon: <IconHearth className={'account-company-buyer__icon'}/>, link: 'favorites', label: 'Избранное', },
-    { icon: <IconBasket/>, link: 'basket', label: 'Корзина' },
+    { icon: <IconBasket/>, link: '/basket', label: 'Корзина' },
     { icon: <IconMessage/>, link: 'message', label: 'Сообщения' },
     { icon: <IconLock/>, link: 'secure', label: 'Безопасность' },
   ];

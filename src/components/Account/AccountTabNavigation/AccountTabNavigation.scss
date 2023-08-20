@@ -1,0 +1,13 @@
+.account-tab-navigation {
+  display: flex;
+  column-gap: 50px;
+  list-style: none;
+
+  &__link{
+    text-decoration: none;
+    color: $fontColor;
+    &_active{
+      text-decoration: underline;
+    }
+  }
+}
