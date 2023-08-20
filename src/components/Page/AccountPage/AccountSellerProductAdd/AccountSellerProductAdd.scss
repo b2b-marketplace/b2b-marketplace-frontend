@@ -8,17 +8,21 @@
     display: flex;
     flex-direction: column;
     font-family: $fontFamily;
+    gap: 60px;
   }
 
   &__form {
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
     row-gap: 56px;
   }
 
+  &__form:last-child {
+    row-gap: 80px;
+  }
+
   &__field {
-    width: 853px;
+    max-width: 853px;
     display: flex;
     flex-wrap: wrap;
     row-gap: 28px;
@@ -34,11 +38,14 @@
     line-height: normal;
   }
 
+  &__conteiner-textarea {
+    display: flex;
+    gap: 44px;
+  }
+
   &__label-textarea {
     width: 183px;
-    margin-right: 44px;
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     line-height: normal;
   }
@@ -52,7 +59,6 @@
     padding: 18px 25px;
     color: #686868;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
@@ -79,24 +85,27 @@
     padding: 18px 16px;
     color: #686868;
     font-size: 24px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
 
+  &__control {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
   &__text {
-    margin: 24px auto 0;
+    margin: 0 auto;
     text-align: center;
     max-width: 398px;
     color: #686868;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
 
   &__button-conteiner {
-    margin-top: 12px;
     display: flex;
     gap: 20px;
   }
