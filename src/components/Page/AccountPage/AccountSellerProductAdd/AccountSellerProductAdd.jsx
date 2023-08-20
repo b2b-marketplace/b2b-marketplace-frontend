@@ -6,12 +6,13 @@ import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import InputField from '../../../UI/InputField/InputField';
 import FileUpload from '../../../UI/FileUpload/FileUpload';
 import DropDown from '../../../UI/DropDown/DropDown';
+import logo from '../../../../images/logofooter.svg';
 
 const AccountSellerProductAdd = () => {
   return (
     <section className="account-seller-product-add">
       <div className="account-seller-product-add__section">
-        <AccountTitle name="ООО «Компания»" title="Продавец" />
+        <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Продавец" />
         <form className="account-seller-product-add__form">
           <FileUpload
             label="Добавить изображение"

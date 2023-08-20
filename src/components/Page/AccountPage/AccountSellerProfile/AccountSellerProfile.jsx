@@ -1,41 +1,47 @@
 import React from 'react';
-import './AccountBuyerProfile.scss';
-import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
-import IconPencil from '../../../UI/Icon/Icon_pencil';
-import AccountRating from '../../../AccountPating/AccountPating';
-import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
-import Tooltip from '../../../UI/Tooltip/Tooltip';
-import IconPhone from '../../../UI/Icon/Icon_phone';
+import './AccountSellerProfile.scss';
 import IconMail from '../../../UI/Icon/Icon_mail';
+import IconPhone from '../../../UI/Icon/Icon_phone';
+import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
+import Tooltip from '../../../UI/Tooltip/Tooltip';
+import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
+import IconPencil from '../../../UI/Icon/Icon_pencil';
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
+import AccountPating from '../../../AccountPating/AccountPating';
 import logo from '../../../../images/logofooter.svg';
 
-const AccountBuyerProfile = () => {
+const AccountSellerProfile = () => {
   return (
-    <section className="account-buyer-profile">
-      <div className="account-buyer-profile__blok">
-        <div className="account-buyer-profile__conteiner">
+    <section className="account-seller-profile">
+      <div className="account-seller-profile__blok">
+        <div className="account-seller-profile__conteiner">
           <AccountTitle
             logoSrc={logo}
             name="ООО «Компания»"
-            title="Покупатель"
+            title="Продавец"
             icon={<IconPencil />}
           />
-          <AccountRating />
+          <AccountPating />
         </div>
-        <form className="account-buyer-profile__form">
-          <div className="account-buyer-profile__control">
-            <h2 className="account-buyer-profile__title">Данные покупателя</h2>
-            <div className="account-buyer-profile__field">
-              <AccountInputField label="Способ оплаты" />
+        <form className="account-seller-profile__form">
+          <textarea
+            className="account-seller-profile__description"
+            name="comment"
+            cols="40"
+            rows="3"
+            placeholder="Описание компании"></textarea>
+          <div className="account-seller-profile__control">
+            <h2 className="account-seller-profile__title">Данные продавец</h2>
+            <div className="account-seller-profile__field">
               <AccountInputField label="Счет" placeholder="000000000 0000" type="number" />
               <AccountInputField label="ИНН" placeholder="000000000 0000" type="number" />
+              <AccountInputField label="ОГРН" placeholder="000000000 0000" type="number" />
               <AccountInputField label="Регион доставки" placeholder="Город" type="text" />
             </div>
           </div>
 
-          <div className="account-buyer-profile__control">
-            <h2 className="account-buyer-profile__title">
+          <div className="account-seller-profile__control">
+            <h2 className="account-seller-profile__title">
               Контакты
               <Tooltip
                 position="right"
@@ -45,7 +51,7 @@ const AccountBuyerProfile = () => {
                 <IconInfoFil />
               </Tooltip>
             </h2>
-            <div className="account-buyer-profile__field">
+            <div className="account-seller-profile__field">
               <AccountInputField
                 label="Почта"
                 placeholder="Почта"
@@ -66,4 +72,4 @@ const AccountBuyerProfile = () => {
   );
 };
 
-export default AccountBuyerProfile;
+export default AccountSellerProfile;

@@ -11,15 +11,14 @@
   &__conteiner-logo {
     width: 92px;
     height: 92px;
-    border-radius: 50px;
-    border: 1px solid $blackColor;
-    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: $blackColor;
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
     width: 20px;
     height: 20px;
   }
