@@ -1,6 +1,7 @@
+import NextButton from "../../NextButton/NextButton";
 import PopupButtons from "../../PopupButtons/PopupButtons";
 
-const RegistrationFirstStep = ({ onType, userType }) => {
+const RegistrationFirstStep = ({ onType, userType, onNext }) => {
   return (
     <>
       <h2 className="popup__title">Укажите, кто вы</h2>
@@ -18,6 +19,7 @@ const RegistrationFirstStep = ({ onType, userType }) => {
         <input id="entity" type="checkbox" className="popup__checkbox" />
         <span className="popup__checkbox-span">Я юридическое лицо</span>
       </label>
+      <NextButton onNext={onNext}/>
     </>
   );
 };
