@@ -111,25 +111,8 @@ $black: #000;
 			}
 		}
 
-		&__submit,
-		&__next {
-			opacity: 1;
-			visibility: visible;
-			transition: opacity .4s, visibility .4s ease;
-
-			&_hidden {
-				visibility: hidden;
-				height: 0;
-				opacity: 0;
-			}
-		}
-
 		&__next {
 			@include marginTop(70px);
-
-			&_hidden {
-				height: fit-content;
-			}
 		}
 
 		&__form>.popup__button {
@@ -165,6 +148,7 @@ $black: #000;
 			justify-content: center;
 			align-items: center;
 			gap: 0 20px;
+			cursor: pointer;
 		}
 
 		&__checkbox {
@@ -173,6 +157,7 @@ $black: #000;
 			width: 27px;
 			height: 27px;
 			margin: 5px;
+			cursor: pointer;
 
 			&::after,
 			&::before {

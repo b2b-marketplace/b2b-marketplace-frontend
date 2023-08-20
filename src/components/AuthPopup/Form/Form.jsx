@@ -1,19 +1,19 @@
-import { Button } from "../../UI/Button/Button";
+// import { Button } from "../../UI/Button/Button";
 
-const Form = ({ children, onSubmit, className, isVisibleSubmit, submitText }) => {
+const Form = ({ children, onSubmit, className, submitText }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-  const submitButtonClassName = `popup__submit${isVisibleSubmit ? ' popup__submit_hidden' : ''}`;
+  
   return (
     <form className={className} onSubmit={handleSubmit} >
       {children}
-      <Button
-        className={submitButtonClassName}
+      {/* <Button
+        className="popup__submit"
         size={'xxxl'}
         type="submit">
         {submitText}
-      </Button>
+      </Button> */}
     </form>
   );
 };
