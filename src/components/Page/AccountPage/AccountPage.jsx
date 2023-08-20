@@ -1,9 +1,7 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import "./AccountPage.scss";
 import SidebarLeft from '../../SidebarLeft/SidebarLeft';
-import AccountCompanyBuyer from './AccountCompanyBuyer/AccountCompanyBuyer';
-import AccountCompanyIndividual from './AccountCompanyIndividual/AccountCompanyIndividual';
-import AccountCompanySeller from './AccountCompanySeller/AccountCompanySeller';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import IconExit from '../../UI/Icon/Icon_exit';
 import BiBag from '../../UI/Icon/Icon_bibag';
@@ -14,79 +12,37 @@ import IconMessage from '../../UI/Icon/Icon_message';
 import IconLock from '../../UI/Icon/Icon_lock';
 import IconBasket from '../../UI/Icon/Icon_basket';
 
-const AccountPage = () => {
-  const menuItemsBuyer = [
-    { icon: <BiBag />, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Закупки' },
-    {
-      icon: <IconHearth className={'account-company-buyer__icon'} />,
-      link: '#',
-      label: 'Избранное',
-    },
-    { icon: <IconBasket />, link: '#', label: 'Корзина' },
-    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
-    { icon: <IconLock />, link: '#', label: 'Безопасность' },
-  ];
+const AccountPage = ({role="seller"}) => {
 
-  const menuItemsIndividual = [
-    { icon: <BiBag />, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Закупки' },
-    {
-      icon: <IconHearth className={'account-company-buyer__icon'} />,
-      link: '#',
-      label: 'Избранное',
-    },
-    { icon: <IconBag />, link: '#', label: 'Корзина' },
-    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
-    { icon: <IconLock />, link: '#', label: 'Безопасность' },
+  const menuItemsBuyer = [
+    { icon: <BiBag/>, link: 'profile', label: 'Моя компания' },
+    { icon: <IconPackage/>, link: 'orders', label: 'Закупки' },
+    { icon: <IconHearth className={'account-company-buyer__icon'}/>, link: 'favorites', label: 'Избранное', },
+    { icon: <IconBasket/>, link: 'basket', label: 'Корзина' },
+    { icon: <IconMessage/>, link: 'message', label: 'Сообщения' },
+    { icon: <IconLock/>, link: 'secure', label: 'Безопасность' },
   ];
 
   const menuItemsSeller = [
-    { icon: <BiBag />, link: '#', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Товары' },
-    { icon: <IconBag />, link: '#', label: 'Заказы' },
-    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
-    { icon: <IconLock />, link: '#', label: 'Безопасность' },
+    { icon: <BiBag/>, link: 'profile', label: 'Моя компания' },
+    { icon: <IconPackage/>, link: '#', label: 'Товары' },
+    { icon: <IconBag/>, link: '#', label: 'Заказы' },
+    { icon: <IconMessage/>, link: '#', label: 'Сообщения' },
+    { icon: <IconLock/>, link: '#', label: 'Безопасность' },
   ];
 
   return (
-    <div>
-      <Routes>
-        <Route path="/buyer">
-          <SidebarLeft
-            menuItems={menuItemsBuyer}
-            icon1={<IconTrash />}
-            text1={'Выйти'}
-            icon2={<IconExit />}
-            text2={'Удалить аккаунт'}
-            phone="8-800-800-00-00"
-          />
-          <AccountCompanyBuyer />
-        </Route>
-        <Route path="/individual">
-          <SidebarLeft
-            menuItems={menuItemsIndividual}
-            icon1={<IconTrash />}
-            text1={'Выйти'}
-            icon2={<IconExit />}
-            text2={'Удалить аккаунт'}
-            phone="8-800-800-00-00"
-          />
-          <AccountCompanyIndividual />
-        </Route>
-        <Route path="/seller">
-          <SidebarLeft
-            menuItems={menuItemsSeller}
-            icon1={<IconTrash />}
-            text1={'Выйти'}
-            icon2={<IconExit />}
-            text2={'Удалить аккаунт'}
-            phone="8-800-800-00-00"
-          />
-          <AccountCompanySeller />
-        </Route>
-      </Routes>
-    </div>
+    <main className="account-page">
+      <SidebarLeft
+        menuItems={menuItemsBuyer}
+        icon1={<IconTrash/>}
+        text1={'Выйти'}
+        icon2={<IconExit/>}
+        text2={'Удалить аккаунт'}
+        phone="8-800-800-00-00"
+      />
+      <Outlet/>
+    </main>
   );
 };
 

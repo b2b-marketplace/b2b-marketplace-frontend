@@ -1,34 +1,47 @@
 .account-title {
   display: flex;
   font-family: $fontFamily;
+  gap: 76px;
 
-  &__logo {
+  &__conteiner {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__conteiner-logo {
     width: 92px;
     height: 92px;
     border-radius: 50px;
     border: 1px solid $blackColor;
-
-    background-image: url(../../../../images/logo-registration.svg);
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: center;
+    box-sizing: border-box;
+    background: $blackColor;
   }
 
-  &__conteiner {
-    padding: 7px 0 7px 20px;
+  &__logo {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
   }
 
   &__description {
-    margin: 0 0 9px;
+    margin: 0;
     font-size: 30px;
-    font-style: normal;
+    font-style: $mainStyle;
     font-weight: 500;
     line-height: normal;
   }
 
   &__text {
     display: flex;
-    width: 129px;
+    max-width: 129px;
     height: 34px;
     justify-content: center;
     align-items: center;
@@ -36,14 +49,13 @@
     background: $blackColor;
     color: $whiteColor;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
+    font-style: $mainStyle;
+    font-weight: $mainWeight;
     line-height: normal;
     margin: 0;
   }
 
   &__button {
-    margin: 0 265px 0 77px;
     border: none;
     padding: 0;
     background: $whiteColor;
