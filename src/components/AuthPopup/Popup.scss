@@ -1,14 +1,17 @@
 $white: #fff;
 $black: #000;
+
 %tpbutton {
 	padding: 0;
 	background-color: transparent;
 	border: none;
 	box-sizing: border-box;
 }
-@mixin marginTopAuto($top) {
-	margin: $top auto 0;
+
+@mixin marginTop($top) {
+	margin: $top 0 0;
 }
+
 @mixin text($weight, $lh, $fz) {
 	font-weight: $weight;
 	line-height: $lh;
@@ -25,22 +28,26 @@ $black: #000;
 	inset: 0;
 	z-index: 200;
 
+	background-color: #000000a6;
+
 	visibility: hidden;
 	opacity: 0;
-	transition: opacity .4s, visibility .4s  ease;
+	transition: opacity .4s, visibility .4s ease;
 
 	// общие стили текста для попапа
 	color: $white;
 	font-family: Inter;
 	text-align: center;
+
 	&_opened {
 		visibility: visible;
-		opacity: 1;	
+		opacity: 1;
 	}
+
 	.popup {
 		position: relative;
 		max-width: 1320px;
-		min-height: 692px;
+		// min-height: 692px;
 		width: 100%;
 		background-color: #000;
 		border-radius: 150px;
@@ -48,44 +55,157 @@ $black: #000;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		padding-bottom: 130px;
+
 		&__close {
 			position: absolute;
 			top: 90px;
 			right: 90px;
 			@extend %tpbutton;
+
 			&-icon {
 				box-sizing: border-box;
 				width: 19px;
 				height: 19px;
 			}
 		}
-		&__container {
+
+
+		&__container,
+		&__form {
 			display: flex;
 			flex-direction: column;
-			width: 874px;
+			align-items: center;
 		}
+
 		&__title {
-			@include marginTopAuto(130px);
+			@include marginTop(130px);
 			@include text(500, 61px, 50px);
 			width: fit-content;
 		}
+
 		&__subtitle {
-			@include marginTopAuto(70px);
+			@include marginTop(70px);
 			@include text(500, 36px, 30px);
 			max-width: 650px;
 		}
+
 		&__socials {
-			@include marginTopAuto(70px);
+			@include marginTop(70px);
 			display: flex;
 			gap: 0 15px;
 		}
-		&__social {
+
+		&__social,
+		&__button {
 			@extend %tpbutton;
 		}
+
 		&__buttons {
-			margin-top: 40px;
+			@include marginTop(40px);
 			display: flex;
 			gap: 0 20px;
+
+			&_form {
+				@include marginTop(70px);
+			}
+		}
+
+		&__submit,
+		&__next {
+			opacity: 1;
+			visibility: visible;
+			transition: opacity .4s, visibility .4s ease;
+
+			&_hidden {
+				visibility: hidden;
+				height: 0;
+				opacity: 0;
+			}
+		}
+
+		&__next {
+			@include marginTop(70px);
+
+			&_hidden {
+				height: fit-content;
+			}
+		}
+
+		&__form>.popup__button {
+			@include marginTop(70px);
+		}
+
+		&__steper {
+			display: flex;
+			gap: 10px;
+			width: 56px;
+			height: 12px;
+			@include marginTop(70px);
+		}
+
+		&__step {
+			border: 1px solid $white;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			box-sizing: border-box;
+			transition: background-color .3s ease;
+
+			&_active {
+				background-color: $white;
+			}
+		}
+
+		&__label {
+			min-width: 305px;
+			min-height: 37px;
+			display: flex;
+			@include marginTop(40px);
+			justify-content: center;
+			align-items: center;
+			gap: 0 20px;
+		}
+
+		&__checkbox {
+			position: relative;
+			background: transparent;
+			width: 27px;
+			height: 27px;
+			margin: 5px;
+
+			&::after,
+			&::before {
+				position: absolute;
+				content: '';
+				width: 37px;
+				height: 37px;
+				border-radius: 50%;
+			}
+
+			&::before {
+				inset: -5px;
+			}
+
+			&::before,
+			&::after {
+				background-color: $white;
+			}
+
+			&::after {
+				width: 27px;
+				height: 27px;
+				inset: 0;
+				transition: background-color .3s ease;
+			}
+
+			&:checked::after {
+				background-color: #4285f4;
+			}
+
+			&-span {
+				@include text(400, 29px, 24px);
+			}
 		}
 	}
 }
