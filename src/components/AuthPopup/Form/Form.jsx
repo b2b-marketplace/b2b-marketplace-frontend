@@ -4,7 +4,7 @@ const Form = ({ children, onSubmit, className, isVisibleSubmit, submitText }) =>
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-  const submitButtonClassName = `popup__submit${isVisibleSubmit ? ' popup__submit_visible' : ''}`;
+  const submitButtonClassName = `popup__submit${isVisibleSubmit ? ' popup__submit_hidden' : ''}`;
   return (
     <form className={className} onSubmit={handleSubmit} >
       {children}
