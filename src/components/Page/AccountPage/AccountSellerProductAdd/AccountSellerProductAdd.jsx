@@ -6,13 +6,12 @@ import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import InputField from '../../../UI/InputField/InputField';
 import FileUpload from '../../../UI/FileUpload/FileUpload';
 import DropDown from '../../../UI/DropDown/DropDown';
-import logo from '../../../../images/logofooter.svg';
 
 const AccountSellerProductAdd = () => {
   return (
     <section className="account-seller-product-add">
       <div className="account-seller-product-add__section">
-        <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Продавец" />
+        <AccountTitle name="ООО «Компания»" title="Продавец" />
         <form className="account-seller-product-add__form">
           <FileUpload
             label="Добавить изображение"
@@ -45,7 +44,7 @@ const AccountSellerProductAdd = () => {
               <Counter />
             </div>
             <div className="account-seller-product-add__field-counter">
-              <label className="account-seller-product-add__label">Цена/за единицу товара</label>
+              <label className="account-seller-product-add__label2">Цена/за единицу товара</label>
               <Counter />
             </div>
             <div className="account-seller-product-add__field-counter">
@@ -53,7 +52,7 @@ const AccountSellerProductAdd = () => {
               <Counter />
             </div>
             <div className="account-seller-product-add__field-counter">
-              <label className="account-seller-product-add__label">Статус заказа</label>
+              <label className="account-seller-product-add__label2">Статус заказа</label>
               <input className="account-seller-product-add__input-status" placeholder="В наличии" />
             </div>
           </div>

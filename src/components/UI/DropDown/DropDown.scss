@@ -56,7 +56,7 @@
 
   &__select.is-active .drop-down__body {
     display: block;
-    max-height: 200px; /*  максимальная высота меню */
+    max-height: 125px; /*  максимальная высота меню */
     overflow: auto; /* прокрутка, если меню слишком длинное */
   }
 

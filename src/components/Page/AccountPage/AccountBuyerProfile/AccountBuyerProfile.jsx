@@ -8,7 +8,7 @@ import Tooltip from '../../../UI/Tooltip/Tooltip';
 import IconPhone from '../../../UI/Icon/Icon_phone';
 import IconMail from '../../../UI/Icon/Icon_mail';
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
-import logo from '../../../../images/logofooter.svg';
+import AccountDropDown from '../../../UI/Account/AccountDropDown/AccountDropDown';
 
 const AccountBuyerProfile = () => {
   return (
@@ -16,7 +16,6 @@ const AccountBuyerProfile = () => {
       <div className="account-buyer-profile__blok">
         <div className="account-buyer-profile__conteiner">
           <AccountTitle
-            logoSrc={logo}
             name="ООО «Компания»"
             title="Покупатель"
             icon={<IconPencil />}
@@ -27,7 +26,7 @@ const AccountBuyerProfile = () => {
           <div className="account-buyer-profile__control">
             <h2 className="account-buyer-profile__title">Данные покупателя</h2>
             <div className="account-buyer-profile__field">
-              <AccountInputField label="Способ оплаты" />
+              <AccountDropDown label="Способ оплаты" />
               <AccountInputField label="Счет" placeholder="000000000 0000" type="number" />
               <AccountInputField label="ИНН" placeholder="000000000 0000" type="number" />
               <AccountInputField label="Регион доставки" placeholder="Город" type="text" />

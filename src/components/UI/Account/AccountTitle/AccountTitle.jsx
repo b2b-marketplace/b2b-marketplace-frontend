@@ -1,12 +1,13 @@
 import React from 'react';
 import './AccountTitle.scss';
+import logo from '../../../../images/logofooter.svg';
 
-const AccountTitle = ({ title, icon, name, logoSrc }) => {
+const AccountTitle = ({ title, icon, name }) => {
   return (
     <section className="account-title">
       <div className="account-title__conteiner">
         <div className="account-title__conteiner-logo">
-          <img className='account-title__logo' src={logoSrc} alt="Логотоп." />
+          <img className="account-title__logo" src={logo} alt="Логотоп." />
         </div>
 
         <div className="account-title__about">

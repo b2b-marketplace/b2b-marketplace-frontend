@@ -8,7 +8,6 @@ import AccountInputField from '../../../UI/Account/AccountInputField/AccountInpu
 import IconPencil from '../../../UI/Icon/Icon_pencil';
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
 import AccountPating from '../../../AccountPating/AccountPating';
-import logo from '../../../../images/logofooter.svg';
 
 const AccountSellerProfile = () => {
   return (
@@ -16,7 +15,6 @@ const AccountSellerProfile = () => {
       <div className="account-seller-profile__blok">
         <div className="account-seller-profile__conteiner">
           <AccountTitle
-            logoSrc={logo}
             name="ООО «Компания»"
             title="Продавец"
             icon={<IconPencil />}

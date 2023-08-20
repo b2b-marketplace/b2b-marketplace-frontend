@@ -17,10 +17,6 @@
     row-gap: 56px;
   }
 
-  &__form:last-child {
-    row-gap: 80px;
-  }
-
   &__field {
     max-width: 853px;
     display: flex;
@@ -29,7 +25,17 @@
   }
 
   &__label {
-    width: 183px;
+    width: 188px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__label2{
+    width: 211px;
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -55,7 +61,7 @@
     width: 626px;
     height: 237px;
     border-radius: 20px;
-    border: 1px solid #000;
+    border: 1px solid $blackColor;
     padding: 18px 25px;
     color: #686868;
     font-size: 20px;
@@ -64,15 +70,16 @@
   }
 
   &__conteiner {
+    max-width: 853px;
     display: flex;
     flex-wrap: wrap;
     row-gap: 28px;
-    gap: 52px;
+    column-gap: 52px;
   }
 
   &__field-counter {
     display: flex;
-    gap: 25px;
+    gap: 20px;
   }
 
   &__input-status {
@@ -80,7 +87,7 @@
     height: 65px;
     box-sizing: border-box;
     border-radius: 20px;
-    border: 1px solid #000;
+    border: 1px solid $blackColor;
 
     padding: 18px 16px;
     color: #686868;
