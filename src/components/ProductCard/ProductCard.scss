@@ -14,7 +14,7 @@
     justify-content: space-between;
   }
 
-  &__info_top {
+  &__info-top {
     width: 100%;
     margin-bottom: 4px;
     display: flex;
@@ -62,7 +62,7 @@
     -webkit-line-clamp: 3;
   }
 
-  &__info_bottom {
+  &__info-bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -80,7 +80,7 @@
     box-sizing: border-box;
     top: 20px;
     z-index: 10;
-    &_right {
+    &-right {
       display: flex;
       flex-direction: row;
       gap: 20px;
@@ -107,11 +107,11 @@
     font-style: normal;
     line-height: normal;
     margin: 0 0 17px;
-    &_title {
+    &-title {
       margin: 0;
       font-weight: 500;
     }
-    &_quantity {
+    &-quantity {
       font-weight: 400;
       margin: 0 0 0 7px;
     }

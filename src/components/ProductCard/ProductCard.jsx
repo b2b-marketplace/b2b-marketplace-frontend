@@ -20,7 +20,7 @@ function ProductCard({ product }) {
         {isOwnProduct ? (
           isVerified ? (
             <>
-              <div className="card__icons_right">
+              <div className="card__icons-right">
                 <IconDelete />
                 <IconEdit />
               </div>
@@ -28,7 +28,7 @@ function ProductCard({ product }) {
             </>
           ) : (
             <>
-              <div className="card__icons_right">
+              <div className="card__icons-right">
                 <IconDelete />
                 <IconEdit />
               </div>
@@ -36,7 +36,7 @@ function ProductCard({ product }) {
             </>
           )
         ) : (
-          <div className="card__icons_right">
+          <div className="card__icons-right">
             <IconScales />
             <IconHearth />
           </div>
@@ -44,7 +44,7 @@ function ProductCard({ product }) {
       </div>
 
       <div className="card__info">
-        <div className="card__info_top">
+        <div className="card__info-top">
           <Link to={`/product/${product.id}`} className="card__title">
             {product.title}
           </Link>
@@ -55,8 +55,8 @@ function ProductCard({ product }) {
         <div className="card__description">{product.description}</div>
 
         <div className="card__min-order">
-          <p className="card__min-order_title">Мин. заказ:</p>
-          <p className="card__min-order_quantity">{`от ${product.orderQuantity} шт`}</p>
+          <p className="card__min-order-title">Мин. заказ:</p>
+          <p className="card__min-order-quantity">{`от ${product.orderQuantity} шт`}</p>
         </div>
 
         <p className="card__price">{`${product.price} р`}</p>
