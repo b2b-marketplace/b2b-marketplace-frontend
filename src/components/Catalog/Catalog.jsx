@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Catalog.scss';
 import IconBurger from '../UI/Icon/Icon_burger';
 import IconAction from '../UI/Icon/Icon_action';
@@ -22,13 +22,32 @@ const Catalog = () => {
         <IconBurger /> <span className="catalog__button-text">Каталог</span>
       </button>
       <ul className="catalog__list">
-        <li className="catalog__list-item">Поставщики</li>
-        <li className="catalog__list-item">Закупки</li>
-        <li className="catalog__list-item">Оплата&nbsp;и&nbsp;доставка</li>
-        <li className="catalog__list-item">Возврат</li>
         <li className="catalog__list-item">
-          <IconAction className={'catalog__list-img'} />
-          Акции
+          <NavLink className="catalog__list-link" to="/">
+            Поставщики
+          </NavLink>
+        </li>
+        <li className="catalog__list-item">
+          <NavLink className="catalog__list-link" to="">
+            Закупки
+          </NavLink>
+        </li>
+        <li className="catalog__list-item">
+          <NavLink className="catalog__list-link" to="">
+            Оплата&nbsp;и&nbsp;доставка
+          </NavLink>
+        </li>
+        <li className="catalog__list-item">
+          <NavLink className="catalog__list-link" to="">
+            Возврат
+          </NavLink>
+        </li>
+
+        <li className="catalog__list-item">
+          <NavLink className="catalog__list-link" to="">
+            <IconAction className={'catalog__list-img'} />
+            Акции
+          </NavLink>
         </li>
       </ul>
 
@@ -49,12 +68,11 @@ const Catalog = () => {
           </Link>
         </li>
         <li className="catalog__navigation-item">
-          <Link to="/profile" className="catalog__navigation-link">
+          <Link to="/account" className="catalog__navigation-link">
             <IconProfile></IconProfile>
           </Link>
         </li>
       </ul>
-      <PopupCatalog isOpen={catalogPopup} onClose={'123'} />
     </div>
   );
 };
