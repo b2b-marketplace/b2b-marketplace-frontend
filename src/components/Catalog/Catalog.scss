@@ -7,6 +7,7 @@
   flex-direction: row;
   justify-content: start;
   padding: 0;
+  column-gap: 134px;
 
   &__button {
     max-width: 203px;
@@ -14,10 +15,10 @@
     height: 65px;
     border-radius: 30px;
     background-color: #000;
+    border-style: none;
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-right: 134px;
     padding: 0;
     cursor: pointer;
 
@@ -33,26 +34,17 @@
   }
 
   &__list {
-    max-width: 835px;
-    width: 100%;
     list-style-type: none;
     display: flex;
     flex-direction: row;
     padding: 0;
     align-items: center;
-
     &-item {
       list-style-type: none;
       display: flex;
       flex-direction: row;
       align-items: center;
       margin-right: 21px;
-      color: #000;
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
       cursor: pointer;
 
       &:hover {
@@ -60,9 +52,20 @@
       }
 
       &:last-of-type {
-        margin-right: 10px;
+        margin-right: 0px;
         height: 32px;
       }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: #000;
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: flex;
     }
     &-img {
       margin-right: 10px;
