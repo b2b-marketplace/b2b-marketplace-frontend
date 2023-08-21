@@ -13,7 +13,7 @@ export const PRODUCT_CARD = {
   description:
     'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
   orderQuantity: 10,
-  colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+  colors: ['red', 'green', 'black'],
   price: 4000,
   commentsCount: 20,
   rating: 4.8,
@@ -30,7 +30,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -45,7 +45,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -60,7 +60,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -75,7 +75,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -90,7 +90,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -105,7 +105,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -120,7 +120,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -135,7 +135,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
@@ -150,7 +150,7 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,

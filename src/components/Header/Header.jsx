@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.scss';
 import IconPosition from '../../components/UI/Icon/Icon_position';
 import IconBoxRu from '../../components/UI/Icon/Icon_boxRu';
+import Catalog from "../Catalog/Catalog";
 
 const Header = () => {
   return (
@@ -21,6 +22,7 @@ const Header = () => {
           <span className="header__location-text">Санкт&#8209;Петербург</span>
         </button>
       </div>
+      <Catalog />
     </header>
   );
 };
