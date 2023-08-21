@@ -1,6 +1,6 @@
 import React from 'react';
 import './PromoRegistration.scss';
-import logo from '../../image/logo-registration.svg';
+import logo from '../../images/logo-registration.svg';
 import { Button } from '../UI/Button/Button';
 import ButtonScrollUp from '../ButtonScrollUp/ButtonScrollUp';
 

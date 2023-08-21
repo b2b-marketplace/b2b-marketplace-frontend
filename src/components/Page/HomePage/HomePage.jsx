@@ -5,16 +5,18 @@ import ProductCardContainer from "../../ProductCardContainer/ProductCardContaine
 import { PRODUCTS } from "../../../utils/productCardExample.js";
 import Banner from "../../Banner/Banner";
 import PromoRegistration from "../../PromoRegistration/PromoRegistration";
+import Promo from "../../Promo/Promo";
 
 const HomePage = () => {
   return (
-    <div className="home-page">
+    <main className="home-page">
+      <Promo/>
       <PlatformBenefits className="home-page__platform-benefits"/>
       <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
       <Banner className="home-page__banner"/>
       <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
-      <PromoRegistration className="home-page__promo-registration" />
-    </div>
+      <PromoRegistration className="home-page__promo-registration"/>
+    </main>
   );
 };
 

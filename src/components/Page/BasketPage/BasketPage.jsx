@@ -5,10 +5,10 @@ import "./BasketPage.scss";
 
 const BasketPage = () => {
   return (
-    <>
+    <main className="basket-page">
       <Basket/>
-      <Banner className="basket-page basket-page__banner"/>
-    </>
+      <Banner className="basket-page__banner"/>
+    </main>
   );
 };
 

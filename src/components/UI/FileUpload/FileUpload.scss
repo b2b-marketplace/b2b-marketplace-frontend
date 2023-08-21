@@ -1,8 +1,6 @@
 .file-upload {
   display: flex;
-  flex-wrap: wrap;
   gap: 44px;
-  row-gap: 28px;
 
   &__label {
     width: 183px;
@@ -15,34 +13,33 @@
     margin: 0;
   }
 
-  &__input {
+  &__button {
     width: 204px;
     height: 158px;
     border-radius: 20px;
     border: 1px solid #000;
-    margin-right: 20px;
+    box-sizing: border-box;
     padding: 0;
-    grid-area: file;
+    background: $whiteColor;
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'file comment'
-      'file comment2';
+    display: flex;
+    gap: 20px;
+  }
+
+  &__container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 12px;
   }
 
   &__text {
-    display: flex;
-    align-items: center;
     max-width: 223px;
-
     font-size: 16px;
-    font-style: normal;
     font-weight: 600;
     line-height: 20px;
-    grid-area: comment;
     margin: 0;
   }
 
@@ -50,10 +47,8 @@
     max-width: 223px;
     color: #686868;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    grid-area: comment2;
     margin: 0;
   }
 }
