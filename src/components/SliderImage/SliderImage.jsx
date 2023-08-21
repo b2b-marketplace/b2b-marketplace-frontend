@@ -10,9 +10,7 @@ export default function SliderImage({ images }) {
 
   const handleMouseEnter = (event) => {
     const card = getCurrentSlider(event);
-    card.querySelector('.slider__images').style.transform = `translateX(${
-      -100 * event.target.id
-    }%)`;
+    card.querySelector('.slider__images').style.transform = `translateX(${-315 * event.target.id}px)`;
     [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
     [...card.querySelectorAll('.dot')]
       .filter((item) => item.id === event.target.id)[0]
