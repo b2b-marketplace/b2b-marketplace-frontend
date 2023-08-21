@@ -1,6 +1,6 @@
 import React from 'react';
 import './Promo.scss';
-import PromoImage from '../../images/promo-image.svg';
+import PromoImage from '../../images/promo-image.png';
 
 const Promo = () => {
   return (
