@@ -42,7 +42,7 @@ export default function SliderImage({ images }) {
           <div
             key={idx}
             id={idx}
-            className="slider__nav_column"
+            className="slider__nav-column"
             style={{ width: `${width}%` }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

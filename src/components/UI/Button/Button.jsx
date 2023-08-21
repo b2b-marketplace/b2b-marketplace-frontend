@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 
 export const Button = ({ primary, border, rotate, size, type, children, ...props }) => {
-  const mode = primary ? 'button__primary' : 'button__secondary';
+  const mode = primary ? 'button_primary' : 'button_secondary';
   const isBorder = border ? `${mode}_border` : '';
   const isRotate = rotate && size === 'xs' ? 'button_rotate' : '';
   return (

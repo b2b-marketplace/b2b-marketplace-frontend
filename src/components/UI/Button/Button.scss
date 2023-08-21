@@ -69,7 +69,7 @@
     font-weight: 500;
   }
 
-  &__primary {
+  &_primary {
     background-color: $lightColor;
     border: none;
     color: $darkColor;
@@ -78,7 +78,7 @@
     }
   }
 
-  &__secondary {
+  &_secondary {
     background-color: $darkColor;
     border: none;
     color: $lightColor;
