@@ -1,11 +1,9 @@
 .catalog {
-  max-width: 1440px;
-  width: calc(100% - 120px);
-  margin: 0 auto;
   height: 65px;
   display: flex;
   flex-direction: row;
   justify-content: start;
+  margin-top: 14px;
   padding: 0;
   column-gap: 134px;
 
@@ -39,12 +37,13 @@
     flex-direction: row;
     padding: 0;
     align-items: center;
+    column-gap: 21px;
+
     &-item {
       list-style-type: none;
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-right: 21px;
       cursor: pointer;
 
       &:hover {
