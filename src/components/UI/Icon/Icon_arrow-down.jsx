@@ -13,9 +13,9 @@ const IconArrowDown = ({ className, ...props }) => {
         <path
           d="M5.83366 8.33333L10.0003 12.5L14.167 8.33333"
           stroke="currentColor"
-          stroke-width="1.875"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.875"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </Icon>

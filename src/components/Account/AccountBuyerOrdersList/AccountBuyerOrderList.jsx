@@ -6,6 +6,7 @@ import "./AccountBuyerOrderList.scss";
 
 const AccountBuyerOrderList = () => {
   const { filter } = useParams();
+  const { page } = useParams();
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
 
@@ -21,7 +22,6 @@ const AccountBuyerOrderList = () => {
       setOrders(PRODUCTS.slice(5, 9));
     } else {
       navigate('/account/orders');
-      // setOrders([]);
     }
   }, [filter]);
 

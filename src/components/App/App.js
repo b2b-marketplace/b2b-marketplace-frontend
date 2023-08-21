@@ -21,9 +21,10 @@ function App() {
         <Route path="/account" element={<AccountPage/>}>
           <Route index path="profile" element={<AccountBuyerProfile/>} exact/>
           <Route path="product/add" element={<AccountSellerProductAdd/>} exact/>
-          <Route path="orders" element={<AccountBuyerOrders/>}>
+          <Route path="orders" element={<AccountBuyerOrders/>} exact>
             <Route index element={<AccountBuyerOrderList/>} exact/>
             <Route path=":filter" element={<AccountBuyerOrderList/>}/>
+            <Route path=":filter/:page" element={<AccountBuyerOrderList/>}/>
           </Route>
           <Route index element={<Navigate to="profile" />} />
         </Route>

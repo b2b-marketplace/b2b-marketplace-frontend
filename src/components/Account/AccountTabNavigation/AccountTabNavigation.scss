@@ -2,11 +2,14 @@
   display: flex;
   column-gap: 50px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 
-  &__link{
+  &__link {
     text-decoration: none;
     color: $fontColor;
-    &_active{
+
+    &_active {
       text-decoration: underline;
     }
   }
