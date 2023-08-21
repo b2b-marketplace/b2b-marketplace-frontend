@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/b2b-marketplace-frontend/static/css/main.8eab05e6.css",
+    "main.js": "/b2b-marketplace-frontend/static/js/main.758da218.js",
+    "static/media/3.jpg": "/b2b-marketplace-frontend/static/media/3.94881ec04c2e8c3bb306.jpg",
+    "static/media/2.jpg": "/b2b-marketplace-frontend/static/media/2.faad5cce4140e765daf2.jpg",
+    "static/media/1.jpg": "/b2b-marketplace-frontend/static/media/1.51e3c7ee2c27b74d9744.jpg",
+    "static/media/5.jpg": "/b2b-marketplace-frontend/static/media/5.f60c788d6830e806c134.jpg",
+    "static/media/4.jpg": "/b2b-marketplace-frontend/static/media/4.3e2c1bde5ebf18abc92e.jpg",
+    "static/media/promo-image.png": "/b2b-marketplace-frontend/static/media/promo-image.21b7c63e3bb5d57ce2f1.png",
+    "static/media/Inter-Bold.woff?v=3.19": "/b2b-marketplace-frontend/static/media/Inter-Bold.93c1301bd9f486c573b3.woff",
+    "static/media/Inter-SemiBold.woff?v=3.19": "/b2b-marketplace-frontend/static/media/Inter-SemiBold.cca62d21c8c555c392e5.woff",
+    "static/media/Inter-Medium.woff": "/b2b-marketplace-frontend/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Regular.woff": "/b2b-marketplace-frontend/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Bold.woff2?v=3.19": "/b2b-marketplace-frontend/static/media/Inter-Bold.ec64ea577b0349e055ad.woff2",
+    "static/media/Inter-Medium.woff2": "/b2b-marketplace-frontend/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-SemiBold.woff2?v=3.19": "/b2b-marketplace-frontend/static/media/Inter-SemiBold.b5f0f109bc88052d4000.woff2",
+    "static/media/Inter-Regular.woff2": "/b2b-marketplace-frontend/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/logofooter.svg": "/b2b-marketplace-frontend/static/media/logofooter.2ac0b8edef3a7a003dd8b7e623f0086b.svg",
+    "static/media/logo-registration.svg": "/b2b-marketplace-frontend/static/media/logo-registration.b2685b3ae4ef3adde5448eefb8ef8544.svg",
+    "index.html": "/b2b-marketplace-frontend/index.html",
+    "static/media/dotFill.svg": "/b2b-marketplace-frontend/static/media/dotFill.5a2e9e92d8e861ab4cc5.svg",
+    "static/media/dotNoFill.svg": "/b2b-marketplace-frontend/static/media/dotNoFill.057262ab3f30e3d11720.svg",
+    "main.8eab05e6.css.map": "/b2b-marketplace-frontend/static/css/main.8eab05e6.css.map",
+    "main.758da218.js.map": "/b2b-marketplace-frontend/static/js/main.758da218.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8eab05e6.css",
+    "static/js/main.758da218.js"
+  ]
+}
