@@ -10,6 +10,8 @@ import AccountBuyerOrders from "../Page/AccountPage/AccountBuyerOrders/AccountBu
 import AccountBuyerProfile from '../Page/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
 import BasketPage from "../Page/BasketPage/BasketPage";
 import AccountBuyerOrderList from "../Account/AccountBuyerOrdersList/AccountBuyerOrderList";
+import ProductPage from "../Page/ProductPage/ProductPage";
+import { PRODUCTS } from '../../utils/productCardExample';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} exact/>
         <Route path="/basket" element={<BasketPage/>} exact/>
+        <Route path="/product/*" element={<ProductPage product={PRODUCTS[ 0 ]}/>} exact/>
         <Route path="/account" element={<AccountPage/>}>
           <Route index path="profile" element={<AccountBuyerProfile/>} exact/>
           <Route path="product/add" element={<AccountSellerProductAdd/>} exact/>
@@ -26,7 +29,7 @@ function App() {
             <Route path=":filter" element={<AccountBuyerOrderList/>}/>
             <Route path=":filter/:page" element={<AccountBuyerOrderList/>}/>
           </Route>
-          <Route index element={<Navigate to="profile" />} />
+          <Route index element={<Navigate to="profile"/>}/>
         </Route>
       </Routes>
       <Footer/>
