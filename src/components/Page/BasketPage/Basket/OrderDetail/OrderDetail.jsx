@@ -4,7 +4,7 @@ import IconInfoFill from "../../../../UI/Icon/Icon_info_fill";
 import { Button } from "../../../../UI/Button/Button";
 import "./OrderDetail.scss";
 
-const OrderDetail = ({ className, ...props }) => {
+const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...props }) => {
   return (
     <div className={`order-detail ${className ? className : ''}`}>
       <div className="order-detail__header">
@@ -18,11 +18,11 @@ const OrderDetail = ({ className, ...props }) => {
           Итого:
         </div>
         <div className="order-detail__total-content">
-          <p className="order-detail__total-suppliers">2 поставщика</p>
-          <p className="order-detail__total-product">20 товаров</p>
+          <p className="order-detail__total-suppliers">{suppliersCount} поставщика</p>
+          <p className="order-detail__total-product">{productCount} товаров</p>
         </div>
       </div>
-      <div className="order-detail__price-total">80 000 ₽</div>
+      <div className="order-detail__price-total">{productSum} ₽</div>
       <div className="order-detail__buttons">
         <Button size="xxxl" primary={false} border={true} label={'Опубликовать'}>Перейти к оформлению</Button>
         <Button size="xxxl" primary={true} border={true} label={'Опубликовать'}>В рассрочку или кредит</Button>
