@@ -12,7 +12,7 @@ import ProductCharacteristicsList from "../ProductCharacteristic/ProductCharacte
  * Компонент ProductCardBasket для отображения товара в корзине.
  *
  * @param {string} className - Дополнительные CSS классы для настройки внешнего вида.
- * @param {function} onCheckboxClick - Функция обратного вызова при клике на чекбокс.
+ * @param {function} onClickCheckbox - Функция обратного вызова при клике на чекбокс.
  * @param {boolean} isCheckboxChecked - Состояние выбора чекбокса.
  * @param {object} product - Информация о продукте.
  * @param {object} props - Дополнительные пропсы компонента.
@@ -20,7 +20,7 @@ import ProductCharacteristicsList from "../ProductCharacteristic/ProductCharacte
  * @constructor
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const ProductCardBasket = ({ className, onCheckboxClick, isCheckboxChecked, product }) => {
+const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChecked }) => {
   const productInfo = product.product;
 
   return (
@@ -32,7 +32,7 @@ const ProductCardBasket = ({ className, onCheckboxClick, isCheckboxChecked, prod
       <div className="product-card-basket__container">
         <div className="product-card-basket__content">
           <div className="product-card-basket__checkbox">
-            <Checkbox onClick={onCheckboxClick} isChecked={isCheckboxChecked} id={productInfo.id}/>
+            <Checkbox onCheckboxClick={onClickCheckbox} isChecked={isCheckboxChecked}/>
           </div>
           <div className="product-card-basket__image-with-vendor-code">
             <img className="product-card-basket__image" src={imageStub} alt="Заглушка"/>
