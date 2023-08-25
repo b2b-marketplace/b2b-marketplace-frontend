@@ -9,24 +9,24 @@ import Counter from "../UI/Counter/Counter";
 import ProductCharacteristicsList from "../ProductCharacteristic/ProductCharacteristic";
 
 /**
- * Компонент ProductCardBasket для отображения товара в корзине.
+ * Компонент ProductCardBasket для отображения товара.
  *
  * @param {string} className - Дополнительные CSS классы для настройки внешнего вида.
+ * @param {object} product - Информация о продукте.
  * @param {function} onClickCheckbox - Функция обратного вызова при клике на чекбокс.
  * @param {boolean} isCheckboxChecked - Состояние выбора чекбокса.
- * @param {object} product - Информация о продукте.
- * @param {object} props - Дополнительные пропсы компонента.
+ * @param {function} onClickDeleteProduct - Функция обратного вызова при клике на кнопку удаление.
  * @returns {JSX.Element} - Возвращает JSX-элемент компонента CheckboxItem.
  * @constructor
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChecked }) => {
+const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChecked, onClickDeleteProduct }) => {
   const productInfo = product.product;
 
   return (
     <div className={`product-card-basket ${className ? className : ""}`}>
       <div className="product-card-basket__buttons">
-        <button type="button" className="product-card-basket__button"><IconTrash className="product-card-basket__icon-button"/></button>
+        <button onClick={onClickDeleteProduct} type="button" className="product-card-basket__button"><IconTrash className="product-card-basket__icon-button"/></button>
         <button type="button" className="product-card-basket__button"><IconHearth className="product-card-basket__icon-button"/></button>
       </div>
       <div className="product-card-basket__container">
