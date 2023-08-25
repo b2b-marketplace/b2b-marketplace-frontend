@@ -32,7 +32,7 @@ export const basketList = [
           //Добавлено
           "suppliers": [
             {
-              "id": 0,
+              "id": 1,
               "email": "user@example.com",
               "username": "@hqWgF4c2V+KytAySz",
               "company": {

@@ -106,4 +106,9 @@
     position: sticky;
   }
 
+  &__checkbox {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px
+  }
 }
