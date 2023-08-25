@@ -6,11 +6,19 @@ import ProductCardBasket from "../../../ProductCardBasket/ProductCardBasket";
 import OrderDetail from "./OrderDetail/OrderDetail";
 import { basketList } from "./mock";
 
+/**
+ * Компонент Basket для отображения товаров в корзине.
+ *
+ * @param className - Дополнительные CSS классы для настройки внешнего вида.
+ * @returns {JSX.Element} - Возвращает JSX-элемент компонента Basket.
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const Basket = ({ className }) => {
-  const [selectedProductList, setSelectedProductList] = useState([]);
   const [productList, setProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
+  const [selectedProductId, setSelectedProductId] = useState([]);
 
   const [orderInfo, setOrderInfo] = useState({
     productSum: 0,
@@ -23,54 +31,68 @@ const Basket = ({ className }) => {
   }, [basketList]);
 
   useEffect(() => {
-    const sumWithProduct = selectedProductList.reduce((total, currentProduct) => {
+    //Список выделенных товаров
+    const selectedProducts = productList.filter(product => selectedProductId.includes(product.product.id));
+    //Сумма цен выделенных продуктов
+    const sumWithProducts = selectedProducts.reduce((total, currentProduct) => {
+      //Цена продукта
       const productPrice = parseFloat(currentProduct.product.price.replace(/\s/g, ""));
+      //количество
       const productQuantity = parseFloat(currentProduct.quantity);
-      return total + productPrice * productQuantity;
+      return total + (productPrice * productQuantity);
     }, 0);
-
-    const suppliersId = new Set(selectedProductList.map(currentProduct => currentProduct.product.suppliers[ 0 ]?.id));
+    //Количество поставщиков | Set - представляет собой коллекцию значений, где каждое значение может присутствовать только один раз.
+    const suppliersId = new Set(selectedProducts.map(currentProduct => currentProduct.product.suppliers[ 0 ]?.id));
 
     setOrderInfo({
       suppliersCount: suppliersId.size,
-      productSum: sumWithProduct,
-      productCount: selectedProductList.reduce((total, currentProduct) => total + parseFloat(currentProduct.quantity), 0)
+      productSum: sumWithProducts,
+      productCount: selectedProducts.reduce((total, currentProduct) => total + parseFloat(currentProduct.quantity), 0)
     });
-  }, [selectedProductList]);
+  }, [selectedProductId, productList]);
 
-  const toggleProductSelection = (productId) => {
-    const updatedIsCheck = isCheck.includes(productId) ? isCheck.filter(item => item !== productId) : [...isCheck, productId];
-    const selectedProduct = productList.find(item => item.product.id === productId);
-    const updatedSelectedProductList = isCheck.includes(productId)
-      ? selectedProductList.filter(item => item.product.id !== productId)
-      : [...selectedProductList, selectedProduct];
+  /**
+   * Изменение состояния выбора продукта в корзине
+   * @param productId
+   */
+  const handleClickCheckboxProduct = (productId) => {
+    const updatedSelectedProductIds = selectedProductId.includes(productId)
+      ? selectedProductId.filter(id => id !== productId)
+      : [...selectedProductId, productId];
 
-    setIsCheck(updatedIsCheck);
-    setSelectedProductList(updatedSelectedProductList);
+    setSelectedProductId(updatedSelectedProductIds);
   };
 
-  const handleSelectAllCheckbox = () => {
+  /**
+   * Выбор всех продуктов
+   */
+  const handleClickCheckboxSelectAllProduct = () => {
     if (isCheckAll) {
-      setIsCheck([]);
-      setSelectedProductList([]);
+      setSelectedProductId([]);
     } else {
       const allProductIds = productList.map(product => product.product.id);
-      setIsCheck(allProductIds);
-      setSelectedProductList(productList);
+      setSelectedProductId(allProductIds);
     }
     setIsCheckAll(!isCheckAll);
   };
 
-  const handleDeleteSelected = () => {
-    const updatedProductList = productList.filter(product => !isCheck.includes(product.product.id));
-    const updatedSelectedProductList = selectedProductList.filter(product => !isCheck.includes(product.product.id));
+  /**
+   * Удаление выбранных продуктов
+   */
+  const handleClickDeleteSelectedProduct = () => {
+    const updatedProductList = productList.filter(product => !selectedProductId.includes(product.product.id));
 
     setProductList(updatedProductList);
-    setSelectedProductList(updatedSelectedProductList);
-
-    if (isCheckAll) {
-      setIsCheckAll(false);
-    }
+    setSelectedProductId([]);
+    setIsCheckAll(false);
+  };
+  /**
+   * Удаление продукта из корзины
+   * @param productId
+   */
+  const handleClickDeleteProduct = (productId) => {
+    const updatedProductList = productList.filter(product => product.product.id !== productId);
+    setProductList(updatedProductList);
   };
 
   return (
@@ -82,11 +104,11 @@ const Basket = ({ className }) => {
       <main className="basket__main">
         <div className="basket__panel">
           <div className="basket__panel-checkbox">
-            <Checkbox onCheckboxClick={handleSelectAllCheckbox} isChecked={isCheckAll} className="basket__checkbox">
+            <Checkbox onCheckboxClick={handleClickCheckboxSelectAllProduct} isChecked={isCheckAll} className="basket__checkbox">
               <span className="basket__checkbox-text">Выбрать все</span>
             </Checkbox>
           </div>
-          <button onClick={handleDeleteSelected} className="basket__panel-button">
+          <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
             <IconTrash className="basket__icon-trash"/>
             Удалить выбранные
           </button>
@@ -96,8 +118,9 @@ const Basket = ({ className }) => {
             {productList?.map((product) => (
               <li className="basket__product-item" key={product.product.id} data-id={product.product.id}>
                 <ProductCardBasket
-                  isCheckboxChecked={isCheck.includes(product.product.id)}
-                  onClickCheckbox={() => toggleProductSelection(product.product.id)}
+                  isCheckboxChecked={selectedProductId.includes(product.product.id)}
+                  onClickCheckbox={() => handleClickCheckboxProduct(product.product.id)}
+                  onClickDeleteProduct={() => handleClickDeleteProduct(product.product.id)}
                   product={product}
                   className="basket__product"/>
               </li>
