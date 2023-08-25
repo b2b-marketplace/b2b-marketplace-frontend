@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
+  cursor: pointer;
   /* для элемента input c type="checkbox" */
   &__input {
     position: absolute;
@@ -24,6 +25,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
+    z-index: -1;
 
     &_active {
       border-color: #000;

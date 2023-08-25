@@ -5,6 +5,27 @@ import { Button } from "../../../../UI/Button/Button";
 import "./OrderDetail.scss";
 
 const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...props }) => {
+
+  function getProductText(count) {
+    if (count === 1) {
+      return `${count} товар`;
+    } else if (count >= 2 && count <= 4) {
+      return `${count} товара`;
+    } else {
+      return `${count} товаров`;
+    }
+  }
+
+  function getSuppliersText(count) {
+    if (count === 1) {
+      return `${count} поставщик`;
+    } else if (count >= 2 && count <= 4) {
+      return `${count} поставщика`;
+    } else {
+      return `${count} поставщиков`;
+    }
+  }
+
   return (
     <div className={`order-detail ${className ? className : ''}`}>
       <div className="order-detail__header">
@@ -18,8 +39,8 @@ const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...p
           Итого:
         </div>
         <div className="order-detail__total-content">
-          <p className="order-detail__total-suppliers">{suppliersCount} поставщика</p>
-          <p className="order-detail__total-product">{productCount} товаров</p>
+          <p className="order-detail__total-suppliers">{getSuppliersText(suppliersCount)}</p>
+          <p className="order-detail__total-product">{getProductText(productCount)}</p>
         </div>
       </div>
       <div className="order-detail__price-total">{productSum} ₽</div>

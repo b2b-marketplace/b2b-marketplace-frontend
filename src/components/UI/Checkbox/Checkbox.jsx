@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import "./Checkbox.scss";
 
 /**
@@ -6,21 +6,24 @@ import "./Checkbox.scss";
  *
  * @param {string} className - Дополнительные CSS классы для настройки внешнего вида.
  * @param {string} name - Имя чекбокса.
- * @param {string} id - Уникальный идентификатор чекбокса.
- * @param {function} onClick - Функция обратного вызова при клике на элемент чекбокса.
+ * @param {function} onCheckboxClick - Функция обратного вызова при клике на элемент чекбокса.
  * @param {boolean} isChecked - Состояние выбора чекбокса.
+ * @param children -  Дочерние элементы.
  * @returns {JSX.Element} - Возвращает JSX-элемент компонента Checkbox.
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const Checkbox = ({ className, name, id, onClick, isChecked }) => {
+const Checkbox = ({ className, name, onCheckboxClick, isChecked, children }) => {
+
+  const containerRef = useRef(null);
 
   const handleClick = (event) => {
-    onClick(event);
+    if (event.target.tagName.toLowerCase() !== 'input')
+      onCheckboxClick(event);
+    event.stopPropagation();
   };
 
-
   return (
-    <label className={`checkbox ${className ? className : ''}`}>
+    <label onClick={handleClick} ref={containerRef} className={`checkbox ${className ? className : ''}`}>
       <input
         className="checkbox__input"
         type="checkbox"
@@ -30,7 +33,8 @@ const Checkbox = ({ className, name, id, onClick, isChecked }) => {
         onChange={() => {
         }}
       />
-      <div data-checked={isChecked} data-id={id} onClick={handleClick} className={`checkbox__checkbox ${isChecked ? "checkbox__checkbox_active" : ""}`}></div>
+      <span className={`checkbox__checkbox ${isChecked ? "checkbox__checkbox_active" : ""}`}></span>
+      {children}
     </label>
   );
 };

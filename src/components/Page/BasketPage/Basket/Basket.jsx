@@ -11,45 +11,66 @@ const Basket = ({ className }) => {
   const [productList, setProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [isCheck, setIsCheck] = useState([]);
-  const [orderInfo, setOrderInfo] = useState({ productSum: 0, productCount: 0, suppliersCount: 0 });
+
+  const [orderInfo, setOrderInfo] = useState({
+    productSum: 0,
+    productCount: 0,
+    suppliersCount: 0
+  });
 
   useEffect(() => {
-    setProductList(basketList[ 0 ].basket_products || []);
+    setProductList(basketList[ 0 ]?.basket_products || []);
   }, [basketList]);
 
   useEffect(() => {
-    const sumWithInitial = selectedProductList.reduce((accumulator, currentProduct) => accumulator + parseFloat(currentProduct.product.price.replace(/\s/g, "")), 0);
-    const sumProductCount = selectedProductList.reduce((accumulator, currentProduct) => accumulator + parseFloat(currentProduct.quantity), 0);
-    setOrderInfo(prevOrderInfo => ({
-      ...prevOrderInfo,
-      productSum: sumWithInitial,
-      productCount: sumProductCount,
-    }));
+    const sumWithProduct = selectedProductList.reduce((total, currentProduct) => {
+      const productPrice = parseFloat(currentProduct.product.price.replace(/\s/g, ""));
+      const productQuantity = parseFloat(currentProduct.quantity);
+      return total + productPrice * productQuantity;
+    }, 0);
+
+    const suppliersId = new Set(selectedProductList.map(currentProduct => currentProduct.product.suppliers[ 0 ]?.id));
+
+    setOrderInfo({
+      suppliersCount: suppliersId.size,
+      productSum: sumWithProduct,
+      productCount: selectedProductList.reduce((total, currentProduct) => total + parseFloat(currentProduct.quantity), 0)
+    });
   }, [selectedProductList]);
 
-  const handleCheckboxSelectAll = () => {
-    const allProductIds = productList.map(product => product.product.id);
+  const toggleProductSelection = (productId) => {
+    const updatedIsCheck = isCheck.includes(productId) ? isCheck.filter(item => item !== productId) : [...isCheck, productId];
+    const selectedProduct = productList.find(item => item.product.id === productId);
+    const updatedSelectedProductList = isCheck.includes(productId)
+      ? selectedProductList.filter(item => item.product.id !== productId)
+      : [...selectedProductList, selectedProduct];
 
+    setIsCheck(updatedIsCheck);
+    setSelectedProductList(updatedSelectedProductList);
+  };
+
+  const handleSelectAllCheckbox = () => {
     if (isCheckAll) {
       setIsCheck([]);
       setSelectedProductList([]);
     } else {
+      const allProductIds = productList.map(product => product.product.id);
       setIsCheck(allProductIds);
       setSelectedProductList(productList);
     }
-
     setIsCheckAll(!isCheckAll);
   };
 
-  const handleCheckboxClick = event => {
-    const { id } = event.target.dataset;
-    const numberValue = parseInt(id, 10);
-    const selectedProduct = productList.find(item => item.product.id === numberValue);
-    const updatedIsCheck = isCheck.includes(numberValue) ? isCheck.filter(item => item !== numberValue) : [...isCheck, numberValue];
-    const updatedSelectedProductList = isCheck.includes(numberValue) ? selectedProductList.filter(item => item.product.id !== numberValue) : [...selectedProductList, selectedProduct];
+  const handleDeleteSelected = () => {
+    const updatedProductList = productList.filter(product => !isCheck.includes(product.product.id));
+    const updatedSelectedProductList = selectedProductList.filter(product => !isCheck.includes(product.product.id));
 
-    setIsCheck(updatedIsCheck);
+    setProductList(updatedProductList);
     setSelectedProductList(updatedSelectedProductList);
+
+    if (isCheckAll) {
+      setIsCheckAll(false);
+    }
   };
 
   return (
@@ -61,10 +82,11 @@ const Basket = ({ className }) => {
       <main className="basket__main">
         <div className="basket__panel">
           <div className="basket__panel-checkbox">
-            <Checkbox onClick={handleCheckboxSelectAll} isChecked={isCheckAll} className="basket__checkbox"/>
-            <span className="basket__checkbox-text">Выбрать все</span>
+            <Checkbox onCheckboxClick={handleSelectAllCheckbox} isChecked={isCheckAll} className="basket__checkbox">
+              <span className="basket__checkbox-text">Выбрать все</span>
+            </Checkbox>
           </div>
-          <button className="basket__panel-button">
+          <button onClick={handleDeleteSelected} className="basket__panel-button">
             <IconTrash className="basket__icon-trash"/>
             Удалить выбранные
           </button>
@@ -72,10 +94,10 @@ const Basket = ({ className }) => {
         <div className="basket__container">
           <ul className="basket__product-list">
             {productList?.map((product) => (
-              <li className="basket__order-item" key={product.product.id}>
+              <li className="basket__product-item" key={product.product.id} data-id={product.product.id}>
                 <ProductCardBasket
                   isCheckboxChecked={isCheck.includes(product.product.id)}
-                  onCheckboxClick={handleCheckboxClick}
+                  onClickCheckbox={() => toggleProductSelection(product.product.id)}
                   product={product}
                   className="basket__product"/>
               </li>
