@@ -2,10 +2,13 @@
   background: $blackColor;
   color: $whiteColor;
   font-family: Nunito Sans;
-  padding: 92px 265px 50px 124px;
-  width: 100%;
+  padding: 86px 265px 50px 124px;
 
   &__container {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    min-width: $minWidth;
+
     display: flex;
     column-gap: 443px;
   }
@@ -36,6 +39,7 @@
   }
 
   &__title {
+    width: 262px;
     margin: 0;
     font-size: 20px;
     font-style: normal;
@@ -64,7 +68,7 @@
   }
 
   &__lists {
-    max-width: 262px;
+    width: 262px;
     display: flex;
     flex-direction: column;
     row-gap: 16px;
