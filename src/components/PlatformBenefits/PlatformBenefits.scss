@@ -1,7 +1,9 @@
 .platform-benefits {
   font-family: $fontFamily;
-  font-style: normal;
-  font-weight: 400;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color: $whiteColor;
   position: relative;
 
   &__list {
@@ -15,21 +17,20 @@
   }
 
   &__item {
-    max-width: 315px;
-    height: 160px;
+    max-width: 403px;
+    background-color: #23252E;
+    height: 144px;
     box-sizing: border-box;
     border: 1px solid #131313;
     border-radius: 20px;
     flex-shrink: 0;
-    //width: 100%;
     display: flex;
     column-gap: 16px;
-    padding: 24px 12px 0 24px;
+    padding: 20px;
   }
 
 
   &__icon {
-    //align-self: center;
     max-width: 44px;
     width: 100%;
     max-height: 44px;
@@ -39,22 +40,21 @@
   &__content {
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
-    //justify-content: center;
-    //max-width: 320px;
-    //margin: 20px 35px 24px 0;
+    row-gap: 20px;
   }
 
   &__title {
     margin: 0;
     font-size: 20px;
     font-weight: 500;
+    line-height: 28px;
   }
 
   &__text {
     margin: 0;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
     //max-width: 318px;
   }
 
