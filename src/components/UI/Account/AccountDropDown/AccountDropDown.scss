@@ -31,20 +31,16 @@
     color: #686868;
   }
 
-  &__icon {
-    display: flex;
-  }
-
   &__body {
     background: $whiteColor;
     border-top: 0;
     display: none;
-    transition: all 0.3s ease; /*анимация при изменении высоты элемента */
+    transition: all 0.3s ease; 
   }
 
   &__select.is-active .account-drop-down__body {
     display: block;
-    max-height: 100px; /*  максимальная высота меню */
+    max-height: 100px; 
     position: absolute;
   }
 

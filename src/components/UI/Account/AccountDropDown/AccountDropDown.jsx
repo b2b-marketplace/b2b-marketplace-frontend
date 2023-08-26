@@ -23,9 +23,7 @@ const AccountDropDown = ({ label }) => {
       <div className={`account-drop-down__select ${isMenuOpen ? 'is-active' : ''}`}>
         <div className="account-drop-down__header" onClick={toggleMenu}>
           <span className="account-drop-down__current">{selectedOption}</span>
-          <div className="account-drop-down__icon">
-            <IconArrowDown />
-          </div>
+          <IconArrowDown />
         </div>
 
         {isMenuOpen && (
