@@ -22,7 +22,7 @@ const PlatformBenefits = ({ className }) => {
           <IconRuble className="platform-benefits__icon"/>
           <div className="platform-benefits__content">
             <h4 className="platform-benefits__title">Выбор лучших цен</h4>
-            <p className="platform-benefits__text">Сравнивайте предложения и&nbsp;выбирайте самые выгодные</p>
+            <p className="platform-benefits__text">Сравнивайте и выбирайте выгодные</p>
           </div>
         </li>
 
@@ -30,7 +30,7 @@ const PlatformBenefits = ({ className }) => {
           <IconTimer className="platform-benefits__icon"/>
           <div className="platform-benefits__content">
             <h4 className="platform-benefits__title">Экономия времени</h4>
-            <p className="platform-benefits__text">Оформляйте заказ в&nbsp;несколько кликов в&nbsp;любое удобное время</p>
+            <p className="platform-benefits__text">Оформляйте заказ в несколько кликов</p>
           </div>
         </li>
 
@@ -38,7 +38,7 @@ const PlatformBenefits = ({ className }) => {
           <IconDiscountLight className="platform-benefits__icon"/>
           <div className="platform-benefits__content">
             <h4 className="platform-benefits__title">Еженедельные акции</h4>
-            <p className="platform-benefits__text">Узнавайте первыми о&nbsp;скидках и&nbsp;новинках поставщиков</p>
+            <p className="platform-benefits__text">Узнавайте первыми о скидках и новинках</p>
           </div>
         </li>
       </ul>
