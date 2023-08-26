@@ -4,11 +4,14 @@
   font-weight: $fontWeight;
   font-size: $fontSize;
   color: $fontColor;
-  width: 1320px;
-  padding: 0 60px;
+  max-width: $maxWidth;
+  min-width: $minWidth;
+  box-sizing: border-box;
+  margin: 20px auto 0;
+  padding: 0 124px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  width: 100%;
 
   &__info {
     width: 1440px;
@@ -26,13 +29,11 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-    background-color: white;
     border-style: none;
     background-color: black;
-    margin-top: 0px;
+    margin-top: 0;
     margin-right: 61px;
     color: #fff;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -43,6 +44,7 @@
 
     &-img {
     }
+
     &-text {
     }
 
@@ -80,10 +82,7 @@
       align-content: center;
       max-width: 155px;
       font-size: 18px;
-
       color: #000;
-      font-family: Inter;
-      font-size: 18px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -137,12 +136,9 @@
       background: #000;
       align-self: center;
       border-style: none;
-
       padding: 0;
       margin-right: 12px;
-
       color: #fff;
-      font-family: Inter;
       font-size: 20px;
       font-style: normal;
       font-weight: 500;
