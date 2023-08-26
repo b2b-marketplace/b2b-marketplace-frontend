@@ -13,7 +13,7 @@ const Promo = () => {
           <li className="promo__list-item">Сотрудничаем с компаниями и ИП</li>
         </ul>
       </div>
-      <img className="promo__image" src={PromoImage}></img>
+      <img alt="Промо" className="promo__image" src={PromoImage}></img>
     </div>
   );
 };
