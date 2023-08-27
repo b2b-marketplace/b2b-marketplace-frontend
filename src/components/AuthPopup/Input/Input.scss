@@ -1,5 +1,20 @@
 @import '../../../styles/vars';
 
+$correctColor: #6DFF85;
+
+// убрал стрелочки у инпута number при наведении
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
 .input {
 	background-color: $lightColor;
 	border-radius: 20px;
@@ -9,6 +24,7 @@
 	outline: none;
 	padding: 20px;
 	box-sizing: border-box;
+	appearance: none;
 
 
 	font-size: 24px;
@@ -33,10 +49,7 @@
 
 	&_type {
 		&_select {
-			appearance: none;
 			background-image: url("../../../images/select-icon.svg");
-			background-repeat: no-repeat;
-			background-position: right 20px;
 			background-repeat: no-repeat;
 			background-position: calc(100% - 23px) 26px;
 		}
@@ -45,18 +58,61 @@
 
 .input-label {
 	width: 100%;
+	position: relative;
+	width: 100vw;
+
+	&__button {
+		position: absolute;
+
+		&_type {
+
+			&_password {
+				top: 20px;
+				right: 20px;
+			}
+			&_info {
+				top: 25px;
+				left: calc(100% + 15px);
+			}
+		}
+	}
+
+	&_size {
+		&_l {
+			max-width: 968px;
+		}
+
+		&_m {
+			max-width: 600px;
+		}
+
+		&_s {
+			max-width: 476px;
+		}
+	}
 
 	&__span {
 		display: inline-block;
-		width: 100%;
 		text-align: left;
 		margin-top: 10px;
 		min-height: 22px;
-		
+		width: 100%;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 22px;
 		letter-spacing: 0;
 		color: $grayColor;
+		box-sizing: border-box;
 	}
+
+	&_type {
+		&_repeat>.input-label__span {
+			padding-left: 30px;
+			background-image: url("../../../images/check-password.svg");
+			background-repeat: no-repeat;
+			background-position: left;
+			color: $correctColor;
+		}
+	}
+
 }

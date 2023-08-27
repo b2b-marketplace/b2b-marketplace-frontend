@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import './Input.scss';
 
-const Input = ({ size, type, className, children, text, ...props }) => {
+const Input = ({ size, type, className, children, text, labelClassName, ...props }) => {
   const inputClass = ['input', `input_size_${size}`, className].join(' ');
+  const labelClass = ['input-label', `input-label_size_${size}`, labelClassName].join(' ');
   const isSelect = type === 'select';
   const selectClass = `${inputClass} input_type_select`;
 
   return (
-    <label className="input-label">
+    <label className={labelClass}>
       {
         isSelect
           ? (
@@ -18,11 +19,16 @@ const Input = ({ size, type, className, children, text, ...props }) => {
               {children}
             </select>
           ) : (
-            <input
-              className={inputClass}
-              type={type}
-              {...props}
-            />
+            <>
+              <input
+                className={inputClass}
+                type={type}
+                {...props}
+              />
+              {
+                children && children
+              }
+            </>
 
           )
       }
