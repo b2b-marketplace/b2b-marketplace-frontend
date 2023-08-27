@@ -6,6 +6,7 @@
   color: $fontColor;
   display: flex;
   column-gap: 20px;
+
   &__title {
     font-family: $fontFamilyUnbounded;
     font-size: 36px;
@@ -42,14 +43,10 @@
   }
 
   &__animation {
-
-
     animation: slideDownAnimation 1s ease forwards;
-
   }
 
   &__image {
-
     &_box1 {
       grid-column: 1/span 2;
       grid-row: 5/span 3;
