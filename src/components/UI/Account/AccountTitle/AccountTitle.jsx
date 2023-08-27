@@ -10,12 +10,12 @@ const AccountTitle = ({ title, icon, name }) => {
           <img className="account-title__logo" src={logo} alt="Логотоп." />
         </div>
 
-        <div className="account-title__about">
-          <h2 className="account-title__description">{name}</h2>
-          <p className="account-title__text">{title}</p>
-        </div>
+        <h2 className="account-title__description">{name}</h2>
+        <p className="account-title__text">{title}</p>
       </div>
-      <button className="account-title__button">{icon}</button>
+      <button className="account-title__button" type="button">
+        {icon}
+      </button>
     </section>
   );
 };

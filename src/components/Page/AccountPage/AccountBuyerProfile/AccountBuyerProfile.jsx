@@ -2,7 +2,6 @@ import React from 'react';
 import './AccountBuyerProfile.scss';
 import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import IconPencil from '../../../UI/Icon/Icon_pencil';
-import AccountRating from '../../../AccountPating/AccountPating';
 import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
 import Tooltip from '../../../UI/Tooltip/Tooltip';
 import IconPhone from '../../../UI/Icon/Icon_phone';
@@ -14,14 +13,8 @@ const AccountBuyerProfile = () => {
   return (
     <section className="account-buyer-profile">
       <div className="account-buyer-profile__blok">
-        <div className="account-buyer-profile__conteiner">
-          <AccountTitle
-            name="ООО «Компания»"
-            title="Покупатель"
-            icon={<IconPencil />}
-          />
-          <AccountRating />
-        </div>
+        <AccountTitle name="ООО «Компания»" title="Покупатель" icon={<IconPencil />} />
+
         <form className="account-buyer-profile__form">
           <div className="account-buyer-profile__control">
             <h2 className="account-buyer-profile__title">Данные покупателя</h2>

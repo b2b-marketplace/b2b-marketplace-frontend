@@ -15,12 +15,12 @@ const AccountSellerProductAdd = () => {
         <form className="account-seller-product-add__form">
           <FileUpload
             label="Добавить изображение"
-            text="Нажмите на «+» или&nbsp;перетащите фото в&nbsp;эту&nbsp;область"
+            text="Нажмите на «+» илиперетащите фото в эту область"
             comet="Изображение в формате PNG, JPEG. До 5 фото"
           />
           <FileUpload
             label="Добавить видео"
-            text="Нажмите на «+» или&nbsp;перетащите видео в&nbsp;эту область"
+            text="Нажмите на «+» или перетащите видео в эту область"
             comet="1 видео длительностью не более 3 мин"
           />
           <div className="account-seller-product-add__field">
@@ -58,7 +58,7 @@ const AccountSellerProductAdd = () => {
           </div>
           <div className="account-seller-product-add__control">
             <p className="account-seller-product-add__text">
-              Каждый товар проходит модерацию. В&nbsp;среднем проверка занимает 30 минут
+              Каждый товар проходит модерацию. В среднем проверка занимает 30 минут
             </p>
             <div className="account-seller-product-add__button-conteiner">
               <Button size="xxxxl" primary={false} border={true}>

@@ -7,20 +7,13 @@ import Tooltip from '../../../UI/Tooltip/Tooltip';
 import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
 import IconPencil from '../../../UI/Icon/Icon_pencil';
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
-import AccountPating from '../../../AccountPating/AccountPating';
 
 const AccountSellerProfile = () => {
   return (
     <section className="account-seller-profile">
       <div className="account-seller-profile__blok">
-        <div className="account-seller-profile__conteiner">
-          <AccountTitle
-            name="ООО «Компания»"
-            title="Продавец"
-            icon={<IconPencil />}
-          />
-          <AccountPating />
-        </div>
+        <AccountTitle name="ООО «Компания»" title="Продавец" icon={<IconPencil />} />
+
         <form className="account-seller-profile__form">
           <textarea
             className="account-seller-profile__description"
