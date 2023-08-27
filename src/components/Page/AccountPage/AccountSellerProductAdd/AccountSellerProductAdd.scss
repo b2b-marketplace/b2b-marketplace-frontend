@@ -7,7 +7,7 @@
     max-width: 877px;
     display: flex;
     flex-direction: column;
-    font-family: $fontFamily;
+    font-family: $fontFamilyNunitoSans;
     gap: 60px;
   }
 
@@ -61,7 +61,7 @@
     width: 626px;
     height: 237px;
     border-radius: 20px;
-    border: 1px solid $blackColor;
+    border: 1px solid $darkColor;
     padding: 18px 25px;
     color: #686868;
     font-size: 20px;
@@ -87,7 +87,7 @@
     height: 65px;
     box-sizing: border-box;
     border-radius: 20px;
-    border: 1px solid $blackColor;
+    border: 1px solid $darkColor;
 
     padding: 18px 16px;
     color: #686868;

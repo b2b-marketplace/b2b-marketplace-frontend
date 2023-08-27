@@ -1,8 +1,8 @@
 .product-block {
   display: flex;
   flex-direction: column;
-  font-family: $fontFamily;
-  color: $darkColor;
+  font-family: $fontFamilyNunitoSans;
+  color: $blackColor;
   font-style: normal;
   gap: 60px;
 
@@ -28,7 +28,7 @@
     width: 203px;
     height: 132px;
     border-radius: 20px;
-    border: 1px solid $darkColor;
+    border: 1px solid $blackColor;
     box-sizing: border-box;
   }
 
@@ -38,7 +38,7 @@
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 20px;
-    border: 1px solid $darkColor;
+    border: 1px solid $blackColor;
     box-sizing: border-box;
   }
 
@@ -154,7 +154,7 @@
       font-weight: 400;
       line-height: normal;
       &_checked {
-        border-bottom: solid 2px $darkColor;
+        border-bottom: solid 2px $blackColor;
       }
     }
   }

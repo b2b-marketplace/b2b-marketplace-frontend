@@ -1,5 +1,5 @@
 .basket {
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
   font-style: normal;
   font-weight: 400;
   margin-top: 60px;
@@ -32,7 +32,7 @@
 
   &__panel {
     box-sizing: border-box;
-    border: 1px solid $blackColor;
+    border: 1px solid $darkColor;
     border-radius: 20px;
     height: 73px;
     display: flex;

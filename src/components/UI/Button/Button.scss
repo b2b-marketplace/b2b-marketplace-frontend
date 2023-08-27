@@ -3,7 +3,7 @@
   padding: 0;
   cursor: pointer;
   font-style: $mainStyle;
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
   line-height: normal;
   display: flex;
   flex-direction: row;
@@ -70,20 +70,20 @@
   }
 
   &_primary {
-    background-color: $lightColor;
+    background-color: $whiteColor;
     border: none;
-    color: $darkColor;
+    color: $blackColor;
     &_border {
-      border: 1px solid $darkColor;
+      border: 1px solid $blackColor;
     }
   }
 
   &_secondary {
-    background-color: $darkColor;
+    background-color: $blackColor;
     border: none;
-    color: $lightColor;
+    color: $whiteColor;
     &_border {
-      border: 1px solid $lightColor;
+      border: 1px solid $whiteColor;
     }
   }
 
