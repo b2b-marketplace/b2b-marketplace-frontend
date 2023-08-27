@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
-import IconNext from "../../UI/Icon/IconNext";
 import Popup from "../Popup";
 import RegistrationFirstStep from "./RegistrationFirstStep/RegistrationFirstStep";
 import Stepper from "../Stepper/Stepper";
 import Form from "../Form/Form";
+import RegistrationSecondStep from "./RegistrationSecondStep/RegistrationSecondStep";
+import RegistrationThirdStep from "./RegistrationThirdStep/RegistrationThirdStep";
 
 const RegisterPopup = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1);
   const [userType, setUserType] = useState('');
 
-  const nextButtonClassName = `popup__button popup__next${step === 3 ? ' popup__next_hidden' : ''}`;
-
   const handleType = (event) => {
     setUserType(event.target.value);
   };
-  
-  const handleNextStep = () => {
+
+  const handleNextStep = (event) => {
+    event.preventDefault();
     setStep(step + 1);
   };
-  
+
 
   useEffect(() => {
     if (!isOpen) {
@@ -29,17 +29,24 @@ const RegisterPopup = ({ isOpen, onClose }) => {
 
   return (
     <Popup isOpen={isOpen} onClose={onClose}>
+      <Stepper step={step} />
       <Form
         className="popup__form"
-        isVisibleSubmit={step !== 3}
         submitText={'Завершить регистрацию'}
       >
-        <Stepper step={step} />
-        <RegistrationFirstStep userType={userType} onType={handleType} />
+        {
+          step === 1 &&
+            <RegistrationFirstStep onNext={handleNextStep} userType={userType} onType={handleType} />
+        }
+        {
+          step === 2 &&
+            <RegistrationSecondStep onNext={handleNextStep} />
+        }
+        {
+          step === 3 &&
+            <RegistrationThirdStep />
+        }
       </Form>
-      <button className={nextButtonClassName} onClick={handleNextStep}>
-        <IconNext />
-      </button>
     </Popup>
   );
 };

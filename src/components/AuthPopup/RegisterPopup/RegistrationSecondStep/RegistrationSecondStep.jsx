@@ -1,3 +1,4 @@
+import IconInfo from "../../../UI/Icon/IconInfo";
 import Input from "../../Input/Input";
 import NextButton from "../../NextButton/NextButton";
 
@@ -18,7 +19,11 @@ const RegistrationSecondStep = ({ onNext }) => {
         placeholder="ИНН"
         size="l"
         text="Без пробелов"
-      />
+      >
+        <button className="popup__button input-label__button input-label__button_type_info" type="button">
+          <IconInfo />
+        </button>
+      </Input>
       {/* <Input
         name="adress"
         type="text"
