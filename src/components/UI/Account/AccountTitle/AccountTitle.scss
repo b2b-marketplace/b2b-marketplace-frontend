@@ -1,14 +1,18 @@
 .account-title {
   display: flex;
   font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
   gap: 76px;
 
   &__conteiner {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 16px 20px;
   }
 
   &__conteiner-logo {
+    grid-row: span 2;
     width: 92px;
     height: 92px;
     border-radius: 50%;
@@ -19,38 +23,30 @@
   }
 
   &__logo {
-    width: 20px;
-    height: 20px;
-  }
-
-  &__about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
+    width: 48px;
+    height: 48px;
   }
 
   &__description {
     margin: 0;
     font-size: 30px;
-    font-style: $mainStyle;
-    font-weight: 500;
-    line-height: normal;
+    font-weight: 600;
+    line-height: 44px;
   }
 
   &__text {
     display: flex;
-    max-width: 129px;
-    height: 34px;
+    max-width: 119px;
+    height: 40px;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background: $darkColor;
+    background: $bluetColor;
     color: $whiteColor;
-    font-size: 18px;
-    font-style: $mainStyle;
-    font-weight: $mainWeight;
-    line-height: normal;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
     margin: 0;
   }
 

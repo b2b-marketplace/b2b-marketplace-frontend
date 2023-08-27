@@ -20,7 +20,7 @@ const PromoRegistration = ({ className }) => {
             Войти
           </Button>
         </div>
-        <img className="promo-registration__logo" src={logo} alt="Логотип." />
+        <img className="promo-registration__logo" src={logo} alt="Фото" />
       </div>
     </section>
   );
