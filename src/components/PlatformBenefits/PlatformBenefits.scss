@@ -1,5 +1,5 @@
 .platform-benefits {
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
   font-style: $fontStyle;
   font-weight: $fontWeight;
   font-size: $fontSize;
@@ -44,6 +44,7 @@
   }
 
   &__title {
+    font-family: $fontFamilyUnbounded;
     margin: 0;
     font-size: 20px;
     font-weight: 500;

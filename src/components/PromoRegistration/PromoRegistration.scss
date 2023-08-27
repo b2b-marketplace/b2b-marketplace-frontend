@@ -1,14 +1,14 @@
 .promo-registration {
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
   background: #b5dbff;
-  
+
 
   &__conteiner {
     padding-left: 142px;
     display: flex;
     align-items: center;
     column-gap: 160px;
-    
+
   }
 
   &__control {

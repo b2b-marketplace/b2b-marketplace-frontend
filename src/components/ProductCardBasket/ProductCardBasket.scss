@@ -1,12 +1,12 @@
 .product-card-basket {
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   color: $fontColor;
 
   box-sizing: border-box;
-  border: 1px solid $blackColor;
+  border: 1px solid $darkColor;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@
   &__image {
     display: block;
     box-sizing: border-box;
-    border: 1px solid $blackColor;
+    border: 1px solid $darkColor;
     border-radius: 20px;
     object-fit: cover;
     object-position: center;

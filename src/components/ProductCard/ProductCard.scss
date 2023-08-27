@@ -2,8 +2,8 @@
   width: 315px;
   height: 598px;
   border-radius: 20px;
-  border: 1px solid $darkColor;
-  font-family: $fontFamily;
+  border: 1px solid $blackColor;
+  font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
   position: relative;
   box-sizing: border-box;
@@ -24,7 +24,7 @@
   }
 
   &__title {
-    color: $darkColor;
+    color: $blackColor;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -35,7 +35,7 @@
   }
 
   &__price {
-    color: $darkColor;
+    color: $blackColor;
     font-size: 20px;
     font-weight: 600;
     font-style: normal;
@@ -102,7 +102,7 @@
   &__min-order {
     display: flex;
     flex-direction: row;
-    color: $darkColor;
+    color: $blackColor;
     font-size: 14px;
     font-style: normal;
     line-height: normal;

@@ -1,6 +1,6 @@
 .account-title {
   display: flex;
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
   gap: 76px;
 
   &__conteiner {
@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $blackColor;
+    background: $darkColor;
   }
 
   &__logo {
@@ -45,7 +45,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background: $blackColor;
+    background: $darkColor;
     color: $whiteColor;
     font-size: 18px;
     font-style: $mainStyle;

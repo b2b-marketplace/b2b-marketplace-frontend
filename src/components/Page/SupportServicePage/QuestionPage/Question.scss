@@ -1,7 +1,7 @@
 .question {
   display: flex;
   gap: 60px;
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
 
   &__menu-conteiner {
     display: grid;
@@ -43,7 +43,7 @@
   }
 
   &__link {
-    color: $darkColor;
+    color: $blackColor;
     font-size: 20px;
     font-style: $mainStyle;
     font-weight: $mainWeight;

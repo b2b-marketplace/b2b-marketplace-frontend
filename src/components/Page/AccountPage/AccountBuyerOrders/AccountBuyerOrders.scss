@@ -1,5 +1,5 @@
 .account-buyer-orders {
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
   font-style: $fontStyle;
   font-weight: $fontWeight;
   font-size: $fontSize;
@@ -40,7 +40,7 @@
   &__search {
     display: flex;
     box-sizing: border-box;
-    border: 1px solid $blackColor;
+    border: 1px solid $darkColor;
     border-radius: 30px;
     max-width: 519px;
     width: 100%;
