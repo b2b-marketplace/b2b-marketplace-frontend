@@ -1,14 +1,14 @@
 .footer {
   background: $darkColor;
   color: $whiteColor;
-  font-family: Nunito Sans;
-  padding: 86px 265px 50px 124px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
 
   &__container {
     margin: 0 auto;
     max-width: $maxWidth;
     min-width: $minWidth;
-
+    padding: 86px 0 50px 124px;
     display: flex;
     column-gap: 443px;
   }
@@ -19,9 +19,8 @@
     align-items: center;
     justify-content: flex-end;
     column-gap: 10px;
-    font-family: Unbounded;
+    font-family: $fontFamilyUnbounded;
     font-size: 28px;
-    font-style: normal;
     font-weight: 500;
     line-height: 36px;
     margin: 0;
