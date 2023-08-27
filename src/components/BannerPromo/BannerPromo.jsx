@@ -6,6 +6,13 @@ import box3 from "../../images/banner-promo/box3.png";
 import Polygon1 from "../../images/banner-promo/Polygon1.png";
 import InfoCards from "../InfoCards/InfoCards";
 
+/**
+ * BannerPromo компонент для отображения баннера на главной странице.
+ *
+ * @returns {JSX.Element} - Возвращает JSX-элемент компонента BannerPromo.
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const BannerPromo = () => {
   return (
     <section className="banner-promo">
