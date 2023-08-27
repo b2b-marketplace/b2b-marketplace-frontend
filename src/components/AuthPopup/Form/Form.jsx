@@ -1,5 +1,3 @@
-// import { Button } from "../../UI/Button/Button";
-
 const Form = ({ children, onSubmit, className, submitText }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -8,12 +6,7 @@ const Form = ({ children, onSubmit, className, submitText }) => {
   return (
     <form className={className} onSubmit={handleSubmit} >
       {children}
-      {/* <Button
-        className="popup__submit"
-        size={'xxxl'}
-        type="submit">
-        {submitText}
-      </Button> */}
+      
     </form>
   );
 };
