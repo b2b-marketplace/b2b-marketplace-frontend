@@ -5,7 +5,7 @@
   padding: 0 124px;
   max-width: $maxWidth;
   min-width: $minWidth;
-  margin: 20px auto 0;
+  margin: auto 0;
 
   &__platform-benefits {
     margin-top: 60px;
@@ -21,5 +21,6 @@
 
   &__promo-registration {
     margin-top: 80px;
+    padding: 0 100px;
   }
 }

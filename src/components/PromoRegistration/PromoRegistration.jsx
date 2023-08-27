@@ -13,7 +13,7 @@ const PromoRegistration = ({ className }) => {
             Зарегистрируйтесь на нашем портале и найдите новых клиентов, заказчиков и партнёров!
           </p>
 
-          <Button size="l" primary={false} border={true}>
+          <Button size="l" primary={false} border={false}>
             Зарегистрироваться
           </Button>
           <Button size="l" primary={true} border={true}>
