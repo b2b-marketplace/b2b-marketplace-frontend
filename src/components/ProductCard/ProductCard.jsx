@@ -1,4 +1,6 @@
 import { Button } from '../UI/Button/Button';
+
+import IconInfo from '../UI/Icon/Icon_info';
 import IconHearth from '../UI/Icon/Icon_hearth';
 import IconScales from '../UI/Icon/Icon_scales';
 import IconVerified from '../UI/Icon/Icon_verified';
@@ -16,7 +18,7 @@ function ProductCard({ product }) {
   return (
     <div className="card">
       <SliderImage images={product.images} />
-      <div className="card__icons">
+      {/* <div className="card__icons">
         {isOwnProduct ? (
           isVerified ? (
             <>
@@ -41,27 +43,37 @@ function ProductCard({ product }) {
             <IconHearth />
           </div>
         )}
-      </div>
+      </div> */}
 
       <div className="card__info">
-        <div className="card__info-top">
-          <Link to={`/product/${product.id}`} className="card__title">
-            {product.title}
-          </Link>
-          <ProductRating rating={product.rating} />
+        {/* <div className="card__info-top"> */}
+        <Link to={`/product/${product.id}`} className="card__title">
+          {product.description}
+        </Link>
+        {/* <ProductRating rating={product.rating} /> */}
+        {/* </div> */}
+        <div className='card__shipper'>
+          <p className="card__shipper-name">{product.shipper}</p>
+          <IconInfo />
         </div>
-        <p className="card__shipper">{product.shipper}</p>
 
-        <div className="card__description">{product.description}</div>
+        {/* <div className="card__description">{product.description}</div> */}
 
         <div className="card__min-order">
           <p className="card__min-order-title">Мин. заказ:</p>
           <p className="card__min-order-quantity">{`от ${product.orderQuantity} шт`}</p>
         </div>
 
-        <p className="card__price">{`${product.price} р`}</p>
+        <div className='card__info-bottom'>
 
-        <Button size="xl" primary={true} border={true}>
+          <p className="card__price">{`${product.price} ₽`}</p>
+          <div className='card__icons'>
+            <IconHearth />
+            <IconScales />
+          </div>
+        </div>
+
+        <Button size="m" mode='tertiary'>
           В корзину
         </Button>
       </div>

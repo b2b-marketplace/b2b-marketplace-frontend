@@ -8,6 +8,7 @@ import IconScales from '../UI/Icon/Icon_scales';
 import IconBasket from '../UI/Icon/Icon_basket';
 import IconProfile from '../UI/Icon/Icon_profile';
 import PopupCatalog from '../Popups/PopupCatalog/PopupCatalog';
+import { Button } from '../UI/Button/Button';
 
 const Catalog = () => {
   const [catalogPopup, setCatalogPopup] = useState(true);
@@ -18,9 +19,13 @@ const Catalog = () => {
 
   return (
     <div className="catalog">
-      <button className="catalog__button" onClick={openCatalogPopup}>
+      {/* <button className="catalog__button" onClick={openCatalogPopup}>
         <IconBurger /> <span className="catalog__button-text">Каталог</span>
-      </button>
+      </button> */}
+      <Button size='l' mode='secondary' >
+        <IconBurger />
+        Каталог
+      </Button>
       <ul className="catalog__list">
         <li className="catalog__list-item">
           <NavLink className="catalog__list-link" to="/">
