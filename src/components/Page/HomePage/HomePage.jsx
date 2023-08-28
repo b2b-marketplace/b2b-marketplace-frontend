@@ -14,7 +14,7 @@ const HomePage = () => {
       <PlatformBenefits className="home-page__platform-benefits"/>
       <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
       <BannerAdvertising className="home-page__banner"/>
-      <ProductCardContainer title="Новые товары" products={PRODUCTS} className="home-page__cards-container"/>
+      <ProductCardContainer title="Популярные товары" products={PRODUCTS} className="home-page__cards-container"/>
       <PromoRegistration className="home-page__promo-registration"/>
     </main>
   );

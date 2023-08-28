@@ -1,12 +1,12 @@
 .slider {
-  max-width: 100%;
-  max-height: 280px;
+  width: 100%;
+  height: $sliderHeight;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border-bottom: 1px solid $blackColor;
+  border-bottom: 1px solid $grayLightColor;
   &__images {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -23,12 +23,11 @@
   &__image {
     -o-object-fit: cover;
     object-fit: cover;
-    width: 315px;
-    height: 280px;
+    width: $cardWidth;
   }
 
   &__nav {
-    height: 280px;
+    height: $cardHeight;
     width: 100%;
     position: absolute;
     top: 0;
@@ -43,7 +42,7 @@
   }
 
   &__nav-column {
-    height: 100%;
+    height: $cardHeight;
     z-index: 2;
   }
 
@@ -62,7 +61,7 @@
     -webkit-column-gap: 10px;
     -moz-column-gap: 10px;
     column-gap: 10px;
-    top: 248px;
+    bottom: 16px;
     left: 0;
     right: 0;
     z-index: 1;

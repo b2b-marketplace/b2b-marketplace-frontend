@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 
 export default function ProductCardContainer({ title, products, className }) {
   const [displayCards, setDisplayCards] = useState([]);
-  const [cardsQuantity, setCardsQuantity] = useState(4);
+  const [cardsQuantity, setCardsQuantity] = useState(6);
 
   const handleAddCards = () => {
-    setCardsQuantity(cardsQuantity + 4);
+    setCardsQuantity(cardsQuantity + 6);
   };
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ProductCardContainer({ title, products, className }) {
       {cardsQuantity >= products?.length ? (
         <></>
       ) : (
-        <Button primary size="l" onClick={handleAddCards}>
+        <Button mode='secondary' size="xl" onClick={handleAddCards}>
           Смотреть ещё
         </Button>
       )}
