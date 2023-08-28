@@ -25,10 +25,10 @@ const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChec
 
   return (
     <div className={`product-card-basket ${className ? className : ""}`}>
-      <div className="product-card-basket__buttons">
-        <button onClick={onClickDeleteProduct} type="button" className="product-card-basket__button"><IconTrash className="product-card-basket__icon-button"/></button>
-        <button type="button" className="product-card-basket__button"><IconHearth className="product-card-basket__icon-button"/></button>
-      </div>
+      {/*<div className="product-card-basket__buttons">*/}
+      {/*  <button onClick={onClickDeleteProduct} type="button" className="product-card-basket__button"><IconTrash className="product-card-basket__icon-button"/></button>*/}
+      {/*  <button type="button" className="product-card-basket__button"><IconHearth className="product-card-basket__icon-button"/></button>*/}
+      {/*</div>*/}
       <div className="product-card-basket__container">
         <div className="product-card-basket__content">
           <div className="product-card-basket__checkbox">

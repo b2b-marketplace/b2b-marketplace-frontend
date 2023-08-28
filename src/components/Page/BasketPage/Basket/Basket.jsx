@@ -97,35 +97,39 @@ const Basket = ({ className }) => {
 
   return (
     <section className={`basket ${className}`}>
-      <header className="basket__header">
-        <h1 className="basket__title">Корзина</h1>
-        <p className="basket__title-product-count">{productList.length}</p>
-      </header>
+      {/*<header className="basket__header">*/}
+      {/*  <h1 className="basket__title">Корзина</h1>*/}
+      {/*  <p className="basket__title-product-count">{productList.length}</p>*/}
+      {/*</header>*/}
       <main className="basket__main">
-        <div className="basket__panel">
-          <div className="basket__panel-checkbox">
-            <Checkbox onCheckboxClick={handleClickCheckboxSelectAllProduct} isChecked={isCheckAll} className="basket__checkbox">
-              <span className="basket__checkbox-text">Выбрать все</span>
-            </Checkbox>
-          </div>
-          <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
-            <IconTrash className="basket__icon-trash"/>
-            Удалить выбранные
-          </button>
-        </div>
+
         <div className="basket__container">
-          <ul className="basket__product-list">
-            {productList?.map((product) => (
-              <li className="basket__product-item" key={product.product.id} data-id={product.product.id}>
-                <ProductCardBasket
-                  isCheckboxChecked={selectedProductId.includes(product.product.id)}
-                  onClickCheckbox={() => handleClickCheckboxProduct(product.product.id)}
-                  onClickDeleteProduct={() => handleClickDeleteProduct(product.product.id)}
-                  product={product}
-                  className="basket__product"/>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <div className="basket__panel">
+              <div className="basket__panel-checkbox">
+                <Checkbox onCheckboxClick={handleClickCheckboxSelectAllProduct} isChecked={isCheckAll} className="basket__checkbox">
+                  <span className="basket__checkbox-text">Выбрать все</span>
+                </Checkbox>
+              </div>
+              <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
+                <IconTrash className="basket__icon-trash"/>
+                Удалить выбранные
+              </button>
+            </div>
+            <ul className="basket__product-list">
+              {productList?.map((product) => (
+                <li className="basket__product-item" key={product.product.id} data-id={product.product.id}>
+                  <ProductCardBasket
+                    isCheckboxChecked={selectedProductId.includes(product.product.id)}
+                    onClickCheckbox={() => handleClickCheckboxProduct(product.product.id)}
+                    onClickDeleteProduct={() => handleClickDeleteProduct(product.product.id)}
+                    product={product}
+                    className="basket__product"/>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div className="basket__order-detail-container">
             <OrderDetail
               productSum={orderInfo.productSum}

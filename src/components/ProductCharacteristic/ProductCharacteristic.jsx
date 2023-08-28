@@ -21,8 +21,8 @@ const ProductCharacteristicsList = ({ characteristics }) => {
 
     return (
       <div className="product-characteristic">
-        <span className="characteristic-label">{characteristicName}:</span>
-        <span className="characteristic-value">
+        <span className="product-characteristic__label">{characteristicName}:</span>
+        <span className="product-characteristic__value">
           {CharacteristicComponent ? (
             <CharacteristicComponent characteristicValue={value}/>
           ) : (

@@ -6,30 +6,30 @@
   color: $fontColor;
 
   box-sizing: border-box;
-  border: 1px solid $darkColor;
+  border: 1px solid $grayLightColor;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  padding: 32px 35px 46px 32px;
+  padding: 20px 40px;
   width: 100%;
   row-gap: 4px;
 
-  &__buttons {
-    display: flex;
-    column-gap: 20px;
-    justify-content: end;
-  }
+  //&__buttons {
+  //  display: flex;
+  //  column-gap: 20px;
+  //  justify-content: end;
+  //}
 
-  &__button {
-    border: none;
-    background: transparent;
-    transition: opacity linear .3s;
-    padding: 0;
-
-    &:hover {
-      opacity: .7;
-    }
-  }
+  //&__button {
+  //  border: none;
+  //  background: transparent;
+  //  transition: opacity linear .3s;
+  //  padding: 0;
+  //
+  //  &:hover {
+  //    opacity: .7;
+  //  }
+  //}
 
   &__icon-button {
     width: 32px;
@@ -46,55 +46,65 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    column-gap: 32px;
-    flex-shrink: 0;
+    //column-gap: 32px;
+    //flex-shrink: 0;
   }
 
   &__content {
     display: flex;
     flex-direction: row;
-    column-gap: 28px;
+    column-gap: 24px;
 
   }
 
   &__image {
     display: block;
     box-sizing: border-box;
-    border: 1px solid $darkColor;
+    border: 1px solid $grayLightColor;
     border-radius: 20px;
     object-fit: cover;
     object-position: center;
-    max-width: 132px;
+    width: 122px;
+    height: 108px;
   }
 
   &__image-with-vendor-code {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 4px;
+    text-align: center;
+    justify-content: center;
   }
 
   &__details {
     display: flex;
     flex-direction: column;
-    row-gap: 31px;
-    flex-shrink: 0;
+    //align-content: space-between;
+    row-gap: 16px;
+    //flex-shrink: 0;
+    max-width: 447px;
   }
 
   &__details-header {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 4px;
   }
 
   &__product-title {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
     margin: 0;
   }
 
   &__product-company {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: $grayColor;
     margin: 0;
   }
 
@@ -102,7 +112,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 13px;
+    row-gap: 4px;
   }
 
   &__characteristic {
