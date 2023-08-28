@@ -23,7 +23,7 @@ const SidebarLeft = ({ menuItems, phone, icon1, icon2, text1, text2 }) => {
         </ul>
 
         <div className="sidebar-left__profile-control">
-          <div className="sidebar-left__links">
+          <div className="sidebar-left__items">
             <Link className="sidebar-left__link">
               {icon1} {text1}
             </Link>
