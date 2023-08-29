@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Catalog.scss';
 import IconBurger from '../UI/Icon/Icon_burger';
@@ -9,15 +9,22 @@ import IconProfile from '../UI/Icon/Icon_profile';
 
 import { Button } from '../UI/Button/Button';
 import IconMessage from '../UI/Icon/Icon_message';
+import PopupCatalog from '../PopupCatalog/PopupCatalog';
 
 const Catalog = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
   return (
     <div className="catalog">
-      <Button size="l" mode="secondary">
+      <Button size="l" mode="secondary" onClick={togglePopup} >
         <IconBurger />
-        Каталог
+        Каталог 
       </Button>
-
+      
       <nav className="catalog__navigation">
         <NavLink className="catalog__link" to="/">
           Поставщики
@@ -58,6 +65,8 @@ const Catalog = () => {
           <IconProfile />
         </Link>
       </nav>
+
+      {isPopupOpen && <PopupCatalog onClose={togglePopup} />}
     </div>
   );
 };
