@@ -5,7 +5,7 @@ import './Counter.scss';
 import IconPlus from "../Icon/Icon_plus";
 import IconMinus from "../Icon/Icon_minus";
 
-const Counter = ({ initCount = 0, onChangeProductQuantity }) => {
+const Counter = ({ initCount = 0, minValue = 1, maxValue, onChangeProductQuantity }) => {
   const [count, setCount] = useState(initCount);
 
 
@@ -22,8 +22,12 @@ const Counter = ({ initCount = 0, onChangeProductQuantity }) => {
   };
 
   const handleChangeInput = (event) => {
-    setCount(event.target.value);
-    onChangeProductQuantity(event.target.value);
+    const productCount = parseInt(event.target.value);
+    if (!isNaN(productCount)) {
+      setCount(productCount);
+      onChangeProductQuantity(productCount);
+    }
+    
   };
   return (
     <div className="counter">
@@ -32,6 +36,8 @@ const Counter = ({ initCount = 0, onChangeProductQuantity }) => {
       </button>
       <input
         type="number"
+        min={minValue}
+        max={maxValue}
         className="counter__input"
         value={count}
         onChange={handleChangeInput}/>
