@@ -1,7 +1,7 @@
 .product-card-basket {
   font-family: $fontFamilyNunitoSans;
-  font-style: normal;
-  font-weight: 400;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
   font-size: 16px;
   color: $fontColor;
 
@@ -9,32 +9,11 @@
   border: 1px solid $grayLightColor;
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
-  padding: 20px 40px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 40px 20px 44px;
   width: 100%;
   row-gap: 4px;
-
-  //&__buttons {
-  //  display: flex;
-  //  column-gap: 20px;
-  //  justify-content: end;
-  //}
-
-  //&__button {
-  //  border: none;
-  //  background: transparent;
-  //  transition: opacity linear .3s;
-  //  padding: 0;
-  //
-  //  &:hover {
-  //    opacity: .7;
-  //  }
-  //}
-
-  &__icon-button {
-    width: 32px;
-    height: 32px;
-  }
 
   &__checkbox {
     align-self: center;
@@ -43,18 +22,13 @@
   }
 
   &__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    //column-gap: 32px;
-    //flex-shrink: 0;
+
   }
 
   &__content {
     display: flex;
     flex-direction: row;
     column-gap: 24px;
-
   }
 
   &__image {
@@ -79,9 +53,7 @@
   &__details {
     display: flex;
     flex-direction: column;
-    //align-content: space-between;
     row-gap: 16px;
-    //flex-shrink: 0;
     max-width: 447px;
   }
 
@@ -125,25 +97,52 @@
     }
   }
 
+  &__price-count-like {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    max-width: 420px;
+    width: 100%;
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 20px;
+    justify-content: end;
+  }
+
+  &__button {
+    border: none;
+    background: transparent;
+    transition: opacity linear .3s;
+    padding: 0;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__icon-button {
+    width: 32px;
+    height: 32px;
+  }
 
   &__price-count {
     display: flex;
     align-items: center;
-    column-gap: 40px;
+    max-width: 420px;
+    width: 100%;
+    justify-content: space-between;
   }
 
   &__product-count {
-    //width: 170px;
-    //height: 40px;
-    //align-self: center;
-    //box-sizing: border-box;
-    //border: 1px solid $blackColor;
   }
 
   &__product-price {
-    font-size: 24px;
-    font-weight: 600;
-
+    font-family: $fontFamilyUnbounded;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
   }
-
 }

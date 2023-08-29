@@ -8,7 +8,7 @@ export const basketList = [
           "sku": "1234567",
           "name": "Детская зимняя куртка для девочки, средней плотности с мембранным напылением 5000/5000.",
           "brand": "Бренд",
-          "price": "100",
+          "price": "40000",
           "wholesale_quantity": 0,
           "video": "string",
           "quantity_in_stock": 0,
@@ -55,7 +55,8 @@ export const basketList = [
           ],
         },
         "quantity": 1
-      }, {
+      },
+      {
         "product": {
           "id": 1,
           "sku": "1234567",
@@ -108,7 +109,8 @@ export const basketList = [
           ],
         },
         "quantity": 2
-      }, {
+      },
+      {
         "product": {
           "id": 3,
           "sku": "1234567",

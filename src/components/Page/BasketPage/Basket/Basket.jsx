@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./Basket.scss";
 import Checkbox from "../../../UI/Checkbox/Checkbox";
 import IconTrash from "../../../UI/Icon/Icon_trash";
@@ -19,6 +19,7 @@ const Basket = ({ className }) => {
   const [productList, setProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
+
 
   const [orderInfo, setOrderInfo] = useState({
     productSum: 0,
@@ -95,16 +96,42 @@ const Basket = ({ className }) => {
     setProductList(updatedProductList);
   };
 
-  return (
-    <section className={`basket ${className}`}>
-      {/*<header className="basket__header">*/}
-      {/*  <h1 className="basket__title">Корзина</h1>*/}
-      {/*  <p className="basket__title-product-count">{productList.length}</p>*/}
-      {/*</header>*/}
-      <main className="basket__main">
+  /**
+   * Изменение количества продуктов в корзине
+   *
+   * @param productId
+   * @param quantity
+   */
+  const handleChangeProductQuantity = (productId, quantity) => {
+    updatedBasketList(productId, quantity);
 
+  };
+
+  /**
+   * Обновление количество продуктов в корзине
+   *
+   * @param productId
+   * @param quantity
+   * @returns {unknown[]}
+   */
+  const updatedBasketList = (productId, quantity) => {
+    const basketList = productList.map(product => {
+      if (product.product.id === productId) {
+        return {
+          ...product,
+          quantity: quantity
+        };
+      }
+      return product; // Если это не нужный продукт, возвращаем без изменений
+    });
+    setProductList(basketList || []);
+  };
+
+  return (
+    <section className={`basket ${className || ''} `}>
+      <main className="basket__main">
         <div className="basket__container">
-          <div>
+          <div className="basket__container-product">
             <div className="basket__panel">
               <div className="basket__panel-checkbox">
                 <Checkbox onCheckboxClick={handleClickCheckboxSelectAllProduct} isChecked={isCheckAll} className="basket__checkbox">
@@ -123,6 +150,7 @@ const Basket = ({ className }) => {
                     isCheckboxChecked={selectedProductId.includes(product.product.id)}
                     onClickCheckbox={() => handleClickCheckboxProduct(product.product.id)}
                     onClickDeleteProduct={() => handleClickDeleteProduct(product.product.id)}
+                    onChangeProductQuantity={(count) => handleChangeProductQuantity(product.product.id, count)}
                     product={product}
                     className="basket__product"/>
                 </li>
