@@ -8,9 +8,6 @@ import IconMinus from "../Icon/Icon_minus";
 const Counter = ({ initCount = 0, onChangeProductQuantity }) => {
   const [count, setCount] = useState(initCount);
 
-  // useEffect(() => {
-  //   onChangeProductQuantity(count);
-  // }, [count]);
 
   const handleLeft = (event) => {
     const productCount = count - 1 === 0 ? count : count - 1;
@@ -24,6 +21,10 @@ const Counter = ({ initCount = 0, onChangeProductQuantity }) => {
     onChangeProductQuantity(productCount);
   };
 
+  const handleChangeInput = (event) => {
+    setCount(event.target.value);
+    onChangeProductQuantity(event.target.value);
+  };
   return (
     <div className="counter">
       <button className="counter__button" onClick={handleLeft}>
@@ -33,9 +34,7 @@ const Counter = ({ initCount = 0, onChangeProductQuantity }) => {
         type="number"
         className="counter__input"
         value={count}
-        onChange={(event) => {
-          setCount(+event.target.value);
-        }}/>
+        onChange={handleChangeInput}/>
       <button className="counter__button" onClick={handleRight}>
         <IconPlus className={'counter__icon'}/>
       </button>
