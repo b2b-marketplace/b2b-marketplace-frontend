@@ -16,7 +16,7 @@ export default function ProductCardContainer({ title, products, className }) {
   }, [cardsQuantity, products]);
 
   return (
-    <section className={`cards-container ${className ? className : ''}`}>
+    <section className={`cards-container ${className || ''}`}>
       <h3 className="cards-container__title">{title}</h3>
 
       <div className="cards-container__cards">

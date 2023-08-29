@@ -1,69 +1,95 @@
 .order-detail {
-  box-sizing: border-box;
-  top: 40px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  color: $fontColor;
+  top: 0;
   right: 0;
-  max-width: 427px;
-  width: 100%;
-  height: 573px;
-  border: 1px solid $darkColor;
-  border-radius: 20px;
-  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  //max-width: 403px;
+  //width: 100%;
+  //height: 573px;
+
+
+  &__container {
+    width: 100%;
+    border: 1px solid $grayLightColor;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 32px 32px 32px;
+  }
 
   &__header {
     display: flex;
-    column-gap: 32px;
+
     align-items: center;
+    justify-content: space-between;
   }
 
   &__title {
-    margin: 0;
-    font-size: 30px;
+    font-family: $fontFamilyUnbounded;
+    font-size: 20px;
     font-weight: 500;
+    line-height: 28px;
+    margin: 0;
   }
 
   &__icon-info {
-    width: 16.667px;
-    height: 16.667px;
+    width: 32px;
+    height: 32px;
+    color: #222222;
   }
 
   &__total {
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 20px;
+    margin-top: 20px;
   }
 
   &__total-label {
-    font-size: 20px;
-    margin-top: 25px;
 
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px
   }
 
   &__total-content {
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 16px;
   }
 
   &__total-suppliers {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
     margin: 0;
   }
 
   &__total-product {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
     margin: 0;
   }
 
   &__price-total {
-    margin-top: 67px;
-    font-size: 30px;
-    font-weight: 700;
+    font-family: $fontFamilyUnbounded;
+    margin-top: 40px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
   }
 
   &__buttons {
-    margin-top: 34px;
+    box-sizing: border-box;
+    padding: 32px 71px 32px 70px;
+    border: 1px solid $grayLightColor;
+    border-radius: 20px;
+    //margin-top: 34px;
     display: flex;
     flex-direction: column;
     row-gap: 14px;

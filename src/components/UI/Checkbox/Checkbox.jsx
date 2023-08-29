@@ -23,7 +23,7 @@ const Checkbox = ({ className, name, onCheckboxClick, isChecked, children }) => 
   };
 
   return (
-    <label onClick={handleClick} ref={containerRef} className={`checkbox ${className ? className : ''}`}>
+    <label onClick={handleClick} ref={containerRef} className={`checkbox ${className || ''}`}>
       <input
         className="checkbox__input"
         type="checkbox"

@@ -1,28 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import IconArrowCounter from '../Icon/Icon_arrow-counter';
 import './Counter.scss';
+import IconPlus from "../Icon/Icon_plus";
+import IconMinus from "../Icon/Icon_minus";
 
-const Counter = ({ initCount = 2000 }) => {
+const Counter = ({ initCount = 0, minValue = 1, maxValue, onChangeProductQuantity }) => {
   const [count, setCount] = useState(initCount);
-  const handleLeft = () => {
-    count - 1 === 0 ? setCount(count) : setCount(count - 1);
+
+
+  const handleLeft = (event) => {
+    const productCount = count - 1 === 0 ? count : count - 1;
+    setCount(productCount);
+    onChangeProductQuantity(productCount);
   };
 
-  const handleRight = () => {
-    setCount(count + 1);
+  const handleRight = (event) => {
+    const productCount = count + 1;
+    setCount(productCount);
+    onChangeProductQuantity(productCount);
   };
 
+  const handleChangeInput = (event) => {
+    const productCount = parseInt(event.target.value);
+    if (!isNaN(productCount)) {
+      setCount(productCount);
+      onChangeProductQuantity(productCount);
+    }
+    
+  };
   return (
     <div className="counter">
       <button className="counter__button" onClick={handleLeft}>
-        <IconArrowCounter className={'counter__icon-left'}/>
+        <IconMinus className={'counter__icon'}/>
       </button>
-      <input type="number" className="counter__count-conteiner" value={count} onChange={(event) => {
-        setCount(+event.target.value);
-      }}/>
+      <input
+        type="number"
+        min={minValue}
+        max={maxValue}
+        className="counter__input"
+        value={count}
+        onChange={handleChangeInput}/>
       <button className="counter__button" onClick={handleRight}>
-        <IconArrowCounter className={'counter__icon-right'}/>
+        <IconPlus className={'counter__icon'}/>
       </button>
     </div>
   );

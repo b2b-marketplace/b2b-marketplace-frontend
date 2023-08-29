@@ -5,6 +5,7 @@ import { Button } from "../../../../UI/Button/Button";
 import "./OrderDetail.scss";
 
 const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...props }) => {
+  const productSumPrice = new Intl.NumberFormat('ru-RU').format(parseFloat(productSum));
 
   function getProductText(count) {
     if (count === 1) {
@@ -27,26 +28,29 @@ const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...p
   }
 
   return (
-    <div className={`order-detail ${className ? className : ''}`}>
-      <div className="order-detail__header">
-        <h3 className="order-detail__title">Детали заказа</h3>
-        <Tooltip position="top" tooltipContent={<>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>}>
-          <IconInfoFill className="order-detail__icon-info"/>
-        </Tooltip>
-      </div>
-      <div className="order-detail__total">
-        <div className="order-detail__total-label">
-          Итого:
+    <div className={`order-detail ${className || ''}`}>
+      <div className="order-detail__container">
+        <div className="order-detail__header">
+          <h3 className="order-detail__title">Детали заказа</h3>
+          <Tooltip position="top" tooltipContent={<>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>}>
+            <IconInfoFill className="order-detail__icon-info"/>
+          </Tooltip>
         </div>
-        <div className="order-detail__total-content">
-          <p className="order-detail__total-suppliers">{getSuppliersText(suppliersCount)}</p>
-          <p className="order-detail__total-product">{getProductText(productCount)}</p>
+        <div className="order-detail__total">
+          <div className="order-detail__total-label">
+            Итог:
+          </div>
+          <div className="order-detail__total-content">
+            <p className="order-detail__total-suppliers">{getSuppliersText(suppliersCount)}</p>
+            <p className="order-detail__total-product">{getProductText(productCount)}</p>
+          </div>
         </div>
+        <div className="order-detail__price-total">{productSumPrice} ₽</div>
       </div>
-      <div className="order-detail__price-total">{productSum} ₽</div>
+
       <div className="order-detail__buttons">
-        <Button size="xxxl" primary={false} border={true} label={'Опубликовать'}>Перейти к оформлению</Button>
-        <Button size="xxxl" primary={true} border={true} label={'Опубликовать'}>В рассрочку или кредит</Button>
+        <Button size="xl" mode="secondary" border={true} label={'Опубликовать'}>Купить</Button>
+        <Button size="xl" mode="primary" border={true} label={'Опубликовать'}>Рассрочка</Button>
       </div>
     </div>
   );
