@@ -6,7 +6,7 @@ import Form from "../Form/Form";
 import RegistrationSecondStep from "./RegistrationSecondStep/RegistrationSecondStep";
 import RegistrationThirdStep from "./RegistrationThirdStep/RegistrationThirdStep";
 
-const RegisterPopup = ({ isOpen, onClose }) => {
+const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
   const [step, setStep] = useState(1);
   const [userType, setUserType] = useState('');
 
@@ -16,6 +16,7 @@ const RegisterPopup = ({ isOpen, onClose }) => {
 
   const handleSubmit = () => {
     onClose();
+    onSubmit && onSubmit();
   };
 
   const handleNextStep = (event) => {

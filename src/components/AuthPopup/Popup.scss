@@ -74,7 +74,11 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			width: inherit
+			width: inherit;
+
+			&_complete-register {
+				max-width: 852px;
+			}
 		}
 
 		&__form {
@@ -86,6 +90,10 @@
 			@include marginTop(130px);
 			@include text(500, 61px, 50px);
 			width: fit-content;
+
+			&_complete-register {
+				@include text(500, 48px, 40px);
+			}
 		}
 
 		&__subtitle {
@@ -215,6 +223,25 @@
 
 			&-span {
 				@include text(400, 29px, 24px);
+			}
+		}
+
+		&__regiter-opportunities {
+			list-style-type: none;
+			display: flex;
+			flex-direction: column;
+			gap: 40px 0;
+			@include marginTop(70px);
+		}
+
+		&__regiter-opportunity {
+			display: flex;
+			gap: 0 41px;
+
+			& > p {
+				@include text(500, 36px, 30px);
+				@include marginTop(0);
+				text-align: left;
 			}
 		}
 	}
