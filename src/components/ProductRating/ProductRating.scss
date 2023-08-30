@@ -1,0 +1,18 @@
+@import './../../styles/_vars.scss';
+.product-rating {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 46px;
+  max-height: 20px;
+  color: $blackColor;
+
+  &__text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

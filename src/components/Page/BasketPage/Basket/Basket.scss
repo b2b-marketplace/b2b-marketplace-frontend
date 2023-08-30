@@ -1,0 +1,134 @@
+.basket {
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  color: $fontColor;
+  //&__header {
+  //  display: flex;
+  //  column-gap: 20px;
+  //  align-items: center;
+  //}
+  //
+  //&__title {
+  //  margin: 0;
+  //  font-size: 40px;
+  //  font-weight: 600;
+  //}
+  //
+  //&__title-product-count {
+  //  margin: 0;
+  //}
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__panel-checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &__panel {
+    box-sizing: border-box;
+    border: 1px solid $grayLightColor;
+    border-radius: 20px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px 0 44px;
+  }
+
+  &__panel-button {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    transition: opacity linear .5s;
+
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__icon-trash {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__panel-checkbox {
+    display: flex;
+    gap: 20px;
+  }
+
+
+  &__checkbox-text {
+    font-weight: 600;
+    color: $fontColor;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    //margin-top: 40px;
+    column-gap: 60px;
+    position: relative;
+  }
+
+  &__container-product {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  &__product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    //width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    //flex-shrink: 0;
+    //max-width: 873px;
+    flex-grow: 1;
+  }
+
+  &__product-item {
+    display: flex;
+    //flex-shrink: 0;
+  }
+
+  &__product {
+  }
+
+
+  &__order-detail-container {
+    position: relative;
+    width: 100%;
+    max-width: 403px;
+
+  }
+
+  &__order-detail-sticky {
+    position: sticky;
+  }
+
+  &__checkbox {
+    display: flex;
+    flex-direction: row;
+    column-gap: 22px
+  }
+}

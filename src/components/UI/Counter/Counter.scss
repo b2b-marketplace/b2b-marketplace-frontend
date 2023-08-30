@@ -1,0 +1,54 @@
+.counter {
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color: $fontColor;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  &__button {
+
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  &__input {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 111px;
+    height: 48px;
+    //margin: 0 5px;
+    padding: 0;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid $darkColor;
+    color: $grayColor;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+
+  }
+
+  &__icon {
+    color: $darkColor;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}

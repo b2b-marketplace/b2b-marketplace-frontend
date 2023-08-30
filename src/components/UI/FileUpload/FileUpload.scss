@@ -1,0 +1,54 @@
+.file-upload {
+  display: flex;
+  gap: 44px;
+
+  &__label {
+    width: 183px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+  }
+
+  &__button {
+    width: 204px;
+    height: 158px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    padding: 0;
+    background: $whiteColor;
+  }
+
+  &__container {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 12px;
+  }
+
+  &__text {
+    max-width: 223px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  &__text2 {
+    max-width: 223px;
+    color: #686868;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+  }
+}
