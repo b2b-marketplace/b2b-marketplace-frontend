@@ -14,6 +14,10 @@ const RegisterPopup = ({ isOpen, onClose }) => {
     setUserType(event.target.value);
   };
 
+  const handleSubmit = () => {
+    onClose();
+  };
+
   const handleNextStep = (event) => {
     event.preventDefault();
     setStep(step + 1);
@@ -33,6 +37,7 @@ const RegisterPopup = ({ isOpen, onClose }) => {
       <Form
         className="popup__form"
         submitText={'Завершить регистрацию'}
+        onSubmit={handleSubmit}
       >
         {
           step === 1 &&

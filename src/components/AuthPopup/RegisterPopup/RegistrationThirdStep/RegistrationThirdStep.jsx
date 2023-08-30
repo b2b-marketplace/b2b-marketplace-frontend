@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { Button } from "../../../UI/Button/Button";
 import IconPassword from "../../../UI/Icon/IconPassword";
 import Input from "../../Input/Input";
+import LabelCheckbox from "../../LabelCheckbox/LabelCheckbox";
 
 const RegistrationThirdStep = () => {
   return (
@@ -38,6 +40,10 @@ const RegistrationThirdStep = () => {
           <IconPassword isVisiblePassword={false} />
         </button>
       </Input>
+      <div className="popup__terms">
+        <LabelCheckbox id="terms" text="Я принимаю правила сайта" />
+        <Link className="popup__terms-link">Познакомиться с правилами</Link>
+      </div>
       <Button
         className="popup__submit"
         size={'xxxl'}

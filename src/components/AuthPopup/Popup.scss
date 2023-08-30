@@ -27,6 +27,7 @@
 	inset: 0;
 	z-index: 200;
 
+	// удалить -------------------------------<
 	background-color: #000000a6;
 
 	visibility: hidden;
@@ -68,7 +69,6 @@
 			}
 		}
 
-
 		&__container,
 		&__form {
 			display: flex;
@@ -76,6 +76,7 @@
 			align-items: center;
 			width: inherit
 		}
+
 		&__form {
 			gap: 40px 0;
 			max-width: 968px;
@@ -107,18 +108,19 @@
 		&__buttons {
 			@include marginTop(40px);
 			gap: 0 20px;
+
 			&_form {
-				@include marginTop(70px);
+				@include marginTop(30px);
 			}
 		}
 
-		&__buttons, &__inputs {
+		&__buttons,
+		&__inputs {
 			display: flex;
 			gap: 0 15px;
 			max-width: 968px;
-			width: 100%
 		}
-		
+
 		&__next {
 			@extend %tpbutton;
 			@include marginTop(30px);
@@ -149,11 +151,29 @@
 			min-width: 305px;
 			min-height: 37px;
 			display: flex;
-			@include marginTop(40px);
 			justify-content: center;
 			align-items: center;
 			gap: 0 20px;
 			cursor: pointer;
+		}
+
+		&__info {
+			position: absolute;
+		}
+
+		&__terms {
+			padding: 30px 0;
+
+			&-link {
+				@include marginTop(10px);
+				display: inline-block;
+				font-size: 25px;
+				font-weight: 400;
+				line-height: 30px;
+				letter-spacing: 0;
+				color: $inactiveColor;
+				text-decoration-line: underline;
+			}
 		}
 
 		&__checkbox {

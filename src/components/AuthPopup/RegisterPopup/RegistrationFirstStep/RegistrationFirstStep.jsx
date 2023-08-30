@@ -1,3 +1,4 @@
+import LabelCheckbox from "../../LabelCheckbox/LabelCheckbox";
 import NextButton from "../../NextButton/NextButton";
 import PopupButtons from "../../PopupButtons/PopupButtons";
 
@@ -15,10 +16,7 @@ const RegistrationFirstStep = ({ onType, userType, onNext }) => {
         buttonText1="Я поставщик/производитель"
         buttonText2="Я покупатель"
       />
-      <label className="popup__label" htmlFor="entity">
-        <input id="entity" type="checkbox" className="popup__checkbox" />
-        <span className="popup__checkbox-span">Я юридическое лицо</span>
-      </label>
+      <LabelCheckbox id="entity" text="Я юридическое лицо" />
       <NextButton onNext={onNext}/>
     </>
   );
