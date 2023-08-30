@@ -2,8 +2,11 @@ import './ProductBlock.scss';
 import Counter from '../../../UI/Counter/Counter';
 import { Button } from '../../../UI/Button/Button';
 import IconVerified from '../../../UI/Icon/Icon_verified';
+import IconNotVerified from '../../../UI/Icon/Icon_not-verified';
 import IconScales from '../../../UI/Icon/Icon_scales';
 import IconHearth from '../../../UI/Icon/Icon_hearth';
+import IconInfo from '../../../UI/Icon/Icon_info';
+import IconFire from '../../../UI/Icon/Icon_fire';
 import ProductRating from '../../../ProductRating/ProductRating';
 import CharacteristicColor from '../../../CharacteristicColor/CharacteristicColor';
 import { useEffect, useState } from 'react';
@@ -13,7 +16,7 @@ export default function ProductBlock({ product }) {
   const [text, setText] = useState('');
   const [mainImage, setMainImage] = useState(defaultImage);
   const descr =
-    'Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара. Описание товара.';
+    'Городской рюкзак из качественных материалов Urbano - неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42 x 30 x 12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей';
   const char =
     'Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. ';
   const otz =
@@ -35,10 +38,10 @@ export default function ProductBlock({ product }) {
   const handleClickNav = (event) => {
     [
       ...event.target
-        .closest('.product-block__navigation')
-        .querySelectorAll('.product-block__navigation-item'),
-    ].map((item) => item.classList.remove('product-block__navigation-item_checked'));
-    event.target.classList.add('product-block__navigation-item_checked');
+        .closest('.navigation')
+        .querySelectorAll('.navigation__item'),
+    ].map((item) => item.classList.remove('navigation__item_checked'));
+    event.target.classList.add('navigation__item_checked');
     switch (event.target.textContent) {
     case 'Характеристики':
       setText(char);
@@ -60,11 +63,11 @@ export default function ProductBlock({ product }) {
   return (
     <section className="product-block">
       <div className="product-block__top">
-        <div className="product-block__images">
-          <div className="product-block__images-column">
+        <div className="images">
+          <div className="images__column">
             {product.images.map((image) => (
               <img
-                className="product-block__image"
+                className="images__item"
                 src={image}
                 alt="Изображение товара"
                 onMouseEnter={handleMouseEnter}
@@ -72,71 +75,104 @@ export default function ProductBlock({ product }) {
               />
             ))}
           </div>
-          <img className="product-block__main-image" src={mainImage} alt="Крупное фото товара" />
+          <img className="images__main" src={mainImage} alt="Крупное фото товара" />
         </div>
-        <div className="product-block__info">
-          <div className="product-block__title-line">
-            <h2 className="product-block__title">{product.title}</h2>
+
+        <div className="info">
+          <div className="info__title-line">
+            <h2 className="info__title">{product.title}</h2>
             <ProductRating rating={product.rating} />
           </div>
-          <p className="product-block__shipper">{product.shipper}</p>
-          <p className="product-block__code">{`Арт. ${product.productCode}`}</p>
-          <div className="product-block__status-line">
+
+          <div className='info__shipper'>
+            <p className="info__shipper-name">{product.shipper}</p>
+            <IconInfo />
+          </div>
+
+          <p className="info__code">{`Арт. ${product.productCode}`}</p>
+
+          <div className="info__status-line">
             {product.availableStatus ? (
               <>
                 <IconVerified />
-                <p className="product-block__status">В наличии</p>
+                <p className="info__status">В наличии</p>
               </>
             ) : (
               <>
-                <IconVerified />
-                <p className="product-block__status">Не в наличии</p>
+                <IconNotVerified />
+                <p className="info__status">Не в наличии</p>
               </>
             )}
           </div>
-          <div className="product-block__size-line">
-            <p className="product-block__subtitle">Размер</p>
+
+          <div className="info__size-line">
+            <p className="info__size">Размер</p>
           </div>
-          <div className="product-block__color-line">
-            <p className="product-block__subtitle">Цвет</p>
+
+          <div className="info__color-line">
+            <p className="info__color">Цвет</p>
             <CharacteristicColor characteristicValue={product.colors} />
           </div>
-          <div className="product-block__quantity-line">
-            <p className="product-block__subtitle">Кол-во</p>
-            <Counter initCount={product.orderQuantity} />
+
+          
+        </div>
+
+        <div className='order'>
+          <div className='order__price'>           
+            <p className="order__price-value">{`${product.price} ` } &#x20bd;
+              <span className='order__price-unit'>{`за ${product.unit}`}</span>
+            </p>
+              
+           
+            <div className='order__price-quantity'>
+              <div className='order__price-quantity-now' style={{width: (product.piecesNow / product.piecesAll) * 100 + '%'}}/>
+            </div>
+
+            <p className='order__price-remainder'>
+              Осталось: <span className='order__price-remainder-now'>{`${product.piecesNow} ${product.unit}`}</span>
+            </p> 
+
+            <p className='order__price-min-order'>{`Минимальное количество товара для заказа: ${product.minOrder}`}</p>
           </div>
-          <h3 className="product-block__price">{`${product.price} р`}</h3>
-          <div className="product-block__buttons-line">
-            <Button size="xxl" primary={false} border={true}>
-              В корзину
-            </Button>
-            <div className="product-block__icons">
-              <IconScales />
-              <IconHearth />
+          
+          <div className='order__quantity'>
+            <Counter initCount={product.orderQuantity} />
+          
+            <div className='order__quantity-promo'>
+              <IconFire className='order__quantity-icon'/>
+              <p className='order__quantity-text'>Больше заказ&nbsp;— меньше цена за единицу</p>
             </div>
           </div>
+
+          <div className='order__buttons'>
+            <Button size='xl' mode='secondary' >В корзину</Button>
+            <div className='order__buttons-icons'>
+              <IconScales />
+              <IconHearth/>
+            </div>
+          </div>          
         </div>
       </div>
       <div className="product-block__bottom">
         <nav>
-          <ul className="product-block__navigation">
+          <ul className="navigation">
             <li
-              className="product-block__navigation-item product-block__navigation-item_checked"
+              className="navigation__item navigation__item_checked"
               onClick={handleClickNav}>
               Описание
             </li>
-            <li className="product-block__navigation-item" onClick={handleClickNav}>
+            <li className="navigation__item" onClick={handleClickNav}>
               Характеристики
             </li>
-            <li className="product-block__navigation-item" onClick={handleClickNav}>
+            <li className="navigation__item" onClick={handleClickNav}>
               Отзывы
             </li>
-            <li className="product-block__navigation-item" onClick={handleClickNav}>
+            <li className="navigation__item" onClick={handleClickNav}>
               Доставка
             </li>
           </ul>
         </nav>
-        <p className="product-block__description">{text}</p>
+        <p className="text">{text}</p>
       </div>
     </section>
   );

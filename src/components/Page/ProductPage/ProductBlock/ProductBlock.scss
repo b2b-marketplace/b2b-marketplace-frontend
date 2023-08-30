@@ -1,4 +1,7 @@
 .product-block {
+  width: 100%;
+  max-width: 1672px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   font-family: $fontFamilyNunitoSans;
@@ -13,157 +16,307 @@
     gap: 60px;
   }
 
-  &__images {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    &-column {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+  &__bottom {
+    max-width: 1249px;
   }
+}
 
-  &__image {
-    width: 203px;
-    height: 132px;
+.images {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__item {
+    width: 121px;
+    height: 100px;
     border-radius: 20px;
-    border: 1px solid $blackColor;
+    border: 1px solid $grayLightColor;
     box-sizing: border-box;
   }
-
-  &__main-image {
-    width: 539px;
-    height: 588px;
+  &__main {
+    width: 544px;
+    height: 520px;
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 20px;
-    border: 1px solid $blackColor;
+    border: 1px solid $grayLightColor;
     box-sizing: border-box;
   }
+}
 
-  &__info {
-    max-width: 498px;
-    width: 100%;
-    position: relative;
-  }
-
+.info {
+  max-width: 464px;
+  width: 100%;
   &__title {
-    font-weight: 500;
-    line-height: normal;
-    font-size: 28px;
     margin: 0;
+    max-width: 292px;
+    max-height: 80px;
+
+    color: $blackColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 142.857% */
     &-line {
-      margin: 0 0 10px;
+      margin: 0 0 16px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
     }
   }
-
   &__shipper {
-    margin: 0 0 40px;
-    text-decoration: underline;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px; /* 133.333% */
+    display: flex;
+    flex-direction: row;
+    max-height: 32px;
+    align-items: center;
+    gap: 24px;
+    margin: 0 0 56px;
+    color: $blueColor;
+    height: 32px;
+    &-name {
+      color: $blackColor;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px; /* 133.333% */
+      text-decoration-line: underline;
+    }
   }
-
   &__code {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: normal;
     margin: 0 0 18px;
-  }
-
-  &__status {
+    color: $blackColor;
+    font-family: $fontFamilyNunitoSans;
     font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 140% */
+  }
+  &__status {
+    color: $blackColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 20px;
+    font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 28px; /* 140% */
     &-line {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 10px;
+      max-height: 28px;
+      color: $greenColor;
+      margin: 0 0 56px;
     }
   }
 
-  &__subtitle {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-  }
-  &__size-line {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 0 17px;
-    gap: 40px;
-  }
-
-  &__color-line {
-    margin: 0 0 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 60px;
-  }
-
-  &__quantity-line {
-    margin: 0 0 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 50px;
-  }
-
-  &__price {
-    font-size: 32px;
+  &__size {
+    color: $blackColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 20px;
+    font-style: normal;
     font-weight: 600;
-    line-height: normal;
-    margin: 0;
+    line-height: 28px; /* 140% */
+    &-line {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 263px;
+      margin: 0 0 16px;
+    }
   }
-  &__buttons-line {
-    display: flex;
-    flex-direction: row;
-    gap: 56px;
-    bottom: 0;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
+  &__color {
+    color: $blackColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+    &-line {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 60px;
+    }
+  }
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 403px;
+  width: 100%;
+  &__price {
+    // width: 100%;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid $grayLightColor;
+    background: $whiteColor;
+    &-value {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      align-items: flex-end;
+      margin: 0 0 20px;
+      color: $blackColor;
+      font-family: $fontFamilyUnbounded;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 36px; /* 128.571% */
+    }
+    &-unit {
+      margin: 0;
+      color: $blackColor;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px; /* 142.857% */
+    }
+    &-quantity {
+      width: 100%;
+      position: relative;
+      height: 8px;
+      border-radius: 4px;
+      background-color: $grayLightColor;
+      margin: 0 0 12px;
+      &-now {
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $blueColorLine;
+        z-index: 2;
+      }
+    }
+
+    &-remainder {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      color: $blackColor;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 142.857% */
+      margin: 0 0 32px;
+      &-now {
+        font-weight: 400;
+      }
+    }
+
+    &-min-order {
+      max-width: 224px;
+      color: $grayColor;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px; /* 142.857% */
+      margin: 0;
+    }
   }
 
-  &__icons {
+  &__quantity {
+    padding: 0px 0 0px 32px;
+    border-radius: 20px;
+    border: 1px solid $grayLightColor;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    &-promo {
+      border-radius: 20px;
+      background-color: $blueLightColor;
+      height: 100%;
+      padding: 38px 23px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: -1;
+    }
+    &-text {
+      color: $darkColor;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 142.857% */
+      margin: 0;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    &-icon {
+      color: $redColor;
+      position: absolute;
+      top: 18px;
+      left: 15px;
+      z-index: -1;
+    }
+  }
+
+  &__buttons {
+    padding: 32px 23px 32px 22px;
+    border-radius: 20px;
+    border: 1px solid $grayLightColor;
+    color: $darkColor;
     display: flex;
     flex-direction: row;
     gap: 20px;
-  }
-
-  &__navigation {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 50px;
-    margin: 0 0 20px;
-    padding: 0;
-    &-item {
-      cursor: pointer;
-      font-size: 24px;
-      font-weight: 400;
-      line-height: normal;
-      &_checked {
-        border-bottom: solid 2px $blackColor;
-      }
+    justify-content: space-between;
+    align-items: center;
+    &-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      justify-content: space-between;
     }
   }
+}
 
-  &__description {
-    max-width: 1208px;
-    margin: 0;
-    font-size: 20px;
+.navigation {
+  max-width: 826px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+  &__item {
+    cursor: pointer;
+    font-size: 24px;
     font-weight: 400;
     line-height: normal;
+    color: $blackColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 116.667% */
+    &_checked {
+      border-bottom: solid 2px $blackColor;
+    }
   }
+}
+
+.text {
+  margin: 0;
+  color: $blackColor;
+  font-family: $fontFamilyNunitoSans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
