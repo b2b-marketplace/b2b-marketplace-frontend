@@ -34,11 +34,11 @@ const Basket = ({ className }) => {
   useEffect(() => {
     //Список выделенных товаров
     const selectedProducts = productList.filter(product => selectedProductId.includes(product.product.id));
-    //Сумма цен выделенных продуктов
+    //Сумма цен выделенных товаров
     const sumWithProducts = selectedProducts.reduce((total, currentProduct) => {
-      //Цена продукта
+      //Цена товара
       const productPrice = parseFloat(currentProduct.product.price.replace(/\s/g, ""));
-      //количество
+      //количество товаров
       const productQuantity = parseFloat(currentProduct.quantity);
       return total + (productPrice * productQuantity);
     }, 0);
@@ -53,7 +53,7 @@ const Basket = ({ className }) => {
   }, [selectedProductId, productList]);
 
   /**
-   * Изменение состояния выбора продукта в корзине
+   * Изменение состояния выбора товара в корзине
    * @param productId
    */
   const handleClickCheckboxProduct = (productId) => {
@@ -65,7 +65,7 @@ const Basket = ({ className }) => {
   };
 
   /**
-   * Выбор всех продуктов
+   * Выбор всех товаров
    */
   const handleClickCheckboxSelectAllProduct = () => {
     if (isCheckAll) {
@@ -78,7 +78,7 @@ const Basket = ({ className }) => {
   };
 
   /**
-   * Удаление выбранных продуктов
+   * Удаление выбранных товаров
    */
   const handleClickDeleteSelectedProduct = () => {
     const updatedProductList = productList.filter(product => !selectedProductId.includes(product.product.id));
@@ -88,7 +88,7 @@ const Basket = ({ className }) => {
     setIsCheckAll(false);
   };
   /**
-   * Удаление продукта из корзины
+   * Удаление товара из корзины
    * @param productId
    */
   const handleClickDeleteProduct = (productId) => {
@@ -97,18 +97,17 @@ const Basket = ({ className }) => {
   };
 
   /**
-   * Изменение количества продуктов в корзине
+   * Изменение количества товаров в корзине
    *
    * @param productId
    * @param quantity
    */
   const handleChangeProductQuantity = (productId, quantity) => {
     updatedBasketList(productId, quantity);
-
   };
 
   /**
-   * Обновление количество продуктов в корзине
+   * Обновление количество товаров в корзине
    *
    * @param productId
    * @param quantity
@@ -122,7 +121,7 @@ const Basket = ({ className }) => {
           quantity: quantity
         };
       }
-      return product; // Если это не нужный продукт, возвращаем без изменений
+      return product; // Если это не нужный товар, возвращаем без изменений
     });
     setProductList(basketList || []);
   };
