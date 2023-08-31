@@ -10,14 +10,14 @@ const RegistrationSecondStep = ({ onNext }) => {
         name="company"
         type="text"
         placeholder="ОАО «Компания»"
-        size="l"
+        size="xxl"
         text="Юридическое название"
       />
       <Input
         name="tin"
         type="number"
         placeholder="ИНН"
-        size="l"
+        size="xxl"
         text="Без пробелов"
       >
         <button className="popup__button input-label__button input-label__button_type_info" type="button">
@@ -28,14 +28,14 @@ const RegistrationSecondStep = ({ onNext }) => {
         name="adress"
         type="text"
         placeholder="Край/область"
-        size="l"
+        size="xxl"
         text="Выберите свой из списка"
       /> */}
       <Input
         name="adress"
         type="select"
         placeholder="Край/область"
-        size="l"
+        size="xxl"
         text="Выберите свой из списка"
       >
         <option value="">Край/область</option>
@@ -48,14 +48,14 @@ const RegistrationSecondStep = ({ onNext }) => {
           name="email"
           type="email"
           placeholder="Почта"
-          size="s"
+          size="m"
           text=""
         />
         <Input
           name="tel"
           type="tel"
           placeholder="+7"
-          size="s"
+          size="m"
           text="Без дефисов и пробелов"
         />
       </div>

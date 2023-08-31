@@ -34,16 +34,23 @@ input[type="number"]::-webkit-inner-spin-button {
 	text-align: left;
 
 	&_size {
-		&_l {
+		&_xxl {
 			max-width: 968px;
 		}
 
-		&_m {
+		&_xl {
 			max-width: 600px;
 		}
 
-		&_s {
+		&_l {
+			max-width: 576px;
+		}
+		&_m {
 			max-width: 476px;
+		}
+		
+		&_s {
+			max-width: 385px;
 		}
 	}
 
@@ -78,16 +85,23 @@ input[type="number"]::-webkit-inner-spin-button {
 	}
 
 	&_size {
-		&_l {
+		&_xxl {
 			max-width: 968px;
 		}
 
-		&_m {
+		&_xl {
 			max-width: 600px;
 		}
 
-		&_s {
+		&_l {
+			max-width: 576px;
+		}
+		&_m {
 			max-width: 476px;
+		}
+		
+		&_s {
+			max-width: 385px;
 		}
 	}
 

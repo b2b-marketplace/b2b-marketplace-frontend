@@ -12,7 +12,7 @@ const RegistrationThirdStep = () => {
         name="login"
         type="text"
         placeholder="Логин"
-        size="m"
+        size="xl"
         text="Латиница, цифры"
       />
       <Input
@@ -20,7 +20,7 @@ const RegistrationThirdStep = () => {
         type="password"
         autoComplete="off"
         placeholder="Пароль"
-        size="m"
+        size="xl"
         text="От 10 символов, латиница, цифры, символы"
       >
         <button className="popup__button input-label__button input-label__button_type_password" type="button">
@@ -33,7 +33,7 @@ const RegistrationThirdStep = () => {
         type="password"
         autoComplete="off"
         placeholder="Повторите пароль"
-        size="m"
+        size="xl"
         text="Пароли совпадают"
       >
         <button className="popup__button input-label__button input-label__button_type_password" type="button">

@@ -38,7 +38,7 @@ const Input = ({ size, type, className, children, text, labelClassName, ...props
 };
 
 Input.propTypes = {
-  size: PropTypes.oneOf(['s', 'm', 'l']),
+  size: PropTypes.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
   type: PropTypes.oneOf(['text', 'number', 'email', 'password', 'tel', 'select']),
   onChange: PropTypes.func,
 };
