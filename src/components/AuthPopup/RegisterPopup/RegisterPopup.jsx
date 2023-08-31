@@ -9,6 +9,7 @@ import RegistrationThirdStep from "./RegistrationThirdStep/RegistrationThirdStep
 const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
   const [step, setStep] = useState(1);
   const [userType, setUserType] = useState('');
+  const [isEntity, setisEntity] = useState(false);
 
   const handleType = (event) => {
     setUserType(event.target.value);
@@ -24,10 +25,12 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
     setStep(step + 1);
   };
 
+  const handleEntity = () => setisEntity(!isEntity);
 
   useEffect(() => {
     if (!isOpen) {
       setStep(1);
+      setisEntity(false);
     }
   }, [isOpen]);
 
@@ -42,11 +45,11 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
       >
         {
           step === 1 &&
-            <RegistrationFirstStep onNext={handleNextStep} userType={userType} onType={handleType} />
+            <RegistrationFirstStep onNext={handleNextStep} isEntity={isEntity} onEntity={handleEntity} userType={userType} onType={handleType} />
         }
         {
-          step === 2 &&
-            <RegistrationSecondStep onNext={handleNextStep} />
+          step === 2 && 
+            <RegistrationSecondStep isEntity={isEntity} onNext={handleNextStep} />
         }
         {
           step === 3 &&
