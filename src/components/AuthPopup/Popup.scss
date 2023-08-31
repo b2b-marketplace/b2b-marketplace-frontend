@@ -171,17 +171,18 @@
 
 		&__terms {
 			padding: 30px 0;
+		}
 
-			&-link {
-				@include marginTop(10px);
-				display: inline-block;
-				font-size: 25px;
-				font-weight: 400;
-				line-height: 30px;
-				letter-spacing: 0;
-				color: $inactiveColor;
-				text-decoration-line: underline;
-			}
+		&__link {
+			@include marginTop(10px);
+			display: inline-block;
+			font-size: 25px;
+			font-weight: 400;
+			line-height: 30px;
+			letter-spacing: 0;
+			color: $inactiveColor;
+			text-decoration-line: underline;
+			text-underline-offset: 5px;
 		}
 
 		&__checkbox {
@@ -238,7 +239,7 @@
 			display: flex;
 			gap: 0 41px;
 
-			& > p {
+			&>p {
 				@include text(500, 36px, 30px);
 				@include marginTop(0);
 				text-align: left;

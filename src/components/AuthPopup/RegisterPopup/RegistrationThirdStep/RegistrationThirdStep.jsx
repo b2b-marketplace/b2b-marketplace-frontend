@@ -42,7 +42,7 @@ const RegistrationThirdStep = () => {
       </Input>
       <div className="popup__terms">
         <LabelCheckbox id="terms" text="Я принимаю правила сайта" />
-        <Link className="popup__terms-link">Познакомиться с правилами</Link>
+        <Link className="popup__link">Познакомиться с правилами</Link>
       </div>
       <Button
         className="popup__submit"
