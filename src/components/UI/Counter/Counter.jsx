@@ -17,7 +17,7 @@ const Counter = ({ initCount = 2000, min = 1, max = 2000 }) => {
   return (
     <div className="counter">
       <IconMinus onClick={handleLeft} />
-      <input type="number" className="counter__count-conteiner" value={count} onChange={(event) => {
+      <input type="number" className="counter__count-container" value={count} min={min} max={max} onChange={(event) => {
         setCount(+event.target.value);
       }} />
       <IconPlus onClick={handleRight} />

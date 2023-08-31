@@ -85,8 +85,8 @@ export default function ProductBlock({ product }) {
           </div>
 
           <div className='info__shipper'>
-            <p className="info__shipper-name">{product.shipper}</p>
-            <IconInfo />
+            <p className="info__shipper-name">{product.shipper}</p>            
+            <IconInfo className='info__shipper-icon hint-right-middle' data-hint={product.shipper}/>            
           </div>
 
           <p className="info__code">{`Арт. ${product.productCode}`}</p>
@@ -136,11 +136,11 @@ export default function ProductBlock({ product }) {
           </div>
           
           <div className='order__quantity'>
-            <Counter initCount={product.orderQuantity} />
+            <Counter initCount={product.orderQuantity} min={product.minOrder} />
           
             <div className='order__quantity-promo'>
               <IconFire className='order__quantity-icon'/>
-              <p className='order__quantity-text'>Больше заказ&nbsp;— меньше цена за единицу</p>
+              Больше&nbsp;заказ&nbsp;— меньше цена за единицу
             </div>
           </div>
 

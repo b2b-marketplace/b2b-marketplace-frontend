@@ -46,6 +46,10 @@
       font-weight: 400;
       line-height: 20px; /* 142.857% */
     }
+    &-icon {
+      position: relative;
+      cursor: default;
+    }
   }
 
   &__min-order {

@@ -19,7 +19,7 @@ function ProductCard({ product }) {
         </Link>
         <div className='card__shipper'>
           <p className="card__shipper-name">{product.shipper}</p>
-          <IconInfo />
+          <IconInfo className='card__shipper-icon hint-right-middle' data-hint={product.shipper}/>
         </div>
 
         <div className="card__min-order">

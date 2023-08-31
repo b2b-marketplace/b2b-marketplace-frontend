@@ -4,7 +4,7 @@
   justify-content:space-around;
   align-items: center;
   gap: 80px;
-  // margin: 60px 0 160px;
+  margin: 80px auto 65px;
 
   box-sizing: border-box;
   width: 100%;
@@ -12,5 +12,5 @@
   padding: 0 124px;
   max-width: $maxWidth;
   min-width: $minWidth;
-  margin: 0 auto;
+  // margin: 0 auto;
 }
