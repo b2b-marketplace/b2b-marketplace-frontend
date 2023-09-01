@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/b2b-marketplace-frontend/static/css/main.bbb05a8f.css",
-    "main.js": "/b2b-marketplace-frontend/static/js/main.123631f3.js",
+    "main.css": "/b2b-marketplace-frontend/static/css/main.3e05388a.css",
+    "main.js": "/b2b-marketplace-frontend/static/js/main.06d68f00.js",
     "static/media/3.jpg": "/b2b-marketplace-frontend/static/media/3.94881ec04c2e8c3bb306.jpg",
     "static/media/4.jpg": "/b2b-marketplace-frontend/static/media/4.e4502b040ddfe9f1de91.jpg",
     "static/media/5.jpg": "/b2b-marketplace-frontend/static/media/5.f7857968bc0f6dbfd94f.jpg",
@@ -60,11 +60,11 @@
     "index.html": "/b2b-marketplace-frontend/index.html",
     "static/media/dotFill.svg": "/b2b-marketplace-frontend/static/media/dotFill.5a2e9e92d8e861ab4cc5.svg",
     "static/media/dotNoFill.svg": "/b2b-marketplace-frontend/static/media/dotNoFill.c013e1fda92b66ce841f.svg",
-    "main.bbb05a8f.css.map": "/b2b-marketplace-frontend/static/css/main.bbb05a8f.css.map",
-    "main.123631f3.js.map": "/b2b-marketplace-frontend/static/js/main.123631f3.js.map"
+    "main.3e05388a.css.map": "/b2b-marketplace-frontend/static/css/main.3e05388a.css.map",
+    "main.06d68f00.js.map": "/b2b-marketplace-frontend/static/js/main.06d68f00.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbb05a8f.css",
-    "static/js/main.123631f3.js"
+    "static/css/main.3e05388a.css",
+    "static/js/main.06d68f00.js"
   ]
 }
