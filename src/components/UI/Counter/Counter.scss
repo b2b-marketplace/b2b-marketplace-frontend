@@ -16,13 +16,13 @@
   }
 
   &__input {
+    outline-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
     width: 111px;
     height: 48px;
-    //margin: 0 5px;
     padding: 0;
     flex-shrink: 0;
     border-radius: 20px;
@@ -31,7 +31,6 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-
   }
 
   &__icon {

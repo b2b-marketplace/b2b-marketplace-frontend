@@ -8,6 +8,7 @@ import IconCalendar from "../../../components/UI/Icon/Icon_calendar";
 import IconSearch from "../../../components/UI/Icon/Icon_search";
 import { Outlet } from "react-router-dom";
 import AccountTabNavigation from "../../../components/Account/AccountTabNavigation/AccountTabNavigation";
+import Input from "../../../components/UI/Input/Input";
 
 
 const AccountBuyerOrders = () => {
@@ -28,19 +29,19 @@ const AccountBuyerOrders = () => {
     <section className="account-buyer-orders">
       <div className="account-buyer-orders__header">
         <div className="account-buyer-orders__profile-info">
-          <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Покупатель" icon={<IconPencil/>}/>
+          <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Покупатель"/>
         </div>
         <div className="account-buyer-orders__control">
           {/*<Link to="/account/product/add">*/}
-          <Button type="submit" size="xxl">
+          <Button extraClass="account-buyer-orders__control-button" mode="tertiary" border={false} type="button" size="m">
             <IconPlus className="account-buyer-orders__icon-plus"/>
             Заявка на закупку
           </Button>
           {/*</Link>*/}
           <div className="account-buyer-orders__search">
             <IconCalendar/>
-            <input placeholder="Поиск..." className="account-buyer-orders__search-input" type="text"/>
-            <button className="account-buyer-orders__search-button" type="submit">
+            <Input mode="primary" type="text" placeholder="Поиск...."/>
+            <button className="account-buyer-orders__search-button" type="submit" >
               <IconSearch/>
             </button>
           </div>
