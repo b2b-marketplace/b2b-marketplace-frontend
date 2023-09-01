@@ -1,18 +1,21 @@
-@import './../../styles/_vars.scss';
 .product-rating {
   display: flex;
   flex-direction: row;
-  column-gap: 5px;
+  column-gap: 4px;
+  margin: 4px 0;
   justify-content: space-between;
   align-items: flex-end;
-  max-width: 46px;
-  max-height: 20px;
+  max-width: 52px;
+  max-height: 32px;
   color: $blackColor;
 
   &__text {
-    font-size: 14px;
+    vertical-align: middle;
+    color: $darkColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
   }
 }
