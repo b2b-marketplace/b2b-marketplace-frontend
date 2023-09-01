@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
+    justify-items: start;
     gap: 16px 20px;
   }
 
@@ -35,12 +36,8 @@
   }
 
   &__text {
-    display: flex;
-    max-width: 119px;
     height: 40px;
     box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
     border-radius: 20px;
     background: $blueColor;
     color: $whiteColor;
@@ -48,6 +45,7 @@
     font-weight: 700;
     line-height: 24px;
     margin: 0;
+    padding: 8px 20px;
   }
 
   &__button {

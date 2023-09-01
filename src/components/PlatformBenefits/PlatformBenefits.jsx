@@ -8,7 +8,7 @@ import IconDiscountLight from "../UI/Icon/Icon_discount_light";
 const PlatformBenefits = ({ className }) => {
 
   return (
-    <section className={`platform-benefits ${className ? className : ''}`}>
+    <section className={`platform-benefits ${className || ''}`}>
       <ul className="platform-benefits__list">
         <li className="platform-benefits__item">
           <IconSafety className="platform-benefits__icon"/>

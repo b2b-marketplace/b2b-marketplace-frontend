@@ -1,0 +1,26 @@
+.home-page {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  //padding: 0 124px;
+  max-width: $maxWidth;
+  min-width: $minWidth;
+  margin: 0 auto;
+
+  &__platform-benefits {
+    margin-top: 60px;
+  }
+
+  &__cards-container {
+    margin-top: 80px;
+  }
+
+  &__banner {
+    margin-top: 80px;
+  }
+
+  &__promo-registration {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}

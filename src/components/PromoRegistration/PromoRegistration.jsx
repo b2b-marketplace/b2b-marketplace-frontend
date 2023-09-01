@@ -5,7 +5,7 @@ import { Button } from '../UI/Button/Button';
 
 const PromoRegistration = ({ className }) => {
   return (
-    <section className={`promo-registration ${className ? className : ''}`}>
+    <section className={`promo-registration ${className || ''}`}>
       <div className="promo-registration__conteiner">
         <div className="promo-registration__control">
           <h2 className="promo-registration__title">Покупайте дешевле!</h2>
