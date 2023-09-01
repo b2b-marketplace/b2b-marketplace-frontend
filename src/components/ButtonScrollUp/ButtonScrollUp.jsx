@@ -27,7 +27,7 @@ const ButtonScrollUp = () => {
 
   return (
     <div className={`navigation-arrow ${showArrow ? 'show' : ''}`}>
-      <Button size="xs" primary={false} border={true} onClick={scrollToTop}>
+      <Button size="s" mode='secondary' onClick={scrollToTop}>
         <IconArrowUp />
       </Button>
     </div>

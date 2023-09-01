@@ -6,6 +6,7 @@
     overflow: visible;
   }
 
+
   //&:hover &__content {
   //  opacity: 1;
   //}
@@ -83,6 +84,25 @@
         margin-top: -5px;
         top: 50%;
       }
+    }
+  }
+
+
+  &__size {
+    &_s {
+      font-size: 12px;
+    }
+
+    &_m {
+      font-size: 14px;
+    }
+
+    &_l {
+      font-size: 16px;
+    }
+
+    &_xl {
+      font-size: 18px;
     }
   }
 }
