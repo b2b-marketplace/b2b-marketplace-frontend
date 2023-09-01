@@ -1,5 +1,5 @@
 import React from 'react';
-import BannerAdvertising from "../../BannerAdvertising/BannerAdvertising";
+import BannerAdvertising from "../../components/BannerAdvertising/BannerAdvertising";
 import Basket from "./Basket/Basket";
 import "./BasketPage.scss";
 

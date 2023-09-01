@@ -1,8 +1,8 @@
 import './ProductPage.scss';
 import ProductBlock from './ProductBlock/ProductBlock';
-import PlatformBenefits from '../../PlatformBenefits/PlatformBenefits';
-import ProductCardContainer from '../../ProductCardContainer/ProductCardContainer';
-import { PRODUCTS } from '../../../utils/productCardExample';
+import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
+import ProductCardContainer from '../../components/ProductCardContainer/ProductCardContainer';
+import { PRODUCTS } from '../../utils/productCardExample';
 
 export default function ProductPage({ product }) {
 

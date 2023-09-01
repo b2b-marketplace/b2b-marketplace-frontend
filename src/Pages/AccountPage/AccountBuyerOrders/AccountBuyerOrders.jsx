@@ -1,13 +1,13 @@
 import "./AccountBuyerOrders.scss";
-import AccountTitle from "../../../UI/Account/AccountTitle/AccountTitle";
-import IconPencil from "../../../UI/Icon/Icon_pencil";
-import { Button } from "../../../UI/Button/Button";
-import logo from '../../../../images/logofooter.svg';
-import IconPlus from "../../../UI/Icon/Icon_plus";
-import IconCalendar from "../../../UI/Icon/Icon_calendar";
-import IconSearch from "../../../UI/Icon/Icon_search";
+import AccountTitle from "../../../components/UI/Account/AccountTitle/AccountTitle";
+import IconPencil from "../../../components/UI/Icon/Icon_pencil";
+import { Button } from "../../../components/UI/Button/Button";
+import logo from '../../../images/logofooter.svg';
+import IconPlus from "../../../components/UI/Icon/Icon_plus";
+import IconCalendar from "../../../components/UI/Icon/Icon_calendar";
+import IconSearch from "../../../components/UI/Icon/Icon_search";
 import { Outlet } from "react-router-dom";
-import AccountTabNavigation from "../../../Account/AccountTabNavigation/AccountTabNavigation";
+import AccountTabNavigation from "../../../components/Account/AccountTabNavigation/AccountTabNavigation";
 
 
 const AccountBuyerOrders = () => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import './HomePage.scss';
-import PlatformBenefits from "../../PlatformBenefits/PlatformBenefits";
-import ProductCardContainer from "../../ProductCardContainer/ProductCardContainer";
-import { PRODUCTS } from "../../../utils/productCardExample.js";
-import BannerAdvertising from "../../BannerAdvertising/BannerAdvertising";
-import PromoRegistration from "../../PromoRegistration/PromoRegistration";
-import BannerPromo from "../../BannerPromo/BannerPromo";
+import PlatformBenefits from "../../components/PlatformBenefits/PlatformBenefits";
+import ProductCardContainer from "../../components/ProductCardContainer/ProductCardContainer";
+import { PRODUCTS } from "../../utils/productCardExample.js";
+import BannerAdvertising from "../../components/BannerAdvertising/BannerAdvertising";
+import PromoRegistration from "../../components/PromoRegistration/PromoRegistration";
+import BannerPromo from "../../components/BannerPromo/BannerPromo";
 
 const HomePage = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
-import Tooltip from "../../../../UI/Tooltip/Tooltip";
-import IconInfoFill from "../../../../UI/Icon/Icon_info_fill";
-import { Button } from "../../../../UI/Button/Button";
+import Tooltip from "../../../../components/UI/Tooltip/Tooltip";
+import IconInfoFill from "../../../../components/UI/Icon/Icon_info_fill";
+import { Button } from "../../../../components/UI/Button/Button";
 import "./OrderDetail.scss";
 
 const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...props }) => {
