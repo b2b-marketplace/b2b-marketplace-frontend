@@ -6,20 +6,33 @@ import IconScales from '../UI/Icon/Icon_scales';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
 import { Link } from 'react-router-dom';
+import Tooltip from "../UI/Tooltip/Tooltip";
+import IconInfoFil from "../UI/Icon/Icon_info_fill";
+import React from "react";
 
 function ProductCard({ product }) {
   return (
     <div className="card">
-      <SliderImage images={product.images} />
+      <SliderImage images={product.images}/>
 
 
       <div className="card__info">
         <Link to={`/product/${product.id}`} className="card__title">
           {product.description}
         </Link>
-        <div className='card__shipper'>
+        <div className="card__shipper">
           <p className="card__shipper-name">{product.shipper}</p>
-          <IconInfo className='card__shipper-icon hint-right-middle' data-hint={product.shipper}/>
+          {/*<IconInfo className='card__shipper-icon hint-right-middle' data-hint={product.shipper}/>*/}
+          <Tooltip
+            position="top"
+            sizeText="l"
+            textClassName="card__tooltip"
+            tooltipContent={
+              <>{product.shipper}</>
+            }>
+            <IconInfo/>
+          </Tooltip>
+          {/*<IconInfo className="card__shipper-icon hint-right-middle"/>*/}
         </div>
 
         <div className="card__min-order">
@@ -27,16 +40,16 @@ function ProductCard({ product }) {
           <p className="card__min-order-quantity">{`от ${product.orderQuantity} шт`}</p>
         </div>
 
-        <div className='card__info-bottom'>
+        <div className="card__info-bottom">
 
           <p className="card__price">{`${product.price} `}&#x20bd;</p>
-          <div className='card__icons'>
-            <IconHearth />
-            <IconScales />
+          <div className="card__icons">
+            <IconHearth/>
+            <IconScales/>
           </div>
         </div>
 
-        <Button size="m" mode='tertiary'>
+        <Button size="m" mode="tertiary">
           В корзину
         </Button>
       </div>
