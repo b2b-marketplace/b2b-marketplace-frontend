@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconExit = ({ className, ...props }) => {
+const IconFire = ({ className, ...props }) => {
   return (
     <Icon {...props} className={`${className}`}>
       <svg xmlns="http://www.w3.org/2000/svg" width="23" height="32" viewBox="0 0 23 32" fill="none">
@@ -11,4 +11,4 @@ const IconExit = ({ className, ...props }) => {
   );
 };
 
-export default IconExit;
+export default IconFire;
