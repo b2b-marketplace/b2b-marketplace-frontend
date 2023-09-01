@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Question.scss';
-import SidebarLeft from '../../../SidebarLeft/SidebarLeft';
-import IconQuestion from '../../../UI/Icon/Icon_question';
-import IconMail from '../../../UI/Icon/Icon_mail';
-import IconCommunication from '../../../UI/Icon/Icon_communication';
+import SidebarLeft from '../../../components/SidebarLeft/SidebarLeft';
+import IconQuestion from '../../../components/UI/Icon/Icon_question';
+import IconMail from '../../../components/UI/Icon/Icon_mail';
+import IconCommunication from '../../../components/UI/Icon/Icon_communication';
 
 const Question = () => {
   const menuItems = [

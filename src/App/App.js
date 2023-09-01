@@ -1,17 +1,17 @@
 import './App.scss';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import HomePage from "../Page/HomePage/HomePage";
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import HomePage from "../Pages/HomePage/HomePage";
 import { Navigate, Route, Routes } from "react-router-dom";
-import AccountPage from "../Page/AccountPage/AccountPage";
-import AccountSellerProductAdd from "../Page/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd";
+import AccountPage from "../Pages/AccountPage/AccountPage";
+import AccountSellerProductAdd from "../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd";
 import React from "react";
-import AccountBuyerOrders from "../Page/AccountPage/AccountBuyerOrders/AccountBuyerOrders";
-import AccountBuyerProfile from '../Page/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
-import BasketPage from "../Page/BasketPage/BasketPage";
-import AccountBuyerOrderList from "../Account/AccountBuyerOrdersList/AccountBuyerOrderList";
-import ProductPage from "../Page/ProductPage/ProductPage";
-import { PRODUCTS } from '../../utils/productCardExample';
+import AccountBuyerOrders from "../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders";
+import AccountBuyerProfile from '../Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
+import BasketPage from "../Pages/BasketPage/BasketPage";
+import AccountBuyerOrderList from "../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList";
+import ProductPage from "../Pages/ProductPage/ProductPage";
+import { PRODUCTS } from '../utils/productCardExample';
 
 function App() {
   return (

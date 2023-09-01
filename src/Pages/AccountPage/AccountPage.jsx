@@ -1,16 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import './AccountPage.scss';
-import SidebarLeft from '../../SidebarLeft/SidebarLeft';
-import IconTrash from '../../UI/Icon/Icon_trash';
-import IconExit from '../../UI/Icon/Icon_exit';
-import BiBag from '../../UI/Icon/Icon_bibag';
-import IconPackage from '../../UI/Icon/Icon_package';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import IconBag from '../../UI/Icon/Icon_bag';
-import IconMessage from '../../UI/Icon/Icon_message';
-import IconLock from '../../UI/Icon/Icon_lock';
-import IconBasket from '../../UI/Icon/Icon_basket';
+import SidebarLeft from '../../components/SidebarLeft/SidebarLeft';
+import IconTrash from '../../components/UI/Icon/Icon_trash';
+import IconExit from '../../components/UI/Icon/Icon_exit';
+import BiBag from '../../components/UI/Icon/Icon_bibag';
+import IconPackage from '../../components/UI/Icon/Icon_package';
+import IconHearth from '../../components/UI/Icon/Icon_hearth';
+import IconBag from '../../components/UI/Icon/Icon_bag';
+import IconMessage from '../../components/UI/Icon/Icon_message';
+import IconLock from '../../components/UI/Icon/Icon_lock';
+import IconBasket from '../../components/UI/Icon/Icon_basket';
 
 const AccountPage = ({ role = 'seller' }) => {
   const menuItemsBuyer = [

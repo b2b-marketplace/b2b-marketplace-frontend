@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import "./Basket.scss";
-import Checkbox from "../../../UI/Checkbox/Checkbox";
-import IconTrash from "../../../UI/Icon/Icon_trash";
-import ProductCardBasket from "../../../ProductCardBasket/ProductCardBasket";
+import Checkbox from "../../../components/UI/Checkbox/Checkbox";
+import IconTrash from "../../../components/UI/Icon/Icon_trash";
+import ProductCardBasket from "../../../components/ProductCardBasket/ProductCardBasket";
 import OrderDetail from "./OrderDetail/OrderDetail";
 import { basketList } from "./mock";
 

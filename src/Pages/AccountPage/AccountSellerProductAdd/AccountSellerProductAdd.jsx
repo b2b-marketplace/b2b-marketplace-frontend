@@ -1,11 +1,11 @@
 import React from 'react';
-import Counter from '../../../UI/Counter/Counter';
+import Counter from '../../../components/UI/Counter/Counter';
 import './AccountSellerProductAdd.scss';
-import { Button } from '../../../UI/Button/Button';
-import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
-import InputField from '../../../UI/InputField/InputField';
-import FileUpload from '../../../UI/FileUpload/FileUpload';
-import DropDown from '../../../UI/DropDown/DropDown';
+import { Button } from '../../../components/UI/Button/Button';
+import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
+import InputField from '../../../components/UI/InputField/InputField';
+import FileUpload from '../../../components/UI/FileUpload/FileUpload';
+import DropDown from '../../../components/UI/DropDown/DropDown';
 
 const AccountSellerProductAdd = () => {
   return (

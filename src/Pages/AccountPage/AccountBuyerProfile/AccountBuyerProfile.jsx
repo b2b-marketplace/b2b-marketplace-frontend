@@ -1,13 +1,13 @@
 import React from 'react';
 import './AccountBuyerProfile.scss';
-import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
-import IconPencil from '../../../UI/Icon/Icon_pencil';
-import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
-import Tooltip from '../../../UI/Tooltip/Tooltip';
-import IconPhone from '../../../UI/Icon/Icon_phone';
-import IconMail from '../../../UI/Icon/Icon_mail';
-import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
-import AccountDropDown from '../../../UI/Account/AccountDropDown/AccountDropDown';
+import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
+import IconPencil from '../../../components/UI/Icon/Icon_pencil';
+import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
+import Tooltip from '../../../components/UI/Tooltip/Tooltip';
+import IconPhone from '../../../components/UI/Icon/Icon_phone';
+import IconMail from '../../../components/UI/Icon/Icon_mail';
+import IconInfoFil from '../../../components/UI/Icon/Icon_info_fill';
+import AccountDropDown from '../../../components/UI/Account/AccountDropDown/AccountDropDown';
 
 const AccountBuyerProfile = () => {
   return (
