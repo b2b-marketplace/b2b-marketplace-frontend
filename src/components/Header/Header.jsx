@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss';
 import IconPosition from '../../components/UI/Icon/Icon_position';
 import IconBoxRu from '../../components/UI/Icon/Icon_boxRu';
-import Catalog from '../Catalog/Catalog';
-import { Link } from 'react-router-dom';
+import Menu from '../Menu/Menu';
 import IconSearch from '../UI/Icon/Icon_search';
 import Input from "../UI/Input/Input";
 
@@ -27,7 +27,7 @@ const Header = () => {
           <span className="header__location-text">Санкт-Петербург</span>
         </button>
       </div>
-      <Catalog />
+      <Menu />
     </header>
   );
 };

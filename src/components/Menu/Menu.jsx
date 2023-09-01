@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import './Catalog.scss';
+import './Menu.scss';
 import IconBurger from '../UI/Icon/Icon_burger';
 import IconFire from '../UI/Icon/Icon_fire';
 import IconScales from '../UI/Icon/Icon_scales';
@@ -9,9 +9,9 @@ import IconProfile from '../UI/Icon/Icon_profile';
 
 import { Button } from '../UI/Button/Button';
 import IconMessage from '../UI/Icon/Icon_message';
-import PopupCatalog from '../PopupCatalog/PopupCatalog';
+import PopupMenu from '../PopupMenu/PopupMenu';
 
-const Catalog = () => {
+const Menu = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const togglePopup = () => {
@@ -19,56 +19,56 @@ const Catalog = () => {
   };
 
   return (
-    <div className="catalog">
-      <Button size="l" mode="secondary" onClick={togglePopup} >
-        <IconBurger />
-        Каталог 
+    <div className="menu">
+      <Button size="l" mode="secondary" border={false} onClick={togglePopup}>
+        <IconBurger className={'menu__icon'} />
+        Каталог
       </Button>
-      
-      <nav className="catalog__navigation">
-        <NavLink className="catalog__link" to="/">
+
+      <nav className="menu__navigation">
+        <NavLink className="menu__link" to="/">
           Поставщики
         </NavLink>
 
-        <NavLink className="catalog__link" to="#">
+        <NavLink className="menu__link" to="#">
           Закупки
         </NavLink>
 
-        <NavLink className="catalog__link" to="#">
+        <NavLink className="menu__link" to="#">
           Оплата&nbsp;и&nbsp;доставка
         </NavLink>
 
-        <NavLink className="catalog__link" to="#">
+        <NavLink className="menu__link" to="#">
           Возврат
         </NavLink>
 
-        <NavLink className="catalog__link" to="#">
-          <IconFire />
+        <NavLink className="menu__link" to="#">
+          <IconFire className={'menu__icon'} />
           Акции
         </NavLink>
       </nav>
 
-      <nav className="catalog__navigation-link">
-        <Link to="/chat" className="catalog__link">
+      <nav className="menu__navigation-link">
+        <Link to="/chat" className="menu__link">
           <IconMessage />
         </Link>
 
-        <Link to="/scale" className="catalog__link">
+        <Link to="/scale" className="menu__link">
           <IconScales />
         </Link>
 
-        <Link to="/basket" className="catalog__link">
+        <Link to="/basket" className="menu__link">
           <IconBasket />
         </Link>
 
-        <Link to="/account" className="catalog__link">
+        <Link to="/account" className="menu__link">
           <IconProfile />
         </Link>
       </nav>
 
-      {isPopupOpen && <PopupCatalog onClose={togglePopup} />}
+      {isPopupOpen && <PopupMenu onClose={togglePopup} />}
     </div>
   );
 };
 
-export default Catalog;
+export default Menu;

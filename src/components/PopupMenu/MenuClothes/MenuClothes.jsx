@@ -1,41 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './CatalogClothes.scss';
+import './MenuClothes.scss';
 
 const categories = [
   {
     title: 'Женщинам',
     items: ['Платья', 'Футболки и топы', 'Брюки и шорты', 'Нижнее белье', 'Верхняя одежда'],
+    link: ['#', '#', '#', '#', '#'],
   },
   {
     title: 'Детям',
     items: ['Девочкам', 'Мальчикам', 'Новорожденным', 'Школьная форма'],
+    link: ['#', '#', '#', '#'],
   },
   {
     title: 'Уход за одеждой',
     items: ['Красители', 'Ролики, щетки', 'Бретели, штрипки'],
+    link: ['#', '#', '#'],
   },
   {
     title: 'Мужчинам',
     items: ['Футболки и майки', 'Брюки и шорты', 'Рубашки', 'Нижнее белье', 'Носки'],
+    link: ['#', '#', '#', '#', '#'],
   },
   {
     title: 'Униформа',
     items: ['Спецодежда', 'Медицинская одежда', 'Поварам и официантам', 'Сигнальная одежда'],
+    link: ['#', '#', '#', '#'],
   },
 ];
 
-const CatalogClothes = () => {
+const MenuClothes = () => {
   return (
-    <div className="catalog-clothes">
-      <h2 className="catalog-clothes__title">Категории</h2>
-      <div className="catalog-clothes__conteiner">
+    <div className="menu-clothes">
+      <h2 className="menu-clothes__title">Категории</h2>
+      <div className="menu-clothes__conteiner">
         {categories.map((category, index) => (
-          <ul key={index} className="catalog-clothes__list">
-            <h3 className="catalog-clothes__subtitle">{category.title}</h3>
+          <ul key={index} className="menu-clothes__list">
+            <h3 className="menu-clothes__subtitle">{category.title}</h3>
             {category.items.map((item, subIndex) => (
               <li key={subIndex}>
-                <Link className="catalog-clothes__link" to="#">
+                <Link className="menu-clothes__link" to={category.link}>
                   {item}
                 </Link>
               </li>
@@ -47,4 +52,4 @@ const CatalogClothes = () => {
   );
 };
 
-export default CatalogClothes;
+export default MenuClothes;
