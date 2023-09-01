@@ -14,6 +14,7 @@ import ProductPage from "../Pages/ProductPage/ProductPage";
 import { PRODUCTS } from '../utils/productCardExample';
 
 function App() {
+
   return (
     <div className="app">
       <Header/>
