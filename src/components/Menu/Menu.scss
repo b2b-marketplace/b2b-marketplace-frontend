@@ -1,4 +1,4 @@
-.catalog {
+.menu {
   height: 44px;
   display: flex;
   align-items: center;
@@ -33,5 +33,10 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
   }
 }
