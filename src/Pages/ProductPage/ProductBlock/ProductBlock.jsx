@@ -1,14 +1,14 @@
 import './ProductBlock.scss';
-import Counter from '../../../UI/Counter/Counter';
-import { Button } from '../../../UI/Button/Button';
-import IconVerified from '../../../UI/Icon/Icon_verified';
-import IconNotVerified from '../../../UI/Icon/Icon_not-verified';
-import IconScales from '../../../UI/Icon/Icon_scales';
-import IconHearth from '../../../UI/Icon/Icon_hearth';
-import IconInfo from '../../../UI/Icon/Icon_info';
-import IconFire from '../../../UI/Icon/Icon_fire';
-import ProductRating from '../../../ProductRating/ProductRating';
-import CharacteristicColor from '../../../CharacteristicColor/CharacteristicColor';
+import Counter from '../../../components/UI/Counter/Counter';
+import { Button } from '../../../components/UI/Button/Button';
+import IconVerified from '../../../components/UI/Icon/Icon_verified';
+import IconNotVerified from '../../../components/UI/Icon/Icon_not-verified';
+import IconScales from '../../../components/UI/Icon/Icon_scales';
+import IconHearth from '../../../components/UI/Icon/Icon_hearth';
+import IconInfo from '../../../components/UI/Icon/Icon_info';
+import IconFire from '../../../components/UI/Icon/Icon_fire_big';
+import ProductRating from '../../../components/ProductRating/ProductRating';
+import CharacteristicColor from '../../../components/CharacteristicColor/CharacteristicColor';
 import { useEffect, useState } from 'react';
 
 export default function ProductBlock({ product }) {
