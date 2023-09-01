@@ -2,8 +2,9 @@
   max-width: $maxWidth;
   min-width: $minWidth;
   //padding: 0 124px;
-  margin: 64px auto 0;
-
+  //margin: 64px auto 0;
+  margin: 64px 0 0;
+  width: 100%;
 
   &__banner {
     margin-top: 81px;
