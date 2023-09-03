@@ -91,8 +91,14 @@
 			@include text(500, 61px, 50px);
 			width: fit-content;
 
-			&_complete-register {
-				@include text(500, 48px, 40px);
+			&_complete {
+				&-login {
+					margin-top: 271px;
+				}
+
+				&-register {
+					@include text(500, 48px, 40px);
+				}
 			}
 		}
 
@@ -239,10 +245,19 @@
 			display: flex;
 			gap: 0 41px;
 
-			&>p {
-				@include text(500, 36px, 30px);
-				@include marginTop(0);
-				text-align: left;
+		}
+		&__complete-paragraph {
+			@include text(500, 36px, 30px);
+			@include marginTop(0);
+			text-align: left;
+
+			&_login {
+				@include marginTop(70px);
+				margin-bottom: 141px;
+
+				&>span {
+					font-weight: 700;
+				}
 			}
 		}
 	}
