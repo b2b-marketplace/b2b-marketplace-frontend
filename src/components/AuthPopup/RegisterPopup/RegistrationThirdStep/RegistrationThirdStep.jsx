@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import { Button } from "../../../UI/Button/Button";
 import IconPassword from "../../../UI/Icon/IconPassword";
 import Input from "../../Input/Input";
 import LabelCheckbox from "../../LabelCheckbox/LabelCheckbox";
+import PopupButton from "../../PopupButton/PopupButton";
 
 const RegistrationThirdStep = () => {
   return (
@@ -42,7 +42,9 @@ const RegistrationThirdStep = () => {
       </Input>
       <div className="popup__terms">
         <LabelCheckbox id="terms" text="Я принимаю правила сайта" />
-        <Link className="popup__link">Познакомиться с правилами</Link>
+
+        <PopupButton type="button" className="popup__button popup__underlined-text">Познакомиться с правилами</PopupButton>
+        <button type="button" className="popup__button popup__underlined-text">Познакомиться с правилами</button>
       </div>
       <Button
         className="popup__submit"

@@ -179,13 +179,10 @@
 			padding: 30px 0;
 		}
 
-		&__link {
+		&__underlined-text {
 			@include marginTop(10px);
-			display: inline-block;
-			font-size: 25px;
-			font-weight: 400;
-			line-height: 30px;
-			letter-spacing: 0;
+			@include text(400, 30px, 25px);
+			display: inline-block;			
 			color: $inactiveColor;
 			text-decoration-line: underline;
 			text-underline-offset: 5px;

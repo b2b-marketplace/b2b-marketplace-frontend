@@ -1,9 +1,9 @@
 
-import { Link } from "react-router-dom";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import NextButton from "../NextButton/NextButton";
 import Popup from "../Popup";
+import PopupButton from "../PopupButton/PopupButton";
 
 const LoginPopup = ({ isOpen, onClose, onSubmit }) => {
 
@@ -35,8 +35,8 @@ const LoginPopup = ({ isOpen, onClose, onSubmit }) => {
           size="xl"
           text="От 10 символов, латиница, цифры, символы"
         />
-        
-        <Link className="popup__link">Забыл логин/пароль</Link>
+        <PopupButton type="button" className="popup__button popup__underlined-text" onClick={() => true}>Забыл логин/пароль</PopupButton>
+        {/* <button type="button" className="popup__button popup__underlined-text">Забыл логин/пароль</button> */}
         <NextButton onNext={handleSubmit} />
 
       </Form>
