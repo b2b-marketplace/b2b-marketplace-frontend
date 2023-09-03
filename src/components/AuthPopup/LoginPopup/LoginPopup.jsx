@@ -36,7 +36,7 @@ const LoginPopup = ({ isOpen, onClose, onSubmit }) => {
           text="От 10 символов, латиница, цифры, символы"
         />
         
-        <Link className="popup__link">Забыл логин/пар оль</Link>
+        <Link className="popup__link">Забыл логин/пароль</Link>
         <NextButton onNext={handleSubmit} />
 
       </Form>
