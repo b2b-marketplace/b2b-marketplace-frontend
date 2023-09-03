@@ -39,5 +39,9 @@
   &__link {
     color: $grayColor;
     text-decoration: none;
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
   }
 }

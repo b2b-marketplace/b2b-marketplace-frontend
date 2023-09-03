@@ -6,15 +6,13 @@
   height: 100%;
   background-color: rgba(35, 37, 46, 0.3);
   z-index: 4;
- 
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__content {
-    position: relative;
     max-width: 1269px;
-    max-height: 930px;
     padding: 60px 60px;
     flex-shrink: 0;
     display: flex;
@@ -22,7 +20,5 @@
     background-color: $whiteColor;
     border-radius: 20px;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
-    
   }
-  
 }
