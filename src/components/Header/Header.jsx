@@ -28,7 +28,9 @@ const Header = () => {
         <Link to="/" className="header__logo">
           <IconBoxRu />
         </Link>
-        <p className="header__title">B2Buy.ru</p>
+        <Link to="/" className="header__title">
+          B2Buy.ru
+        </Link>
         <button type="button" className="header__location">
           <IconPosition />
           <span className="header__location-text">Санкт-Петербург</span>
@@ -37,7 +39,7 @@ const Header = () => {
 
       <div className="header__container">
         <Button size="s" mode="secondary" border={false} onClick={togglePopup}>
-          <IconBurger className={'header__icon'} />
+          <IconBurger />
           Каталог
         </Button>
 
