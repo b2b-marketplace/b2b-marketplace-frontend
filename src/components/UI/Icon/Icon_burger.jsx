@@ -6,9 +6,9 @@ const IconBurger = ({ className, ...props }) => {
     <Icon {...props} className={`${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
+        width="25"
         height="24"
-        viewBox="0 0 24 24"
+        viewBox="0 0 25 24"
         fill="none">
         <path d="M5.75 6H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M5.75 12H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
