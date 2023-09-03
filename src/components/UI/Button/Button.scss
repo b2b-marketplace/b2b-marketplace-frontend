@@ -12,12 +12,19 @@
   box-sizing: border-box;
   gap: 20px;
 
-  &_size_s {
+  &_size_xs {
     width: 92px;
     height: 92px;
     border-radius: 50%;
     font-size: 20px;
     font-weight: 500;
+  }
+  &_size_s {
+    width: 160px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 20px;
   }
   &_size_m {
     width: 230px;

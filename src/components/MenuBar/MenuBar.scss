@@ -22,6 +22,10 @@
     align-items: center;
     justify-content: space-between;
     color: $grayColor;
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
   }
 
   &__link {
