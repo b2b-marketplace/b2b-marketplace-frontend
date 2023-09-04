@@ -40,7 +40,6 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
       <Stepper step={step} />
       <Form
         className="popup__form"
-        submitText={'Завершить регистрацию'}
         onSubmit={handleSubmit}
       >
         {

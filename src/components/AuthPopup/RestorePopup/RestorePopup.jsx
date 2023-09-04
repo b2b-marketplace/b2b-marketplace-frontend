@@ -14,7 +14,6 @@ const RestorePopup = ({ isOpen, onClose, onSubmit, title, inputPlaceholder, inpu
     <Popup isOpen={isOpen} onClose={onClose}>
       <Form
         className="popup__form"
-        submitText={'Завершить регистрацию'}
         onSubmit={handleSubmit}
       >
         <h2 className="popup__title popup__title_retore">{title}</h2>
