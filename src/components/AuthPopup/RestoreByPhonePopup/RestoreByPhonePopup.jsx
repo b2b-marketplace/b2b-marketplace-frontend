@@ -1,7 +1,7 @@
 import RestorePopup from "../RestorePopup/RestorePopup";
 
 const RestoreByPhonePopup = ({ isOpen, onClose }) => {
-  console.log(isOpen);
+  
   return (
     <RestorePopup
       isOpen={isOpen}
