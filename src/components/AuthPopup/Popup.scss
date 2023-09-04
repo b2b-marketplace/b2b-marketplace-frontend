@@ -90,6 +90,11 @@
 			@include marginTop(130px);
 			@include text(500, 61px, 50px);
 			width: fit-content;
+			margin-inline: auto;
+
+			&_retore {
+				max-width: 870px;
+			}
 
 			&_complete {
 				&-login {
