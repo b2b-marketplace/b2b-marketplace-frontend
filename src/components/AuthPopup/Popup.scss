@@ -187,10 +187,14 @@
 		&__underlined-text {
 			@include marginTop(10px);
 			@include text(400, 30px, 25px);
-			display: inline-block;			
+			display: inline-block;
 			color: $inactiveColor;
 			text-decoration-line: underline;
 			text-underline-offset: 5px;
+
+			&_type_resend {
+				color: $lightColor;
+			}
 		}
 
 		&__checkbox {
@@ -248,6 +252,7 @@
 			gap: 0 41px;
 
 		}
+
 		&__complete-paragraph {
 			@include text(500, 36px, 30px);
 			@include marginTop(0);
@@ -261,6 +266,23 @@
 					font-weight: 700;
 				}
 			}
+		}
+
+		&__pin {
+			display: flex;
+			gap: 0 20px;
+		}
+
+		&__digit {
+			@include text(500, 48px, 40px);
+			box-sizing: border-box;
+			text-align: center;
+			
+			width: 65px;
+			height: 73px;
+			background-color: $lightColor;
+			border-radius: 20px;
+			color: $darkColor;
 		}
 	}
 }
