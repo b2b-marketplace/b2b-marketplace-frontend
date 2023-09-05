@@ -7,7 +7,6 @@
 
   &__title {
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
     line-height: 28px;
     margin: 0;
@@ -16,7 +15,7 @@
   &__conteiner {
     display: grid;
     grid-template-columns: repeat(3, 233px);
-    gap: 24px 40px;
+    gap: 40px 24px;
   }
 
   &__list {
