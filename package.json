@@ -6,6 +6,7 @@
   "homepage": "https://b2b-marketplace.github.io/b2b-marketplace-frontend/",
   "dependencies": {
     "@craco/craco": "^7.1.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
