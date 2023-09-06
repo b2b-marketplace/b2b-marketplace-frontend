@@ -65,8 +65,9 @@ export default function ProductBlock({ product }) {
       <div className="product-block__top">
         <div className="images">
           <div className="images__column">
-            {product.images.map((image) => (
+            {product.images.map((image, idx) => (
               <img
+                key={idx}
                 className="images__item"
                 src={image}
                 alt="Изображение товара"

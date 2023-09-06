@@ -34,7 +34,7 @@ export default function SliderImage({ images }) {
     <div className="slider" onMouseLeave={handleStartState}>
       <div className="slider__images">
         {images.map((image, idx) => (
-          <img key={idx} id={idx} className="slider__image" src={image} alt="" />
+          <img key={idx} id={idx} className="slider__image" src={image.image} alt="" />
         ))}
       </div>
       <div className="slider__nav">

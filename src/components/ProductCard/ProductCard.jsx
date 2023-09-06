@@ -18,17 +18,17 @@ function ProductCard({ product }) {
 
       <div className="card__info">
         <Link to={`/product/${product.id}`} className="card__title">
-          {product.description}
+          {product.name}
         </Link>
         <div className="card__shipper">
-          <p className="card__shipper-name">{product.shipper}</p>
+          <p className="card__shipper-name">{product.seller.name}</p>
           {/*<IconInfo className='card__shipper-icon hint-right-middle' data-hint={product.shipper}/>*/}
           <Tooltip
             position="top"
             sizeText="l"
             textClassName="card__tooltip"
             tooltipContent={
-              <>{product.shipper}</>
+              <>{product.seller.name}</>
             }>
             <IconInfo/>
           </Tooltip>
@@ -37,7 +37,7 @@ function ProductCard({ product }) {
 
         <div className="card__min-order">
           <p className="card__min-order-title">Мин. заказ:</p>
-          <p className="card__min-order-quantity">{`от ${product.orderQuantity} шт`}</p>
+          <p className="card__min-order-quantity">{`от ${product.wholesale_quantity} шт`}</p>
         </div>
 
         <div className="card__info-bottom">
