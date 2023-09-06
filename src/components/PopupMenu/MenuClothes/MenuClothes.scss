@@ -1,27 +1,27 @@
 .menu-clothes {
   font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 40px;
 
   &__title {
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 600;
     line-height: 28px;
     margin: 0;
   }
 
   &__conteiner {
     display: grid;
-    grid-template-columns: repeat(3, 204px);
-    gap: 70px 100px;
+    grid-template-columns: repeat(3, 233px);
+    gap: 40px 24px;
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -29,14 +29,16 @@
 
   &__subtitle {
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
-    color: $grayColor;
+    line-height: 28px;
+    color: $blackColor;
     margin: 0;
   }
 
   &__link {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
     color: $grayColor;
     text-decoration: none;
 

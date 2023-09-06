@@ -13,12 +13,12 @@
 
   &__content {
     max-width: 1269px;
-    padding: 60px 60px;
+    padding: 40px 40px;
     flex-shrink: 0;
     display: flex;
-    gap: 100px;
+    gap: 60px;
     background-color: $whiteColor;
     border-radius: 20px;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid $grayLightColor;
   }
 }
