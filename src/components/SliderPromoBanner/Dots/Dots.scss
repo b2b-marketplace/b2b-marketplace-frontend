@@ -1,0 +1,28 @@
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid $blackColor;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+
+    &.active {
+      background-color: $blackColor;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

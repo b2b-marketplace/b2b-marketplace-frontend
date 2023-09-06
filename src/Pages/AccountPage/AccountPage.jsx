@@ -2,8 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import './AccountPage.scss';
 import SidebarLeft from '../../components/SidebarLeft/SidebarLeft';
-import IconTrash from '../../components/UI/Icon/Icon_trash';
-import IconExit from '../../components/UI/Icon/Icon_exit';
+
 import BiBag from '../../components/UI/Icon/Icon_bibag';
 import IconPackage from '../../components/UI/Icon/Icon_package';
 import IconHearth from '../../components/UI/Icon/Icon_hearth';
@@ -23,7 +22,7 @@ const AccountPage = ({ role = 'seller' }) => {
     },
     { icon: <IconBasket />, link: '/basket', label: 'Корзина' },
     { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
-    { icon: <IconLock className={'account-page__icon'}/>, link: 'secure', label: 'Безопасность' },
+    { icon: <IconLock className={'account-page__icon'} />, link: 'secure', label: 'Безопасность' },
   ];
 
   const menuItemsSeller = [
@@ -36,14 +35,7 @@ const AccountPage = ({ role = 'seller' }) => {
 
   return (
     <main className="account-page">
-      <SidebarLeft
-        menuItems={menuItemsBuyer}
-        icon1={<IconExit />}
-        text1={'Выйти'}
-        icon2={<IconTrash />}
-        text2={'Удалить аккаунт'}
-        phone="8-800-800-00-00"
-      />
+      <SidebarLeft menuItems={menuItemsBuyer} phone="8-800-800-00-00" />
       <Outlet />
     </main>
   );
