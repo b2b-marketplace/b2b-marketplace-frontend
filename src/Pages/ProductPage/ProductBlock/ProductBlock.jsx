@@ -119,7 +119,7 @@ export default function ProductBlock({ product }) {
             <p className='order__delivery-subtitle'>Курьером — <span className='order__delivery-data'>10 сентября</span></p>
           </div>
 
-          <Counter initCount={product.orderQuantity} min={product.minOrder} />
+          <Counter initCount={product.minOrder} minValue={product.minOrder} onChangeProductQuantity={(count)=>{}}/>
           <Button size='xl' mode='secondary' extraClass='order__button'>В корзину</Button>
         </div>
       </div>
