@@ -2,7 +2,6 @@ import './SliderImage.scss';
 import Dot from './Dot/Dot';
 
 export default function SliderImage({ images }) {
-  console.log(images.length);
   const width = 100 / images.length;
 
   const getCurrentSlider = (event) => {
