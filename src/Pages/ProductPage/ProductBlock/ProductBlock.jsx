@@ -6,21 +6,14 @@ import IconNotVerified from '../../../components/UI/Icon/Icon_not-verified';
 import IconScales from '../../../components/UI/Icon/Icon_scales';
 import IconHearth from '../../../components/UI/Icon/Icon_hearth';
 import IconInfo from '../../../components/UI/Icon/Icon_info';
-import IconFire from '../../../components/UI/Icon/Icon_fire_big';
 import ProductRating from '../../../components/ProductRating/ProductRating';
 import CharacteristicColor from '../../../components/CharacteristicColor/CharacteristicColor';
 import { useEffect, useState } from 'react';
+import CommentsBlock from '../../../components/CommentsBlock/CommentsBlock';
 
 export default function ProductBlock({ product }) {
   const defaultImage = product.images[0];
-  const [text, setText] = useState('');
   const [mainImage, setMainImage] = useState(defaultImage);
-  const descr =
-    'Городской рюкзак из качественных материалов Urbano - неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42 x 30 x 12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей';
-  const char =
-    'Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. ';
-  const otz =
-    'Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. ';
 
 
   const handleMouseEnter = (event) => {
@@ -31,31 +24,6 @@ export default function ProductBlock({ product }) {
     setMainImage(defaultImage);
   };
 
-  useEffect(() => {
-    setText(descr);
-  }, []);
-
-  const handleClickNav = (event) => {
-    [
-      ...event.target
-        .closest('.navigation')
-        .querySelectorAll('.navigation__item'),
-    ].map((item) => item.classList.remove('navigation__item_checked'));
-    event.target.classList.add('navigation__item_checked');
-    switch (event.target.textContent) {
-    case 'Характеристики':
-      setText(char);
-      break;
-    case 'Описание':
-      setText(descr);
-      break;
-    case 'Отзывы':
-      setText(otz);
-      break;
-    default:
-      setText('');
-    }
-  };
 
   return (
     <section className="product-block">
@@ -124,16 +92,16 @@ export default function ProductBlock({ product }) {
             </h3>
             <p className='order__price-piece'>
               {`за ед. ${product.price} `} &#x20bd;
-            </p> 
-  
+            </p>
+
             <div className='order__price-quantity'>
               <div className='order__price-quantity-now' style={{ width: (product.piecesNow / product.piecesAll) * 100 + '%' }} />
             </div>
-  
+
             <p className='order__price-remainder'>
               Осталось: <span className='order__price-remainder-now'>{`${product.piecesNow} шт.`}</span>
             </p>
-  
+
             <p className='order__price-min-order'>{`Минимальное количество товара для заказа: ${product.minOrder}`}</p>
           </div>
 
@@ -142,27 +110,41 @@ export default function ProductBlock({ product }) {
             <p className='order__delivery-subtitle'>Самовывоз со склада продавца — <span className='order__delivery-data'>завтра</span></p>
             <p className='order__delivery-subtitle'>Курьером — <span className='order__delivery-data'>10 сентября</span></p>
           </div>
-          
-          <Counter initCount={product.orderQuantity} min={product.minOrder} />  
+
+          <Counter initCount={product.orderQuantity} min={product.minOrder} />
           <Button size='xl' mode='secondary' extraClass='order__button'>В корзину</Button>
         </div>
       </div>
 
       <div className="product-block__bottom">
-        <nav>
-          <ul className="navigation">
-            <li
-              className="navigation__item navigation__item_checked"
-              onClick={handleClickNav}>
-              Описание
-            </li>
-            <li className="navigation__item" onClick={handleClickNav}>
-              Характеристики
-            </li>
+        <div className='description'>
+          <div className='description__item'>
+            <h4 className='description__title'>Описание</h4>
+            <p className='description__text'>Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей</p>
+          </div>
+          <div className='description__item'>
+            <h4 className='description__title'>Характеристики</h4>
+            <p className='description__text'>Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей</p>
+          </div>
+        </div>
 
-          </ul>
-        </nav>
-        <p className="text">{text}</p>
+        <div className='comments'>
+          <h3 className='comments__title'>
+            Отзывы
+            <p className='comments__count'>15</p>
+          </h3>
+          <div className='comments__container'>
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+          </div>
+          <Button size='xl' mode='secondary' >Смотреть все</Button>
+        </div>
+
+
       </div>
     </section>
   );

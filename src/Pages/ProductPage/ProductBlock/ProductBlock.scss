@@ -17,7 +17,8 @@
   }
 
   &__bottom {
-    max-width: 1249px;
+    // max-width: 1249px;
+    width: 100%;
   }
 }
 
@@ -282,38 +283,64 @@
   }
 }
 
-.navigation {
-  max-width: 826px;
-  width: 100%;
+.description {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  list-style: none;
-  margin: 0 0 40px;
-  padding: 0;
+  gap: 161px;
+  margin: 0 0 84px;
   &__item {
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: normal;
-    color: $blackColor;
+    display: flex;
+    flex-direction: column;
+    max-width: 544px;
+    color: $darkColor;
     font-family: $fontFamilyNunitoSans;
-    font-size: 24px;
     font-style: normal;
     font-weight: 600;
+  }
+  &__title {
+    font-size: 24px;
     line-height: 28px; /* 116.667% */
-    &_checked {
-      border-bottom: solid 2px $blackColor;
-    }
+    margin: 0 0 20px;
+  }
+  &__text {
+    font-size: 16px;
+
+    line-height: 24px; /* 150% */
+    margin: 0;
   }
 }
 
-.text {
-  margin: 0;
-  color: $blackColor;
-  font-family: $fontFamilyNunitoSans;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  &__title {
+    color: $blackColor;
+    font-family: $fontFamilyUnbounded;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px; /* 128.571% */
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    gap: 16px;
+    align-self: flex-start;
+  }
+  &__count {
+    color: $blueDarkColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+    margin: 0;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+  }
 }
