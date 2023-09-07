@@ -17,6 +17,11 @@ const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit }) => {
   };
 
   useEffect(() => {
+
+    return () => setDigits(['','','','','','']);
+  }, [isOpen]);
+
+  useEffect(() => {
     if(digits.some(digit => !digit)) return;
     handleSubmit();
   }, [digits]);
