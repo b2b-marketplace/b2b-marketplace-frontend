@@ -11,8 +11,8 @@ const CharacteristicColor = ({ className, characteristicValue }) => {
 
   const renderColors = (colors) => {
     return (
-      colors.map((color) => (
-        <div key={color.key}>{renderColor(color.color)}</div>
+      colors.map((color, idx) => (
+        <div key={idx}>{renderColor(color.color)}</div>
       ))
     );
   };

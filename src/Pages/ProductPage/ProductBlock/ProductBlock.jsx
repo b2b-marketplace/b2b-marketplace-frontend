@@ -38,7 +38,7 @@ export default function ProductBlock({ product }) {
             className="images__column"
           >
             {product.images.map((image, idx) => (
-              <SwiperSlide className='images__slide'>
+              <SwiperSlide key={idx} className='images__slide'>
                 <img
                   key={idx}
                   className="images__item"
