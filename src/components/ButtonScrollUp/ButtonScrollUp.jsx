@@ -31,7 +31,8 @@ function ButtonScrollUp() {
     <div className="button-scroll-up">
       <button
         className={`button-scroll-up__button ${isVisible ? 'visible' : ''}`}
-        onClick={scrollToTop}>
+        onClick={scrollToTop}
+        type="button">
         <IconArrowUp />
       </button>
     </div>

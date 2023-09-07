@@ -1,17 +1,24 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconArrowCounter = ({ className, ...props }) => {
+const IconClose = ({ className, ...props }) => {
   return (
     <Icon {...props} className={`${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
         fill="none">
         <path
-          d="M18 9L12 15L6 9"
+          d="M24 8L8 24"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8 8L24 24"
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
@@ -22,4 +29,4 @@ const IconArrowCounter = ({ className, ...props }) => {
   );
 };
 
-export default IconArrowCounter;
+export default IconClose;

@@ -16,19 +16,19 @@ import IconAnimals from '../UI/Icon/Icon_animals';
 import IconArrowCounter from '../UI/Icon/Icon_arrow-counter';
 
 const menuItems = [
-  { icon: <IconClothes className={'menu-bar__icons'}/>, label: 'Одежда' },
-  { icon: <IconSneaker className={'menu-bar__icons'}/>, label: 'Обувь' },
-  { icon: <IconComputer className={'menu-bar__icons'}/>, label: 'Электроника' },
-  { icon: <IconToy className={'menu-bar__icons'}/>, label: 'Детские товары' },
-  { icon: <IconSport className={'menu-bar__icons'}/>, label: 'Спорттовары' },
-  { icon: <IconEatDrink className={'menu-bar__icons'}/>, label: 'Продукты' },
-  { icon: <IconRollerBrush className={'menu-bar__icons'}/>, label: 'Стройматериалы' },
-  { icon: <IconTextile className={'menu-bar__icons'}/>, label: 'Текстиль' },
-  { icon: <IconJul className={'menu-bar__icons'}/>, label: 'Аксессуары' },
-  { icon: <IconCar className={'menu-bar__icons'}/>, label: 'Автотовары' },
-  { icon: <IconGift className={'menu-bar__icons'}/>, label: 'Сувениры' },
-  { icon: <IconHome className={'menu-bar__icons'}/>, label: 'Для дома' },
-  { icon: <IconAnimals className={'menu-bar__icons'}/>, label: 'Для животных' },
+  { icon: <IconClothes />, label: 'Одежда' },
+  { icon: <IconSneaker />, label: 'Обувь' },
+  { icon: <IconComputer />, label: 'Электроника' },
+  { icon: <IconToy />, label: 'Детские товары' },
+  { icon: <IconSport />, label: 'Спорттовары' },
+  { icon: <IconEatDrink />, label: 'Продукты' },
+  { icon: <IconRollerBrush />, label: 'Стройматериалы' },
+  { icon: <IconTextile />, label: 'Текстиль' },
+  { icon: <IconJul />, label: 'Аксессуары' },
+  { icon: <IconCar />, label: 'Автотовары' },
+  { icon: <IconGift />, label: 'Сувениры' },
+  { icon: <IconHome />, label: 'Для дома' },
+  { icon: <IconAnimals />, label: 'Для животных' },
 ];
 
 const MenuBar = () => {
@@ -37,11 +37,11 @@ const MenuBar = () => {
       <ul className="menu-bar__list">
         {menuItems.map((item, index) => (
           <li key={index} className="menu-bar__item">
+            {item.icon}
             <Link className="menu-bar__link" to="#">
-              {item.icon}
               {item.label}
+              <IconArrowCounter className={'menu-bar__icon'} />
             </Link>
-            <IconArrowCounter className={'menu-bar__icon'} />
           </li>
         ))}
       </ul>

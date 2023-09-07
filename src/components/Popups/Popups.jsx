@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import MenuBar from '../MenuBar/MenuBar';
-import MenuClothes from './MenuClothes/MenuClothes';
-import './PopupMenu.scss';
+import './Popups.scss';
+import IconClose from '../UI/Icon/Icon_close';
 
-const PopupMenu = ({ onClose }) => {
+const Popups = ({ isOpen, onClose, children }) => {
   const popupRef = useRef(null);
 
   useEffect(() => {
@@ -29,15 +28,13 @@ const PopupMenu = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="popup-menu" >
-      <div className="popup-menu__content" ref={popupRef}>
-        <MenuBar />
-        <MenuClothes />
+    <div className="popups">
+      <div className="popups__content" ref={popupRef}>
+        {children}
+        <button className="popups__button" type="button" onClick={onClose}><IconClose/></button>
       </div>
     </div>
   );
 };
 
-export default PopupMenu;
-
-
+export default Popups;

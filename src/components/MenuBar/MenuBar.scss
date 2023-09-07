@@ -19,8 +19,8 @@
   &__item {
     height: 24px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    gap: 16px;
     color: $grayColor;
 
     &:hover {
@@ -30,8 +30,9 @@
 
   &__link {
     display: flex;
-    align-items: center;
-    gap: 16px;
+
+    justify-content: space-between;
+    width: 100%;
     text-decoration: none;
     color: $grayColor;
   }
@@ -43,6 +44,5 @@
 
   &__icon {
     transform: rotate(-90deg);
-    flex-shrink: 0;
   }
 }
