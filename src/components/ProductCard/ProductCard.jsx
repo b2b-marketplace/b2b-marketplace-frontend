@@ -13,40 +13,41 @@ import React from "react";
 function ProductCard({ product }) {
   return (
     <div className="card">
-      <SliderImage images={product.images}/>
+      <SliderImage images={product.images} />
+      <div className="card__icons">
+        <IconHearth />
+        <IconScales />
+      </div>
 
 
       <div className="card__info">
         <Link to={`/product/${product.id}`} className="card__title">
-          {product.description}
+          {product.name}
         </Link>
         <div className="card__shipper">
-          <p className="card__shipper-name">{product.shipper}</p>
-          {/*<IconInfo className='card__shipper-icon hint-right-middle' data-hint={product.shipper}/>*/}
-          <Tooltip
+          <p className="card__shipper-name">{product.seller.name}</p>
+          <IconInfo className='card__shipper-icon hint-top-middle' data-hint={product.seller.name} />
+          {/* <Tooltip
             position="top"
             sizeText="l"
             textClassName="card__tooltip"
             tooltipContent={
-              <>{product.shipper}</>
+              <>{product.seller.name}</>
             }>
             <IconInfo/>
-          </Tooltip>
+          </Tooltip> */}
           {/*<IconInfo className="card__shipper-icon hint-right-middle"/>*/}
         </div>
 
         <div className="card__min-order">
           <p className="card__min-order-title">Мин. заказ:</p>
-          <p className="card__min-order-quantity">{`от ${product.orderQuantity} шт`}</p>
+          <p className="card__min-order-quantity">{`от ${product.wholesale_quantity} шт`}</p>
         </div>
 
         <div className="card__info-bottom">
 
           <p className="card__price">{`${product.price} `}&#x20bd;</p>
-          <div className="card__icons">
-            <IconHearth/>
-            <IconScales/>
-          </div>
+
         </div>
 
         <Button size="m" mode="tertiary">

@@ -6,67 +6,71 @@ import IconNotVerified from '../../../components/UI/Icon/Icon_not-verified';
 import IconScales from '../../../components/UI/Icon/Icon_scales';
 import IconHearth from '../../../components/UI/Icon/Icon_hearth';
 import IconInfo from '../../../components/UI/Icon/Icon_info';
-import IconFire from '../../../components/UI/Icon/Icon_fire_big';
 import ProductRating from '../../../components/ProductRating/ProductRating';
 import CharacteristicColor from '../../../components/CharacteristicColor/CharacteristicColor';
 import { useEffect, useState } from 'react';
+import CommentsBlock from '../../../components/CommentsBlock/CommentsBlock';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
 
 export default function ProductBlock({ product }) {
   const defaultImage = product.images[0];
-  const [text, setText] = useState('');
   const [mainImage, setMainImage] = useState(defaultImage);
-  const descr =
-    'Городской рюкзак из качественных материалов Urbano - неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42 x 30 x 12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей';
-  const char =
-    'Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. Характеристики товара. ';
-  const otz =
-    'Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. Отзыв о товаре. ';
-  const dost = 'Доставка. Доставка. Доставка. Доставка. Доставка. Доставка. Доставка. Доставка. ';
 
-  const handleMouseEnter = (event) => {
+
+  const handleImageClick = (event) => {
     setMainImage(event.target.src);
-  };
-
-  const handleMouseLeave = (event) => {
-    setMainImage(defaultImage);
-  };
-
-  useEffect(() => {
-    setText(descr);
-  }, []);
-
-  const handleClickNav = (event) => {
-    [
-      ...event.target
-        .closest('.navigation')
-        .querySelectorAll('.navigation__item'),
-    ].map((item) => item.classList.remove('navigation__item_checked'));
-    event.target.classList.add('navigation__item_checked');
-    switch (event.target.textContent) {
-    case 'Характеристики':
-      setText(char);
-      break;
-    case 'Описание':
-      setText(descr);
-      break;
-    case 'Отзывы':
-      setText(otz);
-      break;
-    case 'Доставка':
-      setText(dost);
-      break;
-    default:
-      setText('');
-    }
   };
 
   return (
     <section className="product-block">
       <div className="product-block__top">
         <div className="images">
-          <div className="images__column">
-            {product.images.map((image) => (
+
+          <Swiper
+            // className='swiper images__column'
+            spaceBetween={40}
+            slidesPerView={4}
+            direction={'vertical'}
+            navigation={true}
+            modules={[Navigation]}
+            className="images__column"
+          >
+            {product.images.map((image, idx) => (
+              <SwiperSlide className='images__slide'>
+                <img
+                  key={idx}
+                  className="images__item"
+                  src={image}
+                  alt="Изображение товара"
+                  onClick={handleImageClick}
+                />
+              </SwiperSlide>
+            ))}
+
+            ...
+          </Swiper>
+          {/* <Slider {...settings} className="images__column">
+            {product.images.map((image, idx) => (
+              <div>
+
+                <img
+                  key={idx}
+                  className="images__item"
+                  src={image}
+                  alt="Изображение товара"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+              </div>
+            ))}
+          </Slider> */}
+          {/* <div className="images__column">
+            {product.images.map((image, idx) => (
               <img
+                key={idx}
                 className="images__item"
                 src={image}
                 alt="Изображение товара"
@@ -74,7 +78,7 @@ export default function ProductBlock({ product }) {
                 onMouseLeave={handleMouseLeave}
               />
             ))}
-          </div>
+          </div> */}
           <img className="images__main" src={mainImage} alt="Крупное фото товара" />
         </div>
 
@@ -85,8 +89,8 @@ export default function ProductBlock({ product }) {
           </div>
 
           <div className='info__shipper'>
-            <p className="info__shipper-name">{product.shipper}</p>            
-            <IconInfo className='info__shipper-icon hint-right-middle' data-hint={product.shipper}/>            
+            <p className="info__shipper-name">{product.shipper}</p>
+            <IconInfo className='info__shipper-icon hint-right-middle' data-hint={product.shipper} />
           </div>
 
           <p className="info__code">{`Арт. ${product.productCode}`}</p>
@@ -113,67 +117,73 @@ export default function ProductBlock({ product }) {
             <p className="info__color">Цвет</p>
             <CharacteristicColor characteristicValue={product.colors} />
           </div>
-
-          
         </div>
 
         <div className='order'>
-          <div className='order__price'>           
-            <p className="order__price-value">{`${product.price} ` } &#x20bd;
-              <span className='order__price-unit'>{`за ${product.unit}`}</span>
+          <div className='order__price'>
+            <h3 className="order__price-value">
+              {`${product.price} `} &#x20bd;
+              <div className='order__icons'>
+                <IconScales />
+                <IconHearth />
+              </div>
+            </h3>
+            <p className='order__price-piece'>
+              {`за ед. ${product.price} `} &#x20bd;
             </p>
-              
-           
+
             <div className='order__price-quantity'>
-              <div className='order__price-quantity-now' style={{width: (product.piecesNow / product.piecesAll) * 100 + '%'}}/>
+              <div className='order__price-quantity-now' style={{ width: (product.piecesNow / product.piecesAll) * 100 + '%' }} />
             </div>
 
             <p className='order__price-remainder'>
-              Осталось: <span className='order__price-remainder-now'>{`${product.piecesNow} ${product.unit}`}</span>
-            </p> 
+              Осталось: <span className='order__price-remainder-now'>{`${product.piecesNow} шт.`}</span>
+            </p>
 
             <p className='order__price-min-order'>{`Минимальное количество товара для заказа: ${product.minOrder}`}</p>
           </div>
-          
-          <div className='order__quantity'>
-            <Counter initCount={product.orderQuantity} min={product.minOrder} />
-          
-            <div className='order__quantity-promo'>
-              <IconFire className='order__quantity-icon'/>
-              Больше&nbsp;заказ&nbsp;— меньше цена за единицу
-            </div>
+
+          <div className='order__delivery'>
+            <p className='order__delivery-title'>Варианты доставки</p>
+            <p className='order__delivery-subtitle'>Самовывоз со склада продавца — <span className='order__delivery-data'>завтра</span></p>
+            <p className='order__delivery-subtitle'>Курьером — <span className='order__delivery-data'>10 сентября</span></p>
           </div>
 
-          <div className='order__buttons'>
-            <Button size='xl' mode='secondary' >В корзину</Button>
-            <div className='order__buttons-icons'>
-              <IconScales />
-              <IconHearth/>
-            </div>
-          </div>          
+          <Counter initCount={product.orderQuantity} min={product.minOrder} />
+          <Button size='xl' mode='secondary' extraClass='order__button'>В корзину</Button>
         </div>
       </div>
+
       <div className="product-block__bottom">
-        <nav>
-          <ul className="navigation">
-            <li
-              className="navigation__item navigation__item_checked"
-              onClick={handleClickNav}>
-              Описание
-            </li>
-            <li className="navigation__item" onClick={handleClickNav}>
-              Характеристики
-            </li>
-            <li className="navigation__item" onClick={handleClickNav}>
-              Отзывы
-            </li>
-            <li className="navigation__item" onClick={handleClickNav}>
-              Доставка
-            </li>
-          </ul>
-        </nav>
-        <p className="text">{text}</p>
+        <div className='description'>
+          <div className='description__item'>
+            <h4 className='description__title'>Описание</h4>
+            <p className='description__text'>Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей</p>
+          </div>
+          <div className='description__item'>
+            <h4 className='description__title'>Характеристики</h4>
+            <p className='description__text'>Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей</p>
+          </div>
+        </div>
+
+        <div className='comments'>
+          <h3 className='comments__title'>
+            Отзывы
+            <p className='comments__count'>15</p>
+          </h3>
+          <div className='comments__container'>
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+          </div>
+          <Button size='xl' mode='secondary' >Смотреть все</Button>
+        </div>
+
+
       </div>
-    </section>
+    </section >
   );
 }

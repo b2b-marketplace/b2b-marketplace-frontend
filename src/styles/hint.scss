@@ -52,7 +52,7 @@ $delay-long: 1.5s;
 	&:after {
 		content: attr(data-hint);
 		text-align: center;
-		white-space: nowrap;
+		white-space: normal;
 		z-index: 9999;
 
 		/* 
@@ -68,6 +68,8 @@ $delay-long: 1.5s;
 		font-weight: 400;
 		font-size: 1.2rem;
 		line-height: 2em;
+		width: 250px;
+
 		/* 
 			============================
 		*/

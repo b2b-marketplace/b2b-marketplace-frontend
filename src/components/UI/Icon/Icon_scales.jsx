@@ -19,6 +19,7 @@ const IconScales = ({ className, ...props }) => {
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinejoin="round"
+          fill='white'
         />
         <rect
           x="14"
@@ -29,6 +30,7 @@ const IconScales = ({ className, ...props }) => {
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinejoin="round"
+          fill='white'
         />
         <rect
           x="3.33398"
@@ -39,6 +41,7 @@ const IconScales = ({ className, ...props }) => {
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinejoin="round"
+          fill='white'
         />
       </svg>
     </Icon>

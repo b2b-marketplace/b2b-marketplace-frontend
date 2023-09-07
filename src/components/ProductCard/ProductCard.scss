@@ -25,6 +25,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
+  height: 48px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -100,8 +101,12 @@
   }
 
   &__icons {
+    position: absolute;
+    top: 16px;
+    right: 16px;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 5px;
+    z-index: 999;
   }
 }

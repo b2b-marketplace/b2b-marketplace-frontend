@@ -22,7 +22,7 @@ export const PRODUCTS = [
     piecesAll: 2000,
     piecesNow: 800,
     minOrder: 5,
-    images: [img4, img3, img5, img2],
+    images: [img4, img3, img5, img4, img3, img5, img2, img2],
   },
   {
     id: '3',
