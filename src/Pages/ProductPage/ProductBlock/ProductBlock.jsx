@@ -10,26 +10,64 @@ import ProductRating from '../../../components/ProductRating/ProductRating';
 import CharacteristicColor from '../../../components/CharacteristicColor/CharacteristicColor';
 import { useEffect, useState } from 'react';
 import CommentsBlock from '../../../components/CommentsBlock/CommentsBlock';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
 
 export default function ProductBlock({ product }) {
   const defaultImage = product.images[0];
   const [mainImage, setMainImage] = useState(defaultImage);
 
 
-  const handleMouseEnter = (event) => {
+  const handleImageClick = (event) => {
     setMainImage(event.target.src);
   };
-
-  const handleMouseLeave = (event) => {
-    setMainImage(defaultImage);
-  };
-
 
   return (
     <section className="product-block">
       <div className="product-block__top">
         <div className="images">
-          <div className="images__column">
+
+          <Swiper
+            // className='swiper images__column'
+            spaceBetween={40}
+            slidesPerView={4}
+            direction={'vertical'}
+            navigation={true}
+            modules={[Navigation]}
+            className="images__column"
+          >
+            {product.images.map((image, idx) => (
+              <SwiperSlide className='images__slide'>
+                <img
+                  key={idx}
+                  className="images__item"
+                  src={image}
+                  alt="Изображение товара"
+                  onClick={handleImageClick}
+                />
+              </SwiperSlide>
+            ))}
+
+            ...
+          </Swiper>
+          {/* <Slider {...settings} className="images__column">
+            {product.images.map((image, idx) => (
+              <div>
+
+                <img
+                  key={idx}
+                  className="images__item"
+                  src={image}
+                  alt="Изображение товара"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+              </div>
+            ))}
+          </Slider> */}
+          {/* <div className="images__column">
             {product.images.map((image, idx) => (
               <img
                 key={idx}
@@ -40,7 +78,7 @@ export default function ProductBlock({ product }) {
                 onMouseLeave={handleMouseLeave}
               />
             ))}
-          </div>
+          </div> */}
           <img className="images__main" src={mainImage} alt="Крупное фото товара" />
         </div>
 
@@ -146,6 +184,6 @@ export default function ProductBlock({ product }) {
 
 
       </div>
-    </section>
+    </section >
   );
 }
