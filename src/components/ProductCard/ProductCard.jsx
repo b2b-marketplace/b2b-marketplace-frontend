@@ -13,7 +13,11 @@ import React from "react";
 function ProductCard({ product }) {
   return (
     <div className="card">
-      <SliderImage images={product.images}/>
+      <SliderImage images={product.images} />
+      <div className="card__icons">
+        <IconHearth />
+        <IconScales />
+      </div>
 
 
       <div className="card__info">
@@ -22,8 +26,8 @@ function ProductCard({ product }) {
         </Link>
         <div className="card__shipper">
           <p className="card__shipper-name">{product.seller.name}</p>
-          {/*<IconInfo className='card__shipper-icon hint-right-middle' data-hint={product.shipper}/>*/}
-          <Tooltip
+          <IconInfo className='card__shipper-icon hint-top-middle' data-hint={product.seller.name} />
+          {/* <Tooltip
             position="top"
             sizeText="l"
             textClassName="card__tooltip"
@@ -31,7 +35,7 @@ function ProductCard({ product }) {
               <>{product.seller.name}</>
             }>
             <IconInfo/>
-          </Tooltip>
+          </Tooltip> */}
           {/*<IconInfo className="card__shipper-icon hint-right-middle"/>*/}
         </div>
 
@@ -43,10 +47,7 @@ function ProductCard({ product }) {
         <div className="card__info-bottom">
 
           <p className="card__price">{`${product.price} `}&#x20bd;</p>
-          <div className="card__icons">
-            <IconHearth/>
-            <IconScales/>
-          </div>
+
         </div>
 
         <Button size="m" mode="tertiary">
