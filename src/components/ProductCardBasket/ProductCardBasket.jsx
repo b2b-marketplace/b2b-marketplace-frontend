@@ -25,6 +25,7 @@ const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChec
   const productInfo = product.product;
   //Форматируем цену из 40000 в 40 000, добавляем разделители разрядов
   const productInfoPrice = new Intl.NumberFormat('ru-RU').format(parseFloat(productInfo.price * product.quantity));
+  const productInfoPricePerOne = new Intl.NumberFormat('ru-RU').format(parseFloat(productInfo.price));
   return (
     <div className={`product-card-basket ${className ? className : ""}`}>
       <div className="product-card-basket__content">
@@ -46,6 +47,14 @@ const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChec
         </div>
       </div>
       <div className="product-card-basket__price-count-like">
+        <div className="product-card-basket__product-count">
+          <Counter onChangeProductQuantity={onChangeProductQuantity} initCount={product.quantity}/>
+        </div>
+        <div className="product-card-basket__product-prices">
+          <span className="product-card-basket__product-price">{productInfoPrice} ₽</span>
+          <span className="product-card-basket__product-price-per-one">за ед. {productInfoPricePerOne} ₽</span>
+
+        </div>
         <div className="product-card-basket__buttons">
           <button onClick={onClickDeleteProduct} type="button" className="product-card-basket__button">
             <IconTrash className="product-card-basket__icon-button"/>
@@ -53,14 +62,6 @@ const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChec
           <button type="button" className="product-card-basket__button">
             <IconHearth className="product-card-basket__icon-button"/>
           </button>
-        </div>
-        <div className="product-card-basket__price-count">
-          <div className="product-card-basket__product-count">
-            <Counter onChangeProductQuantity={onChangeProductQuantity} initCount={product.quantity}/>
-          </div>
-          <div className="product-card-basket__product-price">
-            {productInfoPrice} ₽
-          </div>
         </div>
 
       </div>

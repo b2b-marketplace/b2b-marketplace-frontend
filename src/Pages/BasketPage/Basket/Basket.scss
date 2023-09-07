@@ -3,21 +3,15 @@
   font-style: $fontStyle;
   font-weight: $fontWeight;
   color: $fontColor;
-  //&__header {
-  //  display: flex;
-  //  column-gap: 20px;
-  //  align-items: center;
-  //}
-  //
-  //&__title {
-  //  margin: 0;
-  //  font-size: 40px;
-  //  font-weight: 600;
-  //}
-  //
-  //&__title-product-count {
-  //  margin: 0;
-  //}
+
+  &__empty {
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+
+    min-height: 320px;
+  }
 
   &__main {
     display: flex;
@@ -31,7 +25,7 @@
 
   &__panel {
     box-sizing: border-box;
-    border: 1px solid $grayLightColor;
+    //border: 1px solid $grayLightColor;
     border-radius: 20px;
     height: 52px;
     display: flex;
@@ -90,7 +84,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: 40px;
   }
 
   &__product-list {
