@@ -11,7 +11,7 @@ import IconProfile from '../UI/Icon/Icon_profile';
 
 import { Button } from '../UI/Button/Button';
 import IconMessage from '../UI/Icon/Icon_message';
-import PopupMenu from '../PopupMenu/PopupMenu';
+import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
 import Input from '../UI/Input/Input';
 
@@ -69,7 +69,7 @@ const Header = () => {
         <div className="header__search">
           <Input mode="primary" type="text" extraClass="header__input" placeholder="Поиск...." />
           <button type="button" className="header__button">
-            <IconSearch className={'header__button-icon'} />
+            <IconSearch />
           </button>
         </div>
       </div>

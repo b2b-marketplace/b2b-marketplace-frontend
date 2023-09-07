@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './ButtonScrollUp.scss';
-import IconArrowUp from '../UI/Icon/Icon_arrow';
-import { Button } from '../UI/Button/Button';
+import IconArrowUp from '../UI/Icon/Icon_arrow-up';
 
-const ButtonScrollUp = () => {
-  const [showArrow, setShowArrow] = useState(false);
-
-  const handleScroll = () => {
-    if (window.scrollY > 200) {
-      setShowArrow(true);
-    } else {
-      setShowArrow(false);
-    }
-  };
+function ButtonScrollUp() {
+  const [isVisible, setIsVisible] = useState(false);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleScroll = () => {
+    if (window.scrollY > 800) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
   };
 
   useEffect(() => {
@@ -26,12 +28,15 @@ const ButtonScrollUp = () => {
   }, []);
 
   return (
-    <div className={`navigation-arrow ${showArrow ? 'show' : ''}`}>
-      <Button size="xs" mode='secondary' onClick={scrollToTop}>
+    <div className="button-scroll-up">
+      <button
+        className={`button-scroll-up__button ${isVisible ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        type="button">
         <IconArrowUp />
-      </Button>
+      </button>
     </div>
   );
-};
+}
 
 export default ButtonScrollUp;

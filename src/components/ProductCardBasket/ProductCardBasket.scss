@@ -4,25 +4,20 @@
   font-weight: $fontWeight;
   font-size: 16px;
   color: $fontColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   box-sizing: border-box;
   border: 1px solid $grayLightColor;
   border-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 20px 40px 20px 44px;
   width: 100%;
-  row-gap: 4px;
-
+  max-height: 172px;
   &__checkbox {
     align-self: center;
     justify-content: center;
     align-content: center;
-  }
-
-  &__container {
-
   }
 
   &__content {
@@ -99,10 +94,12 @@
 
   &__price-count-like {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     row-gap: 14px;
-    max-width: 420px;
+    max-width: 476px;
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__buttons {
@@ -138,11 +135,22 @@
   &__product-count {
   }
 
+  &__product-prices {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+  }
+
   &__product-price {
     font-family: $fontFamilyUnbounded;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 28px;
+  }
+
+  &__product-price-per-one {
+    color: $grayColor;
+    line-height: 24px;
   }
 }

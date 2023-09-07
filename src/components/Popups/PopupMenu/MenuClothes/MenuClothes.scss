@@ -18,13 +18,22 @@
     gap: 40px 24px;
   }
 
-  &__list {
+  &__lists {
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 0;
     margin: 0;
     list-style-type: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &.hidden {
+      display: none;
+    }
   }
 
   &__subtitle {
@@ -45,5 +54,20 @@
     &:hover {
       background-color: #f2f2f2;
     }
+  }
+
+  &__button-more {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border: none;
+    padding: 0;
+    width: 65px;
+    height: 24px;
+    background-color: transparent;
+    color: $blueDarkColor;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
   }
 }

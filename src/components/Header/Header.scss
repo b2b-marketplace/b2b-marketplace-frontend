@@ -26,6 +26,8 @@
   &__logo {
     grid-row: span 2;
     text-decoration: none;
+    height: 68px;
+    width: 68px;
   }
 
   &__title {
@@ -123,12 +125,7 @@
     border-radius: 20px;
     border: $blackColor;
     background: $blackColor;
+    color: $whiteColor;
     border: none;
-  }
-
-  &__button-icon {
-    width: 24px;
-    height: 24px;
-    color: #7b7c82;
   }
 }
