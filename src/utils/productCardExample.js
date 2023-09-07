@@ -11,8 +11,7 @@ export const PRODUCTS = [
     shipper: 'ООО "Компания"',
     productCode: 1234567,
     availableStatus: true,
-    description:
-      'Комплект карандашей с ластиком. Самый базовый...',
+    description: 'Комплект карандашей с ластиком. Самый базовый...',
     orderQuantity: 10,
     colors: [{ color: 'white' }, { color: 'violet' }, { color: 'yellow' }],
     price: 4000,

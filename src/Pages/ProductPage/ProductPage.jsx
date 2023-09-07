@@ -2,7 +2,6 @@ import './ProductPage.scss';
 import ProductBlock from './ProductBlock/ProductBlock';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
 import ProductCardContainer from '../../components/ProductCardContainer/ProductCardContainer';
-import { PRODUCTS } from '../../utils/productCardExample';
 import { useEffect, useState } from 'react';
 
 export default function ProductPage({ product }) {
