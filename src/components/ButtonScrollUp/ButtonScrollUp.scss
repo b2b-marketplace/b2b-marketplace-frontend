@@ -2,7 +2,7 @@
   max-width: 1672px;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 30px 0;
 
   &__button {
@@ -14,12 +14,15 @@
     background-color: $darkColor;
     border: none;
     cursor: pointer;
+    padding: 0;
     transition:
       transform 0.3s ease,
       scale 0.3s ease;
 
     &.visible {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &:hover {
