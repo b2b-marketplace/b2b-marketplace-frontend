@@ -2,6 +2,7 @@ import './SliderImage.scss';
 import Dot from './Dot/Dot';
 
 export default function SliderImage({ images }) {
+  console.log(images.length);
   const width = 100 / images.length;
 
   const getCurrentSlider = (event) => {
@@ -10,24 +11,30 @@ export default function SliderImage({ images }) {
 
   const handleMouseEnter = (event) => {
     const card = getCurrentSlider(event);
-    card.querySelector('.slider__images').style.transform = `translateX(${-card.querySelector('.slider__image').width * event.target.id}px)`;
-    [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
-    [...card.querySelectorAll('.dot')]
-      .filter((item) => item.id === event.target.id)[0]
-      .classList.add('dot_fill');
+    if (images.length!==0) {
+      card.querySelector('.slider__images').style.transform = `translateX(${-card.querySelector('.slider__image').width * event.target.id}px)`;
+      [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
+      [...card.querySelectorAll('.dot')]
+        .filter((item) => item.id === event.target.id)[0]
+        .classList.add('dot_fill');
+    }
   };
 
   const handleMouseLeave = (event) => {
     const card = getCurrentSlider(event);
-    [...card.querySelectorAll('.dot')]
-      .filter((item) => item.id === event.target.id)[0]
-      .classList.remove('dot_fill');
+    if (images.length!==0) {
+      [...card.querySelectorAll('.dot')]
+        .filter((item) => item.id === event.target.id)[0]
+        .classList.remove('dot_fill');
+    }
   };
 
   const handleStartState = (event) => {
     const card = getCurrentSlider(event);
-    card.querySelector('.dot').classList.add('dot_fill');
-    card.querySelector('.slider__images').style.transform = `translateX(0%)`;
+    if (images.length!==0) {
+      card.querySelector('.dot').classList.add('dot_fill');
+      card.querySelector('.slider__images').style.transform = `translateX(0%)`;
+    }
   };
 
   return (

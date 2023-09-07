@@ -30,7 +30,6 @@ export default function ProductBlock({ product }) {
         <div className="images">
 
           <Swiper
-            // className='swiper images__column'
             spaceBetween={40}
             slidesPerView={4}
             direction={'vertical'}
@@ -49,36 +48,7 @@ export default function ProductBlock({ product }) {
                 />
               </SwiperSlide>
             ))}
-
-            ...
           </Swiper>
-          {/* <Slider {...settings} className="images__column">
-            {product.images.map((image, idx) => (
-              <div>
-
-                <img
-                  key={idx}
-                  className="images__item"
-                  src={image}
-                  alt="Изображение товара"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                />
-              </div>
-            ))}
-          </Slider> */}
-          {/* <div className="images__column">
-            {product.images.map((image, idx) => (
-              <img
-                key={idx}
-                className="images__item"
-                src={image}
-                alt="Изображение товара"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              />
-            ))}
-          </div> */}
           <img className="images__main" src={mainImage} alt="Крупное фото товара" />
         </div>
 
