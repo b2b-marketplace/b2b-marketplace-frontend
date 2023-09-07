@@ -8,7 +8,7 @@ export const basketList = [
           "sku": "1234567",
           "name": "Детская зимняя куртка для девочки, средней плотности с мембранным напылением 5000/5000.",
           "brand": "Бренд",
-          "price": "40000",
+          "price": "4000",
           "wholesale_quantity": 0,
           "video": "string",
           "quantity_in_stock": 0,
@@ -54,7 +54,7 @@ export const basketList = [
             { "color": 'red' },
           ],
         },
-        "quantity": 1
+        "quantity": 10
       },
       {
         "product": {
@@ -62,7 +62,7 @@ export const basketList = [
           "sku": "1234567",
           "name": "Детская зимняя куртка для девочки, средней плотности с мембранным напылением 5000/5000.",
           "brand": "Бренд",
-          "price": "200",
+          "price": "4000",
           "wholesale_quantity": 0,
           "video": "string",
           "quantity_in_stock": 0,
@@ -108,7 +108,7 @@ export const basketList = [
             { "color": 'red' },
           ],
         },
-        "quantity": 2
+        "quantity": 10
       },
       {
         "product": {
@@ -116,7 +116,7 @@ export const basketList = [
           "sku": "1234567",
           "name": "Детская зимняя куртка для девочки, средней плотности с мембранным напылением 5000/5000.",
           "brand": "Бренд",
-          "price": "300",
+          "price": "4000",
           "wholesale_quantity": 0,
           "video": "string",
           "quantity_in_stock": 0,
@@ -162,7 +162,7 @@ export const basketList = [
             { "color": 'red' },
           ],
         },
-        "quantity": 3
+        "quantity": 10
       }
     ]
   }

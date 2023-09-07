@@ -129,42 +129,53 @@ const Basket = ({ className }) => {
   return (
     <section className={`basket ${className || ''} `}>
       <main className="basket__main">
-        <div className="basket__container">
-          <div className="basket__container-product">
-            <div className="basket__panel">
-              <div className="basket__panel-checkbox">
-                <Checkbox onCheckboxClick={handleClickCheckboxSelectAllProduct} isChecked={isCheckAll} className="basket__checkbox">
-                  <span className="basket__checkbox-text">Выбрать все</span>
-                </Checkbox>
-              </div>
-              <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
-                <IconTrash className="basket__icon-trash"/>
-                Удалить выбранные
-              </button>
-            </div>
-            <ul className="basket__product-list">
-              {productList?.map((product) => (
-                <li className="basket__product-item" key={product.product.id} data-id={product.product.id}>
-                  <ProductCardBasket
-                    isCheckboxChecked={selectedProductId.includes(product.product.id)}
-                    onClickCheckbox={() => handleClickCheckboxProduct(product.product.id)}
-                    onClickDeleteProduct={() => handleClickDeleteProduct(product.product.id)}
-                    onChangeProductQuantity={(count) => handleChangeProductQuantity(product.product.id, count)}
-                    product={product}
-                    className="basket__product"/>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div className="basket__order-detail-container">
-            <OrderDetail
-              productSum={orderInfo.productSum}
-              productCount={orderInfo.productCount}
-              suppliersCount={orderInfo.suppliersCount}
-              className="basket__order-detail-sticky"/>
-          </div>
-        </div>
+        {productList.length > 0 ?
+          (<>
+            <div className="basket__container">
+              <div className="basket__container-product">
+                <div className="basket__panel">
+                  <div className="basket__panel-checkbox">
+                    <Checkbox onCheckboxClick={handleClickCheckboxSelectAllProduct} isChecked={isCheckAll} className="basket__checkbox">
+                      <span className="basket__checkbox-text">Выбрать все</span>
+                    </Checkbox>
+                  </div>
+                  <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
+                    <IconTrash className="basket__icon-trash"/>
+                    Удалить выбранные
+                  </button>
+                </div>
+                <ul className="basket__product-list">
+                  {productList?.map((product) => (
+                    <li className="basket__product-item" key={product.product.id} data-id={product.product.id}>
+                      <ProductCardBasket
+                        isCheckboxChecked={selectedProductId.includes(product.product.id)}
+                        onClickCheckbox={() => handleClickCheckboxProduct(product.product.id)}
+                        onClickDeleteProduct={() => handleClickDeleteProduct(product.product.id)}
+                        onChangeProductQuantity={(count) => handleChangeProductQuantity(product.product.id, count)}
+                        product={product}
+                        className="basket__product"/>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="basket__order-detail-container">
+                <OrderDetail
+                  productSum={orderInfo.productSum}
+                  productCount={orderInfo.productCount}
+                  suppliersCount={orderInfo.suppliersCount}
+                  className="basket__order-detail-sticky"/>
+              </div>
+            </div>
+          </>) :
+          (
+            <div className="basket__empty">
+              Корзина Пуста
+            </div>
+          )
+        }
+
+
       </main>
     </section>
   );

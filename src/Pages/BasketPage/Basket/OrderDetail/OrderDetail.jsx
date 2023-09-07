@@ -46,12 +46,12 @@ const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...p
           </div>
         </div>
         <div className="order-detail__price-total">{productSumPrice} ₽</div>
+        <div className="order-detail__buttons">
+          <Button size="xl" mode="secondary" border={true} label={'Опубликовать'} extraClass="order-detail__button">Купить</Button>
+        </div>
       </div>
 
-      <div className="order-detail__buttons">
-        <Button size="xl" mode="secondary" border={true} label={'Опубликовать'}>Купить</Button>
-        <Button size="xl" mode="primary" border={true} label={'Опубликовать'}>Рассрочка</Button>
-      </div>
+
     </div>
   );
 };
