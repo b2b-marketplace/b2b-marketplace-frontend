@@ -23,7 +23,7 @@ import { changeQuantity, deleteProduct } from "../../store/slices/basketSlice.js
  */
 const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChecked }) => {
   const dispatch = useDispatch();
-
+  const imageSrc = product.images[ 0 ] ? product.images[ 0 ].image : imageStub;
   //Форматируем цену из 40000 в 40 000, добавляем разделители разрядов
   const productInfoPrice = new Intl.NumberFormat('ru-RU').format(parseFloat(product.price * product.quantity));
   const productInfoPricePerOne = new Intl.NumberFormat('ru-RU').format(parseFloat(product.price));
@@ -34,7 +34,7 @@ const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChec
           <Checkbox onCheckboxClick={onClickCheckbox} isChecked={isCheckboxChecked}/>
         </div>
         <div className="product-card-basket__image-with-vendor-code">
-          <img className="product-card-basket__image" src={imageStub} alt="Заглушка"/>
+          <img className="product-card-basket__image" src={imageSrc} alt="Заглушка"/>
           <VendorCode vendorCode="1234567"/>
         </div>
         <div className="product-card-basket__details">

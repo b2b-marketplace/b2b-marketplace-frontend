@@ -5,8 +5,9 @@ import IconTrash from "../../../components/UI/Icon/Icon_trash";
 import ProductCardBasket from "../../../components/ProductCardBasket/ProductCardBasket";
 import OrderDetail from "./OrderDetail/OrderDetail";
 import { useSelector, useDispatch } from "react-redux";
-import { productList } from "../../../mock/productsMock";
+//import { productList } from "../../../mock/productsMock";
 import { deleteProduct } from "../../../store/slices/basketSlice.js";
+import productsApi from '../../../utils/productsApi';
 
 /**
  * Компонент Basket для отображения товаров в корзине.
@@ -35,24 +36,29 @@ const Basket = ({ className }) => {
     const mergedList = [];
     //Проходим по массиву товаров из корзины
     if (basketList.basket_products.length) {
-      for (const basketItem of basketList.basket_products) {
-        // Ищем товар по ID
-        const productItem = productList.results.find(product => product.id === basketItem.id);
-        // Если товар найден, объединяем информацию о товаре и количестве
-        if (productItem) {
-          const mergedItem = {
-            ...productItem,
-            quantity: basketItem.quantity
-          };
-          mergedList.push(mergedItem);
-        }
-      }
-      if (mergedList.length) {
-        setCurrentProductList(mergedList);
-      }
+      const productBasketIds = basketList.basket_products.map(product => product.id);
+      productsApi.getProducts(productBasketIds)
+        .then(data => {
+          for (const basketItem of basketList.basket_products) {
+            // Ищем товар по ID
+            const productItem = data.results.find(product => product.id === basketItem.id);
+            // Если товар найден, объединяем информацию о товаре и количестве
+            if (productItem) {
+              const mergedItem = {
+                ...productItem,
+                quantity: basketItem.quantity
+              };
+              mergedList.push(mergedItem);
+            }
+          }
+          if (mergedList.length) {
+            setCurrentProductList(mergedList);
+          }
+        });
     } else {
       setCurrentProductList([]);
     }
+
 
   }, [basketList]);
 
