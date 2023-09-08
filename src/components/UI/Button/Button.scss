@@ -1,4 +1,5 @@
 @import '../../../styles/vars';
+
 .button {
   padding: 0;
   cursor: pointer;
@@ -19,6 +20,7 @@
     font-size: 20px;
     font-weight: 500;
   }
+
   &_size_s {
     width: 160px;
     height: 44px;
@@ -26,41 +28,40 @@
     font-weight: 700;
     border-radius: 20px;
   }
+
   &_size_m {
     width: 230px;
     height: 44px;
-    font-family: $fontFamilyNunitoSans;
     border-radius: 20px;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
   }
+
   &_size_l {
-    width: 262px;
-    height: 44px;
+    width: 236px;
+    height: 68px;
     border-radius: 30px;
-    font-family: $fontFamilyNunitoSans;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 24px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
   }
+
   &_size_xl {
     width: 262px;
     height: 68px;
-    font-family: $fontFamilyNunitoSans;
     border-radius: 30px;
     color: #fff;
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 28px; /* 140% */
+    line-height: 28px;
   }
 
   &_primary {
     background-color: transparent;
     border: none;
     color: $darkColor;
+
     &_border {
       border: 1px solid $darkColor;
     }
@@ -70,6 +71,7 @@
     background-color: $darkColor;
     border: none;
     color: $whiteColor;
+
     &_border {
       border: 1px solid $whiteColor;
     }
@@ -79,6 +81,7 @@
     background-color: $blueColor;
     border: none;
     color: $whiteColor;
+
     &_border {
       border: 1px solid $whiteColor;
     }
