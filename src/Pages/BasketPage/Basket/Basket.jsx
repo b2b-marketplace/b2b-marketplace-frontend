@@ -139,8 +139,6 @@ const Basket = ({ className }) => {
                       <ProductCardBasket
                         isCheckboxChecked={selectedProductId.includes(product.id)}
                         onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
-                        // onClickDeleteProduct={() => handleClickDeleteProduct(product.id)}
-                        //onChangeQuantity={(count) => handleChangeProductQuantity(product.id, count)}
                         product={product}
                         className="basket__product"/>
                     </li>

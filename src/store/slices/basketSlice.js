@@ -12,7 +12,8 @@ const basketSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action) => {
-
+      const { productIds, quantity } = action.payload;
+      state.basket.basket_products.push({ id: productIds, quantity });
     },
     deleteProduct: (state, action) => {
       if (isArray(action.payload.productIds)) {
@@ -23,9 +24,6 @@ const basketSlice = createSlice({
         });
       }
     },
-    /**
-     * Обновление количество товаров в корзине
-     */
     changeQuantity: (state, action) => {
       const { productIds, quantity } = action.payload;
       state.basket.basket_products = state.basket.basket_products.map(product => {
