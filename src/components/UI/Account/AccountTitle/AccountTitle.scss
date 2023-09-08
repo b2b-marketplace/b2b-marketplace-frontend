@@ -2,55 +2,69 @@
   display: flex;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
-  gap: 76px;
 
-  &__conteiner {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    justify-items: start;
-    gap: 16px 20px;
-  }
-
-  &__conteiner-logo {
-    grid-row: span 2;
+  &__container-logo {
     width: 92px;
     height: 92px;
     border-radius: 50%;
+    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: $darkColor;
+    background-image: url("../../../../images/editAvatar.png");
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__logo {
-    width: 48px;
-    height: 48px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
 
-  &__description {
-    margin: 0;
-    font-size: 30px;
+  &__logo:hover {
+    cursor: pointer;
+    opacity: .2;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+    justify-content: center;
+  }
+
+  &__container-description {
+    margin: 0 0 4px 0;
+    font-size: 20px;
     font-weight: 600;
-    line-height: 44px;
+    line-height: 36px;
+    font-family: $fontFamilyUnbounded;
   }
 
-  &__text {
-    height: 40px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background: $blueColor;
-    color: $whiteColor;
+  &__container-text {
+    color: $grayColor;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 24px;
     margin: 0;
-    padding: 8px 20px;
+    padding: 0;
   }
 
-  &__button {
+  /* &__button {
+    max-width: 156px;
+    width: 100%;
     border: none;
     padding: 0;
     background: $whiteColor;
-  }
+    color: $blueColor;
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    display: grid;
+    justify-self: center;
+    cursor:pointer;
+  } */
 }
