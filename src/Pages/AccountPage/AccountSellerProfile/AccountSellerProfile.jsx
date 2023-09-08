@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
 import './AccountSellerProfile.scss';
-<<<<<<< Updated upstream:src/Pages/AccountPage/AccountSellerProfile/AccountSellerProfile.jsx
-import IconMail from '../../../components/UI/Icon/Icon_mail';
-import IconPhone from '../../../components/UI/Icon/Icon_phone';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import Tooltip from '../../../components/UI/Tooltip/Tooltip';
-import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
-import IconPencil from '../../../components/UI/Icon/Icon_pencil';
-import IconInfoFil from '../../../components/UI/Icon/Icon_info_fill';
-=======
 import IconMail from '../../../UI/Icon/Icon_mail';
 import IconPhone from '../../../UI/Icon/Icon_phone';
 import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
@@ -17,7 +8,6 @@ import AccountInputField from '../../../UI/Account/AccountInputField/AccountInpu
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
 import useValidation from '../../../../hooks/useValidation';
 import { Button } from '../../../../components/UI/Button/Button';
->>>>>>> Stashed changes:src/components/Page/AccountPage/AccountSellerProfile/AccountSellerProfile.jsx
 
 const AccountSellerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);

@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
 import './AccountBuyerProfile.scss';
-<<<<<<< Updated upstream:src/Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile.jsx
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import IconPencil from '../../../components/UI/Icon/Icon_pencil';
-import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
-import Tooltip from '../../../components/UI/Tooltip/Tooltip';
-import IconPhone from '../../../components/UI/Icon/Icon_phone';
-import IconMail from '../../../components/UI/Icon/Icon_mail';
-import IconInfoFil from '../../../components/UI/Icon/Icon_info_fill';
-import AccountDropDown from '../../../components/UI/Account/AccountDropDown/AccountDropDown';
-=======
 import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
 import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
 import Tooltip from '../../../UI/Tooltip/Tooltip';
@@ -17,7 +7,6 @@ import IconPhone from '../../../UI/Icon/Icon_phone';
 import IconMail from '../../../UI/Icon/Icon_mail';
 import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
 import { Button } from '../../../../components/UI/Button/Button';
->>>>>>> Stashed changes:src/components/Page/AccountPage/AccountBuyerProfile/AccountBuyerProfile.jsx
 
 const AccountBuyerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -87,8 +76,6 @@ const AccountBuyerProfile = () => {
             </div>
           )
           }
-          
-
         </form>
        
         {/* <AccountPaymentInfo title="Способы оплаты" /> */}
