@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/b2b-marketplace-frontend/static/css/main.67ecc66f.css",
-    "main.js": "/b2b-marketplace-frontend/static/js/main.8f80ec1e.js",
+    "main.css": "/b2b-marketplace-frontend/static/css/main.9904bfb2.css",
+    "main.js": "/b2b-marketplace-frontend/static/js/main.bdb3f3ef.js",
     "static/media/3.jpg": "/b2b-marketplace-frontend/static/media/3.94881ec04c2e8c3bb306.jpg",
     "static/media/4.jpg": "/b2b-marketplace-frontend/static/media/4.e4502b040ddfe9f1de91.jpg",
     "static/media/5.jpg": "/b2b-marketplace-frontend/static/media/5.f7857968bc0f6dbfd94f.jpg",
@@ -20,7 +20,6 @@
     "static/media/Unbounded-Bold.woff2": "/b2b-marketplace-frontend/static/media/Unbounded-Bold.f2af041e0655ff62d306.woff2",
     "static/media/Unbounded-SemiBold.woff2": "/b2b-marketplace-frontend/static/media/Unbounded-SemiBold.aeb3dba50e2efd1a24a6.woff2",
     "static/media/Unbounded-Medium.woff2": "/b2b-marketplace-frontend/static/media/Unbounded-Medium.b89c9f33e9d127e84d18.woff2",
-    "static/media/charming_businesswoman_in_glasses_and_striped_shirt_working_with.jpg": "/b2b-marketplace-frontend/static/media/charming_businesswoman_in_glasses_and_striped_shirt_working_with.9807576a3dcf691cd57e.jpg",
     "static/media/Unbounded-Light.woff2": "/b2b-marketplace-frontend/static/media/Unbounded-Light.0ca45966f4cc67d44f98.woff2",
     "static/media/Unbounded-Regular.woff2": "/b2b-marketplace-frontend/static/media/Unbounded-Regular.0d40822f4ac46c989a79.woff2",
     "static/media/Unbounded-ExtraLight.woff2": "/b2b-marketplace-frontend/static/media/Unbounded-ExtraLight.9c08ddde841d454ed822.woff2",
@@ -38,7 +37,6 @@
     "static/media/NunitoSans-Light.woff": "/b2b-marketplace-frontend/static/media/NunitoSans-Light.57866616a79599c90ac9.woff",
     "static/media/NunitoSans-ExtraLightItalic.woff": "/b2b-marketplace-frontend/static/media/NunitoSans-ExtraLightItalic.811bba21c3286e51a1dc.woff",
     "static/media/NunitoSans-ExtraLight.woff": "/b2b-marketplace-frontend/static/media/NunitoSans-ExtraLight.75e707aff5cea743a725.woff",
-    "static/media/shirt-mockup-concept-with-plain-clothing.jpg": "/b2b-marketplace-frontend/static/media/shirt-mockup-concept-with-plain-clothing.ae9464ff6b98793b38f5.jpg",
     "static/media/photo_promo-registration.jpg": "/b2b-marketplace-frontend/static/media/photo_promo-registration.eb637b3bc93d319ed695.jpg",
     "static/media/NunitoSans-ExtraBoldItalic.woff2": "/b2b-marketplace-frontend/static/media/NunitoSans-ExtraBoldItalic.eb92d2a344dabf85b4e7.woff2",
     "static/media/NunitoSans-SemiBoldItalic.woff2": "/b2b-marketplace-frontend/static/media/NunitoSans-SemiBoldItalic.4cab5e502138952ae8e5.woff2",
@@ -60,11 +58,11 @@
     "index.html": "/b2b-marketplace-frontend/index.html",
     "static/media/dotFill.svg": "/b2b-marketplace-frontend/static/media/dotFill.5a2e9e92d8e861ab4cc5.svg",
     "static/media/dotNoFill.svg": "/b2b-marketplace-frontend/static/media/dotNoFill.c013e1fda92b66ce841f.svg",
-    "main.67ecc66f.css.map": "/b2b-marketplace-frontend/static/css/main.67ecc66f.css.map",
-    "main.8f80ec1e.js.map": "/b2b-marketplace-frontend/static/js/main.8f80ec1e.js.map"
+    "main.9904bfb2.css.map": "/b2b-marketplace-frontend/static/css/main.9904bfb2.css.map",
+    "main.bdb3f3ef.js.map": "/b2b-marketplace-frontend/static/js/main.bdb3f3ef.js.map"
   },
   "entrypoints": [
-    "static/css/main.67ecc66f.css",
-    "static/js/main.8f80ec1e.js"
+    "static/css/main.9904bfb2.css",
+    "static/js/main.bdb3f3ef.js"
   ]
 }
