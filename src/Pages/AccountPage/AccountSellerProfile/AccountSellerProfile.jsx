@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './AccountSellerProfile.scss';
-import IconMail from '../../../UI/Icon/Icon_mail';
-import IconPhone from '../../../UI/Icon/Icon_phone';
-import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
-import Tooltip from '../../../UI/Tooltip/Tooltip';
-import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
-import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
+import IconMail from "../../../components/UI/Icon/Icon_mail";
+import IconPhone from "../../../components/UI/Icon/Icon_phone";
+import AccountTitle from "../../../components/UI/Account/AccountTitle/AccountTitle";
+import AccountInputField from "../../../components/UI/Account/AccountInputField/AccountInputField";
 import useValidation from '../../../../hooks/useValidation';
 import { Button } from '../../../../components/UI/Button/Button';
 

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import './AccountBuyerProfile.scss';
-import AccountTitle from '../../../UI/Account/AccountTitle/AccountTitle';
-import AccountInputField from '../../../UI/Account/AccountInputField/AccountInputField';
-import Tooltip from '../../../UI/Tooltip/Tooltip';
-import IconPhone from '../../../UI/Icon/Icon_phone';
-import IconMail from '../../../UI/Icon/Icon_mail';
-import IconInfoFil from '../../../UI/Icon/Icon_info_fill';
-import { Button } from '../../../../components/UI/Button/Button';
+import AccountTitle from "../../../components/UI/Account/AccountTitle/AccountTitle";
+import AccountInputField from "../../../components/UI/Account/AccountInputField/AccountInputField";
+import IconPhone from "../../../components/UI/Icon/Icon_phone";
+import IconMail from "../../../components/UI/Icon/Icon_mail";
+import { Button } from "../../../components/UI/Button/Button";
 
 const AccountBuyerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
