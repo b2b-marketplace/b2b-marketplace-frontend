@@ -1,46 +1,67 @@
 .slider {
-  width: 315px;
-  max-height: 280px;
+  width: 100%;
+  height: $sliderHeight;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid $darkColor;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid $grayLightColor;
   &__images {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
-    transform: translateX(000%);
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
   }
 
   &__image {
+    -o-object-fit: cover;
     object-fit: cover;
-    max-width: 315px;
-    height: 280px;
+    width: $cardWidth;
   }
 
   &__nav {
-    height: 280px;
+    height: $cardHeight;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
   }
 
-  &__nav_column {
-    height: 100%;
-    // background-color: #fff;
-    // opacity: 0.2;
+  &__nav-column {
+    height: $cardHeight;
     z-index: 2;
   }
 
   &__dots {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     position: absolute;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
     column-gap: 10px;
-    top: 248px;
+    bottom: 16px;
     left: 0;
     right: 0;
     z-index: 1;

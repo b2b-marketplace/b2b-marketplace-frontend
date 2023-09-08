@@ -10,33 +10,37 @@ export default function SliderImage({ images }) {
 
   const handleMouseEnter = (event) => {
     const card = getCurrentSlider(event);
-    card.querySelector('.slider__images').style.transform = `translateX(${
-      -100 * event.target.id
-    }%)`;
-    [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
-    [...card.querySelectorAll('.dot')]
-      .filter((item) => item.id === event.target.id)[0]
-      .classList.add('dot_fill');
+    if (images.length!==0) {
+      card.querySelector('.slider__images').style.transform = `translateX(${-card.querySelector('.slider__image').width * event.target.id}px)`;
+      [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
+      [...card.querySelectorAll('.dot')]
+        .filter((item) => item.id === event.target.id)[0]
+        .classList.add('dot_fill');
+    }
   };
 
   const handleMouseLeave = (event) => {
     const card = getCurrentSlider(event);
-    [...card.querySelectorAll('.dot')]
-      .filter((item) => item.id === event.target.id)[0]
-      .classList.remove('dot_fill');
+    if (images.length!==0) {
+      [...card.querySelectorAll('.dot')]
+        .filter((item) => item.id === event.target.id)[0]
+        .classList.remove('dot_fill');
+    }
   };
 
   const handleStartState = (event) => {
     const card = getCurrentSlider(event);
-    card.querySelector('.dot').classList.add('dot_fill');
-    card.querySelector('.slider__images').style.transform = `translateX(0%)`;
+    if (images.length!==0) {
+      card.querySelector('.dot').classList.add('dot_fill');
+      card.querySelector('.slider__images').style.transform = `translateX(0%)`;
+    }
   };
 
   return (
     <div className="slider" onMouseLeave={handleStartState}>
       <div className="slider__images">
         {images.map((image, idx) => (
-          <img key={idx} id={idx} className="slider__image" src={image} alt="" />
+          <img key={idx} id={idx} className="slider__image" src={image.image} alt="" />
         ))}
       </div>
       <div className="slider__nav">
@@ -44,7 +48,7 @@ export default function SliderImage({ images }) {
           <div
             key={idx}
             id={idx}
-            className="slider__nav_column"
+            className="slider__nav-column"
             style={{ width: `${width}%` }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

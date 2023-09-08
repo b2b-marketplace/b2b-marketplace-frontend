@@ -1,39 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './SidebarLeft.scss';
 import PropTypes from 'prop-types';
 
-const SidebarLeft = ({ menuItems, phone, icon1, icon2, text1, text2 }) => {
+const SidebarLeft = ({ menuItems, phone }) => {
   return (
-    <section className="sidebar-left">
-      <div className="sidebar-left__container">
+    <nav className="sidebar-left">
+      <div className="sidebar-left__conteiner">
         <ul className="sidebar-left__items">
           {menuItems.map((item, index) => (
             <li key={index} className="sidebar-left__item">
-              {item.icon}
-              <Link className="sidebar-left__link" to={item.link}>
+              <NavLink
+                className={({ isActive }) =>
+                  `sidebar-left__link ${isActive ? 'sidebar-left__link_active' : ''}`
+                }
+                to={item.link}>
+                {item.icon}
                 {item.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="sidebar-left__container">
-        <button className="sidebar-left__button">
-          {icon1} {text1}
-        </button>
-
-        <button className="sidebar-left__button">
-          {icon2} {text2}
-        </button>
 
         <a className="sidebar-left__contact" href={`tel:${phone}`}>
           {phone}
+          <p className="sidebar-left__text">Звонок бесплатный</p>
         </a>
-        <p className="sidebar-left__text">Звонок бесплатный</p>
       </div>
-    </section>
+    </nav>
   );
 };
 

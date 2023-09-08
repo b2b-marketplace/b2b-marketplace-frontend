@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import './Button.scss';
 
-export const Button = ({ primary, border, rotate, size, type, children, className, ...props }) => {
-  const mode = primary ? 'button__primary' : 'button__secondary';
-  const isBorder = border ? `${mode}_border` : '';
+export const Button = ({ mode, border, rotate, size, type, children, extraClass, ...props }) => {
+  const modeClass = `button_${mode}`;
+  const isBorder = border ? `${modeClass}_border` : '';
   const isRotate = rotate && size === 'xs' ? 'button_rotate' : '';
   return (
     <button
       type={type}
-      className={['button', `button_size_${size}`, mode, isBorder, isRotate, className].join(' ')}
+      className={['button', `button_size_${size}`, modeClass, isBorder, isRotate, extraClass || ""].join(' ')}
       {...props}>
       {children}
     </button>
@@ -16,18 +16,20 @@ export const Button = ({ primary, border, rotate, size, type, children, classNam
 };
 
 Button.propTypes = {
-  primary: PropTypes.bool,
-  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxx','xxxl', 'xxxxl']),
+  mode: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
+  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
   border: PropTypes.bool,
   rotate: PropTypes.bool,
   type: PropTypes.oneOf(['button', 'submit']),
+  extraClass: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  primary: false,
+  mode: 'primary',
   size: 'm',
   border: true,
   rotate: false,
+  extraClass: "",
   onClick: undefined,
 };

@@ -1,67 +1,56 @@
 import { Button } from '../UI/Button/Button';
+
+import IconInfo from '../UI/Icon/Icon_info';
 import IconHearth from '../UI/Icon/Icon_hearth';
 import IconScales from '../UI/Icon/Icon_scales';
-import IconVerified from '../UI/Icon/Icon_verified';
-import IconNotVerified from '../UI/Icon/Icon_not-verified';
-import IconEdit from '../UI/Icon/Icon_edit';
-import IconDelete from '../UI/Icon/Icon_delete';
-import ProductRating from '../ProductRating/ProductRating';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
 import { Link } from 'react-router-dom';
+import Tooltip from "../UI/Tooltip/Tooltip";
+import IconInfoFil from "../UI/Icon/Icon_info_fill";
+import React from "react";
 
 function ProductCard({ product }) {
-  const isOwnProduct = true;
-  const isVerified = false;
   return (
     <div className="card">
       <SliderImage images={product.images} />
       <div className="card__icons">
-        {isOwnProduct ? (
-          isVerified ? (
-            <>
-              <div className="card__icons_right">
-                <IconDelete />
-                <IconEdit />
-              </div>
-              <IconVerified />
-            </>
-          ) : (
-            <>
-              <div className="card__icons_right">
-                <IconDelete />
-                <IconEdit />
-              </div>
-              <IconNotVerified />
-            </>
-          )
-        ) : (
-          <div className="card__icons_right">
-            <IconScales />
-            <IconHearth />
-          </div>
-        )}
+        <IconHearth />
+        <IconScales />
       </div>
 
-      <div className="card__info">
-        <div className="card__info_top">
-          <Link to={`/product/${product.id}`} className="card__title">
-            {product.title}
-          </Link>
-          <ProductRating rating={product.rating} />
-        </div>
-        <p className="card__shipper">{product.shipper}</p>
 
-        <div className="card__description">{product.description}</div>
+      <div className="card__info">
+        <Link to={`/product/${product.id}`} className="card__title">
+          {product.name}
+        </Link>
+        <div className="card__shipper">
+          <p className="card__shipper-name">{product.seller.name}</p>
+          <IconInfo className='card__shipper-icon hint-top-middle' data-hint={product.seller.name} />
+          {/* <Tooltip
+            position="top"
+            sizeText="l"
+            textClassName="card__tooltip"
+            tooltipContent={
+              <>{product.seller.name}</>
+            }>
+            <IconInfo/>
+          </Tooltip> */}
+          {/*<IconInfo className="card__shipper-icon hint-right-middle"/>*/}
+        </div>
 
         <div className="card__min-order">
-          <p className="card__min-order_title">Мин. заказ:</p>
-          <p className="card__min-order_quantity">{`от ${product.orderQuantity} шт`}</p>
+          <p className="card__min-order-title">Мин. заказ:</p>
+          <p className="card__min-order-quantity">{`от ${product.wholesale_quantity} шт`}</p>
         </div>
 
-        <p className="card__price">{`${product.price} р`}</p>
+        <div className="card__info-bottom">
 
-        <Button size="xl" primary={true} border={true}>
+          <p className="card__price">{`${product.price} `}&#x20bd;</p>
+
+        </div>
+
+        <Button size="m" mode="tertiary">
           В корзину
         </Button>
       </div>

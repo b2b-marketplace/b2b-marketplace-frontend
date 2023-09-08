@@ -15,7 +15,7 @@
     width: 626px;
     display: flex;
     flex-direction: column;
-    font-family: $fontFamily;
+    font-family: $fontFamilyNunitoSans;
     font-size: 20px;
     font-style: $mainStyle;
     font-weight: $mainWeight;
@@ -25,7 +25,7 @@
   &__header {
     box-sizing: border-box;
     display: flex;
-    border: 1px solid $darkColor;
+    border: 1px solid $blackColor;
     border-radius: 20px;
     cursor: pointer;
     width: 626px;
@@ -47,7 +47,7 @@
 
   &__body {
     background: $whiteColor;
-    border: 1px solid $darkColor;
+    border: 1px solid $blackColor;
     border-radius: 20px;
     border-top: 0;
     display: none;
@@ -56,7 +56,7 @@
 
   &__select.is-active .drop-down__body {
     display: block;
-    max-height: 200px; /*  максимальная высота меню */
+    max-height: 125px; /*  максимальная высота меню */
     overflow: auto; /* прокрутка, если меню слишком длинное */
   }
 

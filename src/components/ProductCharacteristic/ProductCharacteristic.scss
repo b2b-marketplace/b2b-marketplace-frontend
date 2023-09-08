@@ -1,10 +1,10 @@
 .product-characteristic {
-  font-family: $fontFamily;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: 14px;
   color: $fontColor;
-
+  line-height: 20px;
   display: flex;
   flex-direction: row;
   column-gap: 16px;
@@ -14,6 +14,9 @@
     display: flex;
     flex-direction: column;
     align-self: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
   }
 
   &__value {

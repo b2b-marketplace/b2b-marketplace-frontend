@@ -1,24 +1,33 @@
-$maxWidth: 1440px;
+$maxWidth: 1672px;
 $minWidth: 320px;
+
+// slider & card
+$cardWidth: 262px;
+$cardHeight: 400px;
+$sliderHeight: 164px;
 
 $mainStyle: normal;
 $mainWeight: 400;
 $mainFontSize: 16px;
 
 $whiteColor: #fff;
-$blackColor: #131313;
-$grayColor: #686868;
-$redColor: #ff4040;
-$lightColor: #fff;
-$darkColor: #000;
-$inactiveColor: #A3A3A3;  
+$blackColor: #000;
+$darkColor: #23252E;
+$grayColor: #7B7C82;
+$grayLightColor: rgba(123, 124, 130, 0.2);
+$redColor: #F76C6C;
+$greenColor: #61E083;
+$blueColor: #3DA1FF;
+$blueLightColor: #B5DBFF;
+$blueDarkColor: #116FC7;
+$blueColorLine: #77ADFF;
 
 
-
-$fontFamily: "Inter", Arial, sans-serif; // Семейство шрифта по умолчанию
-$fontColor: $blackColor; // Цвет шрифта по умолчанию
+$fontFamilyNunitoSans: "NunitoSans", Arial, sans-serif; // Семейство шрифта по умолчанию
+$fontFamilyUnbounded: "Unbounded", Arial, sans-serif; // Семейство шрифта по умолчанию
+$fontColor: $darkColor; // Цвет шрифта по умолчанию
 $fontSize: $mainFontSize; // Размер шрифта по умолчанию
 $fontWeight: $mainWeight; // Жирность шрифта по умолчанию
 $fontStyle: $mainStyle; // Начертание шрифта по умолчанию
 
-$linkFontColor: $blackColor; // Цвет ссылок
+$linkFontColor: $darkColor; // Цвет ссылок

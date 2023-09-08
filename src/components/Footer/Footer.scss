@@ -1,70 +1,110 @@
 .footer {
-  padding: 60px 60px 91px;
-  display: flex;
-  background: $blackColor;
+  background: $darkColor;
   color: $whiteColor;
-  font-family: $fontFamily;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  padding: 80px 0 50px 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 
-  &__title {
-    margin: 30px 0 50px;
-    font-size: 24px;
-    line-height: normal;
-    font-style: $mainStyle;
-    font-weight: $mainWeight;
+  &__container {
+    //margin: 0 auto;
+    max-width: $maxWidth;
+    min-width: $minWidth;
+    display: flex;
+    //justify-content: flex-start;
+    width: 100%;
   }
 
-  &__text {
-    margin-bottom: 15px;
+  &__container-logo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    width: 100%;
+    max-width: 705px;
+  }
+
+  &__logo-title {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 10px;
+    font-family: $fontFamilyUnbounded;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    margin: 0;
+  }
+
+  &__logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__title {
+    margin: 0;
     font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__container-links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__link {
+    margin: 0;
+    color: $whiteColor;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 826px;
+  }
+
+  &__lists {
+    width: 262px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    font-size: 24px;
     line-height: normal;
     font-style: $mainStyle;
     font-weight: $mainWeight;
   }
 
   &__link {
-    color: $whiteColor;
-    font-size: 20px;
-    line-height: normal;
-    font-style: $mainStyle;
-    font-weight: $mainWeight;
-    text-decoration-line: underline;
-  }
-
-  &__menu {
-    max-width: 316px;
-    margin: 0;
-    list-style-type: none;
-    padding: 0;
-  }
-
-  &__menu-list {
-    max-width: 335px;
-    margin: 0;
-    list-style-type: none;
-    padding: 0;
-  }
-
-  &__menu-item {
-    margin-bottom: 15px;
-    font-size: 24px;
-    line-height: normal;
-    font-style: $mainStyle;
-    font-weight: $mainWeight;
-  }
-
-  &__links {
-    display: flex;
-    gap: 228px;
-    margin: 80px 0 0 135px;
-  }
-
-  &__menu-link {
     text-decoration: none;
     color: $whiteColor;
   }
 
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin: 0;
+  }
+
   &__icon-links {
-    margin-top: 40px;
     display: flex;
     gap: 15px;
   }

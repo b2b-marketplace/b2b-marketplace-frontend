@@ -1,12 +1,18 @@
+import React from 'react';
 import Icon from './Icon';
 
 const IconBurger = ({ className, ...props }) => {
   return (
     <Icon {...props} className={`${className}`}>
-      <svg width="30" height="18" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0.5" width="30" height="1" fill="currentColor" />
-        <rect y="8.5" width="30" height="1" fill="currentColor" />
-        <rect y="16.5" width="30" height="1" fill="currentColor" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="24"
+        viewBox="0 0 25 24"
+        fill="none">
+        <path d="M5.75 6H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M5.75 12H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M5.75 18H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     </Icon>
   );

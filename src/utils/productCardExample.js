@@ -4,22 +4,6 @@ import img3 from './../images/3.jpg';
 import img4 from './../images/4.jpg';
 import img5 from './../images/5.jpg';
 
-export const PRODUCT_CARD = {
-  id: '1',
-  title: 'Детская зимняя куртка',
-  shipper: 'ООО "Компания"',
-  productCode: 1234567,
-  availableStatus: true,
-  description:
-    'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
-  orderQuantity: 10,
-  colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
-  price: 4000,
-  commentsCount: 20,
-  rating: 4.8,
-  images: [img1, img3, img5, img2],
-};
-
 export const PRODUCTS = [
   {
     id: '2',
@@ -27,14 +11,17 @@ export const PRODUCTS = [
     shipper: 'ООО "Компания"',
     productCode: 1234567,
     availableStatus: true,
-    description:
-      'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
+    description: 'Комплект карандашей с ластиком. Самый базовый...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'white' }, { color: 'violet' }, { color: 'yellow' }],
     price: 4000,
     commentsCount: 20,
     rating: 4.8,
-    images: [img4, img3, img5, img2],
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 800,
+    minOrder: 5,
+    images: [img4, img3, img5, img4, img3, img5, img2, img2],
   },
   {
     id: '3',
@@ -45,10 +32,14 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 1598,
     rating: 4.8,
+    minOrder: 5,
     images: [img1, img3, img2, img1],
   },
   {
@@ -60,10 +51,14 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 1598,
     rating: 4.8,
+    minOrder: 5,
     images: [img1, img3, img2],
   },
   {
@@ -75,9 +70,12 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 1598,
     rating: 4.8,
     images: [img1, img3],
   },
@@ -90,10 +88,14 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 1598,
     rating: 4.8,
+    minOrder: 5,
     images: [img1, img3, img5, img2, img4],
   },
   {
@@ -105,10 +107,14 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 1598,
     rating: 4.8,
+    minOrder: 5,
     images: [img1, img2, img4],
   },
   {
@@ -120,10 +126,14 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 1598,
     rating: 4.8,
+    minOrder: 5,
     images: [img2, img4],
   },
   {
@@ -135,10 +145,14 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 198,
     rating: 4.8,
+    minOrder: 5,
     images: [img1, img3, img5, img2, img4],
   },
   {
@@ -150,10 +164,14 @@ export const PRODUCTS = [
     description:
       'Куртка зимняя, утепленная, выполнена из прочной, износостойкой, влагостойкой ткани...',
     orderQuantity: 10,
-    colors: [{color: 'red'}, {color: 'green'}, {color: 'black'}],
+    colors: [{ color: 'red' }, { color: 'green' }, { color: 'black' }],
     price: 4000,
     commentsCount: 20,
+    unit: 'шт',
+    piecesAll: 2000,
+    piecesNow: 1598,
     rating: 4.8,
+    minOrder: 5,
     images: [img1],
   },
 ];
