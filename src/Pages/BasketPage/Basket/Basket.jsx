@@ -54,7 +54,7 @@ const Basket = ({ className }) => {
           if (mergedList.length) {
             setCurrentProductList(mergedList);
           }
-        });
+        }).catch((err)=>console.log(err));
     } else {
       setCurrentProductList([]);
     }
