@@ -1,0 +1,34 @@
+.comment {
+  width: 403px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid $blueColor;
+  background: $whiteColor;
+  &__author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: $darkColor;
+    font-family: $fontFamilyUnbounded;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+    margin: 0 0 6px;
+  }
+  &__text {
+    color: $darkColor;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}

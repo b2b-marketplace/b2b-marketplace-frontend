@@ -1,0 +1,48 @@
+.menu-bar {
+  width: 222px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    height: 24px;
+    display: flex;
+
+    gap: 16px;
+    color: $grayColor;
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &__link {
+    display: flex;
+
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+    color: $grayColor;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    transform: rotate(-90deg);
+  }
+}

@@ -1,0 +1,62 @@
+.platform-benefits {
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color: $whiteColor;
+  position: relative;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    max-width: 403px;
+    background-color: #23252E;
+    height: 144px;
+    box-sizing: border-box;
+    border: 1px solid #131313;
+    border-radius: 20px;
+    flex-shrink: 0;
+    display: flex;
+    column-gap: 16px;
+    padding: 20px;
+  }
+
+
+  &__icon {
+    max-width: 44px;
+    width: 100%;
+    max-height: 44px;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__title {
+    font-family: $fontFamilyUnbounded;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    //max-width: 318px;
+  }
+
+}
