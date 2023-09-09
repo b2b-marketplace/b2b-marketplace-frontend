@@ -34,7 +34,7 @@ export default function ProductCardContainer({ title, className }) {
       {cardsQuantity >= products?.length ? (
         <></>
       ) : (
-        <Button mode='secondary' size="xl" onClick={handleAddCards}>
+        <Button primary size="l" onClick={handleAddCards}>
           Смотреть ещё
         </Button>
       )}

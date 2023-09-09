@@ -1,5 +1,5 @@
 // Api для получения информации из общей базы данных продуктов
-import { PRODUCTS_BASE_URL } from './constants.js';
+import { API_URL } from './constants.js';
 
 class ProductsApi {
   constructor({ serverUrl, headers }) {
@@ -29,7 +29,7 @@ class ProductsApi {
 }
 
 const productsApi = new ProductsApi({
-  serverUrl: PRODUCTS_BASE_URL + '/v1/products/',
+  serverUrl: API_URL + '/v1/products/',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

@@ -61,10 +61,10 @@ const AccountSellerProductAdd = () => {
               Каждый товар проходит модерацию. В среднем проверка занимает 30 минут
             </p>
             <div className="account-seller-product-add__button-conteiner">
-              <Button size="xxxxl" primary={false} border={true}>
+              <Button size="l" primary>
                 Опубликовать
               </Button>
-              <Button size="xxxxl" primary={true} border={true}>
+              <Button size="l" primary>
                 Отмена
               </Button>
             </div>

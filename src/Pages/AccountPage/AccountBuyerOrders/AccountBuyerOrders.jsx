@@ -33,7 +33,7 @@ const AccountBuyerOrders = () => {
         </div>
         <div className="account-buyer-orders__control">
           {/*<Link to="/account/product/add">*/}
-          <Button extraClass="account-buyer-orders__control-button" mode="tertiary" border={false} type="button" size="m">
+          <Button extraClass="account-buyer-orders__control-button" primary={false} type="button" size="m">
             <IconPlus className="account-buyer-orders__icon-plus"/>
             Заявка на закупку
           </Button>

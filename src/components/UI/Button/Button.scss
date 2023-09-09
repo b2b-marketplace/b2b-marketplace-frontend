@@ -39,15 +39,6 @@
   }
 
   &_size_l {
-    width: 236px;
-    height: 68px;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
-  }
-
-  &_size_xl {
     width: 262px;
     height: 68px;
     border-radius: 30px;
@@ -57,33 +48,55 @@
     line-height: 28px;
   }
 
-  &_primary {
-    background-color: transparent;
-    border: none;
-    color: $darkColor;
+  &_size_xl {
+    width: 323px;
+    height: 68px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+  }
 
-    &_border {
+  &_primary {
+    background-color: $darkColor;
+    border: none;
+    color: $whiteColor;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $whiteColor;
       border: 1px solid $darkColor;
+      color: $darkColor;
+    }
+    &:active {
+      background-color: $blueColor;
+      color: $whiteColor;
+      border: none;
+    }
+    &:disabled {
+      background-color: $blueLightColor;
+      color: $whiteColor;
+      border: none;
     }
   }
 
   &_secondary {
-    background-color: $darkColor;
-    border: none;
-    color: $whiteColor;
-
-    &_border {
-      border: 1px solid $whiteColor;
-    }
-  }
-
-  &_tertiary {
     background-color: $blueColor;
     border: none;
     color: $whiteColor;
-
-    &_border {
-      border: 1px solid $whiteColor;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $blueLightColor;
+      border: 1px solid $blueColor;
+    }
+    &:active {
+      background-color: $blueDarkColor;
+      color: $whiteColor;
+      border: none;
+    }
+    &:disabled {
+      background-color: $grayLightColor;
+      color: $whiteColor;
+      border: none;
     }
   }
 

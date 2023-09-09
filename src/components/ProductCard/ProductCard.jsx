@@ -50,7 +50,7 @@ function ProductCard({ product }) {
 
         </div>
 
-        <Button size="m" mode="tertiary">
+        <Button size="m" primary={false}>
           В корзину
         </Button>
       </div>

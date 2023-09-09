@@ -120,7 +120,7 @@ export default function ProductBlock({ product }) {
           </div>
 
           <Counter initCount={product.minOrder} minValue={product.minOrder} onChangeProductQuantity={(count)=>{}}/>
-          <Button size='xl' mode='secondary' extraClass='order__button'>В корзину</Button>
+          <Button size='xl' primary extraClass='order__button'>В корзину</Button>
         </div>
       </div>
 
@@ -149,7 +149,7 @@ export default function ProductBlock({ product }) {
             <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
             <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
           </div>
-          <Button size='xl' mode='secondary' >Смотреть все</Button>
+          <Button size='xl' primary >Смотреть все</Button>
         </div>
 
 
