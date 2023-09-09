@@ -1,13 +1,22 @@
+import { useEffect, useState } from 'react';
 import Icon from './Icon';
 
 const IconPassword = ({ className, isVisiblePassword, ...props }) => {
+  const [id, setId] = useState('');
+
+  useEffect(() => {
+    const randomID = 'clip1184_679' + Math.floor(Math.random() * 1000);
+    setId(randomID);
+  }, []);
+
+
   if (isVisiblePassword) {
     return (
       <Icon {...props} className={`${className}`}>
-        <svg width="30.000000" height="30.000000" viewBox="0 0 30 30" fill="none">
+        <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
           <defs>
-            <clipPath id="clip1184_679">
-              <rect id="iconamoon:eye-off" width="30.000000" height="30.000000" fill="white" />
+            <clipPath id={id}>
+              <rect id="iconamoon:eye-off" width="30" height="30" fill="white" />
             </clipPath>
           </defs>
           <g clipPath="url(#clip1184_679)">
@@ -21,10 +30,10 @@ const IconPassword = ({ className, isVisiblePassword, ...props }) => {
   }
   return (
     <Icon {...props} className={`${className}`}>
-      <svg width="30.000000" height="30.000000" viewBox="0 0 30 30" fill="none">
+      <svg width="24" height="24" viewBox="0 0 30 30" fill="none">
         <defs>
-          <clipPath id="clip1184_671">
-            <rect id="uiw:eye-o" width="30.000000" height="30.000000" fill="white" />
+          <clipPath id={id}>
+            <rect id="uiw:eye-o" width="30" height="30" fill="white" />
           </clipPath>
         </defs>
         <g clipPath="url(#clip1184_671)">

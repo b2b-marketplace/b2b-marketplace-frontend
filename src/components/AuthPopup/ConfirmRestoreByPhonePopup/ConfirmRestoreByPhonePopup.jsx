@@ -4,8 +4,8 @@ import Popup from "../Popup";
 import PopupButton from "../PopupButton/PopupButton";
 import PinCodeInput from "../PinCodeInput/PinCodeInput";
 
-const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit }) => {
-  const [digits, setDigits] = useState(['','','','','','']);
+const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit, initDigit=['','','',''] }) => {
+  const [digits, setDigits] = useState(initDigit);
 
   const changeDigitsHandler = (newDigits) => {
     setDigits(newDigits);
@@ -18,7 +18,7 @@ const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit }) => {
 
   useEffect(() => {
 
-    return () => setDigits(['','','','','','']);
+    return () => setDigits(initDigit);
   }, [isOpen]);
 
   useEffect(() => {

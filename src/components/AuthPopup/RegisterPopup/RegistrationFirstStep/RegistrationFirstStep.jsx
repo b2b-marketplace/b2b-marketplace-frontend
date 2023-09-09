@@ -1,8 +1,6 @@
-import LabelCheckbox from "../../LabelCheckbox/LabelCheckbox";
-import NextButton from "../../NextButton/NextButton";
 import PopupButtons from "../../PopupButtons/PopupButtons";
 
-const RegistrationFirstStep = ({ onType, userType, onNext, onEntity, isEntity }) => {
+const RegistrationFirstStep = ({ onType }) => {
   return (
     <>
       <h2 className="popup__title">Укажите, кто вы</h2>
@@ -11,13 +9,10 @@ const RegistrationFirstStep = ({ onType, userType, onNext, onEntity, isEntity })
         onClick={onType}
         value1="contractor"
         value2="customer"
-        primary1={userType === 'contractor'}
-        primary2={userType === 'customer'}
-        buttonText1="Я поставщик/производитель"
+        mode1="secondary"
+        buttonText1="Я поставщик"
         buttonText2="Я покупатель"
       />
-      <LabelCheckbox isCheck={isEntity} onCheck={onEntity} id="entity" text="Я юридическое лицо" />
-      <NextButton onNext={onNext}/>
     </>
   );
 };

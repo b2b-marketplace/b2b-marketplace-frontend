@@ -2,8 +2,8 @@
 import Input from "../Input/Input";
 import Popup from "../Popup";
 import IconPassword from "../../UI/Icon/IconPassword";
-import NextButton from "../NextButton/NextButton";
 import Form from "../Form/Form";
+import { Button } from "../../UI/Button/Button";
 
 const NewPasswordPopup = ({ isOpen, onClose, onSubmit }) => {
 
@@ -45,7 +45,7 @@ const NewPasswordPopup = ({ isOpen, onClose, onSubmit }) => {
           </button>
         </Input>
 
-        <NextButton />
+        <Button mode="secondary" onClick={handleSubmit} type="button" size="l">Сохранить</Button>
       </Form>
     </Popup>
   );

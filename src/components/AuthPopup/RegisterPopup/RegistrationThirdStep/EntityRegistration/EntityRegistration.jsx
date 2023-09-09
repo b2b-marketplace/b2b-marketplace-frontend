@@ -1,6 +1,5 @@
-import IconInfo from "../../../../UI/Icon/IconInfo";
+import { Button } from "../../../../UI/Button/Button";
 import Input from "../../../Input/Input";
-import NextButton from "../../../NextButton/NextButton";
 
 const EntityRegistration = ({ onNext }) => {
   return (
@@ -20,9 +19,6 @@ const EntityRegistration = ({ onNext }) => {
         size="xxl"
         text="Без пробелов"
       >
-        <button className="popup__button input-label__button input-label__button_type_info" type="button">
-          <IconInfo />
-        </button>
       </Input>
       {/* <Input
         name="adress"
@@ -59,7 +55,7 @@ const EntityRegistration = ({ onNext }) => {
           text="Без дефисов и пробелов"
         />
       </div>
-      <NextButton onNext={onNext} />
+      <Button mode="secondary" onClick={onNext} type="button" size="l">Далее</Button>
     </>
   );
 };

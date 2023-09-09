@@ -1,12 +1,19 @@
-import EntityRegistration from "./EntityRegistration/EntityRegistration";
-import PersonRegistration from "./PersonRegistration/PersonRegistration";
+import PopupButtons from "../../PopupButtons/PopupButtons";
 
-const RegistrationSecondStep = ({ onNext, isEntity }) => {
-  if (isEntity) {
-    return (<EntityRegistration onNext={onNext} />);
-  }
+const RegistrationSecondStep = ({ onEntity }) => {
   return (
-    <PersonRegistration onNext={onNext} />
+    <>
+      <h2 className="popup__title">Вы юридическое лицо?</h2>
+      <PopupButtons
+        className="popup__buttons_form"
+        onClick={onEntity}
+        value1="yes"
+        value2="no"
+        mode1="secondary"
+        buttonText1="Да"
+        buttonText2="Нет"
+      />
+    </>
   );
 };
 

@@ -1,9 +1,12 @@
+import './Stepper.scss';
+
 const Stepper = ({ step }) => {
   return (
-    <div className="popup__steper">
-      <div className={`popup__step${step === 1 ? ' popup__step_active' : ''}`}></div>
-      <div className={`popup__step${step === 2 ? ' popup__step_active' : ''}`}></div>
-      <div className={`popup__step${step === 3 ? ' popup__step_active' : ''}`}></div>
+    <div className="steps">
+      <div className={`step${step === 1 ? ' step_active' : ''}`}></div>
+      <div className={`step${step === 2 ? ' step_active' : ''}`}></div>
+      <div className={`step${step === 3 ? ' step_active' : ''}`}></div>
+      <div className={`step${step === 4 ? ' step_active' : ''}`}></div>
     </div>
   );
 };

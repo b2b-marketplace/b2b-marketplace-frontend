@@ -1,6 +1,68 @@
 @import '../../../styles/vars';
 
-$correctColor: #6DFF85;
+.input-label {
+	width: 100%;
+	position: relative;
+	width: 100vw;
+	font-family: $fontFamilyNunitoSans;
+
+	&__button {
+		position: absolute;
+
+		&_type {
+
+			&_password {
+				top: 7px;
+				right: 18px;
+			}
+		}
+	}
+
+	&_size {
+		&_xxl {
+			max-width: 504px;
+		}
+
+		&_xl {
+			max-width: 239px;
+		}
+
+		&_l {
+			max-width: 239px;
+		}
+
+		&_m {
+			max-width: 239px;
+		}
+
+		&_s {
+			max-width: 44px;
+		}
+	}
+
+	&__span {
+		display: inline-block;
+		text-align: left;
+		margin-top: 4px;
+		width: 100%;
+		box-sizing: border-box;
+
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0;
+		color: $grayColor;
+	}
+
+	&_type {
+		&_repeat>.input-label__span {
+			background-repeat: no-repeat;
+			background-position: left;
+			color: $greenColor;
+		}
+	}
+
+}
 
 // убрал стрелочки у инпута number при наведении
 input[type='number'],
@@ -16,41 +78,49 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .input {
-	background-color: $lightColor;
-	border-radius: 20px;
-	color: black;
+	background-color: transparent;
+	border-radius: 10px;
+	color: $grayColor;
 	width: 100%;
-	border: none;
+	border: 1px solid $darkColor;
 	outline: none;
-	padding: 20px;
+	padding: 8px 16px;
 	box-sizing: border-box;
 	appearance: none;
+	width: 100%;
+	height: 40px;
 
-
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 29px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
 	letter-spacing: 0;
 	text-align: left;
 
 	&_size {
-		&_xxl {
-			max-width: 968px;
-		}
+		// &_xxl {
+		// 	max-width: 968px;
+		// }
 
-		&_xl {
-			max-width: 600px;
-		}
+		// &_xl {
+		// 	max-width: 600px;
+		// }
 
-		&_l {
-			max-width: 576px;
-		}
-		&_m {
-			max-width: 476px;
-		}
-		
+		// &_l {
+		// 	max-width: 576px;
+		// }
+		// &_m {
+		// 	max-width: 476px;
+		// }
+
 		&_s {
-			max-width: 385px;
+			padding: 10px 8px;
+			height: 44px;
+			text-align: center;
+
+			color:  $blackColor;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 24px;
 		}
 	}
 
@@ -58,75 +128,7 @@ input[type="number"]::-webkit-inner-spin-button {
 		&_select {
 			background-image: url("../../../images/select-icon.svg");
 			background-repeat: no-repeat;
-			background-position: calc(100% - 23px) 26px;
+			background-position: calc(100% - 23px);
 		}
 	}
-}
-
-.input-label {
-	width: 100%;
-	position: relative;
-	width: 100vw;
-
-	&__button {
-		position: absolute;
-
-		&_type {
-
-			&_password {
-				top: 20px;
-				right: 20px;
-			}
-			&_info {
-				top: 25px;
-				left: calc(100% + 15px);
-			}
-		}
-	}
-
-	&_size {
-		&_xxl {
-			max-width: 968px;
-		}
-
-		&_xl {
-			max-width: 600px;
-		}
-
-		&_l {
-			max-width: 576px;
-		}
-		&_m {
-			max-width: 476px;
-		}
-		
-		&_s {
-			max-width: 385px;
-		}
-	}
-
-	&__span {
-		display: inline-block;
-		text-align: left;
-		margin-top: 10px;
-		min-height: 22px;
-		width: 100%;
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 22px;
-		letter-spacing: 0;
-		color: $grayColor;
-		box-sizing: border-box;
-	}
-
-	&_type {
-		&_repeat>.input-label__span {
-			padding-left: 30px;
-			background-image: url("../../../images/check-password.svg");
-			background-repeat: no-repeat;
-			background-position: left;
-			color: $correctColor;
-		}
-	}
-
 }

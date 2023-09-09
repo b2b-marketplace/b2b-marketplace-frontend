@@ -1,6 +1,6 @@
+import { Button } from "../../UI/Button/Button";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
-import NextButton from "../NextButton/NextButton";
 import Popup from "../Popup";
 
 const RestorePopup = ({ isOpen, onClose, onSubmit, title, inputPlaceholder, inputType }) => {
@@ -19,7 +19,7 @@ const RestorePopup = ({ isOpen, onClose, onSubmit, title, inputPlaceholder, inpu
         <h2 className="popup__title popup__title_retore">{title}</h2>
         <Input placeholder={inputPlaceholder} type={inputType} size="m" />
 
-        <NextButton />
+        <Button mode="secondary" onClick={handleSubmit} type="button" size="l">Далее</Button>
       </Form>
     </Popup>
   );
