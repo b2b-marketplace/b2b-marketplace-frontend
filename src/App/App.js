@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/product/*" element={<ProductPage product={PRODUCTS[0]} />} exact />
+        <Route path="/product/:id" element={<ProductPage product={PRODUCTS[0]} />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />

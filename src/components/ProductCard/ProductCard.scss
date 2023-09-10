@@ -3,7 +3,6 @@
   height: $cardHeight;
   border-radius: 20px;
   border: 1px solid $grayLightColor;
-  // font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
   position: relative;
   box-sizing: border-box;
@@ -107,6 +106,6 @@
     display: flex;
     justify-content: space-between;
     gap: 5px;
-    z-index: 999;
+    z-index: 5;
   }
 }

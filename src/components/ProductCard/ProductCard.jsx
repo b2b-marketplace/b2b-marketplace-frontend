@@ -8,9 +8,24 @@ import './ProductCard.scss';
 import { Link } from 'react-router-dom';
 import Tooltip from "../UI/Tooltip/Tooltip";
 import IconInfoFil from "../UI/Icon/Icon_info_fill";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { addProduct } from '../../store/slices/basketSlice';
 
 function ProductCard({ product }) {
+  const [isProductSelect, setIsProductSelect] = useState(false);
+  const dispatch = useDispatch();
+  const basketList = useSelector((state) => state.basket.basket);
+  
+  useEffect(()=> {
+    if (basketList.basket_products.find(item => item.id === product.id)) setIsProductSelect(true) ; 
+  },[basketList.basket_products, product.id]);
+
+  const handleSelect = () => {
+    setIsProductSelect(!isProductSelect);
+    dispatch(addProduct({ productIds: product.id, quantity: product.wholesale_quantity }));
+  };
+
   return (
     <div className="card">
       <SliderImage images={product.images} />
@@ -50,8 +65,8 @@ function ProductCard({ product }) {
 
         </div>
 
-        <Button size="m" primary={false}>
-          В корзину
+        <Button size="m" primary={false} onClick={handleSelect} pressed={isProductSelect}>
+          {isProductSelect ? 'В корзине' : 'В корзину'}
         </Button>
       </div>
     </div>

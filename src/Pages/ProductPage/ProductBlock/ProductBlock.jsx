@@ -14,8 +14,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
+import { useParams } from 'react-router';
 
 export default function ProductBlock({ product }) {
+  const { id } = useParams();
+
   const defaultImage = product.images[0];
   const [mainImage, setMainImage] = useState(defaultImage);
 
@@ -40,7 +43,6 @@ export default function ProductBlock({ product }) {
             {product.images.map((image, idx) => (
               <SwiperSlide key={idx} className='images__slide'>
                 <img
-                  key={idx}
                   className="images__item"
                   src={image}
                   alt="Изображение товара"
@@ -55,6 +57,7 @@ export default function ProductBlock({ product }) {
         <div className="info">
           <div className="info__title-line">
             <h2 className="info__title">{product.title}</h2>
+            {/* <h2 className="info__title">{id}</h2> */}
             <ProductRating rating={product.rating} />
           </div>
 
@@ -79,27 +82,27 @@ export default function ProductBlock({ product }) {
             )}
           </div>
 
-          <div className="info__size-line">
+          {/* <div className="info__size-line">
             <p className="info__size">Размер</p>
           </div>
 
           <div className="info__color-line">
             <p className="info__color">Цвет</p>
             <CharacteristicColor characteristicValue={product.colors} />
-          </div>
+          </div> */}
         </div>
 
         <div className='order'>
           <div className='order__price'>
             <h3 className="order__price-value">
-              {`${product.price} `} &#x20bd;
+              {`${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
               <div className='order__icons'>
                 <IconScales />
                 <IconHearth />
               </div>
             </h3>
             <p className='order__price-piece'>
-              {`за ед. ${product.price} `} &#x20bd;
+              {`за ед. ${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
             </p>
 
             <div className='order__price-quantity'>
@@ -119,7 +122,7 @@ export default function ProductBlock({ product }) {
             <p className='order__delivery-subtitle'>Курьером — <span className='order__delivery-data'>10 сентября</span></p>
           </div>
 
-          <Counter initCount={product.minOrder} minValue={product.minOrder} onChangeProductQuantity={(count)=>{}}/>
+          <Counter initCount={product.minOrder} minValue={product.minOrder} onChangeProductQuantity={(count) => { }} />
           <Button size='xl' primary extraClass='order__button'>В корзину</Button>
         </div>
       </div>
