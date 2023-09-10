@@ -8,6 +8,7 @@ import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAd
 import React from 'react';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
 import AccountBuyerProfile from '../Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
+import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/AccountSellerProfile';
 import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
