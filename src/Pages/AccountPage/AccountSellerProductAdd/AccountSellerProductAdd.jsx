@@ -14,22 +14,20 @@ const AccountSellerProductAdd = () => {
         <AccountTitle name="ООО «Компания»" title="Продавец" />
         <form className="account-seller-product-add__form">
           <FileUpload
-            label="Добавить изображение"
-            text="Нажмите на «+» илиперетащите фото в эту область"
-            comet="Изображение в формате PNG, JPEG. До 5 фото"
+            label="Изображение*"
+            text="Нажмите на «+» или перетащите фото товара (JPEG, PNG) в рамку"
           />
           <FileUpload
-            label="Добавить видео"
-            text="Нажмите на «+» или перетащите видео в эту область"
-            comet="1 видео длительностью не более 3 мин"
+            label="Видео"
+            text="Нажмите на «+» или перетащите одно видео с товаром не длиннее 1 мин в эту область"
           />
           <div className="account-seller-product-add__field">
-            <DropDown label="Категория товара" placeholder="Выберите из списка" />
-            <InputField label="Название товара" placeholder="Кожаная мужская куртка" type="text" />
+            <DropDown label="Категория*" placeholder="Выберите из списка" />
+            <InputField label="Название товара*" placeholder="Наименование" type="text" />
             <InputField label="Артикул" placeholder="000 000" type="number" />
             <DropDown label="Бренд" placeholder="Выберите из списка" />
             <InputField label="Производитель" placeholder="Страна производитель" type="text" />
-            <DropDown label="Размер" placeholder="Выберите из списка" />
+            <DropDown label="Размер*" placeholder="Выберите из списка" />
             <DropDown label="Цвет" placeholder="Выберите из списка" />
             <div className="account-seller-product-add__conteiner-textarea">
               <label className="account-seller-product-add__label-textarea">Описание товара</label>
@@ -38,33 +36,34 @@ const AccountSellerProductAdd = () => {
                 placeholder="Добавьте описание товара"></textarea>
             </div>
           </div>
+
           <div className="account-seller-product-add__conteiner">
-            <div className="account-seller-product-add__field-counter">
-              <label className="account-seller-product-add__label">Кол-во товара</label>
+            <label className="account-seller-product-add__label-counter">
+              Кол-во товара*
               <Counter />
-            </div>
-            <div className="account-seller-product-add__field-counter">
-              <label className="account-seller-product-add__label2">Цена/за единицу товара</label>
+            </label>
+
+            <label className="account-seller-product-add__label-counter">
+              Цена/за единицу товара*
               <Counter />
-            </div>
-            <div className="account-seller-product-add__field-counter">
-              <label className="account-seller-product-add__label">Мин. объем заказа</label>
+            </label>
+
+            <label className="account-seller-product-add__label-counter">
+              Мин. объем заказа*
               <Counter />
-            </div>
-            <div className="account-seller-product-add__field-counter">
-              <label className="account-seller-product-add__label2">Статус заказа</label>
-              <input className="account-seller-product-add__input-status" placeholder="В наличии" />
-            </div>
+            </label>
+            <DropDown label="Статус&nbsp;заказа*" placeholder="В наличии" />
           </div>
+
           <div className="account-seller-product-add__control">
             <p className="account-seller-product-add__text">
               Каждый товар проходит модерацию. В среднем проверка занимает 30 минут
             </p>
             <div className="account-seller-product-add__button-conteiner">
-              <Button size="xxxxl" primary={false} border={true}>
+              <Button size="xl" primary={true} border={true}>
                 Опубликовать
               </Button>
-              <Button size="xxxxl" primary={true} border={true}>
+              <Button size="xl" primary={true} border={true}>
                 Отмена
               </Button>
             </div>
