@@ -71,6 +71,12 @@
     align-items: center;
   }
 
+  &__drop-down {
+   height: 48px;
+   display: flex;
+   justify-content: space-between;
+  }
+
   &__control {
     margin-top: 24px;
     display: flex;
