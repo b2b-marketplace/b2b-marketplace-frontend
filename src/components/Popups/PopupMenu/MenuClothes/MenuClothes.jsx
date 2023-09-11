@@ -60,7 +60,8 @@ const MenuClothes = () => {
                 className={`menu-clothes__list ${
                   !expandedCategories[index] && subIndex >= 5 ? 'hidden' : ''
                 }`}
-                key={subIndex}>
+                key={subIndex}
+              >
                 <Link className="menu-clothes__link" to={category.link}>
                   {item}
                 </Link>
@@ -69,7 +70,8 @@ const MenuClothes = () => {
             {category.items.length > 5 && (
               <button
                 className="menu-clothes__button-more"
-                onClick={() => toggleCategoryExpansion(index)}>
+                onClick={() => toggleCategoryExpansion(index)}
+              >
                 Еще <IconArrowCounter />
               </button>
             )}

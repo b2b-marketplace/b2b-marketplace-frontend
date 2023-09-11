@@ -10,8 +10,7 @@ export default function ProductCardContainer({ title, className }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    productsApi.getProducts()
-      .then(data => setProducts(data.results));
+    productsApi.getProducts().then((data) => setProducts(data.results));
   }, []);
 
   const handleAddCards = () => {
@@ -34,7 +33,7 @@ export default function ProductCardContainer({ title, className }) {
       {cardsQuantity >= products?.length ? (
         <></>
       ) : (
-        <Button mode='secondary' size="xl" onClick={handleAddCards}>
+        <Button mode="secondary" size="xl" onClick={handleAddCards}>
           Смотреть ещё
         </Button>
       )}

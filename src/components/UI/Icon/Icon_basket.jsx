@@ -9,7 +9,8 @@ const IconBasket = ({ className, ...props }) => {
         width="32"
         height="32"
         viewBox="0 0 32 32"
-        fill="none">
+        fill="none"
+      >
         <path
           d="M4.66699 6H7.22547C7.9212 6 8.26906 6 8.53094 6.18876C8.79283 6.37752 8.90283 6.70753 9.12284 7.36754L10.0003 10"
           stroke="currentColor"

@@ -9,7 +9,8 @@ const IconArrowDown = ({ className, ...props }) => {
         width="20"
         height="20"
         viewBox="0 0 20 20"
-        fill="none">
+        fill="none"
+      >
         <path
           d="M5.83366 8.33333L10.0003 12.5L14.167 8.33333"
           stroke="currentColor"

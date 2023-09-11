@@ -1,11 +1,7 @@
 import React from 'react';
-import "./VendorCode.scss";
+import './VendorCode.scss';
 
 const VendorCode = ({ vendorCode }) => {
-  return (
-    <div className="vendor-code">
-      Арт. {vendorCode}
-    </div>
-  );
+  return <div className="vendor-code">Арт. {vendorCode}</div>;
 };
 export default VendorCode;

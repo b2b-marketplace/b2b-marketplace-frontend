@@ -33,7 +33,8 @@ const DropDown = ({ label, placeholder, options, className }) => {
                 <div
                   key={index}
                   className="drop-down__item"
-                  onClick={() => handleOptionChange(option)}>
+                  onClick={() => handleOptionChange(option)}
+                >
                   {option}
                 </div>
               ))}

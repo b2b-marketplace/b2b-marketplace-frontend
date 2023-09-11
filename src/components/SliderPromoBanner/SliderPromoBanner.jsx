@@ -37,11 +37,13 @@ const SliderPromoBanner = () => {
         style={{
           transform: `translateX(-${currentSlide * 100}%)`,
           width: `${slides.length * 100}%`,
-        }}>
+        }}
+      >
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`slider-promo-banner__slide ${index === currentSlide ? 'active' : ''}`}>
+            className={`slider-promo-banner__slide ${index === currentSlide ? 'active' : ''}`}
+          >
             {slide}
           </div>
         ))}

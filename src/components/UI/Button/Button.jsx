@@ -8,8 +8,16 @@ export const Button = ({ mode, border, rotate, size, type, children, extraClass,
   return (
     <button
       type={type}
-      className={['button', `button_size_${size}`, modeClass, isBorder, isRotate, extraClass || ""].join(' ')}
-      {...props}>
+      className={[
+        'button',
+        `button_size_${size}`,
+        modeClass,
+        isBorder,
+        isRotate,
+        extraClass || '',
+      ].join(' ')}
+      {...props}
+    >
       {children}
     </button>
   );
@@ -30,6 +38,6 @@ Button.defaultProps = {
   size: 'm',
   border: true,
   rotate: false,
-  extraClass: "",
+  extraClass: '',
   onClick: undefined,
 };

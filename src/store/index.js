@@ -10,8 +10,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { accountReducer } from "./slices/accountSlice";
-import { basketReducer } from "./slices/basketSlice";
+import { accountReducer } from './slices/accountSlice';
+import { basketReducer } from './slices/basketSlice';
 
 const rootReducer = combineReducers({
   account: accountReducer,
@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['basket']
+  whitelist: ['basket'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

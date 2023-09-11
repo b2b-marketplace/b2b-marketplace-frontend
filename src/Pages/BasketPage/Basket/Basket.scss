@@ -1,4 +1,4 @@
-@import "../../../styles/global";
+@import '../../../styles/global';
 
 .basket {
   font-family: $fontFamilyNunitoSans;
@@ -48,11 +48,10 @@
     display: flex;
     align-items: center;
     column-gap: 20px;
-    transition: opacity linear .5s;
-
+    transition: opacity linear 0.5s;
 
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 
@@ -65,7 +64,6 @@
     display: flex;
     gap: 20px;
   }
-
 
   &__checkbox-text {
     font-weight: 600;
@@ -110,12 +108,10 @@
   &__product {
   }
 
-
   &__order-detail-container {
     position: relative;
     width: 100%;
     max-width: 403px;
-
   }
 
   &__order-detail-sticky {
@@ -125,6 +121,6 @@
   &__checkbox {
     display: flex;
     flex-direction: row;
-    column-gap: 22px
+    column-gap: 22px;
   }
 }

@@ -1,4 +1,4 @@
-@import "../../../../styles/global";
+@import '../../../../styles/global';
 
 .order-detail {
   font-family: $fontFamilyNunitoSans;
@@ -49,7 +49,7 @@
   &__total-label {
     font-size: 20px;
     font-weight: 600;
-    line-height: 28px
+    line-height: 28px;
   }
 
   &__total-content {
@@ -91,7 +91,7 @@
     row-gap: 14px;
   }
 
-  &__button{
+  &__button {
     width: 100%;
   }
 }

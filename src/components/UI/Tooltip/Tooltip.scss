@@ -1,4 +1,4 @@
-@import "../../../styles/global";
+@import '../../../styles/global';
 
 .tooltip {
   position: relative;
@@ -27,10 +27,9 @@
     //opacity: 0;
     //transition: all 0.3s ease;
 
-
     &::after {
       background: black;
-      content: "";
+      content: '';
       height: 10px;
       position: absolute;
       transform: rotate(45deg);
@@ -61,7 +60,6 @@
       }
     }
 
-
     &_right {
       left: calc(100% + 1em);
       top: 50%;
@@ -73,7 +71,6 @@
         top: 50%;
       }
     }
-
 
     &_left {
       right: calc(100% + 1em);
@@ -87,7 +84,6 @@
       }
     }
   }
-
 
   &__size {
     &_s {

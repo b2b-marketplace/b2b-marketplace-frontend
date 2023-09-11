@@ -1,4 +1,4 @@
-@import "../../styles/global";
+@import '../../styles/global';
 
 .platform-benefits {
   font-family: $fontFamilyNunitoSans;
@@ -20,7 +20,7 @@
 
   &__item {
     max-width: 403px;
-    background-color: #23252E;
+    background-color: #23252e;
     height: 144px;
     box-sizing: border-box;
     border: 1px solid #131313;
@@ -30,7 +30,6 @@
     column-gap: 16px;
     padding: 20px;
   }
-
 
   &__icon {
     max-width: 44px;
@@ -60,5 +59,4 @@
     line-height: 28px;
     //max-width: 318px;
   }
-
 }

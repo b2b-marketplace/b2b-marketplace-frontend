@@ -9,7 +9,8 @@ const IconPlus = ({ className, ...props }) => {
         width="40"
         height="40"
         viewBox="0 0 40 40"
-        fill="none">
+        fill="none"
+      >
         <path d="M20 10L20 30" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M30 20L10 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
