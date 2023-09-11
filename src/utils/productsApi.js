@@ -1,7 +1,6 @@
 // Api для получения информации из общей базы данных продуктов
 import { PRODUCTS_BASE_URL } from './constants.js';
 
-
 class ProductsApi {
   constructor({ serverUrl, headers }) {
     this._serverUrl = serverUrl;

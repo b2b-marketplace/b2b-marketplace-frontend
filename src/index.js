@@ -16,7 +16,7 @@ root.render(
       {/*<HashRouter>*/}
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <App/>
+          <App />
         </PersistGate>
       </Provider>
       {/*</HashRouter>*/}
