@@ -77,7 +77,7 @@ const Basket = ({ className }) => {
     }, 0);
     //Количество поставщиков | Set - представляет собой коллекцию значений, где каждое значение может присутствовать только один раз.
     const suppliersId = new Set(
-      selectedProducts.map((currentProduct) => currentProduct.seller[ 0 ]?.id)
+      selectedProducts.map((currentProduct) => currentProduct.seller[0]?.id)
     );
 
     setOrderInfo({
@@ -142,7 +142,7 @@ const Basket = ({ className }) => {
                     onClick={handleClickDeleteSelectedProduct}
                     className="basket__panel-button"
                   >
-                    <IconTrash className="basket__icon-trash"/>
+                    <IconTrash className="basket__icon-trash" />
                     Удалить выбранные
                   </button>
                 </div>

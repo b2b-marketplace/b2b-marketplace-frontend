@@ -8,7 +8,6 @@ import './index.scss';
 import App from './App/App';
 import store from './store';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -17,7 +16,7 @@ root.render(
       {/*<HashRouter>*/}
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <App/>
+          <App />
         </PersistGate>
       </Provider>
       {/*</HashRouter>*/}
