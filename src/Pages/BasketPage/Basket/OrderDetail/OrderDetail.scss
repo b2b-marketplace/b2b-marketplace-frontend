@@ -1,3 +1,5 @@
+@import '../../../../styles/global';
+
 .order-detail {
   font-family: $fontFamilyNunitoSans;
   font-style: $fontStyle;
@@ -8,10 +10,6 @@
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-  //max-width: 403px;
-  //width: 100%;
-  //height: 573px;
-
 
   &__container {
     width: 100%;
@@ -51,7 +49,7 @@
   &__total-label {
     font-size: 20px;
     font-weight: 600;
-    line-height: 28px
+    line-height: 28px;
   }
 
   &__total-content {
@@ -93,7 +91,7 @@
     row-gap: 14px;
   }
 
-  &__button{
+  &__button {
     width: 100%;
   }
 }

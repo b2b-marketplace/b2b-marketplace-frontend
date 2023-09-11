@@ -5,22 +5,22 @@ const IconClose = ({ className, ...props }) => {
   return (
     <Icon {...props} className={`${className}`}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
+        width="24"
+        height="23"
+        viewBox="0 0 24 24"
         fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M24 8L8 24"
-          stroke="currentColor"
+          d="M18 6L6 18"
+          stroke="#222222"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M8 8L24 24"
-          stroke="currentColor"
+          d="M6 6L18 18"
+          stroke="#222222"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

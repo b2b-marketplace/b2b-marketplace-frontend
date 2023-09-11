@@ -5,10 +5,9 @@ import ProductCardContainer from '../../components/ProductCardContainer/ProductC
 import { useEffect, useState } from 'react';
 
 export default function ProductPage({ product }) {
-
   return (
-    <div className='product-page'>
-      <ProductBlock product={product} className='product-page__product-block' />
+    <div className="product-page">
+      <ProductBlock product={product} className="product-page__product-block" />
       <PlatformBenefits className="product-page__platform-benefits" />
       <ProductCardContainer title={'Товары от этого поставщика'} />
     </div>

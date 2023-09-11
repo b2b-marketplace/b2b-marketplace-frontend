@@ -1,13 +1,6 @@
 {
-  "extends": [
-    "react-app",
-    "react-app/jest",
-    "prettier"
-  ],
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "extends": ["react-app", "react-app/jest", "prettier"],
+  "plugins": ["react", "prettier"],
   "env": {
     "browser": true,
     "node": true,
@@ -25,17 +18,11 @@
   "rules": {
     "no-var": "error",
     "semi": "error",
-    "indent": [
-      "error",
-      2
-    ],
+    "indent": ["error", 2],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "no-multi-spaces": "error",
@@ -54,7 +41,7 @@
     "react/react-in-jsx-scope": "off",
     "arrow-body-style": "off",
     "react/self-closing-comp": "off",
-    "jsx-a11y/anchor-is-valid":  "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "react/jsx-max-props-per-line": [
       1,
       {

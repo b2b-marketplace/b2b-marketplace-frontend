@@ -14,7 +14,8 @@ const SidebarLeft = ({ menuItems, phone }) => {
                 className={({ isActive }) =>
                   `sidebar-left__link ${isActive ? 'sidebar-left__link_active' : ''}`
                 }
-                to={item.link}>
+                to={item.link}
+              >
                 {item.icon}
                 {item.label}
               </NavLink>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink, useParams } from "react-router-dom";
-import "./AccountTabNavigation.scss";
+import { NavLink, useParams } from 'react-router-dom';
+import './AccountTabNavigation.scss';
 
 const AccountTabNavigation = ({ menuList }) => {
   const { filter } = useParams();
@@ -10,8 +10,16 @@ const AccountTabNavigation = ({ menuList }) => {
       {menuList.map((item) => (
         <li key={item.key} className="account-tab-navigation__item">
           <NavLink
-            className={({ isActive }) => `account-tab-navigation__link ${isActive && (filter === item.link || (!filter && !item.link)) ? 'account-tab-navigation__link_active' : ''}`}
-            to={item.link}>{item.name}
+            className={({ isActive }) =>
+              `account-tab-navigation__link ${
+                isActive && (filter === item.link || (!filter && !item.link))
+                  ? 'account-tab-navigation__link_active'
+                  : ''
+              }`
+            }
+            to={item.link}
+          >
+            {item.name}
           </NavLink>
         </li>
       ))}

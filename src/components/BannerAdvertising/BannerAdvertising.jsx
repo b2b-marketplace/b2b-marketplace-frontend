@@ -43,19 +43,21 @@ const BannerAdvertising = ({ className, bannerList, timeInterval = 5000 }) => {
   }, [images, timeInterval]);
 
   const play = (images) => {
-    images[ imageIndex ].classList.remove('banner-advertising__link_active');
+    images[imageIndex].classList.remove('banner-advertising__link_active');
     const nextIndex = (imageIndex + 1) % images.length;
-    images[ nextIndex ].classList.add('banner-advertising__link_active');
+    images[nextIndex].classList.add('banner-advertising__link_active');
     setImageIndex(nextIndex);
   };
 
   const renderImage = (image) => (
     <Link
-      className={`banner-advertising__link ${images[ imageIndex ] === image ? 'banner-advertising__link_active' : ''}`}
+      className={`banner-advertising__link ${
+        images[imageIndex] === image ? 'banner-advertising__link_active' : ''
+      }`}
       key={image.key}
       to={image.link}
     >
-      <img className="banner-advertising__image" src={image.src} alt={image.alt}/>
+      <img className="banner-advertising__image" src={image.src} alt={image.alt} />
     </Link>
   );
 

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import "./Checkbox.scss";
+import './Checkbox.scss';
 
 /**
  * Компонент Checkbox для отображения интерактивного флажка.
@@ -13,12 +13,10 @@ import "./Checkbox.scss";
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
 const Checkbox = ({ className, name, onCheckboxClick, isChecked, children }) => {
-
   const containerRef = useRef(null);
 
   const handleClick = (event) => {
-    if (event.target.tagName.toLowerCase() !== 'input')
-      onCheckboxClick(event);
+    if (event.target.tagName.toLowerCase() !== 'input') onCheckboxClick(event);
     event.stopPropagation();
   };
 
@@ -30,10 +28,9 @@ const Checkbox = ({ className, name, onCheckboxClick, isChecked, children }) => 
         name={name}
         value={isChecked ? 'true' : 'false'}
         checked={isChecked}
-        onChange={() => {
-        }}
+        onChange={() => {}}
       />
-      <span className={`checkbox__checkbox ${isChecked ? "checkbox__checkbox_active" : ""}`}></span>
+      <span className={`checkbox__checkbox ${isChecked ? 'checkbox__checkbox_active' : ''}`}></span>
       {children}
     </label>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 const SupportServicePage = () => {
   return (
     <div className="support-service-page">
-      <SupportServicePage/>
+      <SupportServicePage />
     </div>
   );
 };

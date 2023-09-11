@@ -31,7 +31,9 @@ const Popups = ({ isOpen, onClose, children }) => {
     <div className="popups">
       <div className="popups__content" ref={popupRef}>
         {children}
-        <button className="popups__button" type="button" onClick={onClose}><IconClose/></button>
+        <button className="popups__button" type="button" onClick={onClose}>
+          <IconClose />
+        </button>
       </div>
     </div>
   );
