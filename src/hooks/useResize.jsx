@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 
-
 export const useResize = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -21,6 +20,6 @@ export const useResize = () => {
   }, [handleResizeWithDelay]);
 
   return {
-    width
+    width,
   };
 };

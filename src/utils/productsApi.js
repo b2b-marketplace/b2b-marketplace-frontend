@@ -1,6 +1,6 @@
 // Api для получения информации из общей базы данных продуктов
 import { PRODUCTS_BASE_URL } from './constants.js';
-import { isArray } from "@craco/craco/dist/lib/utils";
+
 
 class ProductsApi {
   constructor({ serverUrl, headers }) {
@@ -10,9 +10,7 @@ class ProductsApi {
 
   _checkResponse(res) {
     // функция проверки статуса ответа
-    return res.ok
-      ? res.json()
-      : Promise.reject(`${res.status} ${res.statusText}`);
+    return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`);
   }
 
   _request(url, options) {
@@ -23,8 +21,8 @@ class ProductsApi {
   // получение данных о фильмах
   getProducts(productIds) {
     let path = this._serverUrl;
-    if (isArray(productIds)) {
-      const productIdsString = productIds.join(",");
+    if (Array.isArray(productIds)) {
+      const productIdsString = productIds.join(',');
       path = `${this._serverUrl}?ids=${productIdsString}`;
     }
     return this._request(path, {

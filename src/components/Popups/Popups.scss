@@ -1,4 +1,4 @@
-@import "../../styles/global";
+@import '../../styles/global';
 
 .popups {
   position: fixed;
@@ -33,8 +33,9 @@
     position: absolute;
     background-color: $whiteColor;
     border: none;
-    transition: transform 0.3s ease,
-    scale 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      scale 0.3s ease;
 
     &:hover {
       transform: scale(1.2);

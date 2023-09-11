@@ -9,7 +9,8 @@ const BiBag = ({ className, ...props }) => {
         width="32"
         height="32"
         viewBox="0 0 32 32"
-        fill="none">
+        fill="none"
+      >
         <path
           d="M10.667 16L10.667 10.6667C10.667 7.72115 13.0548 5.33333 16.0003 5.33333V5.33333C18.9458 5.33333 21.3337 7.72115 21.3337 10.6667L21.3337 16"
           stroke="currentColor"

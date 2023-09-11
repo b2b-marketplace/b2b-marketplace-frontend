@@ -1,4 +1,4 @@
-@import "../../../styles/global";
+@import '../../../styles/global';
 
 .account-buyer-orders {
   font-family: $fontFamilyNunitoSans;
@@ -65,14 +65,12 @@
     width: 100%;
     height: 29px;
     background-color: transparent;
-
   }
 
   &__search-button {
     background-color: transparent;
     border: none;
   }
-
 
   &__navigation {
     margin-top: 60px;

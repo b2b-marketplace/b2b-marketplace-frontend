@@ -2,30 +2,29 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   user: {
-    "id": '',
-    "email": "",
-    "username": "",
-    "is_company": true,
-    "company": {
-      "id": '',
-      "role": "",
-      "company_account": "",
-      "name": "",
-      "inn": "",
-      "ogrn": "",
-      "phone_number": {
-        "phone_number": ""
+    id: '',
+    email: '',
+    username: '',
+    is_company: true,
+    company: {
+      id: '',
+      role: '',
+      company_account: '',
+      name: '',
+      inn: '',
+      ogrn: '',
+      phone_number: {
+        phone_number: '',
       },
-      "address": {
-        "address": ""
-      }
-    }
+      address: {
+        address: '',
+      },
+    },
   },
   isFetched: false,
   loading: false,
   error: null,
 };
-
 
 const accountSlice = createSlice({
   name: 'account',

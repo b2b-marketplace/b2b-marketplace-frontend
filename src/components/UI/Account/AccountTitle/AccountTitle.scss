@@ -1,4 +1,4 @@
-@import "../../../../styles/global";
+@import '../../../../styles/global';
 
 .account-title {
   display: flex;
@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     background: $darkColor;
-    background-image: url("../../../../images/editAvatar.png");
+    background-image: url('../../../../images/editAvatar.png');
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -27,7 +27,7 @@
 
   &__logo:hover {
     cursor: pointer;
-    opacity: .2;
+    opacity: 0.2;
   }
 
   &__container {

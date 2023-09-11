@@ -14,7 +14,6 @@ export default {
     border: { control: 'boolean', default: true, description: 'Рамка вокруг кнопки' },
     backgroundColor: { control: 'color' },
     children: { description: 'Надпись на кнопке и иконка' },
-
   },
 };
 
@@ -66,7 +65,11 @@ export const Large = {
 export const Medium = {
   args: {
     size: 'm',
-    children: <><IconBurger/> Каталог</>,
+    children: (
+      <>
+        <IconBurger /> Каталог
+      </>
+    ),
   },
 };
 
@@ -80,7 +83,6 @@ export const Small = {
 export const ExtraSmall = {
   args: {
     size: 'xs',
-    children: <IconArrowUp/>,
+    children: <IconArrowUp />,
   },
-
 };

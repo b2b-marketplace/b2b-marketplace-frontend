@@ -9,7 +9,8 @@ const IconBurger = ({ className, ...props }) => {
         width="25"
         height="24"
         viewBox="0 0 25 24"
-        fill="none">
+        fill="none"
+      >
         <path d="M5.75 6H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M5.75 12H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M5.75 18H19.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

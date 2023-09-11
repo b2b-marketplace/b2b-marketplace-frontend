@@ -32,7 +32,8 @@ const AccountDropDown = ({ label }) => {
               <div
                 key={index}
                 className="account-drop-down__item"
-                onClick={() => handleOptionChange(option)}>
+                onClick={() => handleOptionChange(option)}
+              >
                 {option}
               </div>
             ))}

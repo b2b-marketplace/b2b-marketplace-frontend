@@ -9,7 +9,8 @@ const IconTrash = ({ className, ...props }) => {
         width="32"
         height="32"
         viewBox="0 0 32 32"
-        fill="none">
+        fill="none"
+      >
         <path
           d="M12.6641 21L12.6641 17"
           stroke="currentColor"
