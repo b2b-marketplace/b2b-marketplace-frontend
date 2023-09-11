@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import './OrderPage.scss';
 
 const OrderPage = () => {
-  return (
-    <section className="order">
+  useEffect(() => {});
 
-    </section>
-  );
+  return <section className="order-page"></section>;
 };
 
 export default OrderPage;

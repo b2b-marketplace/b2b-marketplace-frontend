@@ -14,6 +14,7 @@ import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/
 import ProductPage from '../Pages/ProductPage/ProductPage';
 import { PRODUCTS } from '../utils/productCardExample';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
+import OrderPage from '../Pages/OrderPage/OrderPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
+        <Route path="/order" element={<OrderPage />} exact />
         <Route path="/product/*" element={<ProductPage product={PRODUCTS[0]} />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />

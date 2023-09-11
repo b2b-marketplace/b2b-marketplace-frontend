@@ -1,23 +1,30 @@
-@import '../../../styles/global';
+@import '../../styles/global';
 
 .basket {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  color: $fontColor;
+  @include default-font-style;
+  display: flex;
+  flex-direction: column;
 
   &__empty {
     text-align: center;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-
     min-height: 320px;
   }
 
-  &__main {
+  &__container {
     display: flex;
+    flex-direction: row;
+    column-gap: 60px;
+    position: relative;
+  }
+
+  &__container-product {
+    display: flex;
+    width: 100%;
     flex-direction: column;
+    row-gap: 40px;
   }
 
   &__panel-checkbox {
@@ -33,7 +40,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 40px 0 44px;
   }
 
@@ -72,55 +78,54 @@
     line-height: 28px;
   }
 
-  &__container {
-    display: flex;
-    flex-direction: row;
-    //margin-top: 40px;
-    column-gap: 60px;
-    position: relative;
-  }
-
-  &__container-product {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    row-gap: 40px;
-  }
-
   &__product-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    //width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    //flex-shrink: 0;
-    //max-width: 873px;
     flex-grow: 1;
   }
 
   &__product-item {
     display: flex;
-    //flex-shrink: 0;
   }
 
-  &__product {
+  &__order-detail-content {
+    margin-top: 40px;
   }
 
-  &__order-detail-container {
+  &__sidebar-right {
     position: relative;
-    width: 100%;
-    max-width: 403px;
   }
 
   &__order-detail-sticky {
     position: sticky;
+    top: 0;
+    right: 0;
   }
 
   &__checkbox {
     display: flex;
     flex-direction: row;
     column-gap: 22px;
+  }
+
+  &__order-detail-icon-info {
+    width: 32px;
+    height: 32px;
+    color: #222222;
+  }
+
+  &__order-detail-buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+  }
+
+  &__order-detail-button {
+    width: 100%;
   }
 }
