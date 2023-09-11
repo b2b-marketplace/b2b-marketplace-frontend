@@ -1,3 +1,5 @@
+@import "../../../styles/global";
+
 .account-seller-product-add {
   display: flex;
   gap: 60px;
@@ -72,9 +74,9 @@
   }
 
   &__drop-down {
-   height: 48px;
-   display: flex;
-   justify-content: space-between;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__control {

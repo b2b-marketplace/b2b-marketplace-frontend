@@ -1,3 +1,5 @@
+@import "../../../styles/global";
+
 .file-upload {
   max-width: 766px;
   max-height: 164px;
@@ -61,6 +63,6 @@
     box-sizing: border-box;
     border-radius: 10px;
     overflow: hidden;
-    flex-grow: 1; 
+    flex-grow: 1;
   }
 }

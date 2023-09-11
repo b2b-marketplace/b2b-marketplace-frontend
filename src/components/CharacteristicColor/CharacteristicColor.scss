@@ -1,3 +1,5 @@
+@import "../../styles/global";
+
 .characteristic-color {
   display: flex;
   column-gap: 15px;
@@ -7,6 +9,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
+
     &-white {
       border: 1px solid $darkColor;
     }

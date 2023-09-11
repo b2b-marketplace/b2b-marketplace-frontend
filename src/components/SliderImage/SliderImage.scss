@@ -1,3 +1,5 @@
+@import "../../styles/global";
+
 .slider {
   width: 100%;
   height: $sliderHeight;
@@ -7,6 +9,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-bottom: 1px solid $grayLightColor;
+
   &__images {
     display: -webkit-box;
     display: -ms-flexbox;
