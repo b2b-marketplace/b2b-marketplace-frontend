@@ -2,18 +2,15 @@ import PopupButtons from "../../PopupButtons/PopupButtons";
 
 const RegistrationSecondStep = ({ onEntity }) => {
   return (
-    <>
-      <h2 className="popup__title">Вы юридическое лицо?</h2>
-      <PopupButtons
-        className="popup__buttons_form"
-        onClick={onEntity}
-        value1="yes"
-        value2="no"
-        mode1="secondary"
-        buttonText1="Да"
-        buttonText2="Нет"
-      />
-    </>
+    <PopupButtons
+      className="popup__buttons_form"
+      onClick={onEntity}
+      value1="yes"
+      value2="no"
+      mode1="secondary"
+      buttonText1="Да"
+      buttonText2="Нет"
+    />
   );
 };
 

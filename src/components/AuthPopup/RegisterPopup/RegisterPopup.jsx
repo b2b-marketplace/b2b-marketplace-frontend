@@ -9,7 +9,16 @@ import RegistrationLastStep from "./RegistrationLastStep.jsx/RegistrationLastSte
 const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
   const [step, setStep] = useState(1);
   const [userType, setUserType] = useState('');
-  const [isEntity, setisEntity] = useState('');
+  const [isEntity, setisEntity] = useState(false);
+
+  const fieldsetHeight = step === 3 ? '420px' : step === 4 ? '325px' : '0';
+
+  const formParams = [
+    { title: 'Укажите, кто вы', },
+    { title: 'Вы юридическое лицо?', },
+    { title: isEntity ? 'Укажите данные организации' : 'Укажите свои данные', btnText: 'Далее' },
+    { title: 'Финальный шаг', btnText: 'Зарегистрироваться' },
+  ];
 
   const handleType = (event) => {
     setUserType(event.target.value);
@@ -20,13 +29,14 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
     onClose();
     onSubmit && onSubmit();
   };
-  
+
   const handleEntity = (event) => {
-    setisEntity(event.target.value);
+    setisEntity(event.target.value === 'yes');
     handleNextStep();
   };
 
-  const handleNextStep = () => {
+  const handleNextStep = (event) => {
+    event?.preventDefault && event.preventDefault();
     setStep(step + 1);
   };
 
@@ -34,16 +44,19 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
     if (!isOpen) {
       setStep(1);
       setUserType('');
-      setisEntity('');
+      setisEntity(false);
     }
   }, [isOpen]);
 
-
   return (
-    <Popup isOpen={isOpen} onClose={onClose} isShowStepper={true} step={step} >
+    <Popup isOpen={isOpen} onClose={onClose} isShowStepper={true} step={step} anim={step > 2}>
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
+        title={formParams[step - 1].title}
+        btnText={formParams[step - 1].btnText}
+        btnType={step === 4 ? 'submit' : 'button'}
+        btnOnClick={step === 4 ? undefined : handleNextStep}
       >
         {
           step === 1 &&
@@ -51,16 +64,19 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
         }
         {
           step === 2 &&
-          <RegistrationSecondStep onEntity={handleEntity} onNext={handleNextStep} />
+          <RegistrationSecondStep onEntity={handleEntity} />
         }
-        {
-          step === 3 &&
-          <RegistrationThirdStep isEntity={isEntity} onNext={handleNextStep} />
-        }
-        {
-          step === 4 &&
-          <RegistrationLastStep />
-        }
+
+        <fieldset style={{'height': fieldsetHeight}} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
+          {
+            step === 3 &&
+            <RegistrationThirdStep isEntity={isEntity} />
+          }
+          {
+            step === 4 &&
+            <RegistrationLastStep />
+          }
+        </fieldset>
       </Form>
     </Popup>
   );

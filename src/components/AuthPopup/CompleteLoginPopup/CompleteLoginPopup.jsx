@@ -8,7 +8,7 @@ const CompleteLoginPopup = ({ isOpen, onClose }) => {
       <div className="popup__container">
         <h2 className="popup__title popup__title_complete-login">Вход успешно выполнен</h2>
 
-        <PopupCompleteParagraph className="popup__complete-paragraph_login">Через <span>5 секунд</span> вы попадете в личный кабинет</PopupCompleteParagraph>
+        <PopupCompleteParagraph className="popup__complete-paragraph_center">Через <span>5 секунд</span> вы попадете в личный кабинет</PopupCompleteParagraph>
       </div>
     </Popup>
   );

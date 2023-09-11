@@ -7,9 +7,12 @@ const RestoreByEmailPopup = ({ isOpen, onClose, onSubmit }) => {
       isOpen={isOpen}
       onClose={onClose}
       title="Укажите почту, к который привязан аккаунт"
+      titleClassName='popup__title_size_s'
       inputType="email"
-      inputPlaceholder="Почта"
-      inputCaption=""
+      inputName="email"
+      inputPlaceholder="box@mail.ru"
+      inputCaption="Без дефисов и пробелов"
+      text="Почта"
     />
   );
 };

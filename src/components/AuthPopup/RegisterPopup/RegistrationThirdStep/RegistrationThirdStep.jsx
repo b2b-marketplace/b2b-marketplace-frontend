@@ -2,12 +2,12 @@
 import EntityRegistration from './EntityRegistration/EntityRegistration';
 import PersonRegistration from './PersonRegistration/PersonRegistration';
 
-const RegistrationThirdStep = ({ onNext, isEntity }) => {
-  if (isEntity === 'yes') {
-    return (<EntityRegistration onNext={onNext} />);
+const RegistrationThirdStep = ({ isEntity }) => {
+  if (isEntity) {
+    return (<EntityRegistration />);
   }
   return (
-    <PersonRegistration onNext={onNext} />
+    <PersonRegistration/>
   );
 };
 

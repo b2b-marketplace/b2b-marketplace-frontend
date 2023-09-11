@@ -1,8 +1,12 @@
-const LabelCheckbox = ({ id, text, isCheck, onCheck }) => {
+const LabelCheckbox = ({ id, text, ...props }) => {
   return (
 
     <label className="popup__label" htmlFor={id}>
-      <input id={id} onChange={onCheck} checked={isCheck} type="checkbox" className={`popup__checkbox popup__checkbox_type_${id}`} />
+      <input
+        className={`popup__checkbox popup__checkbox_type_${id}`}
+        id={id}
+        {...props}
+      />
       <span className="popup__checkbox-span">{text}</span>
     </label>
   );

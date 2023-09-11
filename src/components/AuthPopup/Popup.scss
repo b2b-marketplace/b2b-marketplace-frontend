@@ -88,21 +88,76 @@ $inactiveColor: #A3A3A3;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+		}
+
+		&__container {
 			gap: 40px 0;
 
+			&_type_radio {
+				gap: 20px 0;
+			}
+		}
+
+		&__radio {
+			display: flex;
+			gap: 0 58px;
+		}
+
+		&__form {
+			gap: 32px 0;
+
+			&_more_gap {
+				grid-row-gap: 40px;
+			}
+		}
+
+		&__fieldset {
+			gap: 16px 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			border: none;
+			margin: 0;
+			padding: 0;
+
+			&_hidden {
+				height: 0;
+				visibility: hidden;
+				opacity: 0;
+				transition: height 0.5s, visibility 0.7s, opacity 0.7s cubic-bezier(0.65, -0.98, 1, 0.69);
+			}
+
+			&_visible {
+				height: 420px;
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		&__terms {
+			@include marginTop(16px);
 		}
 
 		&__title {
 			@include marginTop(0);
 			@include text(600, 28px, 24px);
-			width: fit-content;
 			margin-inline: auto;
+			max-width: 427px;
+
+			&_size_s {
+				max-width: 413px;				
+			}
 		}
 
 		&__subtitle {
 			@include marginTop(24px);
 			@include text(600, 24px, 16px);
 			max-width: 398px;
+
+			&_type_bolded {
+				font-weight: 700;
+			}
 		}
 
 		&__socials {
@@ -119,10 +174,15 @@ $inactiveColor: #A3A3A3;
 			gap: 0 20px;
 		}
 
+		&__buttons {
+			margin-top: 8px;
+		}
+
 		&__buttons,
 		&__inputs {
 			display: flex;
 			gap: 0 26px;
+
 		}
 
 		&__next {
@@ -131,7 +191,6 @@ $inactiveColor: #A3A3A3;
 		}
 
 		&__label {
-			min-width: 305px;
 			min-height: 32px;
 			display: flex;
 			justify-content: center;
@@ -151,8 +210,12 @@ $inactiveColor: #A3A3A3;
 			color: $grayColor;
 			text-decoration-line: underline;
 
-			&_type_resend {
-				color: $whiteColor;
+			&_resend_phonedi {
+				margin-top: 8px;	
+			}
+
+			&_resend_email {
+				margin: 0;
 			}
 		}
 
@@ -213,11 +276,9 @@ $inactiveColor: #A3A3A3;
 			@include marginTop(0);
 			text-align: left;
 			max-width: 348px;
-	
 
-			&_login {
-				@include marginTop(70px);
-				margin-bottom: 141px;
+
+			&_center {
 				text-align: center;
 
 				&>span {
@@ -229,6 +290,7 @@ $inactiveColor: #A3A3A3;
 		&__pin {
 			display: flex;
 			gap: 0 20px;
+			@include marginTop(8px);
 		}
 
 		&__digit {

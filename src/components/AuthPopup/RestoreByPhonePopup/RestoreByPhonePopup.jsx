@@ -7,10 +7,12 @@ const RestoreByPhonePopup = ({ isOpen, onClose, onSubmit }) => {
       onSubmit={onSubmit}
       isOpen={isOpen}
       onClose={onClose}
-      title="Укажите номер телефона, который привязан к аккаунту"
+      title="Укажите номер телефона, к&nbsp;которому привязан аккаунт"
       inputType="tel"
       inputPlaceholder="+7"
       inputCaption="Без дефисов и пробелов"
+      inputName="tel"
+      text="Номер телефона без дефисов"
     />
   );
 };

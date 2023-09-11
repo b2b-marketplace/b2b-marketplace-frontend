@@ -31,12 +31,12 @@ const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit, initDigit=['','
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
+        title="Введите код сброса пароля, который пришел на указанный вами номер"
       >
-        <h2 className="popup__title">На указанный номер вам придет код для сброса пароля</h2>
         <PinCodeInput digits={digits} changeHandler={changeDigitsHandler} />
         <PopupButton
           type="button"
-          className="popup__button popup__underlined-text popup__underlined-text_type_resend"
+          className="popup__button popup__underlined-text popup__underlined-text_resend_phone"
         >
           Отправить повторно через 01:00
         </PopupButton>
