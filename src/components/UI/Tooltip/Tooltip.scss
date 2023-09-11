@@ -1,3 +1,5 @@
+@import "../../../styles/global";
+
 .tooltip {
   position: relative;
   overflow: hidden;
@@ -6,10 +8,9 @@
     overflow: visible;
   }
 
-
-  //&:hover &__content {
-  //  opacity: 1;
-  //}
+  &:hover &__content {
+    opacity: 1;
+  }
 
   &__content {
     background: black;

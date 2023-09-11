@@ -5,7 +5,6 @@
   "author": "B2B Frontend Team",
   "homepage": "https://b2b-marketplace.github.io/b2b-marketplace-frontend/",
   "dependencies": {
-    "@craco/craco": "^7.1.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -24,9 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "eject": "react-scripts eject",
     "lint": "npx eslint .",
     "lint-fix": "npx eslint . --fix",

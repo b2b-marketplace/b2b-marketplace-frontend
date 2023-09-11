@@ -1,3 +1,5 @@
+@import "../../../styles/global";
+
 .account-buyer-profile {
   display: flex;
   font-family: $fontFamilyNunitoSans;
@@ -37,7 +39,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    line-height: 28px;  
+    line-height: 28px;
   }
 
   &__info {
