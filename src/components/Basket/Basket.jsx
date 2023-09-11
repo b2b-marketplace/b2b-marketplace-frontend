@@ -1,12 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Basket.scss';
-import Checkbox from '../../../components/UI/Checkbox/Checkbox';
-import IconTrash from '../../../components/UI/Icon/Icon_trash';
-import ProductCardBasket from '../../../components/ProductCardBasket/ProductCardBasket';
-import OrderDetail from './OrderDetail/OrderDetail';
-import { deleteProduct } from '../../../store/slices/basketSlice.js';
-import productsApi from '../../../utils/productsApi';
+import { deleteProduct } from '../../store/slices/basketSlice.js';
+import Checkbox from '../UI/Checkbox/Checkbox';
+import IconTrash from '../UI/Icon/Icon_trash';
+import Tooltip from '../UI/Tooltip/Tooltip';
+import IconInfoFill from '../UI/Icon/Icon_info_fill';
+import { Button } from '../UI/Button/Button';
+import OrderDetail from '../OrderDetail/OrderDetail';
+import ProductCardBasket from '../ProductCardBasket/ProductCardBasket';
+import productsApi from '../../utils/productsApi';
+import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 
 /**
  * Компонент Basket для отображения товаров в корзине.
@@ -33,7 +38,6 @@ const Basket = ({ className }) => {
   useEffect(() => {
     // Пустой массив для объединенных данных
     const mergedList = [];
-
     //Проходим по массиву товаров из корзины
     if (basketList.basket_products.length) {
       const productBasketIds = basketList.basket_products.map((product) => product.id);
@@ -57,6 +61,28 @@ const Basket = ({ className }) => {
           }
         })
         .catch((err) => console.log(err));
+    } else {
+      setCurrentProductList([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (currentProductList.length === 0) return;
+    const mergedList = [];
+    for (const basketItem of basketList.basket_products) {
+      // Ищем товар по ID
+      const productItem = currentProductList.find((product) => product.id === basketItem.id);
+      // Если товар найден, объединяем информацию о товаре и количестве
+      if (productItem) {
+        const mergedItem = {
+          ...productItem,
+          quantity: basketItem.quantity,
+        };
+        mergedList.push(mergedItem);
+      }
+    }
+    if (mergedList.length) {
+      setCurrentProductList(mergedList);
     } else {
       setCurrentProductList([]);
     }
@@ -160,12 +186,35 @@ const Basket = ({ className }) => {
                 </ul>
               </div>
               <div className="basket__order-detail-container">
-                <OrderDetail
-                  productSum={orderInfo.productSum}
-                  productCount={orderInfo.productCount}
-                  suppliersCount={orderInfo.suppliersCount}
-                  className="basket__order-detail-sticky"
-                />
+                <OrderDetail className="basket__order-detail-sticky">
+                  <OrderDetailHeader title="Детали заказа">
+                    <Tooltip
+                      position="top"
+                      tooltipContent={
+                        <>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>
+                      }
+                    >
+                      <IconInfoFill className="basket__order-detail-icon-info" />
+                    </Tooltip>
+                  </OrderDetailHeader>
+                  <OrderDetailContentBasket
+                    productSum={orderInfo.productSum}
+                    productCount={orderInfo.productCount}
+                    suppliersCount={orderInfo.suppliersCount}
+                    extraClassName="basket__order-detail-content"
+                  />
+                  <div className="basket__order-detail-buttons">
+                    <Button
+                      size="xl"
+                      mode="secondary"
+                      border={true}
+                      label={'Опубликовать'}
+                      extraClass="basket__order-detail-button"
+                    >
+                      Купить
+                    </Button>
+                  </div>
+                </OrderDetail>
               </div>
             </div>
           </>

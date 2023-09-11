@@ -1,6 +1,6 @@
 import React from 'react';
 import BannerAdvertising from '../../components/BannerAdvertising/BannerAdvertising';
-import Basket from './Basket/Basket';
+import Basket from '../../components/Basket/Basket';
 import './BasketPage.scss';
 
 const BasketPage = () => {

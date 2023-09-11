@@ -1,0 +1,17 @@
+@import '../../styles/global';
+
+.order-detail {
+  @include default-font-style;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  &__container {
+    width: 100%;
+    border: 1px solid $grayLightColor;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 40px;
+  }
+
+}

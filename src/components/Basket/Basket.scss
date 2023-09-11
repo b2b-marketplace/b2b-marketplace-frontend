@@ -1,10 +1,7 @@
-@import '../../../styles/global';
+@import '../../styles/global';
 
 .basket {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  color: $fontColor;
+  @include default-font-style;
 
   &__empty {
     text-align: center;
@@ -105,7 +102,8 @@
     //flex-shrink: 0;
   }
 
-  &__product {
+  &__order-detail-content {
+    margin-top: 40px;
   }
 
   &__order-detail-container {
@@ -116,11 +114,30 @@
 
   &__order-detail-sticky {
     position: sticky;
+    top: 0;
+    right: 0;
   }
 
   &__checkbox {
     display: flex;
     flex-direction: row;
     column-gap: 22px;
+  }
+
+  &__order-detail-icon-info {
+    width: 32px;
+    height: 32px;
+    color: #222222;
+  }
+
+  &__order-detail-buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+  }
+
+  &__order-detail-button {
+    width: 100%;
   }
 }
