@@ -10,9 +10,9 @@ import './OrderDetail.scss';
  *
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const OrderDetail = ({ className, ...props }) => {
+const OrderDetail = ({ extraClassName, ...props }) => {
   return (
-    <div className={`order-detail ${className || ''}`}>
+    <div className={`order-detail ${extraClassName || ''}`}>
       <div className="order-detail__container">{props.children}</div>
     </div>
   );

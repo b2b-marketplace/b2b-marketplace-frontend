@@ -12,6 +12,7 @@ import ProductCardBasket from '../ProductCardBasket/ProductCardBasket';
 import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import SidebarRight from '../SidebarRight/SidebarRight';
 
 /**
  * Компонент Basket для отображения товаров в корзине.
@@ -149,79 +150,74 @@ const Basket = ({ className }) => {
 
   return (
     <section className={`basket ${className || ''} `}>
-      <main className="basket__main">
-        {currentProductList.length > 0 ? (
-          <>
-            <div className="basket__container">
-              <div className="basket__container-product">
-                <div className="basket__panel">
-                  <div className="basket__panel-checkbox">
-                    <Checkbox
-                      onCheckboxClick={handleClickCheckboxSelectAllProduct}
-                      isChecked={isCheckAll}
-                      className="basket__checkbox"
-                    >
-                      <span className="basket__checkbox-text">Выбрать все</span>
-                    </Checkbox>
-                  </div>
-                  <button
-                    onClick={handleClickDeleteSelectedProduct}
-                    className="basket__panel-button"
+      {currentProductList.length > 0 ? (
+        <>
+          <div className="basket__container">
+            <div className="basket__container-product">
+              <div className="basket__panel">
+                <div className="basket__panel-checkbox">
+                  <Checkbox
+                    onCheckboxClick={handleClickCheckboxSelectAllProduct}
+                    isChecked={isCheckAll}
+                    className="basket__checkbox"
                   >
-                    <IconTrash className="basket__icon-trash" />
-                    Удалить выбранные
-                  </button>
+                    <span className="basket__checkbox-text">Выбрать все</span>
+                  </Checkbox>
                 </div>
-                <ul className="basket__product-list">
-                  {currentProductList?.map((product) => (
-                    <li className="basket__product-item" key={product.id} data-id={product.id}>
-                      <ProductCardBasket
-                        isCheckboxChecked={selectedProductId.includes(product.id)}
-                        onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
-                        product={product}
-                        className="basket__product"
-                      />
-                    </li>
-                  ))}
-                </ul>
+                <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
+                  <IconTrash className="basket__icon-trash" />
+                  Удалить выбранные
+                </button>
               </div>
-              <div className="basket__order-detail-container">
-                <OrderDetail className="basket__order-detail-sticky">
-                  <OrderDetailHeader title="Детали заказа">
-                    <Tooltip
-                      position="top"
-                      tooltipContent={
-                        <>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>
-                      }
-                    >
-                      <IconInfoFill className="basket__order-detail-icon-info" />
-                    </Tooltip>
-                  </OrderDetailHeader>
-                  <OrderDetailContentBasket
-                    productSum={orderInfo.productSum}
-                    productCount={orderInfo.productCount}
-                    suppliersCount={orderInfo.suppliersCount}
-                    extraClassName="basket__order-detail-content"
-                  />
-                  <div className="basket__order-detail-buttons">
-                    <Button
-                      size="xl"
-                      mode="secondary"
-                      border={true}
-                      label={'Опубликовать'}
-                      extraClass="basket__order-detail-button"
-                    >
-                      Купить
-                    </Button>
-                  </div>
-                </OrderDetail>
-              </div>
+              <ul className="basket__product-list">
+                {currentProductList?.map((product) => (
+                  <li className="basket__product-item" key={product.id} data-id={product.id}>
+                    <ProductCardBasket
+                      isCheckboxChecked={selectedProductId.includes(product.id)}
+                      onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
+                      product={product}
+                      className="basket__product"
+                    />
+                  </li>
+                ))}
+              </ul>
             </div>
-          </>
-        ) : (
-          <div className="basket__empty">Корзина Пуста</div>
-        )}
-      </main>
+            <SidebarRight extraClassName="basket__sidebar-right">
+              <OrderDetail extraClassName="basket__order-detail-sticky">
+                <OrderDetailHeader title="Детали заказа">
+                  <Tooltip
+                    position="top"
+                    tooltipContent={
+                      <>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>
+                    }
+                  >
+                    <IconInfoFill className="basket__order-detail-icon-info" />
+                  </Tooltip>
+                </OrderDetailHeader>
+                <OrderDetailContentBasket
+                  productSum={orderInfo.productSum}
+                  productCount={orderInfo.productCount}
+                  suppliersCount={orderInfo.suppliersCount}
+                  extraClassName="basket__order-detail-content"
+                />
+                <div className="basket__order-detail-buttons">
+                  <Button
+                    size="xl"
+                    mode="secondary"
+                    border={true}
+                    label={'Опубликовать'}
+                    extraClass="basket__order-detail-button"
+                  >
+                    Купить
+                  </Button>
+                </div>
+              </OrderDetail>
+            </SidebarRight>
+          </div>
+        </>
+      ) : (
+        <div className="basket__empty">Корзина Пуста</div>
+      )}
     </section>
   );
 };
