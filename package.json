@@ -33,12 +33,6 @@
     "deploy": "gh-pages -d build",
     "prepaer": "husky install"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -74,7 +68,9 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "npm run lint-fix",
+      "npm run lint-fix"
+    ],
+    "*.{js,jsx,css,md,html,json}": [
       "npm run format"
     ]
   }
