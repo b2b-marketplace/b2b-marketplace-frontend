@@ -1,0 +1,14 @@
+@import "../../../styles/global";
+
+.order-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    margin: 0;
+  }
+}

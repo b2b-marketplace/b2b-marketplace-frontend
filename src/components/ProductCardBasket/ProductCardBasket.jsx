@@ -52,8 +52,8 @@ const ProductCardBasket = ({ className, product, onClickCheckbox, isCheckboxChec
       <div className="product-card-basket__price-count-like">
         <div className="product-card-basket__product-count">
           <Counter
-            onChangeQuantity={(productCount) =>
-              dispatch(changeQuantity({ productIds: product.id, quantity: productCount }))
+            onChangeQuantity={(productQuantity) =>
+              dispatch(changeQuantity({ productIds: product.id, quantity: productQuantity }))
             }
             initCount={product.quantity}
           />
