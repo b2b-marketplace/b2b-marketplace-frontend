@@ -10,7 +10,7 @@
     width: 92px;
     height: 92px;
     border-radius: 50%;
-    color: #fff;
+    color: $whiteColor;
     background-color: $darkColor;
     border: none;
     cursor: pointer;
@@ -26,7 +26,7 @@
     }
 
     &:hover {
-      background-color: #0056b3;
+      background-color: $blueDarkColor;
       transform: scale(1.1);
     }
   }
