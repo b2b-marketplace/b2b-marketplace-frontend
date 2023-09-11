@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import "./Basket.scss";
 import Checkbox from "../../../components/UI/Checkbox/Checkbox";
 import IconTrash from "../../../components/UI/Icon/Icon_trash";
 import ProductCardBasket from "../../../components/ProductCardBasket/ProductCardBasket";
 import OrderDetail from "./OrderDetail/OrderDetail";
-import { useSelector, useDispatch } from "react-redux";
-//import { productList } from "../../../mock/productsMock";
 import { deleteProduct } from "../../../store/slices/basketSlice.js";
 import productsApi from '../../../utils/productsApi';
 
