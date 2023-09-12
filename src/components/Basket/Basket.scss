@@ -127,5 +127,10 @@
 
   &__order-detail-button {
     width: 100%;
+
+    &_disabled {
+      background-color: $grayColor;
+      cursor: default;
+    }
   }
 }
