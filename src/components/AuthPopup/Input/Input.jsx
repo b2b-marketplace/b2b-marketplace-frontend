@@ -32,13 +32,13 @@ const Input = ({ size, type, className, children, text, labelClassName, ...props
 
           )
       }
-      <span className="input-label__span">{text}</span>
+      {size !== 's' && <span className="input-label__span">{text}</span>}
     </label>
   );
 };
 
 Input.propTypes = {
-  size: PropTypes.oneOf(['s', 'm', 'l', 'xl', 'xxl']),
+  size: PropTypes.oneOf(['s', 'm', 'l']),
   type: PropTypes.oneOf(['text', 'number', 'email', 'password', 'tel', 'select']),
   onChange: PropTypes.func,
 };

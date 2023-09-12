@@ -14,7 +14,7 @@ const ConfirmRestoreByEmailPopup = ({ isOpen, onClose }) => {
         <PopupCompleteParagraph className="popup__complete-paragraph_center">Если не нашли письмо от нас, проверьте папку спам</PopupCompleteParagraph>
         <PopupButton
           type="button"
-          className="popup__button popup__underlined-text popup__underlined-text_resend_email"
+          className="popup__button popup__underlined-text popup__underlined-text_type_resend"
         >
           Отправить повторно через 00:10
         </PopupButton>

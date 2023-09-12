@@ -215,12 +215,8 @@ $inactiveColor: #A3A3A3;
 			color: $grayColor;
 			text-decoration-line: underline;
 
-			&_resend_phonedi {
-				margin-top: 8px;
-			}
-
-			&_resend_email {
-				margin: 0;
+			&_type_resend {
+				margin-top: 0px;
 			}
 		}
 
@@ -295,7 +291,6 @@ $inactiveColor: #A3A3A3;
 		&__pin {
 			display: flex;
 			gap: 0 20px;
-			@include marginTop(8px);
 		}
 
 		&__digit {

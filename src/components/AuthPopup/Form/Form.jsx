@@ -1,6 +1,6 @@
 import { Button } from "../../UI/Button/Button";
 
-const Form = ({ children, onSubmit, btnOnClick, className, title, btnText, btnType, titleClassName }) => {
+const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit && onSubmit();

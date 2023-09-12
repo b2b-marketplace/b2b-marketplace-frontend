@@ -30,7 +30,7 @@ const LoginPopup = ({ isOpen, onClose, onSubmit, onRestore }) => {
             name="login"
             type="text"
             placeholder="Логин"
-            size="xxl"
+            size="l"
             text="Латиница, цифры"
           />
           <Input
@@ -38,7 +38,7 @@ const LoginPopup = ({ isOpen, onClose, onSubmit, onRestore }) => {
             type="password"
             autoComplete="off"
             placeholder="Пароль"
-            size="xxl"
+            size="l"
             text="От 10 символов, латиница, цифры, символы"
           >
             <button className="popup__button input-label__button input-label__button_type_password" type="button">

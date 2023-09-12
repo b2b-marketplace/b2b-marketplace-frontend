@@ -16,6 +16,7 @@ const NewPasswordPopup = ({ isOpen, onClose, onSubmit }) => {
       isOpen={isOpen}
       onClose={onClose}
       title="Придумайте новый пароль"
+      popupContClassMode={'popup__container_type_form'}
     >
       <Form
         className="popup__form"
@@ -29,7 +30,7 @@ const NewPasswordPopup = ({ isOpen, onClose, onSubmit }) => {
             type="password"
             autoComplete="off"
             placeholder="Пароль"
-            size="xxl"
+            size="l"
             text="От 10 символов, латиница, цифры, символы"
           >
             <button className="popup__button input-label__button input-label__button_type_password" type="button">
@@ -42,7 +43,7 @@ const NewPasswordPopup = ({ isOpen, onClose, onSubmit }) => {
             type="password"
             autoComplete="off"
             placeholder="Повторите пароль"
-            size="xxl"
+            size="l"
             text="Пароли совпадают"
           >
             <button className="popup__button input-label__button input-label__button_type_password" type="button">

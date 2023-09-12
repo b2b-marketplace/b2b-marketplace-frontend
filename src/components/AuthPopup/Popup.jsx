@@ -10,12 +10,14 @@ const Popup = (props) => {
     children,
     step,
     isShowStepper,
-    titleClassName,
+    titleClassMode,
     title,
     popupContClassMode
   } = props;
   const isOpenPopupTypeClass = `auth${isOpen ? ' auth_opened' : ''}`;
   const popupContClassName = `popup__container${popupContClassMode ? ` ${popupContClassMode}` : ''}`;
+  const titleClassName = `popup__title${titleClassMode ? ` ${titleClassMode}` : ''}`;
+
   const closeByEvent = (event) => {
     if (event.key === 'Escape' || event.target === event.currentTarget) {
       onClose();
@@ -45,8 +47,8 @@ const Popup = (props) => {
             <IconClose className="popup__close-icon" />
           </button>
         </div>
-        <div className={`popup__container${popupContClassName ? ` ${popupContClassName}` : ''}`}>
-          <h2 className={`popup__title${titleClassName ? ` ${titleClassName}` : ''}`}>{title}</h2>
+        <div className={popupContClassName}>
+          <h2 className={titleClassName}>{title}</h2>
           {children}
         </div>
       </div>

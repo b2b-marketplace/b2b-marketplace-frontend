@@ -7,14 +7,14 @@ const PersonRegistration = ({ onNext }) => {
         name="last-name"
         type="text"
         placeholder="Фамилия"
-        size="xxl"
+        size="l"
         text="Кририллицей"
       />
       <Input
         name="name"
         type="text"
         placeholder="Имя"
-        size="xxl"
+        size="l"
         text="Кририллицей"
       />
 
@@ -39,14 +39,14 @@ const PersonRegistration = ({ onNext }) => {
         name="adress"
         type="text"
         placeholder="Край/область"
-        size="xxl"
+        size="l"
         text="Выберите свой из списка"
       /> */}
       <Input
         name="adress"
         type="select"
         placeholder="Край/область"
-        size="xxl"
+        size="l"
         text="Начните ввод, чтобы выбрать из списка"
       >
         <option value="">Край/область</option>

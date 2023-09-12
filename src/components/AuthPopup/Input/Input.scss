@@ -3,7 +3,6 @@
 .input-label {
 	width: 100%;
 	position: relative;
-	width: 100vw;
 	font-family: $fontFamilyNunitoSans;
 
 	&__button {
@@ -19,16 +18,8 @@
 	}
 
 	&_size {
-		&_xxl {
-			max-width: 504px;
-		}
-
-		&_xl {
-			max-width: 239px;
-		}
-
 		&_l {
-			max-width: 239px;
+			max-width: 504px;
 		}
 
 		&_m {
@@ -97,27 +88,12 @@ input[type="number"]::-webkit-inner-spin-button {
 	text-align: left;
 
 	&_size {
-		// &_xxl {
-		// 	max-width: 968px;
-		// }
-
-		// &_xl {
-		// 	max-width: 600px;
-		// }
-
-		// &_l {
-		// 	max-width: 576px;
-		// }
-		// &_m {
-		// 	max-width: 476px;
-		// }
-
 		&_s {
 			padding: 10px 8px;
 			height: 44px;
 			text-align: center;
 
-			color:  $blackColor;
+			color: $blackColor;
 			font-size: 16px;
 			font-weight: 600;
 			line-height: 24px;
