@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { PRODUCTS } from "../../../utils/productCardExample";
-import OrderListItem from "./OrderListItem/OrderListItem";
-import "./AccountBuyerOrderList.scss";
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { PRODUCTS } from '../../../utils/productCardExample';
+import OrderListItem from './OrderListItem/OrderListItem';
+import './AccountBuyerOrderList.scss';
 
 const AccountBuyerOrderList = () => {
   const { filter } = useParams();
@@ -10,15 +10,14 @@ const AccountBuyerOrderList = () => {
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);
 
-
   useEffect(() => {
     if (filter === undefined) {
       setOrders(PRODUCTS);
-    } else if (filter === "in-transit") {
+    } else if (filter === 'in-transit') {
       setOrders(PRODUCTS.slice(0, 3));
-    } else if (filter === "received") {
+    } else if (filter === 'received') {
       setOrders(PRODUCTS.slice(3, 5));
-    } else if (filter === "canceled") {
+    } else if (filter === 'canceled') {
       setOrders(PRODUCTS.slice(5, 9));
     } else {
       navigate('/account/orders');
@@ -28,14 +27,13 @@ const AccountBuyerOrderList = () => {
   return (
     <div>
       <ul className="account-buyer-order-list">
-        {orders?.map(order => (
+        {orders?.map((order) => (
           <li className="account-buyer-order-list__item" key={order.id}>
-            <OrderListItem order={order}/>
+            <OrderListItem order={order} />
           </li>
         ))}
       </ul>
     </div>
-
   );
 };
 

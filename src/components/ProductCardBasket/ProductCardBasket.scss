@@ -1,3 +1,5 @@
+@import '../../styles/global';
+
 .product-card-basket {
   font-family: $fontFamilyNunitoSans;
   font-style: $fontStyle;
@@ -14,6 +16,7 @@
   padding: 20px 40px 20px 44px;
   width: 100%;
   max-height: 172px;
+
   &__checkbox {
     align-self: center;
     justify-content: center;
@@ -112,11 +115,11 @@
   &__button {
     border: none;
     background: transparent;
-    transition: opacity linear .3s;
+    transition: opacity linear 0.3s;
     padding: 0;
 
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 

@@ -9,7 +9,8 @@ const IconQuestion = ({ className, ...props }) => {
         width="32"
         height="32"
         viewBox="0 0 32 32"
-        fill="none">
+        fill="none"
+      >
         <circle cx="16" cy="16" r="12" stroke="#currentColor" strokeWidth="1.5" />
         <circle cx="16.0859" cy="24.082" r="0.75" fill="#currentColor" />
         <path

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Tooltip.scss";
+import './Tooltip.scss';
 
 /**
  * Компонент Tooltip, отображающий дополнительную информацию при наведении или клике.
@@ -11,13 +11,15 @@ import "./Tooltip.scss";
  *
  * @returns {JSX.Element} - Отрендеренный компонент Tooltip.
  */
-const Tooltip = ({ tooltipContent, children, sizeText, position = "top" }) => {
-  const stylePosition = position ? "tooltip__content_" + position : "";
-  const styleSizeText = sizeText ? `tooltip__size tooltip__size_${sizeText}` : "";
+const Tooltip = ({ tooltipContent, children, sizeText, position = 'top' }) => {
+  const stylePosition = position ? 'tooltip__content_' + position : '';
+  const styleSizeText = sizeText ? `tooltip__size tooltip__size_${sizeText}` : '';
   return (
     <div className="tooltip">
       {children}
-      <span className={`tooltip__content ${stylePosition} ${styleSizeText} `}>{tooltipContent}</span>
+      <span className={`tooltip__content ${stylePosition} ${styleSizeText} `}>
+        {tooltipContent}
+      </span>
     </div>
   );
 };

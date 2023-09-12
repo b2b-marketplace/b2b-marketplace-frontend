@@ -1,18 +1,20 @@
+@import '../../../../styles/global';
+
 .account-title {
   display: flex;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
+  gap: 20px;
 
   &__container-logo {
     width: 92px;
     height: 92px;
     border-radius: 50%;
-    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: $darkColor;
-    background-image: url("../../../../images/editAvatar.png");
+    background-image: url('../../../../images/editAvatar.png');
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -25,18 +27,19 @@
 
   &__logo:hover {
     cursor: pointer;
-    opacity: .2;
+    opacity: 0.2;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
-    margin-right: 60px;
     justify-content: center;
   }
 
   &__container-description {
-    margin: 0 0 4px 0;
+    display: flex;
+    gap: 4px;
+    margin: 0;
     font-size: 20px;
     font-weight: 600;
     line-height: 36px;
@@ -51,20 +54,4 @@
     margin: 0;
     padding: 0;
   }
-
-  /* &__button {
-    max-width: 156px;
-    width: 100%;
-    border: none;
-    padding: 0;
-    background: $whiteColor;
-    color: $blueColor;
-    margin-top: 18px;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    display: grid;
-    justify-self: center;
-    cursor:pointer;
-  } */
 }

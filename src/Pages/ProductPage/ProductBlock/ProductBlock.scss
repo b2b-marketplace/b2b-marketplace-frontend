@@ -1,3 +1,5 @@
+@import '../../../styles/global';
+
 .product-block {
   width: 100%;
   display: flex;
@@ -24,6 +26,7 @@
   flex-direction: row;
   gap: 20px;
   max-width: 685px;
+
   &__column {
     width: 121px;
     height: 520px;
@@ -33,6 +36,7 @@
     width: 100%;
     height: 100%;
   }
+
   &__column [class^='swiper-button'] {
     transform: rotate(90deg);
     top: initial;
@@ -40,10 +44,12 @@
     right: 45px;
     margin: 0;
   }
+
   &__column .swiper-button-prev {
     top: 0;
     color: $blueDarkColor;
   }
+
   &__column .swiper-button-next {
     bottom: 0;
     color: $blueDarkColor;
@@ -54,6 +60,7 @@
     justify-content: center;
     align-items: center;
   }
+
   &__slide img {
     display: block;
     width: 100%;
@@ -74,8 +81,9 @@
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Edge, Opera and Firefox */
   }
 
   &__main {
@@ -94,6 +102,7 @@
 .info {
   max-width: 464px;
   width: 100%;
+
   &__title {
     margin: 0;
     max-width: 292px;
@@ -113,6 +122,7 @@
       align-items: flex-start;
     }
   }
+
   &__shipper {
     display: flex;
     flex-direction: row;
@@ -122,6 +132,7 @@
     margin: 0 0 56px;
     color: $blueColor;
     height: 32px;
+
     &-name {
       margin: 0;
       color: $blackColor;
@@ -132,11 +143,13 @@
       line-height: 28px; /* 140% */
       text-decoration-line: underline;
     }
+
     &-icon {
       cursor: default;
       position: relative;
     }
   }
+
   &__code {
     margin: 0 0 18px;
     color: $blackColor;
@@ -146,6 +159,7 @@
     font-weight: 600;
     line-height: 28px; /* 140% */
   }
+
   &__status {
     color: $darkColor;
     font-family: $fontFamilyNunitoSans;
@@ -154,6 +168,7 @@
     font-weight: 600;
     line-height: 28px; /* 140% */
     margin: 0;
+
     &-line {
       display: flex;
       flex-direction: row;
@@ -173,6 +188,7 @@
     font-weight: 600;
     line-height: 28px; /* 140% */
     margin: 0;
+
     &-line {
       display: flex;
       flex-direction: row;
@@ -181,6 +197,7 @@
       margin: 0 0 24px;
     }
   }
+
   &__color {
     color: $darkColor;
     font-family: $fontFamilyNunitoSans;
@@ -189,6 +206,7 @@
     font-weight: 600;
     line-height: 28px; /* 140% */
     margin: 0;
+
     &-line {
       display: flex;
       flex-direction: row;
@@ -211,15 +229,18 @@
   border-radius: 20px;
   border: 1px solid $grayLightColor;
   background: $whiteColor;
+
   &__icons {
     display: flex;
     flex-direction: row;
     gap: 12px;
     justify-content: space-between;
   }
+
   &__price {
     display: flex;
     flex-direction: column;
+
     &-value {
       display: flex;
       flex-direction: row;
@@ -233,6 +254,7 @@
       font-weight: 500;
       line-height: 36px; /* 128.571% */
     }
+
     &-piece {
       margin: 0 0 6px;
       color: $grayColor;
@@ -250,6 +272,7 @@
       border-radius: 4px;
       background-color: $grayLightColor;
       margin: 0 0 8px;
+
       &-now {
         border-radius: 4px;
         position: absolute;
@@ -272,6 +295,7 @@
       font-weight: 700;
       line-height: 20px; /* 142.857% */
       margin: 0 0 4px;
+
       &-now {
         font-weight: 400;
       }
@@ -293,6 +317,7 @@
     font-family: $fontFamilyNunitoSans;
     font-style: normal;
     margin: 0;
+
     &-title {
       color: $darkColor;
       font-size: 16px;
@@ -300,6 +325,7 @@
       line-height: 24px; /* 150% */
       margin: 0 0 8px;
     }
+
     &-subtitle {
       color: $grayColor;
       font-size: 14px;
@@ -311,10 +337,12 @@
     &-subtitle:last-of-type {
       margin: 0;
     }
+
     &-data {
       font-weight: 700;
     }
   }
+
   &__button {
     width: 100%;
   }
@@ -325,6 +353,7 @@
   flex-direction: row;
   gap: 161px;
   margin: 0 0 84px;
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -334,11 +363,13 @@
     font-style: normal;
     font-weight: 600;
   }
+
   &__title {
     font-size: 24px;
     line-height: 28px; /* 116.667% */
     margin: 0 0 20px;
   }
+
   &__text {
     font-size: 16px;
 
@@ -352,6 +383,7 @@
   flex-direction: column;
   gap: 40px;
   align-items: center;
+
   &__title {
     color: $blackColor;
     font-family: $fontFamilyUnbounded;
@@ -365,6 +397,7 @@
     gap: 16px;
     align-self: flex-start;
   }
+
   &__count {
     color: $blueDarkColor;
     font-family: $fontFamilyNunitoSans;
@@ -374,6 +407,7 @@
     line-height: 28px; /* 140% */
     margin: 0;
   }
+
   &__container {
     display: flex;
     flex-wrap: wrap;

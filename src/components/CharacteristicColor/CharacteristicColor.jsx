@@ -1,8 +1,7 @@
 import React from 'react';
-import "./CharacteristicColor.scss";
+import './CharacteristicColor.scss';
 
 const CharacteristicColor = ({ className, characteristicValue }) => {
-
   const renderColor = (color) => {
     const backgroundColor = color ? color : 'white';
     const isWhite = color === 'white' ? 'characteristic-color__color-white' : '';
@@ -10,16 +9,14 @@ const CharacteristicColor = ({ className, characteristicValue }) => {
   };
 
   const renderColors = (colors) => {
-    return (
-      colors.map((color, idx) => (
-        <div key={idx}>{renderColor(color.color)}</div>
-      ))
-    );
+    return colors.map((color, idx) => <div key={idx}>{renderColor(color.color)}</div>);
   };
 
   return (
-    <div className={`characteristic-color ${className || ""}`}>
-      {Array.isArray(characteristicValue) ? renderColors(characteristicValue) : renderColor(characteristicValue)}
+    <div className={`characteristic-color ${className || ''}`}>
+      {Array.isArray(characteristicValue)
+        ? renderColors(characteristicValue)
+        : renderColor(characteristicValue)}
     </div>
   );
 };

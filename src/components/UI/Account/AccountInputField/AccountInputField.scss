@@ -1,3 +1,5 @@
+@import '../../../../styles/global';
+
 .account-input-field {
   display: inline-flex;
   gap: 10px;
@@ -11,6 +13,10 @@
     font-style: $mainStyle;
     font-weight: 500;
     line-height: 28px;
+  }
+
+  &__label-active {
+    max-width: 494px;
   }
 
   &__input {
@@ -32,12 +38,13 @@
   }
 
   &__input-active {
+    max-width: 262px;
     border-radius: 10px;
     border: none;
     padding-left: 20px;
-    outline:none; 
+    outline: none;
     font-size: 16px;
-    line-height: 24px;   
+    line-height: 24px;
   }
 
   &__input-button {

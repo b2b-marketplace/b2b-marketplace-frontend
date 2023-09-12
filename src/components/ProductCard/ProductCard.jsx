@@ -36,7 +36,6 @@ function ProductCard({ product }) {
         <IconScales />
       </div>
 
-
       <div className="card__info">
         <Link to={`/product/${product.id}`}
           className="card__title"
@@ -50,7 +49,10 @@ function ProductCard({ product }) {
         </Link>
         <div className="card__shipper">
           <p className="card__shipper-name">{product.seller.name}</p>
-          <IconInfo className='card__shipper-icon hint-top-middle' data-hint={product.seller.name} />
+          <IconInfo
+            className="card__shipper-icon hint-top-middle"
+            data-hint={product.seller.name}
+          />
           {/* <Tooltip
             position="top"
             sizeText="l"
@@ -69,9 +71,7 @@ function ProductCard({ product }) {
         </div>
 
         <div className="card__info-bottom">
-
           <p className="card__price">{`${product.price} `}&#x20bd;</p>
-
         </div>
 
         <Button size="m" primary={false} onClick={handleSelect} pressed={isProductSelect}>

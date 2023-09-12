@@ -1,11 +1,11 @@
+@import '../../styles/global';
+
 .home-page {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  //padding: 0 124px;
   max-width: $maxWidth;
   min-width: $minWidth;
-  //margin: 0 auto;
   margin-top: 52px;
 
   &__platform-benefits {

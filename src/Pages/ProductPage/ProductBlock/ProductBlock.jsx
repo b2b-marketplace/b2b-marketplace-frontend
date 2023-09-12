@@ -52,7 +52,6 @@ export default function ProductBlock({ product }) {
     <section className="product-block">
       <div className="product-block__top">
         <div className="images">
-
           <Swiper
             spaceBetween={40}
             slidesPerView={4}
@@ -112,8 +111,8 @@ export default function ProductBlock({ product }) {
           </div> */}
         </div>
 
-        <div className='order'>
-          <div className='order__price'>
+        <div className="order">
+          <div className="order__price">
             <h3 className="order__price-value">
               {`${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
               <div className='order__icons'>
@@ -136,10 +135,14 @@ export default function ProductBlock({ product }) {
             <p className='order__price-min-order'>{`Минимальное количество товара для заказа: ${product.wholesale_quantity}`}</p>
           </div>
 
-          <div className='order__delivery'>
-            <p className='order__delivery-title'>Варианты доставки</p>
-            <p className='order__delivery-subtitle'>Самовывоз со склада продавца — <span className='order__delivery-data'>завтра</span></p>
-            <p className='order__delivery-subtitle'>Курьером — <span className='order__delivery-data'>10 сентября</span></p>
+          <div className="order__delivery">
+            <p className="order__delivery-title">Варианты доставки</p>
+            <p className="order__delivery-subtitle">
+              Самовывоз со склада продавца — <span className="order__delivery-data">завтра</span>
+            </p>
+            <p className="order__delivery-subtitle">
+              Курьером — <span className="order__delivery-data">10 сентября</span>
+            </p>
           </div>
 
           <Counter initCount={product.wholesale_quantity} minValue={product.wholesale_quantity} onChangeProductQuantity={(count) => { }} />
@@ -150,21 +153,43 @@ export default function ProductBlock({ product }) {
       </div>
 
       <div className="product-block__bottom">
-        <div className='description'>
-          <div className='description__item'>
-            <h4 className='description__title'>Описание</h4>
-            <p className='description__text'>Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей</p>
+        <div className="description">
+          <div className="description__item">
+            <h4 className="description__title">Описание</h4>
+            <p className="description__text">
+              Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар
+              современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов.
+              Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак
+              хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров.
+              Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи,
+              телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак
+              лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних
+              карманов, а также потайной, все на молнии и отделение для документов. Размер
+              42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку
+              не один год. Городской рюкзак, выбор стильных и современных людей
+            </p>
           </div>
-          <div className='description__item'>
-            <h4 className='description__title'>Характеристики</h4>
-            <p className='description__text'>Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов. Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров. Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи, телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних карманов, а также потайной, все на молнии и отделение для документов. Размер 42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку не один год. Городской рюкзак, выбор стильных и современных людей</p>
+          <div className="description__item">
+            <h4 className="description__title">Характеристики</h4>
+            <p className="description__text">
+              Городской рюкзак из качественных материалов Urbano — неотъемлемый аксессуар
+              современного человека. Рюкзак выполнен из надежных, приятных на ощупь материалов.
+              Качественные материалы этого рюкзака не теряют свои свойства и не мнутся. Рюкзак
+              хорошо держит форму. Рюкзак вместительный. Множество отделений и мест для аксессуаров.
+              Помещается ноутбук диагональю 15,4, документы формата А4, папки, кошелек, ключи,
+              телефон, внешний аккумулятор и многое другое. Рюкзак удобный и практичный. Рюкзак
+              лёгкий, с лямками и ручкой для ношения в руке. Рюкзак имеет множество внешних
+              карманов, а также потайной, все на молнии и отделение для документов. Размер
+              42×30×12 см Качественная фурнитура и материалы, позволят прослужить рюкзаку
+              не один год. Городской рюкзак, выбор стильных и современных людей
+            </p>
           </div>
         </div>
 
-        <div className='comments'>
-          <h3 className='comments__title'>
+        <div className="comments">
+          <h3 className="comments__title">
             Отзывы
-            <p className='comments__count'>15</p>
+            <p className="comments__count">15</p>
           </h3>
           <div className='comments__container'>
             <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
@@ -175,6 +200,6 @@ export default function ProductBlock({ product }) {
           <Button size='l' primary dark>Смотреть все</Button>
         </div>
       </div>
-    </section >
+    </section>
   );
 }

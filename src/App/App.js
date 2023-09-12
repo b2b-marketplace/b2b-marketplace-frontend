@@ -8,10 +8,12 @@ import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAd
 import React from 'react';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
 import AccountBuyerProfile from '../Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
+import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/AccountSellerProfile';
 import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
+import OrderPage from '../Pages/OrderPage/OrderPage';
 
 function App() {
   return (
@@ -20,7 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/product/:id" element={<ProductPage />} exact />
+        <Route path="/order" element={<OrderPage />} exact />
+        <Route path="/product/*" element={<ProductPage />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />

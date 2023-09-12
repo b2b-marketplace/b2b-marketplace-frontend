@@ -8,7 +8,7 @@ function CommentsBlock({ author, text, rating }) {
         {author}
         <ProductRating rating={rating} />
       </h3>
-      <p className='comment__text'>{text}</p>
+      <p className="comment__text">{text}</p>
     </div>
   );
 }
