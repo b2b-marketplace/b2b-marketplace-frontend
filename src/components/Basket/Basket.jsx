@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Basket.scss';
-import { deleteProduct } from '../../store/slices/basketSlice.js';
+import { changeChecked, deleteProduct } from '../../store/slices/basketSlice.js';
 import Checkbox from '../UI/Checkbox/Checkbox';
 import IconTrash from '../UI/Icon/Icon_trash';
 import Tooltip from '../UI/Tooltip/Tooltip';
@@ -13,96 +13,90 @@ import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import SidebarRight from '../SidebarRight/SidebarRight';
+import { useNavigate } from 'react-router-dom';
 
-/**
- * Компонент Basket для отображения товаров в корзине.
- *
- * @param className - Дополнительные CSS классы для настройки внешнего вида.
- * @returns {JSX.Element} - Возвращает JSX-элемент компонента Basket.
- * @constructor
- *
- * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
- */
 const Basket = ({ className }) => {
   const [currentProductList, setCurrentProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
-  const basketList = useSelector((state) => state.basket.basket);
-  const dispatch = useDispatch();
-
   const [orderInfo, setOrderInfo] = useState({
     productSum: 0,
     productCount: 0,
     suppliersCount: 0,
   });
+  const basketList = useSelector((state) => state.basket.basket);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    // Пустой массив для объединенных данных
-    const mergedList = [];
-    //Проходим по массиву товаров из корзины
+  const fetchBasketProducts = async () => {
     if (basketList.basket_products.length) {
       const productBasketIds = basketList.basket_products.map((product) => product.id);
-      productsApi
-        .getProducts(productBasketIds)
-        .then((data) => {
-          for (const basketItem of basketList.basket_products) {
-            // Ищем товар по ID
-            const productItem = data.results.find((product) => product.id === basketItem.id);
-            // Если товар найден, объединяем информацию о товаре и количестве
-            if (productItem) {
-              const mergedItem = {
-                ...productItem,
-                quantity: basketItem.quantity,
-              };
-              mergedList.push(mergedItem);
+      const mergedList = [];
+      const selectedList = [];
+      try {
+        const { results } = await productsApi.getProducts(productBasketIds);
+        for (const basketItem of basketList.basket_products) {
+          const productItem = results.find((product) => product.id === basketItem.id);
+          if (productItem) {
+            if (basketItem.checked) {
+              selectedList.push(basketItem.id);
             }
+            const mergedItem = {
+              ...productItem,
+              quantity: basketItem.quantity,
+              checked: basketItem.checked,
+            };
+            mergedList.push(mergedItem);
           }
-          if (mergedList.length) {
-            setCurrentProductList(mergedList);
-          }
-        })
-        .catch((err) => console.log(err));
-    } else {
-      setCurrentProductList([]);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setCurrentProductList(mergedList);
+        setSelectedProductId(selectedList);
+      }
     }
+  };
+
+  useEffect(() => {
+    fetchBasketProducts();
   }, []);
 
   useEffect(() => {
     if (currentProductList.length === 0) return;
+
     const mergedList = [];
+
     for (const basketItem of basketList.basket_products) {
-      // Ищем товар по ID
       const productItem = currentProductList.find((product) => product.id === basketItem.id);
-      // Если товар найден, объединяем информацию о товаре и количестве
+
       if (productItem) {
+        if (basketItem.checked) {
+          setSelectedProductId([...selectedProductId, basketItem.id]);
+        }
         const mergedItem = {
           ...productItem,
           quantity: basketItem.quantity,
+          checked: basketItem.checked,
         };
         mergedList.push(mergedItem);
       }
     }
-    if (mergedList.length) {
-      setCurrentProductList(mergedList);
-    } else {
-      setCurrentProductList([]);
-    }
+
+    setCurrentProductList(mergedList);
   }, [basketList]);
 
   useEffect(() => {
-    //Список выделенных товаров
     const selectedProducts = currentProductList.filter((product) =>
       selectedProductId.includes(product.id)
     );
-    //Сумма цен выделенных товаров
+
     const sumWithProducts = selectedProducts.reduce((total, currentProduct) => {
-      //Цена товара
       const productPrice = parseFloat(currentProduct.price.replace(/\s/g, ''));
-      //количество товаров
       const productQuantity = parseFloat(currentProduct.quantity);
       return total + productPrice * productQuantity;
     }, 0);
-    //Количество поставщиков | Set - представляет собой коллекцию значений, где каждое значение может присутствовать только один раз.
+
     const suppliersId = new Set(
       selectedProducts.map((currentProduct) => currentProduct.seller[0]?.id)
     );
@@ -117,39 +111,39 @@ const Basket = ({ className }) => {
     });
   }, [selectedProductId, currentProductList]);
 
-  /**
-   * Изменение состояния выбора товара в корзине
-   * @param productId
-   */
   const handleClickCheckboxProduct = (productId) => {
+    dispatch(changeChecked({ productIds: productId }));
     const updatedSelectedProductIds = selectedProductId.includes(productId)
       ? selectedProductId.filter((id) => id !== productId)
       : [...selectedProductId, productId];
     setSelectedProductId(updatedSelectedProductIds);
   };
 
-  /**
-   * Выбор всех товаров
-   */
   const handleClickCheckboxSelectAllProduct = () => {
     if (isCheckAll) {
       setSelectedProductId([]);
+      dispatch(changeChecked({ productIds: [], checked: false }));
     } else {
       const allProductIds = currentProductList.map((product) => product.id);
+      dispatch(changeChecked({ productIds: [], checked: true }));
       setSelectedProductId(allProductIds);
     }
     setIsCheckAll(!isCheckAll);
   };
 
-  /**
-   * Удаление выбранных товаров
-   */
   const handleClickDeleteSelectedProduct = () => {
     dispatch(deleteProduct({ productIds: selectedProductId }));
   };
 
+  const handleNavigateToOrder = () => {
+    if (selectedProductId.length)
+      navigate('/order', {
+        state: { cameFromBasket: true },
+      });
+  };
+
   return (
-    <section className={`basket ${className || ''} `}>
+    <section className={`basket ${className || ''}`}>
       {currentProductList.length > 0 ? (
         <>
           <div className="basket__container">
@@ -173,7 +167,7 @@ const Basket = ({ className }) => {
                 {currentProductList?.map((product) => (
                   <li className="basket__product-item" key={product.id} data-id={product.id}>
                     <ProductCardBasket
-                      isCheckboxChecked={selectedProductId.includes(product.id)}
+                      isCheckboxChecked={product.checked}
                       onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
                       product={product}
                       className="basket__product"
@@ -203,10 +197,14 @@ const Basket = ({ className }) => {
                 <div className="basket__order-detail-buttons">
                   <Button
                     size="xl"
+                    onClick={handleNavigateToOrder}
                     mode="secondary"
+                    disabled={!selectedProductId.length}
                     border={true}
-                    label={'Опубликовать'}
-                    extraClass="basket__order-detail-button"
+                    label={'Купить'}
+                    extraClass={`basket__order-detail-button ${
+                      !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
+                    }`}
                   >
                     Купить
                   </Button>

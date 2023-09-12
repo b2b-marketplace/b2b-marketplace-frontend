@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "B2B Frontend Team",
-  "homepage": "https://b2b-marketplace.github.io/b2b-marketplace-frontend/",
+  "homepage": ".",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
