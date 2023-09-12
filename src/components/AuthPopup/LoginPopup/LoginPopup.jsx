@@ -1,21 +1,30 @@
 
+import usePopup from "../../../hooks/usePopup";
 import IconPassword from "../../UI/Icon/IconPassword";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import Popup from "../Popup";
 import PopupButton from "../PopupButton/PopupButton";
 
-const LoginPopup = ({ isOpen, onClose, onSubmit, onRestore }) => {
+const LoginPopup = () => {
+  const { isOpen, closePopup } = usePopup('login');
+  const { openPopup: openCompleteLogin } = usePopup('completeLogin');
+  const { openPopup: openRestore } = usePopup('selectRestore');
 
   const handleSubmit = () => {
-    onClose();
-    onSubmit && onSubmit();
+    closePopup();
+    openCompleteLogin();
+  };
+
+  const handleRestore = () => {
+    openRestore();
+    closePopup();
   };
 
   return (
     <Popup
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={closePopup}
       title="Вход"
       popupContClassMode={'popup__container_type_form'}
     >
@@ -48,7 +57,7 @@ const LoginPopup = ({ isOpen, onClose, onSubmit, onRestore }) => {
           <PopupButton
             type="button"
             className="popup__button popup__underlined-text"
-            onClick={onRestore}
+            onClick={handleRestore}
           >
             Забыл логин/пароль
           </PopupButton>

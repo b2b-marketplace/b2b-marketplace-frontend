@@ -2,8 +2,12 @@ import React from 'react';
 import './PromoRegistration.scss';
 import logo from '../../images/photo_promo-registration.jpg';
 import { Button } from '../UI/Button/Button';
+import usePopup from '../../hooks/usePopup';
 
-const PromoRegistration = ({ className, onAuth }) => {
+const PromoRegistration = ({ className }) => {
+  const { openPopup: openRegisterPopup } = usePopup('registration');
+  const { openPopup: openLoginPopup } = usePopup('login');
+
   return (
     <section className={`promo-registration ${className || ''}`}>
       <div className="promo-registration__conteiner">
@@ -13,10 +17,10 @@ const PromoRegistration = ({ className, onAuth }) => {
             Зарегистрируйтесь на нашем портале и найдите новых клиентов, заказчиков и партнёров!
           </p>
 
-          <Button size="xl" mode='secondary' value="register" onClick={onAuth} border={false}>
+          <Button size="xl" mode='secondary' onClick={openRegisterPopup} border={false}>
             Зарегистрироваться
           </Button>
-          <Button size="xl" mode='primary' value="login" onClick={onAuth} border={true}>
+          <Button size="xl" mode='primary' onClick={openLoginPopup} border={true}>
             Войти
           </Button>
         </div>

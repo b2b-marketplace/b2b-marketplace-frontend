@@ -3,17 +3,22 @@ import Form from "../Form/Form";
 import Popup from "../Popup";
 import PopupButton from "../PopupButton/PopupButton";
 import PinCodeInput from "../PinCodeInput/PinCodeInput";
+import usePopup from "../../../hooks/usePopup";
 
-const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit, initDigit = ['', '', '', ''] }) => {
+const ConfirmRestoreByPhonePopup = ({ initDigit = ['', '', '', ''] }) => {
+  
+  const { isOpen, closePopup } = usePopup('confirmRestoreByPhone');
+  const { openPopup: openNewPassword } = usePopup('newPassword');
+  
   const [digits, setDigits] = useState(initDigit);
 
   const changeDigitsHandler = (newDigits) => {
     setDigits(newDigits);
   };
-
+  
   const handleSubmit = () => {
-    onClose();
-    onSubmit && onSubmit();
+    closePopup();
+    openNewPassword();
   };
 
   useEffect(() => {
@@ -29,7 +34,7 @@ const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit, initDigit = [''
   return (
     <Popup
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={closePopup}
       title="Введите код сброса пароля, который пришел на указанный вами номер"
     >
       <Form

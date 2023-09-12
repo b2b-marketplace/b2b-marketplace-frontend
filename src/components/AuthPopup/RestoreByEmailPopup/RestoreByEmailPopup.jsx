@@ -1,11 +1,20 @@
+import usePopup from "../../../hooks/usePopup";
 import RestorePopup from "../RestorePopup/RestorePopup";
 
-const RestoreByEmailPopup = ({ isOpen, onClose, onSubmit }) => {
+const RestoreByEmailPopup = () => {
+  const { isOpen, closePopup } = usePopup('restoreByEmail');
+  const { openPopup: openConfirm } = usePopup('confirmRestoreByEmail');
+  
+  const handleSubmit = () => {
+    closePopup();
+    openConfirm();
+  };
+
   return (
     <RestorePopup
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={closePopup}
       title="Укажите почту, к который привязан аккаунт"
       titleClassMode='popup__title_size_s'
       inputType="email"

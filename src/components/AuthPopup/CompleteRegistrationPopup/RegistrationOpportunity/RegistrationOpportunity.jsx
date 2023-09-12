@@ -1,11 +1,11 @@
 import IconComplele from "../../../UI/Icon/IconComplele";
-import PopupCompleteParagraph from "../../PopupCompleteParagraph/PopupCompleteParagraph";
+import PopupParagraph from "../../PopupParagraph/PopupParagraph";
 
 const RegistrationOpportunity = ({ children }) => {
   return (
     <li className="popup__regiter-opportunity">
       <IconComplele />
-      <PopupCompleteParagraph>{children}</PopupCompleteParagraph>
+      <PopupParagraph>{children}</PopupParagraph>
     </li>
   );
 };

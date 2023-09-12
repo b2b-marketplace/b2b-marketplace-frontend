@@ -7,7 +7,7 @@ import BannerAdvertising from '../../components/BannerAdvertising/BannerAdvertis
 import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
 
-const HomePage = ({ onAuth }) => {
+const HomePage = () => {
   return (
     <main className="home-page">
       <SliderPromoBanner />
@@ -23,7 +23,7 @@ const HomePage = ({ onAuth }) => {
         products={PRODUCTS}
         className="home-page__cards-container"
       />
-      <PromoRegistration onAuth={onAuth} className="home-page__promo-registration" />
+      <PromoRegistration className="home-page__promo-registration" />
     </main>
   );
 };

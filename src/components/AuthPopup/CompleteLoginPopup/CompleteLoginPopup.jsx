@@ -1,15 +1,17 @@
+import usePopup from "../../../hooks/usePopup";
 import Popup from "../Popup";
-import PopupCompleteParagraph from "../PopupCompleteParagraph/PopupCompleteParagraph";
+import PopupParagraph from "../PopupParagraph/PopupParagraph";
 
-const CompleteLoginPopup = ({ isOpen, onClose }) => {
+const CompleteLoginPopup = () => {
+  const { isOpen, closePopup} = usePopup('completeLogin');
 
   return (
     <Popup
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={closePopup}
       title="Вход успешно выполнен"
     >
-      <PopupCompleteParagraph className="popup__complete-paragraph_center">Через <span>5 секунд</span> вы попадете в личный кабинет</PopupCompleteParagraph>
+      <PopupParagraph className="popup__paragraph_center">Через <span>5 секунд</span> вы попадете в личный кабинет</PopupParagraph>
     </Popup>
   );
 };

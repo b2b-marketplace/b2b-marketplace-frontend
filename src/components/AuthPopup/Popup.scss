@@ -272,7 +272,7 @@ $inactiveColor: #A3A3A3;
 
 		}
 
-		&__complete-paragraph {
+		&__paragraph {
 			@include text(600, 24px, 16px);
 			@include marginTop(0);
 			text-align: left;

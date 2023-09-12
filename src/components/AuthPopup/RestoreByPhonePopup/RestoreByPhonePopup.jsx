@@ -1,12 +1,20 @@
+import usePopup from "../../../hooks/usePopup";
 import RestorePopup from "../RestorePopup/RestorePopup";
 
-const RestoreByPhonePopup = ({ isOpen, onClose, onSubmit }) => {
+const RestoreByPhonePopup = () => {
+  const { isOpen, closePopup } = usePopup('restoreByPhone');
+  const { openPopup: openConfirm } = usePopup('confirmRestoreByPhone');
+  
+  const handleSubmit = () => {
+    closePopup();
+    openConfirm();
+  };
   
   return (
     <RestorePopup
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={closePopup}
       title="Укажите номер телефона, к&nbsp;которому привязан аккаунт"
       titleClassMode='popup__title_size_s'
       inputType="tel"

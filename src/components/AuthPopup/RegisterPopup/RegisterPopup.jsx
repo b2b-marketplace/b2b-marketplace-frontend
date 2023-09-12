@@ -5,13 +5,23 @@ import RegistrationFirstStep from './RegistrationFirstStep/RegistrationFirstStep
 import RegistrationSecondStep from './RegistrationSecondStep/RegistrationSecondStep';
 import RegistrationThirdStep from './RegistrationThirdStep/RegistrationThirdStep.jsx';
 import RegistrationLastStep from './RegistrationLastStep.jsx/RegistrationLastStep';
+import usePopup from '../../../hooks/usePopup';
 
-const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
+const RegisterPopup = () => {
+  const { isOpen, closePopup } = usePopup('registration');
+  const { openPopup: openCompleteRegistration } = usePopup('completeRegistration');
+
   const [step, setStep] = useState(1);
   const [userType, setUserType] = useState('');
   const [isEntity, setisEntity] = useState(false);
 
-  const fieldsetHeight = step === 3 ? '420px' : step === 4 ? '325px' : '0';
+  const fieldsetHeight = step === 3
+    ? isEntity
+      ? '420px'
+      : '304px'
+    : step === 4
+      ? '325px'
+      : '0';
 
   const formParams = [
     { title: 'Укажите, кто вы', },
@@ -26,8 +36,8 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
   };
 
   const handleSubmit = () => {
-    onClose();
-    onSubmit && onSubmit();
+    closePopup();
+    openCompleteRegistration();
   };
 
   const handleEntity = (event) => {
@@ -51,7 +61,7 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
   return (
     <Popup
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={closePopup}
       isShowStepper={true}
       step={step}
       anim={step > 2}

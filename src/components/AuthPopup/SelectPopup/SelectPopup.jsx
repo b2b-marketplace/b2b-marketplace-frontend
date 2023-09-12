@@ -3,10 +3,25 @@ import IconVK from '../../UI/Icon/IconVK';
 import IconGmail from '../../UI/Icon/IconGmail';
 import Popup from "../Popup";
 import PopupButtons from "../PopupButtons/PopupButtons";
+import usePopup from "../../../hooks/usePopup";
 
-const SelectPopup = ({ onSelectType, isOpen, onClose }) => {
+const SelectPopup = () => {
+  const { isOpen, closePopup } = usePopup('select');
+  const { openPopup: openRegistration } = usePopup('registration');
+  const { openPopup: openLogin } = usePopup('login');
+
+  const handleSelectPopup = (event) => {
+    if (event.target.value === 'registration') {
+      closePopup();
+      openRegistration();
+    }
+    if (event.target.value === 'login') {
+      closePopup();
+      openLogin();
+    }
+  };
   return (
-    <Popup isOpen={isOpen} onClose={onClose}>
+    <Popup isOpen={isOpen} onClose={closePopup}>
       <div className="popup__container">
         <div className="popup__titles">
           <h2 className="popup__title">Добро пожаловать!</h2>
@@ -24,8 +39,8 @@ const SelectPopup = ({ onSelectType, isOpen, onClose }) => {
           </button>
         </div>
         <PopupButtons
-          onClick={onSelectType}
-          value1="register"
+          onClick={handleSelectPopup}
+          value1="registration"
           value2="login"
           mode1="secondary"
           buttonText1="Зарегистрироваться"

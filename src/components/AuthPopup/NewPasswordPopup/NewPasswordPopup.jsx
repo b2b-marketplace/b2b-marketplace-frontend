@@ -3,18 +3,20 @@ import Input from "../Input/Input";
 import Popup from "../Popup";
 import IconPassword from "../../UI/Icon/IconPassword";
 import Form from "../Form/Form";
+import usePopup from "../../../hooks/usePopup";
 
-const NewPasswordPopup = ({ isOpen, onClose, onSubmit }) => {
-
+const NewPasswordPopup = () => {
+  
+  const { isOpen, closePopup } = usePopup('newPassword');
+  
   const handleSubmit = () => {
-    onClose();
-    onSubmit && onSubmit();
+    closePopup();
   };
 
   return (
     <Popup
       isOpen={isOpen}
-      onClose={onClose}
+      onClose={closePopup}
       title="Придумайте новый пароль"
       popupContClassMode={'popup__container_type_form'}
     >
