@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
         <Route path="/order" element={<OrderPage />} exact />
-        <Route path="/product/*" element={<ProductPage />} exact />
+        <Route path="/product/:id" element={<ProductPage />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />

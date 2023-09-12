@@ -16,7 +16,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     dispatch(fetchProducts);
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='product-page'>
