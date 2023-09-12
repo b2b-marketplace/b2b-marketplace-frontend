@@ -94,16 +94,16 @@ const AccountBuyerProfile = () => {
           </div>
           {isEditMode ? (
             <div className="account-buyer-profile__button-container">
-              <Button size="xl" mode="secondary" type="submit" onClick={handleEdit}>
+              <Button size="l" primary dark type="submit" onClick={handleEdit}>
                 Сохранить
               </Button>
-              <Button size="xl" mode="secondary" type="button" onClick={cancelEdit}>
+              <Button size="l" primary dark type="button" onClick={cancelEdit}>
                 Отменить
               </Button>
             </div>
           ) : (
             <div className="account-buyer-profile__button-container">
-              <Button size="xl" mode="secondary" type="button" onClick={editInfo}>
+              <Button size="l" primary dark type="button" onClick={editInfo}>
                 Редактировать
               </Button>
             </div>

@@ -12,7 +12,6 @@ import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/Acco
 import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
-import { PRODUCTS } from '../utils/productCardExample';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
 import OrderPage from '../Pages/OrderPage/OrderPage';
 
@@ -24,7 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
         <Route path="/order" element={<OrderPage />} exact />
-        <Route path="/product/*" element={<ProductPage product={PRODUCTS[0]} />} exact />
+        <Route path="/product/:id" element={<ProductPage />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />

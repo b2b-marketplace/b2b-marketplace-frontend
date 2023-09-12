@@ -28,8 +28,8 @@
   max-width: 685px;
 
   &__column {
-    max-width: 121px;
-    max-height: 520px;
+    width: 121px;
+    height: 520px;
     display: flex;
     flex-direction: column;
     gap: 40px;

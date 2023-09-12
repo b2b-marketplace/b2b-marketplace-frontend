@@ -36,9 +36,30 @@ const basketSlice = createSlice({
         return product; // Если это не нужный товар, возвращаем без изменений
       });
     },
+    changeChecked: (state, action) => {
+      const { productIds, checked } = action.payload;
+      if (Array.isArray(productIds)) {
+        state.basket.basket_products = state.basket.basket_products.map((product) => {
+          return {
+            ...product,
+            checked: checked,
+          };
+        });
+      } else {
+        state.basket.basket_products = state.basket.basket_products.map((product) => {
+          if (product.id === productIds) {
+            return {
+              ...product,
+              checked: !product.checked,
+            };
+          }
+          return product; // Если это не нужный товар, возвращаем без изменений
+        });
+      }
+    },
   },
 });
 
-export const { addProduct, deleteProduct, changeQuantity } = basketSlice.actions;
+export const { addProduct, deleteProduct, changeQuantity, changeChecked } = basketSlice.actions;
 
 export const basketReducer = basketSlice.reducer;

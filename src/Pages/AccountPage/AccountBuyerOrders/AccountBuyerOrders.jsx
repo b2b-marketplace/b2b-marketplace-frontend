@@ -33,8 +33,7 @@ const AccountBuyerOrders = () => {
           {/*<Link to="/account/product/add">*/}
           <Button
             extraClass="account-buyer-orders__control-button"
-            mode="tertiary"
-            border={false}
+            primary={false}
             type="button"
             size="m"
           >
