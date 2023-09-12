@@ -1,0 +1,27 @@
+@import "../../styles/global.scss";
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__title {
+    @include reset;
+    font-family: $fontFamilyUnbounded;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+  }
+
+  &__main {
+  }
+
+  &__receiver {
+
+  }
+
+  &__receiver-header {
+
+  }
+}
