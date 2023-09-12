@@ -2,16 +2,18 @@ import ProductCard from '../ProductCard/ProductCard';
 import { Button } from '../UI/Button/Button';
 import './ProductCardContainer.scss';
 import { useEffect, useState } from 'react';
-import productsApi from '../../utils/productsApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../store/slices/productsSlice';
 
 export default function ProductCardContainer({ title, className }) {
   const [displayCards, setDisplayCards] = useState([]);
   const [cardsQuantity, setCardsQuantity] = useState(6);
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+
+  const products = useSelector((state) => state.products.products.items);
 
   useEffect(() => {
-    productsApi.getProducts()
-      .then(data => setProducts(data.results));
+    dispatch(fetchProducts());
   }, []);
 
   const handleAddCards = () => {

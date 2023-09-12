@@ -7,7 +7,7 @@ import OrderDetail from "./OrderDetail/OrderDetail";
 import { useSelector, useDispatch } from "react-redux";
 //import { productList } from "../../../mock/productsMock";
 import { deleteProduct } from "../../../store/slices/basketSlice.js";
-import productsApi from '../../../utils/productsApi';
+import productsApi from '../../../utils/ProductsApi';
 
 /**
  * Компонент Basket для отображения товаров в корзине.
