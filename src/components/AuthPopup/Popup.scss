@@ -111,6 +111,14 @@ $inactiveColor: #A3A3A3;
 		&__form {
 			gap: 32px 0;
 
+			&:has(.popup__fieldset_hidden) {
+				gap: 0;
+			}
+
+			&:has(.popup__fieldset_visible) {
+				gap: 32px 0;
+			}
+
 			&_more_gap {
 				grid-row-gap: 40px;
 			}
@@ -303,6 +311,9 @@ $inactiveColor: #A3A3A3;
 			background-color: $whiteColor;
 			border-radius: 20px;
 			color: $darkColor;
+		}
+		&__extra-button {
+			width: 236px;
 		}
 	}
 }

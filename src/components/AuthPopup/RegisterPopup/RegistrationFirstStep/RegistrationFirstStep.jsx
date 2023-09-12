@@ -7,7 +7,7 @@ const RegistrationFirstStep = ({ onType }) => {
       onClick={onType}
       value1="contractor"
       value2="customer"
-      mode1="secondary"
+      dark1={true}
       buttonText1="Я поставщик"
       buttonText2="Я покупатель"
     />

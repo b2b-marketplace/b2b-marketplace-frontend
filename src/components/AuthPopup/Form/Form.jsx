@@ -18,6 +18,7 @@ const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType }) =
             type={btnType}
             onClick={btnOnClick}
             mode="secondary"
+            dark={true}
           >
             {btnText}
           </Button>

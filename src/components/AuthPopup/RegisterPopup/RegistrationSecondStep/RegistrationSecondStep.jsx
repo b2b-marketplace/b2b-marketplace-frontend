@@ -7,7 +7,7 @@ const RegistrationSecondStep = ({ onEntity }) => {
       onClick={onEntity}
       value1="yes"
       value2="no"
-      mode1="secondary"
+      dark1={true}
       buttonText1="Да"
       buttonText2="Нет"
     />
