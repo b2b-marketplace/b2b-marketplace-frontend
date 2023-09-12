@@ -10,14 +10,17 @@ const RestorePopup = ({ isOpen, onClose, onSubmit, title, inputPlaceholder, inpu
   };
 
   return (
-    <Popup isOpen={isOpen} onClose={onClose}>
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      title={title}
+      popupContClassMode={titleClassName}
+    >
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
-        title={title}
         btnText="Далее"
         btnType="submit"
-        titleClassName={titleClassName}
       >
         <Input
           placeholder={inputPlaceholder}

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import Popup from "../Popup";
-import Form from "../Form/Form";
-import RegistrationFirstStep from "./RegistrationFirstStep/RegistrationFirstStep";
-import RegistrationSecondStep from "./RegistrationSecondStep/RegistrationSecondStep";
-import RegistrationThirdStep from "./RegistrationThirdStep/RegistrationThirdStep.jsx";
-import RegistrationLastStep from "./RegistrationLastStep.jsx/RegistrationLastStep";
+import { useEffect, useState } from 'react';
+import Popup from '../Popup';
+import Form from '../Form/Form';
+import RegistrationFirstStep from './RegistrationFirstStep/RegistrationFirstStep';
+import RegistrationSecondStep from './RegistrationSecondStep/RegistrationSecondStep';
+import RegistrationThirdStep from './RegistrationThirdStep/RegistrationThirdStep.jsx';
+import RegistrationLastStep from './RegistrationLastStep.jsx/RegistrationLastStep';
 
 const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
   const [step, setStep] = useState(1);
@@ -49,11 +49,18 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
   }, [isOpen]);
 
   return (
-    <Popup isOpen={isOpen} onClose={onClose} isShowStepper={true} step={step} anim={step > 2}>
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      isShowStepper={true}
+      step={step}
+      anim={step > 2}
+      title={formParams[step - 1].title}
+      popupContClassMode={step < 3 ? '' : 'popup__container_type_form'}
+    >
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
-        title={formParams[step - 1].title}
         btnText={formParams[step - 1].btnText}
         btnType={step === 4 ? 'submit' : 'button'}
         btnOnClick={step === 4 ? undefined : handleNextStep}
@@ -67,7 +74,7 @@ const RegisterPopup = ({ isOpen, onClose, onSubmit }) => {
           <RegistrationSecondStep onEntity={handleEntity} />
         }
 
-        <fieldset style={{'height': fieldsetHeight}} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
+        <fieldset style={{ 'height': fieldsetHeight }} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
           {
             step === 3 &&
             <RegistrationThirdStep isEntity={isEntity} />

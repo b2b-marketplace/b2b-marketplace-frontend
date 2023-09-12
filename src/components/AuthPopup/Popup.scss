@@ -93,6 +93,11 @@ $inactiveColor: #A3A3A3;
 		&__container {
 			gap: 40px 0;
 
+			&_type_form {
+				gap: 32px 0;
+
+			}
+
 			&_type_radio {
 				gap: 20px 0;
 			}
@@ -146,7 +151,7 @@ $inactiveColor: #A3A3A3;
 			max-width: 427px;
 
 			&_size_s {
-				max-width: 413px;				
+				max-width: 413px;
 			}
 		}
 
@@ -211,7 +216,7 @@ $inactiveColor: #A3A3A3;
 			text-decoration-line: underline;
 
 			&_resend_phonedi {
-				margin-top: 8px;	
+				margin-top: 8px;
 			}
 
 			&_resend_email {

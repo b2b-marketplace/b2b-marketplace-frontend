@@ -10,7 +10,6 @@ const Form = ({ children, onSubmit, btnOnClick, className, title, btnText, btnTy
   return (
     <form className={className} onSubmit={handleSubmit} >
 
-      <h2 className={`popup__title${titleClassName ? ` ${titleClassName}` : ''}`}>{title}</h2>
       {children}
       {btnText &&
         <div className="popup__buttons">

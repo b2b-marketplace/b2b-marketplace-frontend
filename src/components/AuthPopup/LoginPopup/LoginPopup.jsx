@@ -13,11 +13,15 @@ const LoginPopup = ({ isOpen, onClose, onSubmit, onRestore }) => {
   };
 
   return (
-    <Popup isOpen={isOpen} onClose={onClose}>
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Вход"
+      popupContClassMode={'popup__container_type_form'}
+    >
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
-        title="Вход"
         btnText="Далее"
         btnType={"submit"}
       >

@@ -12,13 +12,16 @@ const NewPasswordPopup = ({ isOpen, onClose, onSubmit }) => {
   };
 
   return (
-    <Popup isOpen={isOpen} onClose={onClose}>
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Придумайте новый пароль"
+    >
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
-        title="Придумайте новый пароль"
         btnText="Сохранить"
-        btnType={"submit"}
+        btnType="submit"
       >
         <fieldset className="popup__fieldset">
           <Input

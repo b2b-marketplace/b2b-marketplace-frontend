@@ -4,7 +4,7 @@ import Popup from "../Popup";
 import PopupButton from "../PopupButton/PopupButton";
 import PinCodeInput from "../PinCodeInput/PinCodeInput";
 
-const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit, initDigit=['','','',''] }) => {
+const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit, initDigit = ['', '', '', ''] }) => {
   const [digits, setDigits] = useState(initDigit);
 
   const changeDigitsHandler = (newDigits) => {
@@ -22,16 +22,19 @@ const ConfirmRestoreByPhonePopup = ({ isOpen, onClose, onSubmit, initDigit=['','
   }, [isOpen]);
 
   useEffect(() => {
-    if(digits.some(digit => !digit)) return;
+    if (digits.some(digit => !digit)) return;
     handleSubmit();
   }, [digits]);
 
   return (
-    <Popup isOpen={isOpen} onClose={onClose}>
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Введите код сброса пароля, который пришел на указанный вами номер"
+    >
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
-        title="Введите код сброса пароля, который пришел на указанный вами номер"
       >
         <PinCodeInput digits={digits} changeHandler={changeDigitsHandler} />
         <PopupButton

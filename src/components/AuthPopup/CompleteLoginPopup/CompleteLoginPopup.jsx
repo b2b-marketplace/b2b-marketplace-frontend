@@ -4,12 +4,12 @@ import PopupCompleteParagraph from "../PopupCompleteParagraph/PopupCompleteParag
 const CompleteLoginPopup = ({ isOpen, onClose }) => {
 
   return (
-    <Popup isOpen={isOpen} onClose={onClose}>
-      <div className="popup__container">
-        <h2 className="popup__title popup__title_complete-login">Вход успешно выполнен</h2>
-
-        <PopupCompleteParagraph className="popup__complete-paragraph_center">Через <span>5 секунд</span> вы попадете в личный кабинет</PopupCompleteParagraph>
-      </div>
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Вход успешно выполнен"
+    >
+      <PopupCompleteParagraph className="popup__complete-paragraph_center">Через <span>5 секунд</span> вы попадете в личный кабинет</PopupCompleteParagraph>
     </Popup>
   );
 };

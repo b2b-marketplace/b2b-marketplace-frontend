@@ -5,9 +5,12 @@ import PopupCompleteParagraph from "../PopupCompleteParagraph/PopupCompleteParag
 const ConfirmRestoreByEmailPopup = ({ isOpen, onClose }) => {
 
   return (
-    <Popup isOpen={isOpen} onClose={onClose}>
-      <div className="popup__container">
-        <h2 className="popup__title">Мы отправили на указанный адрес ссылку для сброса пароля</h2>
+    <Popup
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Мы отправили на указанный адрес ссылку для сброса пароля"
+    >
+      <>
         <PopupCompleteParagraph className="popup__complete-paragraph_center">Если не нашли письмо от нас, проверьте папку спам</PopupCompleteParagraph>
         <PopupButton
           type="button"
@@ -15,7 +18,7 @@ const ConfirmRestoreByEmailPopup = ({ isOpen, onClose }) => {
         >
           Отправить повторно через 00:10
         </PopupButton>
-      </div>
+      </>
     </Popup>
   );
 };

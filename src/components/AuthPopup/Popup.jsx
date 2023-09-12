@@ -3,8 +3,19 @@ import './Popup.scss';
 import IconClose from '../UI/Icon/IconClose';
 import Stepper from './Stepper/Stepper';
 
-const Popup = ({ isOpen, onClose, children, step, isShowStepper }) => {
+const Popup = (props) => {
+  const {
+    isOpen,
+    onClose,
+    children,
+    step,
+    isShowStepper,
+    titleClassName,
+    title,
+    popupContClassMode
+  } = props;
   const isOpenPopupTypeClass = `auth${isOpen ? ' auth_opened' : ''}`;
+  const popupContClassName = `popup__container${popupContClassMode ? ` ${popupContClassMode}` : ''}`;
   const closeByEvent = (event) => {
     if (event.key === 'Escape' || event.target === event.currentTarget) {
       onClose();
@@ -34,7 +45,10 @@ const Popup = ({ isOpen, onClose, children, step, isShowStepper }) => {
             <IconClose className="popup__close-icon" />
           </button>
         </div>
-        {children}
+        <div className={`popup__container${popupContClassName ? ` ${popupContClassName}` : ''}`}>
+          <h2 className={`popup__title${titleClassName ? ` ${titleClassName}` : ''}`}>{title}</h2>
+          {children}
+        </div>
       </div>
     </section>
   );
