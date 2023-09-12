@@ -12,10 +12,12 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { accountReducer } from './slices/accountSlice';
 import { basketReducer } from './slices/basketSlice';
+import { productsReducer } from './slices/productsSlice';
 
 const rootReducer = combineReducers({
   account: accountReducer,
   basket: basketReducer,
+  products: productsReducer,
 });
 
 const persistConfig = {
