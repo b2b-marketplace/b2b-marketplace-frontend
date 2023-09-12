@@ -13,7 +13,7 @@ import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import SidebarRight from '../SidebarRight/SidebarRight';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Basket = ({ className }) => {
   const [currentProductList, setCurrentProductList] = useState([]);
@@ -98,7 +98,7 @@ const Basket = ({ className }) => {
     }, 0);
 
     const suppliersId = new Set(
-      selectedProducts.map((currentProduct) => currentProduct.seller[ 0 ]?.id)
+      selectedProducts.map((currentProduct) => currentProduct.seller[0]?.id)
     );
 
     setOrderInfo({
@@ -137,8 +137,8 @@ const Basket = ({ className }) => {
 
   const handleNavigateToOrder = () => {
     if (selectedProductId.length)
-      navigate("/order", {
-        state: { cameFromBasket: true }
+      navigate('/order', {
+        state: { cameFromBasket: true },
       });
   };
 
@@ -159,7 +159,7 @@ const Basket = ({ className }) => {
                   </Checkbox>
                 </div>
                 <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
-                  <IconTrash className="basket__icon-trash"/>
+                  <IconTrash className="basket__icon-trash" />
                   Удалить выбранные
                 </button>
               </div>
@@ -185,7 +185,7 @@ const Basket = ({ className }) => {
                       <>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>
                     }
                   >
-                    <IconInfoFill className="basket__order-detail-icon-info"/>
+                    <IconInfoFill className="basket__order-detail-icon-info" />
                   </Tooltip>
                 </OrderDetailHeader>
                 <OrderDetailContentBasket
@@ -202,7 +202,9 @@ const Basket = ({ className }) => {
                     disabled={!selectedProductId.length}
                     border={true}
                     label={'Купить'}
-                    extraClass={`basket__order-detail-button ${!selectedProductId.length ? "basket__order-detail-button_disabled" : ""}`}
+                    extraClass={`basket__order-detail-button ${
+                      !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
+                    }`}
                   >
                     Купить
                   </Button>
