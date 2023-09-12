@@ -29,7 +29,11 @@ export default function ProductBlock({ product }) {
   const basketList = useSelector((state) => state.basket.basket);
 
   useEffect(() => {
-    if (basketList.basket_products.find((item) => item.id === product.id)) setIsProductSelect(true);
+    if (
+      basketList.basket_products.length &&
+      basketList.basket_products.find((item) => item.id === product.id)
+    )
+      setIsProductSelect(true);
   }, [basketList.basket_products, product.id]);
 
   const handleSelect = () => {

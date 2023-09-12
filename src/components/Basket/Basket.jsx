@@ -9,7 +9,7 @@ import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import { Button } from '../UI/Button/Button';
 import OrderDetail from '../OrderDetail/OrderDetail';
 import ProductCardBasket from '../ProductCardBasket/ProductCardBasket';
-import productsApi from '../../utils/ProductsApi';
+import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import SidebarRight from '../SidebarRight/SidebarRight';
