@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
@@ -12,10 +11,10 @@ const Footer = () => {
       <div className="footer__container">
         <div className="footer__container-logo">
           <h2 className="footer__logo-title">
-            BOX.RU
+            B2Buy.ru
             <img className="footer__logo" src={logo} alt="Логотип." />
           </h2>
-          <h3 className="footer__title">ООО «БОКС»</h3>
+          <h3 className="footer__title">ООО «БиТуБай»</h3>
           <div className="footer__container-links">
             <p className="footer__link">Все права защищены</p>
             <a className="footer__link" href="#" target="_blank">

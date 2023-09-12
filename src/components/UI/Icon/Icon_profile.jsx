@@ -9,7 +9,8 @@ const IconProfile = ({ className, ...props }) => {
         width="32"
         height="32"
         viewBox="0 0 32 32"
-        fill="none">
+        fill="none"
+      >
         <circle
           cx="16.0003"
           cy="10.6668"

@@ -9,7 +9,8 @@ const IconArrowCounter = ({ className, ...props }) => {
         width="24"
         height="24"
         viewBox="0 0 24 24"
-        fill="none">
+        fill="none"
+      >
         <path
           d="M18 9L12 15L6 9"
           stroke="currentColor"

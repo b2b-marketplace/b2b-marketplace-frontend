@@ -14,6 +14,7 @@ import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
 import Input from '../UI/Input/Input';
+//import IconClose from '../UI/Icon/Icon_close';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -38,7 +39,7 @@ const Header = () => {
       </div>
 
       <div className="header__container">
-        <Button size="s" mode="secondary" border={false} onClick={togglePopup}>
+        <Button size="s" primary dark onClick={togglePopup}>
           <IconBurger />
           Каталог
         </Button>
@@ -67,9 +68,16 @@ const Header = () => {
         </nav>
 
         <div className="header__search">
-          <Input mode="primary" type="text" extraClass="header__input" placeholder="Поиск...." />
+          <Input
+            mode="primary"
+            type="text"
+            extraClass="header__input"
+            placeholder="Поиск...."
+            
+          />
           <button type="button" className="header__button">
             <IconSearch />
+         
           </button>
         </div>
       </div>

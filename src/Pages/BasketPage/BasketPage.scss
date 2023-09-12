@@ -1,3 +1,5 @@
+@import '../../styles/global';
+
 .basket-page {
   max-width: $maxWidth;
   min-width: $minWidth;
@@ -9,6 +11,5 @@
   &__banner {
     margin-top: 81px;
     //margin-bottom: 160px;
-
   }
 }

@@ -1,18 +1,10 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import './Counter.scss';
-import IconPlus from "../Icon/Icon_plus";
-import IconMinus from "../Icon/Icon_minus";
+import IconPlus from '../Icon/Icon_plus';
+import IconMinus from '../Icon/Icon_minus';
 
-const Counter = (
-  {
-    initCount = 0,
-    minValue = 1,
-    maxValue,
-    onChangeQuantity = (() => {
-    })
-  }
-) => {
+const Counter = ({ initCount = 0, minValue = 1, maxValue, onChangeQuantity = () => {} }) => {
   const [count, setCount] = useState(initCount);
 
   const handleLeft = (event) => {
@@ -33,12 +25,11 @@ const Counter = (
       setCount(productCount);
       onChangeQuantity(productCount);
     }
-
   };
   return (
     <div className="counter">
       <button className="counter__button" onClick={handleLeft}>
-        <IconMinus className={'counter__icon'}/>
+        <IconMinus className={'counter__icon'} />
       </button>
       <input
         type="number"
@@ -46,9 +37,10 @@ const Counter = (
         max={maxValue}
         className="counter__input"
         value={count}
-        onChange={handleChangeInput}/>
+        onChange={handleChangeInput}
+      />
       <button className="counter__button" onClick={handleRight}>
-        <IconPlus className={'counter__icon'}/>
+        <IconPlus className={'counter__icon'} />
       </button>
     </div>
   );

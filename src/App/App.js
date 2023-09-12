@@ -7,12 +7,13 @@ import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
 import AccountBuyerProfile from '../Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
+import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/AccountSellerProfile';
 import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
-import { PRODUCTS } from '../utils/productCardExample';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
+import OrderPage from '../Pages/OrderPage/OrderPage';
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/product/*" element={<ProductPage product={PRODUCTS[0]} />} exact />
+        <Route path="/order" element={<OrderPage />} exact />
+        <Route path="/product/:id" element={<ProductPage />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />

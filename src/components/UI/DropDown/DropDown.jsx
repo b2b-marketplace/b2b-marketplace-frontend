@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './DropDown.scss';
 import IconArrowCounter from '../Icon/Icon_arrow-counter';
 
-const DropDown = ({ label, placeholder }) => {
-  const options = ['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5'];
+const DropDown = ({ label, placeholder, options, className }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,7 +16,7 @@ const DropDown = ({ label, placeholder }) => {
   };
 
   return (
-    <div className="drop-down">
+    <div className={`drop-down ${className || ''}`}>
       <label className="drop-down__label">
         {label}
         <div className={`drop-down__select ${isMenuOpen ? 'is-active' : ''}`}>
@@ -34,7 +33,8 @@ const DropDown = ({ label, placeholder }) => {
                 <div
                   key={index}
                   className="drop-down__item"
-                  onClick={() => handleOptionChange(option)}>
+                  onClick={() => handleOptionChange(option)}
+                >
                   {option}
                 </div>
               ))}

@@ -1,7 +1,9 @@
+@import '../../styles/global';
+
 .product-page {
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   gap: 80px;
   margin: 80px auto 65px;

@@ -17,10 +17,10 @@ const PromoRegistration = ({ className }) => {
             Зарегистрируйтесь на нашем портале и найдите новых клиентов, заказчиков и партнёров!
           </p>
 
-          <Button size="xl" mode='secondary' onClick={openRegisterPopup} border={false}>
+          <Button size="l" onClick={openRegisterPopup} primary dark>
             Зарегистрироваться
           </Button>
-          <Button size="xl" mode='primary' onClick={openLoginPopup} border={true}>
+          <Button size="l" onClick={openLoginPopup} primary>
             Войти
           </Button>
         </div>

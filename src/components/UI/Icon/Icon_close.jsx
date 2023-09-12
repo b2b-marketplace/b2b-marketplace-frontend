@@ -9,7 +9,8 @@ const IconClose = ({ className, ...props }) => {
         width="32"
         height="32"
         viewBox="0 0 32 32"
-        fill="none">
+        fill="none"
+      >
         <path
           d="M24 8L8 24"
           stroke="currentColor"

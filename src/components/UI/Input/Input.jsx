@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import "./Input.scss";
+import PropTypes from 'prop-types';
+import './Input.scss';
 
 const Input = ({ mode, size, border, type, extraClass, ...props }) => {
   const modeClass = `input__${mode}`;
   return (
     <>
       <input
-        className={['input', modeClass, `input__size_${size}`, extraClass || ""].join(' ')}
+        className={['input', modeClass, `input__size_${size}`, extraClass || ''].join(' ')}
         type={type}
         {...props}
       />
     </>
-
   );
 };
 
@@ -28,8 +27,8 @@ Input.propTypes = {
 Input.defaultProps = {
   mode: 'primary',
   size: 'auto',
-  type: "text",
-  extraClass: "",
+  type: 'text',
+  extraClass: '',
   onClick: undefined,
   onChange: undefined,
 };
