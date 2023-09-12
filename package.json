@@ -67,7 +67,7 @@
     }
   },
   "lint-staged": {
-    "./src/*.{js,jsx}": "npm run lint-fix",
-    "./src/*.{js,jsx,css,md,html,json}": "npm run format"
+    "src/**/*.{js,jsx}": "npm run lint-fix",
+    "src/**/*.{js,jsx,css,md,html,json}": "npm run format"
   }
 }
