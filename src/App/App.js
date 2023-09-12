@@ -19,25 +19,25 @@ import OrderPage from '../Pages/OrderPage/OrderPage';
 function App() {
   return (
     <div className="app">
-      <Header />
+      <Header/>
       <Routes>
-        <Route path="/" element={<HomePage />} exact />
-        <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/order" element={<OrderPage />} exact />
-        <Route path="/product/*" element={<ProductPage product={PRODUCTS[0]} />} exact />
-        <Route path="/account" element={<AccountPage />}>
-          <Route index path="profile" element={<AccountBuyerProfile />} exact />
-          <Route path="product/add" element={<AccountSellerProductAdd />} exact />
-          <Route path="orders" element={<AccountBuyerOrders />} exact>
-            <Route index element={<AccountBuyerOrderList />} exact />
-            <Route path=":filter" element={<AccountBuyerOrderList />} />
-            <Route path=":filter/:page" element={<AccountBuyerOrderList />} />
+        <Route path="/" element={<HomePage/>} exact/>
+        <Route path="/basket" element={<BasketPage/>} exact/>
+        <Route path="/order" element={<OrderPage/>} exact/>
+        <Route path="/product/*" element={<ProductPage product={PRODUCTS[ 0 ]}/>} exact/>
+        <Route path="/account" element={<AccountPage/>}>
+          <Route index path="profile" element={<AccountBuyerProfile/>} exact/>
+          <Route path="product/add" element={<AccountSellerProductAdd/>} exact/>
+          <Route path="orders" element={<AccountBuyerOrders/>} exact>
+            <Route index element={<AccountBuyerOrderList/>} exact/>
+            <Route path=":filter" element={<AccountBuyerOrderList/>}/>
+            <Route path=":filter/:page" element={<AccountBuyerOrderList/>}/>
           </Route>
-          <Route index element={<Navigate to="profile" />} />
+          <Route index element={<Navigate to="profile"/>}/>
         </Route>
       </Routes>
-      <ButtonScrollUp />
-      <Footer />
+      <ButtonScrollUp/>
+      <Footer/>
     </div>
   );
 }
