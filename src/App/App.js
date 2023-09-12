@@ -31,7 +31,7 @@ function App() {
           <Route path="orders" element={<AccountBuyerOrders/>} exact>
             <Route index element={<AccountBuyerOrderList/>} exact/>
             <Route path=":filter" element={<AccountBuyerOrderList/>}/>
-            <Route path=":filter/:page" element={<AccountBuyerOrderList/>}/>
+            <Route path=":filter/:page" element={<AccountBuyerOrderList/>} />
           </Route>
           <Route index element={<Navigate to="profile"/>}/>
         </Route>
