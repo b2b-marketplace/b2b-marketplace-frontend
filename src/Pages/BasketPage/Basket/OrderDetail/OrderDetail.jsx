@@ -33,7 +33,7 @@ const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...p
         <div className="order-detail__header">
           <h3 className="order-detail__title">Детали заказа</h3>
           <Tooltip position="top" tooltipContent={<>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>}>
-            <IconInfoFill className="order-detail__icon-info"/>
+            <IconInfoFill className="order-detail__icon-info" />
           </Tooltip>
         </div>
         <div className="order-detail__total">
@@ -47,7 +47,7 @@ const OrderDetail = ({ className, productSum, productCount, suppliersCount, ...p
         </div>
         <div className="order-detail__price-total">{productSumPrice} ₽</div>
         <div className="order-detail__buttons">
-          <Button size="xl" primary extraClass="order-detail__button">Купить</Button>
+          <Button size="xl" primary dark extraClass="order-detail__button">Купить</Button>
         </div>
       </div>
 

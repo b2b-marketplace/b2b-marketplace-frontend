@@ -38,7 +38,7 @@ const Header = () => {
       </div>
 
       <div className="header__container">
-        <Button size="s" primary onClick={togglePopup}>
+        <Button size="s" primary dark onClick={togglePopup}>
           <IconBurger />
           Каталог
         </Button>

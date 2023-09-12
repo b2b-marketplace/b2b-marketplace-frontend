@@ -143,7 +143,7 @@ export default function ProductBlock({ product }) {
           </div>
 
           <Counter initCount={product.wholesale_quantity} minValue={product.wholesale_quantity} onChangeProductQuantity={(count) => { }} />
-          <Button size="xl" primary onClick={handleSelect} pressed={isProductSelect}>
+          <Button size="xl" primary dark onClick={handleSelect} pressed={isProductSelect}>
             {isProductSelect ? 'В корзине' : 'В корзину'}
           </Button>
         </div>
@@ -172,7 +172,7 @@ export default function ProductBlock({ product }) {
             <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
             <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
           </div>
-          <Button size='xl' primary >Смотреть все</Button>
+          <Button size='l' primary dark>Смотреть все</Button>
         </div>
       </div>
     </section >

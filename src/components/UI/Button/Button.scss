@@ -58,24 +58,44 @@
   }
 
   &_primary {
-    background-color: $darkColor;
-    border: none;
-    color: $whiteColor;
+    background-color: $whiteColor;
+    border: 1px solid $darkColor;
+    color: $darkColor;
     transition: all 0.3s ease-in-out;
     &:hover {
-      background-color: $whiteColor;
+      background-color: $grayLightColor;
       border: 1px solid $darkColor;
       color: $darkColor;
     }
     &_pressed {
-      background-color: $blueColor;
+      background-color: $blackDarkColor;
       color: $whiteColor;
       border: none;
     }
     &:disabled {
-      background-color: $blueLightColor;
-      color: $whiteColor;
+      background-color: $grayLightColor;
+      color: $grayColor;
       border: none;
+    }
+    &_dark {
+      background-color: $darkColor;
+      border: none;
+      color: $whiteColor;
+      &:hover {
+        background-color: $grayColor;
+        border: none;
+        color: $whiteColor;
+      }
+      &_pressed {
+        background-color: $blackDarkColor;
+        color: $whiteColor;
+        border: none;
+      }
+      &:disabled {
+        background-color: $grayLightColor;
+        color: $grayColor;
+        border: none;
+      }
     }
   }
 
@@ -85,17 +105,17 @@
     color: $whiteColor;
     transition: all 0.3s ease-in-out;
     &:hover {
-      background-color: $blueLightColor;
+      background-color: $blueDarkColor;
       border: 1px solid $blueColor;
     }
     &_pressed {
-      background-color: $blueDarkColor;
+      background-color: $darkColor;
       color: $whiteColor;
       border: none;
     }
     &:disabled {
       background-color: $grayLightColor;
-      color: $whiteColor;
+      color: $grayColor;
       border: none;
     }
   }
