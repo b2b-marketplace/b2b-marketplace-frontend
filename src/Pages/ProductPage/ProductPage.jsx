@@ -9,7 +9,7 @@ import { fetchProducts } from '../../store/slices/productsSlice';
 import './ProductPage.scss';
 
 export default function ProductPage() {
-  const { products } = useSelector(state => state.products);
+  const { products } = useSelector((state) => state.products);
   const { id } = useParams();
   const dispatch = useDispatch();
   const isProductsLoaded = products.status === 'loaded';
@@ -19,12 +19,15 @@ export default function ProductPage() {
   }, [dispatch]);
 
   return (
-    <div className='product-page'>
-      {isProductsLoaded
-        ? <ProductBlock
-          product={products.items.find(item => item.id === Number(id))}
-          className='product-page__product-block' />
-        : <Preloader />}
+    <div className="product-page">
+      {isProductsLoaded ? (
+        <ProductBlock
+          product={products.items.find((item) => item.id === Number(id))}
+          className="product-page__product-block"
+        />
+      ) : (
+        <Preloader />
+      )}
       <PlatformBenefits className="product-page__platform-benefits" />
       <ProductCardContainer title={'Товары от этого поставщика'} />
     </div>

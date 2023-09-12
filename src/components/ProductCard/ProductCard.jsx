@@ -6,9 +6,9 @@ import IconScales from '../UI/Icon/Icon_scales';
 import SliderImage from '../SliderImage/SliderImage';
 import './ProductCard.scss';
 import { Link } from 'react-router-dom';
-import Tooltip from "../UI/Tooltip/Tooltip";
-import IconInfoFil from "../UI/Icon/Icon_info_fill";
-import React, { useEffect, useState } from "react";
+import Tooltip from '../UI/Tooltip/Tooltip';
+import IconInfoFil from '../UI/Icon/Icon_info_fill';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, deleteProduct } from '../../store/slices/basketSlice';
 
@@ -18,7 +18,11 @@ function ProductCard({ product }) {
   const basketList = useSelector((state) => state.basket.basket);
 
   useEffect(() => {
-    if (basketList.basket_products.find(item => item.id === product.id)) setIsProductSelect(true);
+    if (
+      basketList.basket_products.length &&
+      basketList.basket_products.find((item) => item.id === product.id)
+    )
+      setIsProductSelect(true);
   }, [basketList.basket_products, product.id]);
 
   const handleSelect = () => {
@@ -37,14 +41,16 @@ function ProductCard({ product }) {
       </div>
 
       <div className="card__info">
-        <Link to={`/product/${product.id}`}
+        <Link
+          to={`/product/${product.id}`}
           className="card__title"
           onClick={() => {
             window.scrollTo({
               top: 0,
               behavior: 'smooth',
             });
-          }}>
+          }}
+        >
           {product.name}
         </Link>
         <div className="card__shipper">

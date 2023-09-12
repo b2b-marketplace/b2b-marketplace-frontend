@@ -16,7 +16,7 @@ const PromoRegistration = ({ className }) => {
           <Button size="l" primary dark>
             Зарегистрироваться
           </Button>
-          <Button size="l" primary >
+          <Button size="l" primary>
             Войти
           </Button>
         </div>
