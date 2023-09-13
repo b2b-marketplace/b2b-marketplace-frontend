@@ -31,6 +31,6 @@ Button.defaultProps = {
   dark: false,
   size: 'm',
   disabled: false,
-  extraClass: "",
+  extraClass: '',
   onClick: undefined,
 };

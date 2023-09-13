@@ -27,6 +27,8 @@
     display: flex;
     flex-direction: row;
     column-gap: 24px;
+    max-width: 500px;
+    width: 100%;
   }
 
   &__image {
@@ -100,7 +102,7 @@
     display: flex;
     flex-direction: row;
     row-gap: 14px;
-    max-width: 476px;
+    //max-width: 476px;
     width: 100%;
     align-items: center;
     justify-content: space-between;

@@ -21,9 +21,7 @@ import { addProduct, deleteProduct } from '../../../store/slices/basketSlice';
 export default function ProductBlock({ product }) {
   console.log(product);
   let imagesList;
-  product.images.length === 0
-    ? imagesList = [{ image: noPhoto }]
-    : imagesList = product.images;
+  product.images.length === 0 ? (imagesList = [{ image: noPhoto }]) : (imagesList = product.images);
 
   const [mainImage, setMainImage] = useState();
   const [isProductSelect, setIsProductSelect] = useState(false);
@@ -31,7 +29,11 @@ export default function ProductBlock({ product }) {
   const basketList = useSelector((state) => state.basket.basket);
 
   useEffect(() => {
-    if (basketList.basket_products.find(item => item.id === product.id)) setIsProductSelect(true);
+    if (
+      basketList.basket_products.length &&
+      basketList.basket_products.find((item) => item.id === product.id)
+    )
+      setIsProductSelect(true);
   }, [basketList.basket_products, product.id]);
 
   const handleSelect = () => {
@@ -62,7 +64,7 @@ export default function ProductBlock({ product }) {
             className="images__column"
           >
             {imagesList.map((image, idx) => (
-              <SwiperSlide key={idx} className='images__slide'>
+              <SwiperSlide key={idx} className="images__slide">
                 <img
                   className="images__item"
                   src={image.image}
@@ -81,9 +83,14 @@ export default function ProductBlock({ product }) {
             <ProductRating rating={4.8} />
           </div>
 
-          <div className='info__shipper'>
-            <p className="info__shipper-name">{product.seller.name || ""}</p>
-            <IconInfo className='info__shipper-icon hint-right-middle' data-hint={`${product.seller.name || ""}, ИНН:${product.seller.inn || ""}, ОГРН:${product.seller.ogrn || ""}`} />
+          <div className="info__shipper">
+            <p className="info__shipper-name">{product.seller.name || ''}</p>
+            <IconInfo
+              className="info__shipper-icon hint-right-middle"
+              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${
+                product.seller.ogrn || ''
+              }`}
+            />
           </div>
 
           <p className="info__code">{`Арт. НАДО УТОЧНИТЬ`}</p>
@@ -116,24 +123,30 @@ export default function ProductBlock({ product }) {
           <div className="order__price">
             <h3 className="order__price-value">
               {`${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
-              <div className='order__icons'>
+              <div className="order__icons">
                 <IconScales />
                 <IconHearth />
               </div>
             </h3>
-            <p className='order__price-piece'>
+            <p className="order__price-piece">
               {`за ед. ${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
             </p>
 
-            <div className='order__price-quantity'>
-              <div className='order__price-quantity-now' style={{ width: (product.quantity_in_stock / product.quantity_in_stock) * 100 + '%' }} />
+            <div className="order__price-quantity">
+              <div
+                className="order__price-quantity-now"
+                style={{
+                  width: (product.quantity_in_stock / product.quantity_in_stock) * 100 + '%',
+                }}
+              />
             </div>
 
-            <p className='order__price-remainder'>
-              Осталось: <span className='order__price-remainder-now'>{`${product.quantity_in_stock} шт.`}</span>
+            <p className="order__price-remainder">
+              Осталось:{' '}
+              <span className="order__price-remainder-now">{`${product.quantity_in_stock} шт.`}</span>
             </p>
 
-            <p className='order__price-min-order'>{`Минимальное количество товара для заказа: ${product.wholesale_quantity}`}</p>
+            <p className="order__price-min-order">{`Минимальное количество товара для заказа: ${product.wholesale_quantity}`}</p>
           </div>
 
           <div className="order__delivery">
@@ -146,7 +159,11 @@ export default function ProductBlock({ product }) {
             </p>
           </div>
 
-          <Counter initCount={product.wholesale_quantity} minValue={product.wholesale_quantity} onChangeProductQuantity={(count) => { }} />
+          <Counter
+            initCount={product.wholesale_quantity}
+            minValue={product.wholesale_quantity}
+            onChangeProductQuantity={(count) => {}}
+          />
           <Button size="xl" primary dark onClick={handleSelect} pressed={isProductSelect}>
             {isProductSelect ? 'В корзине' : 'В корзину'}
           </Button>
@@ -192,13 +209,31 @@ export default function ProductBlock({ product }) {
             Отзывы
             <p className="comments__count">15</p>
           </h3>
-          <div className='comments__container'>
-            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
-            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
-            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
-            <CommentsBlock author='Андрей К.' rating={4.8} text='Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.' />
+          <div className="comments__container">
+            <CommentsBlock
+              author="Андрей К."
+              rating={4.8}
+              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
+            />
+            <CommentsBlock
+              author="Андрей К."
+              rating={4.8}
+              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
+            />
+            <CommentsBlock
+              author="Андрей К."
+              rating={4.8}
+              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
+            />
+            <CommentsBlock
+              author="Андрей К."
+              rating={4.8}
+              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
+            />
           </div>
-          <Button size='l' primary dark>Смотреть все</Button>
+          <Button size="l" primary dark>
+            Смотреть все
+          </Button>
         </div>
       </div>
     </section>
