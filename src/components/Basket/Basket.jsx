@@ -198,13 +198,13 @@ const Basket = ({ className }) => {
                   <Button
                     size="xl"
                     onClick={handleNavigateToOrder}
-                    mode="secondary"
+                    primary 
+                    dark
                     disabled={!selectedProductId.length}
-                    border={true}
                     label={'Купить'}
-                    extraClass={`basket__order-detail-button ${
-                      !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
-                    }`}
+                    // extraClass={`basket__order-detail-button ${
+                    //   !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
+                    // }`}
                   >
                     Купить
                   </Button>

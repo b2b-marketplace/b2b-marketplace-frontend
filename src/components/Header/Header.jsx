@@ -4,6 +4,7 @@ import './Header.scss';
 import IconPosition from '../../components/UI/Icon/Icon_position';
 import IconBoxRu from '../../components/UI/Icon/Icon_boxRu';
 import IconBurger from '../UI/Icon/Icon_burger';
+import IconClose from '../UI/Icon/Icon_close24';
 import IconFire from '../UI/Icon/Icon_fire';
 import IconScales from '../UI/Icon/Icon_scales';
 import IconBasket from '../UI/Icon/Icon_basket';
@@ -38,10 +39,17 @@ const Header = () => {
       </div>
 
       <div className="header__container">
-        <Button size="s" primary dark onClick={togglePopup}>
-          <IconBurger />
+        <button
+          type='button'
+          className='header__catalog-button'
+          onClick={togglePopup}
+        >
+          {isPopupOpen
+            ? <IconClose />
+            : <IconBurger />
+          }
           Каталог
-        </Button>
+        </button>
 
         <nav className="header__navigation">
           <NavLink className="header__link" to="/">
