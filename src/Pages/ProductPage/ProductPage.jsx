@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../../components/UI/Preloader/Preloader';
 import { fetchProducts } from '../../store/slices/productsSlice';
 import './ProductPage.scss';
+import NotFound from '../../components/NotFound/NotFound';
 
 export default function ProductPage() {
   const { products } = useSelector((state) => state.products);
@@ -20,14 +21,17 @@ export default function ProductPage() {
 
   return (
     <div className="product-page">
-      {isProductsLoaded ? (
-        <ProductBlock
-          product={products.items.find((item) => item.id === Number(id))}
-          className="product-page__product-block"
-        />
-      ) : (
-        <Preloader />
-      )}
+      {isProductsLoaded ?
+        products.items.find((item) => item.id === Number(id)) === undefined
+          ? (<NotFound />)
+          : (<ProductBlock
+            product={products.items.find((item) => item.id === Number(id))}
+            className="product-page__product-block"
+          />
+          ) : (
+          <Preloader />
+          // <NotFound />
+        )}
       <PlatformBenefits className="product-page__platform-benefits" />
       <ProductCardContainer title={'Товары от этого поставщика'} />
     </div>
