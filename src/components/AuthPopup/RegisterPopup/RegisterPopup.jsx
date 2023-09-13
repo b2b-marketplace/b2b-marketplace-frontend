@@ -20,7 +20,7 @@ const RegisterPopup = () => {
       ? '420px'
       : '304px'
     : step === 4
-      ? '325px'
+      ? '246px'
       : '0';
 
   const formParams = [

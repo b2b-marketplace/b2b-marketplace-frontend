@@ -7,13 +7,6 @@ const RegistrationLastStep = () => {
   return (
     <>
       <Input
-        name="login"
-        type="text"
-        placeholder="Логин"
-        size="l"
-        text="Латиница, цифры"
-      />
-      <Input
         name="password"
         type="password"
         autoComplete="off"
