@@ -13,9 +13,9 @@ const NotFound = () => {
           <p className="not-found__figure">4</p>
           <p className="not-found__figure">4</p>
         </div>
-        <img className="not-found__image_box1 " src={box1} alt="box1" />
-        <img className="not-found__image_box2 " src={box2} alt="box2" />
-        <img className="not-found__image_box3 " src={box3} alt="box3" />
+        <img className="not-found__image_box1" src={box1} alt="box1" />
+        <img className="not-found__image_box2" src={box2} alt="box2" />
+        <img className="not-found__image_box3" src={box3} alt="box3" />
       </div>
       <h3 className="not-found__subtitle">Страница не найдена</h3>
       <p className="not-found__text">
