@@ -1,11 +1,15 @@
 import React from 'react';
 import './InputField.scss';
 
-const InputField = ({ label, placeholder, type }) => {
+const InputField = ({ label, placeholder, type, className, inputClassName, labelClassName }) => {
   return (
-    <div className="input-field">
-      <label className="input-field__label">{label}</label>
-      <input className="input-field__input" type={type} placeholder={placeholder} />
+    <div className={`input-field ${className || ''}`}>
+      <label className={`input-field__label ${labelClassName || ''}`}>{label}</label>
+      <input
+        className={`input-field__input ${inputClassName || ''}`}
+        type={type}
+        placeholder={placeholder}
+      />
     </div>
   );
 };

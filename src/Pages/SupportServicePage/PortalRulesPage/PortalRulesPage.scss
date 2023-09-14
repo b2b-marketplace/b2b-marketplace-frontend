@@ -1,0 +1,29 @@
+@import '../../../styles/global.scss';
+
+.portal-rules-page {
+  max-width: 1249px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  line-height: 28px;
+
+  &__title {
+    font-family: Unbounded;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 44px;
+    margin: 0 0 40px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: $mainWeight;
+    line-height: 28px;
+    margin: 0 0 20px;
+  }
+}

@@ -1,0 +1,47 @@
+@import '../../../styles/global';
+
+.about-us-page {
+  max-width: 1108px;
+  display: flex;
+  flex-direction: column;
+  font-family: $fontFamilyNunitoSans;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+
+
+  &__title {
+    font-family: $fontFamilyUnbounded;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 44px;
+    margin: 0 0 40px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 32px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    margin: 0 0 20px;
+  }
+
+  &__desc {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 32px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+  }
+
+  &__lists {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 32px;
+  }
+}
