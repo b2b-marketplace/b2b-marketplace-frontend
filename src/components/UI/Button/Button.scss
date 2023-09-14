@@ -13,23 +13,7 @@
   box-sizing: border-box;
   gap: 20px;
 
-  &_size_xs {
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-    font-size: 20px;
-    font-weight: 500;
-  }
-
   &_size_s {
-    width: 160px;
-    height: 44px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 20px;
-  }
-
-  &_size_m {
     width: 230px;
     height: 44px;
     border-radius: 20px;
@@ -38,8 +22,17 @@
     line-height: 24px;
   }
 
-  &_size_l {
+  &_size_m {
     width: 236px;
+    height: 68px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+  }
+
+  &_size_l {
+    width: 262px;
     height: 68px;
     border-radius: 30px;
     font-size: 20px;
@@ -48,46 +41,77 @@
   }
 
   &_size_xl {
-    width: 262px;
+    width: 323px;
     height: 68px;
     border-radius: 30px;
-    color: #fff;
     font-size: 20px;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 28px; /* 140% */
   }
 
   &_primary {
-    background-color: transparent;
-    border: none;
+    background-color: $whiteColor;
+    border: 1px solid $darkColor;
     color: $darkColor;
-
-    &_border {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $grayLightColor;
       border: 1px solid $darkColor;
+      color: $darkColor;
+    }
+    &_pressed {
+      background-color: $blackDarkColor;
+      color: $whiteColor;
+      border: none;
+    }
+    &:disabled {
+      background-color: $grayLightColor;
+      color: $grayColor;
+      border: none;
+      cursor: default;
+    }
+    &_dark {
+      background-color: $darkColor;
+      border: none;
+      color: $whiteColor;
+      &:hover {
+        background-color: $grayColor;
+        border: none;
+        color: $whiteColor;
+      }
+      &_pressed {
+        background-color: $blackDarkColor;
+        color: $whiteColor;
+        border: none;
+      }
+      &:disabled {
+        background-color: $grayLightColor;
+        color: $grayColor;
+        border: none;
+        cursor: default;
+      }
     }
   }
 
   &_secondary {
-    background-color: $darkColor;
-    border: none;
-    color: $whiteColor;
-
-    &_border {
-      border: 1px solid $whiteColor;
-    }
-  }
-
-  &_tertiary {
     background-color: $blueColor;
     border: none;
     color: $whiteColor;
-
-    &_border {
-      border: 1px solid $whiteColor;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $blueDarkColor;
+      border: 1px solid $blueColor;
     }
-  }
-
-  &_rotate {
-    transform: rotate(90deg);
+    &_pressed {
+      background-color: $darkColor;
+      color: $whiteColor;
+      border: none;
+    }
+    &:disabled {
+      background-color: $grayLightColor;
+      color: $grayColor;
+      border: none;
+      cursor: default;
+    }
   }
 }

@@ -1,0 +1,100 @@
+@import '../../../styles/global.scss';
+
+.question-form {
+  max-width: 967px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  font-weight: 600;
+
+  &__title {
+    font-family: $fontFamilyUnbounded;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 44px;
+    margin: 0;
+  }
+
+  &__links {
+    display: flex;
+    gap: 51px;
+    color: $blackColor;
+  }
+
+  &__link {
+    font-size: 24px;
+    line-height: 28px;
+    text-decoration: none;
+    color: $blackColor;
+    transition: border-bottom 0.3s ease;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__input {
+    border: 1px solid $grayColor;
+  }
+
+  &__label-textarea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__textarea {
+    box-sizing: border-box;
+    display: flex;
+    max-width: 685px;
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid $grayColor;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__folder {
+    width: 750px;
+    height: 32px;
+    display: flex;
+    font-size: 20px;
+    line-height: 28px;
+    text-decoration-line: underline;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 36px;
+  }
+
+  &__text {
+    margin: 0;
+
+    &_blue {
+      color: $blueDarkColor;
+    }
+  }
+}
+
+.active-link {
+    border-bottom: 2px solid $blackColor; // Стиль активной ссылки
+  }

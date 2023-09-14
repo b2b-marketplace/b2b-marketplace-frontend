@@ -4,6 +4,7 @@
   display: flex;
   gap: 60px;
   justify-content: center;
+  flex-direction: column;
 
   &__section {
     max-width: 927px;
@@ -55,7 +56,6 @@
     padding: 20px 20px;
     color: $grayColor;
     font-size: 16px;
-    font-style: normal;
     font-weight: 600;
     line-height: 24px;
   }
