@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import './AccountSellerProfile.scss';
+import useValidation from '../../../hooks/useValidation';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
 import { Button } from '../../../../src/components/UI/Button/Button';
 
+
 const AccountSellerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDisadled, setIsDisadled] = useState(true);
 
+  const { values, handleChange, errors, isValid, resetForm } =
+  useValidation({
+    bankaccount: "",
+    inn: "",
+    ogrn: "",
+    region: "",
+    phone: "",
+    email: "",
+  });
+  
   function editInfo(e) {
     e.preventDefault();
     setIsEditMode(true);
@@ -37,7 +49,7 @@ const AccountSellerProfile = () => {
           button="Редактировать" /* icon={<IconPencil />} */
         />
 
-        <form className="account-seller-profile__form">
+        <form className="account-seller-profile__form" noValidate onSubmit={handleEdit}>
           <div className="account-buyer-profile__form-block">
             <div className="account-seller-profile__title-group">
               <h2 className="account-seller-profile__title">О компании</h2>
@@ -50,8 +62,7 @@ const AccountSellerProfile = () => {
               name="comment"
               cols="40"
               rows="7"
-              placeholder="Описание компании"
-            >
+              placeholder="Описание компании">
               Наша компания с 1999 г. производит верхнюю одежду для детей от 0 до 16 лет. У нас есть
               фабрика полного цикла — разрабатываем дизайн и выпускаем готовые изделия. Все циклы
               производства проходят в одном здании. Два раза в год выпускаем новые коллекции —
@@ -71,26 +82,46 @@ const AccountSellerProfile = () => {
               <AccountInputField
                 label="Счет"
                 placeholder="000000000 0000"
+                id="bankaccount"
+                name="bankaccount"
                 type="number"
                 isDisabled={isDisadled}
+                onChange={handleChange}
+                value={values.bankaccount || ""}
+                isValid={isValid}
               />
               <AccountInputField
                 label="ИНН"
                 placeholder="000000000 0000"
+                id="inn"
+                name="inn"
                 type="number"
                 isDisabled={isDisadled}
+                onChange={handleChange}
+                value={values.inn || ""}
+                isValid={isValid}
               />
               <AccountInputField
                 label="ОГРН"
                 placeholder="000000000 0000"
+                id="ogrn"
+                name="ogrn"
                 type="number"
                 isDisabled={isDisadled}
+                onChange={handleChange}
+                value={values.ogrn || ""}
+                isValid={isValid}
               />
               <AccountInputField
                 label="Регион доставки"
                 placeholder="Город"
+                id="region"
+                name="region"
                 type="text"
                 isDisabled={isDisadled}
+                onChange={handleChange}
+                value={values.region || ""}
+                isValid={isValid}
               />
             </fieldset>
           </div>
@@ -113,22 +144,32 @@ const AccountSellerProfile = () => {
                 label="Почта"
                 placeholder="Почта"
                 type="email"
+                id="email"
+                name="email"
                 icon={<IconMail />}
                 isDisabled={isDisadled}
+                onChange={handleChange}
+                value={values.email || ""}
+                isValid={isValid}
               />
               <AccountInputField
                 label="Телефон"
                 placeholder="Телефон"
+                id="phone"
+                name="phone"
                 type="tel"
                 icon={<IconPhone />}
                 isDisabled={isDisadled}
+                onChange={handleChange}
+                value={values.phone || ""}
+                isValid={isValid}
               />
             </fieldset>
           </div>
 
           {isEditMode ? (
             <div className="account-seller-profile__button-container">
-              <Button size="xl" mode="secondary" type="submit" onClick={handleEdit}>
+              <Button size="xl" mode="secondary" type="submit">
                 Сохранить
               </Button>
               <Button size="xl" mode="secondary" type="button" onClick={cancelEdit}>
