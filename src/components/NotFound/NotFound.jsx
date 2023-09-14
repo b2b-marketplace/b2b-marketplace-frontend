@@ -1,5 +1,6 @@
 import React from 'react';
 import './NotFound.scss';
+import { Link } from 'react-router-dom';
 import { Button } from '../UI/Button/Button';
 import box1 from '../../images/banner-promo/box1-404.png';
 import box2 from '../../images/banner-promo/box2-404.png';
@@ -22,9 +23,11 @@ const NotFound = () => {
         Возможно неправильно набран адрес или такой страницы больше не существует
       </p>
       <p className="not-found__text">Перейдите на главную, чтобы продолжить работу</p>
-      <Button size="xl" mode="secondary" border={false}>
-        На главную
-      </Button>
+      <Link to='/' className='not-found__link'>
+        <Button size="l" primary dark>
+          На главную
+        </Button>
+      </Link>
     </div>
   );
 };

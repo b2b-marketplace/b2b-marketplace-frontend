@@ -80,7 +80,7 @@ function ProductCard({ product }) {
           <p className="card__price">{`${product.price} `}&#x20bd;</p>
         </div>
 
-        <Button size="m" primary={false} onClick={handleSelect} pressed={isProductSelect}>
+        <Button size="s" primary={false} onClick={handleSelect} pressed={isProductSelect}>
           {isProductSelect ? 'В корзине' : 'В корзину'}
         </Button>
       </div>

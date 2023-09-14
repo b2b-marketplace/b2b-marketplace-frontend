@@ -9,7 +9,7 @@ import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import { Button } from '../UI/Button/Button';
 import OrderDetail from '../OrderDetail/OrderDetail';
 import ProductCardBasket from '../ProductCardBasket/ProductCardBasket';
-import productsApi from '../../utils/productsApi';
+import productsApi from '../../utils/ProductsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import SidebarRight from '../SidebarRight/SidebarRight';
@@ -198,13 +198,13 @@ const Basket = ({ className }) => {
                   <Button
                     size="xl"
                     onClick={handleNavigateToOrder}
-                    mode="secondary"
+                    primary 
+                    dark
                     disabled={!selectedProductId.length}
-                    border={true}
                     label={'Купить'}
-                    extraClass={`basket__order-detail-button ${
-                      !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
-                    }`}
+                    // extraClass={`basket__order-detail-button ${
+                    //   !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
+                    // }`}
                   >
                     Купить
                   </Button>
