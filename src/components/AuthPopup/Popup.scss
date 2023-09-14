@@ -236,8 +236,7 @@ $inactiveColor: #A3A3A3;
 			margin: 3px;
 			cursor: pointer;
 
-			&::after,
-			&::before {
+			&::after {
 				position: absolute;
 				content: '';
 				width: 24px;
@@ -245,19 +244,21 @@ $inactiveColor: #A3A3A3;
 				background-color: $whiteColor;
 				box-sizing: border-box;
 				inset: -3px;
-			}
-
-			&::after {
-				border: $darkColor 1px solid;
-				width: 24px;
-				height: 24px;
 				border-radius: 50%;
-				// inset: 0;
-				transition: background-color .3s ease;
+				background-image: url(../../images/checkbox-circle.svg);
+				transition: background-image .3s ease;
 			}
 
 			&:checked::after {
-				background-color: #4285f4;
+				background-image: url(../../images/checkbox-circle-checked.svg);
+			} 
+
+			&_type_radio::after {
+				background-image: url(../../images/radio-circle.svg);
+			}
+
+			&_type_radio:checked::after {
+				background-image: url(../../images/radio-circle-checked.svg);
 			}
 
 			&-span {
@@ -312,6 +313,7 @@ $inactiveColor: #A3A3A3;
 			border-radius: 20px;
 			color: $darkColor;
 		}
+
 		&__extra-button {
 			width: 236px;
 		}

@@ -5,11 +5,12 @@ const RegistrationFirstStep = ({ onType }) => {
     <PopupButtons
       className="popup__buttons_form"
       onClick={onType}
-      value1="contractor"
+      value1="supplier"
       value2="customer"
       dark1={true}
       buttonText1="Я поставщик"
       buttonText2="Я покупатель"
+      name={'role'}
     />
   );
 };

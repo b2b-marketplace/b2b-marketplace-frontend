@@ -3,17 +3,30 @@ import Popup from '../Popup';
 import Form from '../Form/Form';
 import RegistrationFirstStep from './RegistrationFirstStep/RegistrationFirstStep';
 import RegistrationSecondStep from './RegistrationSecondStep/RegistrationSecondStep';
-import RegistrationThirdStep from './RegistrationThirdStep/RegistrationThirdStep.jsx';
+import RegistrationThirdStep from './RegistrationThirdStep/RegistrationThirdStep';
 import RegistrationLastStep from './RegistrationLastStep.jsx/RegistrationLastStep';
 import usePopup from '../../../hooks/usePopup';
+import authApi from '../../../utils/authApi';
+import useInput from '../../../hooks/useInput';
 
 const RegisterPopup = () => {
   const { isOpen, closePopup } = usePopup('registration');
   const { openPopup: openCompleteRegistration } = usePopup('completeRegistration');
-
   const [step, setStep] = useState(1);
-  const [userType, setUserType] = useState('');
   const [isEntity, setisEntity] = useState(false);
+  const initValueParams = {
+    email: '',
+    password: '',
+    repeat_password: '',
+    role: '',
+    name: '',
+    inn: '',
+    phone_number: '',
+    address: '',
+    vat: ''
+  };
+  
+  const { values, handleChange, resetValue} = useInput(initValueParams);
 
   const fieldsetHeight = step === 3
     ? isEntity
@@ -30,14 +43,14 @@ const RegisterPopup = () => {
     { title: 'Финальный шаг', btnText: 'Зарегистрироваться' },
   ];
 
-  const handleType = (event) => {
-    setUserType(event.target.value);
-    handleNextStep();
+  const handleNextStep = (event) => {
+    event?.preventDefault && event.preventDefault();
+    setStep(step + 1);
   };
 
-  const handleSubmit = () => {
-    closePopup();
-    openCompleteRegistration();
+  const handleType = (event) => {
+    handleChange(event);
+    handleNextStep();
   };
 
   const handleEntity = (event) => {
@@ -45,15 +58,22 @@ const RegisterPopup = () => {
     handleNextStep();
   };
 
-  const handleNextStep = (event) => {
-    event?.preventDefault && event.preventDefault();
-    setStep(step + 1);
+  const handleSubmit = () => {
+    if (step === 3) return handleNextStep();
+
+    const { password, repeat_password, email, ...company} = values;
+    authApi.registerCompany({ email, password, company: { ...company, vat: company.vat === 'yes' }, })
+
+      .then((res) => {
+        closePopup();
+        openCompleteRegistration();
+      }).catch(console.log);
   };
 
   useEffect(() => {
     if (!isOpen) {
       setStep(1);
-      setUserType('');
+      resetValue();
       setisEntity(false);
     }
   }, [isOpen]);
@@ -72,8 +92,8 @@ const RegisterPopup = () => {
         className="popup__form"
         onSubmit={handleSubmit}
         btnText={formParams[step - 1].btnText}
-        btnType={step === 4 ? 'submit' : 'button'}
-        btnOnClick={step === 4 ? undefined : handleNextStep}
+        btnType="submit"
+      // btnOnClick={step === 4 ? undefined : handleNextStep}
       >
         {
           step === 1 &&
@@ -87,11 +107,11 @@ const RegisterPopup = () => {
         <fieldset style={{ 'height': fieldsetHeight }} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
           {
             step === 3 &&
-            <RegistrationThirdStep isEntity={isEntity} />
+            <RegistrationThirdStep values={values} onChange={handleChange} isEntity={isEntity} />
           }
           {
             step === 4 &&
-            <RegistrationLastStep />
+            <RegistrationLastStep values={values} onChange={handleChange} />
           }
         </fieldset>
       </Form>

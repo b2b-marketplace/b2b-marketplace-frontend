@@ -3,7 +3,7 @@ const LabelCheckbox = ({ id, text, ...props }) => {
 
     <label className="popup__label" htmlFor={id}>
       <input
-        className={`popup__checkbox popup__checkbox_type_${id}`}
+        className={`popup__checkbox popup__checkbox_type_${props.type}`}
         id={id}
         {...props}
       />
