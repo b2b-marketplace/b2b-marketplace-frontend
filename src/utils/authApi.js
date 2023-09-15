@@ -20,11 +20,12 @@ class AuthApi {
     return fetch(`${this._serverUrl}${path}`, reqOptions).then(this._ckeckOk);
   }
   // регистрация компании
-  registerCompany = (companyData) => this._fetcher('POST', '/companies', companyData);
+  registerCompany = (companyData) => this._fetcher('POST', '/users/companies', companyData);
+  login = (loginData) => this._fetcher('POST', '/auth/token/login', loginData);
 }
 
 const authApi = new AuthApi({
-  serverUrl: PRODUCTS_BASE_URL + '/v1/users',
+  serverUrl: PRODUCTS_BASE_URL + '/v1',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
