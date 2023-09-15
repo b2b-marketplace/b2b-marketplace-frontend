@@ -1,12 +1,12 @@
-import ProductBlock from './ProductBlock/ProductBlock';
+import './ProductPage.scss';
+import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import ProductCardContainer from '../../components/ProductCardContainer/ProductCardContainer';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../../components/UI/Preloader/Preloader';
 import { fetchProducts } from '../../store/slices/productsSlice';
-import './ProductPage.scss';
 import NotFound from '../../components/NotFound/NotFound';
 
 export default function ProductPage() {

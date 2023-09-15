@@ -8,7 +8,7 @@ import Tooltip from '../UI/Tooltip/Tooltip';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import { Button } from '../UI/Button/Button';
 import OrderDetail from '../OrderDetail/OrderDetail';
-import ProductCardBasket from '../ProductCardBasket/ProductCardBasket';
+import ProductCardBasket from '../ProductElements/ProductCardBasket/ProductCardBasket';
 import productsApi from '../../utils/ProductsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';

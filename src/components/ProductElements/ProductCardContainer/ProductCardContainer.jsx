@@ -1,9 +1,9 @@
-import ProductCard from '../ProductCard/ProductCard';
-import { Button } from '../UI/Button/Button';
 import './ProductCardContainer.scss';
+import ProductCard from '../ProductCard/ProductCard';
+import { Button } from '../../UI/Button/Button';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../store/slices/productsSlice';
+import { fetchProducts } from '../../../store/slices/productsSlice';
 
 export default function ProductCardContainer({ title, className }) {
   const [displayCards, setDisplayCards] = useState([]);

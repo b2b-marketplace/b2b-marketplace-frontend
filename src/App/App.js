@@ -12,7 +12,7 @@ import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/Acco
 import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
-import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
+import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
 import OrderPage from '../Pages/OrderPage/OrderPage';
 import NotFound from '../components/NotFound/NotFound';
 

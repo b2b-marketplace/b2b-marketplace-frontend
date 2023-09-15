@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePage.scss';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import ProductCardContainer from '../../components/ProductCardContainer/ProductCardContainer';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import BannerAdvertising from '../../components/BannerAdvertising/BannerAdvertising';
 import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
