@@ -20,8 +20,8 @@ class AuthApi {
     return fetch(`${this._serverUrl}${path}`, reqOptions).then(this._ckeckOk);
   }
   // регистрация компании
-  registerCompany = (companyData) => this._fetcher('POST', '/users/companies', companyData);
-  login = (loginData) => this._fetcher('POST', '/auth/token/login', loginData);
+  registerCompany = (companyData) => this._fetcher('POST', '/users/companies/', companyData);
+  login = (loginData) => this._fetcher('POST', '/auth/token/login/', loginData);
 }
 
 const authApi = new AuthApi({
