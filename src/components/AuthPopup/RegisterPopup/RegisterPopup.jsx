@@ -26,7 +26,7 @@ const RegisterPopup = () => {
     vat: ''
   };
   
-  const { values, handleChange, resetValue} = useInput(initValueParams);
+  const { values, handleChange, resetValues } = useInput(initValueParams);
 
   const fieldsetHeight = step === 3
     ? isEntity
@@ -63,7 +63,6 @@ const RegisterPopup = () => {
 
     const { password, repeat_password, email, ...company} = values;
     authApi.registerCompany({ email, password, company: { ...company, vat: company.vat === 'yes' }, })
-
       .then((res) => {
         closePopup();
         openCompleteRegistration();
@@ -73,7 +72,7 @@ const RegisterPopup = () => {
   useEffect(() => {
     if (!isOpen) {
       setStep(1);
-      resetValue();
+      resetValues();
       setisEntity(false);
     }
   }, [isOpen]);

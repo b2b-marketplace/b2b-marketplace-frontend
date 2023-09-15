@@ -10,11 +10,11 @@ const useInput = (initValueParams) => {
     }));
   };
 
-  const resetValue = (newValues = initValueParams) => {
+  const resetValues = (newValues = initValueParams) => {
     setValues(newValues);
   };
 
-  return {values, handleChange, resetValue};
+  return {values, handleChange, resetValues};
 };
 
 export default useInput;
