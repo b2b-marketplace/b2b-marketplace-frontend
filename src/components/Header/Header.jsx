@@ -9,13 +9,11 @@ import IconFire from '../UI/Icon/Icon_fire';
 import IconScales from '../UI/Icon/Icon_scales';
 import IconBasket from '../UI/Icon/Icon_basket';
 import IconProfile from '../UI/Icon/Icon_profile';
-import axios from 'axios';
-
 import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
 import Input from '../UI/Input/Input';
-//import IconClose from '../UI/Icon/Icon_close';
+import geoApi from '../../utils/GeoApi';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -25,9 +23,7 @@ const Header = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  axios
-    .get('http://ip-api.com/json?lang=ru')
-    .then(res => setCity(res.data.city));
+  geoApi.getCity().then(res=>setCity(res.city));
 
   return (
     <header className="header">
