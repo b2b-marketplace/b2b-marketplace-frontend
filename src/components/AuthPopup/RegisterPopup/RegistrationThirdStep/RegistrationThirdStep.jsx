@@ -7,7 +7,7 @@ const RegistrationThirdStep = ({ isEntity, onChange, values }) => {
     return (<EntityRegistration onChange={onChange} values={values} />);
   }
   return (
-    <PersonRegistration/>
+    <PersonRegistration onChange={onChange} values={values} />
   );
 };
 

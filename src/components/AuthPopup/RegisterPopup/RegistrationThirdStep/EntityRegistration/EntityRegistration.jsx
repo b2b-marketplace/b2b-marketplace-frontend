@@ -68,6 +68,7 @@ const EntityRegistration = ({ onChange, values }) => {
         onChange={onChange}
         value={values.address}
         options={options}
+        autoComplete='off'
         required
       />
       <div className="popup__container popup__container_type_radio">

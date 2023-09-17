@@ -60,7 +60,10 @@ const RegisterPopup = () => {
 
   const handleSubmit = () => {
     if (step === 3) return handleNextStep();
-
+    if (!isEntity) {
+      closePopup();
+      openCompleteRegistration();
+    }
     const { password, repeat_password, email, phone_number, address, ...company } = values;
     authApi.registerCompany({
       email,

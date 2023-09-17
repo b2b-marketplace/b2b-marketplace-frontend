@@ -50,7 +50,8 @@ const PersonRegistration = ({ onChange, values }) => {
         onChange={onChange}
         value={values.address}
         options={options}
-        // required
+        autoComplete='off'
+        required
       />
     </>
   );
