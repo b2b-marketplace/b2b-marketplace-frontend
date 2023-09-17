@@ -1,8 +1,5 @@
 import Select from 'react-select';
-import makeAnimated from 'react-select/animated';
 import './Selector.scss';
-
-const animatedComponents = makeAnimated();
 
 const Selector = (props) => {
   const { value, options, name, onChange, ...restedProps } = props;
@@ -18,7 +15,6 @@ const Selector = (props) => {
   return (
     <Select
       className="custom-select"
-      components={animatedComponents}
       options={options}
       value={getValue()}
       onChange={handleChange}
