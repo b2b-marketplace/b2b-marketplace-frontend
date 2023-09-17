@@ -358,6 +358,7 @@
     display: flex;
     flex-direction: column;
     max-width: 544px;
+    width: 100%;
     color: $darkColor;
     font-family: $fontFamilyNunitoSans;
     font-style: normal;
@@ -372,9 +373,52 @@
 
   &__text {
     font-size: 16px;
-
     line-height: 24px; /* 150% */
     margin: 0;
+  }
+}
+
+.specification {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__item {
+    max-width: 544px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+  &__name {
+    color: $grayColor;
+    max-width: 415px;
+    white-space: nowrap;
+    width: 100%;
+    font-family: $fontFamilyNunitoSans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    overflow: hidden;
+    &::after {
+      padding-left: 8px;
+      content: '...........................................................................................................';
+    }
+
+    &__value {
+      color: $darkColor;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px; /* 150% */
+      text-align: left;
+    }
   }
 }
 

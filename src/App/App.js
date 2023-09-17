@@ -12,8 +12,9 @@ import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
-import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 import OrderPage from '../Pages/OrderPage/OrderPage';
+import NotFound from '../components/NotFound/NotFound';
+import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           </Route>
           <Route index element={<Navigate to="profile" />} />
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <ButtonScrollUp />
       <Footer />
