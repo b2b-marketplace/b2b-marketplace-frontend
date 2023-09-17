@@ -25,7 +25,7 @@ const RegisterPopup = () => {
     address: '',
     vat: ''
   };
-  
+
   const { values, handleChange, resetValues } = useInput(initValueParams);
 
   const fieldsetHeight = step === 3
@@ -61,8 +61,21 @@ const RegisterPopup = () => {
   const handleSubmit = () => {
     if (step === 3) return handleNextStep();
 
-    const { password, repeat_password, email, ...company} = values;
-    authApi.registerCompany({ email, password, company: { ...company, vat: company.vat === 'yes' }, })
+    const { password, repeat_password, email, phone_number, address, ...company } = values;
+    authApi.registerCompany({
+      email,
+      password,
+      company: {
+        ...company,
+        vat: company.vat === 'yes',
+        phone_number: {
+          phone_number
+        },
+        address: {
+          address,
+        },
+      },
+    })
       .then((res) => {
         closePopup();
         openCompleteRegistration();

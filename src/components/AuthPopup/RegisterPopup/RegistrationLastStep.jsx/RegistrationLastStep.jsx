@@ -18,6 +18,7 @@ const RegistrationLastStep = ({ values, onChange}) => {
         text="От 10 символов, латиница, цифры, символы"
         onChange={onChange}
         value={values.password}
+        minLength={10}
         required
       >
         <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShow} type="button">
@@ -34,6 +35,8 @@ const RegistrationLastStep = ({ values, onChange}) => {
         text="Пароли совпадают"
         onChange={onChange}
         value={values.repeat_password}
+        minLength={10}
+        required
       >
         <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShowRepeat} type="button">
           <IconPassword isVisiblePassword={isShowRepeat} />

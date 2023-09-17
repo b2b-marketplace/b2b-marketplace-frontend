@@ -246,20 +246,20 @@ $inactiveColor: #A3A3A3;
 				box-sizing: border-box;
 				inset: -3px;
 				border-radius: 50%;
-				background-image: url(../../images/checkbox-circle.svg);
+				background-image: url(../../images/popup/checkbox-circle.svg);
 				transition: background-image .3s ease;
 			}
 
 			&:checked::after {
-				background-image: url(../../images/checkbox-circle-checked.svg);
+				background-image: url(../../images/popup/checkbox-circle-checked.svg);
 			} 
 
 			&_type_radio::after {
-				background-image: url(../../images/radio-circle.svg);
+				background-image: url(../../images/popup/radio-circle.svg);
 			}
 
 			&_type_radio:checked::after {
-				background-image: url(../../images/radio-circle-checked.svg);
+				background-image: url(../../images/popup/radio-circle-checked.svg);
 			}
 
 			&-span {
