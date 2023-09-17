@@ -4,12 +4,13 @@ import './Header.scss';
 import IconPosition from '../../components/UI/Icon/Icon_position';
 import IconBoxRu from '../../components/UI/Icon/Icon_boxRu';
 import IconBurger from '../UI/Icon/Icon_burger';
+import IconClose from '../UI/Icon/Icon_close24';
 import IconFire from '../UI/Icon/Icon_fire';
 import IconScales from '../UI/Icon/Icon_scales';
 import IconBasket from '../UI/Icon/Icon_basket';
 import IconProfile from '../UI/Icon/Icon_profile';
+import axios from 'axios';
 
-import { Button } from '../UI/Button/Button';
 import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
@@ -18,10 +19,13 @@ import Input from '../UI/Input/Input';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [city, setCity] = useState('Дефолтсити');
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
+
+  axios.get('http://ip-api.com/json?lang=ru').then((res) => setCity(res.data.city));
 
   return (
     <header className="header">
@@ -34,15 +38,15 @@ const Header = () => {
         </Link>
         <button type="button" className="header__location">
           <IconPosition />
-          <span className="header__location-text">Санкт-Петербург</span>
+          <span className="header__location-text">{city}</span>
         </button>
       </div>
 
       <div className="header__container">
-        <Button size="s" primary dark onClick={togglePopup}>
-          <IconBurger />
+        <button type="button" className="header__catalog-button" onClick={togglePopup}>
+          {isPopupOpen ? <IconClose /> : <IconBurger />}
           Каталог
-        </Button>
+        </button>
 
         <nav className="header__navigation">
           <NavLink className="header__link" to="/">
@@ -68,16 +72,9 @@ const Header = () => {
         </nav>
 
         <div className="header__search">
-          <Input
-            mode="primary"
-            type="text"
-            extraClass="header__input"
-            placeholder="Поиск...."
-            
-          />
+          <Input mode="primary" type="text" extraClass="header__input" placeholder="Поиск...." />
           <button type="button" className="header__button">
             <IconSearch />
-         
           </button>
         </div>
       </div>

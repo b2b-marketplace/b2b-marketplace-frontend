@@ -8,16 +8,13 @@ class ProductsApi {
   }
 
   _checkResponse(res) {
-    // функция проверки статуса ответа
     return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`);
   }
 
   _request(url, options) {
-    // функция отправки запроса с проверкой ответа
     return fetch(url, options).then(this._checkResponse);
   }
 
-  // получение данных о фильмах
   getProducts(productIds) {
     let path = this._serverUrl;
     if (Array.isArray(productIds)) {

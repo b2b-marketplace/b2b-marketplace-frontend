@@ -13,23 +13,7 @@
   box-sizing: border-box;
   gap: 20px;
 
-  &_size_xs {
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-    font-size: 20px;
-    font-weight: 500;
-  }
-
   &_size_s {
-    width: 160px;
-    height: 44px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 20px;
-  }
-
-  &_size_m {
     width: 230px;
     height: 44px;
     border-radius: 20px;
@@ -38,11 +22,19 @@
     line-height: 24px;
   }
 
+  &_size_m {
+    width: 236px;
+    height: 68px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+  }
+
   &_size_l {
     width: 262px;
     height: 68px;
     border-radius: 30px;
-    color: #fff;
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
@@ -76,6 +68,7 @@
       background-color: $grayLightColor;
       color: $grayColor;
       border: none;
+      cursor: default;
     }
     &_dark {
       background-color: $darkColor;
@@ -95,6 +88,7 @@
         background-color: $grayLightColor;
         color: $grayColor;
         border: none;
+        cursor: default;
       }
     }
   }
@@ -117,10 +111,7 @@
       background-color: $grayLightColor;
       color: $grayColor;
       border: none;
+      cursor: default;
     }
-  }
-
-  &_rotate {
-    transform: rotate(90deg);
   }
 }

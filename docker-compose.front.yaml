@@ -1,0 +1,11 @@
+version: '3.8'
+
+volumes:
+  node_modules:
+
+services:
+  frontend:
+    image: ghcr.io/b2b-marketplace/b2b_marketplace_frontend:latest
+    container_name: b2b_marketplace_frontend
+    volumes:
+      - node_modules:/b2b_marketplace/result_build/
