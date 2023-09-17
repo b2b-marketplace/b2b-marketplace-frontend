@@ -202,9 +202,6 @@ const Basket = ({ className }) => {
                     dark
                     disabled={!selectedProductId.length}
                     label={'Купить'}
-                    // extraClass={`basket__order-detail-button ${
-                    //   !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
-                    // }`}
                   >
                     Купить
                   </Button>

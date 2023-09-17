@@ -5,6 +5,7 @@
   flex-direction: column;
   width: 100%;
 
+
   &__title {
     @include reset;
     font-family: $fontFamilyUnbounded;
@@ -12,9 +13,13 @@
     font-style: normal;
     font-weight: 500;
     line-height: 44px;
+
   }
 
   &__main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
   }
 
   &__receiver {

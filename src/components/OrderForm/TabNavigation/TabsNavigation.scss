@@ -1,0 +1,75 @@
+@import "../../../styles/global";
+
+.tabs-navigation {
+  display: flex;
+  flex-direction: column;
+  @include default-font-style;
+
+  &__links {
+    display: flex;
+    column-gap: 20px;
+    padding: 0 20px;
+  }
+
+  &__link {
+    @include reset-link;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $grayLightColor;
+    border-radius: 20px 20px 0 0;
+    width: 262px;
+    height: 48px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+
+    &_active {
+      color: white;
+      background-color: $blackColor;
+    }
+  }
+
+  &__container {
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid $grayLightColor;
+  }
+
+  &__content {
+    //display: none;
+  }
+
+  &__warehouse-addresses {
+  }
+
+  &__warehouse-addresses-info {
+
+  }
+
+  &__warehouse-addresses-map {
+
+  }
+
+  &__warehouse-addresses-info {
+
+  }
+
+  &__warehouse-addresses-title {
+    @include reset;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__warehouse-addresses-list {
+    @include reset-list;
+
+  }
+
+  &__warehouse-addresses-item {
+
+  }
+}
