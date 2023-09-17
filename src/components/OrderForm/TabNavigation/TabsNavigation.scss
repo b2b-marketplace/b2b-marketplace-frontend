@@ -1,4 +1,4 @@
-@import "../../../styles/global";
+@import '../../../styles/global';
 
 .tabs-navigation {
   display: flex;
@@ -46,15 +46,12 @@
   }
 
   &__warehouse-addresses-info {
-
   }
 
   &__warehouse-addresses-map {
-
   }
 
   &__warehouse-addresses-info {
-
   }
 
   &__warehouse-addresses-title {
@@ -66,10 +63,8 @@
 
   &__warehouse-addresses-list {
     @include reset-list;
-
   }
 
   &__warehouse-addresses-item {
-
   }
 }
