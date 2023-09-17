@@ -1,5 +1,11 @@
 import Input from "../../../Input/Input";
 import LabelCheckbox from "../../../LabelCheckbox/LabelCheckbox";
+const options = [
+  { value: 'moscow', label: 'Московская Область' },
+  { value: 'Spb', label: 'Ленинградская Область' },
+  { value: 'newCity', label: 'Новгородская Область' },
+  { value: 'HowkCity', label: 'Орловская Область' },
+];
 
 const EntityRegistration = ({ onChange, values }) => {
   return (
@@ -12,7 +18,6 @@ const EntityRegistration = ({ onChange, values }) => {
         text="Юридическое название"
         onChange={onChange}
         value={values.name}
-        minLength={1}
         maxLength={100}
         required
       />
@@ -24,7 +29,7 @@ const EntityRegistration = ({ onChange, values }) => {
         text="Без пробелов"
         onChange={onChange}
         value={values.inn}
-        minLength={8}
+        minLength={10}
         maxLength={10}
         required
       >
@@ -38,7 +43,6 @@ const EntityRegistration = ({ onChange, values }) => {
           text="Номер телефона без дефисов"
           onChange={onChange}
           value={values.phone_number}
-          minLength={1}
           maxLength={20}
           required
         />
@@ -50,6 +54,7 @@ const EntityRegistration = ({ onChange, values }) => {
           text="Почта"
           onChange={onChange}
           value={values.email}
+          maxLength={254}
           required
         />
       </div>
@@ -62,12 +67,9 @@ const EntityRegistration = ({ onChange, values }) => {
         text="Начните ввод, чтобы выбрать из списка"
         onChange={onChange}
         value={values.address}
+        options={options}
         required
-      >
-        <option value="">Край/область</option>
-        <option value="1">Московская Область</option>
-        <option value="2">Ленинградская область</option>
-      </Input>
+      />
       <div className="popup__container popup__container_type_radio">
         <h2 className="popup__subtitle popup__subtitle_type_bolded">Вы работаете с НДС?</h2>
         <div className="popup__radio">

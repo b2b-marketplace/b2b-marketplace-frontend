@@ -1,6 +1,12 @@
 import Input from "../../../Input/Input";
+const options = [
+  { value: 'moscow', label: 'Московская Область' },
+  { value: 'Spb', label: 'Ленинградская Область' },
+  { value: 'newCity', label: 'Новгородская Область' },
+  { value: 'HowkCity', label: 'Орловская Область' },
+];
 
-const PersonRegistration = ({ onNext }) => {
+const PersonRegistration = ({ onChange, values }) => {
   return (
     <>
       <Input
@@ -35,24 +41,17 @@ const PersonRegistration = ({ onNext }) => {
         />
       </div>
 
-      {/* <Input
-        name="adress"
-        type="text"
-        placeholder="Край/область"
-        size="l"
-        text="Выберите свой из списка"
-      /> */}
       <Input
-        name="adress"
+        name="address"
         type="select"
         placeholder="Край/область"
         size="l"
         text="Начните ввод, чтобы выбрать из списка"
-      >
-        <option value="">Край/область</option>
-        <option value="1">Московская Область</option>
-        <option value="2">Ленинградская область</option>
-      </Input>
+        onChange={onChange}
+        value={values.address}
+        options={options}
+        // required
+      />
     </>
   );
 };

@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import './Input.scss';
+import { useState } from 'react';
+import Selector from '../../UI/Selector/Selector';
 
 const Input = ({ size, type, className, children, text, labelClassName, ...props }) => {
   const inputClass = ['input', `input_size_${size}`, className].join(' ');
@@ -7,17 +9,24 @@ const Input = ({ size, type, className, children, text, labelClassName, ...props
   const isSelect = type === 'select';
   const selectClass = `${inputClass} input_type_select`;
 
+  const [address, setAddress] = useState('');
+  const handleChange = (newAddress = '') => setAddress(newAddress.value);
+
   return (
     <label className={labelClass}>
       {
         isSelect
           ? (
-            <select
-              className={selectClass}
+            // <select
+            //   className={selectClass}
+            //   {...props}
+            // >
+            //   {children}
+            // </select>
+            <Selector
+              // className={selectClass}
               {...props}
-            >
-              {children}
-            </select>
+            />
           ) : (
             <>
               <input
