@@ -1,0 +1,7 @@
+@import "../../../styles/global";
+
+.vendor-code {
+  @include default-font-style;
+  font-size: 14px;
+  line-height: 20px;
+}

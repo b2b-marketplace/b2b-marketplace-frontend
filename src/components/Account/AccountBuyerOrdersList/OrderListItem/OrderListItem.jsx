@@ -1,6 +1,6 @@
 import React from 'react';
 import './OrderListItem.scss';
-import ProductCardBasket from '../../../ProductCardBasket/ProductCardBasket';
+import ProductCardHorizontal from '../../../Product/ProductCardHorizontal/ProductCardHorizontal';
 
 const OrderListItem = ({ order }) => {
   return <div className="order-list-item"></div>;

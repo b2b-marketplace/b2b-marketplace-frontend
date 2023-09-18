@@ -1,6 +1,6 @@
 import ProductBlock from './ProductBlock/ProductBlock';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import ProductCardContainer from '../../components/ProductCardContainer/ProductCardContainer';
+import ProductCardContainer from '../../components/Product/ProductCardContainer/ProductCardContainer';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';

@@ -134,7 +134,7 @@ const QuestionForm = () => {
           <Checkbox
             name="agreeTerms"
             checked={formData.agreeTerms}
-            onChange={handleCheckboxChange}
+            handleChangeCheckbox={handleCheckboxChange}
             required
           />
           <p className="question-form__text">

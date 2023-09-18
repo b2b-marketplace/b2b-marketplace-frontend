@@ -1,0 +1,49 @@
+@import "../../../styles/global";
+
+.delivery-warehouse-address-list {
+  @include default-font-style;
+  display: flex;
+  flex-direction: column;
+
+
+  &__title {
+    @include reset;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  &__warehouse-addresses-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__content {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px
+  }
+
+}

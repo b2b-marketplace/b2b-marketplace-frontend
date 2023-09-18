@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Basket.scss';
-import { changeChecked, deleteProduct } from '../../store/slices/basketSlice.js';
+import { changeChecked, deleteProduct, updateAllProduct } from '../../store/slices/basketSlice.js';
 import Checkbox from '../UI/Checkbox/Checkbox';
 import IconTrash from '../UI/Icon/Icon_trash';
 import Tooltip from '../UI/Tooltip/Tooltip';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import { Button } from '../UI/Button/Button';
 import OrderDetail from '../OrderDetail/OrderDetail';
-import ProductCardBasket from '../ProductCardBasket/ProductCardBasket';
+import ProductCardHorizontal from '../Product/ProductCardHorizontal/ProductCardHorizontal';
 import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import OrderDetailContent from '../OrderDetail/OrderDetailContent/OrderDetailContent';
 import SidebarRight from '../SidebarRight/SidebarRight';
 import { useNavigate } from 'react-router-dom';
 
-const Basket = ({ className }) => {
+const Basket = ({ extraClassName }) => {
   const [currentProductList, setCurrentProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
@@ -136,14 +136,16 @@ const Basket = ({ className }) => {
   };
 
   const handleNavigateToOrder = () => {
-    if (selectedProductId.length)
+    if (selectedProductId.length) {
+      dispatch(updateAllProduct({ currentProductList }));
       navigate('/order', {
         state: { cameFromBasket: true },
       });
+    }
   };
 
   return (
-    <section className={`basket ${className || ''}`}>
+    <section className={`basket ${extraClassName || ''}`}>
       {currentProductList.length > 0 ? (
         <>
           <div className="basket__container">
@@ -151,8 +153,8 @@ const Basket = ({ className }) => {
               <div className="basket__panel">
                 <div className="basket__panel-checkbox">
                   <Checkbox
-                    onCheckboxClick={handleClickCheckboxSelectAllProduct}
-                    isChecked={isCheckAll}
+                    handleChangeCheckbox={handleClickCheckboxSelectAllProduct}
+                    checked={isCheckAll}
                     className="basket__checkbox"
                   >
                     <span className="basket__checkbox-text">Выбрать все</span>
@@ -166,7 +168,7 @@ const Basket = ({ className }) => {
               <ul className="basket__product-list">
                 {currentProductList?.map((product) => (
                   <li className="basket__product-item" key={product.id} data-id={product.id}>
-                    <ProductCardBasket
+                    <ProductCardHorizontal
                       isCheckboxChecked={product.checked}
                       onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
                       product={product}
@@ -188,7 +190,7 @@ const Basket = ({ className }) => {
                     <IconInfoFill className="basket__order-detail-icon-info" />
                   </Tooltip>
                 </OrderDetailHeader>
-                <OrderDetailContentBasket
+                <OrderDetailContent
                   productSum={orderInfo.productSum}
                   productCount={orderInfo.productCount}
                   suppliersCount={orderInfo.suppliersCount}

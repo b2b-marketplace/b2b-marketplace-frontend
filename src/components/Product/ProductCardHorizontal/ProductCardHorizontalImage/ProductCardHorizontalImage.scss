@@ -1,0 +1,12 @@
+@import "../../../../styles/global.scss";
+
+.product-card-horizontal-image {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid $grayLightColor;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  width: 122px;
+  height: 108px;
+}

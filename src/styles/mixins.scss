@@ -22,3 +22,8 @@
   text-decoration: none;
   color: $blackColor;
 }
+
+@mixin reset-button {
+  @include reset;
+  background-color: transparent;
+}

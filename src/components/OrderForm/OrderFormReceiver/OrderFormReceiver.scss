@@ -4,22 +4,17 @@
   @include default-font-style;
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
+  row-gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
 
   &__title {
-    @include reset;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 28px;
+
   }
 
   &__main {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
+
   }
 
   &__fio {

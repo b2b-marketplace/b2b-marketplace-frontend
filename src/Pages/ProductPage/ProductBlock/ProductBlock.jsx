@@ -6,7 +6,7 @@ import IconNotAvailable from '../../../components/UI/Icon/Icon_not-available';
 import IconScales from '../../../components/UI/Icon/Icon_scales';
 import IconHearth from '../../../components/UI/Icon/Icon_hearth';
 import IconInfo from '../../../components/UI/Icon/Icon_info';
-import ProductRating from '../../../components/ProductRating/ProductRating';
+import ProductRating from '../../../components/Product/ProductRating/ProductRating';
 import CharacteristicColor from '../../../components/CharacteristicColor/CharacteristicColor';
 import { useEffect, useState } from 'react';
 import CommentsBlock from '../../../components/CommentsBlock/CommentsBlock';
