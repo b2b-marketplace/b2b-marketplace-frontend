@@ -74,3 +74,4 @@ jobs:
             docker compose --file infra/docker-compose.stage.yaml stop
             docker compose --file infra/docker-compose.stage.yaml rm frontend
             docker compose --file infra/docker-compose.stage.yaml up -d
+# test deploy
