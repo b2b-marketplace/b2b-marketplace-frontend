@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: Dockerfile.front
+          file: Dockerfile
           labels: runnumber=${GITHUB_RUN_ID}
           push: true
           tags: |
@@ -55,20 +55,9 @@ jobs:
     needs: buld_and_push_image_to_github_packages
     environment:
       name: Stage
-
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-      - name: Copy docker-compose to server
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          source: 'docker-compose.front.yaml'
-          target: ${{ env.DEPLOY_PATH }}
-      - name: Execute remote commands to deploy and start app
+      -
+        name: Execute remote commands to deploy and start app
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
@@ -76,11 +65,12 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-
+            cd ${{ env.DEPLOY_PATH }}
+            
             echo ${{ secrets.REGISTRY_PAT }} | docker login ${{ env.REGISTRY }} -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
 
             docker image prune -f
             docker pull  ${{ env.REGISTRY }}/${{ env.REP_OWNER }}/${{ env.IMAGE_NAME }}:latest
-            docker compose --file docker-compose.front.yaml stop
-            docker compose --file docker-compose.front.yaml rm frontend
-            docker compose --file docker-compose.front.yaml up -d
+            docker compose --file infra/docker-compose.stage.yaml stop
+            docker compose --file infra/docker-compose.stage.yaml rm frontend
+            docker compose --file infra/docker-compose.stage.yaml up -d
