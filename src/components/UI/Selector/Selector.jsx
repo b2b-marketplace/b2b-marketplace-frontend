@@ -8,7 +8,8 @@ const Selector = (props) => {
   const handleChange = (newAddress = '') => onChange({
     target: {
       name,
-      value: newAddress.value
+      value: newAddress.value,
+      validationMessage: newAddress.value ? '' : 'Необходимо выбрать'
     }
   });
 
