@@ -1,6 +1,7 @@
 @import '../../../styles/global';
 
 .about-us-page {
+  padding: 52px 0 120px;
   max-width: 1108px;
   display: flex;
   flex-direction: column;
@@ -42,5 +43,6 @@
     font-weight: 400;
     font-size: 20px;
     margin: 0 0 32px;
+    padding-left: 20px;
   }
 }

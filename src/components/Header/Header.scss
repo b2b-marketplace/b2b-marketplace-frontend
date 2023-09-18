@@ -109,7 +109,6 @@
   }
 
   &__input {
-    width: 20%;
     border: none;
     padding: 0;
     height: 20px;
@@ -143,7 +142,6 @@
     font-family: $fontFamilyNunitoSans;
     line-height: normal;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;

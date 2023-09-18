@@ -1,11 +1,12 @@
 @import '../../../styles/global.scss';
 
-.question {
+.question-page {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
+  padding: 52px 0 120px;
 
   &__title {
     display: flex;
