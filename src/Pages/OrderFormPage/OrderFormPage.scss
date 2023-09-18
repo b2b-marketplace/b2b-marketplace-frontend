@@ -7,10 +7,18 @@
   max-width: $maxWidth;
   min-width: $minWidth;
   margin-top: 52px;
+  column-gap: 60px;
 
   &__container {
     display: flex;
     flex-direction: column;
     row-gap: 80px;
+  }
+
+  &__detail-buttons {
+  }
+
+  &__detail-content {
+
   }
 }

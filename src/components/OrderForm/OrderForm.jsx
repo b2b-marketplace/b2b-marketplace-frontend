@@ -9,6 +9,7 @@ import { addDeliveryAddress } from '../../store/slices/basketSlice';
 
 const OrderForm = ({ extraClassName, productList }) => {
   const dispatch = useDispatch();
+  //const deliveryAddressList = useSelector((state) => state.basket.basket.delivery_address || []);
 
   const handleGetStockAddr = useCallback((stock) => {
     dispatch(addDeliveryAddress({ deliveryAddress: stock }));
