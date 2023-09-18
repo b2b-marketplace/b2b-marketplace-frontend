@@ -13,11 +13,13 @@ import storage from 'redux-persist/lib/storage';
 import { accountReducer } from './slices/accountSlice';
 import { basketReducer } from './slices/basketSlice';
 import { productsReducer } from './slices/productsSlice';
+import { popupReducer } from './slices/togglePopupSlice.js';
 
 const rootReducer = combineReducers({
   account: accountReducer,
   basket: basketReducer,
   products: productsReducer,
+  popup: popupReducer,
 });
 
 const persistConfig = {

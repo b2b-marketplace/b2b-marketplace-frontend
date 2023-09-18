@@ -5,7 +5,6 @@ import HomePage from '../Pages/HomePage/HomePage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
-import React from 'react';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
 import AccountBuyerProfile from '../Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
 import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/AccountSellerProfile';
@@ -15,8 +14,10 @@ import ProductPage from '../Pages/ProductPage/ProductPage';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
 import NotFound from '../components/NotFound/NotFound';
 import OrderFormPage from '../Pages/OrderFormPage/OrderFormPage';
+import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 
 function App() {
+
   return (
     <div className="app">
       <Header />
@@ -39,6 +40,7 @@ function App() {
       </Routes>
       <ButtonScrollUp />
       <Footer />
+      <AuthPopup />
     </div>
   );
 }

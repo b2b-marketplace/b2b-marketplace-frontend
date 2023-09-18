@@ -1,0 +1,101 @@
+@import '../../../styles/vars';
+
+.input-label {
+	width: 100%;
+	position: relative;
+	font-family: $fontFamilyNunitoSans;
+
+	&__button {
+		position: absolute;
+
+		&_type {
+
+			&_password {
+				top: 9px;
+				right: 18px;
+			}
+		}
+	}
+
+	&_size {
+		&_l {
+			max-width: 504px;
+		}
+
+		&_m {
+			max-width: 239px;
+		}
+
+		&_s {
+			max-width: 44px;
+		}
+	}
+
+	&__span {
+		display: inline-block;
+		text-align: left;
+		margin-top: 4px;
+		width: 100%;
+		box-sizing: border-box;
+
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0;
+		color: $grayColor;
+		transition: color .3s ease-in;
+
+		&_valid {
+			color: $greenColor;
+		}
+	}
+
+
+}
+
+// убрал стрелочки у инпута number при наведении
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.input {
+	background-color: transparent;
+	border-radius: 10px;
+	color: $grayColor;
+	width: 100%;
+	border: 1px solid $darkColor;
+	outline: none;
+	padding: 8px 16px;
+	box-sizing: border-box;
+	appearance: none;
+	width: 100%;
+	height: 40px;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0;
+	text-align: left;
+
+	&_size {
+		&_s {
+			padding: 10px 8px;
+			height: 44px;
+			text-align: center;
+
+			color: $blackColor;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 24px;
+		}
+	}
+
+}

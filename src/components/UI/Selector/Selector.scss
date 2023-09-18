@@ -1,0 +1,151 @@
+@import '../../../styles/vars';
+
+@keyframes scaleIn {
+	0% {
+		opacity: 0;
+		transform: scale(.9);
+	}
+
+	50% {
+		opacity: .3;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes rotatingX {
+	0% {
+		transform: rotateX(0);
+	}
+
+	100% {
+		transform: rotateX(180deg);
+	}
+}
+
+@keyframes rotatingXReverse {
+	0% {
+		transform: rotateX(180deg);
+		opacity: 1;
+	}
+
+	50% {
+		opacity: .5;
+	}
+
+	100% {
+		transform: rotateX(0);
+		opacity: 1;
+	}
+}
+
+
+.custom-select {
+	background-color: transparent;
+	// width: 100% !important;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0;
+	text-align: left;
+	height: 40px;
+
+	&__control {
+		border: 1px solid $darkColor !important;
+		border-radius: 10px !important;
+		outline: none !important;
+
+		&--is-focused {
+			border-color: $darkColor;
+			// box-shadow: 0 0 0 1px $darkColor !important;
+			box-shadow: none !important;
+
+		}
+
+		&--menu-is-open {
+			border-color: $darkColor;
+			box-shadow: none !important;
+
+			& .custom-select__dropdown-indicator {
+				animation: rotatingX .3s ease-in-out forwards;
+			}
+		}
+	}
+
+	&__dropdown-indicator {
+		animation: rotatingXReverse .3s ease-in-out;
+		background-image: url(../../../images/select-icon.svg);
+		background-position: 2px 3px;
+		background-repeat: no-repeat;
+
+		&>svg {
+			opacity: 0;
+		}
+	}
+
+	&__menu {
+		animation: scaleIn .3s ease-in-out;
+		border-radius: 10px !important;
+
+
+		&-list {
+			border-radius: 10px !important;
+			padding: 0 !important;
+			max-height: 160px !important;
+
+			&::-webkit-scrollbar {
+				width: 4px !important;
+				height: 0px !important;
+				padding-right: 55px !important;
+			}
+			&::-webkit-scrollbar-track {
+				background: #f1f1f1 !important;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: #888 !important;
+			}
+			&::-webkit-scrollbar-thumb:hover {
+				background: #555 !important;
+			}
+		}
+	}
+
+	&__value-container {
+		cursor: text;
+	}
+
+	&__option {
+		color: $grayColor !important;
+		cursor: pointer !important;
+
+		&--is-focused {
+			color: $blueColor !important;
+			background-color: transparent !important;
+		}
+
+		&--is-selected {
+			color: $whiteColor !important;
+			background-color: $blueColor !important;
+		}
+	}
+
+	&__input-container,
+	&__value-container,
+	&__single-value,
+	&__control {
+		color: $grayColor !important;
+	}
+
+	&__indicator-separator {
+		opacity: 0;
+	}
+
+	&__indicator {
+		cursor: pointer;
+	}
+
+}
