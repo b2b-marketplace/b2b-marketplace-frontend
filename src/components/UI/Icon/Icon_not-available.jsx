@@ -8,22 +8,11 @@ const IconNotAvailable = ({ className, ...props }) => {
         width="32"
         height="32"
         viewBox="0 0 32 32"
-        fill="none">
-        <circle
-          cx="16"
-          cy="16"
-          r="12"
-          fill="#F76C6C" />
-        <path
-          d="M12 12L20 20"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round" />
-        <path
-          d="M20 12L12 20"
-          stroke="white"
-          strokeWidth="1.5"
-          strokeLinecap="round" />
+        fill="none"
+      >
+        <circle cx="16" cy="16" r="12" fill="#F76C6C" />
+        <path d="M12 12L20 20" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M20 12L12 20" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     </Icon>
   );

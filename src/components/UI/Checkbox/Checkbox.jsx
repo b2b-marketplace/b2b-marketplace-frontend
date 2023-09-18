@@ -6,31 +6,29 @@ import './Checkbox.scss';
  *
  * @param {string} className - Дополнительные CSS классы для настройки внешнего вида.
  * @param {string} name - Имя чекбокса.
- * @param {function} onCheckboxClick - Функция обратного вызова при клике на элемент чекбокса.
- * @param {boolean} isChecked - Состояние выбора чекбокса.
+ * @param {function} handleChangeCheckbox - Функция обратного вызова при клике на элемент чекбокса.
+ * @param {boolean} checked - Состояние выбора чекбокса.
  * @param children -  Дочерние элементы.
  * @returns {JSX.Element} - Возвращает JSX-элемент компонента Checkbox.
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const Checkbox = ({ className, name, onCheckboxClick, isChecked, children }) => {
-  const containerRef = useRef(null);
-
+const Checkbox = ({ className, name, handleChangeCheckbox, checked, children }) => {
   const handleClick = (event) => {
-    if (event.target.tagName.toLowerCase() !== 'input') onCheckboxClick(event);
-    event.stopPropagation();
+    if (handleChangeCheckbox && event.target.tagName.toLowerCase() !== 'input')
+      handleChangeCheckbox(event);
   };
 
   return (
-    <label onClick={handleClick} ref={containerRef} className={`checkbox ${className || ''}`}>
+    <label onClick={handleClick} className={`checkbox ${className || ''}`}>
       <input
         className="checkbox__input"
         type="checkbox"
         name={name}
-        value={isChecked ? 'true' : 'false'}
-        checked={isChecked}
+        value={checked ? 'true' : 'false'}
+        checked={checked}
         onChange={() => {}}
       />
-      <span className={`checkbox__checkbox ${isChecked ? 'checkbox__checkbox_active' : ''}`}></span>
+      <span className={`checkbox__checkbox ${checked ? 'checkbox__checkbox_active' : ''}`}></span>
       {children}
     </label>
   );

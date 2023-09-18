@@ -6,7 +6,7 @@ import IconNotAvailable from '../../../components/UI/Icon/Icon_not-available';
 import IconScales from '../../../components/UI/Icon/Icon_scales';
 import IconHearth from '../../../components/UI/Icon/Icon_hearth';
 import IconInfo from '../../../components/UI/Icon/Icon_info';
-import ProductRating from '../../../components/ProductRating/ProductRating';
+import ProductRating from '../../../components/Product/ProductRating/ProductRating';
 import CharacteristicColor from '../../../components/CharacteristicColor/CharacteristicColor';
 import { useEffect, useState } from 'react';
 import CommentsBlock from '../../../components/CommentsBlock/CommentsBlock';
@@ -21,9 +21,7 @@ import { addProduct, deleteProduct, changeQuantity } from '../../../store/slices
 export default function ProductBlock({ product }) {
   // console.log(product);
   let imagesList;
-  product.images.length === 0
-    ? (imagesList = [{ image: noPhoto }])
-    : (imagesList = product.images);
+  product.images.length === 0 ? (imagesList = [{ image: noPhoto }]) : (imagesList = product.images);
 
   const [mainImage, setMainImage] = useState();
   const [isProductSelect, setIsProductSelect] = useState(false);
@@ -37,8 +35,7 @@ export default function ProductBlock({ product }) {
       basketList.basket_products.find((item) => item.id === product.id)
     )
       setIsProductSelect(true);
-    else
-      setIsProductSelect(false);
+    else setIsProductSelect(false);
   }, [basketList.basket_products, product.id]);
 
   const handleSelect = () => {
@@ -55,7 +52,6 @@ export default function ProductBlock({ product }) {
   const handleImageClick = (event) => {
     setMainImage(event.target.src);
   };
-
 
   return (
     <section className="product-block">
@@ -93,7 +89,9 @@ export default function ProductBlock({ product }) {
             <p className="info__shipper-name">{product.seller.name || ''}</p>
             <IconInfo
               className="info__shipper-icon hint-right-middle"
-              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${product.seller.ogrn || ''}`}
+              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${
+                product.seller.ogrn || ''
+              }`}
             />
           </div>
 
@@ -182,22 +180,19 @@ export default function ProductBlock({ product }) {
         <div className="description">
           <div className="description__item">
             <h4 className="description__title">Описание</h4>
-            <p className="description__text">
-              {product.description}
-            </p>
+            <p className="description__text">{product.description}</p>
           </div>
           <div className="description__item">
             <h4 className="description__title">Характеристики</h4>
-            <ul className='specification'>
-              <li className='specification__item'>
-                <span className='specification__name' >Страна производитель</span>
-                <span className='specification__value'>{product.manufacturer_country}</span>
+            <ul className="specification">
+              <li className="specification__item">
+                <span className="specification__name">Страна производитель</span>
+                <span className="specification__value">{product.manufacturer_country}</span>
               </li>
-              <li className='specification__item'>
-                <span className='specification__name' >Бренд</span>
-                <span className='specification__value'>{product.brand}</span>
+              <li className="specification__item">
+                <span className="specification__name">Бренд</span>
+                <span className="specification__value">{product.brand}</span>
               </li>
-
             </ul>
           </div>
         </div>

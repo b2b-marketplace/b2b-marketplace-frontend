@@ -1,0 +1,16 @@
+@import '../../styles/global.scss';
+
+.order-form-page {
+  @include default-font-style;
+  display: flex;
+  width: 100%;
+  max-width: $maxWidth;
+  min-width: $minWidth;
+  margin-top: 52px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+  }
+}
