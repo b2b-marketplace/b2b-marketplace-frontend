@@ -12,21 +12,25 @@ import useInput from '../../../hooks/useInput';
 const RegisterPopup = () => {
   const { isOpen, closePopup } = usePopup('registration');
   const { openPopup: openCompleteRegistration } = usePopup('completeRegistration');
+
   const [step, setStep] = useState(1);
   const [isEntity, setisEntity] = useState(false);
-  const initValueParams = {
-    email: '',
-    password: '',
-    repeat_password: '',
-    role: '',
-    name: '',
-    inn: '',
-    phone_number: '',
-    address: '',
-    vat: ''
+  const [role, setRole] = useState('');
+  const [form, setForm] = useState({});
+  const [isNotValid, setIsNotValid] = useState(true);
+
+  const handleForm = (inputData, newIsNotValid) => {
+    console.log(newIsNotValid);
+    setForm(state => ({
+      ...state,
+      ...inputData
+    }));
+    setIsNotValid(newIsNotValid);
   };
 
-  const { values, handleChange, resetValues } = useInput(initValueParams);
+  // const personValidation = useInput(initValueParams);
+  // const lastStepValidation = useInput(initLastParams);
+  // const currentValidation = isEntity ? entityValidation : personValidation;
 
   const fieldsetHeight = step === 3
     ? isEntity
@@ -48,8 +52,8 @@ const RegisterPopup = () => {
     setStep(step + 1);
   };
 
-  const handleType = (event) => {
-    handleChange(event);
+  const handleType = ({ target }) => {
+    setRole(target.value);
     handleNextStep();
   };
 
@@ -64,12 +68,17 @@ const RegisterPopup = () => {
       closePopup();
       openCompleteRegistration();
     }
-    const { password, repeat_password, email, phone_number, address, ...company } = values;
+
+    const { email, password, phone_number, address, ...company } = form;
     authApi.registerCompany({
       email,
       password,
+      // FIXME: just for presentation
+      // username: `test-name-${Math.floor(Math.random() * 1000000)}`,
+      username: email,
       company: {
         ...company,
+        role,
         vat: company.vat === 'yes',
         phone_number: {
           phone_number
@@ -88,8 +97,9 @@ const RegisterPopup = () => {
   useEffect(() => {
     if (!isOpen) {
       setStep(1);
-      resetValues();
+      setForm({});
       setisEntity(false);
+      setRole('');
     }
   }, [isOpen]);
 
@@ -108,7 +118,7 @@ const RegisterPopup = () => {
         onSubmit={handleSubmit}
         btnText={formParams[step - 1].btnText}
         btnType="submit"
-      // btnOnClick={step === 4 ? undefined : handleNextStep}
+        formDisabled={isNotValid}
       >
         {
           step === 1 &&
@@ -122,11 +132,16 @@ const RegisterPopup = () => {
         <fieldset style={{ 'height': fieldsetHeight }} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
           {
             step === 3 &&
-            <RegistrationThirdStep values={values} onChange={handleChange} isEntity={isEntity} />
+            <RegistrationThirdStep
+              isEntity={isEntity}
+              onFormChange={handleForm}
+            />
           }
           {
             step === 4 &&
-            <RegistrationLastStep values={values} onChange={handleChange} />
+            <RegistrationLastStep
+              onFormChange={handleForm}
+            />
           }
         </fieldset>
       </Form>

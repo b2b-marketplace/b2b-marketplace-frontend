@@ -1,6 +1,6 @@
-import { Button } from "../../UI/Button/Button";
+import { Button } from '../../UI/Button/Button';
 
-const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType }) => {
+const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType, formDisabled }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit && onSubmit();
@@ -8,7 +8,7 @@ const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType }) =
   };
 
   return (
-    <form className={className} onSubmit={handleSubmit} >
+    <form className={className} onSubmit={handleSubmit} noValidate >
 
       {children}
       {btnText &&
@@ -19,6 +19,7 @@ const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType }) =
             onClick={btnOnClick}
             mode="secondary"
             dark={true}
+            disabled={formDisabled}
           >
             {btnText}
           </Button>

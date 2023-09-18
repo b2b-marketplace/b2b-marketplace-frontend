@@ -2,24 +2,19 @@ import PropTypes from 'prop-types';
 import './Input.scss';
 import Selector from '../../UI/Selector/Selector';
 
-const Input = ({ size, type, className, children, text, labelClassName, ...props }) => {
+const Input = ({ size, type, className, children, text, labelClassName, isNotError, ...props }) => {
   const inputClass = ['input', `input_size_${size}`, className].join(' ');
   const labelClass = ['input-label', `input-label_size_${size}`, labelClassName].join(' ');
   const isSelect = type === 'select';
+
+  const spanValidClass = `input-label__span${isNotError ? ' input-label__span_valid' : ''}`;
 
   return (
     <label className={labelClass}>
       {
         isSelect
           ? (
-            // <select
-            //   className={selectClass}
-            //   {...props}
-            // >
-            //   {children}
-            // </select>
             <Selector
-              // className={selectClass}
               {...props}
             />
           ) : (
@@ -36,7 +31,7 @@ const Input = ({ size, type, className, children, text, labelClassName, ...props
 
           )
       }
-      {size !== 's' && <span className="input-label__span">{text}</span>}
+      {size !== 's' && <span className={spanValidClass}>{text}</span>}
     </label>
   );
 };

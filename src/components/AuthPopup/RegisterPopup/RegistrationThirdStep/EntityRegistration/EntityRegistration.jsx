@@ -1,5 +1,7 @@
-import Input from "../../../Input/Input";
-import LabelCheckbox from "../../../LabelCheckbox/LabelCheckbox";
+import { useEffect } from 'react';
+import useInput from '../../../../../hooks/useInput';
+import Input from '../../../Input/Input';
+import LabelCheckbox from '../../../LabelCheckbox/LabelCheckbox';
 const options = [
   { value: 'moscow', label: 'Московская Область' },
   { value: 'Spb', label: 'Ленинградская Область' },
@@ -7,7 +9,25 @@ const options = [
   { value: 'HowkCity', label: 'Орловская Область' },
 ];
 
-const EntityRegistration = ({ onChange, values }) => {
+const EntityRegistration = ({ onFormChange }) => {
+
+  const initValueParams = {
+    email: '',
+    name: '',
+    inn: '',
+    phone_number: '',
+    address: '',
+    vat: ''
+  };
+
+  const { errors, values, handleChange, isDirtyInputs, isNotValidForm} = useInput(initValueParams);
+
+  const onChange = (event) => {
+    handleChange(event);
+  };
+
+  useEffect(() => onFormChange(values, isNotValidForm), [values, isNotValidForm]);
+
   return (
     <>
       <Input
@@ -20,6 +40,7 @@ const EntityRegistration = ({ onChange, values }) => {
         value={values.name}
         maxLength={100}
         required
+        isNotError={!errors.name && isDirtyInputs.name}
       />
       <Input
         name="inn"
@@ -30,8 +51,8 @@ const EntityRegistration = ({ onChange, values }) => {
         onChange={onChange}
         value={values.inn}
         minLength={10}
-        maxLength={10}
         required
+        isNotError={!errors.inn && isDirtyInputs.inn && values.inn.length >= 10}
       >
       </Input>
       <div className="popup__inputs">
@@ -45,6 +66,7 @@ const EntityRegistration = ({ onChange, values }) => {
           value={values.phone_number}
           maxLength={20}
           required
+          isNotError={!errors.phone_number && isDirtyInputs.phone_number}
         />
         <Input
           name="email"
@@ -56,9 +78,10 @@ const EntityRegistration = ({ onChange, values }) => {
           value={values.email}
           maxLength={254}
           required
+          isNotError={!errors.email && isDirtyInputs.email}
         />
       </div>
-      
+
       <Input
         name="address"
         type="select"
@@ -70,6 +93,7 @@ const EntityRegistration = ({ onChange, values }) => {
         options={options}
         autoComplete='off'
         required
+        isNotError={!errors.address && isDirtyInputs.address}
       />
       <div className="popup__container popup__container_type_radio">
         <h2 className="popup__subtitle popup__subtitle_type_bolded">Вы работаете с НДС?</h2>

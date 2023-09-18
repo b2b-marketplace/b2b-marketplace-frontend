@@ -17,7 +17,7 @@ const LoginPopup = () => {
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
-  const { values, handleChange, resetValues } = useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
 
   const handleSubmit = () => {
     authApi.login(values)
@@ -51,17 +51,20 @@ const LoginPopup = () => {
         onSubmit={handleSubmit}
         btnText="Далее"
         btnType={"submit"}
+        formDisabled={isNotValidForm}
       >
         <fieldset className="popup__fieldset">
           <Input
             name="email"
-            type="text"
-            placeholder="Логин"
+            type="email"
+            placeholder="box@mail.ru"
             size="l"
-            text="Латиница, цифры"
+            text="Почта"
             onChange={handleChange}
             value={values.email}
+            maxLength={254}
             required
+            isNotError={!errors.email && isDirtyInputs.email}
           />
           <Input
             name="password"
@@ -72,7 +75,9 @@ const LoginPopup = () => {
             text="От 10 символов, латиница, цифры, символы"
             onChange={handleChange}
             value={values.password}
+            minLength={10}
             required
+            isNotError={!errors.password && isDirtyInputs.password}
           >
             <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShow} type="button">
               <IconPassword isVisiblePassword={isShow} />

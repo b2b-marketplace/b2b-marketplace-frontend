@@ -5,6 +5,7 @@ const LabelCheckbox = ({ id, text, ...props }) => {
       <input
         className={`popup__checkbox popup__checkbox_type_${props.type}`}
         id={id}
+        required
         {...props}
       />
       <span className="popup__checkbox-span">{text}</span>

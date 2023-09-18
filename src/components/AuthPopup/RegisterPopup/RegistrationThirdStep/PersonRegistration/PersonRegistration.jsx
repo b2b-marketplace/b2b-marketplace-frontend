@@ -1,4 +1,6 @@
-import Input from "../../../Input/Input";
+import { useEffect } from 'react';
+import useInput from '../../../../../hooks/useInput';
+import Input from '../../../Input/Input';
 const options = [
   { value: 'moscow', label: 'Московская Область' },
   { value: 'Spb', label: 'Ленинградская Область' },
@@ -6,7 +8,23 @@ const options = [
   { value: 'HowkCity', label: 'Орловская Область' },
 ];
 
-const PersonRegistration = ({ onChange, values }) => {
+const PersonRegistration = ({ onFormChange, }) => {
+  const initValueParams = {
+    email: '',
+    name: '',
+    inn: '',
+    phone_number: '',
+    address: '',
+    vat: ''
+  };
+
+  const { errors, values, handleChange, isDirtyInputs, isNotValidForm} = useInput(initValueParams);
+
+  const onChange = (event) => {
+    handleChange(event);
+  };
+
+  useEffect(() => onFormChange(values, isNotValidForm), [values, isNotValidForm]);
   return (
     <>
       <Input

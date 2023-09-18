@@ -1,12 +1,31 @@
-import useShowPassword from "../../../../hooks/useShowPassword";
-import IconPassword from "../../../UI/Icon/IconPassword";
-import Input from "../../Input/Input";
-import LabelCheckbox from "../../LabelCheckbox/LabelCheckbox";
-import PopupButton from "../../PopupButton/PopupButton";
+import { useEffect } from 'react';
+import useInput from '../../../../hooks/useInput';
+import useShowPassword from '../../../../hooks/useShowPassword';
+import IconPassword from '../../../UI/Icon/IconPassword';
+import Input from '../../Input/Input';
+import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
+import PopupButton from '../../PopupButton/PopupButton';
 
-const RegistrationLastStep = ({ values, onChange}) => {
+const RegistrationLastStep = ({ onFormChange }) => {
   const { isShow, handleShow } = useShowPassword(false);
   const { isShow: isShowRepeat, handleShow: handleShowRepeat } = useShowPassword(false);
+  const initValueParams = {
+    password: '',
+    repeat_password: '',
+    terms: ''
+  };
+
+  const { errors, values, handleChange, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
+
+  const onChange = (event) => {
+    handleChange(event);
+  };
+  
+  const isPasswordsMatch = values.password === values.repeat_password;
+
+  useEffect(() => onFormChange(values, isNotValidForm || !isPasswordsMatch), [values, isNotValidForm]);
+
+
   return (
     <>
       <Input
@@ -20,6 +39,7 @@ const RegistrationLastStep = ({ values, onChange}) => {
         value={values.password}
         minLength={10}
         required
+        isNotError={!errors.password && isDirtyInputs.password}
       >
         <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShow} type="button">
           <IconPassword isVisiblePassword={isShow} />
@@ -37,13 +57,22 @@ const RegistrationLastStep = ({ values, onChange}) => {
         value={values.repeat_password}
         minLength={10}
         required
+        isNotError={!errors.repeat_password && isPasswordsMatch && isDirtyInputs.repeat_password}
       >
         <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShowRepeat} type="button">
           <IconPassword isVisiblePassword={isShowRepeat} />
         </button>
       </Input>
-      <div className="popup__terms">
-        <LabelCheckbox required type="checkbox" name="terms" id="terms" text="Я принимаю правила сайта" />
+      <div className="popup__terms">q
+        <LabelCheckbox
+          name="terms"
+          id="terms"
+          text="Я принимаю правила сайта"
+          type="checkbox"
+          checked={values.terms}
+          onChange={onChange}
+          required
+        />
 
         <PopupButton type="button" className="popup__button popup__underlined-text">Познакомиться с правилами</PopupButton>
       </div>

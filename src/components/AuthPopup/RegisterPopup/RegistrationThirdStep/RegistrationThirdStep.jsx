@@ -2,12 +2,12 @@
 import EntityRegistration from './EntityRegistration/EntityRegistration';
 import PersonRegistration from './PersonRegistration/PersonRegistration';
 
-const RegistrationThirdStep = ({ isEntity, onChange, values }) => {
+const RegistrationThirdStep = ({ isEntity, onFormChange }) => {
   if (isEntity) {
-    return (<EntityRegistration onChange={onChange} values={values} />);
+    return (<EntityRegistration onFormChange={onFormChange} />);
   }
   return (
-    <PersonRegistration onChange={onChange} values={values} />
+    <PersonRegistration onFormChange={onFormChange} />
   );
 };
 
