@@ -1,4 +1,4 @@
-@import "../../../../styles/global";
+@import '../../../../styles/global';
 
 .order-detail-content-order-page {
   @include default-font-style;
@@ -22,14 +22,11 @@
   }
 
   &__name {
-
   }
 
   &__price {
-
   }
 
   &__description {
-
   }
 }

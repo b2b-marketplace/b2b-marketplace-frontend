@@ -1,10 +1,9 @@
-@import "../../../styles/global";
+@import '../../../styles/global';
 
 .delivery-warehouse-address-list {
   @include default-font-style;
   display: flex;
   flex-direction: column;
-
 
   &__title {
     @include reset;
@@ -32,7 +31,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 
   &__content {
@@ -43,7 +41,6 @@
   &__price {
     font-size: 14px;
     font-weight: 700;
-    line-height: 20px
+    line-height: 20px;
   }
-
 }

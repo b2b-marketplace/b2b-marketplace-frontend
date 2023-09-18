@@ -1,4 +1,4 @@
-@import "../../../../styles/global";
+@import '../../../../styles/global';
 
 .delivery-warehouse-address {
   @include default-font-style;
@@ -13,7 +13,7 @@
     object-fit: cover;
     box-sizing: border-box;
     border-radius: 8px;
-    border: 1px solid rgba(123, 124, 130, 0.20);
+    border: 1px solid rgba(123, 124, 130, 0.2);
   }
 
   &__content {
