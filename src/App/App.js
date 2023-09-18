@@ -12,8 +12,8 @@ import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
-import OrderPage from '../Pages/OrderPage/OrderPage';
 import NotFound from '../components/NotFound/NotFound';
+import OrderFormPage from '../Pages/OrderFormPage/OrderFormPage';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/order" element={<OrderPage />} exact />
+        <Route path="/order" element={<OrderFormPage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />
@@ -36,7 +36,7 @@ function App() {
           </Route>
           <Route index element={<Navigate to="profile" />} />
         </Route>
-        <Route path='*' element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ButtonScrollUp />
       <Footer />

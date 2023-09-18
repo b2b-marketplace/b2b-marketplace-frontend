@@ -18,7 +18,7 @@ const AboutUsPage = () => {
         ассортименте маркетплейса.
       </p>
       <h3 className="about-us-page__subtitle">Что мы предлагаем</h3>
-      <ol className='about-us-page__lists'>
+      <ol className="about-us-page__lists">
         <li className="about-us-page__list">
           Широкий выбор продукции: На нашей платформе представлен огромный ассортимент товаров от
           надежных оптовых продавцов. Вы можете легко найти и выбрать нужные товары для вашего
