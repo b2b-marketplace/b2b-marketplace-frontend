@@ -121,8 +121,8 @@ const Basket = ({ extraClassName }) => {
 
   const handleClickCheckboxSelectAllProduct = () => {
     if (isCheckAll) {
-      setSelectedProductId([]);
       dispatch(changeChecked({ productIds: [], checked: false }));
+      setSelectedProductId([]);
     } else {
       const allProductIds = currentProductList.map((product) => product.id);
       dispatch(changeChecked({ productIds: [], checked: true }));

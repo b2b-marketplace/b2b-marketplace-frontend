@@ -12,19 +12,17 @@ import './Checkbox.scss';
  * @returns {JSX.Element} - Возвращает JSX-элемент компонента Checkbox.
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const Checkbox = ({ className, name, handleChangeCheckbox, checked, children }) => {
+const Checkbox = ({ className, name, handleChangeCheckbox, children, checked = false }) => {
   const handleClick = (event) => {
     if (handleChangeCheckbox && event.target.tagName.toLowerCase() !== 'input')
       handleChangeCheckbox(event);
   };
-
   return (
     <label onClick={handleClick} className={`checkbox ${className || ''}`}>
       <input
         className="checkbox__input"
         type="checkbox"
         name={name}
-        value={checked ? 'true' : 'false'}
         checked={checked}
         onChange={() => {}}
       />
