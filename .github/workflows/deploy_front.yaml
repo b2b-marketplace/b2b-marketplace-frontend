@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: Dockerfile.front
+          file: Dockerfile
           labels: runnumber=${GITHUB_RUN_ID}
           push: true
           tags: |
@@ -71,7 +71,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: "docker-compose.front.yaml"
+          source: "infra/docker-compose.stage.yaml,infra/nginx/nginx.stage.conf"
           target: ${{ env.DEPLOY_PATH }}
       -
         name: Execute remote commands to deploy and start app
@@ -82,11 +82,32 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            cd ${{ env.DEPLOY_PATH }}
+            rm -f infra/.env
+            touch infra/.env
+
+            echo APPLICATION_URL=${{ secrets.APPLICATION_URL }} >> infra/.env
+
+            echo DJANGO_SECRET_KEY=$'${{ secrets.DJANGO_SECRET_KEY }}' >> infra/.env
+            echo DJANGO_ALLOWED_HOSTS=${{ secrets.DJANGO_ALLOWED_HOSTS }} >> infra/.env
+            echo CSRF_TRUSTED_ORIGINS=${{ secrets.CSRF_TRUSTED_ORIGINS }} >> infra/.env
+            echo DJANGO_DEBUG=${{ secrets.DJANGO_DEBUG }} >> infra/.env
+
+            echo POSTGRES_DB=${{ secrets.POSTGRES_DB }} >> infra/.env
+            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> infra/.env
+            echo POSTGRES_PASSWORD=$'${{ secrets.POSTGRES_PASSWORD }}' >> infra/.env
+            echo POSTGRES_HOST=${{ secrets.POSTGRES_HOST }} >> infra/.env
+            echo POSTGRES_PORT=${{ secrets.POSTGRES_PORT }} >> infra/.env
+
+            echo EMAIL_HOST=${{ secrets.EMAIL_HOST }} >> infra/.env
+            echo EMAIL_PORT=${{ secrets.EMAIL_PORT }} >> infra/.env
+            echo EMAIL_HOST_USER=$'${{ secrets.EMAIL_HOST_USER }}' >> infra/.env
+            echo EMAIL_HOST_PASSWORD=$'${{ secrets.EMAIL_HOST_PASSWORD }}' >> infra/.env
 
             echo ${{ secrets.REGISTRY_PAT }} | docker login ${{ env.REGISTRY }} -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
 
             docker image prune -f
             docker pull  ${{ env.REGISTRY }}/${{ env.REP_OWNER }}/${{ env.IMAGE_NAME }}:latest
-            docker compose --file docker-compose.front.yaml stop
-            docker compose --file docker-compose.front.yaml rm frontend
-            docker compose --file docker-compose.front.yaml up -d
+            docker compose --file infra/docker-compose.stage.yaml stop
+            docker compose --file infra/docker-compose.stage.yaml rm backend
+            docker compose --file infra/docker-compose.stage.yaml up -d
