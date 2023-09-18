@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './QuestionPage.scss';
 
-const Question = () => {
+const QuestionPage = () => {
   const sections = [
     {
       title: 'Главное',
@@ -173,15 +173,15 @@ const Question = () => {
   ];
 
   return (
-    <section className="question">
-      <h2 className="question__title">Частые вопросы</h2>
-      <div className="question__container">
+    <section className="question-page">
+      <h2 className="question-page__title">Частые вопросы</h2>
+      <div className="question-page__container">
         {sections.map((section, index) => (
-          <ul className="question__lists" key={index}>
-            <h3 className="question__paragraph">{section.title}</h3>
+          <ul className="question-page__lists" key={index}>
+            <h3 className="question-page__paragraph">{section.title}</h3>
             {section.questions.map((question, i) => (
-              <li className="question__list" key={i}>
-                <Link className="question__link" to={question.link}>
+              <li className="question-page__list" key={i}>
+                <Link className="question-page__link" to={question.link}>
                   {question.text}
                 </Link>
               </li>
@@ -193,4 +193,4 @@ const Question = () => {
   );
 };
 
-export default Question;
+export default QuestionPage;

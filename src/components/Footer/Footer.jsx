@@ -17,9 +17,9 @@ const Footer = () => {
           <h3 className="footer__title">ООО «БиТуБай»</h3>
           <div className="footer__container-links">
             <p className="footer__link">Все права защищены</p>
-            <a className="footer__link" href="#" target="_blank">
+            <Link className="footer__link" to="/privacy-policy">
               Политика конфиденциальности
-            </a>
+            </Link>
           </div>
         </div>
         <nav className="footer__menu">
@@ -58,17 +58,17 @@ const Footer = () => {
 
           <ul className="footer__lists">
             <li className="footer__list">
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/portal-rules">
                 Правила портала
               </Link>
             </li>
             <li className="footer__list">
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/question-form">
                 Служба поддержки
               </Link>
             </li>
             <li className="footer__list">
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/question-page">
                 Часто задаваемые вопросы
               </Link>
             </li>
@@ -78,7 +78,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="footer__item">
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/about-us">
                 О нас
               </Link>
 
