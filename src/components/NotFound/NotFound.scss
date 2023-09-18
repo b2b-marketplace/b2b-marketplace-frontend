@@ -60,7 +60,7 @@
   &__subtitle {
     margin: 0 0 40px;
     font-size: 36px;
-    line-height: 44px; /* 122.222% */
+    line-height: 44px; 
   }
 
   &__text {
@@ -70,6 +70,7 @@
     font-weight: 600;
     line-height: 28px;
     margin: 0 0 20px;
+    text-wrap: balance;
 
     &:last-of-type {
       margin: 0 0 60px;
