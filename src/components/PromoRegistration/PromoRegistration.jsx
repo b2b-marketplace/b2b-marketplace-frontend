@@ -2,8 +2,12 @@ import React from 'react';
 import './PromoRegistration.scss';
 import logo from '../../images/photo_promo-registration.jpg';
 import { Button } from '../UI/Button/Button';
+import usePopup from '../../hooks/usePopup';
 
 const PromoRegistration = ({ className }) => {
+  const { openPopup: openRegisterPopup } = usePopup('registration');
+  const { openPopup: openLoginPopup } = usePopup('login');
+
   return (
     <section className={`promo-registration ${className || ''}`}>
       <div className="promo-registration__conteiner">
@@ -13,10 +17,10 @@ const PromoRegistration = ({ className }) => {
             Зарегистрируйтесь на нашем портале и найдите новых клиентов, заказчиков и партнёров!
           </p>
 
-          <Button size="l" primary dark>
+          <Button size="l" onClick={openRegisterPopup} primary dark>
             Зарегистрироваться
           </Button>
-          <Button size="l" primary>
+          <Button size="l" onClick={openLoginPopup} primary>
             Войти
           </Button>
         </div>
