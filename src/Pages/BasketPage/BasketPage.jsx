@@ -6,7 +6,7 @@ import './BasketPage.scss';
 const BasketPage = () => {
   return (
     <main className="basket-page">
-      <Basket className="basket-page__basket" />
+      <Basket extraClassName="basket-page__basket" />
       <BannerAdvertising className="basket-page__banner" />
     </main>
   );

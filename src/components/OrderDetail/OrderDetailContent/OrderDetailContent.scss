@@ -1,0 +1,8 @@
+@import '../../../styles/global';
+
+.order-detail-content {
+  @include default-font-style;
+
+  &__total {
+  }
+}
