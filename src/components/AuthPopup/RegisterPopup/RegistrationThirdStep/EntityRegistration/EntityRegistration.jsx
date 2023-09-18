@@ -50,9 +50,9 @@ const EntityRegistration = ({ onFormChange }) => {
         text="Без пробелов"
         onChange={onChange}
         value={values.inn}
-        minLength={10}
+        min={1000000000}
         required
-        isNotError={!errors.inn && isDirtyInputs.inn && values.inn.length >= 10}
+        isNotError={!errors.inn && isDirtyInputs.inn}
       >
       </Input>
       <div className="popup__inputs">
@@ -66,7 +66,7 @@ const EntityRegistration = ({ onFormChange }) => {
           value={values.phone_number}
           maxLength={20}
           required
-          isNotError={!errors.phone_number && isDirtyInputs.phone_number}
+          isNotError={!errors.phone_number && isDirtyInputs.phone_number && values.phone_number.length >= 9}
         />
         <Input
           name="email"
