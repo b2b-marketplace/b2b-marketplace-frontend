@@ -11,9 +11,16 @@ import OrderDetail from '../OrderDetail/OrderDetail';
 import ProductCardHorizontal from '../Product/ProductCardHorizontal/ProductCardHorizontal';
 import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import OrderDetailContent from '../OrderDetail/OrderDetailContent/OrderDetailContent';
 import SidebarRight from '../SidebarRight/SidebarRight';
 import { useNavigate } from 'react-router-dom';
+import {
+  getProductText,
+  getSuppliersText,
+  getProductTotalPrice,
+  getProductQuantity,
+  getCalculateProductInfo,
+} from '../../utils/utils';
+import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 
 const Basket = ({ extraClassName }) => {
   const [currentProductList, setCurrentProductList] = useState([]);
@@ -21,7 +28,7 @@ const Basket = ({ extraClassName }) => {
   const [selectedProductId, setSelectedProductId] = useState([]);
   const [orderInfo, setOrderInfo] = useState({
     productSum: 0,
-    productCount: 0,
+    productQuantity: 0,
     suppliersCount: 0,
   });
   const basketList = useSelector((state) => state.basket.basket);
@@ -90,24 +97,15 @@ const Basket = ({ extraClassName }) => {
     const selectedProducts = currentProductList.filter((product) =>
       selectedProductId.includes(product.id)
     );
-
-    const sumWithProducts = selectedProducts.reduce((total, currentProduct) => {
-      const productPrice = parseFloat(currentProduct.price.replace(/\s/g, ''));
-      const productQuantity = parseFloat(currentProduct.quantity);
-      return total + productPrice * productQuantity;
-    }, 0);
-
+    const { totalPrice, totalQuantity } = getCalculateProductInfo(selectedProducts);
     const suppliersId = new Set(
       selectedProducts.map((currentProduct) => currentProduct.seller[0]?.id)
     );
 
     setOrderInfo({
       suppliersCount: suppliersId.size,
-      productSum: sumWithProducts,
-      productCount: selectedProducts.reduce(
-        (total, currentProduct) => total + parseFloat(currentProduct.quantity),
-        0
-      ),
+      productSum: totalPrice,
+      productQuantity: totalQuantity,
     });
   }, [selectedProductId, currentProductList]);
 
@@ -190,11 +188,10 @@ const Basket = ({ extraClassName }) => {
                     <IconInfoFill className="basket__order-detail-icon-info" />
                   </Tooltip>
                 </OrderDetailHeader>
-                <OrderDetailContent
-                  productSum={orderInfo.productSum}
-                  productCount={orderInfo.productCount}
-                  suppliersCount={orderInfo.suppliersCount}
-                  extraClassName="basket__order-detail-content"
+                <OrderDetailContentBasket
+                  suppliersCount={getSuppliersText(orderInfo.suppliersCount)}
+                  productQuantity={getProductText(orderInfo.productQuantity)}
+                  productSumPrice={orderInfo.productSum}
                 />
                 <div className="basket__order-detail-buttons">
                   <Button
