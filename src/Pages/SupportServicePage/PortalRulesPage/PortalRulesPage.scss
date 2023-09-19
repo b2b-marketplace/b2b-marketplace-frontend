@@ -5,9 +5,10 @@
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
   line-height: 28px;
+  padding: 52px 0 120px;
 
   &__title {
-    font-family: Unbounded;
+    font-family: $fontFamilyUnbounded;
     font-size: 28px;
     font-weight: 500;
     line-height: 44px;

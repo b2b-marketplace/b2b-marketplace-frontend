@@ -25,9 +25,7 @@ const Header = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  axios
-    .get('http://ip-api.com/json?lang=ru')
-    .then(res => setCity(res.data.city));
+  axios.get('http://ip-api.com/json?lang=ru').then((res) => setCity(res.data.city));
 
   return (
     <header className="header">
@@ -45,15 +43,8 @@ const Header = () => {
       </div>
 
       <div className="header__container">
-        <button
-          type='button'
-          className='header__catalog-button'
-          onClick={togglePopup}
-        >
-          {isPopupOpen
-            ? <IconClose />
-            : <IconBurger />
-          }
+        <button type="button" className="header__catalog-button" onClick={togglePopup}>
+          {isPopupOpen ? <IconClose /> : <IconBurger />}
           Каталог
         </button>
 
@@ -81,16 +72,9 @@ const Header = () => {
         </nav>
 
         <div className="header__search">
-          <Input
-            mode="primary"
-            type="text"
-            extraClass="header__input"
-            placeholder="Поиск...."
-
-          />
+          <input type="text" className="header__input" placeholder="Поиск...." />
           <button type="button" className="header__button">
             <IconSearch />
-
           </button>
         </div>
       </div>

@@ -23,7 +23,7 @@ const NotFound = () => {
         Возможно неправильно набран адрес или такой страницы больше не существует
       </p>
       <p className="not-found__text">Перейдите на главную, чтобы продолжить работу</p>
-      <Link to='/' className='not-found__link'>
+      <Link to="/" className="not-found__link">
         <Button size="l" primary dark>
           На главную
         </Button>

@@ -5,7 +5,6 @@ import HomePage from '../Pages/HomePage/HomePage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
-import React from 'react';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
 import AccountBuyerProfile from '../Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
 import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/AccountSellerProfile';
@@ -13,8 +12,15 @@ import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
 import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
-import OrderPage from '../Pages/OrderPage/OrderPage';
 import NotFound from '../components/NotFound/NotFound';
+import OrderFormPage from '../Pages/OrderFormPage/OrderFormPage';
+import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
+import AboutUsPage from '../Pages/SupportServicePage/AboutUsPage/AboutUsPage';
+import PrivacyPolicyPage from '../Pages/SupportServicePage/PrivacyPolicyPage/PrivacyPolicyPage';
+import PortalRulesPage from '../Pages/SupportServicePage/PortalRulesPage/PortalRulesPage';
+import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage';
+import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
+import Activation from '../Pages/Activation/Activation';
 
 function App() {
   return (
@@ -23,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/order" element={<OrderPage />} exact />
+        <Route path="/order" element={<OrderFormPage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
         <Route path="/account" element={<AccountPage />}>
           <Route index path="profile" element={<AccountBuyerProfile/>} exact />
@@ -35,10 +41,17 @@ function App() {
           </Route>
           <Route index element={<Navigate to="profile" />} />
         </Route>
-        <Route path='*' element={<NotFound />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
+        <Route path="/portal-rules" element={<PortalRulesPage />} exact />
+        <Route path="/question-page" element={<QuestionPage />} exact />
+        <Route path="/question-form" element={<QuestionForm />} exact />
+        <Route path="/about-us" element={<AboutUsPage />} exact />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/activate/*" element={<Activation />}/>
       </Routes>
       <ButtonScrollUp />
       <Footer />
+      <AuthPopup />
     </div>
   );
 }

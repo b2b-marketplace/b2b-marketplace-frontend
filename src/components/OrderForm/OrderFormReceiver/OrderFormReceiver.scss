@@ -1,0 +1,20 @@
+@import '../../../styles/global.scss';
+
+.order-form-receiver {
+  @include default-font-style;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+
+  &__title {
+  }
+
+  &__main {
+  }
+
+  &__fio {
+  }
+}

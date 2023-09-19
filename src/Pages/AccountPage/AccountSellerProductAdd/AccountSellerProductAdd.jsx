@@ -10,20 +10,17 @@ import DropDown from '../../../components/UI/DropDown/DropDown';
 const AccountSellerProductAdd = () => {
   // Состояние для данных формы
   const [formData, setFormData] = useState({
-    image: null,
-    video: null,
-    category: '',
-    productName: '',
-    articul: '',
+    category: 0,
+    sku: '',
+    name: '',
     brand: '',
-    manufacturer: '',
-    size: '',
-    color: '',
-    productDescription: '',
-    productQuantity: 0,
-    productPrice: 0,
-    minOrderQuantity: 0,
-    orderStatus: 'Value 1',
+    price: '',
+    wholesale_quantity: 2147483647,
+    quantity_in_stock: 2147483647,
+    description: '',
+    manufacturer_country: '',
+    videos: ['http://example.com'],
+    images: ['http://example.com'],
   });
 
   // Обработчик изменения данных формы
@@ -37,28 +34,23 @@ const AccountSellerProductAdd = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log(formData);
   };
 
   const handleCancel = () => {
+    
     setFormData({
-      image: null,
-      video: null,
-      category: '',
-      productName: '',
-      articul: '',
+      category: 0,
+      sku: '',
+      name: '',
       brand: '',
-      manufacturer: '',
-      size: '',
-      color: '',
-      productDescription: '',
-      productQuantity: 0,
-      productPrice: 0,
-      minOrderQuantity: 0,
-      orderStatus: 'Value 1',
+      price: '',
+      wholesale_quantity: 2147483647,
+      quantity_in_stock: 2147483647,
+      description: '',
+      manufacturer_country: '',
+      videos: ['http://example.com'],
+      images: ['http://example.com'],
     });
-    console.log('Кнопка "Отмена" нажата');
   };
 
   return (
@@ -67,12 +59,15 @@ const AccountSellerProductAdd = () => {
         <AccountTitle name="ООО «Компания»" title="Продавец" />
         <form className="account-seller-product-add__form" onSubmit={handleSubmit}>
           <FileUpload
+            name="images"
             type="image"
             label="Изображение*"
             text="Нажмите на «+» или перетащите фото товара (JPEG, PNG) в рамку"
+            required
           />
 
           <FileUpload
+            name="videos"
             type="video"
             label="Видео"
             text="Нажмите на «+» или перетащите одно видео с товаром не длиннее 1 мин в эту область"
@@ -84,16 +79,20 @@ const AccountSellerProductAdd = () => {
               placeholder="Выберите из списка"
               options={['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5']}
               onChange={handleFormChange}
+              required
             />
+
             <InputField
-              name="productName"
+              name="name"
               label="Название товара*"
               placeholder="Наименование"
               type="text"
               onChange={handleFormChange}
+              required
             />
+
             <InputField
-              name="articul"
+              name="sku"
               label="Артикул"
               placeholder="000 000"
               type="number"
@@ -107,7 +106,7 @@ const AccountSellerProductAdd = () => {
               onChange={handleFormChange}
             />
             <InputField
-              name="manufacturer"
+              name="manufacturer_country"
               label="Производитель"
               placeholder="Страна производитель"
               type="text"
@@ -119,6 +118,7 @@ const AccountSellerProductAdd = () => {
               placeholder="Выберите из списка"
               options={['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5']}
               onChange={handleFormChange}
+              required
             />
             <DropDown
               name="color"
@@ -130,28 +130,27 @@ const AccountSellerProductAdd = () => {
             <div className="account-seller-product-add__conteiner-textarea">
               <label className="account-seller-product-add__label-textarea">Описание товара</label>
               <textarea
-                name="productDescription"
+                name="description"
                 className="account-seller-product-add__textarea"
                 placeholder="Добавьте описание товара"
-                onChange={handleFormChange}
-              ></textarea>
+                onChange={handleFormChange}></textarea>
             </div>
           </div>
 
           <div className="account-seller-product-add__conteiner">
             <label className="account-seller-product-add__label-counter">
               Кол-во товара*
-              <Counter name="productQuantity" onChange={handleFormChange} />
+              <Counter name="quantity_in_stock" onChange={handleFormChange} required />
             </label>
 
             <label className="account-seller-product-add__label-counter">
               Цена/за единицу товара*
-              <Counter name="productPrice" onChange={handleFormChange} />
+              <Counter name="price" onChange={handleFormChange} required />
             </label>
 
             <label className="account-seller-product-add__label-counter">
               Мин. объем заказа*
-              <Counter name="minOrderQuantity" onChange={handleFormChange} />
+              <Counter name="wholesale_quantity" onChange={handleFormChange} required />
             </label>
             <DropDown
               name="orderStatus"
@@ -160,6 +159,7 @@ const AccountSellerProductAdd = () => {
               options={['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5']}
               className="small"
               onChange={handleFormChange}
+              required
             />
           </div>
 

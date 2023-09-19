@@ -101,4 +101,9 @@
     display: flex;
     gap: 20px;
   }
+
+  &__error {
+    font-size: 12px;
+    color: red;
+  }
 }

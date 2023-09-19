@@ -12,5 +12,8 @@
     border-radius: 20px;
     box-sizing: border-box;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
   }
 }

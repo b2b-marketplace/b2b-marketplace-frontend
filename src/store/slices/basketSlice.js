@@ -12,6 +12,17 @@ const basketSlice = createSlice({
   name: 'basket',
   initialState,
   reducers: {
+    addDeliveryAddress: (state, action) => {
+      const { deliveryAddress } = action.payload;
+      state.basket.delivery_address = deliveryAddress;
+    },
+    updateDeliveryAddress: (state, action) => {
+      const { deliveryAddress } = action.payload;
+    },
+    updateAllProduct: (state, action) => {
+      const { currentProductList } = action.payload;
+      state.basket.basket_products = currentProductList;
+    },
     addProduct: (state, action) => {
       const { productIds, quantity } = action.payload;
       state.basket.basket_products.push({ id: productIds, quantity });
@@ -63,6 +74,13 @@ const basketSlice = createSlice({
   },
 });
 
-export const { addProduct, deleteProduct, changeQuantity, changeChecked } = basketSlice.actions;
+export const {
+  addDeliveryAddress,
+  addProduct,
+  deleteProduct,
+  updateAllProduct,
+  changeQuantity,
+  changeChecked,
+} = basketSlice.actions;
 
 export const basketReducer = basketSlice.reducer;

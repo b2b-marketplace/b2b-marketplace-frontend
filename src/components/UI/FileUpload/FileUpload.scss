@@ -14,9 +14,8 @@
   line-height: 28px;
 
   &__label {
+    @include flex-column;
     width: 202px;
-    display: flex;
-    flex-direction: column;
     gap: 4px;
     margin: 0;
   }
@@ -50,10 +49,9 @@
   }
 
   &__container-img {
-    display: flex;
+    @include flex-space-between;
     flex-wrap: wrap;
     gap: 4px;
-    justify-content: space-between;
   }
 
   &__img {
