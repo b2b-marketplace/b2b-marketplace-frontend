@@ -7,7 +7,10 @@ class AuthApi {
     this._headers = headers;
   }
   // проверка статуса
-  _ckeckOk = (res) => res.ok ? res.json() : Promise.reject(res.status);
+  _checkIsGoodStatus = (res) => res?.ok || (res.status < 300 && res.status >= 200);
+  _ckeckOk = (res) => this._checkIsGoodStatus(res)
+    ? res.status === 204 ? res : res.json()
+    : Promise.reject(res.status);
   // метод отправки запросов
   _fetcher(method, path, body) {
     // конфигурация объекта запроса
@@ -22,6 +25,7 @@ class AuthApi {
   // регистрация компании
   registerCompany = (companyData) => this._fetcher('POST', '/users/companies/', companyData);
   login = (loginData) => this._fetcher('POST', '/auth/token/login/', loginData);
+  activate = (activationData) => this._fetcher('POST', '/users/activation/', activationData);
 }
 
 const authApi = new AuthApi({
