@@ -20,6 +20,7 @@ import PrivacyPolicyPage from '../Pages/SupportServicePage/PrivacyPolicyPage/Pri
 import PortalRulesPage from '../Pages/SupportServicePage/PortalRulesPage/PortalRulesPage';
 import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage';
 import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
+import Activation from '../Pages/Activation/Activation';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
         <Route path="*" element={<NotFound />} />
+        <Route path="/activate/*" element={<Activation />}/>
       </Routes>
       <ButtonScrollUp />
       <Footer />
