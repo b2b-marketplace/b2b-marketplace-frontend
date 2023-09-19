@@ -6,25 +6,11 @@ import Input from '../../Input/Input';
 import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
 import PopupButton from '../../PopupButton/PopupButton';
 
-const RegistrationLastStep = ({ onFormChange }) => {
+const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
   const { isShow, handleShow } = useShowPassword(false);
   const { isShow: isShowRepeat, handleShow: handleShowRepeat } = useShowPassword(false);
-  const initValueParams = {
-    password: '',
-    repeat_password: '',
-    terms: ''
-  };
 
-  const { errors, values, handleChange, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
-
-  const onChange = (event) => {
-    handleChange(event);
-  };
-  
   const isPasswordsMatch = values.password === values.repeat_password;
-
-  useEffect(() => onFormChange(values, isNotValidForm || !isPasswordsMatch), [values, isNotValidForm]);
-
 
   return (
     <>

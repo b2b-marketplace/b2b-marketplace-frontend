@@ -10,6 +10,7 @@ const Selector = (props) => {
       name,
       value: newAddress.value,
       validationMessage: newAddress.value ? '' : 'Необходимо выбрать'
+      
     }
   });
 

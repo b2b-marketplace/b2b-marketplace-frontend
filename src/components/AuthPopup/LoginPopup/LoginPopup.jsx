@@ -1,19 +1,19 @@
-
-import { useEffect } from "react";
-import useInput from "../../../hooks/useInput";
-import usePopup from "../../../hooks/usePopup";
-import IconPassword from "../../UI/Icon/IconPassword";
-import Form from "../Form/Form";
-import Input from "../Input/Input";
-import Popup from "../Popup";
-import PopupButton from "../PopupButton/PopupButton";
-import useShowPassword from "../../../hooks/useShowPassword";
-import authApi from "../../../utils/authApi";
+import { useEffect } from 'react';
+import useInput from '../../../hooks/useInput';
+import usePopup from '../../../hooks/usePopup';
+import IconPassword from '../../UI/Icon/IconPassword';
+import Form from '../Form/Form';
+import Input from '../Input/Input';
+import Popup from '../Popup';
+import PopupButton from '../PopupButton/PopupButton';
+import useShowPassword from '../../../hooks/useShowPassword';
+import authApi from '../../../utils/authApi';
 
 const LoginPopup = () => {
   const { isOpen, closePopup } = usePopup('login');
   const { openPopup: openCompleteLogin } = usePopup('completeLogin');
   const { openPopup: openRestore } = usePopup('selectRestore');
+  
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
