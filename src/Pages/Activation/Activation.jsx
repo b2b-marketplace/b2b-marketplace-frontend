@@ -10,7 +10,7 @@ const Activation = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  const { openPopup } = usePopup('completeLogin');
+  const { openPopup } = usePopup('login');
 
   useEffect(() => {
     setInit(false);
