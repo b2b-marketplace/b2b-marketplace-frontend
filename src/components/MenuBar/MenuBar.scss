@@ -9,38 +9,32 @@
   line-height: 24px;
 
   &__list {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
+    @include reset-list;
     gap: 20px;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
   }
 
   &__item {
     height: 24px;
     display: flex;
-
     gap: 16px;
     color: $grayColor;
 
     &:hover {
-      background-color: #f2f2f2;
+      color: $blueColor;
     }
   }
 
   &__link {
     display: flex;
-
     justify-content: space-between;
     width: 100%;
     text-decoration: none;
     color: $grayColor;
-  }
 
-  &__icons {
-    display: flex;
-    align-items: center;
+    &:hover {
+      color: $blueColor;
+    }
   }
 
   &__icon {

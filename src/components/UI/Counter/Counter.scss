@@ -11,9 +11,8 @@
   column-gap: 10px;
 
   &__button {
+    @include reset-button;
     border: none;
-    padding: 0;
-    background: transparent;
   }
 
   &__input {

@@ -1,11 +1,10 @@
 @import '../../styles/global';
 
 .not-found {
+  @include flex-column; 
   max-width: 544px;
   max-height: 811px;
   padding: 169px 0;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   font-family: $fontFamilyUnbounded;
   font-style: $mainStyle;

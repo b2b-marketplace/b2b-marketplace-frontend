@@ -7,6 +7,16 @@
   color: $fontColor;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 @mixin reset-list {
   margin: 0;
   padding: 0;
