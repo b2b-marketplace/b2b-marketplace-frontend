@@ -34,7 +34,7 @@ const Basket = ({ className }) => {
       const mergedList = [];
       const selectedList = [];
       try {
-        const { results } = await productsApi.getProducts(productBasketIds);
+        const { results } = await productsApi.getProductsBiId(productBasketIds);
         for (const basketItem of basketList.basket_products) {
           const productItem = results.find((product) => product.id === basketItem.id);
           if (productItem) {

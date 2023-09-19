@@ -6,19 +6,31 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../../components/UI/Preloader/Preloader';
-import { fetchProducts } from '../../store/slices/productsSlice';
+import { fetchProductById } from '../../store/slices/productsSlice';
 import NotFound from '../../components/NotFound/NotFound';
 
 export default function ProductPage() {
-  const { products } = useSelector((state) => state.products);
   const { id } = useParams();
   const dispatch = useDispatch();
-  const isProductsLoaded = products.status === 'loaded';
-  const [product, setProduct] = useState();
+  const { productById } = useSelector((state) => state.products);
+  const isProductByIdLoaded = productById.status === 'loaded';
 
   useEffect(() => {
-    setProduct(products.items.find((item) => item.id === Number(id)));
-  }, [id, products.items]);
+    dispatch(fetchProductById(id));
+  }, [dispatch, id]);
+
+
+  const { allProducts } = useSelector((state) => state.products);
+  const isProductsLoaded = allProducts.status === 'loaded';
+  // const [product, setProduct] = useState();
+  const [sellerProducts, setSellerProducts] = useState([]);
+
+  // console.log(products);
+  // useEffect(() => {
+  // setProduct(products.items.find((item) => item.id === Number(id)));
+  // if (isProductsLoaded)
+  //   setSellerProducts(products.item.filter(item => item.seller.id === product.seller.id));
+  // }, []);
 
   // const product = products.items.find((item) => item.id === Number(id));
   // console.log(product);
@@ -27,24 +39,23 @@ export default function ProductPage() {
   // if (isProductsLoaded)
   //   setSellerProducts(products.items.filter(item => item.seller.id === product.seller.id));
 
-  useEffect(() => {
-    dispatch(fetchProducts);
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchProducts);
+  // }, [dispatch]);
 
   return (
     <div className="product-page">
-      {isProductsLoaded ?
-        product === undefined
+      {isProductByIdLoaded
+        ? productById.product === undefined
           ? (<NotFound />)
           : (<ProductBlock
-            product={product}
+            product={productById.product}
             className="product-page__product-block"
-          />
-          ) : (
-          <Preloader />
-        )}
+          />)
+        : (<Preloader />)
+      }
       <PlatformBenefits className="product-page__platform-benefits" />
-      <ProductCardContainer title={'Товары от этого поставщика'} />
+      <ProductCardContainer title={'Товары от этого поставщика'} products={sellerProducts} />
     </div>
   );
 }

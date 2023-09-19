@@ -136,19 +136,19 @@ export default function ProductBlock({ product }) {
               {`за ед. ${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
             </p>
 
-            <div className="order__price-quantity">
+            {/* <div className="order__price-quantity">
               <div
                 className="order__price-quantity-now"
                 style={{
                   width: (product.quantity_in_stock / product.quantity_in_stock) * 100 + '%',
                 }}
               />
-            </div>
+            </div> */}
 
-            <p className="order__price-remainder">
+            {/* <p className="order__price-remainder">
               Осталось:{' '}
               <span className="order__price-remainder-now">{`${product.quantity_in_stock} шт.`}</span>
-            </p>
+            </p> */}
 
             <p className="order__price-min-order">{`Минимальное количество товара для заказа: ${product.wholesale_quantity}`}</p>
           </div>

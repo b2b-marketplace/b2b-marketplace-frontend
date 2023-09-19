@@ -15,12 +15,23 @@ class ProductsApi {
     return fetch(url, options).then(this._checkResponse);
   }
 
-  getProducts(productIds) {
-    let path = this._serverUrl;
+  getProducts(page = 1) {
+    const url = this._serverUrl + `?page=${page}`;
+    console.log(url);
+    return this._request(url, {
+      method: 'GET',
+      headers: this._headers,
+    });
+  }
+
+  getProductById(productIds) {
+    let path = `${this._serverUrl}?ids=${productIds}`;
+
     if (Array.isArray(productIds)) {
       const productIdsString = productIds.join(',');
       path = `${this._serverUrl}?ids=${productIdsString}`;
     }
+
     return this._request(path, {
       method: 'GET',
       headers: this._headers,

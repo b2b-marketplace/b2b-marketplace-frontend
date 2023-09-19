@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.scss';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
@@ -11,11 +11,20 @@ import { fetchProducts } from '../../store/slices/productsSlice';
 
 const HomePage = () => {
   const dispatch = useDispatch();
+  const [newProducts, setNewProducts] = useState([]);
+  const [popularProducts, setPopularProducts] = useState([]);
 
-  const products = useSelector((state) => state.products.products.items);
+  const products = useSelector((state) => state.products.allProducts.allProducts);
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+
+
+  useEffect(() => {
+    setNewProducts(products);
+    setPopularProducts(products);
+  }, [products]);
+
 
   return (
     <main className="home-page">
@@ -23,13 +32,13 @@ const HomePage = () => {
       <PlatformBenefits className="home-page__platform-benefits" />
       <ProductCardContainer
         title="Новые товары"
-        products={products}
+        products={newProducts}
         className="home-page__cards-container"
       />
       <BannerAdvertising className="home-page__banner" />
       <ProductCardContainer
         title="Популярные товары"
-        products={products}
+        products={popularProducts}
         className="home-page__cards-container"
       />
       <PromoRegistration className="home-page__promo-registration" />
