@@ -1,17 +1,23 @@
 @import '../../../../styles/global';
 
 .menu-clothes {
+  @include flex-column;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
-  display: flex;
-  flex-direction: column;
+  font-weight: 600;
+  line-height: 28px;
   gap: 40px;
 
   &__title {
+    display: flex;
+    gap: 60px;
     font-size: 24px;
-    font-weight: 600;
-    line-height: 28px;
     margin: 0;
+
+    &-quantity {
+      font-size: 20px;
+      color: $blueDarkColor;
+    }
   }
 
   &__conteiner {
@@ -21,18 +27,12 @@
   }
 
   &__lists {
-    display: flex;
-    flex-direction: column;
+    @include reset-list;
+    @include flex-column;
     gap: 16px;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-
     &.hidden {
       display: none;
     }
@@ -40,36 +40,35 @@
 
   &__subtitle {
     font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
     color: $blackColor;
     margin: 0;
   }
 
   &__link {
     font-size: 16px;
-    font-weight: 600;
     line-height: 24px;
     color: $grayColor;
     text-decoration: none;
 
     &:hover {
-      background-color: #f2f2f2;
+      color: $blueColor;
     }
   }
 
   &__button-more {
+    @include reset-button;
     display: flex;
     gap: 8px;
     align-items: center;
     border: none;
-    padding: 0;
-    width: 65px;
     height: 24px;
-    background-color: transparent;
     color: $blueDarkColor;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+  }
+
+  &__icon {
+    transform: rotate(180deg);
   }
 }

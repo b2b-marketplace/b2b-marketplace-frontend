@@ -1,11 +1,11 @@
 @import '../../../styles/global.scss';
 
-.question {
-  display: flex;
-  flex-direction: column;
+.question-page {
+  @include flex-column; 
   row-gap: 40px;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
+  padding: 52px 0 120px;
 
   &__title {
     display: flex;
@@ -23,13 +23,14 @@
   }
 
   &__lists {
+    @include flex-column; 
+    @include reset-list;
     max-width: 403px;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
     gap: 20px;
+  }
+
+  &__list.hidden {
+    display: none;
   }
 
   &__paragraph {
@@ -42,9 +43,29 @@
   &__link {
     color: $blueDarkColor;
     font-size: 20px;
-    font-style: $mainStyle;
     font-weight: $mainWeight;
     line-height: 28px;
     text-decoration: none;
+
+    &:hover {
+      color: $blackColor;
+    }
+  }
+
+  &__button-more {
+    @include reset-button;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border: none;
+    height: 28px;
+    color: $blackColor;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__icon {
+    transform: rotate(180deg);
   }
 }

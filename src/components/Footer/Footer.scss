@@ -21,8 +21,7 @@
   }
 
   &__container-logo {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 40px;
     width: 100%;
     max-width: 705px;
@@ -49,14 +48,12 @@
   &__title {
     margin: 0;
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     line-height: 28px;
   }
 
   &__container-links {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 16px;
   }
 
@@ -64,33 +61,27 @@
     margin: 0;
     color: $whiteColor;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
     line-height: 24px;
   }
 
   &__menu {
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between;
     width: 100%;
     max-width: 826px;
   }
 
   &__lists {
+    @include flex-column;
+    @include reset-list;
     width: 262px;
-    display: flex;
-    flex-direction: column;
     row-gap: 16px;
-    margin: 0;
-    list-style-type: none;
-    padding: 0;
   }
 
   &__item {
     margin-bottom: 15px;
     font-size: 24px;
     line-height: normal;
-    font-style: $mainStyle;
     font-weight: $mainWeight;
   }
 
@@ -100,8 +91,7 @@
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 40px;
     margin: 0;
   }

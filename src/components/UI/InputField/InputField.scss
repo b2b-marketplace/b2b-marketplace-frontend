@@ -4,6 +4,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  font-family: $fontFamilyNunitoSans;
+  font-size: 20px;
+  font-style: $fontStyle;
+  font-weight: 600;
+  line-height: 28px;
 
   &__label {
     max-width: 202px;
