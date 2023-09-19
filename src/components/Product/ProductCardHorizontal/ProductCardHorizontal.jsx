@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { changeQuantity, deleteProduct } from '../../../store/slices/basketSlice.js';
 import ProductCardHorizontalImage from './ProductCardHorizontalImage/ProductCardHorizontalImage';
 import VendorCode from '../VendorCode/VendorCode';
+import { priceFormat } from '../../../utils/utils';
 
 /**
  * Компонент ProductCardHorizontal для отображения товара.
@@ -30,16 +31,16 @@ const ProductCardHorizontal = ({
   type,
 }) => {
   const dispatch = useDispatch();
-  const imageSrc = product.images[0] ? product.images[0].image : imageStub;
+  const imageSrc = product.images && product.images[0] ? product.images[0].image : imageStub;
   //Форматируем цену из 40000 в 40 000, добавляем разделители разрядов
-  const productInfoPrice = new Intl.NumberFormat('ru-RU').format(
-    parseFloat(product.price * product.quantity)
-  );
-  const productInfoPricePerOne = new Intl.NumberFormat('ru-RU').format(parseFloat(product.price));
+  const productInfoPrice = priceFormat(product.price * product.quantity);
+  const productInfoPricePerOne = priceFormat(product.price);
+
   const initView = () => {
     if (type === 'orderForm') return orderView();
     else return basketView();
   };
+
   const basketView = () => {
     return (
       <div className={`product-card-horizontal ${className ? className : ''}`}>
@@ -91,6 +92,7 @@ const ProductCardHorizontal = ({
       </div>
     );
   };
+
   const orderView = () => {
     return (
       <div className={`product-card-horizontal ${className ? className : ''}`}>

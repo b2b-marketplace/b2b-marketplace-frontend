@@ -15,9 +15,14 @@ import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
 import NotFound from '../components/NotFound/NotFound';
 import OrderFormPage from '../Pages/OrderFormPage/OrderFormPage';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
+import AboutUsPage from '../Pages/SupportServicePage/AboutUsPage/AboutUsPage';
+import PrivacyPolicyPage from '../Pages/SupportServicePage/PrivacyPolicyPage/PrivacyPolicyPage';
+import PortalRulesPage from '../Pages/SupportServicePage/PortalRulesPage/PortalRulesPage';
+import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage';
+import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
+import Activation from '../Pages/Activation/Activation';
 
 function App() {
-
   return (
     <div className="app">
       <Header />
@@ -36,7 +41,13 @@ function App() {
           </Route>
           <Route index element={<Navigate to="profile" />} />
         </Route>
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
+        <Route path="/portal-rules" element={<PortalRulesPage />} exact />
+        <Route path="/question-page" element={<QuestionPage />} exact />
+        <Route path="/question-form" element={<QuestionForm />} exact />
+        <Route path="/about-us" element={<AboutUsPage />} exact />
         <Route path="*" element={<NotFound />} />
+        <Route path="/activate/*" element={<Activation />}/>
       </Routes>
       <ButtonScrollUp />
       <Footer />

@@ -7,7 +7,7 @@ import logoSrc2 from '../../../images/stock/logo-2.png';
 import imageMap from '../../../images/stock/map.jpg';
 import { useSelector } from 'react-redux';
 
-const DeliveryWarehouseAddressList = ({ onGetStockAddr }) => {
+const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList }) => {
   const date1 = Date.now() / 1000 + 10 * 24 * 60 * 60;
   const date2 = Date.now() / 1000 + 20 * 24 * 60 * 60;
   const mockListStock = [
@@ -30,7 +30,7 @@ const DeliveryWarehouseAddressList = ({ onGetStockAddr }) => {
       deliveryDate: date2.toString(),
     },
   ];
-  const deliveryAddressList = useSelector((state) => state.basket.basket.delivery_address || []);
+  const deliveryAddressList = useSelector((state) => state.basket.basket.delivery_address);
   const selectDefaultValue = 0;
   const [selectedValue, setSelectedValue] = useState(selectDefaultValue);
   const [listStock, setListStock] = useState([]);

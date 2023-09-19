@@ -72,7 +72,7 @@ const Header = () => {
         </nav>
 
         <div className="header__search">
-          <Input mode="primary" type="text" extraClass="header__input" placeholder="Поиск...." />
+          <input type="text" className="header__input" placeholder="Поиск...." />
           <button type="button" className="header__button">
             <IconSearch />
           </button>
