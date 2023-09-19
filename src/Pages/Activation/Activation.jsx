@@ -3,24 +3,31 @@ import Preloader from '../../components/UI/Preloader/Preloader';
 import './Activation.scss';
 import { useEffect, useState } from 'react';
 import authApi from '../../utils/authApi';
+import usePopup from '../../hooks/usePopup';
 
 const Activation = () => {
   const [init, setInit] = useState(true);
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  
+
+  const { openPopup } = usePopup('completeLogin');
+
   useEffect(() => {
     setInit(false);
   }, []);
 
   useEffect(() => {
-    if(init) return;
+    if (init) return;
     const [uid, token] = pathname.replace('/activate/', '').split('/');
     authApi.activate({ uid, token })
       .then(() => {
         navigate('/', { replace: true });
+        openPopup();
       })
-      .catch(console.log);
+      .catch((err) => {
+        console.log(err);
+        navigate('/', { replace: true });
+      });
   }, [init]);
 
   return (
