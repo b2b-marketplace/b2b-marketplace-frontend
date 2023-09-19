@@ -1,6 +1,6 @@
 import React from 'react';
 import './AccountInputField.scss';
-import IconClose from '../../Icon/Icon_close24';
+import IconClose from '../../Icon/Icon_close';
 
 const AccountInputField = ({ label, placeholder, type, icon, name, id, isDisabled, isValid, errors, onChange, value, minLength, maxLength, required, resetInput }) => {
   return (
@@ -18,7 +18,6 @@ const AccountInputField = ({ label, placeholder, type, icon, name, id, isDisable
               id={id}
               onChange={onChange} 
               value={value}
-              errors={errors}
             />
           ) : (
             <div className="account-input-field__inputwithicon">
@@ -35,8 +34,8 @@ const AccountInputField = ({ label, placeholder, type, icon, name, id, isDisable
                 required={required}
                 errors={errors}
               />
-              <button className="account-input-field__input-button" type="button" onClick={resetInput}>
-                <IconClose />
+              <button type="reset" className="account-input-field__input-button">
+                <IconClose className="account-input-field__input-button-icon" />
               </button>
             </div>
           )}       

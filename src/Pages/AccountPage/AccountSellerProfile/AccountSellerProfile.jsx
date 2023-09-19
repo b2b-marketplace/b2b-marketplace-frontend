@@ -12,15 +12,7 @@ const AccountSellerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDisadled, setIsDisadled] = useState(true);
 
-  const { values, handleChange, errors, isValid, resetForm } =
-  useValidation({
-    bankaccount: "",
-    inn: "",
-    ogrn: "",
-    region: "",
-    phone: "",
-    email: "",
-  });
+  const { values, handleChange, errors, isValid, resetForm } = useValidation({});
   
   function editInfo(e) {
     e.preventDefault();
@@ -85,10 +77,13 @@ const AccountSellerProfile = () => {
                 id="bankaccount"
                 name="bankaccount"
                 type="number"
+                minLength={8}
+                required
                 isDisabled={isDisadled}
                 onChange={handleChange}
                 value={values.bankaccount || ""}
-                isValid={isValid}
+                isValid={isValid}              
+                errors={errors.bankaccount}
               />
               <AccountInputField
                 label="ИНН"
@@ -96,10 +91,12 @@ const AccountSellerProfile = () => {
                 id="inn"
                 name="inn"
                 type="number"
+                minLength={10}
                 isDisabled={isDisadled}
                 onChange={handleChange}
                 value={values.inn || ""}
                 isValid={isValid}
+                errors={errors.inn}
               />
               <AccountInputField
                 label="ОГРН"
@@ -107,10 +104,12 @@ const AccountSellerProfile = () => {
                 id="ogrn"
                 name="ogrn"
                 type="number"
+                minLength={10}
                 isDisabled={isDisadled}
                 onChange={handleChange}
                 value={values.ogrn || ""}
                 isValid={isValid}
+                errors={errors.ogrn}
               />
               <AccountInputField
                 label="Регион доставки"
@@ -122,6 +121,9 @@ const AccountSellerProfile = () => {
                 onChange={handleChange}
                 value={values.region || ""}
                 isValid={isValid}
+                minLength={3}
+                maxLength={25}
+                errors={errors.region}
               />
             </fieldset>
           </div>
@@ -151,6 +153,7 @@ const AccountSellerProfile = () => {
                 onChange={handleChange}
                 value={values.email || ""}
                 isValid={isValid}
+                errors={errors.email}
               />
               <AccountInputField
                 label="Телефон"
@@ -163,6 +166,7 @@ const AccountSellerProfile = () => {
                 onChange={handleChange}
                 value={values.phone || ""}
                 isValid={isValid}
+                errors={errors.phone}
               />
             </fieldset>
           </div>

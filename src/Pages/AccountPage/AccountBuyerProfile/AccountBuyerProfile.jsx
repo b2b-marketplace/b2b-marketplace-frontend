@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AccountBuyerProfile.scss';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
+import AccountPaymentInfo from '../../../components/UI/Account/AccountPaymentInfo/AccountPaymentInfo';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import useValidation from '../../../hooks/useValidation';
@@ -10,15 +11,12 @@ import { Button } from '../../../components/UI/Button/Button';
 const AccountBuyerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDisadled, setIsDisadled] = useState(true);
-    
-  const { values, handleChange, setValues, errors, isValid, resetForm } =
-  useValidation({
-    bankaccount: "",
-    inn: "",
-    region: "",
-    phone: "",
-    email: "",
-  });
+  
+  const { values, handleChange, setValues, errors, isValid, resetForm } = useValidation({});
+  
+  useEffect(() => {
+    setValues(values);
+  }, [values, setValues]);
 
   function editInfo(e) {
     e.preventDefault();
@@ -36,7 +34,6 @@ const AccountBuyerProfile = () => {
     e.preventDefault();
     setIsEditMode(false);
     setIsDisadled(true);
-    resetForm();
   }
 
   return (
@@ -48,9 +45,7 @@ const AccountBuyerProfile = () => {
           <div className="account-buyer-profile__form-block">
             <div className="account-buyer-profile__title-group">
               <h2 className="account-buyer-profile__title">Данные покупателя</h2>
-              <p className="account-buyer-profile__info">
-                Их видите только вы и служба поддержки B2Buy.ru
-              </p>
+              <p className="account-buyer-profile__info">Их видите только вы и служба поддержки B2Buy.ru</p>
             </div>
             <fieldset className="account-buyer-profile__field" disabled={isDisadled}>
               <AccountInputField
@@ -74,7 +69,6 @@ const AccountBuyerProfile = () => {
                 name="inn"
                 type="text"
                 minLength={10}
-                required
                 isDisabled={isDisadled}
                 onChange={handleChange}
                 value={values.inn || ""}
@@ -92,7 +86,7 @@ const AccountBuyerProfile = () => {
                 value={values.region || ""}
                 isValid={isValid}
                 minLength={3}
-                maxLength={20}
+                maxLength={25}
                 errors={errors.region}
               />
             </fieldset>
@@ -157,7 +151,7 @@ const AccountBuyerProfile = () => {
           )}
         </form>
 
-        {/* <AccountPaymentInfo title="Способы оплаты" /> */}
+        {/* <AccountPaymentInfo title="Способы оплаты" />  */}
       </div>
     </section>
   );
