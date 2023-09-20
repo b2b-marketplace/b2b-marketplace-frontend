@@ -14,7 +14,7 @@ const PersonRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
         type="text"
         placeholder="Фамилия"
         size="l"
-        text="Кририллицей"
+        text="Кириллицей"
         onChange={onChange}
         value={values.first_name}
         maxLength={100}
@@ -26,7 +26,7 @@ const PersonRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
         type="text"
         placeholder="Имя"
         size="l"
-        text="Кририллицей"
+        text="Кириллицей"
         onChange={onChange}
         value={values.name}
         maxLength={100}

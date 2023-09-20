@@ -31,6 +31,7 @@ const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
         onChange={onChange}
         value={values.inn}
         min={1000000000}
+        max={9999999999}
         required
         isNotError={!errors.inn && isDirtyInputs.inn}
       ></Input>

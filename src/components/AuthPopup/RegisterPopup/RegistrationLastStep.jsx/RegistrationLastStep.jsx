@@ -5,6 +5,7 @@ import IconPassword from '../../../UI/Icon/IconPassword';
 import Input from '../../Input/Input';
 import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
 import PopupButton from '../../PopupButton/PopupButton';
+const passwordLength = 8;
 
 const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
   const { isShow, handleShow } = useShowPassword(false);
@@ -20,10 +21,10 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
         autoComplete="off"
         placeholder="Пароль"
         size="l"
-        text="От 10 символов, латиница, цифры, символы"
+        text={`От ${passwordLength} символов, латиница, цифры, символы`}
         onChange={onChange}
         value={values.password}
-        minLength={10}
+        minLength={passwordLength}
         required
         isNotError={!errors.password && isDirtyInputs.password}
       >
@@ -45,7 +46,7 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
         text="Пароли совпадают"
         onChange={onChange}
         value={values.repeat_password}
-        minLength={10}
+        minLength={passwordLength}
         required
         isNotError={!errors.repeat_password && isPasswordsMatch && isDirtyInputs.repeat_password}
       >
