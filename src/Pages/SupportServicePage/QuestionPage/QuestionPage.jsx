@@ -188,7 +188,8 @@ const QuestionPage = () => {
                 className={`question-page__list ${
                   !expandedCategories[index] && i >= 4 ? 'hidden' : ''
                 }`}
-                key={i}>
+                key={i}
+              >
                 <Link className="question-page__link" to={question.link}>
                   {question.text}
                 </Link>
@@ -197,9 +198,14 @@ const QuestionPage = () => {
             {section.questions.length > 4 && (
               <button
                 className="question-page__button-more"
-                onClick={() => toggleCategoryExpansion(index)}>
+                onClick={() => toggleCategoryExpansion(index)}
+              >
                 {expandedCategories[index] ? 'Скрыть' : 'Еще'}{' '}
-                {expandedCategories[index] ? <IconArrowCounter className={'question-page__icon'}/> : <IconArrowCounter />}
+                {expandedCategories[index] ? (
+                  <IconArrowCounter className={'question-page__icon'} />
+                ) : (
+                  <IconArrowCounter />
+                )}
               </button>
             )}
           </ul>

@@ -10,17 +10,16 @@ const options = [
 ];
 
 const EntityRegistration = ({ onFormChange }) => {
-
   const initValueParams = {
     email: '',
     name: '',
     inn: '',
     phone_number: '',
     address: '',
-    vat: ''
+    vat: '',
   };
 
-  const { errors, values, handleChange, isDirtyInputs, isNotValidForm} = useInput(initValueParams);
+  const { errors, values, handleChange, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
 
   const onChange = (event) => {
     handleChange(event);
@@ -53,8 +52,7 @@ const EntityRegistration = ({ onFormChange }) => {
         min={1000000000}
         required
         isNotError={!errors.inn && isDirtyInputs.inn}
-      >
-      </Input>
+      ></Input>
       <div className="popup__inputs">
         <Input
           name="phone_number"
@@ -66,7 +64,9 @@ const EntityRegistration = ({ onFormChange }) => {
           value={values.phone_number}
           maxLength={20}
           required
-          isNotError={!errors.phone_number && isDirtyInputs.phone_number && values.phone_number.length >= 9}
+          isNotError={
+            !errors.phone_number && isDirtyInputs.phone_number && values.phone_number.length >= 9
+          }
         />
         <Input
           name="email"
@@ -91,15 +91,33 @@ const EntityRegistration = ({ onFormChange }) => {
         onChange={onChange}
         value={values.address}
         options={options}
-        autoComplete='off'
+        autoComplete="off"
         required
         isNotError={!errors.address && isDirtyInputs.address}
       />
       <div className="popup__container popup__container_type_radio">
         <h2 className="popup__subtitle popup__subtitle_type_bolded">Вы работаете с НДС?</h2>
         <div className="popup__radio">
-          <LabelCheckbox type="radio" name="vat" id="vat1" text="Да" checked={values.vat === 'yes'} value="yes" onChange={onChange} required />
-          <LabelCheckbox type="radio" name="vat" id="vat2" text="Нет" checked={values.vat === 'no'} value="no" onChange={onChange} required />
+          <LabelCheckbox
+            type="radio"
+            name="vat"
+            id="vat1"
+            text="Да"
+            checked={values.vat === 'yes'}
+            value="yes"
+            onChange={onChange}
+            required
+          />
+          <LabelCheckbox
+            type="radio"
+            name="vat"
+            id="vat2"
+            text="Нет"
+            checked={values.vat === 'no'}
+            value="no"
+            onChange={onChange}
+            required
+          />
         </div>
       </div>
     </>

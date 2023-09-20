@@ -52,7 +52,7 @@ const MenuClothes = () => {
   return (
     <div className="menu-clothes">
       <h2 className="menu-clothes__title">
-        Категории <span className='menu-clothes__title-quantity'>372 277 товаров</span>
+        Категории <span className="menu-clothes__title-quantity">372 277 товаров</span>
       </h2>
       <div className="menu-clothes__conteiner">
         {categories.map((category, index) => (
@@ -63,7 +63,8 @@ const MenuClothes = () => {
                 className={`menu-clothes__list ${
                   !expandedCategories[index] && subIndex >= 5 ? 'hidden' : ''
                 }`}
-                key={subIndex}>
+                key={subIndex}
+              >
                 <Link className="menu-clothes__link" to={category.link}>
                   {item}
                 </Link>
@@ -72,7 +73,8 @@ const MenuClothes = () => {
             {category.items.length > 5 && (
               <button
                 className="menu-clothes__button-more"
-                onClick={() => toggleCategoryExpansion(index)}>
+                onClick={() => toggleCategoryExpansion(index)}
+              >
                 {expandedCategories[index] ? 'Скрыть' : 'Еще'}{' '}
                 {expandedCategories[index] ? (
                   <IconArrowCounter className={'question-page__icon'} />

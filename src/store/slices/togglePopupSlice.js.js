@@ -15,9 +15,8 @@ const initialState = {
     newPassword: false,
     addNewItem: false,
     cancelAddnewItem: false,
-  }
+  },
 };
-
 
 const togglePopupSlice = createSlice({
   name: 'togglePopup',

@@ -2,7 +2,23 @@ import React from 'react';
 import './AccountInputField.scss';
 import IconClose from '../../Icon/Icon_close';
 
-const AccountInputField = ({ label, placeholder, type, icon, name, id, isDisabled, isValid, errors, onChange, value, minLength, maxLength, required, resetInput }) => {
+const AccountInputField = ({
+  label,
+  placeholder,
+  type,
+  icon,
+  name,
+  id,
+  isDisabled,
+  isValid,
+  errors,
+  onChange,
+  value,
+  minLength,
+  maxLength,
+  required,
+  resetInput,
+}) => {
   return (
     <div className="account-input-field">
       <div className="account-input-field__container">
@@ -10,13 +26,13 @@ const AccountInputField = ({ label, placeholder, type, icon, name, id, isDisable
         <label className="account-input-field__label">
           {label}
           {isDisabled ? (
-            <input 
-              className="account-input-field__input" 
-              type={type} 
+            <input
+              className="account-input-field__input"
+              type={type}
               placeholder={placeholder}
               name={name}
               id={id}
-              onChange={onChange} 
+              onChange={onChange}
               value={value}
             />
           ) : (
@@ -27,7 +43,7 @@ const AccountInputField = ({ label, placeholder, type, icon, name, id, isDisable
                 placeholder={placeholder}
                 name={name}
                 id={id}
-                onChange={onChange} 
+                onChange={onChange}
                 value={value}
                 minLength={minLength}
                 maxLength={maxLength}
@@ -38,13 +54,13 @@ const AccountInputField = ({ label, placeholder, type, icon, name, id, isDisable
                 <IconClose className="account-input-field__input-button-icon" />
               </button>
             </div>
-          )}       
+          )}
         </label>
       </div>
       <span
-        className={`${
-          isValid} ? account-input-field__error : account-input-field__error account-input-field__error_visible
-        `}>
+        className={`${isValid} ? account-input-field__error : account-input-field__error account-input-field__error_visible
+        `}
+      >
         {errors}
       </span>
     </div>

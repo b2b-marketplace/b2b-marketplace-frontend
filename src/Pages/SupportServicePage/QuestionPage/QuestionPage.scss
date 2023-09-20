@@ -1,7 +1,7 @@
 @import '../../../styles/global.scss';
 
 .question-page {
-  @include flex-column; 
+  @include flex-column;
   row-gap: 40px;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
@@ -23,7 +23,7 @@
   }
 
   &__lists {
-    @include flex-column; 
+    @include flex-column;
     @include reset-list;
     max-width: 403px;
     gap: 20px;

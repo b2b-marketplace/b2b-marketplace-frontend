@@ -21,9 +21,9 @@ const RegisterPopup = () => {
 
   const handleForm = (inputData, newIsNotValid) => {
     console.log(newIsNotValid);
-    setForm(state => ({
+    setForm((state) => ({
       ...state,
-      ...inputData
+      ...inputData,
     }));
     setIsNotValid(newIsNotValid);
   };
@@ -32,17 +32,11 @@ const RegisterPopup = () => {
   // const lastStepValidation = useInput(initLastParams);
   // const currentValidation = isEntity ? entityValidation : personValidation;
 
-  const fieldsetHeight = step === 3
-    ? isEntity
-      ? '420px'
-      : '304px'
-    : step === 4
-      ? '246px'
-      : '0';
+  const fieldsetHeight = step === 3 ? (isEntity ? '420px' : '304px') : step === 4 ? '246px' : '0';
 
   const formParams = [
-    { title: 'Укажите, кто вы', },
-    { title: 'Вы юридическое лицо?', },
+    { title: 'Укажите, кто вы' },
+    { title: 'Вы юридическое лицо?' },
     { title: isEntity ? 'Укажите данные организации' : 'Укажите свои данные', btnText: 'Далее' },
     { title: 'Финальный шаг', btnText: 'Зарегистрироваться' },
   ];
@@ -70,28 +64,30 @@ const RegisterPopup = () => {
     }
 
     const { email, password, phone_number, address, ...company } = form;
-    authApi.registerCompany({
-      email,
-      password,
-      // FIXME: just for presentation
-      // username: `test-name-${Math.floor(Math.random() * 1000000)}`,
-      username: email,
-      company: {
-        ...company,
-        role,
-        vat: company.vat === 'yes',
-        phone_number: {
-          phone_number
+    authApi
+      .registerCompany({
+        email,
+        password,
+        // FIXME: just for presentation
+        // username: `test-name-${Math.floor(Math.random() * 1000000)}`,
+        username: email,
+        company: {
+          ...company,
+          role,
+          vat: company.vat === 'yes',
+          phone_number: {
+            phone_number,
+          },
+          address: {
+            address,
+          },
         },
-        address: {
-          address,
-        },
-      },
-    })
+      })
       .then((res) => {
         closePopup();
         openCompleteRegistration();
-      }).catch(console.log);
+      })
+      .catch(console.log);
   };
 
   useEffect(() => {
@@ -120,29 +116,17 @@ const RegisterPopup = () => {
         btnType="submit"
         formDisabled={isNotValid}
       >
-        {
-          step === 1 &&
-          <RegistrationFirstStep onType={handleType} />
-        }
-        {
-          step === 2 &&
-          <RegistrationSecondStep onEntity={handleEntity} />
-        }
+        {step === 1 && <RegistrationFirstStep onType={handleType} />}
+        {step === 2 && <RegistrationSecondStep onEntity={handleEntity} />}
 
-        <fieldset style={{ 'height': fieldsetHeight }} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
-          {
-            step === 3 &&
-            <RegistrationThirdStep
-              isEntity={isEntity}
-              onFormChange={handleForm}
-            />
-          }
-          {
-            step === 4 &&
-            <RegistrationLastStep
-              onFormChange={handleForm}
-            />
-          }
+        <fieldset
+          style={{ height: fieldsetHeight }}
+          className={`popup__fieldset popup__fieldset_hidden${
+            step > 2 ? ` popup__fieldset_visible` : ''
+          }`}
+        >
+          {step === 3 && <RegistrationThirdStep isEntity={isEntity} onFormChange={handleForm} />}
+          {step === 4 && <RegistrationLastStep onFormChange={handleForm} />}
         </fieldset>
       </Form>
     </Popup>

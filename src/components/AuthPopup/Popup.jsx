@@ -12,10 +12,12 @@ const Popup = (props) => {
     isShowStepper,
     titleClassMode,
     title,
-    popupContClassMode
+    popupContClassMode,
   } = props;
   const isOpenPopupTypeClass = `auth${isOpen ? ' auth_opened' : ''}`;
-  const popupContClassName = `popup__container${popupContClassMode ? ` ${popupContClassMode}` : ''}`;
+  const popupContClassName = `popup__container${
+    popupContClassMode ? ` ${popupContClassMode}` : ''
+  }`;
   const titleClassName = `popup__title${titleClassMode ? ` ${titleClassMode}` : ''}`;
 
   const closeByEvent = (event) => {
@@ -25,7 +27,6 @@ const Popup = (props) => {
   };
 
   useEffect(() => {
-
     const closeByEvent = (event) => {
       if (event.key === 'Escape' || event.target === event.currentTarget) {
         onClose();
@@ -41,7 +42,11 @@ const Popup = (props) => {
   return (
     <section className={isOpenPopupTypeClass} onMouseDown={closeByEvent}>
       <div className="popup">
-        <div className={`popup__top-conainer${isShowStepper ? ' popup__top-conainer_with_content' : ''}`}>
+        <div
+          className={`popup__top-conainer${
+            isShowStepper ? ' popup__top-conainer_with_content' : ''
+          }`}
+        >
           {isShowStepper && <Stepper step={step} />}
           <button type="button" onClick={onClose} className="popup__close">
             <IconClose className="popup__close-icon" />

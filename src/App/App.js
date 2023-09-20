@@ -32,7 +32,7 @@ function App() {
         <Route path="/order" element={<OrderFormPage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
         <Route path="/account" element={<AccountPage />}>
-          <Route index path="profile" element={<AccountBuyerProfile/>} exact />
+          <Route index path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />
           <Route path="orders" element={<AccountBuyerOrders />} exact>
             <Route index element={<AccountBuyerOrderList />} exact />
@@ -47,7 +47,7 @@ function App() {
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
         <Route path="*" element={<NotFound />} />
-        <Route path="/activate/*" element={<Activation />}/>
+        <Route path="/activate/*" element={<Activation />} />
       </Routes>
       <ButtonScrollUp />
       <Footer />

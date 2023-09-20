@@ -8,9 +8,12 @@ class AuthApi {
   }
   // проверка статуса
   _checkIsGoodStatus = (res) => res?.ok || (res.status < 300 && res.status >= 200);
-  _ckeckOk = (res) => this._checkIsGoodStatus(res)
-    ? res.status === 204 ? res : res.json()
-    : Promise.reject(res.status);
+  _ckeckOk = (res) =>
+    this._checkIsGoodStatus(res)
+      ? res.status === 204
+        ? res
+        : res.json()
+      : Promise.reject(res.status);
   // метод отправки запросов
   _fetcher(method, path, body) {
     // конфигурация объекта запроса
