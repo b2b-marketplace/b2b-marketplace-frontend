@@ -56,8 +56,7 @@ jobs:
     environment:
       name: Stage
     steps:
-      -
-        name: Execute remote commands to deploy and start app
+      - name: Execute remote commands to deploy and start app
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
@@ -66,7 +65,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd ${{ env.DEPLOY_PATH }}
-            
+
             echo ${{ secrets.REGISTRY_PAT }} | docker login ${{ env.REGISTRY }} -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
 
             docker image prune -f

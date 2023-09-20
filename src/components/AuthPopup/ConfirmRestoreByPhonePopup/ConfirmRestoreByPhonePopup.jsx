@@ -1,33 +1,31 @@
-import { useEffect, useState } from "react";
-import Form from "../Form/Form";
-import Popup from "../Popup";
-import PopupButton from "../PopupButton/PopupButton";
-import PinCodeInput from "../PinCodeInput/PinCodeInput";
-import usePopup from "../../../hooks/usePopup";
+import { useEffect, useState } from 'react';
+import Form from '../Form/Form';
+import Popup from '../Popup';
+import PopupButton from '../PopupButton/PopupButton';
+import PinCodeInput from '../PinCodeInput/PinCodeInput';
+import usePopup from '../../../hooks/usePopup';
 
 const ConfirmRestoreByPhonePopup = ({ initDigit = ['', '', '', ''] }) => {
-  
   const { isOpen, closePopup } = usePopup('confirmRestoreByPhone');
   const { openPopup: openNewPassword } = usePopup('newPassword');
-  
+
   const [digits, setDigits] = useState(initDigit);
 
   const changeDigitsHandler = (newDigits) => {
     setDigits(newDigits);
   };
-  
+
   const handleSubmit = () => {
     closePopup();
     openNewPassword();
   };
 
   useEffect(() => {
-
     return () => setDigits(initDigit);
   }, [isOpen]);
 
   useEffect(() => {
-    if (digits.some(digit => !digit)) return;
+    if (digits.some((digit) => !digit)) return;
     handleSubmit();
   }, [digits]);
 
@@ -37,10 +35,7 @@ const ConfirmRestoreByPhonePopup = ({ initDigit = ['', '', '', ''] }) => {
       onClose={closePopup}
       title="Введите код сброса пароля, который пришел на указанный вами номер"
     >
-      <Form
-        className="popup__form popup__form_more_gap"
-        onSubmit={handleSubmit}
-      >
+      <Form className="popup__form popup__form_more_gap" onSubmit={handleSubmit}>
         <PinCodeInput digits={digits} changeHandler={changeDigitsHandler} />
         <PopupButton
           type="button"

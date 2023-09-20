@@ -1,14 +1,13 @@
 @import '../../../styles/global';
 
 .input-field {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  font-family: $fontFamilyNunitoSans;
+  @include default-font-styles;
   font-size: 20px;
-  font-style: $fontStyle;
   font-weight: 600;
   line-height: 28px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
   &__label {
     max-width: 202px;

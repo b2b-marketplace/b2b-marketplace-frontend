@@ -92,7 +92,7 @@ const Header = () => {
           <IconBasket />
         </Link>
 
-        <Link to="/account" className="header__link">
+        <Link to="/account/profile" className="header__link">
           <IconProfile />
         </Link>
       </nav>

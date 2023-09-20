@@ -1,12 +1,11 @@
 @import '../../../styles/global';
 
 .product-block {
+  @include default-font-styles;
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-family: $fontFamilyNunitoSans;
-  color: $blackColor;
-  font-style: normal;
+
   gap: 60px;
 
   &__top {
@@ -100,6 +99,7 @@
 }
 
 .info {
+  @include default-font-styles;
   max-width: 464px;
   width: 100%;
 
@@ -107,13 +107,11 @@
     margin: 0;
     max-width: 292px;
     // max-height: 80px;
-
     color: $blackColor;
-    font-family: $fontFamilyNunitoSans;
     font-size: 28px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 40px; /* 142.857% */
+    line-height: 40px;
+
     &-line {
       margin: 0 0 16px;
       display: flex;
@@ -134,14 +132,13 @@
     height: 32px;
 
     &-name {
-      margin: 0;
-      color: $blackColor;
-      font-family: $fontFamilyNunitoSans;
+      @include default-font-styles;
       font-size: 20px;
-      font-style: normal;
       font-weight: 600;
-      line-height: 28px; /* 140% */
+      line-height: 28px;
+      color: $blackColor;
       text-decoration-line: underline;
+      margin: 0;
     }
 
     &-icon {
@@ -153,16 +150,13 @@
   &__code {
     margin: 0 0 18px;
     color: $blackColor;
-    font-family: $fontFamilyNunitoSans;
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     line-height: 28px; /* 140% */
   }
 
   &__status {
     color: $darkColor;
-    font-family: $fontFamilyNunitoSans;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -242,17 +236,12 @@
     flex-direction: column;
 
     &-value {
+      @include h2-styles;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       margin: 0 0 4px;
-      color: $darkColor;
-      font-family: $fontFamilyUnbounded;
-      font-size: 28px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 36px; /* 128.571% */
     }
 
     &-piece {
@@ -394,6 +383,7 @@
     gap: 8px;
     align-items: center;
   }
+
   &__name {
     color: $grayColor;
     max-width: 415px;
@@ -405,6 +395,7 @@
     font-weight: 600;
     line-height: 24px; /* 150% */
     overflow: hidden;
+
     &::after {
       padding-left: 8px;
       content: '...........................................................................................................';

@@ -1,10 +1,9 @@
 @import '../../../styles/global';
 
 .button {
+  @include default-font-styles;
   padding: 0;
   cursor: pointer;
-  font-style: $mainStyle;
-  font-family: $fontFamilyNunitoSans;
   line-height: normal;
   display: flex;
   flex-direction: row;

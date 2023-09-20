@@ -27,7 +27,11 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
         required
         isNotError={!errors.password && isDirtyInputs.password}
       >
-        <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShow} type="button">
+        <button
+          className="popup__button input-label__button input-label__button_type_password"
+          onClick={handleShow}
+          type="button"
+        >
           <IconPassword isVisiblePassword={isShow} />
         </button>
       </Input>
@@ -45,11 +49,16 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
         required
         isNotError={!errors.repeat_password && isPasswordsMatch && isDirtyInputs.repeat_password}
       >
-        <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShowRepeat} type="button">
+        <button
+          className="popup__button input-label__button input-label__button_type_password"
+          onClick={handleShowRepeat}
+          type="button"
+        >
           <IconPassword isVisiblePassword={isShowRepeat} />
         </button>
       </Input>
-      <div className="popup__terms">q
+      <div className="popup__terms">
+        q
         <LabelCheckbox
           name="terms"
           id="terms"
@@ -59,8 +68,9 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
           onChange={onChange}
           required
         />
-
-        <PopupButton type="button" className="popup__button popup__underlined-text">Познакомиться с правилами</PopupButton>
+        <PopupButton type="button" className="popup__button popup__underlined-text">
+          Познакомиться с правилами
+        </PopupButton>
       </div>
     </>
   );

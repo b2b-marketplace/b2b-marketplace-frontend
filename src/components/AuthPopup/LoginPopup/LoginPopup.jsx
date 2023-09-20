@@ -7,7 +7,6 @@ import Input from '../Input/Input';
 import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import useShowPassword from '../../../hooks/useShowPassword';
-// import authApi from '../../../utils/authApi';
 import { loginUser, resetLoading } from '../../../store/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -23,15 +22,10 @@ const LoginPopup = () => {
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
-  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } =
+    useInput(initValueParams);
 
   const handleSubmit = () => {
-    // authApi.login(values)
-    //   .then(() => {
-    //     closePopup();
-    //     openCompleteLogin();
-    //   })
-    //   .catch(console.log);
     dispatch(loginUser(values));
   };
 
@@ -50,6 +44,7 @@ const LoginPopup = () => {
   }, [isOpen]);
 
   useEffect(() => {
+    if (!isOpen) return;
     if (!isLoggedIn) return;
     closePopup();
     openCompleteLogin();
@@ -95,7 +90,11 @@ const LoginPopup = () => {
             required
             isNotError={!errors.password && isDirtyInputs.password}
           >
-            <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShow} type="button">
+            <button
+              className="popup__button input-label__button input-label__button_type_password"
+              onClick={handleShow}
+              type="button"
+            >
               <IconPassword isVisiblePassword={isShow} />
             </button>
           </Input>

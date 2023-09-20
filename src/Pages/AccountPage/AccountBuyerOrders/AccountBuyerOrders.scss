@@ -1,15 +1,9 @@
 @import '../../../styles/global';
 
 .account-buyer-orders {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  font-size: $fontSize;
-  color: $fontColor;
-
+  @include default-font-styles;
   display: flex;
   flex-direction: column;
-  //max-width: 854px;
   width: 100%;
 
   &__control-button {

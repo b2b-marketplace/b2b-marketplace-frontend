@@ -28,7 +28,8 @@ const DropDown = ({ label, placeholder, options, className }) => {
       className={`drop-down ${className || ''}`}
       tabIndex="0"
       onKeyDown={handleKeyDown}
-      onClick={toggleMenu}>
+      onClick={toggleMenu}
+    >
       <label className="drop-down__label">
         {label}
         <div className={`drop-down__select ${isMenuOpen ? 'is-active' : ''}`}>
@@ -45,7 +46,8 @@ const DropDown = ({ label, placeholder, options, className }) => {
                   key={index}
                   className={`drop-down__item ${option === activeOption ? 'active' : ''}`}
                   onClick={() => handleOptionChange(option)}
-                  tabIndex="0">
+                  tabIndex="0"
+                >
                   {option}
                 </div>
               ))}

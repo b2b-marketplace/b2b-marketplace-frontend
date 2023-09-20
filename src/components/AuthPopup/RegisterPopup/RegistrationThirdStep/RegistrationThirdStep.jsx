@@ -1,4 +1,3 @@
-
 import EntityRegistration from './EntityRegistration/EntityRegistration';
 import PersonRegistration from './PersonRegistration/PersonRegistration';
 

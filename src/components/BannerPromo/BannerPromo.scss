@@ -1,18 +1,11 @@
 @import '../../styles/global';
 
 .banner-promo {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  font-size: $fontSize;
-  color: $fontColor;
+  @include default-font-styles;
   display: flex;
 
   &__title {
-    font-family: $fontFamilyUnbounded;
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 44px;
+    @include h1-styles;
     max-width: 544px;
     margin: 0;
     display: flex;

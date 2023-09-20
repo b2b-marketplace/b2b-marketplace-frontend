@@ -41,7 +41,7 @@ const RegisterPopup = () => {
   const personValidation = useInput(initPersonValueParams);
   const lastStepValidation = useInput(initLastParams);
   const currentValidation = isEntity ? entityValidation : personValidation;
-  
+
   const fieldsetHeight = step === 3
     ? isEntity
       ? '420px'
@@ -51,8 +51,8 @@ const RegisterPopup = () => {
       : '0';
 
   const formParams = [
-    { title: 'Укажите, кто вы', },
-    { title: 'Вы юридическое лицо?', },
+    { title: 'Укажите, кто вы' },
+    { title: 'Вы юридическое лицо?' },
     { title: isEntity ? 'Укажите данные организации' : 'Укажите свои данные', btnText: 'Далее' },
     { title: 'Финальный шаг', btnText: 'Зарегистрироваться' },
   ];
@@ -98,17 +98,15 @@ const RegisterPopup = () => {
         role,
         vat: company.vat === 'yes',
         phone_number: {
-          phone_number
+          phone_number,
         },
-        address: {
-          address,
-        },
-      },
+      }
     })
       .then((res) => {
         closePopup();
         openCompleteRegistration();
-      }).catch(console.log);
+      })
+      .catch(console.log);
   };
 
   useEffect(() => {
@@ -139,14 +137,8 @@ const RegisterPopup = () => {
         btnType="submit"
         formDisabled={formDisabled}
       >
-        {
-          step === 1 &&
-          <RegistrationFirstStep onType={handleType} />
-        }
-        {
-          step === 2 &&
-          <RegistrationSecondStep onEntity={handleEntity} />
-        }
+        {step === 1 && <RegistrationFirstStep onType={handleType} />}
+        {step === 2 && <RegistrationSecondStep onEntity={handleEntity} />}
 
         <fieldset style={{ 'height': fieldsetHeight }} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
           {

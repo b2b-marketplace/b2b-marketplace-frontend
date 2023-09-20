@@ -70,7 +70,7 @@ const PersonRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
         onChange={onChange}
         value={values.address}
         options={options}
-        autoComplete='off'
+        autoComplete="off"
         required
         isNotError={!errors.address && isDirtyInputs.address}
       />

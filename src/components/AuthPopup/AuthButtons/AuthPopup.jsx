@@ -11,7 +11,6 @@ import SelectPopup from '../SelectPopup/SelectPopup';
 import SelectRestorePopup from '../SelectRestorePopup/SelectRestorePopup';
 
 const AuthPopup = () => {
-  
   return (
     <>
       <SelectPopup />

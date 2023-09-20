@@ -27,33 +27,38 @@ const useInput = (initValueParams) => {
 
   const handleChange = ({ target: input }) => {
     if (!isDirtyInputs[input.name]) {
-      setIsDirtyInputs(state => ({
+      setIsDirtyInputs((state) => ({
         ...state,
         [input.name]: true,
       }));
     }
     setErrors(state => ({
       ...state,
-      [input.name]: input.validationMessage
+      [input.name]: input.validationMessage,
     }));
-    setValues(state => ({
+    setValues((state) => ({
       ...state,
       [input.name]: input.type === 'checkbox' ? input.checked : input.value,
     }));
   };
 
   useEffect(() => {
-    const checkFormIsNotValid = Object.values(errors).some(error => error);
-    const checkFormIsNotFullFilled = Object.values(values).some(value => typeof value === 'string' && !value.trim() || !value);
+    const checkFormIsNotValid = Object.values(errors).some((error) => error);
+    const checkFormIsNotFullFilled = Object.values(values).some(
+      (value) => (typeof value === 'string' && !value.trim()) || !value
+    );
     setIsNotValidForm(checkFormIsNotFullFilled || checkFormIsNotValid);
   }, [values, errors, isDirtyInputs]);
 
-  const resetValues = useCallback((newValues = initValueParams, newErrors = initValueParams, newNotIsVaild = false) => {
-    setValues(newValues);
-    setErrors(newErrors);
-    setIsNotValidForm(newNotIsVaild);
-    setIsDirtyInputs(initDirtyStates);
-  }, []);
+  const resetValues = useCallback(
+    (newValues = initValueParams, newErrors = initValueParams, newNotIsVaild = false) => {
+      setValues(newValues);
+      setErrors(newErrors);
+      setIsNotValidForm(newNotIsVaild);
+      setIsDirtyInputs(initDirtyStates);
+    },
+    []
+  );
 
   return { values, errors, isNotValidForm, isDirtyInputs, handleChange, resetValues };
 };

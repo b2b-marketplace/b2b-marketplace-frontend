@@ -1,19 +1,19 @@
 @import '../../../styles/vars';
 
 .steps {
-	display: flex;
-	gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .step {
-	border: 1px solid $darkColor;
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	box-sizing: border-box;
-	transition: background-color .3s ease;
+  border: 1px solid $darkColor;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
 
-	&_active {
-		background-color: $darkColor;
-	}
+  &_active {
+    background-color: $darkColor;
+  }
 }

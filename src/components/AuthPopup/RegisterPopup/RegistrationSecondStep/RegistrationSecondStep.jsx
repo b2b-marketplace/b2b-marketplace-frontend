@@ -1,4 +1,4 @@
-import PopupButtons from "../../PopupButtons/PopupButtons";
+import PopupButtons from '../../PopupButtons/PopupButtons';
 
 const RegistrationSecondStep = ({ onEntity }) => {
   return (

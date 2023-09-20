@@ -11,26 +11,14 @@ const Input = ({ size, type, className, children, text, labelClassName, isNotErr
 
   return (
     <label className={labelClass}>
-      {
-        isSelect
-          ? (
-            <Selector
-              {...props}
-            />
-          ) : (
-            <>
-              <input
-                className={inputClass}
-                type={type}
-                {...props}
-              />
-              {
-                children && children
-              }
-            </>
-
-          )
-      }
+      {isSelect ? (
+        <Selector {...props} />
+      ) : (
+        <>
+          <input className={inputClass} type={type} {...props} />
+          {children && children}
+        </>
+      )}
       {size !== 's' && <span className={spanValidClass}>{text}</span>}
     </label>
   );

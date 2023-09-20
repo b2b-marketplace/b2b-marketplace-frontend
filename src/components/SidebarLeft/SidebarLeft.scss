@@ -2,17 +2,16 @@
 
 .sidebar-left {
   @include flex-column;
+  @include default-font-styles;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
   align-items: center;
   max-width: 282px;
   height: 664px;
   box-sizing: border-box;
   border-radius: 20px;
   border: 1px solid $grayLightColor;
-  font-family: $fontFamilyNunitoSans;
-  font-size: 24px;
-  font-style: $mainStyle;
-  font-weight: 600;
-  line-height: 28px;
   padding: 32px 32px;
   flex-shrink: 0;
 

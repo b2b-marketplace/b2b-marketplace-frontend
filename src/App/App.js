@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import './App.scss';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -22,7 +23,6 @@ import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage'
 import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
 import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
-import { useSelector } from 'react-redux';
 
 function App() {
   const { isLoggedIn } = useSelector((state) => state.auth);

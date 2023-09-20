@@ -2,7 +2,7 @@
 
 .header {
   @include flex-space-between;
-  @include default-font-style;
+  @include default-font-styles;
   color: $fontColor;
   max-width: $maxWidth;
   min-width: $minWidth;

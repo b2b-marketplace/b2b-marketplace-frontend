@@ -1,10 +1,7 @@
 @import '../../../styles/global';
 
 .checkbox {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  color: $fontColor;
+  @include default-font-styles;
   display: inline-flex;
   align-items: center;
   user-select: none;
