@@ -16,6 +16,7 @@ const initialState = {
     totalProducts: 0,
     pageDB: 1,
     allProducts: [],
+    isFull: false,
     status: 'loading',
   },
   productById: {
@@ -43,8 +44,15 @@ const productsSlice = createSlice({
         if (state.allProducts.allProducts.length !== state.allProducts.totalProducts) {
           state.allProducts.pageDB === 1
             ? (state.allProducts.allProducts = actions.payload.results)
-            : (state.allProducts.allProducts = [...state.allProducts.allProducts, ...actions.payload.results]);
+            : (state.allProducts.allProducts = [
+              ...state.allProducts.allProducts,
+              ...actions.payload.results,
+            ]);
         }
+
+        state.allProducts.allProducts.length === state.allProducts.totalProducts
+          ? (state.allProducts.isFull = true)
+          : (state.allProducts.isFull = false);
 
         state.allProducts.previousDBPage = actions.payload.previous;
         state.allProducts.nextDBPage = actions.payload.next;

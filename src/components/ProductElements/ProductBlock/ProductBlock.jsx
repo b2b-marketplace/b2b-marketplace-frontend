@@ -19,7 +19,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addProduct, deleteProduct, changeQuantity } from '../../../store/slices/basketSlice';
 
 export default function ProductBlock({ product }) {
-  // console.log(product);
   let imagesList;
   product.images.length === 0
     ? (imagesList = [{ image: noPhoto }])

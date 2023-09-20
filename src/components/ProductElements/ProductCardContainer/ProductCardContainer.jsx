@@ -2,30 +2,17 @@ import './ProductCardContainer.scss';
 import ProductCard from '../ProductCard/ProductCard';
 import { Button } from '../../UI/Button/Button';
 import { useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchProducts, loadMoreProducts } from '../../../store/slices/productsSlice.js';
 
-export default function ProductCardContainer({ title, products, onClickMoreBtn, className }) {
+export default function ProductCardContainer({ title, products, onClickMoreBtn, isFull, className }) {
   const [displayCards, setDisplayCards] = useState([]);
   const [cardsQuantity, setCardsQuantity] = useState(6);
-  // const dispatch = useDispatch();
-
-  // const productsState = useSelector((state) => state.products.products);
-  // const products = productsState.items;
-  // const dbPage = productsState.page;
-  // console.log(dbPage);
-
-  // useEffect(() => {
-  //   dispatch(fetchProducts(dbPage));
-  // }, [dbPage]);
 
   const handleAddCards = () => {
-    // if (cardsQuantity + 6 >= products.length)
-    onClickMoreBtn();
-
     setCardsQuantity(cardsQuantity + 6);
-    // dispatch(fetchProducts(dbPage));
-    // dispatch(loadMoreProducts());
+    if (cardsQuantity <= products.length) {
+      onClickMoreBtn();
+
+    }
   };
 
   useEffect(() => {
@@ -41,8 +28,7 @@ export default function ProductCardContainer({ title, products, onClickMoreBtn, 
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
-      {/* {cardsQuantity <= products.length && <Button primary dark size="l" onClick={handleAddCards}> */}
-      {<Button primary dark size="l" onClick={handleAddCards}>
+      { (isFull && products.length > cardsQuantity) && <Button primary dark size="l" onClick={handleAddCards}>
         Смотреть ещё
       </Button>
       }

@@ -15,11 +15,10 @@ const HomePage = () => {
   const [popularProducts, setPopularProducts] = useState([]);
   
 
-  const { allProducts, pageDB} = useSelector((state) => state.products.allProducts);
+  const { allProducts, pageDB, isFull} = useSelector((state) => state.products.allProducts);
 
   useEffect(() => {
     dispatch(fetchProducts(pageDB));
-    // setNewProducts([...newProducts, ...allProducts]);
   }, [dispatch, pageDB]);
 
 
@@ -42,6 +41,7 @@ const HomePage = () => {
         products={newProducts}
         className="home-page__cards-container"
         onClickMoreBtn={handleClickMore}
+        isFull
       />
       <BannerAdvertising className="home-page__banner" />
       <ProductCardContainer
@@ -49,6 +49,7 @@ const HomePage = () => {
         products={popularProducts}
         className="home-page__cards-container"
         onClickMoreBtn={handleClickMore}
+        isFull={isFull}
       />
       <PromoRegistration className="home-page__promo-registration" />
     </main>
