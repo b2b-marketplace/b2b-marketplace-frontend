@@ -1,7 +1,11 @@
 import './ProductPage.scss';
 import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
+<<<<<<< HEAD
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
+=======
+import ProductCardContainer from '../../components/Product/ProductCardContainer/ProductCardContainer';
+>>>>>>> main2
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,6 +41,7 @@ export default function ProductPage() {
 
   return (
     <div className="product-page">
+<<<<<<< HEAD
       {isProductByIdLoaded
         ? productById.product === undefined
           ? (<NotFound />)
@@ -46,6 +51,17 @@ export default function ProductPage() {
           />)
         : (<Preloader />)
       }
+=======
+      {isProductsLoaded ? (
+        product === undefined ? (
+          <NotFound />
+        ) : (
+          <ProductBlock product={product} className="product-page__product-block" />
+        )
+      ) : (
+        <Preloader />
+      )}
+>>>>>>> main2
       <PlatformBenefits className="product-page__platform-benefits" />
       <ProductCardContainer
         title={'Товары от этого поставщика'}

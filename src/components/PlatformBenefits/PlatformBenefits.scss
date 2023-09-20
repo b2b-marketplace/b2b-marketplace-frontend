@@ -1,10 +1,7 @@
 @import '../../styles/global';
 
 .platform-benefits {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  font-size: $fontSize;
+  @include default-font-styles;
   color: $whiteColor;
   position: relative;
 

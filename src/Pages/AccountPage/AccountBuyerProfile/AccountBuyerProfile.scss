@@ -1,8 +1,8 @@
 @import '../../../styles/global';
 
 .account-buyer-profile {
+  @include default-font-styles;
   display: flex;
-  font-family: $fontFamilyNunitoSans;
   max-width: 907px;
   width: 100%;
 
@@ -16,7 +16,7 @@
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 48px;
   }
 
   &__form-block {
@@ -53,8 +53,9 @@
   &__field {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 8px;
     padding: 0;
+    margin: 0;
     border: none;
   }
 

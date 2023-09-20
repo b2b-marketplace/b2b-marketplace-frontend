@@ -1,0 +1,34 @@
+@import '../../styles/vars';
+
+@mixin marginTop($top) {
+  margin: $top 0 0;
+}
+
+@mixin text($weight, $lh, $fz) {
+  font-weight: $weight;
+  line-height: $lh;
+  letter-spacing: 0;
+  color: $darkColor;
+  font-size: $fz;
+}
+
+.activation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+
+  &__title {
+    @include marginTop(0);
+    @include text(600, 28px, 24px);
+    margin-inline: auto;
+    max-width: 427px;
+  }
+
+  &__subtitle {
+    @include marginTop(24px);
+    @include text(600, 24px, 16px);
+    max-width: 398px;
+    text-align: center;
+  }
+}

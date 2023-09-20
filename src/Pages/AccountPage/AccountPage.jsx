@@ -10,18 +10,18 @@ import IconBag from '../../components/UI/Icon/Icon_bag';
 import IconMessage from '../../components/UI/Icon/Icon_message';
 import IconLock from '../../components/UI/Icon/Icon_lock';
 import IconBasket from '../../components/UI/Icon/Icon_basket';
+/* import IconPurchases from '../../components/UI/Icon/Icon_purchases';
+import IconCreditCard from '../../components/UI/Icon/Icon_credit-card'; */
 
 const AccountPage = ({ role = 'seller' }) => {
   const menuItemsBuyer = [
     { icon: <BiBag />, link: 'profile', label: 'Моя компания' },
     { icon: <IconPackage />, link: 'orders', label: 'Закупки' },
-    {
-      icon: <IconHearth />,
-      link: 'favorites',
-      label: 'Избранное',
-    },
+    /* { icon: <IconPurchases />, link: '', label: 'Мои заказы' }, */
+    { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
     { icon: <IconBasket />, link: '/basket', label: 'Корзина' },
     { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
+    /* { icon: <IconCreditCard />, link: '', label: 'Оплата' }, */
     { icon: <IconLock className={'account-page__icon'} />, link: 'secure', label: 'Безопасность' },
   ];
 

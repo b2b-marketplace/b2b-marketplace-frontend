@@ -1,0 +1,52 @@
+@import '../../../styles/global';
+
+.tabs-navigation {
+  display: flex;
+  flex-direction: column;
+  @include default-font-styles;
+
+  &__buttons {
+    display: flex;
+    column-gap: 20px;
+    padding: 0 20px;
+  }
+
+  &__button {
+    @include reset-button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid $grayLightColor;
+    border-right: 1px solid $grayLightColor;
+    border-top: 1px solid $grayLightColor;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    width: 262px;
+    height: 48px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    cursor: pointer;
+
+    &_active {
+      color: white;
+      background-color: $blackColor;
+    }
+  }
+
+  &__container {
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid $grayLightColor;
+  }
+
+  &__content {
+    display: none;
+
+    &_active {
+      display: block;
+    }
+  }
+}

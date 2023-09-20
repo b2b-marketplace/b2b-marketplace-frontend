@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCategoryExpansion } from '../../../../hooks/useCategoryExpansion';
 import './MenuClothes.scss';
 import IconArrowCounter from '../../../UI/Icon/Icon_arrow-counter';
 
@@ -12,7 +13,7 @@ const categories = [
       'Брюки и шорты',
       'Нижнее белье',
       'Верхняя одежда',
-      'fffff',
+      'Свитера',
     ],
     link: ['#', '#', '#', '#', '#'],
   },
@@ -28,7 +29,14 @@ const categories = [
   },
   {
     title: 'Мужчинам',
-    items: ['Футболки и майки', 'Брюки и шорты', 'Рубашки', 'Нижнее белье', 'Носки'],
+    items: [
+      'Футболки и майки',
+      'Брюки и шорты',
+      'Рубашки',
+      'Нижнее белье',
+      'Носки',
+      'Верхняя одежда',
+    ],
     link: ['#', '#', '#', '#', '#'],
   },
   {
@@ -39,18 +47,13 @@ const categories = [
 ];
 
 const MenuClothes = () => {
-  const [expandedCategories, setExpandedCategories] = useState({});
-
-  const toggleCategoryExpansion = (index) => {
-    setExpandedCategories((prevState) => ({
-      ...prevState,
-      [index]: !prevState[index],
-    }));
-  };
+  const { expandedCategories, toggleCategoryExpansion } = useCategoryExpansion();
 
   return (
     <div className="menu-clothes">
-      <h2 className="menu-clothes__title">Категории</h2>
+      <h2 className="menu-clothes__title">
+        Категории <span className="menu-clothes__title-quantity">372 277 товаров</span>
+      </h2>
       <div className="menu-clothes__conteiner">
         {categories.map((category, index) => (
           <ul key={index} className="menu-clothes__lists">
@@ -72,7 +75,12 @@ const MenuClothes = () => {
                 className="menu-clothes__button-more"
                 onClick={() => toggleCategoryExpansion(index)}
               >
-                Еще <IconArrowCounter />
+                {expandedCategories[index] ? 'Скрыть' : 'Еще'}{' '}
+                {expandedCategories[index] ? (
+                  <IconArrowCounter className={'question-page__icon'} />
+                ) : (
+                  <IconArrowCounter />
+                )}
               </button>
             )}
           </ul>

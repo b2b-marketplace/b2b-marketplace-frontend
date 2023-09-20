@@ -2,8 +2,7 @@
 
 .drop-down {
   width: 100%;
-  font-family: $fontFamilyNunitoSans;
-  font-style: $mainStyle;
+  @include default-font-styles;
   font-weight: 600;
 
   &__label {
@@ -16,19 +15,17 @@
   }
 
   &__select {
+    @include flex-column;
     max-width: 685px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
     font-size: 16px;
     line-height: 24px;
     position: relative;
   }
 
   &__header {
+    @include flex-space-between;
     box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     border: 1px solid $blackColor;
     border-radius: 10px;
@@ -53,7 +50,7 @@
     width: 100%;
     z-index: 1;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease;
     max-height: 0;
   }
 
@@ -63,14 +60,23 @@
     overflow: auto; /* прокрутка, если меню слишком длинное */
   }
 
+  &__icon {
+    transform: rotate(180deg);
+  }
+
   &__item {
     cursor: pointer;
     padding: 8px 20px;
     transition: background-color 0.3s ease;
-  }
 
-  &__item:hover {
-    background-color: #f2f2f2;
+    &:hover {
+      color: $blueColor;
+    }
+
+    &.active {
+      background-color: $blueColor;
+      color: white;
+    }
   }
 
   .small &__select {

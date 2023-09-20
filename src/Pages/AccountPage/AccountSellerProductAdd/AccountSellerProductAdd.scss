@@ -7,12 +7,11 @@
   flex-direction: column;
 
   &__section {
+    @include default-font-styles;
     max-width: 927px;
     display: flex;
     flex-direction: column;
-    font-family: $fontFamilyNunitoSans;
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     line-height: normal;
     gap: 60px;
@@ -100,5 +99,10 @@
   &__button-conteiner {
     display: flex;
     gap: 20px;
+  }
+
+  &__error {
+    font-size: 12px;
+    color: red;
   }
 }

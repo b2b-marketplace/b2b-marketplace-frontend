@@ -13,11 +13,21 @@ import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
 import Input from '../UI/Input/Input';
+import { useSelector } from 'react-redux';
+import usePopup from '../../hooks/usePopup';
+//import IconClose from '../UI/Icon/Icon_close';
 import geoApi from '../../utils/GeoApi';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { openPopup: openAuthPopup } = usePopup('select');
   const [city, setCity] = useState('Дефолтсити');
+
+  const handleOpenAuthPopup = (event) => {
+    event.preventDefault();
+    openAuthPopup();
+  };
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -41,15 +51,8 @@ const Header = () => {
       </div>
 
       <div className="header__container">
-        <button
-          type='button'
-          className='header__catalog-button'
-          onClick={togglePopup}
-        >
-          {isPopupOpen
-            ? <IconClose />
-            : <IconBurger />
-          }
+        <button type="button" className="header__catalog-button" onClick={togglePopup}>
+          {isPopupOpen ? <IconClose /> : <IconBurger />}
           Каталог
         </button>
 
@@ -77,16 +80,9 @@ const Header = () => {
         </nav>
 
         <div className="header__search">
-          <Input
-            mode="primary"
-            type="text"
-            extraClass="header__input"
-            placeholder="Поиск...."
-
-          />
+          <input type="text" className="header__input" placeholder="Поиск...." />
           <button type="button" className="header__button">
             <IconSearch />
-
           </button>
         </div>
       </div>
@@ -104,7 +100,7 @@ const Header = () => {
           <IconBasket />
         </Link>
 
-        <Link to="/account" className="header__link">
+        <Link onClick={!isLoggedIn && handleOpenAuthPopup} to="/account/profile" className="header__link">
           <IconProfile />
         </Link>
       </nav>

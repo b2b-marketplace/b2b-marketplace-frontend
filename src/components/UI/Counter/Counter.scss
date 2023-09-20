@@ -1,19 +1,14 @@
 @import '../../../styles/global';
 
 .counter {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  font-size: $fontSize;
-  color: $fontColor;
+  @include default-font-styles;
   display: flex;
   align-items: center;
   column-gap: 10px;
 
   &__button {
+    @include reset-button;
     border: none;
-    padding: 0;
-    background: transparent;
   }
 
   &__input {

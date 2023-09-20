@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCategoryExpansion } from '../../../hooks/useCategoryExpansion';
 import './QuestionPage.scss';
+import IconArrowCounter from '../../../components/UI/Icon/Icon_arrow-counter';
 
-const Question = () => {
+const QuestionPage = () => {
+  const { expandedCategories, toggleCategoryExpansion } = useCategoryExpansion();
+
   const sections = [
     {
       title: 'Главное',
@@ -173,19 +177,37 @@ const Question = () => {
   ];
 
   return (
-    <section className="question">
-      <h2 className="question__title">Частые вопросы</h2>
-      <div className="question__container">
+    <section className="question-page">
+      <h2 className="question-page__title">Частые вопросы</h2>
+      <div className="question-page__container">
         {sections.map((section, index) => (
-          <ul className="question__lists" key={index}>
-            <h3 className="question__paragraph">{section.title}</h3>
+          <ul className="question-page__lists" key={index}>
+            <h3 className="question-page__paragraph">{section.title}</h3>
             {section.questions.map((question, i) => (
-              <li className="question__list" key={i}>
-                <Link className="question__link" to={question.link}>
+              <li
+                className={`question-page__list ${
+                  !expandedCategories[index] && i >= 4 ? 'hidden' : ''
+                }`}
+                key={i}
+              >
+                <Link className="question-page__link" to={question.link}>
                   {question.text}
                 </Link>
               </li>
             ))}
+            {section.questions.length > 4 && (
+              <button
+                className="question-page__button-more"
+                onClick={() => toggleCategoryExpansion(index)}
+              >
+                {expandedCategories[index] ? 'Скрыть' : 'Еще'}{' '}
+                {expandedCategories[index] ? (
+                  <IconArrowCounter className={'question-page__icon'} />
+                ) : (
+                  <IconArrowCounter />
+                )}
+              </button>
+            )}
           </ul>
         ))}
       </div>
@@ -193,4 +215,4 @@ const Question = () => {
   );
 };
 
-export default Question;
+export default QuestionPage;

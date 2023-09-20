@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Basket.scss';
-import { changeChecked, deleteProduct } from '../../store/slices/basketSlice.js';
+import { changeChecked, deleteProduct, updateAllProduct } from '../../store/slices/basketSlice.js';
 import Checkbox from '../UI/Checkbox/Checkbox';
 import IconTrash from '../UI/Icon/Icon_trash';
 import Tooltip from '../UI/Tooltip/Tooltip';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import { Button } from '../UI/Button/Button';
 import OrderDetail from '../OrderDetail/OrderDetail';
-import ProductCardBasket from '../ProductElements/ProductCardBasket/ProductCardBasket';
-import productsApi from '../../utils/ProductsApi';
+import ProductCardHorizontal from '../Product/ProductCardHorizontal/ProductCardHorizontal';
+import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import SidebarRight from '../SidebarRight/SidebarRight';
 import { useNavigate } from 'react-router-dom';
+import {
+  getProductText,
+  getSuppliersText,
+  getProductTotalPrice,
+  getProductQuantity,
+  getCalculateProductInfo,
+} from '../../utils/utils';
+import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 
-const Basket = ({ className }) => {
+const Basket = ({ extraClassName }) => {
   const [currentProductList, setCurrentProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
   const [orderInfo, setOrderInfo] = useState({
     productSum: 0,
-    productCount: 0,
+    productQuantity: 0,
     suppliersCount: 0,
   });
   const basketList = useSelector((state) => state.basket.basket);
@@ -90,24 +97,15 @@ const Basket = ({ className }) => {
     const selectedProducts = currentProductList.filter((product) =>
       selectedProductId.includes(product.id)
     );
-
-    const sumWithProducts = selectedProducts.reduce((total, currentProduct) => {
-      const productPrice = parseFloat(currentProduct.price.replace(/\s/g, ''));
-      const productQuantity = parseFloat(currentProduct.quantity);
-      return total + productPrice * productQuantity;
-    }, 0);
-
+    const { totalPrice, totalQuantity } = getCalculateProductInfo(selectedProducts);
     const suppliersId = new Set(
       selectedProducts.map((currentProduct) => currentProduct.seller[0]?.id)
     );
 
     setOrderInfo({
       suppliersCount: suppliersId.size,
-      productSum: sumWithProducts,
-      productCount: selectedProducts.reduce(
-        (total, currentProduct) => total + parseFloat(currentProduct.quantity),
-        0
-      ),
+      productSum: totalPrice,
+      productQuantity: totalQuantity,
     });
   }, [selectedProductId, currentProductList]);
 
@@ -121,8 +119,8 @@ const Basket = ({ className }) => {
 
   const handleClickCheckboxSelectAllProduct = () => {
     if (isCheckAll) {
-      setSelectedProductId([]);
       dispatch(changeChecked({ productIds: [], checked: false }));
+      setSelectedProductId([]);
     } else {
       const allProductIds = currentProductList.map((product) => product.id);
       dispatch(changeChecked({ productIds: [], checked: true }));
@@ -136,14 +134,16 @@ const Basket = ({ className }) => {
   };
 
   const handleNavigateToOrder = () => {
-    if (selectedProductId.length)
+    if (selectedProductId.length) {
+      dispatch(updateAllProduct({ currentProductList }));
       navigate('/order', {
         state: { cameFromBasket: true },
       });
+    }
   };
 
   return (
-    <section className={`basket ${className || ''}`}>
+    <section className={`basket ${extraClassName || ''}`}>
       {currentProductList.length > 0 ? (
         <>
           <div className="basket__container">
@@ -151,8 +151,8 @@ const Basket = ({ className }) => {
               <div className="basket__panel">
                 <div className="basket__panel-checkbox">
                   <Checkbox
-                    onCheckboxClick={handleClickCheckboxSelectAllProduct}
-                    isChecked={isCheckAll}
+                    handleChangeCheckbox={handleClickCheckboxSelectAllProduct}
+                    checked={isCheckAll}
                     className="basket__checkbox"
                   >
                     <span className="basket__checkbox-text">Выбрать все</span>
@@ -166,7 +166,7 @@ const Basket = ({ className }) => {
               <ul className="basket__product-list">
                 {currentProductList?.map((product) => (
                   <li className="basket__product-item" key={product.id} data-id={product.id}>
-                    <ProductCardBasket
+                    <ProductCardHorizontal
                       isCheckboxChecked={product.checked}
                       onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
                       product={product}
@@ -189,22 +189,18 @@ const Basket = ({ className }) => {
                   </Tooltip>
                 </OrderDetailHeader>
                 <OrderDetailContentBasket
-                  productSum={orderInfo.productSum}
-                  productCount={orderInfo.productCount}
-                  suppliersCount={orderInfo.suppliersCount}
-                  extraClassName="basket__order-detail-content"
+                  suppliersCount={getSuppliersText(orderInfo.suppliersCount)}
+                  productQuantity={getProductText(orderInfo.productQuantity)}
+                  productSumPrice={orderInfo.productSum}
                 />
                 <div className="basket__order-detail-buttons">
                   <Button
                     size="xl"
                     onClick={handleNavigateToOrder}
-                    primary 
+                    primary
                     dark
                     disabled={!selectedProductId.length}
                     label={'Купить'}
-                    // extraClass={`basket__order-detail-button ${
-                    //   !selectedProductId.length ? 'basket__order-detail-button_disabled' : ''
-                    // }`}
                   >
                     Купить
                   </Button>

@@ -69,7 +69,8 @@ const QuestionForm = () => {
       <div className="question-form__links">
         <Link
           className={`question-form__link ${activeLink === 'ask' ? 'active-link' : ''}`}
-          onClick={handleAskClick}>
+          onClick={handleAskClick}
+        >
           Задать вопрос
         </Link>
 
@@ -113,7 +114,8 @@ const QuestionForm = () => {
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            required></textarea>
+            required
+          ></textarea>
         </label>
 
         <label className="question-form__folder">
@@ -132,7 +134,7 @@ const QuestionForm = () => {
           <Checkbox
             name="agreeTerms"
             checked={formData.agreeTerms}
-            onChange={handleCheckboxChange}
+            handleChangeCheckbox={handleCheckboxChange}
             required
           />
           <p className="question-form__text">

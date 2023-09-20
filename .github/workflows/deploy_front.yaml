@@ -1,0 +1,75 @@
+name: Build and deploy to stage server
+
+on:
+  pull_request:
+    branches:
+      - main2
+    types: [closed]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: b2b_marketplace_frontend
+  REP_OWNER: b2b-marketplace
+  DEPLOY_PATH: b2b_marketplace/
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  buld_and_push_image_to_github_packages:
+    name: Build and push image to GitHub Packages
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    environment:
+      name: Stage
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      - name: Login to GutHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile
+          labels: runnumber=${GITHUB_RUN_ID}
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.REP_OWNER }}/${{ env.IMAGE_NAME }}:stage,
+            ${{ env.REGISTRY }}/${{ env.REP_OWNER }}/${{ env.IMAGE_NAME }}:latest,
+            ${{ env.REGISTRY }}/${{ env.REP_OWNER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+  deploy:
+    name: Deploy and start the App
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    needs: buld_and_push_image_to_github_packages
+    environment:
+      name: Stage
+    steps:
+      - name: Execute remote commands to deploy and start app
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ env.DEPLOY_PATH }}
+
+            echo ${{ secrets.REGISTRY_PAT }} | docker login ${{ env.REGISTRY }} -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
+
+            docker image prune -f
+            docker pull  ${{ env.REGISTRY }}/${{ env.REP_OWNER }}/${{ env.IMAGE_NAME }}:latest
+            docker compose --file infra/docker-compose.stage.yaml stop
+            docker compose --file infra/docker-compose.stage.yaml rm frontend
+            docker compose --file infra/docker-compose.stage.yaml up -d

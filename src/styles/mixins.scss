@@ -1,10 +1,13 @@
 @import './_vars.scss';
 
-@mixin default-font-style {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  color: $fontColor;
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 @mixin reset-list {
@@ -16,4 +19,14 @@
 @mixin reset {
   margin: 0;
   padding: 0;
+}
+
+@mixin reset-link {
+  text-decoration: none;
+  color: $blackColor;
+}
+
+@mixin reset-button {
+  @include reset;
+  background-color: transparent;
 }

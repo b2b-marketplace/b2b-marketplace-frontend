@@ -13,17 +13,21 @@ import storage from 'redux-persist/lib/storage';
 import { accountReducer } from './slices/accountSlice';
 import { basketReducer } from './slices/basketSlice';
 import { productsReducer } from './slices/productsSlice';
+import { popupReducer } from './slices/togglePopupSlice.js';
+import { authReducer } from './slices/authSlice';
 
 const rootReducer = combineReducers({
   account: accountReducer,
   basket: basketReducer,
   products: productsReducer,
+  popup: popupReducer,
+  auth: authReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['basket'],
+  whitelist: ['basket', 'auth'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
