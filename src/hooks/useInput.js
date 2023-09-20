@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { isEmail } from 'validator';
 
 const useInput = (initValueParams) => {
   const [values, setValues] = useState(initValueParams);
@@ -12,6 +13,18 @@ const useInput = (initValueParams) => {
 
   const [isDirtyInputs, setIsDirtyInputs] = useState(initDirtyStates);
 
+  const checkValidity = (input) => {
+    if (input.type === 'email') {
+      return isEmail(input.value);
+    }
+    
+    return true;
+  };
+  const getCustomMessage = (input) => {
+
+    return '/';
+  };
+
   const handleChange = ({ target: input }) => {
     if (!isDirtyInputs[input.name]) {
       setIsDirtyInputs((state) => ({
@@ -19,9 +32,7 @@ const useInput = (initValueParams) => {
         [input.name]: true,
       }));
     }
-    console.log(input.validationMessage);
-    console.log(input);
-    setErrors((state) => ({
+    setErrors(state => ({
       ...state,
       [input.name]: input.validationMessage,
     }));
