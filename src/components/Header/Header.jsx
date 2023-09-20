@@ -15,11 +15,20 @@ import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
 import Input from '../UI/Input/Input';
+import { useSelector } from 'react-redux';
+import usePopup from '../../hooks/usePopup';
 //import IconClose from '../UI/Icon/Icon_close';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { openPopup: openAuthPopup } = usePopup('select');
   const [city, setCity] = useState('Дефолтсити');
+
+  const handleOpenAuthPopup = (event) => {
+    event.preventDefault();
+    openAuthPopup();
+  };
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -92,7 +101,7 @@ const Header = () => {
           <IconBasket />
         </Link>
 
-        <Link to="/account/profile" className="header__link">
+        <Link onClick={!isLoggedIn && handleOpenAuthPopup} to="/account/profile" className="header__link">
           <IconProfile />
         </Link>
       </nav>

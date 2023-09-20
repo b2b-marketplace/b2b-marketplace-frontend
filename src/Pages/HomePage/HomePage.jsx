@@ -13,6 +13,8 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   const products = useSelector((state) => state.products.products.items);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
@@ -32,7 +34,7 @@ const HomePage = () => {
         products={products}
         className="home-page__cards-container"
       />
-      <PromoRegistration className="home-page__promo-registration" />
+      {!isLoggedIn && <PromoRegistration className="home-page__promo-registration" />}
     </main>
   );
 };
