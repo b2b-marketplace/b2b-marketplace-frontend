@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import useInput from '../../../hooks/useInput';
 import usePopup from '../../../hooks/usePopup';
 import IconPassword from '../../UI/Icon/IconPassword';
@@ -8,7 +9,6 @@ import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import useShowPassword from '../../../hooks/useShowPassword';
 import { loginUser, resetLoading } from '../../../store/slices/authSlice';
-import { useDispatch, useSelector } from 'react-redux';
 
 const LoginPopup = () => {
   const dispatch = useDispatch();
