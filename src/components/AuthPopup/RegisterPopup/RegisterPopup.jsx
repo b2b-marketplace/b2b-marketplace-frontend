@@ -33,6 +33,7 @@ const RegisterPopup = () => {
     address: '',
   };
   const initLastParams = {
+    terms: '',
     password: '',
     repeat_password: '',
   };
