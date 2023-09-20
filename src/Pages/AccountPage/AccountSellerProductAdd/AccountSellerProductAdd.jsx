@@ -6,8 +6,12 @@ import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTit
 import InputField from '../../../components/UI/InputField/InputField';
 import FileUpload from '../../../components/UI/FileUpload/FileUpload';
 import DropDown from '../../../components/UI/DropDown/DropDown';
+import usePopup from '../../../hooks/usePopup';
 
 const AccountSellerProductAdd = () => {
+  const { openPopup: openModerationNewProductPopup } = usePopup('addNewItem');
+  const { openPopup: openCancelAddProductPopup } = usePopup('cancelAddnewItem');
+
   // Состояние для данных формы
   const [formData, setFormData] = useState({
     category: 0,
@@ -36,21 +40,21 @@ const AccountSellerProductAdd = () => {
     event.preventDefault();
   };
 
-  const handleCancel = () => {
-    setFormData({
-      category: 0,
-      sku: '',
-      name: '',
-      brand: '',
-      price: '',
-      wholesale_quantity: 2147483647,
-      quantity_in_stock: 2147483647,
-      description: '',
-      manufacturer_country: '',
-      videos: ['http://example.com'],
-      images: ['http://example.com'],
-    });
-  };
+  // const handleCancel = () => {
+  //   setFormData({
+  //     category: 0,
+  //     sku: '',
+  //     name: '',
+  //     brand: '',
+  //     price: '',
+  //     wholesale_quantity: 2147483647,
+  //     quantity_in_stock: 2147483647,
+  //     description: '',
+  //     manufacturer_country: '',
+  //     videos: ['http://example.com'],
+  //     images: ['http://example.com'],
+  //   });
+  // };
 
   return (
     <section className="account-seller-product-add">
@@ -132,8 +136,7 @@ const AccountSellerProductAdd = () => {
                 name="description"
                 className="account-seller-product-add__textarea"
                 placeholder="Добавьте описание товара"
-                onChange={handleFormChange}
-              ></textarea>
+                onChange={handleFormChange}></textarea>
             </div>
           </div>
 
@@ -168,10 +171,10 @@ const AccountSellerProductAdd = () => {
               Каждый товар проходит модерацию. В среднем проверка занимает 30 минут
             </p>
             <div className="account-seller-product-add__button-conteiner">
-              <Button size="l" primary dark type="submit">
+              <Button size="l" onClick={openModerationNewProductPopup} primary dark>
                 Опубликовать
               </Button>
-              <Button size="l" primary onClick={handleCancel}>
+              <Button size="l" onClick={openCancelAddProductPopup} primary>
                 Отмена
               </Button>
             </div>

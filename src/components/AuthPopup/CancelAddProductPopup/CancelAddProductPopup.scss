@@ -1,0 +1,33 @@
+@import '../../../styles/vars';
+
+.cancel-add-product-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  font-family: $fontFamilyNunitoSans;
+  font-size: 20px;
+  font-style: $fontStyle;
+  font-weight: 600;
+  line-height: 28px;
+  color: $darkColor;
+ 
+
+  &__title {
+    color: $darkColor;
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $darkColor;
+  }
+
+  &__conteiner {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+  }
+}
