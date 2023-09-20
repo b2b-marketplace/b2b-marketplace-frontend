@@ -12,12 +12,9 @@
   color: $blackColor;
 
   &__text {
-    vertical-align: middle;
-    color: $darkColor;
-    font-family: $fontFamilyNunitoSans;
-    font-size: 16px;
-    font-style: normal;
+    @include default-font-styles;
     font-weight: 700;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    vertical-align: middle;
   }
 }

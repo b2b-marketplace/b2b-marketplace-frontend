@@ -1,7 +1,7 @@
 @import '../../styles/global.scss';
 
 .order-form-page {
-  @include default-font-style;
+  @include default-font-styles;
   display: flex;
   width: 100%;
   max-width: $maxWidth;

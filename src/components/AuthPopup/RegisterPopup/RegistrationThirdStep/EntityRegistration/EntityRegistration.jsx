@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import useInput from '../../../../../hooks/useInput';
 import Input from '../../../Input/Input';
 import LabelCheckbox from '../../../LabelCheckbox/LabelCheckbox';
 const options = [
@@ -9,24 +7,7 @@ const options = [
   { value: 'HowkCity', label: 'Орловская Область' },
 ];
 
-const EntityRegistration = ({ onFormChange }) => {
-  const initValueParams = {
-    email: '',
-    name: '',
-    inn: '',
-    phone_number: '',
-    address: '',
-    vat: '',
-  };
-
-  const { errors, values, handleChange, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
-
-  const onChange = (event) => {
-    handleChange(event);
-  };
-
-  useEffect(() => onFormChange(values, isNotValidForm), [values, isNotValidForm]);
-
+const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
   return (
     <>
       <Input
@@ -50,6 +31,7 @@ const EntityRegistration = ({ onFormChange }) => {
         onChange={onChange}
         value={values.inn}
         min={1000000000}
+        max={9999999999}
         required
         isNotError={!errors.inn && isDirtyInputs.inn}
       ></Input>
@@ -81,7 +63,6 @@ const EntityRegistration = ({ onFormChange }) => {
           isNotError={!errors.email && isDirtyInputs.email}
         />
       </div>
-
       <Input
         name="address"
         type="select"

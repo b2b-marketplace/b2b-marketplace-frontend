@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import useInput from '../../../../../hooks/useInput';
 import Input from '../../../Input/Input';
 const options = [
   { value: 'moscow', label: 'Московская Область' },
@@ -8,31 +6,59 @@ const options = [
   { value: 'HowkCity', label: 'Орловская Область' },
 ];
 
-const PersonRegistration = ({ onFormChange }) => {
-  const initValueParams = {
-    email: '',
-    name: '',
-    inn: '',
-    phone_number: '',
-    address: '',
-    vat: '',
-  };
-
-  const { errors, values, handleChange, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
-
-  const onChange = (event) => {
-    handleChange(event);
-  };
-
-  useEffect(() => onFormChange(values, isNotValidForm), [values, isNotValidForm]);
+const PersonRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
   return (
     <>
-      <Input name="last-name" type="text" placeholder="Фамилия" size="l" text="Кририллицей" />
-      <Input name="name" type="text" placeholder="Имя" size="l" text="Кририллицей" />
+      <Input
+        name="first_name"
+        type="text"
+        placeholder="Фамилия"
+        size="l"
+        text="Кириллицей"
+        onChange={onChange}
+        value={values.first_name}
+        maxLength={100}
+        required
+        isNotError={!errors.first_name && isDirtyInputs.first_name}
+      />
+      <Input
+        name="name"
+        type="text"
+        placeholder="Имя"
+        size="l"
+        text="Кириллицей"
+        onChange={onChange}
+        value={values.name}
+        maxLength={100}
+        required
+        isNotError={!errors.name && isDirtyInputs.name}
+      />
 
       <div className="popup__inputs">
-        <Input name="tel" type="tel" placeholder="+7" size="m" text="Номер телефона без дефисов" />
-        <Input name="email" type="email" placeholder="box@mail.ru" size="m" text="Почта" />
+        <Input
+          name="phone_number"
+          type="tel"
+          placeholder="+7"
+          size="m"
+          text="Номер телефона без дефисов"
+          onChange={onChange}
+          value={values.phone_number}
+          maxLength={20}
+          required
+          isNotError={!errors.phone_number && isDirtyInputs.phone_number && values.phone_number.length >= 9}
+        />
+        <Input
+          name="email"
+          type="email"
+          placeholder="box@mail.ru"
+          size="m"
+          text="Почта"
+          onChange={onChange}
+          value={values.email}
+          maxLength={254}
+          required
+          isNotError={!errors.email && isDirtyInputs.email}
+        />
       </div>
 
       <Input
@@ -46,6 +72,7 @@ const PersonRegistration = ({ onFormChange }) => {
         options={options}
         autoComplete="off"
         required
+        isNotError={!errors.address && isDirtyInputs.address}
       />
     </>
   );

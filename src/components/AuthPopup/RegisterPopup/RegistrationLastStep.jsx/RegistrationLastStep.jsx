@@ -5,28 +5,13 @@ import IconPassword from '../../../UI/Icon/IconPassword';
 import Input from '../../Input/Input';
 import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
 import PopupButton from '../../PopupButton/PopupButton';
+const passwordLength = 8;
 
-const RegistrationLastStep = ({ onFormChange }) => {
+const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
   const { isShow, handleShow } = useShowPassword(false);
   const { isShow: isShowRepeat, handleShow: handleShowRepeat } = useShowPassword(false);
-  const initValueParams = {
-    password: '',
-    repeat_password: '',
-    terms: '',
-  };
-
-  const { errors, values, handleChange, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
-
-  const onChange = (event) => {
-    handleChange(event);
-  };
 
   const isPasswordsMatch = values.password === values.repeat_password;
-
-  useEffect(
-    () => onFormChange(values, isNotValidForm || !isPasswordsMatch),
-    [values, isNotValidForm]
-  );
 
   return (
     <>
@@ -36,10 +21,10 @@ const RegistrationLastStep = ({ onFormChange }) => {
         autoComplete="off"
         placeholder="Пароль"
         size="l"
-        text="От 10 символов, латиница, цифры, символы"
+        text={`От ${passwordLength} символов, латиница, цифры, символы`}
         onChange={onChange}
         value={values.password}
-        minLength={10}
+        minLength={passwordLength}
         required
         isNotError={!errors.password && isDirtyInputs.password}
       >
@@ -61,7 +46,7 @@ const RegistrationLastStep = ({ onFormChange }) => {
         text="Пароли совпадают"
         onChange={onChange}
         value={values.repeat_password}
-        minLength={10}
+        minLength={passwordLength}
         required
         isNotError={!errors.repeat_password && isPasswordsMatch && isDirtyInputs.repeat_password}
       >

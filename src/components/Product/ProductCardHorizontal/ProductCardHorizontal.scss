@@ -1,7 +1,7 @@
 @import '../../../styles/global';
 
 .product-card-horizontal {
-  @include default-font-style;
+  @include default-font-styles;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -148,9 +148,8 @@
   }
 
   &__product-price {
-    font-family: $fontFamilyUnbounded;
+    @include default-font-styles;
     font-size: 20px;
-    font-style: normal;
     font-weight: 500;
     line-height: 28px;
   }

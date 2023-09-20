@@ -10,6 +10,8 @@ const RegistrationSecondStep = ({ onEntity }) => {
       dark1={true}
       buttonText1="Да"
       buttonText2="Нет"
+      disabled1={false}
+      disabled2={true}
     />
   );
 };

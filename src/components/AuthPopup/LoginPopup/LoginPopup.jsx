@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import useInput from '../../../hooks/useInput';
 import usePopup from '../../../hooks/usePopup';
 import IconPassword from '../../UI/Icon/IconPassword';
@@ -7,12 +8,17 @@ import Input from '../Input/Input';
 import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import useShowPassword from '../../../hooks/useShowPassword';
-import authApi from '../../../utils/authApi';
+import { loginUser, resetLoading } from '../../../store/slices/authSlice';
 
 const LoginPopup = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn, isLoading } = useSelector((state) => state.auth);
+
+
   const { isOpen, closePopup } = usePopup('login');
   const { openPopup: openCompleteLogin } = usePopup('completeLogin');
   const { openPopup: openRestore } = usePopup('selectRestore');
+  
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
@@ -20,13 +26,7 @@ const LoginPopup = () => {
     useInput(initValueParams);
 
   const handleSubmit = () => {
-    authApi
-      .login(values)
-      .then(() => {
-        closePopup();
-        openCompleteLogin();
-      })
-      .catch(console.log);
+    dispatch(loginUser(values));
   };
 
   const handleRestore = () => {
@@ -35,10 +35,20 @@ const LoginPopup = () => {
   };
 
   useEffect(() => {
-    if (isOpen) return;
+    if (isOpen) {
+      dispatch(resetLoading());
+      return;
+    }
     resetValues();
     resetShow();
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    if (!isLoggedIn) return;
+    closePopup();
+    openCompleteLogin();
+  }, [isLoggedIn]);
 
   return (
     <Popup
@@ -51,8 +61,8 @@ const LoginPopup = () => {
         className="popup__form"
         onSubmit={handleSubmit}
         btnText="Далее"
-        btnType={'submit'}
-        formDisabled={isNotValidForm}
+        btnType={"submit"}
+        formDisabled={isNotValidForm || isLoading}
       >
         <fieldset className="popup__fieldset">
           <Input
