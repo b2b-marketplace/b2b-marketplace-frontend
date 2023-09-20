@@ -17,7 +17,6 @@ class ProductsApi {
 
   getProducts(page = 1) {
     const url = this._serverUrl + `?page=${page}`;
-    console.log(url);
     return this._request(url, {
       method: 'GET',
       headers: this._headers,

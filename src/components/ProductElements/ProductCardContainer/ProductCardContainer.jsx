@@ -20,8 +20,10 @@ export default function ProductCardContainer({ title, products, onClickMoreBtn, 
   // }, [dbPage]);
 
   const handleAddCards = () => {
-    setCardsQuantity(cardsQuantity + 6);
+    // if (cardsQuantity + 6 >= products.length)
+    onClickMoreBtn();
 
+    setCardsQuantity(cardsQuantity + 6);
     // dispatch(fetchProducts(dbPage));
     // dispatch(loadMoreProducts());
   };
@@ -39,7 +41,8 @@ export default function ProductCardContainer({ title, products, onClickMoreBtn, 
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
-      {cardsQuantity <= products.length && <Button primary dark size="l" onClick={handleAddCards}>
+      {/* {cardsQuantity <= products.length && <Button primary dark size="l" onClick={handleAddCards}> */}
+      {<Button primary dark size="l" onClick={handleAddCards}>
         Смотреть ещё
       </Button>
       }

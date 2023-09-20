@@ -12,36 +12,19 @@ import NotFound from '../../components/NotFound/NotFound';
 export default function ProductPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { productById } = useSelector((state) => state.products);
+  const { productById, allProducts } = useSelector((state) => state.products);
   const isProductByIdLoaded = productById.status === 'loaded';
+  const [sellerProducts, setSellerProducts] = useState([]);
 
   useEffect(() => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]);
 
 
-  const { allProducts } = useSelector((state) => state.products);
-  const isProductsLoaded = allProducts.status === 'loaded';
-  // const [product, setProduct] = useState();
-  const [sellerProducts, setSellerProducts] = useState([]);
+  useEffect(() => {
+    setSellerProducts(allProducts.allProducts);
+  }, [allProducts.allProducts]);
 
-  // console.log(products);
-  // useEffect(() => {
-  // setProduct(products.items.find((item) => item.id === Number(id)));
-  // if (isProductsLoaded)
-  //   setSellerProducts(products.item.filter(item => item.seller.id === product.seller.id));
-  // }, []);
-
-  // const product = products.items.find((item) => item.id === Number(id));
-  // console.log(product);
-  // const [sellerProducts, setSellerProducts] = useState([]);
-
-  // if (isProductsLoaded)
-  //   setSellerProducts(products.items.filter(item => item.seller.id === product.seller.id));
-
-  // useEffect(() => {
-  //   dispatch(fetchProducts);
-  // }, [dispatch]);
 
   return (
     <div className="product-page">

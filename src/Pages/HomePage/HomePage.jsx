@@ -7,23 +7,30 @@ import PromoRegistration from '../../components/PromoRegistration/PromoRegistrat
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchProducts } from '../../store/slices/productsSlice';
+import { fetchProducts, loadMoreProducts } from '../../store/slices/productsSlice';
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const [newProducts, setNewProducts] = useState([]);
   const [popularProducts, setPopularProducts] = useState([]);
+  
 
-  const products = useSelector((state) => state.products.allProducts.allProducts);
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
+  const { allProducts, pageDB} = useSelector((state) => state.products.allProducts);
 
   useEffect(() => {
-    setNewProducts(products);
-    setPopularProducts(products);
-  }, [products]);
+    dispatch(fetchProducts(pageDB));
+    // setNewProducts([...newProducts, ...allProducts]);
+  }, [dispatch, pageDB]);
+
+
+  useEffect(() => {
+    setNewProducts(allProducts);
+    setPopularProducts(allProducts);
+  }, [allProducts]);
+
+  const handleClickMore = () => {
+    dispatch(loadMoreProducts());
+  };
 
 
   return (
@@ -34,12 +41,14 @@ const HomePage = () => {
         title="Новые товары"
         products={newProducts}
         className="home-page__cards-container"
+        onClickMoreBtn={handleClickMore}
       />
       <BannerAdvertising className="home-page__banner" />
       <ProductCardContainer
         title="Популярные товары"
         products={popularProducts}
         className="home-page__cards-container"
+        onClickMoreBtn={handleClickMore}
       />
       <PromoRegistration className="home-page__promo-registration" />
     </main>

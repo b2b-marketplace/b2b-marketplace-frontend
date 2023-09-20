@@ -29,35 +29,38 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     loadMoreProducts: (state) => {
-      if (state.allProducts.nextDBPage !== null) state.allProducts.pageDB += 1;
+      if (state.allProducts.nextDBPage !== null) {
+        state.allProducts.pageDB += 1;
+      }
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
-        state.allProducts.allProducts = [];
-        state.allProducts.next = '';
-        state.allProducts.previous = '';
         state.allProducts.status = 'loading';
       })
       .addCase(fetchProducts.fulfilled, (state, actions) => {
-        state.allProducts.allProducts = actions.payload.results;
-        state.allProducts.previous = actions.payload.previous;
-        state.allProducts.next = actions.payload.next;
+        if (state.allProducts.allProducts.length !== state.allProducts.totalProducts) {
+          state.allProducts.pageDB === 1
+            ? (state.allProducts.allProducts = actions.payload.results)
+            : (state.allProducts.allProducts = [...state.allProducts.allProducts, ...actions.payload.results]);
+        }
+
+        state.allProducts.previousDBPage = actions.payload.previous;
+        state.allProducts.nextDBPage = actions.payload.next;
         state.allProducts.totalProducts = actions.payload.count;
         state.allProducts.status = 'loaded';
       })
       .addCase(fetchProducts.rejected, (state) => {
         state.allProducts.status = 'error';
         state.allProducts.allProducts = [];
-        state.allProducts.next = '';
-        state.allProducts.previous = '';
+        state.allProducts.nextDBPage = null;
+        state.allProducts.previousDBPage = null;
         state.allProducts.totalProducts = 0;
       });
 
     builder
       .addCase(fetchProductById.pending, (state) => {
-        state.productById.product = {};
         state.productById.status = 'loading';
       })
       .addCase(fetchProductById.fulfilled, (state, actions) => {
