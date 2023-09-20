@@ -21,6 +21,7 @@ import PortalRulesPage from '../Pages/SupportServicePage/PortalRulesPage/PortalR
 import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage';
 import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
 import Activation from '../Pages/Activation/Activation';
+import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   return (
@@ -28,10 +29,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} exact />
-        <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/order" element={<OrderFormPage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
-        <Route path="/account" element={<AccountPage />}>
+        <Route path="/basket" element={<BasketPage />} exact />
+        <Route path="/order" element={<ProtectedRoute element={<OrderFormPage />} />} exact />
+        <Route path="/account" element={<ProtectedRoute element={<AccountPage />} />}>
           <Route index path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />
           <Route path="orders" element={<AccountBuyerOrders />} exact>
@@ -46,8 +47,8 @@ function App() {
         <Route path="/question-page" element={<QuestionPage />} exact />
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
-        <Route path="*" element={<NotFound />} />
         <Route path="/activate/*" element={<Activation />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ButtonScrollUp />
       <Footer />
