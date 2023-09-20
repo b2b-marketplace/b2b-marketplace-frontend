@@ -3,7 +3,7 @@ import { togglePopup } from '../store/slices/togglePopupSlice.js';
 
 const usePopup = (popupType) => {
   const dispatch = useDispatch();
-  const {[popupType]: isOpen } = useSelector((state) => state.popup.isOpen);
+  const { [popupType]: isOpen } = useSelector((state) => state.popup.isOpen);
 
   const handleOpenPopup = () => {
     dispatch(togglePopup({ popupType, isOpen: true }));
@@ -12,7 +12,7 @@ const usePopup = (popupType) => {
   const handleClosePopup = () => {
     dispatch(togglePopup({ popupType, isOpen: false }));
   };
-  
+
   return {
     isOpen,
     openPopup: handleOpenPopup,

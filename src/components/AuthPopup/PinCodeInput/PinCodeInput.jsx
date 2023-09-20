@@ -1,7 +1,6 @@
-import Input from "../Input/Input";
+import Input from '../Input/Input';
 
 const PinCodeInput = ({ digits, changeHandler }) => {
-
   const handleChange = (event) => {
     const { target } = event;
 

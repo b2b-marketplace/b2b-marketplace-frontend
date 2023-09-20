@@ -11,9 +11,9 @@ import { Button } from '../../../components/UI/Button/Button';
 const AccountBuyerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDisadled, setIsDisadled] = useState(true);
-  
+
   const { values, handleChange, setValues, errors, isValid, resetForm } = useValidation({});
-  
+
   useEffect(() => {
     setValues(values);
   }, [values, setValues]);
@@ -26,7 +26,7 @@ const AccountBuyerProfile = () => {
 
   function handleEdit(e) {
     e.preventDefault();
-    setIsEditMode(false);    
+    setIsEditMode(false);
     setIsDisadled(true);
   }
 
@@ -45,7 +45,9 @@ const AccountBuyerProfile = () => {
           <div className="account-buyer-profile__form-block">
             <div className="account-buyer-profile__title-group">
               <h2 className="account-buyer-profile__title">Данные покупателя</h2>
-              <p className="account-buyer-profile__info">Их видите только вы и служба поддержки B2Buy.ru</p>
+              <p className="account-buyer-profile__info">
+                Их видите только вы и служба поддержки B2Buy.ru
+              </p>
             </div>
             <fieldset className="account-buyer-profile__field" disabled={isDisadled}>
               <AccountInputField
@@ -58,8 +60,8 @@ const AccountBuyerProfile = () => {
                 required
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.bankaccount || ""}
-                isValid={isValid}                
+                value={values.bankaccount || ''}
+                isValid={isValid}
                 errors={errors.bankaccount}
               />
               <AccountInputField
@@ -71,7 +73,7 @@ const AccountBuyerProfile = () => {
                 minLength={10}
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.inn || ""}
+                value={values.inn || ''}
                 isValid={isValid}
                 errors={errors.inn}
               />
@@ -83,7 +85,7 @@ const AccountBuyerProfile = () => {
                 type="text"
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.region || ""}
+                value={values.region || ''}
                 isValid={isValid}
                 minLength={3}
                 maxLength={25}
@@ -113,7 +115,7 @@ const AccountBuyerProfile = () => {
                 type="email"
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.email || ""}
+                value={values.email || ''}
                 icon={<IconMail />}
                 isValid={isValid}
                 errors={errors.email}
@@ -127,7 +129,7 @@ const AccountBuyerProfile = () => {
                 isDisabled={isDisadled}
                 onChange={handleChange}
                 icon={<IconPhone />}
-                value={values.phone || ""}
+                value={values.phone || ''}
                 isValid={isValid}
                 errors={errors.phone}
               />

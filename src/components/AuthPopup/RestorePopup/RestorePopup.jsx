@@ -1,6 +1,6 @@
-import Form from "../Form/Form";
-import Input from "../Input/Input";
-import Popup from "../Popup";
+import Form from '../Form/Form';
+import Input from '../Input/Input';
+import Popup from '../Popup';
 
 const RestorePopup = (props) => {
   const {
@@ -12,7 +12,7 @@ const RestorePopup = (props) => {
     inputType,
     inputName,
     text,
-    titleClassMode
+    titleClassMode,
   } = props;
   const handleSubmit = () => {
     onClose();
@@ -20,15 +20,10 @@ const RestorePopup = (props) => {
   };
 
   return (
-    <Popup isOpen={isOpen}
-      onClose={onClose}
-      title={title}
-      popupContClassMode={titleClassMode}>
-      <Form className="popup__form"
-        onSubmit={handleSubmit}
-        btnText="Далее"
-        btnType="submit">
-        <Input placeholder={inputPlaceholder}
+    <Popup isOpen={isOpen} onClose={onClose} title={title} popupContClassMode={titleClassMode}>
+      <Form className="popup__form" onSubmit={handleSubmit} btnText="Далее" btnType="submit">
+        <Input
+          placeholder={inputPlaceholder}
           type={inputType}
           size="m"
           name={inputName}

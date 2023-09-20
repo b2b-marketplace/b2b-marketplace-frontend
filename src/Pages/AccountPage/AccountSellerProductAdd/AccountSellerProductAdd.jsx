@@ -37,7 +37,6 @@ const AccountSellerProductAdd = () => {
   };
 
   const handleCancel = () => {
-    
     setFormData({
       category: 0,
       sku: '',
@@ -133,7 +132,8 @@ const AccountSellerProductAdd = () => {
                 name="description"
                 className="account-seller-product-add__textarea"
                 placeholder="Добавьте описание товара"
-                onChange={handleFormChange}></textarea>
+                onChange={handleFormChange}
+              ></textarea>
             </div>
           </div>
 

@@ -1,14 +1,12 @@
-
-import Input from "../Input/Input";
-import Popup from "../Popup";
-import IconPassword from "../../UI/Icon/IconPassword";
-import Form from "../Form/Form";
-import usePopup from "../../../hooks/usePopup";
+import Input from '../Input/Input';
+import Popup from '../Popup';
+import IconPassword from '../../UI/Icon/IconPassword';
+import Form from '../Form/Form';
+import usePopup from '../../../hooks/usePopup';
 
 const NewPasswordPopup = () => {
-  
   const { isOpen, closePopup } = usePopup('newPassword');
-  
+
   const handleSubmit = () => {
     closePopup();
   };
@@ -20,12 +18,7 @@ const NewPasswordPopup = () => {
       title="Придумайте новый пароль"
       popupContClassMode={'popup__container_type_form'}
     >
-      <Form
-        className="popup__form"
-        onSubmit={handleSubmit}
-        btnText="Сохранить"
-        btnType="submit"
-      >
+      <Form className="popup__form" onSubmit={handleSubmit} btnText="Сохранить" btnType="submit">
         <fieldset className="popup__fieldset">
           <Input
             name="password"
@@ -35,7 +28,10 @@ const NewPasswordPopup = () => {
             size="l"
             text="От 10 символов, латиница, цифры, символы"
           >
-            <button className="popup__button input-label__button input-label__button_type_password" type="button">
+            <button
+              className="popup__button input-label__button input-label__button_type_password"
+              type="button"
+            >
               <IconPassword isVisiblePassword={true} />
             </button>
           </Input>
@@ -48,13 +44,16 @@ const NewPasswordPopup = () => {
             size="l"
             text="Пароли совпадают"
           >
-            <button className="popup__button input-label__button input-label__button_type_password" type="button">
+            <button
+              className="popup__button input-label__button input-label__button_type_password"
+              type="button"
+            >
               <IconPassword isVisiblePassword={false} />
             </button>
           </Input>
         </fieldset>
       </Form>
-    </Popup >
+    </Popup>
   );
 };
 

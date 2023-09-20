@@ -3,15 +3,16 @@ import './Selector.scss';
 
 const Selector = (props) => {
   const { value, options, name, onChange, ...restedProps } = props;
-  const getValue = () => value ? options.find((option) => option.value === value) : '';
+  const getValue = () => (value ? options.find((option) => option.value === value) : '');
 
-  const handleChange = (newAddress = '') => onChange({
-    target: {
-      name,
-      value: newAddress.value,
-      validationMessage: newAddress.value ? '' : 'Необходимо выбрать'
-    }
-  });
+  const handleChange = (newAddress = '') =>
+    onChange({
+      target: {
+        name,
+        value: newAddress.value,
+        validationMessage: newAddress.value ? '' : 'Необходимо выбрать',
+      },
+    });
 
   return (
     <Select

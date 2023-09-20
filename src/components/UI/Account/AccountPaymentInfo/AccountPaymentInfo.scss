@@ -5,7 +5,7 @@
   flex-direction: column;
   gap: 40px;
   font-family: $fontFamilyNunitoSans;
-  color: $blackColor;  
+  color: $blackColor;
 
   &__title {
     margin: 0;
@@ -60,14 +60,14 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid #7B7C8233;
+    border: 1px solid #7b7c8233;
     display: grid;
     align-items: center;
     justify-items: center;
   }
 
   &__logo-block-main {
-    border: 1px solid #7B7C8233;
+    border: 1px solid #7b7c8233;
     background-color: $whiteColor;
   }
 
@@ -94,7 +94,7 @@
     border: 1.5px solid $whiteColor;
   }
 
-  &__checkbox:checked { 
+  &__checkbox:checked {
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -144,7 +144,6 @@
     height: 24px;
   }
 
-
   &__delete-button_ligth {
     width: 24px;
     height: 24px;
@@ -163,5 +162,4 @@
     width: 24px;
     height: 24px;
   }
-
 }

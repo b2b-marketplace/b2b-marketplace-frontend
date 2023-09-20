@@ -7,13 +7,12 @@ import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTit
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
 import { Button } from '../../../../src/components/UI/Button/Button';
 
-
 const AccountSellerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDisadled, setIsDisadled] = useState(true);
 
   const { values, handleChange, errors, isValid, resetForm } = useValidation({});
-  
+
   function editInfo(e) {
     e.preventDefault();
     setIsEditMode(true);
@@ -54,7 +53,8 @@ const AccountSellerProfile = () => {
               name="comment"
               cols="40"
               rows="7"
-              placeholder="Описание компании">
+              placeholder="Описание компании"
+            >
               Наша компания с 1999 г. производит верхнюю одежду для детей от 0 до 16 лет. У нас есть
               фабрика полного цикла — разрабатываем дизайн и выпускаем готовые изделия. Все циклы
               производства проходят в одном здании. Два раза в год выпускаем новые коллекции —
@@ -81,8 +81,8 @@ const AccountSellerProfile = () => {
                 required
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.bankaccount || ""}
-                isValid={isValid}              
+                value={values.bankaccount || ''}
+                isValid={isValid}
                 errors={errors.bankaccount}
               />
               <AccountInputField
@@ -94,7 +94,7 @@ const AccountSellerProfile = () => {
                 minLength={10}
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.inn || ""}
+                value={values.inn || ''}
                 isValid={isValid}
                 errors={errors.inn}
               />
@@ -107,7 +107,7 @@ const AccountSellerProfile = () => {
                 minLength={10}
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.ogrn || ""}
+                value={values.ogrn || ''}
                 isValid={isValid}
                 errors={errors.ogrn}
               />
@@ -119,7 +119,7 @@ const AccountSellerProfile = () => {
                 type="text"
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.region || ""}
+                value={values.region || ''}
                 isValid={isValid}
                 minLength={3}
                 maxLength={25}
@@ -151,7 +151,7 @@ const AccountSellerProfile = () => {
                 icon={<IconMail />}
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.email || ""}
+                value={values.email || ''}
                 isValid={isValid}
                 errors={errors.email}
               />
@@ -164,7 +164,7 @@ const AccountSellerProfile = () => {
                 icon={<IconPhone />}
                 isDisabled={isDisadled}
                 onChange={handleChange}
-                value={values.phone || ""}
+                value={values.phone || ''}
                 isValid={isValid}
                 errors={errors.phone}
               />

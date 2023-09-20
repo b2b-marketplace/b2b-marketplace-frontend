@@ -1,14 +1,13 @@
-
-import { useEffect } from "react";
-import useInput from "../../../hooks/useInput";
-import usePopup from "../../../hooks/usePopup";
-import IconPassword from "../../UI/Icon/IconPassword";
-import Form from "../Form/Form";
-import Input from "../Input/Input";
-import Popup from "../Popup";
-import PopupButton from "../PopupButton/PopupButton";
-import useShowPassword from "../../../hooks/useShowPassword";
-import authApi from "../../../utils/authApi";
+import { useEffect } from 'react';
+import useInput from '../../../hooks/useInput';
+import usePopup from '../../../hooks/usePopup';
+import IconPassword from '../../UI/Icon/IconPassword';
+import Form from '../Form/Form';
+import Input from '../Input/Input';
+import Popup from '../Popup';
+import PopupButton from '../PopupButton/PopupButton';
+import useShowPassword from '../../../hooks/useShowPassword';
+import authApi from '../../../utils/authApi';
 
 const LoginPopup = () => {
   const { isOpen, closePopup } = usePopup('login');
@@ -17,10 +16,12 @@ const LoginPopup = () => {
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
-  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } =
+    useInput(initValueParams);
 
   const handleSubmit = () => {
-    authApi.login(values)
+    authApi
+      .login(values)
       .then(() => {
         closePopup();
         openCompleteLogin();
@@ -50,7 +51,7 @@ const LoginPopup = () => {
         className="popup__form"
         onSubmit={handleSubmit}
         btnText="Далее"
-        btnType={"submit"}
+        btnType={'submit'}
         formDisabled={isNotValidForm}
       >
         <fieldset className="popup__fieldset">
@@ -79,7 +80,11 @@ const LoginPopup = () => {
             required
             isNotError={!errors.password && isDirtyInputs.password}
           >
-            <button className="popup__button input-label__button input-label__button_type_password" onClick={handleShow} type="button">
+            <button
+              className="popup__button input-label__button input-label__button_type_password"
+              onClick={handleShow}
+              type="button"
+            >
               <IconPassword isVisiblePassword={isShow} />
             </button>
           </Input>

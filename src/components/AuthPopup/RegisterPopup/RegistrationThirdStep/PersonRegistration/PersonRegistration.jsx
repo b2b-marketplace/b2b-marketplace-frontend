@@ -8,17 +8,17 @@ const options = [
   { value: 'HowkCity', label: 'Орловская Область' },
 ];
 
-const PersonRegistration = ({ onFormChange, }) => {
+const PersonRegistration = ({ onFormChange }) => {
   const initValueParams = {
     email: '',
     name: '',
     inn: '',
     phone_number: '',
     address: '',
-    vat: ''
+    vat: '',
   };
 
-  const { errors, values, handleChange, isDirtyInputs, isNotValidForm} = useInput(initValueParams);
+  const { errors, values, handleChange, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
 
   const onChange = (event) => {
     handleChange(event);
@@ -27,36 +27,12 @@ const PersonRegistration = ({ onFormChange, }) => {
   useEffect(() => onFormChange(values, isNotValidForm), [values, isNotValidForm]);
   return (
     <>
-      <Input
-        name="last-name"
-        type="text"
-        placeholder="Фамилия"
-        size="l"
-        text="Кририллицей"
-      />
-      <Input
-        name="name"
-        type="text"
-        placeholder="Имя"
-        size="l"
-        text="Кририллицей"
-      />
+      <Input name="last-name" type="text" placeholder="Фамилия" size="l" text="Кририллицей" />
+      <Input name="name" type="text" placeholder="Имя" size="l" text="Кририллицей" />
 
       <div className="popup__inputs">
-        <Input
-          name="tel"
-          type="tel"
-          placeholder="+7"
-          size="m"
-          text="Номер телефона без дефисов"
-        />
-        <Input
-          name="email"
-          type="email"
-          placeholder="box@mail.ru"
-          size="m"
-          text="Почта"
-        />
+        <Input name="tel" type="tel" placeholder="+7" size="m" text="Номер телефона без дефисов" />
+        <Input name="email" type="email" placeholder="box@mail.ru" size="m" text="Почта" />
       </div>
 
       <Input
@@ -68,7 +44,7 @@ const PersonRegistration = ({ onFormChange, }) => {
         onChange={onChange}
         value={values.address}
         options={options}
-        autoComplete='off'
+        autoComplete="off"
         required
       />
     </>

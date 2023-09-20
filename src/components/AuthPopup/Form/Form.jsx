@@ -4,14 +4,12 @@ const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType, for
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit && onSubmit();
-
   };
 
   return (
-    <form className={className} onSubmit={handleSubmit} noValidate >
-
+    <form className={className} onSubmit={handleSubmit} noValidate>
       {children}
-      {btnText &&
+      {btnText && (
         <div className="popup__buttons">
           <Button
             size="l"
@@ -24,7 +22,7 @@ const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType, for
             {btnText}
           </Button>
         </div>
-      }
+      )}
     </form>
   );
 };

@@ -19,7 +19,8 @@ const Activation = () => {
   useEffect(() => {
     if (init) return;
     const [uid, token] = pathname.replace('/activate/', '').split('/');
-    authApi.activate({ uid, token })
+    authApi
+      .activate({ uid, token })
       .then(() => {
         navigate('/', { replace: true });
         openPopup();

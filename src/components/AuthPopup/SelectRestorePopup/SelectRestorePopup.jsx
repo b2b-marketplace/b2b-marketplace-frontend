@@ -1,6 +1,6 @@
-import usePopup from "../../../hooks/usePopup";
-import Popup from "../Popup";
-import PopupButtons from "../PopupButtons/PopupButtons";
+import usePopup from '../../../hooks/usePopup';
+import Popup from '../Popup';
+import PopupButtons from '../PopupButtons/PopupButtons';
 
 const SelectRestorePopup = () => {
   const { isOpen, closePopup } = usePopup('selectRestore');
@@ -19,11 +19,7 @@ const SelectRestorePopup = () => {
   };
 
   return (
-    <Popup
-      isOpen={isOpen}
-      onClose={closePopup}
-      title="Выберите другой способ входа"
-    >
+    <Popup isOpen={isOpen} onClose={closePopup} title="Выберите другой способ входа">
       <PopupButtons
         onClick={handleOpenRestorePopup}
         value1="email"
@@ -32,7 +28,6 @@ const SelectRestorePopup = () => {
         buttonText1="Через почту"
         buttonText2="По телефону"
       />
-
     </Popup>
   );
 };
