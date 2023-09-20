@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import './App.scss';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -25,14 +24,13 @@ import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 
 function App() {
-  const { isLoggedIn } = useSelector((state) => state.auth);
   return (
     <div className="app">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
-        <Route element={<ProtectedRoutes isLoggedIn={isLoggedIn} />}>
+        <Route element={<ProtectedRoutes />}>
           <Route path="/basket" element={<BasketPage />} exact />
           <Route path="/order" element={<OrderFormPage />} exact />
           <Route path="/account" element={<AccountPage />}>
