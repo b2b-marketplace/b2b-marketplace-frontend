@@ -7,9 +7,15 @@ import Input from '../Input/Input';
 import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import useShowPassword from '../../../hooks/useShowPassword';
-import authApi from '../../../utils/authApi';
+// import authApi from '../../../utils/authApi';
+import { loginUser, resetLoading } from '../../../store/slices/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const LoginPopup = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn, isLoading } = useSelector((state) => state.auth);
+
+
   const { isOpen, closePopup } = usePopup('login');
   const { openPopup: openCompleteLogin } = usePopup('completeLogin');
   const { openPopup: openRestore } = usePopup('selectRestore');
@@ -20,12 +26,13 @@ const LoginPopup = () => {
   const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
 
   const handleSubmit = () => {
-    authApi.login(values)
-      .then(() => {
-        closePopup();
-        openCompleteLogin();
-      })
-      .catch(console.log);
+    // authApi.login(values)
+    //   .then(() => {
+    //     closePopup();
+    //     openCompleteLogin();
+    //   })
+    //   .catch(console.log);
+    dispatch(loginUser(values));
   };
 
   const handleRestore = () => {
@@ -34,10 +41,19 @@ const LoginPopup = () => {
   };
 
   useEffect(() => {
-    if (isOpen) return;
+    if (isOpen) {
+      dispatch(resetLoading());
+      return;
+    }
     resetValues();
     resetShow();
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+    closePopup();
+    openCompleteLogin();
+  }, [isLoggedIn]);
 
   return (
     <Popup
@@ -51,7 +67,7 @@ const LoginPopup = () => {
         onSubmit={handleSubmit}
         btnText="Далее"
         btnType={"submit"}
-        formDisabled={isNotValidForm}
+        formDisabled={isNotValidForm || isLoading}
       >
         <fieldset className="popup__fieldset">
           <Input

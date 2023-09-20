@@ -17,7 +17,10 @@ class AuthApi {
     if (this._checkIsGoodStatus(res)){
       return res.status === 204 ? res : res.json();
     }
-    return Promise.reject(res.status);
+    return res.json().then(res => {
+      const error =res.non_field_errors.join('');
+      return Promise.reject(error);
+    });
   };
 
   // метод отправки запросов
