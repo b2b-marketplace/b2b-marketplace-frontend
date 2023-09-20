@@ -1,11 +1,9 @@
-import { useEffect } from 'react';
-import useInput from '../../../../hooks/useInput';
 import useShowPassword from '../../../../hooks/useShowPassword';
+import { passwordLength } from '../../../../utils/authConstatnts';
 import IconPassword from '../../../UI/Icon/IconPassword';
 import Input from '../../Input/Input';
 import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
 import PopupButton from '../../PopupButton/PopupButton';
-const passwordLength = 8;
 
 const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
   const { isShow, handleShow } = useShowPassword(false);

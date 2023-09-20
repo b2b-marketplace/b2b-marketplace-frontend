@@ -9,6 +9,7 @@ import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import useShowPassword from '../../../hooks/useShowPassword';
 import { loginUser, resetLoading } from '../../../store/slices/authSlice';
+import { passwordLength } from '../../../utils/authConstatnts';
 
 const LoginPopup = () => {
   const dispatch = useDispatch();
@@ -18,12 +19,11 @@ const LoginPopup = () => {
   const { isOpen, closePopup } = usePopup('login');
   const { openPopup: openCompleteLogin } = usePopup('completeLogin');
   const { openPopup: openRestore } = usePopup('selectRestore');
-  
+
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
-  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } =
-    useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
 
   const handleSubmit = () => {
     dispatch(loginUser(values));
@@ -83,10 +83,10 @@ const LoginPopup = () => {
             autoComplete="off"
             placeholder="Пароль"
             size="l"
-            text="От 10 символов, латиница, цифры, символы"
+            text={`От ${passwordLength} символов, латиница, цифры, символы`}
             onChange={handleChange}
             value={values.password}
-            minLength={10}
+            minLength={passwordLength}
             required
             isNotError={!errors.password && isDirtyInputs.password}
           >
