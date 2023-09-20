@@ -21,33 +21,38 @@ import PortalRulesPage from '../Pages/SupportServicePage/PortalRulesPage/PortalR
 import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage';
 import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
 import Activation from '../Pages/Activation/Activation';
+import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const { isLoggedIn } = useSelector((state) => state.auth);
   return (
     <div className="app">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} exact />
-        <Route path="/basket" element={<BasketPage />} exact />
-        <Route path="/order" element={<OrderFormPage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
-        <Route path="/account" element={<AccountPage />}>
-          <Route index path="profile" element={<AccountBuyerProfile/>} exact />
-          <Route path="product/add" element={<AccountSellerProductAdd />} exact />
-          <Route path="orders" element={<AccountBuyerOrders />} exact>
-            <Route index element={<AccountBuyerOrderList />} exact />
-            <Route path=":filter" element={<AccountBuyerOrderList />} />
-            <Route path=":filter/:page" element={<AccountBuyerOrderList />} />
+        <Route element={<ProtectedRoutes isLoggedIn={isLoggedIn} />}>
+          <Route path="/basket" element={<BasketPage />} exact />
+          <Route path="/order" element={<OrderFormPage />} exact />
+          <Route path="/account" element={<AccountPage />}>
+            <Route index path="profile" element={<AccountBuyerProfile />} exact />
+            <Route path="product/add" element={<AccountSellerProductAdd />} exact />
+            <Route path="orders" element={<AccountBuyerOrders />} exact>
+              <Route index element={<AccountBuyerOrderList />} exact />
+              <Route path=":filter" element={<AccountBuyerOrderList />} />
+              <Route path=":filter/:page" element={<AccountBuyerOrderList />} />
+            </Route>
+            <Route index element={<Navigate to="profile" />} />
           </Route>
-          <Route index element={<Navigate to="profile" />} />
         </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
         <Route path="/portal-rules" element={<PortalRulesPage />} exact />
         <Route path="/question-page" element={<QuestionPage />} exact />
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
+        <Route path="/activate/*" element={<Activation />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/activate/*" element={<Activation />}/>
       </Routes>
       <ButtonScrollUp />
       <Footer />
