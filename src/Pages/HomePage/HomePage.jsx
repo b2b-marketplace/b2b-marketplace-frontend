@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './HomePage.scss';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-<<<<<<< HEAD
+
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
-=======
-import ProductCardContainer from '../../components/Product/ProductCardContainer/ProductCardContainer';
->>>>>>> main2
+
 import BannerAdvertising from '../../components/BannerAdvertising/BannerAdvertising';
 import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
@@ -21,12 +19,9 @@ const HomePage = () => {
 
   const { allProducts, pageDB, isFull} = useSelector((state) => state.products.allProducts);
 
-<<<<<<< HEAD
-=======
-  const products = useSelector((state) => state.products.products.items);
+
   const { isLoggedIn } = useSelector((state) => state.auth);
-  
->>>>>>> main2
+
   useEffect(() => {
     dispatch(fetchProducts(pageDB));
   }, [dispatch, pageDB]);

@@ -8,7 +8,7 @@ import Tooltip from '../UI/Tooltip/Tooltip';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import { Button } from '../UI/Button/Button';
 import OrderDetail from '../OrderDetail/OrderDetail';
-import ProductCardHorizontal from '../Product/ProductCardHorizontal/ProductCardHorizontal';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import SidebarRight from '../SidebarRight/SidebarRight';

@@ -1,17 +1,7 @@
-<<<<<<<< HEAD:src/components/ProductElements/ProductCardContainer/ProductCardContainer.jsx
-========
-import ProductCard from '../ProductCard/ProductCard';
-import { Button } from '../../UI/Button/Button';
->>>>>>>> main2:src/components/Product/ProductCardContainer/ProductCardContainer.jsx
 import './ProductCardContainer.scss';
 import ProductCard from '../ProductCard/ProductCard';
 import { Button } from '../../UI/Button/Button';
 import { useEffect, useState } from 'react';
-<<<<<<<< HEAD:src/components/ProductElements/ProductCardContainer/ProductCardContainer.jsx
-========
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../../store/slices/productsSlice';
->>>>>>>> main2:src/components/Product/ProductCardContainer/ProductCardContainer.jsx
 
 export default function ProductCardContainer({ title, products, onClickMoreBtn, isFull, className }) {
   const [displayCards, setDisplayCards] = useState([]);

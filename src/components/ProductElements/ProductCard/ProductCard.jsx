@@ -1,12 +1,3 @@
-<<<<<<<< HEAD:src/components/ProductElements/ProductCard/ProductCard.jsx
-========
-import { Button } from '../../UI/Button/Button';
-
-import IconInfo from '../../UI/Icon/Icon_info';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import IconScales from '../../UI/Icon/Icon_scales';
-import SliderImage from '../../SliderImage/SliderImage';
->>>>>>>> main2:src/components/Product/ProductCard/ProductCard.jsx
 import './ProductCard.scss';
 import { Button } from '../../UI/Button/Button';
 import IconInfo from '../../UI/Icon/Icon_info';

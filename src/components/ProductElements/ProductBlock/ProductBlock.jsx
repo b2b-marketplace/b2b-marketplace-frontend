@@ -1,5 +1,4 @@
 import './ProductBlock.scss';
-<<<<<<< HEAD:src/components/ProductElements/ProductBlock/ProductBlock.jsx
 import Counter from '../../UI/Counter/Counter';
 import { Button } from '../../UI/Button/Button';
 import IconAvailable from '../../UI/Icon/Icon_available';
@@ -9,17 +8,6 @@ import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconInfo from '../../UI/Icon/Icon_info';
 import ProductRating from '../ProductRating/ProductRating';
 import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
-=======
-import Counter from '../../../components/UI/Counter/Counter';
-import { Button } from '../../../components/UI/Button/Button';
-import IconAvailable from '../../../components/UI/Icon/Icon_available';
-import IconNotAvailable from '../../../components/UI/Icon/Icon_not-available';
-import IconScales from '../../../components/UI/Icon/Icon_scales';
-import IconHearth from '../../../components/UI/Icon/Icon_hearth';
-import IconInfo from '../../../components/UI/Icon/Icon_info';
-import ProductRating from '../../../components/Product/ProductRating/ProductRating';
-import CharacteristicColor from '../../../components/CharacteristicColor/CharacteristicColor';
->>>>>>> main2:src/Pages/ProductPage/ProductBlock/ProductBlock.jsx
 import { useEffect, useState } from 'react';
 import CommentsBlock from '../CommentsBlock/CommentsBlock';
 import { Swiper, SwiperSlide } from 'swiper/react';
