@@ -9,6 +9,8 @@ const PopupButtons = ({
   dark1,
   dark2,
   name,
+  disabled1,
+  disabled2,
 }) => {
   return (
     <div className="popup__buttons">
@@ -20,6 +22,7 @@ const PopupButtons = ({
         size="l"
         extraClass={'popup__extra-button'}
         name={name}
+        disabled={disabled1}
       >
         {buttonText1}
       </Button>
@@ -31,6 +34,7 @@ const PopupButtons = ({
         size="l"
         extraClass={'popup__extra-button'}
         name={name}
+        disabled={disabled2}
       >
         {buttonText2}
       </Button>
