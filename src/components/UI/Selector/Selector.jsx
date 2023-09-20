@@ -1,4 +1,4 @@
-import Select from 'react-select';
+import CreatableSelect from 'react-select/creatable';
 import './Selector.scss';
 
 const Selector = (props) => {
@@ -15,7 +15,7 @@ const Selector = (props) => {
     });
 
   return (
-    <Select
+    <CreatableSelect
       className="custom-select"
       options={options}
       value={getValue()}
