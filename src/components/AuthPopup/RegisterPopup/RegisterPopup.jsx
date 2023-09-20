@@ -92,6 +92,9 @@ const RegisterPopup = () => {
         ...company,
         role,
         vat: company.vat === 'yes',
+        address: {
+          address: address,
+        },
         phone_number: {
           phone_number,
         },
