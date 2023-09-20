@@ -1,10 +1,10 @@
 @import '../../../../styles/global';
 
 .accountpaymentinfo {
+  @include default-font-styles;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  font-family: $fontFamilyNunitoSans;
   color: $blackColor;
 
   &__title {

@@ -25,12 +25,10 @@
   }
 
   &__input {
+    @include text-L-regular-styles;
+    font-weight: $mainWeight;
     max-width: 174px;
     width: 100%;
-    font-size: 20px;
-    font-style: $mainStyle;
-    font-weight: $mainWeight;
-    line-height: 28px;
     border: none;
     padding: 0;
     background: white;

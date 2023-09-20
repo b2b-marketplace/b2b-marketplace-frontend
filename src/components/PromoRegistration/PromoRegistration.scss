@@ -1,7 +1,7 @@
 @import '../../styles/global';
 
 .promo-registration {
-  font-family: $fontFamilyNunitoSans;
+  @include default-font-styles;
 
   &__conteiner {
     max-width: 1672px;
@@ -24,13 +24,9 @@
   }
 
   &__title {
+    @include h2-styles;
     grid-column: span 2;
     margin: 0;
-    font-family: $fontFamilyUnbounded;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
   }
 
   &__text {

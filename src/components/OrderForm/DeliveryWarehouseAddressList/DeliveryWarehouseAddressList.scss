@@ -1,7 +1,7 @@
 @import '../../../styles/global';
 
 .delivery-warehouse-address-list {
-  @include default-font-style;
+  @include default-font-styles;
   display: flex;
   flex-direction: column;
 

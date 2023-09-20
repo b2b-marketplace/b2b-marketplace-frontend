@@ -3,7 +3,7 @@
 .tabs-navigation {
   display: flex;
   flex-direction: column;
-  @include default-font-style;
+  @include default-font-styles;
 
   &__buttons {
     display: flex;
