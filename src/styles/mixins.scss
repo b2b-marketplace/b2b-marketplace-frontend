@@ -1,11 +1,5 @@
 @import './_vars.scss';
 
-@mixin default-font-style {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  color: $fontColor;
-}
 
 @mixin flex-column {
   display: flex;

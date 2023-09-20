@@ -2,8 +2,7 @@
 
 .drop-down {
   width: 100%;
-  font-family: $fontFamilyNunitoSans;
-  font-style: $mainStyle;
+  @include default-font-styles;
   font-weight: 600;
 
   &__label {

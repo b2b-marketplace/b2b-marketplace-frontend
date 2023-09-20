@@ -1,10 +1,7 @@
 @import '../../../styles/global';
 
 .input {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
-  font-size: $fontSize;
+  @include default-font-styles;
   line-height: 20px;
   color: $grayColor;
   width: 100%;

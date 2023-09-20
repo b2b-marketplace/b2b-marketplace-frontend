@@ -1,8 +1,8 @@
 @import '../../../styles/global';
 .account-seller-profile {
+  @include default-font-styles;
   display: flex;
   gap: 60px;
-  font-family: $fontFamilyNunitoSans;
   max-width: 907px;
   width: 100%;
 
@@ -51,13 +51,10 @@
   }
 
   &__description {
+    @include text-L-regular-styles;
     max-width: 766px;
     margin-bottom: 12px;
     width: 100%;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
     padding: 0;
     border: none;
     resize: none;

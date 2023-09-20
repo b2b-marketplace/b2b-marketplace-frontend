@@ -1,7 +1,7 @@
 @import '../../../styles/global.scss';
 
 .order-form-receiver {
-  @include default-font-style;
+  @include default-font-styles;
   display: flex;
   flex-direction: column;
   row-gap: 20px;

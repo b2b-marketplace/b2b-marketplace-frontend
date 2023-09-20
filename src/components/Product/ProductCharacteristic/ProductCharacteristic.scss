@@ -1,11 +1,8 @@
 @import '../../../styles/global';
 
 .product-characteristic {
-  font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: $fontWeight;
+  @include default-font-styles;
   font-size: 14px;
-  color: $fontColor;
   line-height: 20px;
   display: flex;
   flex-direction: row;

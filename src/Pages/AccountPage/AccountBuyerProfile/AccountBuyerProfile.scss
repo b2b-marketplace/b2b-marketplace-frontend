@@ -1,8 +1,8 @@
 @import '../../../styles/global';
 
 .account-buyer-profile {
+  @include default-font-styles;
   display: flex;
-  font-family: $fontFamilyNunitoSans;
   max-width: 907px;
   width: 100%;
 

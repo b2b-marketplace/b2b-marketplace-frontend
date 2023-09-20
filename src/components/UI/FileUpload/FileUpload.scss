@@ -1,17 +1,17 @@
 @import '../../../styles/global';
 
 .file-upload {
+  @include default-font-styles;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
   max-width: 766px;
   max-height: 164px;
   width: 100%;
   display: flex;
   align-items: center;
   gap: 40px;
-  font-family: $fontFamilyNunitoSans;
-  font-size: 20px;
-  font-style: $mainStyle;
-  font-weight: 600;
-  line-height: 28px;
+
 
   &__label {
     @include flex-column;

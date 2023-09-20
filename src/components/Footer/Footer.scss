@@ -33,10 +33,7 @@
     align-items: center;
     justify-content: flex-end;
     column-gap: 10px;
-    font-family: $fontFamilyUnbounded;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 36px;
+    @include h2-styles;
     margin: 0;
   }
 
