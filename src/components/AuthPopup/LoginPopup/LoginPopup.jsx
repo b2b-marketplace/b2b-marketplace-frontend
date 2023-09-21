@@ -13,7 +13,7 @@ import { passwordLength } from '../../../utils/authConstatnts';
 
 const LoginPopup = () => {
   const dispatch = useDispatch();
-  const { isLoggedIn, isLoading } = useSelector((state) => state.auth);
+  const { isLoggedIn, isLoading, error } = useSelector((state) => state.auth);
 
 
   const { isOpen, closePopup } = usePopup('login');
@@ -48,6 +48,7 @@ const LoginPopup = () => {
     if (!isLoggedIn) return;
     closePopup();
     openCompleteLogin();
+    dispatch(resetLoading);
   }, [isLoggedIn]);
 
   return (
@@ -76,6 +77,7 @@ const LoginPopup = () => {
             maxLength={254}
             required
             isNotError={!errors.email && isDirtyInputs.email}
+            serverError={error}
           />
           <Input
             name="password"
@@ -89,6 +91,7 @@ const LoginPopup = () => {
             minLength={passwordLength}
             required
             isNotError={!errors.password && isDirtyInputs.password}
+            serverError={error}
           >
             <button
               className="popup__button input-label__button input-label__button_type_password"

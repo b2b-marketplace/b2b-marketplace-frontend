@@ -5,7 +5,7 @@ import Input from '../../Input/Input';
 import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
 import PopupButton from '../../PopupButton/PopupButton';
 
-const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
+const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverErrors }) => {
   const { isShow, handleShow } = useShowPassword(false);
   const { isShow: isShowRepeat, handleShow: handleShowRepeat } = useShowPassword(false);
 
@@ -25,6 +25,7 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
         minLength={passwordLength}
         required
         isNotError={!errors.password && isDirtyInputs.password}
+        serverError={serverErrors.inn || ''}
       >
         <button
           className="popup__button input-label__button input-label__button_type_password"

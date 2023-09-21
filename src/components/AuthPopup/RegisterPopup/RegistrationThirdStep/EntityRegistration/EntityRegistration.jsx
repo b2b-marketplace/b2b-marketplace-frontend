@@ -7,7 +7,7 @@ const options = [
   { value: 'HowkCity', label: 'Орловская Область' },
 ];
 
-const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
+const EntityRegistration = ({ onChange, values, errors, isDirtyInputs, serverErrors }) => {
   return (
     <>
       <Input
@@ -21,6 +21,7 @@ const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
         maxLength={100}
         required
         isNotError={!errors.name && isDirtyInputs.name}
+        serverError={serverErrors.name || ''}
       />
       <Input
         name="inn"
@@ -34,6 +35,7 @@ const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
         max={9999999999}
         required
         isNotError={!errors.inn && isDirtyInputs.inn}
+        serverError={serverErrors.inn || ''}
       ></Input>
       <div className="popup__inputs">
         <Input
@@ -49,6 +51,7 @@ const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
           isNotError={
             !errors.phone_number && isDirtyInputs.phone_number && values.phone_number.length >= 9
           }
+          serverError={serverErrors.phone_number || ''}
         />
         <Input
           name="email"
@@ -61,6 +64,7 @@ const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
           maxLength={254}
           required
           isNotError={!errors.email && isDirtyInputs.email}
+          serverError={serverErrors.email || ''}
         />
       </div>
       <Input
@@ -75,6 +79,7 @@ const EntityRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
         autoComplete="off"
         required
         isNotError={!errors.address && isDirtyInputs.address}
+        serverError={serverErrors.address || ''}
       />
       <div className="popup__container popup__container_type_radio">
         <h2 className="popup__subtitle popup__subtitle_type_bolded">Вы работаете с НДС?</h2>

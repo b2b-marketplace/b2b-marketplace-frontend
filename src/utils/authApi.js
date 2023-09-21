@@ -1,4 +1,5 @@
 // Api для получения информации из общей базы данных продуктов
+import { parseErrors } from './authConstatnts.js';
 import { PRODUCTS_BASE_URL } from './constants.js';
 
 class AuthApi {
@@ -12,14 +13,22 @@ class AuthApi {
 
   // проверка статуса
   _checkIsGoodStatus = (res) => res?.ok || (res.status < 300 && res.status >= 200);
-  
+
   _ckeckOk = (res) => {
-    if (this._checkIsGoodStatus(res)){
+    if (this._checkIsGoodStatus(res)) {
       return res.status === 204 ? res : res.json();
     }
-    return res.json().then(res => {
-      const error =res.non_field_errors.join('');
-      return Promise.reject(error);
+    return res.json().then(err => {
+      const parsedErrrors = parseErrors(err);
+      const keyList = Object.keys(parsedErrrors);
+      if (keyList.length > 1) {
+        return Promise.reject(parsedErrrors[keyList[0]]);
+      }
+      if (keyList.length === 0) {
+        return Promise.reject(res.status);
+      }
+      
+      return Promise.reject(parsedErrrors);
     });
   };
 
