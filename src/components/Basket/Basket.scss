@@ -137,8 +137,7 @@
     @include text-S-main-styles;
 
     &_warning {
-      color: $redColor
+      color: $redColor;
     }
   }
-
 }

@@ -11,7 +11,8 @@ const ModerationNewProductPopup = () => {
       onClose={closePopup}
       title="Почти готово"
       popupContClassMode={'popup__container_type_product'}
-      titleClassMode={'popup__title_size_l'}>
+      titleClassMode={'popup__title_size_l'}
+    >
       <div className="moderation-new-product-popup">
         <p className="moderation-new-product-popup__text">
           Ваш запрос отправлен на модерацию. В&nbsp;среднем проверка занимает 30 мин

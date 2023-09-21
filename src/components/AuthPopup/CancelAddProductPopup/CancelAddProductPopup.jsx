@@ -12,11 +12,10 @@ const CancelAddProductPopup = ({ onConfirm, onCancel, onReset }) => {
   };
 
   const handleConfirmClick = () => {
- 
     onConfirm();
-    
+
     onReset();
-    
+
     closePopup('cancelAddnewItem');
   };
 
@@ -26,7 +25,8 @@ const CancelAddProductPopup = ({ onConfirm, onCancel, onReset }) => {
       onClose={closePopup}
       popupContClassMode={'popup__container_type_product'}
       titleClassMode={'popup__title_size_l'}
-      title="Уверены, что хотите отменить?">
+      title="Уверены, что хотите отменить?"
+    >
       <p className="cancel-add-product-popup">Данные об этом товаре будут сброшены</p>
       <div className="cancel-add-product-popup__conteiner">
         <Button size="m" primary dark onClick={handleConfirmClick}>
@@ -41,4 +41,3 @@ const CancelAddProductPopup = ({ onConfirm, onCancel, onReset }) => {
 };
 
 export default CancelAddProductPopup;
-

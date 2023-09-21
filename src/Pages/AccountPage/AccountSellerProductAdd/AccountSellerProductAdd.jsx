@@ -57,7 +57,7 @@ const AccountSellerProductAdd = () => {
       videos: ['http://example.com'],
       images: ['http://example.com'],
     });
-    
+
     console.log('After reset:', formData);
     closePopup('cancelAddnewItem');
   };
@@ -67,10 +67,9 @@ const AccountSellerProductAdd = () => {
   };
 
   const handleConfirm = () => {
-  
     console.log('Confirmed');
     handleResetForm();
-    closePopup('cancelAddnewItem'); 
+    closePopup('cancelAddnewItem');
   };
 
   return (
@@ -153,7 +152,8 @@ const AccountSellerProductAdd = () => {
                 name="description"
                 className="account-seller-product-add__textarea"
                 placeholder="Добавьте описание товара"
-                onChange={handleFormChange}></textarea>
+                onChange={handleFormChange}
+              ></textarea>
             </div>
           </div>
 
@@ -198,7 +198,11 @@ const AccountSellerProductAdd = () => {
           </div>
         </form>
       </div>
-      <CancelAddProductPopup onCancel={handleCancel} onConfirm={handleConfirm} onReset={handleResetForm} />
+      <CancelAddProductPopup
+        onCancel={handleCancel}
+        onConfirm={handleConfirm}
+        onReset={handleResetForm}
+      />
     </section>
   );
 };
