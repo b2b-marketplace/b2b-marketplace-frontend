@@ -28,6 +28,15 @@ import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
 
 function App() {
+  const dispatch = useDispatch();
+  const { user, isFetched } = useSelector((state) => state.account);
+  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (isLoggedIn && auth_token && !isFetched) {
+      dispatch(getUser(auth_token));
+    }
+  }, [isFetched, isLoggedIn]);
+
   const ScrollToTop = () => {
     const location = useLocation();
 
@@ -37,15 +46,6 @@ function App() {
 
     return null;
   };
-
-  const dispatch = useDispatch();
-  const { user, isFetched } = useSelector((state) => state.account);
-  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
-  useEffect(() => {
-    if (isLoggedIn && auth_token && !isFetched) {
-      dispatch(getUser(auth_token));
-    }
-  }, [isFetched, isLoggedIn]);
 
   return (
     <div className="app">
