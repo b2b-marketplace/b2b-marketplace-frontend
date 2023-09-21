@@ -31,8 +31,7 @@ const AccountSellerProductAdd = () => {
 
   // Обработчик изменения данных формы
   const handleFormChange = (event, val, nameVal) => {
-    
-    const { name, value } = event ? event.target : {name: nameVal, value: val};
+    const { name, value } = event ? event.target : { name: nameVal, value: val };
     console.log(name, value);
     setFormData({
       ...formData,
@@ -165,7 +164,6 @@ const AccountSellerProductAdd = () => {
               options={['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5']}
               onChange={handleFormChange}
               required
-              
             />
             <DropDown
               name="color"
@@ -173,7 +171,6 @@ const AccountSellerProductAdd = () => {
               placeholder="Выберите из списка"
               options={['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5']}
               onChange={handleFormChange}
-            
             />
             <div className="account-seller-product-add__conteiner-textarea">
               <label className="account-seller-product-add__label-textarea">Описание товара</label>
@@ -181,7 +178,8 @@ const AccountSellerProductAdd = () => {
                 name="description"
                 className="account-seller-product-add__textarea"
                 placeholder="Добавьте описание товара"
-                onChange={handleFormChange}></textarea>
+                onChange={handleFormChange}
+              ></textarea>
             </div>
           </div>
 
@@ -222,7 +220,8 @@ const AccountSellerProductAdd = () => {
                 primary
                 dark
                 type="submit"
-                disabled={!areAllRequiredFieldsFilled()}>
+                disabled={!areAllRequiredFieldsFilled()}
+              >
                 Опубликовать
               </Button>
               <Button size="l" onClick={openCancelAddProductPopup} primary>

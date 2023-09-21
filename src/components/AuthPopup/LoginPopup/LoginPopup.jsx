@@ -22,7 +22,8 @@ const LoginPopup = () => {
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
-  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } =
+    useInput(initValueParams);
 
   const handleSubmit = () => {
     dispatch(loginUser(values));

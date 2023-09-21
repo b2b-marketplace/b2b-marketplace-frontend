@@ -77,6 +77,11 @@ const Basket = ({ extraClassName }) => {
   };
 
   useEffect(() => {
+    if (isLoggedIn) {
+    }
+  }, [isLoggedIn]);
+
+  useEffect(() => {
     fetchBasketProducts();
   }, []);
 
@@ -118,7 +123,7 @@ const Basket = ({ extraClassName }) => {
       productSum: totalPrice,
       productQuantity: totalQuantity,
     });
-  }, [selectedProductId, currentProductList]);
+  }, [selectedProductId]);
 
   const handleClickCheckboxProduct = (productId) => {
     dispatch(changeChecked({ productIds: productId }));
@@ -244,7 +249,6 @@ const Basket = ({ extraClassName }) => {
                         onClick={handleOpenRegisterPopup}
                         primary
                         dark
-                        //disabled={!selectedProductId.length}
                         label={'Зарегистрироваться'}
                       >
                         Зарегистрироваться
