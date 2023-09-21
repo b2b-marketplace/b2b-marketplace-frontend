@@ -24,7 +24,7 @@ const RegisterPopup = () => {
     inn: '',
     phone_number: '',
     address: '',
-    vat: ''
+    vat: '',
   };
   const initPersonValueParams = {
     first_name: '',
@@ -53,11 +53,13 @@ const RegisterPopup = () => {
     { title: 'Финальный шаг', btnText: 'Зарегистрироваться' },
   ];
 
-  const isPasswordsMatch = lastStepValidation.values.password === lastStepValidation.values.repeat_password;
+  const isPasswordsMatch =
+    lastStepValidation.values.password === lastStepValidation.values.repeat_password;
 
-  const formDisabled = step === 4 ?
-    lastStepValidation.isNotValidForm || !isPasswordsMatch
-    : currentValidation.isNotValidForm;
+  const formDisabled =
+    step === 4
+      ? lastStepValidation.isNotValidForm || !isPasswordsMatch
+      : currentValidation.isNotValidForm;
 
   const handleNextStep = () => {
     setStep(step + 1);
@@ -85,24 +87,25 @@ const RegisterPopup = () => {
 
     const { email, phone_number, address, ...company } = entityValidation.values;
     const { password } = lastStepValidation.values;
-    authApi.registerCompany({
-      email,
-      password,
-      // FIXME: just for presentation
-      // username: `test-name-${Math.floor(Math.random() * 1000000)}`,
-      username: email,
-      company: {
-        ...company,
-        role,
-        vat: company.vat === 'yes',
-        address: {
-          address: address,
+    authApi
+      .registerCompany({
+        email,
+        password,
+        // FIXME: just for presentation
+        // username: `test-name-${Math.floor(Math.random() * 1000000)}`,
+        username: email,
+        company: {
+          ...company,
+          role,
+          vat: company.vat === 'yes',
+          address: {
+            address: address,
+          },
+          phone_number: {
+            phone_number,
+          },
         },
-        phone_number: {
-          phone_number,
-        },
-      }
-    })
+      })
       .then((res) => {
         closePopup();
         openCompleteRegistration();
@@ -145,9 +148,13 @@ const RegisterPopup = () => {
         {step === 1 && <RegistrationFirstStep onType={handleType} />}
         {step === 2 && <RegistrationSecondStep onEntity={handleEntity} />}
 
-        <fieldset style={{ 'height': fieldsetHeight }} className={`popup__fieldset popup__fieldset_hidden${step > 2 ? ` popup__fieldset_visible` : ''}`}>
-          {
-            step === 3 &&
+        <fieldset
+          style={{ height: fieldsetHeight }}
+          className={`popup__fieldset popup__fieldset_hidden${
+            step > 2 ? ` popup__fieldset_visible` : ''
+          }`}
+        >
+          {step === 3 && (
             <RegistrationThirdStep
               isEntity={isEntity}
               errors={currentValidation.errors}
@@ -156,9 +163,8 @@ const RegisterPopup = () => {
               isDirtyInputs={currentValidation.isDirtyInputs}
               serverErrors={serverErrors}
             />
-          }
-          {
-            step === 4 &&
+          )}
+          {step === 4 && (
             <RegistrationLastStep
               errors={lastStepValidation.errors}
               values={lastStepValidation.values}
@@ -166,7 +172,7 @@ const RegisterPopup = () => {
               isDirtyInputs={lastStepValidation.isDirtyInputs}
               serverErrors={serverErrors}
             />
-          }
+          )}
         </fieldset>
       </Form>
     </Popup>

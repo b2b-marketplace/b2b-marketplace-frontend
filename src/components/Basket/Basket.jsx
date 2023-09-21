@@ -8,7 +8,7 @@ import Tooltip from '../UI/Tooltip/Tooltip';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import { Button } from '../UI/Button/Button';
 import OrderDetail from '../OrderDetail/OrderDetail';
-import ProductCardHorizontal from '../Product/ProductCardHorizontal/ProductCardHorizontal';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import SidebarRight from '../SidebarRight/SidebarRight';
@@ -21,8 +21,16 @@ import {
   getCalculateProductInfo,
 } from '../../utils/utils';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import usePopup from '../../hooks/usePopup';
+import Preloader from '../UI/Preloader/Preloader';
 
 const Basket = ({ extraClassName }) => {
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.account);
+  const { openPopup: openRegisterPopup } = usePopup('registration');
+  const { openPopup: openLoginPopup } = usePopup('login');
+
+  const [preloader, setPreloader] = useState(true);
   const [currentProductList, setCurrentProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
@@ -41,7 +49,7 @@ const Basket = ({ extraClassName }) => {
       const mergedList = [];
       const selectedList = [];
       try {
-        const { results } = await productsApi.getProducts(productBasketIds);
+        const { results } = await productsApi.getProductById(productBasketIds);
         for (const basketItem of basketList.basket_products) {
           const productItem = results.find((product) => product.id === basketItem.id);
           if (productItem) {
@@ -61,7 +69,10 @@ const Basket = ({ extraClassName }) => {
       } finally {
         setCurrentProductList(mergedList);
         setSelectedProductId(selectedList);
+        setPreloader(false);
       }
+    } else {
+      setPreloader(false);
     }
   };
 
@@ -71,7 +82,7 @@ const Basket = ({ extraClassName }) => {
 
   useEffect(() => {
     if (currentProductList.length === 0) return;
-
+    setPreloader(true);
     const mergedList = [];
 
     for (const basketItem of basketList.basket_products) {
@@ -89,7 +100,7 @@ const Basket = ({ extraClassName }) => {
         mergedList.push(mergedItem);
       }
     }
-
+    setPreloader(false);
     setCurrentProductList(mergedList);
   }, [basketList]);
 
@@ -142,10 +153,20 @@ const Basket = ({ extraClassName }) => {
     }
   };
 
-  return (
-    <section className={`basket ${extraClassName || ''}`}>
-      {currentProductList.length > 0 ? (
-        <>
+  const handleOpenLoginPopup = () => {
+    openLoginPopup();
+  };
+
+  const handleOpenRegisterPopup = () => {
+    openRegisterPopup();
+  };
+
+  if (preloader) {
+    return <Preloader />;
+  } else {
+    return (
+      <section className={`basket ${extraClassName || ''}`}>
+        {currentProductList.length > 0 ? (
           <div className="basket__container">
             <div className="basket__container-product">
               <div className="basket__panel">
@@ -194,26 +215,55 @@ const Basket = ({ extraClassName }) => {
                   productSumPrice={orderInfo.productSum}
                 />
                 <div className="basket__order-detail-buttons">
-                  <Button
-                    size="xl"
-                    onClick={handleNavigateToOrder}
-                    primary
-                    dark
-                    disabled={!selectedProductId.length}
-                    label={'Купить'}
-                  >
-                    Купить
-                  </Button>
+                  {isLoggedIn ? (
+                    user.company.role !== 'supplier' ? (
+                      <Button
+                        size="xl"
+                        onClick={handleNavigateToOrder}
+                        primary
+                        dark
+                        disabled={!selectedProductId.length}
+                        label={'Купить'}
+                      >
+                        Купить
+                      </Button>
+                    ) : (
+                      <>
+                        <Button size="xl" primary dark disabled={true} label={'Купить'}>
+                          Купить
+                        </Button>
+                        <div className="basket__hint basket__hint_warning">
+                          Оформление заказа доступно только покупателям
+                        </div>
+                      </>
+                    )
+                  ) : (
+                    <>
+                      <Button
+                        size="xl"
+                        onClick={handleOpenRegisterPopup}
+                        primary
+                        dark
+                        //disabled={!selectedProductId.length}
+                        label={'Зарегистрироваться'}
+                      >
+                        Зарегистрироваться
+                      </Button>
+                      <Button size="xl" onClick={openLoginPopup} label={'Войти'} primary>
+                        Войти
+                      </Button>
+                    </>
+                  )}
                 </div>
               </OrderDetail>
             </SidebarRight>
           </div>
-        </>
-      ) : (
-        <div className="basket__empty">Корзина Пуста</div>
-      )}
-    </section>
-  );
+        ) : (
+          <div className="basket__empty">Корзина Пуста</div>
+        )}
+      </section>
+    );
+  }
 };
 
 export default Basket;

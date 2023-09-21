@@ -1,14 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import accountApi from '../../utils/accountApi';
+
+export const getUser = createAsyncThunk('account/getData', async (token) => {
+  return accountApi.getUser(token);
+});
 
 const initialState = {
   user: {
     id: '',
     email: '',
     username: '',
-    is_company: true,
+    is_company: false,
     company: {
       id: '',
-      role: '',
+      role: 'guest',
       company_account: '',
       name: '',
       inn: '',
@@ -34,6 +39,22 @@ const accountSlice = createSlice({
       state.user = initialState.user;
       state.isFetched = false;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.isFetched = true;
+        state.user = { ...action.payload };
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
   },
 });
 

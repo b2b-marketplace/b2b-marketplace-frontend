@@ -52,7 +52,7 @@ const useInput = (initValueParams) => {
         [input.name]: true,
       }));
     }
-    setErrors(state => ({
+    setErrors((state) => ({
       ...state,
       [input.name]: checkValidity(input) ? input.validationMessage ?? '' : getCustomMessage(input),
     }));

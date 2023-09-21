@@ -42,7 +42,7 @@ export const authSlice = createSlice({
       state.isLoading = false;
       state.error = 'Невозможно войти с предоставленными учетными данными.';
     },
-  }
+  },
 });
 
 export const { setAuthentication, logoutUser, resetLoading } = authSlice.actions;

@@ -1,8 +1,10 @@
+import CancelAddProductPopup from '../CancelAddProductPopup/CancelAddProductPopup';
 import CompleteLoginPopup from '../CompleteLoginPopup/CompleteLoginPopup';
 import CompleteRegistrationPopup from '../CompleteRegistrationPopup/CompleteRegistrationPopup';
 import ConfirmRestoreByEmailPopup from '../ConfirmRestoreByEmailPopup/ConfirmRestoreByEmailPopup';
 import ConfirmRestoreByPhonePopup from '../ConfirmRestoreByPhonePopup/ConfirmRestoreByPhonePopup';
 import LoginPopup from '../LoginPopup/LoginPopup';
+import ModerationNewProductPopup from '../ModerationNewProductPopup/ModerationNewProductPopup';
 import NewPasswordPopup from '../NewPasswordPopup/NewPasswordPopup';
 import RegisterPopup from '../RegisterPopup/RegisterPopup';
 import RestoreByEmailPopup from '../RestoreByEmailPopup/RestoreByEmailPopup';
@@ -24,6 +26,8 @@ const AuthPopup = () => {
       <ConfirmRestoreByPhonePopup />
       <ConfirmRestoreByEmailPopup />
       <NewPasswordPopup />
+      <ModerationNewProductPopup />
+      {/* <CancelAddProductPopup /> */}
     </>
   );
 };

@@ -10,10 +10,7 @@
   &__title {
     display: flex;
     margin: 0;
-    font-family: $fontFamilyUnbounded;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 44px;
+    @include h2-styles;
   }
 
   &__container {
@@ -34,17 +31,13 @@
   }
 
   &__paragraph {
+    @include text-L-link-styles;
     margin: 0 0 12px;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 28px;
   }
 
   &__link {
+    @include text-L-regular-styles;
     color: $blueDarkColor;
-    font-size: 20px;
-    font-weight: $mainWeight;
-    line-height: 28px;
     text-decoration: none;
 
     &:hover {
@@ -54,15 +47,12 @@
 
   &__button-more {
     @include reset-button;
+    @include text-M-link-styles;
     display: flex;
     gap: 8px;
     align-items: center;
     border: none;
     height: 28px;
-    color: $blackColor;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
   }
 
   &__icon {

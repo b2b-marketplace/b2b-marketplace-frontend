@@ -81,8 +81,8 @@ $inactiveColor: #a3a3a3;
 
       &-icon {
         box-sizing: border-box;
-        width: 19px;
-        height: 19px;
+        width: 32px;
+        height: 32px;
       }
     }
 
@@ -102,6 +102,10 @@ $inactiveColor: #a3a3a3;
 
       &_type_radio {
         gap: 20px 0;
+      }
+
+      &_type_product {
+        gap: 24px 0;
       }
     }
 
@@ -162,6 +166,11 @@ $inactiveColor: #a3a3a3;
       @include text(600, 28px, 24px);
       margin-inline: auto;
       max-width: 427px;
+
+      &_size_l {
+        max-width: 504px;
+        @include text(600, 28px, 20px);
+      }
 
       &_size_s {
         max-width: 413px;

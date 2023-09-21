@@ -15,7 +15,6 @@ const LoginPopup = () => {
   const dispatch = useDispatch();
   const { isLoggedIn, isLoading, error } = useSelector((state) => state.auth);
 
-
   const { isOpen, closePopup } = usePopup('login');
   const { openPopup: openCompleteLogin } = usePopup('completeLogin');
   const { openPopup: openRestore } = usePopup('selectRestore');
@@ -62,7 +61,7 @@ const LoginPopup = () => {
         className="popup__form"
         onSubmit={handleSubmit}
         btnText="Далее"
-        btnType={"submit"}
+        btnType={'submit'}
         formDisabled={isNotValidForm || isLoading}
       >
         <fieldset className="popup__fieldset">
