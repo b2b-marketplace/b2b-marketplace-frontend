@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './DropDown.scss';
 import IconArrowCounter from '../Icon/Icon_arrow-counter';
 
-const DropDown = ({ label, placeholder, options, className }) => {
+const DropDown = ({ label, placeholder, options, className, onChange, name }) => {
   const [activeOption, setActiveOption] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +11,8 @@ const DropDown = ({ label, placeholder, options, className }) => {
     setSelectedOption(option);
     setActiveOption(option); // Устанавливаем активный элемент
     setIsMenuOpen(false);
+    onChange(null, option, name);
+    
   };
 
   const toggleMenu = () => {
