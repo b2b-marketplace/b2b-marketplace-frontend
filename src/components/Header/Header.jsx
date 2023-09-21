@@ -18,7 +18,6 @@ import usePopup from '../../hooks/usePopup';
 import geoApi from '../../utils/GeoApi';
 import { getUser } from '../../store/slices/accountSlice';
 
-
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.auth);
@@ -109,7 +108,8 @@ const Header = () => {
         <Link
           onClick={!isLoggedIn && handleOpenAuthPopup}
           to="/account/profile"
-          className="header__link">
+          className="header__link"
+        >
           <IconProfile />
         </Link>
       </nav>

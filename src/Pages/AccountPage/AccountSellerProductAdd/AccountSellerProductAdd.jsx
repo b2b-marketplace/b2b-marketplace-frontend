@@ -217,7 +217,7 @@ const AccountSellerProductAdd = () => {
                 primary
                 dark
                 type="submit"
-                disabled={!areAllRequiredFieldsFilled()} 
+                disabled={!areAllRequiredFieldsFilled()}
               >
                 Опубликовать
               </Button>
