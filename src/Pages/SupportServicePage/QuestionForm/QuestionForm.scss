@@ -11,17 +11,14 @@
   padding: 52px 0 120px;
 
   &__title {
-    font-family: $fontFamilyUnbounded;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 44px;
+    @include h2-styles;
     margin: 0;
   }
 
   &__links {
     display: flex;
     gap: 51px;
-    color: $blackColor;
+    color: $darkColor;
   }
 
   &__link {
@@ -93,5 +90,5 @@
 }
 
 .active-link {
-  border-bottom: 2px solid $blackColor; // Стиль активной ссылки
+  border-bottom: 2px solid $darkColor; // Стиль активной ссылки
 }

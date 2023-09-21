@@ -6,6 +6,7 @@
   max-height: 811px;
   padding: 169px 0;
   align-items: center;
+
   font-family: $fontFamilyUnbounded;
   font-style: $mainStyle;
   font-weight: 500;
@@ -23,8 +24,7 @@
   }
 
   &__title {
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between;
   }
 
   &__figure {
@@ -63,11 +63,9 @@
   }
 
   &__text {
+    @include text-default-styles;
+    @include text-M-link-styles;
     text-align: center;
-    font-family: $fontFamilyNunitoSans;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
     margin: 0 0 20px;
     text-wrap: balance;
 

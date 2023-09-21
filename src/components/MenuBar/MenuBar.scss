@@ -26,8 +26,7 @@
   }
 
   &__link {
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between;
     width: 100%;
     text-decoration: none;
     color: $grayColor;

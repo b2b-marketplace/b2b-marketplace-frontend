@@ -30,3 +30,8 @@
   @include reset;
   background-color: transparent;
 }
+
+@mixin max-mix-width {
+  max-width: $maxWidth;
+  min-width: $minWidth;
+}

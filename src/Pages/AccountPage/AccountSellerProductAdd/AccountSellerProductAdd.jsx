@@ -6,8 +6,13 @@ import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTit
 import InputField from '../../../components/UI/InputField/InputField';
 import FileUpload from '../../../components/UI/FileUpload/FileUpload';
 import DropDown from '../../../components/UI/DropDown/DropDown';
+import usePopup from '../../../hooks/usePopup';
+import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProductPopup/CancelAddProductPopup';
 
 const AccountSellerProductAdd = () => {
+  const { openPopup: openModerationNewProductPopup } = usePopup('addNewItem');
+  const { openPopup: openCancelAddProductPopup, closePopup } = usePopup('cancelAddnewItem');
+
   // Состояние для данных формы
   const [formData, setFormData] = useState({
     category: 0,
@@ -36,7 +41,9 @@ const AccountSellerProductAdd = () => {
     event.preventDefault();
   };
 
-  const handleCancel = () => {
+  const handleResetForm = () => {
+    console.log('Before reset:', formData);
+    // Сбросить значения в форме
     setFormData({
       category: 0,
       sku: '',
@@ -50,6 +57,20 @@ const AccountSellerProductAdd = () => {
       videos: ['http://example.com'],
       images: ['http://example.com'],
     });
+    
+    console.log('After reset:', formData);
+    closePopup('cancelAddnewItem');
+  };
+
+  const handleCancel = () => {
+    closePopup('cancelAddnewItem');
+  };
+
+  const handleConfirm = () => {
+  
+    console.log('Confirmed');
+    handleResetForm();
+    closePopup('cancelAddnewItem'); 
   };
 
   return (
@@ -132,8 +153,7 @@ const AccountSellerProductAdd = () => {
                 name="description"
                 className="account-seller-product-add__textarea"
                 placeholder="Добавьте описание товара"
-                onChange={handleFormChange}
-              ></textarea>
+                onChange={handleFormChange}></textarea>
             </div>
           </div>
 
@@ -168,16 +188,17 @@ const AccountSellerProductAdd = () => {
               Каждый товар проходит модерацию. В среднем проверка занимает 30 минут
             </p>
             <div className="account-seller-product-add__button-conteiner">
-              <Button size="l" primary dark type="submit">
+              <Button size="l" onClick={openModerationNewProductPopup} primary dark>
                 Опубликовать
               </Button>
-              <Button size="l" primary onClick={handleCancel}>
+              <Button size="l" onClick={openCancelAddProductPopup} primary>
                 Отмена
               </Button>
             </div>
           </div>
         </form>
       </div>
+      <CancelAddProductPopup onCancel={handleCancel} onConfirm={handleConfirm} onReset={handleResetForm} />
     </section>
   );
 };

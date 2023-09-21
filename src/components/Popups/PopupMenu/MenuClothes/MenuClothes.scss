@@ -2,10 +2,10 @@
 
 .menu-clothes {
   @include flex-column;
+  @include text-M-link-styles;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
-  font-weight: 600;
-  line-height: 28px;
+ 
   gap: 40px;
 
   &__title {
@@ -40,7 +40,6 @@
 
   &__subtitle {
     font-size: 20px;
-    color: $blackColor;
     margin: 0;
   }
 
@@ -56,16 +55,13 @@
   }
 
   &__button-more {
+    @include text-M-styles;
     @include reset-button;
     display: flex;
     gap: 8px;
-    align-items: center;
     border: none;
     height: 24px;
     color: $blueDarkColor;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
   }
 
   &__icon {
