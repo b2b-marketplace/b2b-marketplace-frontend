@@ -47,6 +47,9 @@
     &_valid {
       color: $greenColor;
     }
+    &_notvalid {
+      color: $redColor;
+    }
   }
 }
 

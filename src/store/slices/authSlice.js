@@ -25,6 +25,7 @@ export const authSlice = createSlice({
     },
     resetLoading: (state) => {
       state.isLoading = false;
+      state.error = null;
     },
   },
   extraReducers: {
@@ -37,9 +38,9 @@ export const authSlice = createSlice({
       state.isLoggedIn = true;
       state.auth_token = payload.auth_token;
     },
-    [loginUser.rejected]: (state, { error }) => {
+    [loginUser.rejected]: (state) => {
       state.isLoading = false;
-      state.error = error.message;
+      state.error = 'Невозможно войти с предоставленными учетными данными.';
     },
   },
 });
