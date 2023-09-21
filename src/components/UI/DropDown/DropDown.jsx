@@ -12,7 +12,6 @@ const DropDown = ({ label, placeholder, options, className, onChange, name }) =>
     setActiveOption(option); // Устанавливаем активный элемент
     setIsMenuOpen(false);
     onChange(null, option, name);
-    
   };
 
   const toggleMenu = () => {

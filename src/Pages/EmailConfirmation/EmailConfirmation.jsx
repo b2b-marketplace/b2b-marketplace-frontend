@@ -45,5 +45,3 @@ const EmailConfirmation = () => {
 };
 
 export default EmailConfirmation;
-
-
