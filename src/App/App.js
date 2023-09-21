@@ -1,12 +1,10 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './App.scss';
-import { useEffect } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomePage from '../Pages/HomePage/HomePage';
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
@@ -27,16 +25,16 @@ import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
+import EmailConfirmation from '../Pages/EmailConfirmation/EmailConfirmation';
 
 function App() {
-
   const ScrollToTop = () => {
     const location = useLocation();
-  
+
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [location.pathname]);
-  
+
     return null;
   };
 
@@ -48,7 +46,6 @@ function App() {
       dispatch(getUser(auth_token));
     }
   }, [isFetched, isLoggedIn]);
-
 
   return (
     <div className="app">
@@ -78,6 +75,7 @@ function App() {
         <Route path="/about-us" element={<AboutUsPage />} exact />
         <Route path="/activate/*" element={<Activation />} />
         <Route path="/logout" element={<Logout />} exact />
+        <Route path="/email-confirmation" element={<EmailConfirmation />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ButtonScrollUp />
