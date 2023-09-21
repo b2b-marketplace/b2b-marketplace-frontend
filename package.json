@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --profile",
     "eject": "react-scripts eject",
     "format": "prettier . --write",
     "lint": "npx eslint . --ext .js,jsx",
