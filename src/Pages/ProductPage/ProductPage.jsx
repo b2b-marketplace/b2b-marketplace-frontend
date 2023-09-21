@@ -6,7 +6,11 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../../components/UI/Preloader/Preloader';
-import { fetchProductById, loadMoreProducts, fetchProducts } from '../../store/slices/productsSlice';
+import {
+  fetchProductById,
+  loadMoreProducts,
+  fetchProducts,
+} from '../../store/slices/productsSlice';
 import NotFound from '../../components/NotFound/NotFound';
 
 export default function ProductPage() {
@@ -34,25 +38,25 @@ export default function ProductPage() {
     dispatch(loadMoreProducts());
   };
 
-
   return (
     <div className="product-page">
-      {isProductByIdLoaded
-        ? productById.product === undefined
-          ? (<NotFound />)
-          : (<ProductBlock
-            product={productById.product}
-            className="product-page__product-block"
-          />)
-        : (<Preloader />)
-      }
-      
+      {isProductByIdLoaded ? (
+        productById.product === undefined ? (
+          <NotFound />
+        ) : (
+          <ProductBlock product={productById.product} className="product-page__product-block" />
+        )
+      ) : (
+        <Preloader />
+      )}
+
       <PlatformBenefits className="product-page__platform-benefits" />
       <ProductCardContainer
         title={'Товары от этого поставщика'}
         products={sellerProducts}
         onClickMoreBtn={handleClickMore}
-        isFull={isFull} />
+        isFull={isFull}
+      />
     </div>
   );
 }

@@ -17,11 +17,10 @@ const useInput = (initValueParams) => {
     if (input.type === 'email') {
       return isEmail(input.value);
     }
-    
+
     return true;
   };
   const getCustomMessage = (input) => {
-
     return '/';
   };
 
@@ -32,7 +31,7 @@ const useInput = (initValueParams) => {
         [input.name]: true,
       }));
     }
-    setErrors(state => ({
+    setErrors((state) => ({
       ...state,
       [input.name]: input.validationMessage,
     }));
