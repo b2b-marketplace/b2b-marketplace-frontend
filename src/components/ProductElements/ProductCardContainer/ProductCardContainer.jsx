@@ -3,7 +3,13 @@ import ProductCard from '../ProductCard/ProductCard';
 import { Button } from '../../UI/Button/Button';
 import { useEffect, useState } from 'react';
 
-export default function ProductCardContainer({ title, products, onClickMoreBtn, isFull, className }) {
+export default function ProductCardContainer({
+  title,
+  products,
+  onClickMoreBtn,
+  isFull,
+  className,
+}) {
   const [displayCards, setDisplayCards] = useState([]);
   const [cardsQuantity, setCardsQuantity] = useState(6);
 
@@ -11,7 +17,6 @@ export default function ProductCardContainer({ title, products, onClickMoreBtn, 
     setCardsQuantity(cardsQuantity + 6);
     if (cardsQuantity <= products.length) {
       onClickMoreBtn();
-
     }
   };
 
@@ -28,10 +33,11 @@ export default function ProductCardContainer({ title, products, onClickMoreBtn, 
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
-      { (isFull && products.length > cardsQuantity) && <Button primary dark size="l" onClick={handleAddCards}>
-        Смотреть ещё
-      </Button>
-      }
+      {isFull && products.length > cardsQuantity && (
+        <Button primary dark size="l" onClick={handleAddCards}>
+          Смотреть ещё
+        </Button>
+      )}
     </section>
   );
 }

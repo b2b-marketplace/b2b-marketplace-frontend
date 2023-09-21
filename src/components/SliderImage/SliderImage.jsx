@@ -12,10 +12,9 @@ export default function SliderImage({ images }) {
   const handleMouseEnter = (event) => {
     const card = getCurrentSlider(event);
     if (images.length !== 0) {
-      card
-        .querySelector('.slider__images')
-        .style
-        .transform = `translateX(${-card.querySelector('.slider__image').width * event.target.id}px)`;
+      card.querySelector('.slider__images').style.transform = `translateX(${
+        -card.querySelector('.slider__image').width * event.target.id
+      }px)`;
       [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
       [...card.querySelectorAll('.dot')]
         .filter((item) => item.id === event.target.id)[0]
@@ -43,11 +42,13 @@ export default function SliderImage({ images }) {
   return (
     <div className="slider" onMouseLeave={handleStartState}>
       <div className="slider__images">
-        {images.length !== 0
-          ? (images.map((image, idx) => (
+        {images.length !== 0 ? (
+          images.map((image, idx) => (
             <img key={idx} id={idx} className="slider__image" src={image.image} alt="" />
-          )))
-          : (<img className="slider__image" src={noImage} alt="" />)}
+          ))
+        ) : (
+          <img className="slider__image" src={noImage} alt="" />
+        )}
       </div>
       <div className="slider__nav">
         {images.map((image, idx) => (

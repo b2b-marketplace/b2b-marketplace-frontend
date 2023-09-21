@@ -15,17 +15,14 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const [newProducts, setNewProducts] = useState([]);
   const [popularProducts, setPopularProducts] = useState([]);
-  
 
-  const { allProducts, pageDB, isFull} = useSelector((state) => state.products.allProducts);
-
+  const { allProducts, pageDB, isFull } = useSelector((state) => state.products.allProducts);
 
   const { isLoggedIn } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(fetchProducts(pageDB));
   }, [dispatch, pageDB]);
-
 
   useEffect(() => {
     setNewProducts(allProducts);
@@ -35,7 +32,6 @@ const HomePage = () => {
   const handleClickMore = () => {
     dispatch(loadMoreProducts());
   };
-
 
   return (
     <main className="home-page">

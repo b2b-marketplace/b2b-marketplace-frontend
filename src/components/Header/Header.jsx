@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 import IconPosition from '../../components/UI/Icon/Icon_position';
@@ -33,7 +33,12 @@ const Header = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  geoApi.getCity().then(res=>setCity(res.city));
+  useEffect(() => {
+    geoApi
+      .getCity()
+      .then((res) => setCity(res.city))
+      .catch((err) => console.log(err.message));
+  }, []);
 
   return (
     <header className="header">
@@ -100,7 +105,11 @@ const Header = () => {
           <IconBasket />
         </Link>
 
-        <Link onClick={!isLoggedIn && handleOpenAuthPopup} to="/account/profile" className="header__link">
+        <Link
+          onClick={!isLoggedIn && handleOpenAuthPopup}
+          to="/account/profile"
+          className="header__link"
+        >
           <IconProfile />
         </Link>
       </nav>

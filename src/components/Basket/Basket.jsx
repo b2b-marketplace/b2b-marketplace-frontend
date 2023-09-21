@@ -21,8 +21,13 @@ import {
   getCalculateProductInfo,
 } from '../../utils/utils';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import usePopup from '../../hooks/usePopup';
 
 const Basket = ({ extraClassName }) => {
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { openPopup: openRegisterPopup } = usePopup('registration');
+  const { openPopup: openLoginPopup } = usePopup('login');
+
   const [currentProductList, setCurrentProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
@@ -41,7 +46,7 @@ const Basket = ({ extraClassName }) => {
       const mergedList = [];
       const selectedList = [];
       try {
-        const { results } = await productsApi.getProductsBiId(productBasketIds);
+        const { results } = await productsApi.getProductById(productBasketIds);
         for (const basketItem of basketList.basket_products) {
           const productItem = results.find((product) => product.id === basketItem.id);
           if (productItem) {
@@ -142,6 +147,14 @@ const Basket = ({ extraClassName }) => {
     }
   };
 
+  const handleOpenLoginPopup = () => {
+    openLoginPopup();
+  };
+
+  const handleOpenRegisterPopup = () => {
+    openRegisterPopup();
+  };
+
   return (
     <section className={`basket ${extraClassName || ''}`}>
       {currentProductList.length > 0 ? (
@@ -194,16 +207,34 @@ const Basket = ({ extraClassName }) => {
                   productSumPrice={orderInfo.productSum}
                 />
                 <div className="basket__order-detail-buttons">
-                  <Button
-                    size="xl"
-                    onClick={handleNavigateToOrder}
-                    primary
-                    dark
-                    disabled={!selectedProductId.length}
-                    label={'Купить'}
-                  >
-                    Купить
-                  </Button>
+                  {isLoggedIn ? (
+                    <Button
+                      size="xl"
+                      onClick={handleNavigateToOrder}
+                      primary
+                      dark
+                      disabled={!selectedProductId.length}
+                      label={'Купить'}
+                    >
+                      Купить
+                    </Button>
+                  ) : (
+                    <>
+                      <Button
+                        size="xl"
+                        onClick={handleOpenRegisterPopup}
+                        primary
+                        dark
+                        //disabled={!selectedProductId.length}
+                        label={'Зарегистрироваться'}
+                      >
+                        Зарегистрироваться
+                      </Button>
+                      <Button size="xl" onClick={openLoginPopup} label={'Войти'} primary>
+                        Войти
+                      </Button>
+                    </>
+                  )}
                 </div>
               </OrderDetail>
             </SidebarRight>

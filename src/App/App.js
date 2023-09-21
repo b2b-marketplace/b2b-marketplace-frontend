@@ -30,8 +30,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
+        <Route path="/basket" element={<BasketPage />} exact />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/basket" element={<BasketPage />} exact />
           <Route path="/order" element={<OrderFormPage />} exact />
           <Route path="/account" element={<AccountPage />}>
             <Route index path="profile" element={<AccountBuyerProfile />} exact />
