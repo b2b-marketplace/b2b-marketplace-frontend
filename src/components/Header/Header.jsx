@@ -14,8 +14,10 @@ import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
 import { useDispatch, useSelector } from 'react-redux';
 import usePopup from '../../hooks/usePopup';
+//import IconClose from '../UI/Icon/Icon_close';
 import geoApi from '../../utils/GeoApi';
 import { getUser } from '../../store/slices/accountSlice';
+
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -107,8 +109,7 @@ const Header = () => {
         <Link
           onClick={!isLoggedIn && handleOpenAuthPopup}
           to="/account/profile"
-          className="header__link"
-        >
+          className="header__link">
           <IconProfile />
         </Link>
       </nav>

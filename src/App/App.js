@@ -2,9 +2,11 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './App.scss';
+import { useEffect } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomePage from '../Pages/HomePage/HomePage';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
@@ -27,6 +29,17 @@ import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
 
 function App() {
+
+  const ScrollToTop = () => {
+    const location = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]);
+  
+    return null;
+  };
+
   const dispatch = useDispatch();
   const { user, isFetched } = useSelector((state) => state.account);
   const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
@@ -36,9 +49,11 @@ function App() {
     }
   }, [isFetched, isLoggedIn]);
 
+
   return (
     <div className="app">
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
