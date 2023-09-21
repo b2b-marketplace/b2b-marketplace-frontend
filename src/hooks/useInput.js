@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { isEmail } from 'validator';
+import { passwordLength, passwordRegEx, phoneRegEx } from '../utils/authConstatnts';
 
 const useInput = (initValueParams) => {
   const [values, setValues] = useState(initValueParams);
@@ -17,12 +18,31 @@ const useInput = (initValueParams) => {
     if (input.type === 'email') {
       return isEmail(input.value);
     }
-    
-    return true;
+    if (input.name === 'address') {
+      return input.value.length > 0;
+    }
+    if (input.name === 'password' || input.name === 'repeat_password') {
+      return passwordRegEx.test(input.value);
+    }
+    if (input.type === 'tel') {
+      return phoneRegEx.test(input.value);
+    }
+    return input.checkValidity();
   };
   const getCustomMessage = (input) => {
-
-    return '/';
+    if (input.type === 'email') {
+      return 'Неверный формат почты';
+    }
+    if (input.name === 'address') {
+      return 'Обязательное поле';
+    }
+    if (input.name === 'password' || input.name === 'repeat_password') {
+      return `От ${passwordLength} символов, латиница, цифры, символы`;
+    }
+    if (input.type === 'tel') {
+      return 'Длина телефона от 10 до 20 цифр';
+    }
+    return input.validationMessage;
   };
 
   const handleChange = ({ target: input }) => {
@@ -34,7 +54,7 @@ const useInput = (initValueParams) => {
     }
     setErrors(state => ({
       ...state,
-      [input.name]: input.validationMessage,
+      [input.name]: checkValidity(input) ? input.validationMessage ?? '' : getCustomMessage(input),
     }));
     setValues((state) => ({
       ...state,
