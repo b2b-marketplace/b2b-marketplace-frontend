@@ -12,11 +12,8 @@
   justify-content: center;
 
   &__container {
-    //margin: 0 auto;
-    max-width: $maxWidth;
-    min-width: $minWidth;
+    @include max-mix-width;
     display: flex;
-    //justify-content: flex-start;
     width: 100%;
   }
 
@@ -55,11 +52,9 @@
   }
 
   &__link {
+    @include text-M-styles;
     margin: 0;
     color: $whiteColor;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
   }
 
   &__menu {
@@ -73,13 +68,6 @@
     @include reset-list;
     width: 262px;
     row-gap: 16px;
-  }
-
-  &__item {
-    margin-bottom: 15px;
-    font-size: 24px;
-    line-height: normal;
-    font-weight: $mainWeight;
   }
 
   &__link {

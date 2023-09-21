@@ -14,10 +14,8 @@ import axios from 'axios';
 import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
-import Input from '../UI/Input/Input';
 import { useSelector } from 'react-redux';
 import usePopup from '../../hooks/usePopup';
-//import IconClose from '../UI/Icon/Icon_close';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

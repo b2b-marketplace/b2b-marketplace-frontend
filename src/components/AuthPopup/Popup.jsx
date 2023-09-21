@@ -13,13 +13,11 @@ const Popup = (props) => {
     titleClassMode,
     title,
     popupContClassMode,
-    extraClassName,
   } = props;
   const isOpenPopupTypeClass = `auth${isOpen ? ' auth_opened' : ''}`;
   const popupContClassName = `popup__container${
     popupContClassMode ? ` ${popupContClassMode}` : ''
-  }${extraClassName ? ` ${extraClassName}` : ''}`;
-
+  }`;
   const titleClassName = `popup__title${titleClassMode ? ` ${titleClassMode}` : ''}`;
 
   const closeByEvent = (event) => {
@@ -47,7 +45,8 @@ const Popup = (props) => {
         <div
           className={`popup__top-conainer${
             isShowStepper ? ' popup__top-conainer_with_content' : ''
-          }`}>
+          }`}
+        >
           {isShowStepper && <Stepper step={step} />}
           <button type="button" onClick={onClose} className="popup__close">
             <IconClose className="popup__close-icon" />

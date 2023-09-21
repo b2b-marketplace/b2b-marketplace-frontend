@@ -1,25 +1,17 @@
-@import '../../../styles/vars';
+@import '../../../styles/global.scss';
 
 .moderation-new-product-popup {
+  @include flex-column;
   font-family: $fontFamilyNunitoSans;
-  font-size: 20px;
+  font-size: 16px;
   font-style: $fontStyle;
   font-weight: 600;
-  line-height: 28px;
+  line-height: 24px;
   color: $darkColor;
-  display: flex;
-  flex-direction: column;
   gap: 16px;
-
-  &__title {
-    margin: 0 0 8px;
-    color: $darkColor;
-  }
 
   &__text {
     max-width: 346px;
-    font-size: 16px;
-    line-height: 24px;
     margin: 0;
   }
 }

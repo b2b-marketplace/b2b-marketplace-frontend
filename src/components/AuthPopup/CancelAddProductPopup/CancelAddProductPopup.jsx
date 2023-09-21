@@ -4,20 +4,35 @@ import './CancelAddProductPopup.scss';
 import usePopup from '../../../hooks/usePopup';
 import { Button } from '../../UI/Button/Button';
 
-const CancelAddProductPopup = () => {
+const CancelAddProductPopup = ({ onConfirm, onCancel, onReset }) => {
   const { isOpen, closePopup } = usePopup('cancelAddnewItem');
+
+  const handleEditClick = () => {
+    closePopup('cancelAddnewItem');
+  };
+
+  const handleConfirmClick = () => {
+ 
+    onConfirm();
+    
+    onReset();
+    
+    closePopup('cancelAddnewItem');
+  };
+
   return (
     <Popup
       isOpen={isOpen}
       onClose={closePopup}
-      extraClassName="cancel-add-product-popup"
+      popupContClassMode={'popup__container_type_product'}
+      titleClassMode={'popup__title_size_l'}
       title="Уверены, что хотите отменить?">
-      <p className="cancel-add-product-popup__subtitle">Данные об этом товаре будут сброшены</p>
+      <p className="cancel-add-product-popup">Данные об этом товаре будут сброшены</p>
       <div className="cancel-add-product-popup__conteiner">
-        <Button size="m" primary dark>
+        <Button size="m" primary dark onClick={handleConfirmClick}>
           Да, уверен
         </Button>
-        <Button size="m" primary>
+        <Button size="m" primary onClick={handleEditClick}>
           Редактировать
         </Button>
       </div>
@@ -26,3 +41,4 @@ const CancelAddProductPopup = () => {
 };
 
 export default CancelAddProductPopup;
+

@@ -41,6 +41,11 @@
   @include text-styles(24px, 500, 30px, $fontColor);
 }
 
+@mixin h4-styles {
+  @include heading-default-styles;
+  @include text-styles(20px, 500, 28px, $fontColor);
+}
+
 // Стили по умолчанию для заголовков
 @mixin text-default-styles {
   font-family: $fontFamilyNunitoSans;
@@ -70,6 +75,10 @@
 // Миксин для текста L, предназначенного для ссылок
 @mixin text-L-link-styles {
   @include text-styles(24px, 600, 28px, $fontColor); // Используйте цвет для ссылок
+}
+
+@mixin text-M-link-styles {
+  @include text-styles(20px, 600, 28px, $fontColor); // Используйте цвет для ссылок
 }
 
 // Text M Web

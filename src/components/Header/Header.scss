@@ -3,11 +3,7 @@
 .header {
   @include flex-space-between;
   @include default-font-styles;
-  color: $fontColor;
-  max-width: $maxWidth;
-  min-width: $minWidth;
-  box-sizing: border-box;
-  //margin: 0 auto;
+  @include max-mix-width;
   padding: 16px 0;
   align-items: center;
   width: 100%;
@@ -30,21 +26,17 @@
 
   &__title {
     @include reset-link;
+    @include  h4-styles;
     height: 28px;
-    font-family: $fontFamilyUnbounded;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 28px;
     margin: 0;
   }
 
   &__location {
+    @include reset-button;
     height: 24px;
     display: flex;
     align-items: center;
     border: none;
-    background: $whiteColor;
-    padding: 0;
     color: $grayColor;
 
     &-text {
@@ -88,22 +80,19 @@
   }
 
   &__link {
+    @include text-M-link-styles;
     display: flex;
     align-items: center;
     gap: 4px;
-    color: $blackColor;
     text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
   }
 
   &__input {
+    @include text-S-main-styles;
+    color: $grayColor;
     border: none;
     padding: 0;
     height: 20px;
-    font-size: 14px;
-    line-height: 20px;
   }
 
   &__button {
@@ -121,15 +110,12 @@
   }
 
   &__catalog-button {
+    @include text-M-styles;
     width: 160px;
     height: 44px;
-    font-size: 16px;
-    font-weight: 700;
     border-radius: 20px;
     padding: 0;
     cursor: pointer;
-    font-family: $fontFamilyNunitoSans;
-    line-height: normal;
     display: flex;
     justify-content: center;
     align-items: center;

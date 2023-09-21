@@ -8,10 +8,7 @@
   padding: 52px 0 120px;
 
   &__title {
-    font-family: $fontFamilyUnbounded;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 44px;
+    @include h2-styles;
     margin: 0 0 40px;
   }
 
@@ -22,9 +19,7 @@
   }
 
   &__text {
-    font-size: 20px;
-    font-weight: $mainWeight;
-    line-height: 28px;
+    @include text-L-regular-styles;
     margin: 0 0 20px;
   }
 }

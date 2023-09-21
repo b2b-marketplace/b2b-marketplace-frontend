@@ -7,10 +7,11 @@ import InputField from '../../../components/UI/InputField/InputField';
 import FileUpload from '../../../components/UI/FileUpload/FileUpload';
 import DropDown from '../../../components/UI/DropDown/DropDown';
 import usePopup from '../../../hooks/usePopup';
+import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProductPopup/CancelAddProductPopup';
 
 const AccountSellerProductAdd = () => {
   const { openPopup: openModerationNewProductPopup } = usePopup('addNewItem');
-  const { openPopup: openCancelAddProductPopup } = usePopup('cancelAddnewItem');
+  const { openPopup: openCancelAddProductPopup, closePopup } = usePopup('cancelAddnewItem');
 
   // Состояние для данных формы
   const [formData, setFormData] = useState({
@@ -40,21 +41,37 @@ const AccountSellerProductAdd = () => {
     event.preventDefault();
   };
 
-  // const handleCancel = () => {
-  //   setFormData({
-  //     category: 0,
-  //     sku: '',
-  //     name: '',
-  //     brand: '',
-  //     price: '',
-  //     wholesale_quantity: 2147483647,
-  //     quantity_in_stock: 2147483647,
-  //     description: '',
-  //     manufacturer_country: '',
-  //     videos: ['http://example.com'],
-  //     images: ['http://example.com'],
-  //   });
-  // };
+  const handleResetForm = () => {
+    console.log('Before reset:', formData);
+    // Сбросить значения в форме
+    setFormData({
+      category: 0,
+      sku: '',
+      name: '',
+      brand: '',
+      price: '',
+      wholesale_quantity: 2147483647,
+      quantity_in_stock: 2147483647,
+      description: '',
+      manufacturer_country: '',
+      videos: ['http://example.com'],
+      images: ['http://example.com'],
+    });
+    
+    console.log('After reset:', formData);
+    closePopup('cancelAddnewItem');
+  };
+
+  const handleCancel = () => {
+    closePopup('cancelAddnewItem');
+  };
+
+  const handleConfirm = () => {
+  
+    console.log('Confirmed');
+    handleResetForm();
+    closePopup('cancelAddnewItem'); 
+  };
 
   return (
     <section className="account-seller-product-add">
@@ -181,6 +198,7 @@ const AccountSellerProductAdd = () => {
           </div>
         </form>
       </div>
+      <CancelAddProductPopup onCancel={handleCancel} onConfirm={handleConfirm} onReset={handleResetForm} />
     </section>
   );
 };

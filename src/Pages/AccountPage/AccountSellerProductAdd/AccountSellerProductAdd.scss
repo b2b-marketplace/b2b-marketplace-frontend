@@ -1,31 +1,25 @@
 @import '../../../styles/global';
 
 .account-seller-product-add {
-  display: flex;
+  @include flex-column;
   gap: 60px;
   justify-content: center;
-  flex-direction: column;
 
   &__section {
     @include default-font-styles;
+    @include text-M-link-styles;
+    @include flex-column;
     max-width: 927px;
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: normal;
     gap: 60px;
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 56px;
   }
 
   &__field {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 24px;
   }
 
@@ -67,21 +61,18 @@
 
   &__label-counter {
     height: 48px;
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between;
     align-items: center;
   }
 
   &__drop-down {
     height: 48px;
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between;
   }
 
   &__control {
     margin-top: 24px;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: center;
     row-gap: 40px;
   }
@@ -101,8 +92,8 @@
     gap: 20px;
   }
 
-  &__error {
-    font-size: 12px;
-    color: red;
-  }
+  // &__error {
+  //   font-size: 12px;
+  //   color: red;
+  // }
 }
