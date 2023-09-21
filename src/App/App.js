@@ -11,7 +11,7 @@ import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/Acco
 import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
-import ButtonScrollUp from '../components/ButtonScrollUp/ButtonScrollUp';
+import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
 import NotFound from '../components/NotFound/NotFound';
 import OrderFormPage from '../Pages/OrderFormPage/OrderFormPage';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
@@ -30,8 +30,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
+        <Route path="/basket" element={<BasketPage />} exact />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/basket" element={<BasketPage />} exact />
           <Route path="/order" element={<OrderFormPage />} exact />
           <Route path="/account" element={<AccountPage />}>
             <Route index path="profile" element={<AccountBuyerProfile />} exact />

@@ -4,7 +4,7 @@ import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
 import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
 import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
 import { useDispatch, useSelector } from 'react-redux';
-import ProductCardHorizontal from '../Product/ProductCardHorizontal/ProductCardHorizontal';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import { addDeliveryAddress } from '../../store/slices/basketSlice';
 
 const OrderForm = ({ extraClassName, productList }) => {

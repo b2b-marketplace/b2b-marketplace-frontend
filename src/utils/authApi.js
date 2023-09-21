@@ -12,13 +12,13 @@ class AuthApi {
 
   // проверка статуса
   _checkIsGoodStatus = (res) => res?.ok || (res.status < 300 && res.status >= 200);
-  
+
   _ckeckOk = (res) => {
-    if (this._checkIsGoodStatus(res)){
+    if (this._checkIsGoodStatus(res)) {
       return res.status === 204 ? res : res.json();
     }
-    return res.json().then(res => {
-      const error =res.non_field_errors.join('');
+    return res.json().then((res) => {
+      const error = res.non_field_errors.join('');
       return Promise.reject(error);
     });
   };
