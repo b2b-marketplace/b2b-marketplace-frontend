@@ -41,7 +41,7 @@ export const authSlice = createSlice({
       state.isLoading = false;
       state.error = error.message;
     },
-  }
+  },
 });
 
 export const { setAuthentication, logoutUser, resetLoading } = authSlice.actions;

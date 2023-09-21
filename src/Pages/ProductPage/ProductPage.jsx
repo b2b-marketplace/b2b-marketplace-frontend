@@ -1,49 +1,62 @@
-import ProductBlock from './ProductBlock/ProductBlock';
+import './ProductPage.scss';
+import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import ProductCardContainer from '../../components/Product/ProductCardContainer/ProductCardContainer';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../../components/UI/Preloader/Preloader';
-import { fetchProducts } from '../../store/slices/productsSlice';
-import './ProductPage.scss';
+import {
+  fetchProductById,
+  loadMoreProducts,
+  fetchProducts,
+} from '../../store/slices/productsSlice';
 import NotFound from '../../components/NotFound/NotFound';
 
 export default function ProductPage() {
-  const { products } = useSelector((state) => state.products);
   const { id } = useParams();
   const dispatch = useDispatch();
-  const isProductsLoaded = products.status === 'loaded';
-  const [product, setProduct] = useState();
+  const { productById, allProducts } = useSelector((state) => state.products);
+  const isProductByIdLoaded = productById.status === 'loaded';
+  const [sellerProducts, setSellerProducts] = useState([]);
+
+  const { pageDB, isFull } = allProducts;
 
   useEffect(() => {
-    setProduct(products.items.find((item) => item.id === Number(id)));
-  }, [id, products.items]);
-
-  // const product = products.items.find((item) => item.id === Number(id));
-  // console.log(product);
-  // const [sellerProducts, setSellerProducts] = useState([]);
-
-  // if (isProductsLoaded)
-  //   setSellerProducts(products.items.filter(item => item.seller.id === product.seller.id));
+    dispatch(fetchProductById(id));
+  }, [dispatch, id]);
 
   useEffect(() => {
-    dispatch(fetchProducts);
-  }, [dispatch]);
+    dispatch(fetchProducts(pageDB));
+  }, [dispatch, pageDB]);
+
+  useEffect(() => {
+    setSellerProducts(allProducts.allProducts);
+  }, [allProducts.allProducts]);
+
+  const handleClickMore = () => {
+    dispatch(loadMoreProducts());
+  };
 
   return (
     <div className="product-page">
-      {isProductsLoaded ? (
-        product === undefined ? (
+      {isProductByIdLoaded ? (
+        productById.product === undefined ? (
           <NotFound />
         ) : (
-          <ProductBlock product={product} className="product-page__product-block" />
+          <ProductBlock product={productById.product} className="product-page__product-block" />
         )
       ) : (
         <Preloader />
       )}
+
       <PlatformBenefits className="product-page__platform-benefits" />
-      <ProductCardContainer title={'Товары от этого поставщика'} />
+      <ProductCardContainer
+        title={'Товары от этого поставщика'}
+        products={sellerProducts}
+        onClickMoreBtn={handleClickMore}
+        isFull={isFull}
+      />
     </div>
   );
 }

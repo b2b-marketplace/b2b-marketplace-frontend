@@ -45,7 +45,9 @@ const PersonRegistration = ({ onChange, values, errors, isDirtyInputs }) => {
           value={values.phone_number}
           maxLength={20}
           required
-          isNotError={!errors.phone_number && isDirtyInputs.phone_number && values.phone_number.length >= 9}
+          isNotError={
+            !errors.phone_number && isDirtyInputs.phone_number && values.phone_number.length >= 9
+          }
         />
         <Input
           name="email"

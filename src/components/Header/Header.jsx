@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 import IconPosition from '../../components/UI/Icon/Icon_position';
@@ -9,13 +9,12 @@ import IconFire from '../UI/Icon/Icon_fire';
 import IconScales from '../UI/Icon/Icon_scales';
 import IconBasket from '../UI/Icon/Icon_basket';
 import IconProfile from '../UI/Icon/Icon_profile';
-import axios from 'axios';
-
 import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
 import { useSelector } from 'react-redux';
 import usePopup from '../../hooks/usePopup';
+import geoApi from '../../utils/GeoApi';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -32,7 +31,12 @@ const Header = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  axios.get('http://ip-api.com/json?lang=ru').then((res) => setCity(res.data.city));
+  useEffect(() => {
+    geoApi
+      .getCity()
+      .then((res) => setCity(res.city))
+      .catch((err) => console.log(err.message));
+  }, []);
 
   return (
     <header className="header">
@@ -99,7 +103,11 @@ const Header = () => {
           <IconBasket />
         </Link>
 
-        <Link onClick={!isLoggedIn && handleOpenAuthPopup} to="/account/profile" className="header__link">
+        <Link
+          onClick={!isLoggedIn && handleOpenAuthPopup}
+          to="/account/profile"
+          className="header__link"
+        >
           <IconProfile />
         </Link>
       </nav>
