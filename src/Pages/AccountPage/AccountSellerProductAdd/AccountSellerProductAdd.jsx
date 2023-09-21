@@ -12,6 +12,7 @@ import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProduc
 const AccountSellerProductAdd = () => {
   const { openPopup: openModerationNewProductPopup } = usePopup('addNewItem');
   const { openPopup: openCancelAddProductPopup, closePopup } = usePopup('cancelAddnewItem');
+  const [formErrors, setFormErrors] = useState({});
 
   // Состояние для данных формы
   const [formData, setFormData] = useState({
@@ -33,8 +34,16 @@ const AccountSellerProductAdd = () => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value.trim(), // Trim the value before storing it in formData
     });
+
+    const newFormErrors = { ...formErrors };
+    if (value.trim() === '' && name !== 'description') {
+      newFormErrors[name] = 'Обязательное поле';
+    } else {
+      delete newFormErrors[name];
+    }
+    setFormErrors(newFormErrors);
   };
 
   const handleSubmit = (event) => {
@@ -57,7 +66,7 @@ const AccountSellerProductAdd = () => {
       videos: ['http://example.com'],
       images: ['http://example.com'],
     });
-    
+
     console.log('After reset:', formData);
     closePopup('cancelAddnewItem');
   };
@@ -67,10 +76,20 @@ const AccountSellerProductAdd = () => {
   };
 
   const handleConfirm = () => {
-  
     console.log('Confirmed');
     handleResetForm();
-    closePopup('cancelAddnewItem'); 
+    closePopup('cancelAddnewItem');
+  };
+
+  // Функция для проверки того, заполнены ли все обязательные поля
+  const areAllRequiredFieldsFilled = () => {
+    for (const fieldName of Object.keys(formData)) {
+      const value = formData[fieldName];
+      if (typeof value === 'string' && value.trim() === '') {
+        return false;
+      }
+    }
+    return true;
   };
 
   return (
@@ -85,6 +104,7 @@ const AccountSellerProductAdd = () => {
             text="Нажмите на «+» или перетащите фото товара (JPEG, PNG) в рамку"
             required
           />
+          {formErrors.images && <div className="error-message">{formErrors.images}</div>}
 
           <FileUpload
             name="videos"
@@ -100,7 +120,9 @@ const AccountSellerProductAdd = () => {
               options={['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5']}
               onChange={handleFormChange}
               required
+              error={formErrors.category}
             />
+            {formErrors.category && <div className="error-message">{formErrors.category}</div>}
 
             <InputField
               name="name"
@@ -188,7 +210,14 @@ const AccountSellerProductAdd = () => {
               Каждый товар проходит модерацию. В среднем проверка занимает 30 минут
             </p>
             <div className="account-seller-product-add__button-conteiner">
-              <Button size="l" onClick={openModerationNewProductPopup} primary dark>
+              <Button
+                size="l"
+                onClick={openModerationNewProductPopup}
+                primary
+                dark
+                type="submit"
+                disabled={!areAllRequiredFieldsFilled()} 
+              >
                 Опубликовать
               </Button>
               <Button size="l" onClick={openCancelAddProductPopup} primary>
@@ -198,7 +227,11 @@ const AccountSellerProductAdd = () => {
           </div>
         </form>
       </div>
-      <CancelAddProductPopup onCancel={handleCancel} onConfirm={handleConfirm} onReset={handleResetForm} />
+      <CancelAddProductPopup
+        onCancel={handleCancel}
+        onConfirm={handleConfirm}
+        onReset={handleResetForm}
+      />
     </section>
   );
 };

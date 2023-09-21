@@ -1,8 +1,9 @@
 import './App.scss';
+import { useEffect } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomePage from '../Pages/HomePage/HomePage';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
@@ -24,9 +25,21 @@ import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 
 function App() {
+
+  const ScrollToTop = () => {
+    const location = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]);
+  
+    return null;
+  };
+
   return (
     <div className="app">
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
