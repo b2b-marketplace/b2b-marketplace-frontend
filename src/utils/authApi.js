@@ -18,7 +18,7 @@ class AuthApi {
     if (this._checkIsGoodStatus(res)) {
       return res.status === 204 ? res : res.json();
     }
-    return res.json().then(err => {
+    return res.json().then((err) => {
       const parsedErrrors = parseErrors(err);
       const keyList = Object.keys(parsedErrrors);
       if (keyList.length === 1) {
@@ -27,7 +27,7 @@ class AuthApi {
       if (keyList.length === 0) {
         return Promise.reject(res.status);
       }
-      
+
       return Promise.reject(parsedErrrors);
     });
   };
