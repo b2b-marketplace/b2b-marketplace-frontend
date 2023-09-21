@@ -1,12 +1,11 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import './App.scss';
-import { useEffect } from 'react';
+
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomePage from '../Pages/HomePage/HomePage';
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
@@ -29,14 +28,13 @@ import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
 
 function App() {
-
   const ScrollToTop = () => {
     const location = useLocation();
-  
+
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [location.pathname]);
-  
+
     return null;
   };
 
@@ -48,7 +46,6 @@ function App() {
       dispatch(getUser(auth_token));
     }
   }, [isFetched, isLoggedIn]);
-
 
   return (
     <div className="app">
