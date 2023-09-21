@@ -121,7 +121,7 @@
   &__order-detail-buttons {
     display: flex;
     flex-direction: column;
-    row-gap: 14px;
+    row-gap: 20px;
   }
 
   &__order-detail-button {
@@ -130,6 +130,14 @@
     &_disabled {
       background-color: $grayColor;
       cursor: default;
+    }
+  }
+
+  &__hint {
+    @include text-S-main-styles;
+
+    &_warning {
+      color: $redColor;
     }
   }
 }

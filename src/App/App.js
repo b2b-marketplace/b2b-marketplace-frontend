@@ -1,13 +1,14 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import './App.scss';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomePage from '../Pages/HomePage/HomePage';
-import { Navigate, Route, Routes } from 'react-router-dom';
 import AccountPage from '../Pages/AccountPage/AccountPage';
 import AccountSellerProductAdd from '../Pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountBuyerOrders from '../Pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
 import AccountBuyerProfile from '../Pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
-import AccountSellerProfile from '../Pages/AccountPage/AccountSellerProfile/AccountSellerProfile';
 import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
@@ -22,8 +23,19 @@ import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage'
 import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
 import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
+import { getUser } from '../store/slices/accountSlice';
+import Logout from '../components/Logout/Logout';
 
 function App() {
+  const dispatch = useDispatch();
+  const { user, isFetched } = useSelector((state) => state.account);
+  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (isLoggedIn && auth_token && !isFetched) {
+      dispatch(getUser(auth_token));
+    }
+  }, [isFetched, isLoggedIn]);
+
   return (
     <div className="app">
       <Header />
@@ -50,6 +62,7 @@ function App() {
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
         <Route path="/activate/*" element={<Activation />} />
+        <Route path="/logout" element={<Logout />} exact />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ButtonScrollUp />

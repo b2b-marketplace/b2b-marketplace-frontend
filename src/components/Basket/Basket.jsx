@@ -25,6 +25,7 @@ import usePopup from '../../hooks/usePopup';
 
 const Basket = ({ extraClassName }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.account);
   const { openPopup: openRegisterPopup } = usePopup('registration');
   const { openPopup: openLoginPopup } = usePopup('login');
 
@@ -208,16 +209,27 @@ const Basket = ({ extraClassName }) => {
                 />
                 <div className="basket__order-detail-buttons">
                   {isLoggedIn ? (
-                    <Button
-                      size="xl"
-                      onClick={handleNavigateToOrder}
-                      primary
-                      dark
-                      disabled={!selectedProductId.length}
-                      label={'Купить'}
-                    >
-                      Купить
-                    </Button>
+                    user.company.role !== 'supplier' ? (
+                      <Button
+                        size="xl"
+                        onClick={handleNavigateToOrder}
+                        primary
+                        dark
+                        disabled={!selectedProductId.length}
+                        label={'Купить'}
+                      >
+                        Купить
+                      </Button>
+                    ) : (
+                      <>
+                        <Button size="xl" primary dark disabled={true} label={'Купить'}>
+                          Купить
+                        </Button>
+                        <div className="basket__hint basket__hint_warning">
+                          Оформление заказа доступно только покупателями
+                        </div>
+                      </>
+                    )
                   ) : (
                     <>
                       <Button
