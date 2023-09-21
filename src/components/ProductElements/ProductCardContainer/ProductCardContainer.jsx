@@ -33,7 +33,8 @@ export default function ProductCardContainer({
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
-      {isFull && products.length > cardsQuantity && (
+      {/* {(isFull && products.length >= cardsQuantity) && ( */}
+      {(products.length >= cardsQuantity) && (
         <Button primary dark size="l" onClick={handleAddCards}>
           Смотреть ещё
         </Button>
