@@ -9,10 +9,11 @@ import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import useShowPassword from '../../../hooks/useShowPassword';
 import { loginUser, resetLoading } from '../../../store/slices/authSlice';
+import { passwordLength } from '../../../utils/authConstatnts';
 
 const LoginPopup = () => {
   const dispatch = useDispatch();
-  const { isLoggedIn, isLoading } = useSelector((state) => state.auth);
+  const { isLoggedIn, isLoading, error } = useSelector((state) => state.auth);
 
   const { isOpen, closePopup } = usePopup('login');
   const { openPopup: openCompleteLogin } = usePopup('completeLogin');
@@ -21,8 +22,7 @@ const LoginPopup = () => {
   const initValueParams = { email: '', password: '' };
   const { isShow, handleShow, resetShow } = useShowPassword(false);
 
-  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } =
-    useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
 
   const handleSubmit = () => {
     dispatch(loginUser(values));
@@ -47,6 +47,7 @@ const LoginPopup = () => {
     if (!isLoggedIn) return;
     closePopup();
     openCompleteLogin();
+    dispatch(resetLoading);
   }, [isLoggedIn]);
 
   return (
@@ -75,6 +76,7 @@ const LoginPopup = () => {
             maxLength={254}
             required
             isNotError={!errors.email && isDirtyInputs.email}
+            serverError={error}
           />
           <Input
             name="password"
@@ -82,12 +84,13 @@ const LoginPopup = () => {
             autoComplete="off"
             placeholder="Пароль"
             size="l"
-            text="От 10 символов, латиница, цифры, символы"
+            text={`От ${passwordLength} символов, латиница, цифры, символы`}
             onChange={handleChange}
             value={values.password}
-            minLength={10}
+            minLength={passwordLength}
             required
             isNotError={!errors.password && isDirtyInputs.password}
+            serverError={error}
           >
             <button
               className="popup__button input-label__button input-label__button_type_password"
