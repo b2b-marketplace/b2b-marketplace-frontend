@@ -16,6 +16,7 @@ const initialState = {
     addNewItem: false,
     cancelAddnewItem: false,
     error: false,
+    order: false,
   },
 };
 

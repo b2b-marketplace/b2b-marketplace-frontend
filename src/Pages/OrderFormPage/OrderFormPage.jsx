@@ -5,12 +5,17 @@ import SidebarRight from '../../components/SidebarRight/SidebarRight';
 import OrderForm from '../../components/OrderForm/OrderForm';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
 import { Button } from '../../components/UI/Button/Button';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../utils/utils';
+import usePopup from '../../hooks/usePopup';
+import accountApi from '../../utils/accountApi';
+import { updateAllProduct } from '../../store/slices/basketSlice';
+import OrderPopup from '../../components/PopupsRedux/OrderPopup/OrderPopup';
 
 const OrderFormPage = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
   const [orderInfo, setOrderInfo] = useState({
@@ -22,6 +27,8 @@ const OrderFormPage = () => {
   });
   const basketList = useSelector((state) => state.basket.basket);
   const [currentProductList, setCurrentProductList] = useState([]);
+  const { openPopup: openOrderPopup } = usePopup('order');
+  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const productList = basketList.basket_products.filter(
@@ -57,32 +64,54 @@ const OrderFormPage = () => {
     return () => {};
   }, []);
 
+  const handleOrderConfirm = () => {
+    const orderProductList = currentProductList.map((product) => {
+      return { product: product.id, quantity: product.quantity };
+    });
+    const order = {
+      order_products: orderProductList,
+    };
+    accountApi
+      .addOrder(auth_token, order)
+      .then(() => {
+        //dispatch(updateAllProduct())
+        openOrderPopup();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   return (
-    <section className="order-form-page">
-      <OrderForm productList={currentProductList} extraClassName="order-form-page__container" />
-      <SidebarRight>
-        <OrderDetail>
-          <OrderDetailHeader title="Ваш заказ" />
-          <OrderDetailContentOrderPage
-            deliveryDate={formatDateUnixTimestamp(orderInfo.delivery_date)}
-            deliveryName={orderInfo.delivery_name}
-            deliveryPrice={orderInfo.delivery_price}
-            productPriceTotal={orderInfo.product_price_total}
-            productQuantity={orderInfo.product_quantity}
-          />
-          <Button
-            size="xl"
-            //onClick={handleNavigateToOrder}
-            primary
-            dark
-            // disabled={!selectedProductId.length}
-            label={'Подтвердить заказ'}
-          >
-            Подтвердить заказ
-          </Button>
-        </OrderDetail>
-      </SidebarRight>
-    </section>
+    <>
+      <section className="order-form-page">
+        <OrderForm productList={currentProductList} extraClassName="order-form-page__container" />
+        <SidebarRight>
+          <OrderDetail>
+            <OrderDetailHeader title="Ваш заказ" />
+            <OrderDetailContentOrderPage
+              deliveryDate={formatDateUnixTimestamp(orderInfo.delivery_date)}
+              deliveryName={orderInfo.delivery_name}
+              deliveryPrice={orderInfo.delivery_price}
+              productPriceTotal={orderInfo.product_price_total}
+              productQuantity={orderInfo.product_quantity}
+            />
+            <Button
+              size="xl"
+              //onClick={openOrderPopup}
+              onClick={handleOrderConfirm}
+              primary
+              dark
+              // disabled={!selectedProductId.length}
+              label={'Подтвердить заказ'}
+            >
+              Подтвердить заказ
+            </Button>
+          </OrderDetail>
+        </SidebarRight>
+      </section>
+      <OrderPopup />
+    </>
   );
 };
 
