@@ -4,7 +4,6 @@ import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import PopupParagraph from '../PopupParagraph/PopupParagraph';
 import useCountDown from '../../../hooks/useCountDown';
-import { useNavigate } from 'react-router';
 import useRestore from '../../../hooks/useRestore';
 import authApi from '../../../utils/authApi';
 
@@ -12,7 +11,6 @@ const ConfirmRestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('confirmRestoreByEmail');
   
   const { resetTimer, startTimer, time, formatTime } = useCountDown(10);
-  const navigate = useNavigate();
 
   const transfomedTime = formatTime(time);
 
