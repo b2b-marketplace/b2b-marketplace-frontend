@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
 import { Button } from '../../components/UI/Button/Button';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../utils/utils';
+import usePopup from '../../hooks/usePopup';
 
 const OrderFormPage = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const OrderFormPage = () => {
   });
   const basketList = useSelector((state) => state.basket.basket);
   const [currentProductList, setCurrentProductList] = useState([]);
+  const { openPopup: openOrderPopup } = usePopup('order');
 
   useEffect(() => {
     const productList = basketList.basket_products.filter(
@@ -72,7 +74,7 @@ const OrderFormPage = () => {
           />
           <Button
             size="xl"
-            //onClick={handleNavigateToOrder}
+            onClick={openOrderPopup}
             primary
             dark
             // disabled={!selectedProductId.length}

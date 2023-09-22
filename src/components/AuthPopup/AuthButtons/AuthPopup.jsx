@@ -11,6 +11,7 @@ import RestoreByEmailPopup from '../RestoreByEmailPopup/RestoreByEmailPopup';
 import RestoreByPhonePopup from '../RestoreByPhonePopup/RestoreByPhonePopup';
 import SelectPopup from '../SelectPopup/SelectPopup';
 import SelectRestorePopup from '../SelectRestorePopup/SelectRestorePopup';
+import OrderPopup from '../../PopupsRedux/OrderPopup/OrderPopup';
 
 const AuthPopup = () => {
   return (
@@ -27,6 +28,7 @@ const AuthPopup = () => {
       <ConfirmRestoreByEmailPopup />
       <NewPasswordPopup />
       <ModerationNewProductPopup />
+      <OrderPopup />
       {/* <CancelAddProductPopup /> */}
     </>
   );
