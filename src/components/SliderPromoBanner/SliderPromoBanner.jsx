@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './SliderPromoBanner.scss';
 
 import Arrows from './Arrows/Arrows';
-import BannerPromo from '../BannerPromo/BannerPromo';
+import BannerPromo from '../Banners/BannerPromo/BannerPromo';
 import Dots from './Dots/Dots';
 
 const SliderPromoBanner = () => {
