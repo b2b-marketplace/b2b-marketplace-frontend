@@ -6,12 +6,13 @@ import authApi from '../../utils/authApi'; // Импортируйте ваш Au
 const EmailConfirmation = () => {
   const [confirmationStatus, setConfirmationStatus] = useState('pending');
   const { token } = useParams(); // Получаем параметр "token" из URL
+  const { uid } = useParams();
 
   useEffect(() => {
     const confirmEmail = async () => {
       try {
         // Используйте метод activate из AuthApi для подтверждения почты
-        const response = await authApi.activate({ token });
+        const response = await authApi.activate({ token, uid });
 
         if (response.status === 'success') {
           setConfirmationStatus('success');
