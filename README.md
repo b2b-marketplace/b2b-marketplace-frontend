@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# B2B-маркетплейс B2Buy 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend часть проекта B2Buy 
 
-## Available Scripts
+## Описание проекта
+B2Buy - представляет собой онлайн-платформу, созданную для облегчения взаимодействия между поставщиками и оптовыми покупателями. Он предоставляет централизованное место, где поставщики могут предлагать свои товары и услуги, а покупатели могут находить и приобретать их в больших объемах.
 
-In the project directory, you can run:
+## Функциональность
 
-### `npm start`
+ - Регистрация и профили пользователей:
+   Поставщики и оптовые покупатели могут зарегистрироваться на платформе и создать свои профили.
+   Профили пользователей содержат информацию о компании, контактные данные и предлагаемые товары.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ - Каталог товаров:
+   Поставщики могут создавать карточки своих товаров, включающие в себя описания, фотографии, цены и другую сопутствующую информацию.
+   Покупатели могут просматривать карточки товаров и искать нужные с помощью фильтров и поисковой системы.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ - Система заказов и транзакций:
+   Покупатели могут размещать заказы на платформе, указывая необходимое количество товаров и другие детали.
+   Поставщики могут принимать заказы и управлять ими через платформу.
+   Платформа обеспечивает безопасные и надежные транзакции между поставщиками и покупателями.
 
-### `npm test`
+ - Обратная связь и рейтинги (в будущих реализациях проекта): 
+   Пользователи могут оставлять отзывы и оценки о поставщиках и их товарах.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - Уведомления и коммуникация (в будущих реализациях проекта):
+   Платформа предоставляет систему уведомлений, чтобы поставщики и покупатели могли быть в курсе новых заказов, сообщений и других важных событий.
+   Пользователи могут общаться между собой через систему обмена сообщениями на платформе.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Используемые технологии:
+<img src="https://simpleicons.org/icons/javascript.svg" alt="javascript" width="50" height="50"/> <img src="https://simpleicons.org/icons/react.svg" alt="react" width="50" height="50"/> <img src="https://simpleicons.org/icons/redux.svg" alt="redux" width="50" height="50"/> <img src="https://simpleicons.org/icons/sass.svg" alt="scss" width="50" height="50"/>  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+## Развёртывание проекта
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Клонируйте репозиторий через командную строку:
+```
+git clone https://github.com/b2b-marketplace/b2b-marketplace-frontend.git
+```
+* Перейдите в локальную папку с проектом
+* Установите зависимости командой:
+```
+npm i
+```
+* Запустите приложение:
+```
+npm run start
+``` 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Авторы проекта
+Проект приложения B2Buy разработано командой выпускников Яндекс.Практикума:
+  - Project managers
+    - [Аджиева Авельдина](https://github.com/aveldinaa)
+    - [Анна Силинг](https://github.com/AnnaSiling)
+  - Frontend developers
+    - [Типсин Дмитрий](https://github.com/TIPDMR)
+    - [Сулим Михаил](https://github.com/MikhailSulim)
+    - [Воеводин Пётр](https://github.com/VoevodinPetr)
+    - [Ярцева Ольга](https://github.com/Iartseva)
+    - [Алексеев Евгений](https://github.com/0R8-9dzcl)  
+  - Backend developer
+    - [Скворцов Иван](https://github.com/Ivan-Skvortsov)
+    - [Ротбардт Ольга](https://github.com/esfiro4ka)
+    - [Ушаков Дмитрий](https://github.com/voyager1744)
+    - [Росманов Илья](https://github.com/Rikworkco)
+    - [Габдуллин Булат](https://github.com/ByJIaT)
+  - Quality Assurance (QA) engineers
+    - [Симонова Александра](https://github.com/AISimonova)
+    - [Ильенко-Ван Нилен Екатерина](https://github.com/bakaniva)
+    - [Минич Мария](https://github.com/MariaMinich)
+    - [Усаинова Татьяна](https://github.com/TatianaUsainova)
+    - [Жохова Юлия](https://github.com/Juliyasname)
+  - UI/UX Designers
+    - [Зоя Молокова](https://github.com/ZoiaStar)
+    - [Егорова Ольга](https://github.com/helgaegrva)

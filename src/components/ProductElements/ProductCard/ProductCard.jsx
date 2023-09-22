@@ -16,6 +16,8 @@ function ProductCard({ product }) {
   const dispatch = useDispatch();
   const basketList = useSelector((state) => state.basket.basket);
 
+  const {isLoggedIn } = useSelector(state=>state.auth);
+
   useEffect(() => {
     if (
       basketList.basket_products.length &&
@@ -35,7 +37,7 @@ function ProductCard({ product }) {
     <div className="card">
       <SliderImage images={product.images} />
       <div className="card__icons">
-        <IconHearth />
+        {isLoggedIn && <IconHearth />}
         <IconScales />
       </div>
 
