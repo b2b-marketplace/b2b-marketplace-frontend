@@ -73,9 +73,8 @@ function App() {
         <Route path="/question-page" element={<QuestionPage />} exact />
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
-        <Route path="/activate/*" element={<Activation />} />
+        <Route path="/activate/*" element={<EmailConfirmation />} />
         <Route path="/logout" element={<Logout />} exact />
-        <Route path="/email-confirmation" element={<EmailConfirmation />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ButtonScrollUp />

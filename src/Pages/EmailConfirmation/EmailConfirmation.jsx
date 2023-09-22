@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './EmailConfirmation.scss';
 import { useParams } from 'react-router-dom';
-import authApi from '../../utils/authApi'; // Импортируйте ваш AuthApi
+import authApi from '../../utils/authApi'; 
 
 const EmailConfirmation = () => {
   const [confirmationStatus, setConfirmationStatus] = useState('pending');
