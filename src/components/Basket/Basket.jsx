@@ -22,6 +22,7 @@ import {
 } from '../../utils/utils';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import usePopup from '../../hooks/usePopup';
+import Preloader from '../UI/Preloader/Preloader';
 
 const Basket = ({ extraClassName }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
@@ -29,6 +30,7 @@ const Basket = ({ extraClassName }) => {
   const { openPopup: openRegisterPopup } = usePopup('registration');
   const { openPopup: openLoginPopup } = usePopup('login');
 
+  const [preloader, setPreloader] = useState(true);
   const [currentProductList, setCurrentProductList] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
@@ -67,9 +69,17 @@ const Basket = ({ extraClassName }) => {
       } finally {
         setCurrentProductList(mergedList);
         setSelectedProductId(selectedList);
+        setPreloader(false);
       }
+    } else {
+      setPreloader(false);
     }
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+    }
+  }, [isLoggedIn]);
 
   useEffect(() => {
     fetchBasketProducts();
@@ -77,7 +87,7 @@ const Basket = ({ extraClassName }) => {
 
   useEffect(() => {
     if (currentProductList.length === 0) return;
-
+    setPreloader(true);
     const mergedList = [];
 
     for (const basketItem of basketList.basket_products) {
@@ -95,7 +105,7 @@ const Basket = ({ extraClassName }) => {
         mergedList.push(mergedItem);
       }
     }
-
+    setPreloader(false);
     setCurrentProductList(mergedList);
   }, [basketList]);
 
@@ -113,7 +123,7 @@ const Basket = ({ extraClassName }) => {
       productSum: totalPrice,
       productQuantity: totalQuantity,
     });
-  }, [selectedProductId, currentProductList]);
+  }, [selectedProductId]);
 
   const handleClickCheckboxProduct = (productId) => {
     dispatch(changeChecked({ productIds: productId }));
@@ -156,10 +166,12 @@ const Basket = ({ extraClassName }) => {
     openRegisterPopup();
   };
 
-  return (
-    <section className={`basket ${extraClassName || ''}`}>
-      {currentProductList.length > 0 ? (
-        <>
+  if (preloader) {
+    return <Preloader />;
+  } else {
+    return (
+      <section className={`basket ${extraClassName || ''}`}>
+        {currentProductList.length > 0 ? (
           <div className="basket__container">
             <div className="basket__container-product">
               <div className="basket__panel">
@@ -226,7 +238,7 @@ const Basket = ({ extraClassName }) => {
                           Купить
                         </Button>
                         <div className="basket__hint basket__hint_warning">
-                          Оформление заказа доступно только покупателями
+                          Оформление заказа доступно только покупателям
                         </div>
                       </>
                     )
@@ -237,7 +249,6 @@ const Basket = ({ extraClassName }) => {
                         onClick={handleOpenRegisterPopup}
                         primary
                         dark
-                        //disabled={!selectedProductId.length}
                         label={'Зарегистрироваться'}
                       >
                         Зарегистрироваться
@@ -251,12 +262,12 @@ const Basket = ({ extraClassName }) => {
               </OrderDetail>
             </SidebarRight>
           </div>
-        </>
-      ) : (
-        <div className="basket__empty">Корзина Пуста</div>
-      )}
-    </section>
-  );
+        ) : (
+          <div className="basket__empty">Корзина Пуста</div>
+        )}
+      </section>
+    );
+  }
 };
 
 export default Basket;

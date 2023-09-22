@@ -42,7 +42,7 @@ const HomePage = () => {
         products={newProducts}
         className="home-page__cards-container"
         onClickMoreBtn={handleClickMore}
-        isFull
+        isFull={isFull}
       />
       <BannerAdvertising className="home-page__banner" />
       <ProductCardContainer

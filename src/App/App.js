@@ -28,6 +28,14 @@ import Logout from '../components/Logout/Logout';
 import EmailConfirmation from '../Pages/EmailConfirmation/EmailConfirmation';
 
 function App() {
+  const dispatch = useDispatch();
+  const { user, isFetched } = useSelector((state) => state.account);
+  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (isLoggedIn && auth_token && !isFetched) {
+      dispatch(getUser(auth_token));
+    }
+  }, [isFetched, isLoggedIn]);
   const ScrollToTop = () => {
     const location = useLocation();
 
@@ -37,16 +45,6 @@ function App() {
 
     return null;
   };
-
-  const dispatch = useDispatch();
-  const { user, isFetched } = useSelector((state) => state.account);
-  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
-  useEffect(() => {
-    if (isLoggedIn && auth_token && !isFetched) {
-      dispatch(getUser(auth_token));
-    }
-  }, [isFetched, isLoggedIn]);
-
   return (
     <div className="app">
       <Header />
@@ -74,7 +72,6 @@ function App() {
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
         <Route path="/activate/:uid/:token" element={<EmailConfirmation />} exact />
-        <Route path="/activate/*" element={<EmailConfirmation />} />
         <Route path="/logout" element={<Logout />} exact />
         <Route path="*" element={<NotFound />} />
       </Routes>

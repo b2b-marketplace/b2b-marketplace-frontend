@@ -16,6 +16,7 @@ const RegisterPopup = () => {
   const [step, setStep] = useState(1);
   const [isEntity, setisEntity] = useState(false);
   const [role, setRole] = useState('');
+  const [serverErrors, setServerErrors] = useState({});
 
   const initEntityValueParams = {
     email: '',
@@ -82,6 +83,9 @@ const RegisterPopup = () => {
       return;
     }
 
+    const checkIsNotPasswordError = (errors) =>
+      Object.keys(errors).some((error) => error !== 'password');
+
     const { email, phone_number, address, ...company } = entityValidation.values;
     const { password } = lastStepValidation.values;
     authApi
@@ -107,7 +111,10 @@ const RegisterPopup = () => {
         closePopup();
         openCompleteRegistration();
       })
-      .catch(console.log);
+      .catch((err) => {
+        setServerErrors(err);
+        if (checkIsNotPasswordError) setStep(3);
+      });
   };
 
   useEffect(() => {
@@ -118,6 +125,7 @@ const RegisterPopup = () => {
       lastStepValidation.resetValues();
       setisEntity(false);
       setRole('');
+      setServerErrors({});
     }
   }, [isOpen]);
 
@@ -154,6 +162,7 @@ const RegisterPopup = () => {
               values={currentValidation.values}
               onChange={currentValidation.handleChange}
               isDirtyInputs={currentValidation.isDirtyInputs}
+              serverErrors={serverErrors}
             />
           )}
           {step === 4 && (
@@ -162,6 +171,7 @@ const RegisterPopup = () => {
               values={lastStepValidation.values}
               onChange={lastStepValidation.handleChange}
               isDirtyInputs={lastStepValidation.isDirtyInputs}
+              serverErrors={serverErrors}
             />
           )}
         </fieldset>
