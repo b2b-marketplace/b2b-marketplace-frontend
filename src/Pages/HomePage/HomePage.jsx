@@ -4,7 +4,7 @@ import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits
 
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 
-import BannerAdvertising from '../../components/BannerAdvertising/BannerAdvertising';
+import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
 import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
 import { useSelector, useDispatch } from 'react-redux';
@@ -20,9 +20,13 @@ const HomePage = () => {
 
   const { isLoggedIn } = useSelector((state) => state.auth);
 
+  useEffect(()=>{
+    dispatch(fetchProducts());
+  },[]);
+
   useEffect(() => {
     dispatch(fetchProducts(pageDB));
-  }, [dispatch, pageDB]);
+  }, [pageDB]);
 
   useEffect(() => {
     setNewProducts(allProducts);
