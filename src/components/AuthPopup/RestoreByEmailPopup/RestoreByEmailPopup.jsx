@@ -15,14 +15,15 @@ const RestoreByEmailPopup = () => {
 
   const { setType } = useRestore('email');
   const initValueParams = { email: '' };
-  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } =
+    useInput(initValueParams);
   const [isRequesting, setIsRequesting] = useState(false);
   const [serverErrors, setServerErrors] = useState({});
 
-
   const handleSubmit = () => {
     setIsRequesting(true);
-    authApi.restoreByEmail(values)
+    authApi
+      .restoreByEmail(values)
       .then(() => {
         closePopup();
         openConfirm();

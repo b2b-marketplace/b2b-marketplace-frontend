@@ -13,7 +13,7 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverE
   const showTerms = () => {
     window.open(window.location.origin + '/portal-rules', '_blank');
   };
- 
+
   return (
     <>
       <Input
@@ -71,7 +71,11 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverE
           onChange={onChange}
           required
         />
-        <PopupButton type="button" onClick={showTerms} className="popup__button popup__underlined-text">
+        <PopupButton
+          type="button"
+          onClick={showTerms}
+          className="popup__button popup__underlined-text"
+        >
           Познакомиться с правилами
         </PopupButton>
       </div>

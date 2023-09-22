@@ -115,7 +115,7 @@ const RegisterPopup = () => {
         closePopup();
         openCompleteRegistration();
       })
-      .catch(({ messages, errCode}) => {
+      .catch(({ messages, errCode }) => {
         if (errCode !== 400) {
           console.log(messages, errCode);
           openError();
