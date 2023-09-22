@@ -32,6 +32,7 @@
     column-gap: 10px;
     @include h2-styles;
     margin: 0;
+    color: $whiteColor;
   }
 
   &__logo {
