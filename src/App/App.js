@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './App.scss';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -26,6 +26,7 @@ import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
 import EmailConfirmation from '../Pages/EmailConfirmation/EmailConfirmation';
+import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
 
 function App() {
   const dispatch = useDispatch();
@@ -78,6 +79,7 @@ function App() {
       <ButtonScrollUp />
       <Footer />
       <AuthPopup />
+      <OrderPopup />
     </div>
   );
 }

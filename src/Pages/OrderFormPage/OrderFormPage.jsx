@@ -68,6 +68,7 @@ const OrderFormPage = () => {
     const orderProductList = currentProductList.map((product) => {
       return { product: product.id, quantity: product.quantity };
     });
+
     const order = {
       order_products: orderProductList,
     };
@@ -75,7 +76,13 @@ const OrderFormPage = () => {
       .addOrder(auth_token, order)
       .then(() => {
         //dispatch(updateAllProduct())
+        const filteredArray1 = basketList.basket_products.filter(
+          (item1) => !orderProductList.some((item2) => item2.product === item1.id)
+        );
+        //console.log(filteredArray1);
+        dispatch(updateAllProduct({ currentProductList: filteredArray1 }));
         openOrderPopup();
+        //navigate("/account/profile");
       })
       .catch((err) => {
         console.log(err.message);
@@ -110,7 +117,6 @@ const OrderFormPage = () => {
           </OrderDetail>
         </SidebarRight>
       </section>
-      <OrderPopup />
     </>
   );
 };
