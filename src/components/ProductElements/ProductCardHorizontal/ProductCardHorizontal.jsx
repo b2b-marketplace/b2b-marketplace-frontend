@@ -78,6 +78,7 @@ const ProductCardHorizontal = ({
               onChangeQuantity={(productQuantity) =>
                 dispatch(changeQuantity({ productIds: product.id, quantity: productQuantity }))
               }
+              maxValue={product.quantity_in_stock}
               initCount={product.quantity}
             />
           </div>

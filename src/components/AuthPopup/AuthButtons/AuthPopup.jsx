@@ -28,7 +28,6 @@ const AuthPopup = () => {
       <ConfirmRestoreByEmailPopup />
       <NewPasswordPopup />
       <ModerationNewProductPopup />
-      <OrderPopup />
       {/* <CancelAddProductPopup /> */}
     </>
   );

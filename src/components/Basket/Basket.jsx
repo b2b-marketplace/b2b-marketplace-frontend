@@ -58,7 +58,11 @@ const Basket = ({ extraClassName }) => {
             }
             const mergedItem = {
               ...productItem,
-              quantity: basketItem.quantity,
+              quantity:
+                productItem.quantity_in_stock >= basketItem.quantity
+                  ? basketItem.quantity
+                  : parseFloat(productItem.quantity_in_stock),
+              //quantity: basketItem.quantity,
               checked: basketItem.checked,
             };
             mergedList.push(mergedItem);
@@ -99,7 +103,10 @@ const Basket = ({ extraClassName }) => {
         }
         const mergedItem = {
           ...productItem,
-          quantity: basketItem.quantity,
+          quantity:
+            productItem.quantity_in_stock >= basketItem.quantity
+              ? basketItem.quantity
+              : parseFloat(productItem.quantity_in_stock),
           checked: basketItem.checked,
         };
         mergedList.push(mergedItem);
@@ -227,7 +234,7 @@ const Basket = ({ extraClassName }) => {
                         onClick={handleNavigateToOrder}
                         primary
                         dark
-                        disabled={!selectedProductId.length}
+                        disabled={!selectedProductId.length || !orderInfo.productQuantity}
                         label={'Купить'}
                       >
                         Купить

@@ -9,21 +9,29 @@ const Counter = ({ initCount = 0, minValue = 1, maxValue, onChangeQuantity = () 
 
   const handleLeft = (event) => {
     const productCount = count - 1 === 0 ? count : count - 1;
-    setCount(productCount);
-    onChangeQuantity(productCount);
+    if (minValue <= productCount) {
+      setCount(productCount);
+      onChangeQuantity(productCount);
+    }
   };
 
   const handleRight = (event) => {
     const productCount = count + 1;
-    setCount(productCount);
-    onChangeQuantity(productCount);
+    if (maxValue >= productCount) {
+      setCount(productCount);
+      onChangeQuantity(productCount);
+    }
   };
 
   const handleChangeInput = (event) => {
     const productCount = parseInt(event.target.value);
+
     if (!isNaN(productCount)) {
-      setCount(productCount);
-      onChangeQuantity(productCount);
+      //console.log(maxValue);
+      if (minValue <= productCount && maxValue >= productCount) {
+        setCount(productCount);
+        onChangeQuantity(productCount);
+      }
     }
   };
   return (
