@@ -9,21 +9,22 @@ import authApi from '../../../utils/authApi';
 
 const ConfirmRestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('confirmRestoreByEmail');
-  
+
   const { resetTimer, startTimer, time, formatTime } = useCountDown(10);
 
   const transfomedTime = formatTime(time);
 
-  
   const { restoreValue, resetType } = useRestore('email');
 
-  const handleResend = () => authApi.restoreByEmail({ email: restoreValue })
-    .then(() => {
-      resetTimer();
-      startTimer();
-    })
-    .catch(console.log);
-  
+  const handleResend = () =>
+    authApi
+      .restoreByEmail({ email: restoreValue })
+      .then(() => {
+        resetTimer();
+        startTimer();
+      })
+      .catch(console.log);
+
   useEffect(() => {
     if (isOpen) {
       resetTimer();

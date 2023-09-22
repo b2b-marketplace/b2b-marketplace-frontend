@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 const useCountDown = (initialTime) => {
   const [time, setTime] = useState(initialTime);
@@ -32,7 +32,7 @@ const useCountDown = (initialTime) => {
     setIsRunning(false);
     setTime(initialTime);
   };
-  
+
   const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
