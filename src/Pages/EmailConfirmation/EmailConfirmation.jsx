@@ -6,7 +6,7 @@ import authApi from '../../utils/authApi';
 const EmailConfirmation = () => {
   const [confirmationStatus, setConfirmationStatus] = useState('pending');
   const [error, setError] = useState(null); // Добавляем состояние для отслеживания ошибки
-  const { token } = useParams(); // Получаем параметр "token" из URL
+  const { token } = useParams(); 
   const { uid } = useParams();
 
   useEffect(() => {
