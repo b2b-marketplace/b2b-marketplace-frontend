@@ -15,6 +15,7 @@ import { basketReducer } from './slices/basketSlice';
 import { productsReducer } from './slices/productsSlice';
 import { popupReducer } from './slices/togglePopupSlice.js';
 import { authReducer } from './slices/authSlice';
+import { restoreReducer } from './slices/restoreSlice';
 
 const rootReducer = combineReducers({
   account: accountReducer,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   products: productsReducer,
   popup: popupReducer,
   auth: authReducer,
+  restore: restoreReducer,
 });
 
 const persistConfig = {

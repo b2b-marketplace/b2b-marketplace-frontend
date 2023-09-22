@@ -7,27 +7,30 @@ const RestorePopup = (props) => {
     isOpen,
     onClose,
     onSubmit,
+    formDisabled,
     title,
     inputPlaceholder,
     inputType,
     inputName,
     text,
     titleClassMode,
+    ...inputProps
   } = props;
   const handleSubmit = () => {
-    onClose();
     onSubmit && onSubmit();
   };
+  
 
   return (
     <Popup isOpen={isOpen} onClose={onClose} title={title} popupContClassMode={titleClassMode}>
-      <Form className="popup__form" onSubmit={handleSubmit} btnText="Далее" btnType="submit">
+      <Form className="popup__form" onSubmit={handleSubmit} btnText="Далее" btnType="submit" formDisabled={formDisabled}>
         <Input
           placeholder={inputPlaceholder}
           type={inputType}
           size="m"
           name={inputName}
           text={text}
+          { ...inputProps }
         />
       </Form>
     </Popup>

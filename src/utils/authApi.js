@@ -49,6 +49,7 @@ class AuthApi {
 
   login = (loginData) => this._fetcher('POST', '/auth/token/login/', loginData, true);
   activate = (activationData) => this._fetcher('POST', '/users/activation/', activationData, true);
+  restoreByEmail = (restoreData) => this._fetcher('POST', '/users/reset_password/', restoreData, true);
 }
 
 const authApi = new AuthApi({
