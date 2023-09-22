@@ -16,7 +16,7 @@ function ProductCard({ product }) {
   const dispatch = useDispatch();
   const basketList = useSelector((state) => state.basket.basket);
 
-  const {isLoggedIn } = useSelector(state=>state.auth);
+  const { isLoggedIn } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if (
