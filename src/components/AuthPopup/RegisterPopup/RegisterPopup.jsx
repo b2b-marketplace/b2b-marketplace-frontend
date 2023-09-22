@@ -8,6 +8,7 @@ import RegistrationLastStep from './RegistrationLastStep.jsx/RegistrationLastSte
 import usePopup from '../../../hooks/usePopup';
 import authApi from '../../../utils/authApi';
 import useInput from '../../../hooks/useInput';
+import useError from '../../../hooks/useError';
 
 const RegisterPopup = () => {
   const { isOpen, closePopup } = usePopup('registration');
@@ -17,6 +18,9 @@ const RegisterPopup = () => {
   const [isEntity, setisEntity] = useState(false);
   const [role, setRole] = useState('');
   const [serverErrors, setServerErrors] = useState({});
+
+  const { openPopup: openError } = usePopup('error');
+  const { showError } = useError();
 
   const initEntityValueParams = {
     email: '',
@@ -111,9 +115,15 @@ const RegisterPopup = () => {
         closePopup();
         openCompleteRegistration();
       })
-      .catch((err) => {
-        setServerErrors(err);
+      .catch(({ messages, errCode}) => {
+        if (errCode !== 400) {
+          console.log(messages, errCode);
+          openError();
+          showError(errCode ? messages : 'Сервер не доступен');
+          return;
+        }
         if (checkIsNotPasswordError) setStep(3);
+        setServerErrors(messages);
       });
   };
 

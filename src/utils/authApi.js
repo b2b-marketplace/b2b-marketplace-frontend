@@ -20,15 +20,7 @@ class AuthApi {
     }
     return res.json().then((err) => {
       const parsedErrrors = parseErrors(err);
-      const keyList = Object.keys(parsedErrrors);
-      if (keyList.length === 1) {
-        return Promise.reject(parsedErrrors[keyList[0]]);
-      }
-      if (keyList.length === 0) {
-        return Promise.reject(res.status);
-      }
-
-      return Promise.reject(parsedErrrors);
+      return Promise.reject({messages: parsedErrrors, errCode: res.status});
     });
   };
 
@@ -47,8 +39,13 @@ class AuthApi {
   // регистрация компании
   registerCompany = (companyData) => this._fetcher('POST', '/users/companies/', companyData, true);
 
-  login = (loginData) => this._fetcher('POST', '/auth/token/login/', loginData, true);
+  login = (loginData) => this._fetcher('POST', '/auth/token/login/', loginData, true)
+    .catch(err => {
+      const keyList = Object.keys(err);
+      return Promise.reject(err[keyList[0]]);
+    });
   activate = (activationData) => this._fetcher('POST', '/users/activation/', activationData, true);
+  restoreByEmail = (restoreData) => this._fetcher('POST', '/users/reset_password/', restoreData, true);
 }
 
 const authApi = new AuthApi({

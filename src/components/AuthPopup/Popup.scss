@@ -238,6 +238,9 @@ $inactiveColor: #a3a3a3;
 
       &_type_resend {
         margin-top: 0px;
+        &:disabled {
+          cursor: default;
+        }
       }
     }
 

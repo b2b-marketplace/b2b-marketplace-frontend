@@ -1,10 +1,37 @@
+import { useEffect } from 'react';
 import usePopup from '../../../hooks/usePopup';
 import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import PopupParagraph from '../PopupParagraph/PopupParagraph';
+import useCountDown from '../../../hooks/useCountDown';
+import useRestore from '../../../hooks/useRestore';
+import authApi from '../../../utils/authApi';
 
 const ConfirmRestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('confirmRestoreByEmail');
+  
+  const { resetTimer, startTimer, time, formatTime } = useCountDown(10);
+
+  const transfomedTime = formatTime(time);
+
+  
+  const { restoreValue, resetType } = useRestore('email');
+
+  const handleResend = () => authApi.restoreByEmail({ email: restoreValue })
+    .then(() => {
+      resetTimer();
+      startTimer();
+    })
+    .catch(console.log);
+  
+  useEffect(() => {
+    if (isOpen) {
+      resetTimer();
+      startTimer();
+    } else {
+      resetType();
+    }
+  }, [isOpen]);
 
   return (
     <Popup
@@ -18,9 +45,11 @@ const ConfirmRestoreByEmailPopup = () => {
         </PopupParagraph>
         <PopupButton
           type="button"
+          onClick={handleResend}
+          disabled={time > 0}
           className="popup__button popup__underlined-text popup__underlined-text_type_resend"
         >
-          Отправить повторно через 00:10
+          {`Отправить повторно через ${transfomedTime}`}
         </PopupButton>
       </>
     </Popup>

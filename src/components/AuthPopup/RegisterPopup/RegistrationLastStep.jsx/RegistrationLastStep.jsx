@@ -10,7 +10,10 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverE
   const { isShow: isShowRepeat, handleShow: handleShowRepeat } = useShowPassword(false);
 
   const isPasswordsMatch = values.password === values.repeat_password;
-
+  const showTerms = () => {
+    window.open(window.location.origin + '/portal-rules', '_blank');
+  };
+ 
   return (
     <>
       <Input
@@ -68,7 +71,7 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverE
           onChange={onChange}
           required
         />
-        <PopupButton type="button" className="popup__button popup__underlined-text">
+        <PopupButton type="button" onClick={showTerms} className="popup__button popup__underlined-text">
           Познакомиться с правилами
         </PopupButton>
       </div>
