@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './SliderPromoBanner.scss';
-import sklad from '../../images/boxes.jpg';
 
 import Arrows from './Arrows/Arrows';
 import BannerPromo from '../Banners/BannerPromo/BannerPromo';
@@ -11,8 +10,7 @@ const SliderPromoBanner = () => {
 
   const slides = [
     <BannerPromo key="slide1" />,
-    // <BannerPromo key="slide2" />,
-    <img style={{maxWidth: '1900px', objectFit: 'contain'}} key="slide2" src={sklad} alt=''/>,
+    <BannerPromo key="slide2" />,
     <BannerPromo key="slide3" />,
   ];
 
