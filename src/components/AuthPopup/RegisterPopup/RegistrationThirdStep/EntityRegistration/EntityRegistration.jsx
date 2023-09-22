@@ -82,7 +82,7 @@ const EntityRegistration = ({ onChange, values, errors, isDirtyInputs, serverErr
         serverError={serverErrors.address || ''}
       />
       <div className="popup__container popup__container_type_radio">
-        <h2 className="popup__subtitle popup__subtitle_type_bolded">Вы работаете с НДС?</h2>
+        <p className="popup__subtitle popup__subtitle_type_bolded">Вы работаете с НДС?</p>
         <div className="popup__radio">
           <LabelCheckbox
             type="radio"

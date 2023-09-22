@@ -20,12 +20,7 @@ class AuthApi {
     }
     return res.json().then((err) => {
       const parsedErrrors = parseErrors(err);
-      const keyList = Object.keys(parsedErrrors);
-      if (keyList.length === 0) {
-        return Promise.reject(res.status);
-      }
-
-      return Promise.reject(parsedErrrors);
+      return Promise.reject({messages: parsedErrrors, errCode: res.status});
     });
   };
 

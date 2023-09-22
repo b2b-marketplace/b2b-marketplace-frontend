@@ -10,7 +10,7 @@ const Input = ({
   text,
   labelClassName,
   isNotError,
-  serverError,
+  serverError = '',
   ...props
 }) => {
   const inputClass = ['input', `input_size_${size}`, className].join(' ');

@@ -4,15 +4,21 @@ import usePopup from '../../../hooks/usePopup';
 import RestorePopup from '../RestorePopup/RestorePopup';
 import authApi from '../../../utils/authApi';
 import useRestore from '../../../hooks/useRestore';
+import useError from '../../../hooks/useError';
 
 const RestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('restoreByEmail');
   const { openPopup: openConfirm } = usePopup('confirmRestoreByEmail');
+
+  const { openPopup: openError } = usePopup('error');
+  const { showError } = useError();
+
   const { setType } = useRestore('email');
   const initValueParams = { email: '' };
   const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
   const [isRequesting, setIsRequesting] = useState(false);
-  const [error, setError] = useState('');
+  const [serverErrors, setServerErrors] = useState({});
+
 
   const handleSubmit = () => {
     setIsRequesting(true);
@@ -22,7 +28,14 @@ const RestoreByEmailPopup = () => {
         openConfirm();
         setType(values.email);
       })
-      .catch(setError)
+      .catch(({ messages, errCode }) => {
+        if (errCode !== 400) {
+          showError(errCode ? messages : 'Сервер не доступен');
+          openError();
+          return;
+        }
+        setServerErrors(messages);
+      })
       .finally(() => setIsRequesting(false));
   };
 
@@ -30,7 +43,7 @@ const RestoreByEmailPopup = () => {
     if (isOpen) {
       return;
     }
-    setError('');
+    setServerErrors({});
     resetValues();
   }, [isOpen]);
 
@@ -51,7 +64,7 @@ const RestoreByEmailPopup = () => {
       maxLength={254}
       required
       isNotError={!errors.email && isDirtyInputs.email}
-      serverError={error}
+      serverError={serverErrors.email}
     />
   );
 };

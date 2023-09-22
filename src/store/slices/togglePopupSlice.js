@@ -15,6 +15,7 @@ const initialState = {
     newPassword: false,
     addNewItem: false,
     cancelAddnewItem: false,
+    error: false,
   },
 };
 
