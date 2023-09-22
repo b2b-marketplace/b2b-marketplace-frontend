@@ -1,4 +1,4 @@
-@import "../../../styles/global";
+@import '../../../styles/global';
 
 .order-popup {
   @include default-font-styles;
@@ -17,6 +17,6 @@
 
   &__link {
     @include reset-link;
-    @include text-M-styles
+    @include text-M-styles;
   }
 }
