@@ -9,7 +9,7 @@ export const parseErrors = (errors) => {
     for (const key in obj) {
       if (Array.isArray(obj[key])) {
         parsedErrors[key] = obj[key].join(' ');
-      } else if (typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key])) {
+      } else if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
         traverseErrors(obj[key]);
       }
     }

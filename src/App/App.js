@@ -1,8 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './App.scss';
-
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import HomePage from '../Pages/HomePage/HomePage';
@@ -26,6 +25,7 @@ import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
+import EmailConfirmation from '../Pages/EmailConfirmation/EmailConfirmation';
 
 function App() {
   const dispatch = useDispatch();
@@ -36,7 +36,6 @@ function App() {
       dispatch(getUser(auth_token));
     }
   }, [isFetched, isLoggedIn]);
-
   const ScrollToTop = () => {
     const location = useLocation();
 
@@ -46,7 +45,6 @@ function App() {
 
     return null;
   };
-
   return (
     <div className="app">
       <Header />
@@ -73,7 +71,7 @@ function App() {
         <Route path="/question-page" element={<QuestionPage />} exact />
         <Route path="/question-form" element={<QuestionForm />} exact />
         <Route path="/about-us" element={<AboutUsPage />} exact />
-        <Route path="/activate/*" element={<Activation />} />
+        <Route path="/activate/:uid/:token" element={<EmailConfirmation />} exact />
         <Route path="/logout" element={<Logout />} exact />
         <Route path="*" element={<NotFound />} />
       </Routes>

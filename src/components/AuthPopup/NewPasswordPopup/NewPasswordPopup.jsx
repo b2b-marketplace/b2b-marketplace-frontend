@@ -15,7 +15,8 @@ const NewPasswordPopup = () => {
   const { isShow, handleShow } = useShowPassword(false);
   const { isShow: isShowRepeat, handleShow: handleShowRepeat } = useShowPassword(false);
 
-  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } = useInput(initValueParams);
+  const { errors, values, handleChange, resetValues, isDirtyInputs, isNotValidForm } =
+    useInput(initValueParams);
 
   const isPasswordsMatch = values.password === values.repeat_password;
 
@@ -76,7 +77,9 @@ const NewPasswordPopup = () => {
             value={values.repeat_password}
             minLength={passwordLength}
             required
-            isNotError={!errors.repeat_password && isPasswordsMatch && isDirtyInputs.repeat_password}
+            isNotError={
+              !errors.repeat_password && isPasswordsMatch && isDirtyInputs.repeat_password
+            }
           >
             <button
               className="popup__button input-label__button input-label__button_type_password"
@@ -86,7 +89,6 @@ const NewPasswordPopup = () => {
               <IconPassword isVisiblePassword={isShowRepeat} />
             </button>
           </Input>
-
         </fieldset>
       </Form>
     </Popup>

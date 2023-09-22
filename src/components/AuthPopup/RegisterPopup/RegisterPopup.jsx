@@ -83,7 +83,8 @@ const RegisterPopup = () => {
       return;
     }
 
-    const checkIsNotPasswordError = (errors) => Object.keys(errors).some(error => error !== 'password');
+    const checkIsNotPasswordError = (errors) =>
+      Object.keys(errors).some((error) => error !== 'password');
 
     const { email, phone_number, address, ...company } = entityValidation.values;
     const { password } = lastStepValidation.values;

@@ -21,17 +21,18 @@ const AccountSellerProductAdd = () => {
     name: '',
     brand: '',
     price: '',
-    wholesale_quantity: 2147483647,
-    quantity_in_stock: 2147483647,
+    wholesale_quantity: 0,
+    quantity_in_stock: 0,
     description: '',
     manufacturer_country: '',
-    videos: ['http://example.com'],
-    images: ['http://example.com'],
+    videos: [],
+    images: [],
   });
 
   // Обработчик изменения данных формы
-  const handleFormChange = (event) => {
-    const { name, value } = event.target;
+  const handleFormChange = (event, val, nameVal) => {
+    const { name, value } = event ? event.target : { name: nameVal, value: val };
+    console.log(name, value);
     setFormData({
       ...formData,
       [name]: value.trim(), // Trim the value before storing it in formData
@@ -81,6 +82,7 @@ const AccountSellerProductAdd = () => {
     closePopup('cancelAddnewItem');
   };
 
+  console.log(formData);
   // Функция для проверки того, заполнены ли все обязательные поля
   const areAllRequiredFieldsFilled = () => {
     for (const fieldName of Object.keys(formData)) {
@@ -130,6 +132,7 @@ const AccountSellerProductAdd = () => {
               placeholder="Наименование"
               type="text"
               onChange={handleFormChange}
+              value={formData.name}
               required
             />
 
