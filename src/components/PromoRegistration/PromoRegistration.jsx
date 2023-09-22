@@ -24,7 +24,8 @@ const PromoRegistration = ({ className }) => {
             size="l"
             onClick={openLoginPopup}
             primary
-            extraClass={'promo-registration__button'}>
+            extraClass={'promo-registration__button'}
+          >
             Войти
           </Button>
         </div>
