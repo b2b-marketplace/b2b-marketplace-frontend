@@ -22,8 +22,8 @@ const PlatformBenefits = ({ className }) => {
         <li className="platform-benefits__item">
           <IconRuble className="platform-benefits__icon" />
           <div className="platform-benefits__content">
-            <h4 className="platform-benefits__title">Выбор лучших цен</h4>
-            <p className="platform-benefits__text">Сравнивайте и выбирайте выгодные</p>
+            <h4 className="platform-benefits__title">Лучшие цены</h4>
+            <p className="platform-benefits__text">Сравнивайте предложения и выбирайте выгодные</p>
           </div>
         </li>
 

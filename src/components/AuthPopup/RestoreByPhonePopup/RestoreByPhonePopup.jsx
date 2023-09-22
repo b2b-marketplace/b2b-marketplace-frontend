@@ -19,7 +19,6 @@ const RestoreByPhonePopup = () => {
       titleClassMode="popup__title_size_s"
       inputType="tel"
       inputPlaceholder="+7"
-      inputCaption="Без дефисов и пробелов"
       inputName="tel"
       text="Номер телефона без дефисов"
     />

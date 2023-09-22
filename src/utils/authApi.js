@@ -1,4 +1,5 @@
 // Api для получения информации из общей базы данных продуктов
+import { parseErrors } from './authConstatnts.js';
 import { PRODUCTS_BASE_URL } from './constants.js';
 
 class AuthApi {
@@ -17,9 +18,9 @@ class AuthApi {
     if (this._checkIsGoodStatus(res)) {
       return res.status === 204 ? res : res.json();
     }
-    return res.json().then((res) => {
-      const error = res.non_field_errors.join('');
-      return Promise.reject(error);
+    return res.json().then((err) => {
+      const parsedErrrors = parseErrors(err);
+      return Promise.reject({messages: parsedErrrors, errCode: res.status});
     });
   };
 
@@ -38,8 +39,13 @@ class AuthApi {
   // регистрация компании
   registerCompany = (companyData) => this._fetcher('POST', '/users/companies/', companyData, true);
 
-  login = (loginData) => this._fetcher('POST', '/auth/token/login/', loginData, true);
+  login = (loginData) => this._fetcher('POST', '/auth/token/login/', loginData, true)
+    .catch(err => {
+      const keyList = Object.keys(err);
+      return Promise.reject(err[keyList[0]]);
+    });
   activate = (activationData) => this._fetcher('POST', '/users/activation/', activationData, true);
+  restoreByEmail = (restoreData) => this._fetcher('POST', '/users/reset_password/', restoreData, true);
 }
 
 const authApi = new AuthApi({

@@ -1,25 +1,11 @@
 import EntityRegistration from './EntityRegistration/EntityRegistration';
 import PersonRegistration from './PersonRegistration/PersonRegistration';
 
-const RegistrationThirdStep = ({ isEntity, onChange, values, errors, isDirtyInputs }) => {
+const RegistrationThirdStep = ({ isEntity, ...props }) => {
   if (isEntity) {
-    return (
-      <EntityRegistration
-        onChange={onChange}
-        values={values}
-        errors={errors}
-        isDirtyInputs={isDirtyInputs}
-      />
-    );
+    return <EntityRegistration {...props} />;
   }
-  return (
-    <PersonRegistration
-      onChange={onChange}
-      values={values}
-      errors={errors}
-      isDirtyInputs={isDirtyInputs}
-    />
-  );
+  return <PersonRegistration {...props} />;
 };
 
 export default RegistrationThirdStep;

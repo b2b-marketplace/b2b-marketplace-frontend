@@ -1,18 +1,19 @@
-import { useEffect } from 'react';
-import useInput from '../../../../hooks/useInput';
 import useShowPassword from '../../../../hooks/useShowPassword';
+import { passwordLength } from '../../../../utils/authConstatnts';
 import IconPassword from '../../../UI/Icon/IconPassword';
 import Input from '../../Input/Input';
 import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
 import PopupButton from '../../PopupButton/PopupButton';
-const passwordLength = 8;
 
-const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
+const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverErrors }) => {
   const { isShow, handleShow } = useShowPassword(false);
   const { isShow: isShowRepeat, handleShow: handleShowRepeat } = useShowPassword(false);
 
   const isPasswordsMatch = values.password === values.repeat_password;
-
+  const showTerms = () => {
+    window.open(window.location.origin + '/portal-rules', '_blank');
+  };
+ 
   return (
     <>
       <Input
@@ -27,6 +28,7 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
         minLength={passwordLength}
         required
         isNotError={!errors.password && isDirtyInputs.password}
+        serverError={serverErrors.inn || ''}
       >
         <button
           className="popup__button input-label__button input-label__button_type_password"
@@ -69,7 +71,7 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs }) => {
           onChange={onChange}
           required
         />
-        <PopupButton type="button" className="popup__button popup__underlined-text">
+        <PopupButton type="button" onClick={showTerms} className="popup__button popup__underlined-text">
           Познакомиться с правилами
         </PopupButton>
       </div>

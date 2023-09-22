@@ -29,6 +29,18 @@ class AccountApi {
       },
     });
   }
+
+  addOrder(token, order) {
+    const url = `${this._serverUrl}/orders/`;
+    return this._request(url, {
+      method: 'POST',
+      headers: {
+        ...this._headers,
+        Authorization: `Token ${token}`,
+      },
+      body: JSON.stringify(order),
+    });
+  }
 }
 
 const accountApi = new AccountApi({

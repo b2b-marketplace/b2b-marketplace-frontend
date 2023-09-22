@@ -41,13 +41,14 @@ const productsSlice = createSlice({
         state.allProducts.status = 'loading';
       })
       .addCase(fetchProducts.fulfilled, (state, actions) => {
+        const newProducts = actions.payload.results.filter(
+          (product) => product.quantity_in_stock !== 0
+        );
         if (state.allProducts.allProducts.length !== state.allProducts.totalProducts) {
           state.allProducts.pageDB === 1
-            ? (state.allProducts.allProducts = actions.payload.results)
-            : (state.allProducts.allProducts = [
-              ...state.allProducts.allProducts,
-              ...actions.payload.results,
-            ]);
+            ? // ? (state.allProducts.allProducts = actions.payload.results)
+            (state.allProducts.allProducts = newProducts)
+            : (state.allProducts.allProducts = [...state.allProducts.allProducts, ...newProducts]);
         }
 
         state.allProducts.allProducts.length === state.allProducts.totalProducts

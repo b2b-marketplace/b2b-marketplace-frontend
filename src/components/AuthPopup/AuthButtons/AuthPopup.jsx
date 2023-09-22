@@ -3,6 +3,7 @@ import CompleteLoginPopup from '../CompleteLoginPopup/CompleteLoginPopup';
 import CompleteRegistrationPopup from '../CompleteRegistrationPopup/CompleteRegistrationPopup';
 import ConfirmRestoreByEmailPopup from '../ConfirmRestoreByEmailPopup/ConfirmRestoreByEmailPopup';
 import ConfirmRestoreByPhonePopup from '../ConfirmRestoreByPhonePopup/ConfirmRestoreByPhonePopup';
+import ErrorPopup from '../ErrorPopup/ErrorPopup';
 import LoginPopup from '../LoginPopup/LoginPopup';
 import ModerationNewProductPopup from '../ModerationNewProductPopup/ModerationNewProductPopup';
 import NewPasswordPopup from '../NewPasswordPopup/NewPasswordPopup';
@@ -11,6 +12,7 @@ import RestoreByEmailPopup from '../RestoreByEmailPopup/RestoreByEmailPopup';
 import RestoreByPhonePopup from '../RestoreByPhonePopup/RestoreByPhonePopup';
 import SelectPopup from '../SelectPopup/SelectPopup';
 import SelectRestorePopup from '../SelectRestorePopup/SelectRestorePopup';
+import OrderPopup from '../../PopupsRedux/OrderPopup/OrderPopup';
 
 const AuthPopup = () => {
   return (
@@ -27,6 +29,7 @@ const AuthPopup = () => {
       <ConfirmRestoreByEmailPopup />
       <NewPasswordPopup />
       <ModerationNewProductPopup />
+      <ErrorPopup />
       {/* <CancelAddProductPopup /> */}
     </>
   );
