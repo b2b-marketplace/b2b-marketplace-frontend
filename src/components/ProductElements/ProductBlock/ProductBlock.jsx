@@ -163,6 +163,7 @@ export default function ProductBlock({ product }) {
           <Counter
             initCount={product.wholesale_quantity}
             minValue={product.wholesale_quantity}
+            maxValue={product.quantity_in_stock}
             onChangeQuantity={(count) => {
               setOrderQuantity(count);
               if (isProductSelect)
