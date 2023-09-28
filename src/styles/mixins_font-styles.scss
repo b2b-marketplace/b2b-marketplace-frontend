@@ -62,7 +62,7 @@
 // T L Web/main
 // Миксин для текста L с основным начертанием
 @mixin text-L-main-styles {
-  @include text-styles(24px, 400, 20px, $fontColor);
+  @include text-styles(20px, 600, 28px, $fontColor);
 }
 
 //T L Web/regular
@@ -90,7 +90,7 @@
 // Text S Web/bold
 // Миксин для текста S с жирным начертанием
 @mixin text-S-bold-styles {
-  @include text-styles(14px, bold, 20px, $fontColor);
+  @include text-styles(14px, 700, 20px, $fontColor);
   //font-weight: bold;
 }
 
