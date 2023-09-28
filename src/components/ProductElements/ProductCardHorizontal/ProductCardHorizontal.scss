@@ -2,25 +2,19 @@
 
 .product-card-horizontal {
   @include default-font-styles;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  box-sizing: border-box;
-  border: 1px solid $grayLightColor;
-  border-radius: 20px;
+  @include flex-space-between;
+  @include border-radius;
   padding: 20px 40px 20px 44px;
   width: 100%;
   max-height: 172px;
 
   &__checkbox {
+    @include center-both;
     align-self: center;
-    justify-content: center;
-    align-content: center;
   }
 
   &__content {
-    display: flex;
-    flex-direction: row;
+    @include flex-container;
     column-gap: 24px;
     max-width: 500px;
     width: 100%;
@@ -28,9 +22,7 @@
 
   &__image {
     display: block;
-    box-sizing: border-box;
-    border: 1px solid $grayLightColor;
-    border-radius: 20px;
+    @include border-radius;
     object-fit: cover;
     object-position: center;
     width: 122px;
@@ -38,55 +30,44 @@
   }
 
   &__vendor-code-which-image {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
+    @include center-both;
     row-gap: 4px;
-    text-align: center;
-    justify-content: center;
   }
 
   &__details {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
+    justify-content: center;
     row-gap: 16px;
     max-width: 447px;
-    justify-content: center;
   }
 
   &__details-header {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 4px;
   }
 
   &__product-title {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
+    @include text-S-bold-styles;
     margin: 0;
   }
 
   &__product-company {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
+    @include text-S-bold-styles;
     color: $grayColor;
     margin: 0;
   }
 
   &__characteristics {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: center;
     row-gap: 4px;
   }
 
   &__characteristic {
-    font-size: 20px;
-    display: flex;
+    @include flex-container;
     column-gap: 20px;
+    font-size: 20px;
 
     &_color {
       column-gap: 40px;
@@ -94,30 +75,21 @@
   }
 
   &__price-count-like {
-    display: flex;
-    flex-direction: row;
-    row-gap: 14px;
-    //max-width: 476px;
-    width: 100%;
+    @include flex-space-between;
     align-items: center;
-    justify-content: space-between;
+    row-gap: 14px;
+    width: 100%;
   }
 
   &__buttons {
-    display: flex;
+    @include flex-container;
     column-gap: 20px;
     justify-content: end;
   }
 
   &__button {
-    border: none;
-    background: transparent;
-    transition: opacity linear 0.3s;
-    padding: 0;
-
-    &:hover {
-      opacity: 0.7;
-    }
+    @include reset-button;
+    @include link-hover-styles;
   }
 
   &__icon-button {
@@ -126,35 +98,29 @@
   }
 
   &__price-quantity {
-    display: flex;
+    @include flex-space-between;
     align-items: center;
     column-gap: 138px;
     max-width: 400px;
     min-width: 220px;
     width: 100%;
-    justify-content: space-between;
   }
 
   &__product-quantity {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
+    @include text-L-main-styles;
   }
 
   &__product-prices {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 7px;
   }
 
   &__product-price {
-    @include default-font-styles;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 28px;
+    @include h3-styles;
   }
 
   &__product-price-per-one {
+    //@include text-M-styles;
     color: $grayColor;
     line-height: 24px;
   }

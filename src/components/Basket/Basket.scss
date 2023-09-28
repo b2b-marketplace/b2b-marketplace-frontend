@@ -6,24 +6,20 @@
   flex-direction: column;
 
   &__empty {
+    @include text-L-bold-styles;
     text-align: center;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
     min-height: 320px;
   }
 
   &__container {
-    display: flex;
-    flex-direction: row;
+    @include flex-container;
     column-gap: 60px;
     position: relative;
   }
 
   &__container-product {
-    display: flex;
+    @include flex-column;
     width: 100%;
-    flex-direction: column;
     row-gap: 40px;
   }
 
@@ -33,23 +29,15 @@
   }
 
   &__panel {
-    box-sizing: border-box;
-    border-radius: 20px;
-    height: 52px;
-    display: flex;
+    @include flex-space-between;
     align-items: center;
-    justify-content: space-between;
+    height: 52px;
     padding: 0 40px 0 44px;
   }
 
   &__panel-button {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
-    padding: 0;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+    @include text-L-main-styles;
+    @include reset-button;
     display: flex;
     align-items: center;
     column-gap: 20px;
@@ -72,24 +60,17 @@
 
   &__checkbox-text {
     @include text-L-main-styles;
-    font-weight: 600;
-    color: $fontColor;
-    font-size: 20px;
-    line-height: 28px;
   }
 
   &__product-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+    @include reset-list;
+    @include flex-column;
     row-gap: 20px;
     flex-grow: 1;
   }
 
   &__product-item {
-    display: flex;
+    @include flex-container;
   }
 
   &__order-detail-content {
@@ -107,8 +88,7 @@
   }
 
   &__checkbox {
-    display: flex;
-    flex-direction: row;
+    @include flex-container;
     column-gap: 22px;
   }
 
@@ -119,8 +99,7 @@
   }
 
   &__order-detail-buttons {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 20px;
   }
 
