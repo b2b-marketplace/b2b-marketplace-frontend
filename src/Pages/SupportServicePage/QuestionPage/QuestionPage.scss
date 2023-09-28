@@ -47,7 +47,7 @@
 
   &__button-more {
     @include reset-button;
-    @include text-M-link-styles;
+    @include text-L-link-styles;
     display: flex;
     gap: 8px;
     align-items: center;

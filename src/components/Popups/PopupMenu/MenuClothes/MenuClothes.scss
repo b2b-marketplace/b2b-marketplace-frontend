@@ -2,7 +2,7 @@
 
 .menu-clothes {
   @include flex-column;
-  @include text-M-link-styles;
+  @include text-L-link-styles;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
 

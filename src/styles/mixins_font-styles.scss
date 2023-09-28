@@ -74,10 +74,6 @@
 // T L Web/link
 // Миксин для текста L, предназначенного для ссылок
 @mixin text-L-link-styles {
-  @include text-styles(24px, 600, 28px, $fontColor); // Используйте цвет для ссылок
-}
-
-@mixin text-M-link-styles {
   @include text-styles(20px, 600, 28px, $fontColor); // Используйте цвет для ссылок
 }
 

@@ -64,7 +64,7 @@
 
   &__text {
     @include text-default-styles;
-    @include text-M-link-styles;
+    @include text-L-link-styles;
     text-align: center;
     margin: 0 0 20px;
     text-wrap: balance;

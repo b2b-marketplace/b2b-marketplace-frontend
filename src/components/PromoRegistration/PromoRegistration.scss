@@ -30,7 +30,7 @@
   }
 
   &__text {
-    @include text-M-link-styles;
+    @include text-L-link-styles;
     grid-column: span 2;
     margin: 0;
   }
