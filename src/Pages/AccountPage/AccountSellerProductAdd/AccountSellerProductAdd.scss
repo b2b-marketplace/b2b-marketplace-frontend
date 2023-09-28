@@ -7,7 +7,7 @@
 
   &__section {
     @include default-font-styles;
-    @include text-M-link-styles;
+    @include text-L-link-styles;
     @include flex-column;
     max-width: 927px;
     gap: 60px;

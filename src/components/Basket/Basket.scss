@@ -71,6 +71,7 @@
   }
 
   &__checkbox-text {
+    @include text-L-main-styles;
     font-weight: 600;
     color: $fontColor;
     font-size: 20px;
