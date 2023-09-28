@@ -20,9 +20,9 @@ const HomePage = () => {
 
   const { isLoggedIn } = useSelector((state) => state.auth);
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchProducts());
-  },[]);
+  }, []);
 
   useEffect(() => {
     dispatch(fetchProducts(pageDB));
