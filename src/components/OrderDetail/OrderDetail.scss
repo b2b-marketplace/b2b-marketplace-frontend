@@ -2,18 +2,14 @@
 
 .order-detail {
   @include default-font-styles;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   row-gap: 8px;
 
   &__container {
-    width: 100%;
-    border: 1px solid $grayLightColor;
-    border-radius: 20px;
-    box-sizing: border-box;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
+    @include border-radius;
     row-gap: 40px;
+    width: 100%;
+    padding: 40px;
   }
 }

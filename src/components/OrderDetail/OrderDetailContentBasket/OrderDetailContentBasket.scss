@@ -2,39 +2,31 @@
 
 .order-detail-content-basket {
   @include default-font-styles;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   row-gap: 16px;
 
   &__label {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
+    @include text-L-main-styles;
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     row-gap: 16px;
   }
 
   &__suppliers {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
+    @include text-L-main-styles;
     margin: 0;
   }
 
   &__product {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
+    @include text-L-main-styles;
     margin: 0;
   }
 
   &__price-total {
     @include h2-styles;
-    margin-top: 60px;
+    margin-top: 44px;
     word-break: break-all;
   }
 }
