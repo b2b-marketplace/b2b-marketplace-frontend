@@ -18,11 +18,10 @@
 }
 
 @mixin center-both {
- display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 @mixin flex-space-between {
   @include flex-container(row, space-between);
@@ -37,7 +36,6 @@
   @include reset;
   list-style: none;
 }
-
 
 @mixin reset-link {
   text-decoration: none;
