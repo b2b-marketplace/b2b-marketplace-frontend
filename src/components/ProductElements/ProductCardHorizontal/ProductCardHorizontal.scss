@@ -112,8 +112,10 @@
   }
 
   &__product-prices {
-    @include flex-column;
-    row-gap: 7px;
+    @include flex-container(column, center, end);
+    //@include flex-column;
+    //@include center-both;
+    //row-gap: 7px;
   }
 
   &__product-price {
