@@ -95,6 +95,7 @@
   &__icon-button {
     width: 32px;
     height: 32px;
+    @include link-hover-styles;
   }
 
   &__price-quantity {

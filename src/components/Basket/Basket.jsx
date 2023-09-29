@@ -112,8 +112,8 @@ const Basket = ({ extraClassName }) => {
         mergedList.push(mergedItem);
       }
     }
-    setPreloader(false);
     setCurrentProductList(mergedList);
+    setPreloader(false);
   }, [basketList]);
 
   useEffect(() => {
@@ -191,10 +191,17 @@ const Basket = ({ extraClassName }) => {
                     <span className="basket__checkbox-text">Выбрать все</span>
                   </Checkbox>
                 </div>
-                <button onClick={handleClickDeleteSelectedProduct} className="basket__panel-button">
-                  <IconTrash className="basket__icon-trash" />
-                  Удалить выбранные
-                </button>
+                {isCheckAll || selectedProductId.length ? (
+                  <button
+                    onClick={handleClickDeleteSelectedProduct}
+                    className="basket__panel-button"
+                  >
+                    <IconTrash className="basket__icon-trash" />
+                    Удалить выбранные
+                  </button>
+                ) : (
+                  ''
+                )}
               </div>
               <ul className="basket__product-list">
                 {currentProductList?.map((product) => (
