@@ -17,6 +17,6 @@
 
   &__link {
     @include reset-link;
-    @include text-M-styles;
+    @include text-M-bold-styles;
   }
 }
