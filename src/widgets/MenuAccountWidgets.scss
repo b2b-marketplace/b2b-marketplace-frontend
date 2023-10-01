@@ -1,4 +1,4 @@
-@import "../styles/global";
+@import '../styles/global';
 
 .menu-account-widgets {
   @include default-font-styles;
@@ -26,10 +26,8 @@
     color: $grayColor;
     width: max-content;
 
-
     &:hover {
       color: $darkColor;
     }
   }
-
 }
