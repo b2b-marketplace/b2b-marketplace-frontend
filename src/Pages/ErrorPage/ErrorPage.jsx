@@ -5,7 +5,16 @@ import { Button } from '../../components/UI/Button/Button';
 import box1 from '../../images/banner-promo/box1-404.png';
 import box2 from '../../images/banner-promo/box2-404.png';
 import box3 from '../../images/banner-promo/box5-404.png';
-
+/**
+ *
+ * @param {number} code - Код ошибки.
+ * @param {string} title - Заголовок ошибки.
+ * @param {string} text - Текст ошибки.
+ * @returns {JSX.Element} Компонент страницы ошибки.
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const ErrorPage = ({
   code = 404,
   title = 'Страница не найдена',

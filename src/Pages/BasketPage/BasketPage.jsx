@@ -3,6 +3,13 @@ import BannerAdvertising from '../../components/Banners/BannerAdvertising/Banner
 import Basket from '../../components/Basket/Basket';
 import './BasketPage.scss';
 
+/**
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const BasketPage = () => {
   return (
     <main className="basket-page">

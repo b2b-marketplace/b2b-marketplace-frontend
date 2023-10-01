@@ -24,6 +24,14 @@ import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/Or
 import usePopup from '../../hooks/usePopup';
 import Preloader from '../UI/Preloader/Preloader';
 
+/**
+ *
+ * @param extraClassName
+ * @returns {JSX.Element}
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const Basket = ({ extraClassName }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.account);
