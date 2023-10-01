@@ -13,13 +13,7 @@ import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import SidebarRight from '../SidebarRight/SidebarRight';
 import { useNavigate } from 'react-router-dom';
-import {
-  getProductText,
-  getSuppliersText,
-  getProductTotalPrice,
-  getProductQuantity,
-  getCalculateProductInfo,
-} from '../../utils/utils';
+import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../utils/utils';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import usePopup from '../../hooks/usePopup';
 import Preloader from '../UI/Preloader/Preloader';

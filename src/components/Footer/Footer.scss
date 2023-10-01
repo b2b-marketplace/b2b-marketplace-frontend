@@ -53,7 +53,7 @@
   }
 
   &__link {
-    @include text-M-styles;
+    @include text-M-bold-styles;
     margin: 0;
     color: $whiteColor;
   }

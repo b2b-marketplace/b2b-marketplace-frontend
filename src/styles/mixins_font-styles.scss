@@ -80,8 +80,13 @@
 
 // Text M Web
 // Миксин для текста M
-@mixin text-M-styles {
+@mixin text-M-bold-styles {
   @include text-styles(16px, 700, 24px, $fontColor);
+}
+
+// Text M Web
+@mixin text-M-main-styles {
+  @include text-styles(16px, 600, 24px, $fontColor);
 }
 
 // Text S Web/bold

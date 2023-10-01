@@ -55,7 +55,7 @@
   }
 
   &__button-more {
-    @include text-M-styles;
+    @include text-M-bold-styles;
     @include reset-button;
     display: flex;
     gap: 8px;
