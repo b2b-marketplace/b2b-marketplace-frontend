@@ -123,7 +123,7 @@
   }
 
   &__product-price-per-one {
-    //@include text-M-bold-styles;
+    @include text-M-main-styles;
     color: $grayColor;
     line-height: 24px;
   }

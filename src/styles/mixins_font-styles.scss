@@ -85,7 +85,7 @@
 }
 
 // Text M Web
-@mixin text-M-bold-styles {
+@mixin text-M-main-styles {
   @include text-styles(16px, 600, 24px, $fontColor);
 }
 
