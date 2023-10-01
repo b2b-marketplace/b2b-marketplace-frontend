@@ -1,6 +1,6 @@
 @import '../../styles/global';
 
-.not-found {
+.error-page {
   @include flex-column;
   max-width: 544px;
   max-height: 811px;
@@ -25,12 +25,9 @@
 
   &__title {
     @include flex-space-between;
-  }
-
-  &__figure {
+    @include reset;
     width: 167px;
     height: 168px;
-    margin: 0;
   }
 
   &__image {
@@ -73,6 +70,7 @@
       margin: 0 0 60px;
     }
   }
+
   &__link {
     text-decoration: none;
   }
