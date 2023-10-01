@@ -1,46 +1,18 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import './SidebarLeft.scss';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import BiBag from '../UI/Icon/Icon_bibag';
+import IconPackage from '../UI/Icon/Icon_package';
+import IconHearth from '../UI/Icon/Icon_hearth';
+import IconBasket from '../UI/Icon/Icon_basket';
+import IconMessage from '../UI/Icon/Icon_message';
+import IconLock from '../UI/Icon/Icon_lock';
+import IconExit from '../UI/Icon/Icon_exit';
+import IconBag from '../UI/Icon/Icon_bag';
 
-const SidebarLeft = ({ menuItems, phone }) => {
-  return (
-    <nav className="sidebar-left">
-      <div className="sidebar-left__conteiner">
-        <ul className="sidebar-left__items">
-          {menuItems.map((item, index) => (
-            <li key={index} className="sidebar-left__item">
-              <NavLink
-                className={({ isActive }) =>
-                  `sidebar-left__link ${isActive ? 'sidebar-left__link_active' : ''}`
-                }
-                to={item.link}
-              >
-                {item.icon}
-                {item.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-
-        <a className="sidebar-left__contact" href={`tel:${phone}`}>
-          {phone}
-          <p className="sidebar-left__text">Звонок бесплатный</p>
-        </a>
-      </div>
-    </nav>
-  );
-};
-
-SidebarLeft.propTypes = {
-  menuItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.element.isRequired,
-      link: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  phone: PropTypes.string.isRequired,
+const SidebarLeft = ({ extraClassName, children }) => {
+  return <div className={`sidebar-left ${extraClassName || ''}`}> {children} </div>;
 };
 
 export default SidebarLeft;

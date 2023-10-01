@@ -4,12 +4,14 @@
   @include default-font-styles;
   @include flex-column;
   row-gap: 8px;
+  @include border-radius;
+  padding: 40px;
 
   &__container {
     @include flex-column;
-    @include border-radius;
+
     row-gap: 40px;
     width: 100%;
-    padding: 40px;
+
   }
 }

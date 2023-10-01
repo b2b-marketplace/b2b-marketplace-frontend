@@ -1,0 +1,35 @@
+@import "../styles/global";
+
+.menu-account-widgets {
+  @include default-font-styles;
+  @include flex-container(column, space-between);
+  @include border-radius;
+  padding: 32px;
+  //justify-content: space-between;
+  row-gap: 92px;
+
+  &__footer {
+    @include flex-container(column, space-between);
+    row-gap: 12px;
+  }
+
+  &__phone-desc {
+    @include reset;
+    @include text-M-main-styles;
+    color: $grayColor;
+  }
+
+  &__link {
+    @include text-M-main-styles;
+    @include reset-link;
+    @include hover-transition;
+    color: $grayColor;
+    width: max-content;
+
+
+    &:hover {
+      color: $darkColor;
+    }
+  }
+
+}

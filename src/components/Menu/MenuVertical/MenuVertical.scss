@@ -1,0 +1,46 @@
+@import '../../../styles/global';
+
+.menu-vertical {
+  @include default-font-styles;
+
+  &__list {
+    @include flex-column;
+    @include reset-list;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    @include reset-link;
+    @include text-L-main-styles;
+    color: $grayColor;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    @include hover-transition;
+
+    &_active, &:hover {
+      color: $darkColor;
+    }
+  }
+
+  &__contact {
+    text-decoration: none;
+    color: $grayColor;
+    font-size: 20px;
+  }
+
+  &__text {
+    margin: 12px 0 0;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+}
