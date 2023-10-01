@@ -24,7 +24,8 @@
     column-gap: 16px;
     @include hover-transition;
 
-    &_active, &:hover {
+    &_active,
+    &:hover {
       color: $darkColor;
     }
   }
