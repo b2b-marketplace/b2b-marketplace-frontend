@@ -2,51 +2,8 @@
 
 .sidebar-left {
   @include flex-column;
-  @include default-font-styles;
-  @include text-L-link-styles;
-  align-items: center;
-  max-width: 282px;
-  height: 664px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  border: 1px solid $grayLightColor;
-  padding: 32px 32px;
-  flex-shrink: 0;
+  max-width: 270px;
+  width: 100%;
 
-  &__conteiner {
-    @include flex-column;
-    height: 640px;
-    justify-content: space-between;
-  }
 
-  &__items {
-    @include flex-column;
-    @include reset-list;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  &__link {
-    height: 28px;
-    color: $grayColor;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    column-gap: 16px;
-
-    &_active {
-      color: #000;
-    }
-  }
-
-  &__contact {
-    text-decoration: none;
-    color: $grayColor;
-    font-size: 20px;
-  }
-
-  &__text {
-    margin: 0;
-    margin-top: 12px;
-  }
 }

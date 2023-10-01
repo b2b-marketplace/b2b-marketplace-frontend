@@ -1,17 +1,18 @@
 @import '../../styles/global';
 
 .account-page {
-  display: flex;
-  flex-direction: row;
+  @include flex-container;
+  @include max-min-width;
   column-gap: 60px;
-  max-width: $maxWidth;
-  min-width: $minWidth;
-  //padding: 0 124px;
-  //margin: 60px auto 160px;
   margin: 60px 0 0;
   width: 100%;
 
-  &__icon {
-    padding: 0 6px;
+  &__sidebar-left {
+    @include flex-column;
+    row-gap: 40px;
+    max-width: 270px;
+    width: 100%;
   }
+
+
 }
