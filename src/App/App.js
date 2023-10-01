@@ -13,7 +13,7 @@ import BasketPage from '../Pages/BasketPage/BasketPage';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import ProductPage from '../Pages/ProductPage/ProductPage';
 import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
-import NotFound from '../components/NotFound/NotFound';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import OrderFormPage from '../Pages/OrderFormPage/OrderFormPage';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 import AboutUsPage from '../Pages/SupportServicePage/AboutUsPage/AboutUsPage';
@@ -74,7 +74,7 @@ function App() {
         <Route path="/about-us" element={<AboutUsPage />} exact />
         <Route path="/activate/:uid/:token" element={<EmailConfirmation />} exact />
         <Route path="/logout" element={<Logout />} exact />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <ButtonScrollUp />
       <Footer />
