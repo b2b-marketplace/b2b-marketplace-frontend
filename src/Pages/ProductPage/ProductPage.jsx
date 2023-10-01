@@ -11,7 +11,7 @@ import {
   loadMoreProducts,
   fetchProducts,
 } from '../../store/slices/productsSlice';
-import NotFound from '../../components/NotFound/NotFound';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 export default function ProductPage() {
   const { id } = useParams();
@@ -42,7 +42,7 @@ export default function ProductPage() {
     <div className="product-page">
       {isProductByIdLoaded ? (
         productById.product === undefined ? (
-          <NotFound />
+          <ErrorPage />
         ) : (
           <ProductBlock product={productById.product} className="product-page__product-block" />
         )
