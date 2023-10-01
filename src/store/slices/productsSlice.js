@@ -47,7 +47,7 @@ const productsSlice = createSlice({
         if (state.allProducts.allProducts.length !== state.allProducts.totalProducts) {
           state.allProducts.pageDB === 1
             ? // ? (state.allProducts.allProducts = actions.payload.results)
-            (state.allProducts.allProducts = newProducts)
+              (state.allProducts.allProducts = newProducts)
             : (state.allProducts.allProducts = [...state.allProducts.allProducts, ...newProducts]);
         }
 

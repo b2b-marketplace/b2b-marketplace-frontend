@@ -73,6 +73,6 @@
       "npm run lint-fix",
       "npm run format"
     ],
-    "*.{css,md,html,json}": "npm run format"
+    "*.{scss,css,md,html,json}": "npm run format"
   }
 }
