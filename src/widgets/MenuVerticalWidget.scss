@@ -1,11 +1,10 @@
 @import '../styles/global';
 
-.menu-account-widget {
+.menu-vertical-widget {
   @include default-font-styles;
   @include flex-container(column, space-between);
   @include border-radius;
   padding: 32px;
-  //justify-content: space-between;
   row-gap: 92px;
 
   &__footer {
