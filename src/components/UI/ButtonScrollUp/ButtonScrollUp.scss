@@ -1,0 +1,35 @@
+@import '../../../styles/global';
+
+.button-scroll-up {
+  max-width: 1672px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 7px 0 16px 0;
+
+  &__button {
+    display: none;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    color: $whiteColor;
+    background-color: $darkColor;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition:
+      transform 0.3s ease,
+      scale 0.3s ease;
+
+    &.visible {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      background-color: $blueDarkColor;
+      transform: scale(1.1);
+    }
+  }
+}

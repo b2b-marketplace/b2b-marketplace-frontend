@@ -1,0 +1,22 @@
+@import '../../../styles/global';
+
+.order-popup {
+  @include default-font-styles;
+
+  &__title {
+    @include h2-styles;
+    display: flex;
+    column-gap: 4px;
+  }
+
+  &__icon {
+    color: $greenColor;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__link {
+    @include reset-link;
+    @include text-M-bold-styles;
+  }
+}

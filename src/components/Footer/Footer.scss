@@ -1,0 +1,94 @@
+@import '../../styles/global';
+
+.footer {
+  background: $darkColor;
+  color: $whiteColor;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  padding: 80px 0 50px 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    @include max-min-width;
+    display: flex;
+    width: 100%;
+  }
+
+  &__container-logo {
+    @include flex-column;
+    row-gap: 40px;
+    width: 100%;
+    max-width: 705px;
+  }
+
+  &__logo-title {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 10px;
+    @include h2-styles;
+    margin: 0;
+    color: $whiteColor;
+  }
+
+  &__logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__container-links {
+    @include flex-column;
+    row-gap: 16px;
+  }
+
+  &__link {
+    @include text-M-bold-styles;
+    margin: 0;
+    color: $whiteColor;
+  }
+
+  &__menu {
+    @include flex-space-between;
+    width: 100%;
+    max-width: 826px;
+  }
+
+  &__lists {
+    @include flex-column;
+    @include reset-list;
+    width: 262px;
+    row-gap: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $whiteColor;
+  }
+
+  &__item {
+    @include flex-column;
+    row-gap: 40px;
+    margin: 0;
+  }
+
+  &__icon-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__icon-link {
+    text-decoration: none;
+    color: inherit;
+  }
+}

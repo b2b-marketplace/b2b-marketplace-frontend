@@ -1,0 +1,65 @@
+@import '../../../styles/global';
+
+.file-upload {
+  @include default-font-styles;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  max-width: 766px;
+  max-height: 164px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  &__label {
+    @include flex-column;
+    width: 202px;
+    gap: 4px;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: $mainWeight;
+    line-height: 20px;
+    margin: 0;
+    color: $grayColor;
+  }
+
+  &__container {
+    width: 524px;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__button {
+    max-width: 262px;
+    width: 100%;
+    height: 164px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid $blackColor;
+    box-sizing: border-box;
+    padding: 0;
+    background: $whiteColor;
+  }
+
+  &__container-img {
+    @include flex-space-between;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  &__img {
+    width: 121px;
+    height: 80px;
+    border: 1px solid $blackColor;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+}

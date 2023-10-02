@@ -1,0 +1,335 @@
+@import '../../styles/vars';
+$inactiveColor: #a3a3a3;
+
+%tpbutton {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+@mixin marginTop($top) {
+  margin: $top 0 0;
+}
+
+@mixin text($weight, $lh, $fz) {
+  font-weight: $weight;
+  line-height: $lh;
+  letter-spacing: 0;
+  color: $darkColor;
+  font-size: $fz;
+}
+
+.auth {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  z-index: 200;
+
+  // удалить -------------------------------<
+  background-color: #000000a6;
+
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.4s,
+    visibility 0.4s ease;
+
+  // общие стили текста для попапа
+  color: $whiteColor;
+  font-family: $fontFamilyNunitoSans;
+  text-align: center;
+
+  &_opened {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popup {
+    position: relative;
+    max-width: 568px;
+    width: 100%;
+    background-color: $whiteColor;
+    border-radius: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px;
+
+    &__top-conainer {
+      height: 32px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &_with_content {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @extend %tpbutton;
+
+      &-icon {
+        box-sizing: border-box;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &__container,
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__container {
+      gap: 40px 0;
+
+      &_type_form {
+        gap: 32px 0;
+      }
+
+      &_type_radio {
+        gap: 20px 0;
+      }
+
+      &_type_product {
+        gap: 24px 0;
+      }
+    }
+
+    &__radio {
+      display: flex;
+      gap: 0 58px;
+    }
+
+    &__form {
+      gap: 32px 0;
+
+      &:has(.popup__fieldset_hidden) {
+        gap: 0;
+      }
+
+      &:has(.popup__fieldset_visible) {
+        gap: 32px 0;
+      }
+
+      &_more_gap {
+        grid-row-gap: 40px;
+      }
+    }
+
+    &__fieldset {
+      gap: 16px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      border: none;
+      margin: 0;
+      padding: 0;
+
+      &_hidden {
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition:
+          height 0.5s,
+          visibility 0.7s,
+          opacity 0.7s cubic-bezier(0.65, -0.98, 1, 0.69);
+      }
+
+      &_visible {
+        height: 420px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &__terms {
+      @include marginTop(16px);
+    }
+
+    &__title {
+      @include marginTop(0);
+      @include text(600, 28px, 24px);
+      margin-inline: auto;
+      max-width: 427px;
+
+      &_size_l {
+        max-width: 504px;
+        @include text(600, 28px, 20px);
+      }
+
+      &_size_s {
+        max-width: 413px;
+      }
+    }
+
+    &__subtitle {
+      @include marginTop(24px);
+      @include text(600, 24px, 16px);
+      max-width: 398px;
+
+      &_type_bolded {
+        font-weight: 700;
+      }
+    }
+
+    &__socials {
+      display: flex;
+      gap: 0 15px;
+    }
+
+    &__social,
+    &__button {
+      @extend %tpbutton;
+    }
+
+    &__buttons {
+      gap: 0 20px;
+    }
+
+    &__buttons {
+      margin-top: 8px;
+    }
+
+    &__buttons,
+    &__inputs {
+      display: flex;
+      gap: 0 26px;
+    }
+
+    &__next {
+      @extend %tpbutton;
+      @include marginTop(30px);
+    }
+
+    &__label {
+      min-height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 20px;
+      cursor: pointer;
+    }
+
+    &__info {
+      position: absolute;
+    }
+
+    &__underlined-text {
+      @include marginTop(10px);
+      @include text(600, 28px, 20px);
+      display: inline-block;
+      color: $grayColor;
+      text-decoration-line: underline;
+
+      &_type_resend {
+        margin-top: 0px;
+        &:disabled {
+          cursor: default;
+        }
+      }
+    }
+
+    &__checkbox {
+      position: relative;
+      background: transparent;
+      width: 18px;
+      height: 18px;
+      margin: 3px;
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-color: $whiteColor;
+        box-sizing: border-box;
+        inset: -3px;
+        border-radius: 50%;
+        background-image: url(../../images/popup/checkbox-circle.svg);
+        transition: background-image 0.3s ease;
+      }
+
+      &:checked::after {
+        background-image: url(../../images/popup/checkbox-circle-checked.svg);
+      }
+
+      &_type_radio::after {
+        background-image: url(../../images/popup/radio-circle.svg);
+      }
+
+      &_type_radio:checked::after {
+        background-image: url(../../images/popup/radio-circle-checked.svg);
+      }
+
+      &-span {
+        @include text(600, 28px, 20px);
+      }
+    }
+
+    &__regiter-opportunities {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px 0;
+      @include marginTop(0);
+    }
+
+    &__regiter-opportunity {
+      display: flex;
+      gap: 0 20px;
+    }
+
+    &__paragraph {
+      @include text(600, 24px, 16px);
+      @include marginTop(0);
+      text-align: left;
+      max-width: 348px;
+
+      &_center {
+        text-align: center;
+
+        & > span {
+          font-weight: 700;
+        }
+      }
+    }
+
+    &__pin {
+      display: flex;
+      gap: 0 20px;
+    }
+
+    &__digit {
+      @include text(500, 48px, 40px);
+      box-sizing: border-box;
+      text-align: center;
+
+      width: 65px;
+      height: 73px;
+      background-color: $whiteColor;
+      border-radius: 20px;
+      color: $darkColor;
+    }
+
+    &__extra-button {
+      width: 236px;
+    }
+  }
+}

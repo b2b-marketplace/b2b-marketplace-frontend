@@ -1,0 +1,130 @@
+@import '../../../styles/global';
+
+.product-card-horizontal {
+  @include default-font-styles;
+  @include flex-space-between;
+  @include border-radius;
+  padding: 20px 40px 20px 44px;
+  width: 100%;
+  max-height: 172px;
+
+  &__checkbox {
+    @include center-both;
+    align-self: center;
+  }
+
+  &__content {
+    @include flex-container;
+    column-gap: 24px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  &__image {
+    display: block;
+    @include border-radius;
+    object-fit: cover;
+    object-position: center;
+    width: 122px;
+    height: 108px;
+  }
+
+  &__vendor-code-which-image {
+    @include flex-column;
+    @include center-both;
+    row-gap: 4px;
+  }
+
+  &__details {
+    @include flex-column;
+    justify-content: center;
+    row-gap: 16px;
+    max-width: 447px;
+  }
+
+  &__details-header {
+    @include flex-column;
+    row-gap: 4px;
+  }
+
+  &__product-title {
+    @include text-S-bold-styles;
+    margin: 0;
+  }
+
+  &__product-company {
+    @include text-S-bold-styles;
+    color: $grayColor;
+    margin: 0;
+  }
+
+  &__characteristics {
+    @include flex-column;
+    justify-content: center;
+    row-gap: 4px;
+  }
+
+  &__characteristic {
+    @include flex-container;
+    column-gap: 20px;
+    font-size: 20px;
+
+    &_color {
+      column-gap: 40px;
+    }
+  }
+
+  &__price-count-like {
+    @include flex-space-between;
+    align-items: center;
+    row-gap: 14px;
+    width: 100%;
+  }
+
+  &__buttons {
+    @include flex-container;
+    column-gap: 20px;
+    justify-content: end;
+  }
+
+  &__button {
+    @include reset-button;
+    @include link-hover-styles;
+  }
+
+  &__icon-button {
+    width: 32px;
+    height: 32px;
+    @include link-hover-styles;
+  }
+
+  &__price-quantity {
+    @include flex-space-between;
+    align-items: center;
+    column-gap: 138px;
+    max-width: 400px;
+    min-width: 220px;
+    width: 100%;
+  }
+
+  &__product-quantity {
+    @include text-L-main-styles;
+  }
+
+  &__product-prices {
+    @include flex-container(column, center, end);
+    //@include flex-column;
+    //@include center-both;
+    //row-gap: 7px;
+  }
+
+  &__product-price {
+    @include h3-styles;
+  }
+
+  &__product-price-per-one {
+    @include text-M-main-styles;
+    color: $grayColor;
+    line-height: 24px;
+  }
+}

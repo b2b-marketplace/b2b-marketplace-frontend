@@ -1,0 +1,147 @@
+@import '../../styles/global';
+
+.header {
+  @include flex-space-between;
+  @include default-font-styles;
+  @include max-min-width;
+  padding: 16px 0;
+  align-items: center;
+  width: 100%;
+  row-gap: 20px;
+
+  &__container-logo {
+    display: grid;
+    grid-template-columns: 68px auto;
+    align-items: end;
+    max-width: 207px;
+    height: 68px;
+  }
+
+  &__logo {
+    grid-row: span 2;
+    text-decoration: none;
+    height: 68px;
+    width: 68px;
+  }
+
+  &__title {
+    @include reset-link;
+    @include h4-styles;
+    height: 28px;
+    margin: 0;
+  }
+
+  &__location {
+    @include reset-button;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    border: none;
+    color: $grayColor;
+
+    &-text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__container {
+    @include flex-space-between;
+    max-width: 1117px;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__search {
+    @include flex-space-between;
+    max-width: 241px;
+    width: 100%;
+    height: 44px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    border: 1px solid $blackColor;
+    align-items: center;
+    padding: 0 10px 0 20px;
+  }
+
+  &__navigation {
+    @include flex-space-between;
+    max-width: 652px;
+    height: 32px;
+    width: 100%;
+    align-items: center;
+
+    &-link {
+      @include flex-space-between;
+      max-width: 188px;
+      height: 32px;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    @include text-L-link-styles;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+  }
+
+  &__input {
+    @include text-S-main-styles;
+    color: $grayColor;
+    border: none;
+    padding: 0;
+    height: 20px;
+    outline-style: none;
+  }
+
+  &__button {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 7px 7px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: $blackColor;
+    background: $blackColor;
+    color: $whiteColor;
+    border: none;
+  }
+
+  &__catalog-button {
+    @include text-M-bold-styles;
+    width: 160px;
+    height: 44px;
+    border-radius: 20px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 20px;
+    background-color: $darkColor;
+    border: none;
+    color: $whiteColor;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $grayColor;
+      border: none;
+      color: $whiteColor;
+    }
+    &_pressed {
+      background-color: $blackDarkColor;
+      color: $whiteColor;
+      border: none;
+    }
+    &:disabled {
+      background-color: $grayLightColor;
+      color: $grayColor;
+      border: none;
+      cursor: default;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../../styles/global.scss';
+
+.portal-rules-page {
+  max-width: 1249px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  line-height: 28px;
+  padding: 52px 0 120px;
+
+  &__title {
+    @include h2-styles;
+    margin: 0 0 40px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__text {
+    @include text-L-regular-styles;
+    margin: 0 0 20px;
+  }
+}

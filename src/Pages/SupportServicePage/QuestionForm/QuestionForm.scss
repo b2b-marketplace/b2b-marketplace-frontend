@@ -1,0 +1,94 @@
+@import '../../../styles/global.scss';
+
+.question-form {
+  @include flex-column;
+  max-width: 967px;
+  width: 100%;
+  gap: 40px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  font-weight: 600;
+  padding: 52px 0 120px;
+
+  &__title {
+    @include h2-styles;
+    margin: 0;
+  }
+
+  &__links {
+    display: flex;
+    gap: 51px;
+    color: $darkColor;
+  }
+
+  &__link {
+    @include reset-link;
+    font-size: 24px;
+    line-height: 28px;
+    transition: border-bottom 0.3s ease;
+  }
+
+  &__form {
+    @include flex-column;
+    gap: 24px;
+  }
+
+  &__input {
+    border: 1px solid $grayColor;
+  }
+
+  &__label-textarea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__textarea {
+    @include flex-column;
+    box-sizing: border-box;
+    max-width: 685px;
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid $grayColor;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__folder {
+    width: 750px;
+    height: 32px;
+    display: flex;
+    font-size: 20px;
+    line-height: 28px;
+    text-decoration-line: underline;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 36px;
+  }
+
+  &__text {
+    margin: 0;
+
+    &_blue {
+      color: $blueDarkColor;
+    }
+  }
+}
+
+.active-link {
+  border-bottom: 2px solid $darkColor; // Стиль активной ссылки
+}

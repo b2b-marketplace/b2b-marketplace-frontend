@@ -1,0 +1,111 @@
+@import './_vars.scss';
+@import './mixins.scss';
+@import './mixins_animation.scss';
+
+@mixin default-font-styles {
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+// Общие стили для текста
+@mixin text-styles($font-size, $font-weight, $line-height, $color) {
+  @include reset;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+// Стили по умолчанию для заголовков
+@mixin heading-default-styles {
+  font-family: $fontFamilyUnbounded;
+}
+
+// Основной заголовок h1
+@mixin h1-styles {
+  @include heading-default-styles;
+  @include text-styles(36px, 500, 44px, $fontColor);
+}
+
+// Заголовок второго уровня h2
+@mixin h2-styles {
+  @include heading-default-styles;
+  @include text-styles(28px, 500, 36px, $fontColor);
+}
+
+// Заголовок третьего уровня h3
+@mixin h3-styles {
+  @include heading-default-styles;
+  @include text-styles(24px, 500, 28px, $fontColor);
+}
+
+@mixin h4-styles {
+  @include heading-default-styles;
+  @include text-styles(20px, 500, 28px, $fontColor);
+}
+
+// Стили по умолчанию для заголовков
+@mixin text-default-styles {
+  font-family: $fontFamilyNunitoSans;
+}
+
+// T L Web/bold
+// Миксин для текста L с жирным начертанием
+@mixin text-L-bold-styles {
+  @include text-default-styles;
+  @include text-styles(24px, 600, 28px, $fontColor);
+  //font-weight: bold;
+}
+
+// T L Web/main
+// Миксин для текста L с основным начертанием
+@mixin text-L-main-styles {
+  @include text-styles(20px, 600, 28px, $fontColor);
+}
+
+//T L Web/regular
+// Миксин для текста L с обычным начертанием
+@mixin text-L-regular-styles {
+  @include text-styles(20px, 400, 28px, $fontColor);
+}
+
+// T L Web/link
+// Миксин для текста L, предназначенного для ссылок
+@mixin text-L-link-styles {
+  @include text-styles(20px, 600, 28px, $fontColor); // Используйте цвет для ссылок
+}
+
+// Text M Web
+// Миксин для текста M
+@mixin text-M-bold-styles {
+  @include text-styles(16px, 700, 24px, $fontColor);
+}
+
+// Text M Web
+@mixin text-M-main-styles {
+  @include text-styles(16px, 600, 24px, $fontColor);
+}
+
+// Text S Web/bold
+// Миксин для текста S с жирным начертанием
+@mixin text-S-bold-styles {
+  @include text-styles(14px, 700, 20px, $fontColor);
+  //font-weight: bold;
+}
+
+// Text S Web/main
+// Миксин для текста S с основным начертанием
+@mixin text-S-main-styles {
+  @include text-styles(14px, 400, 20px, $fontColor);
+}
+
+@mixin link-hover-styles {
+  @include hover-transition;
+  opacity: 1;
+  &:hover {
+    opacity: 0.7;
+  }
+}

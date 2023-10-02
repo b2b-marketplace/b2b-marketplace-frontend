@@ -1,0 +1,116 @@
+@import '../../../styles/global';
+
+.button {
+  @include default-font-styles;
+  padding: 0;
+  cursor: pointer;
+  line-height: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 20px;
+
+  &_size_s {
+    width: 230px;
+    height: 44px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &_size_m {
+    width: 236px;
+    height: 68px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+  }
+
+  &_size_l {
+    width: 262px;
+    height: 68px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &_size_xl {
+    width: 323px;
+    height: 68px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+  }
+
+  &_primary {
+    background-color: $whiteColor;
+    border: 1px solid $darkColor;
+    color: $darkColor;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $grayLightColor;
+      border: 1px solid $darkColor;
+      color: $darkColor;
+    }
+    &_pressed {
+      background-color: $blackDarkColor;
+      color: $whiteColor;
+      border: none;
+    }
+    &:disabled {
+      background-color: $grayLightColor;
+      color: $grayColor;
+      border: none;
+      cursor: default;
+    }
+    &_dark {
+      background-color: $darkColor;
+      border: none;
+      color: $whiteColor;
+      &:hover {
+        background-color: $grayColor;
+        border: none;
+        color: $whiteColor;
+      }
+      &_pressed {
+        background-color: $blackDarkColor;
+        color: $whiteColor;
+        border: none;
+      }
+      &:disabled {
+        background-color: $grayLightColor;
+        color: $grayColor;
+        border: none;
+        cursor: default;
+      }
+    }
+  }
+
+  &_secondary {
+    background-color: $blueColor;
+    border: none;
+    color: $whiteColor;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $blueDarkColor;
+      border: 1px solid $blueColor;
+    }
+    &_pressed {
+      background-color: $darkColor;
+      color: $whiteColor;
+      border: none;
+    }
+    &:disabled {
+      background-color: $grayLightColor;
+      color: $grayColor;
+      border: none;
+      cursor: default;
+    }
+  }
+}
