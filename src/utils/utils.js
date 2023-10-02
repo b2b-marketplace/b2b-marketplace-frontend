@@ -64,6 +64,16 @@ export function getCalculateProductInfo(productList) {
 export function priceFormat(price) {
   return new Intl.NumberFormat('ru-RU').format(parseFloat(price));
 }
+
+//Форматирование телефона с  88008000000 в 8-800-800-00-00
+export function formatPhoneNumber(phoneNumber) {
+  // Удалить все символы, кроме цифр
+  const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');
+
+  // Разбить строку на части и объединить их с дефисами
+  return cleanPhoneNumber.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1-$2-$3-$4-$5');
+}
+
 //
 //
 // export function getProductQuantity(productList) {
