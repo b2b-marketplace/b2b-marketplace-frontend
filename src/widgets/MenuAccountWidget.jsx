@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './MenuAccountWidgets.scss';
+import './MenuAccountWidget.scss';
 import MenuVertical from '../components/Menu/MenuVertical/MenuVertical';
 import BiBag from '../components/UI/Icon/Icon_bibag';
 import IconPackage from '../components/UI/Icon/Icon_package';
@@ -15,7 +15,7 @@ import IconPurchases from '../components/UI/Icon/Icon_purchases';
 import IconCreditCard from '../components/UI/Icon/Icon_credit-card';
 import IconLocation from '../components/UI/Icon/Icon_location';
 
-const MenuAccountWidgets = () => {
+const MenuAccountWidget = () => {
   const { user } = useSelector((state) => state.account);
   const [menuItems, setMenuItems] = useState([]);
   const menuItemsCustomer = [
@@ -49,19 +49,19 @@ const MenuAccountWidgets = () => {
   }, []);
 
   return (
-    <div className="menu-account-widgets">
+    <div className="menu-account-widget">
       <MenuVertical menuItems={menuItems} />
-      <div className="menu-account-widgets__footer">
-        <Link className="menu-account-widgets__link" to="/logout">
+      <div className="menu-account-widget__footer">
+        <Link className="menu-account-widget__link" to="/logout">
           <IconExit />
         </Link>
-        <Link target="_blank" className="menu-account-widgets__link" to="tel:88008000000">
+        <Link target="_blank" className="menu-account-widget__link" to="tel:88008000000">
           8-800-800-00-00
         </Link>
-        <p className="menu-account-widgets__phone-desc">Звонок бесплатный</p>
+        <p className="menu-account-widget__phone-desc">Звонок бесплатный</p>
       </div>
     </div>
   );
 };
 
-export default MenuAccountWidgets;
+export default MenuAccountWidget;

@@ -1,6 +1,6 @@
 @import '../styles/global';
 
-.menu-account-widgets {
+.menu-account-widget {
   @include default-font-styles;
   @include flex-container(column, space-between);
   @include border-radius;
