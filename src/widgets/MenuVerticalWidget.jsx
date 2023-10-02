@@ -18,14 +18,14 @@ const MenuVerticalWidget = ({ menuItems }) => {
   return (
     <div className="menu-vertical-widget">
       <MenuVertical menuItems={menuItems} />
-      <div className="menu-account-widget__footer">
-        <Link className="menu-account-widget__link" to="/logout">
+      <div className="menu-vertical-widget__footer">
+        <Link className="menu-vertical-widget__link" to="/logout">
           <IconExit />
         </Link>
-        <Link target="_blank" className="menu-account-widget__link" to={`tel:${PHONE_NUMBER}`}>
+        <Link target="_blank" className="menu-vertical-widget__link" to={`tel:${PHONE_NUMBER}`}>
           {`${formatPhoneNumber(PHONE_NUMBER)}`}
         </Link>
-        <p className="menu-account-widget__phone-desc">Звонок бесплатный</p>
+        <p className="menu-vertical-widget__phone-desc">Звонок бесплатный</p>
       </div>
     </div>
   );
