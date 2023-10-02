@@ -15,6 +15,13 @@ import IconLocation from '../../components/UI/Icon/Icon_location';
 import IconLock from '../../components/UI/Icon/Icon_lock';
 import IconBag from '../../components/UI/Icon/Icon_bag';
 
+/**
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const AccountPage = () => {
   const { user } = useSelector((state) => state.account);
   const [menuItems, setMenuItems] = useState([]);

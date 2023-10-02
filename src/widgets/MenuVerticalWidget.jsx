@@ -6,6 +6,14 @@ import MenuVertical from '../components/Menu/MenuVertical/MenuVertical';
 import IconExit from '../components/UI/Icon/Icon_exit';
 import { PHONE_NUMBER } from '../utils/constants';
 
+/**
+ *
+ * @param menuItems
+ * @returns {JSX.Element}
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const MenuVerticalWidget = ({ menuItems }) => {
   return (
     <div className="menu-vertical-widget">
