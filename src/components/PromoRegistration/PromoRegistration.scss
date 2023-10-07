@@ -4,7 +4,7 @@
   @include default-font-styles;
 
   &__conteiner {
-    max-width: 1672px;
+    max-width: $maxWidth;
     height: 400px;
     display: grid;
     grid-template-columns: 1fr 1fr;

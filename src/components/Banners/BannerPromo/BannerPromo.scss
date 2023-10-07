@@ -13,7 +13,7 @@
   }
 
   &__main {
-    max-width: 1672px;
+    max-width: $maxWidth;
     height: 400px;
     width: 100%;
     display: flex;
