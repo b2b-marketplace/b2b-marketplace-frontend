@@ -1,6 +1,6 @@
 // Api для получения информации из общей базы данных продуктов
 import { parseErrors } from './authConstatnts.js';
-import { PRODUCTS_BASE_URL } from './constants.js';
+//import { PRODUCTS_BASE_URL } from './constants.js';
 
 class AuthApi {
   constructor({ serverUrl, headers }) {
@@ -50,7 +50,7 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-  serverUrl: PRODUCTS_BASE_URL + '/v1',
+  serverUrl: process.env.REACT_APP_API_URL + '/v1',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
