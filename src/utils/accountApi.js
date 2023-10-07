@@ -1,4 +1,4 @@
-import { PRODUCTS_BASE_URL } from './constants';
+// import { PRODUCTS_BASE_URL } from './constants';
 
 class AccountApi {
   constructor({ serverUrl, headers }) {
@@ -44,7 +44,7 @@ class AccountApi {
 }
 
 const accountApi = new AccountApi({
-  serverUrl: PRODUCTS_BASE_URL + '/v1',
+  serverUrl: process.env.REACT_APP_API_URL + '/v1',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
