@@ -13,17 +13,19 @@ import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import SidebarRight from '../SidebarRight/SidebarRight';
 import { useNavigate } from 'react-router-dom';
-import {
-  getProductText,
-  getSuppliersText,
-  getProductTotalPrice,
-  getProductQuantity,
-  getCalculateProductInfo,
-} from '../../utils/utils';
+import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../utils/utils';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import usePopup from '../../hooks/usePopup';
 import Preloader from '../UI/Preloader/Preloader';
 
+/**
+ *
+ * @param extraClassName
+ * @returns {JSX.Element}
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const Basket = ({ extraClassName }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.account);

@@ -3,7 +3,7 @@ name: Build and deploy to stage server
 on:
   pull_request:
     branches:
-      - main2
+      - production
     types: [closed]
 
 env:

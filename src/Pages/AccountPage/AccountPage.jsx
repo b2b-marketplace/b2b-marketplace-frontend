@@ -1,44 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './AccountPage.scss';
 import SidebarLeft from '../../components/SidebarLeft/SidebarLeft';
-
+import MenuVerticalWidget from '../../widgets/MenuVerticalWidget';
 import BiBag from '../../components/UI/Icon/Icon_bibag';
 import IconPackage from '../../components/UI/Icon/Icon_package';
+import IconPurchases from '../../components/UI/Icon/Icon_purchases';
 import IconHearth from '../../components/UI/Icon/Icon_hearth';
-import IconBag from '../../components/UI/Icon/Icon_bag';
-import IconMessage from '../../components/UI/Icon/Icon_message';
-import IconLock from '../../components/UI/Icon/Icon_lock';
 import IconBasket from '../../components/UI/Icon/Icon_basket';
-import IconExit from '../../components/UI/Icon/Icon_exit';
-/* import IconPurchases from '../../components/UI/Icon/Icon_purchases';
-import IconCreditCard from '../../components/UI/Icon/Icon_credit-card'; */
+import IconMessage from '../../components/UI/Icon/Icon_message';
+import IconCreditCard from '../../components/UI/Icon/Icon_credit-card';
+import IconLocation from '../../components/UI/Icon/Icon_location';
+import IconLock from '../../components/UI/Icon/Icon_lock';
+import IconBag from '../../components/UI/Icon/Icon_bag';
 
-const AccountPage = ({ role = 'seller' }) => {
-  const menuItemsBuyer = [
+/**
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
+const AccountPage = () => {
+  const { user } = useSelector((state) => state.account);
+  const [menuItems, setMenuItems] = useState([]);
+  const menuItemsCustomer = [
     { icon: <BiBag />, link: 'profile', label: 'Моя компания' },
     { icon: <IconPackage />, link: 'orders', label: 'Закупки' },
-    /* { icon: <IconPurchases />, link: '', label: 'Мои заказы' }, */
+    { icon: <IconPurchases />, link: 'favorites', label: 'Мои заказы' },
     { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
     { icon: <IconBasket />, link: '/basket', label: 'Корзина' },
     { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
-    /* { icon: <IconCreditCard />, link: '', label: 'Оплата' }, */
-    { icon: <IconLock className={'account-page__icon'} />, link: 'secure', label: 'Безопасность' },
-    { icon: <IconExit />, link: '/logout', label: 'Выход' },
+    { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+    { icon: <IconLocation />, link: 'message', label: 'Адрес' },
+    { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
   ];
 
-  const menuItemsSeller = [
+  const menuItemsSupplier = [
     { icon: <BiBag />, link: 'profile', label: 'Моя компания' },
-    { icon: <IconPackage />, link: '#', label: 'Товары' },
-    { icon: <IconBag />, link: '#', label: 'Заказы' },
-    { icon: <IconMessage />, link: '#', label: 'Сообщения' },
-    { icon: <IconLock />, link: '#', label: 'Безопасность' },
-    { icon: <IconExit />, link: '/logout', label: 'Выход' },
+    { icon: <IconPackage />, link: 'products', label: 'Товары' },
+    { icon: <IconBag />, link: 'orders', label: 'Заказы' },
+    { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
+    { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
+    { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+    { icon: <IconLocation />, link: 'message', label: 'Адрес' },
+    { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
   ];
+
+  useEffect(() => {
+    return () => {
+      const currentMenu = user?.company.role === 'supplier' ? menuItemsSupplier : menuItemsCustomer;
+      setMenuItems(currentMenu);
+    };
+  }, []);
 
   return (
     <main className="account-page">
-      <SidebarLeft menuItems={menuItemsBuyer} phone="8-800-800-00-00" />
+      <div className="account-page__sidebar-left">
+        <SidebarLeft>
+          <MenuVerticalWidget menuItems={menuItems} />
+        </SidebarLeft>
+      </div>
       <Outlet />
     </main>
   );

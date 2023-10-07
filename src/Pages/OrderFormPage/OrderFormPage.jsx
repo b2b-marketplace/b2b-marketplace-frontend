@@ -14,6 +14,13 @@ import accountApi from '../../utils/accountApi';
 import { updateAllProduct } from '../../store/slices/basketSlice';
 import OrderPopup from '../../components/PopupsRedux/OrderPopup/OrderPopup';
 
+/**
+ *
+ * @returns {JSX.Element}
+ * @constructor
+ *
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ */
 const OrderFormPage = () => {
   const dispatch = useDispatch();
   const location = useLocation();

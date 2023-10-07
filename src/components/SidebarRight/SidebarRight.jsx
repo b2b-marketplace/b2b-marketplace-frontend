@@ -1,8 +1,8 @@
 import React from 'react';
 import './SidebarRight.scss';
 
-const SidebarRight = ({ extraClassName, ...props }) => {
-  return <div className={`sidebar-right ${extraClassName || ''}`}>{props.children}</div>;
+const SidebarRight = ({ extraClassName, children }) => {
+  return <div className={`sidebar-right ${extraClassName || ''}`}>{children}</div>;
 };
 
 export default SidebarRight;
