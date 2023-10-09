@@ -32,7 +32,7 @@
     @include flex-space-between;
     align-items: center;
     height: 52px;
-    padding: 0 40px 0 44px;
+    padding: 0 20px 0 20px;
   }
 
   &__panel-button {
@@ -56,6 +56,8 @@
 
   &__checkbox-text {
     @include text-L-main-styles;
+    @include link-hover-styles;
+
   }
 
   &__product-list {
@@ -94,9 +96,14 @@
     color: #222222;
   }
 
-  &__order-detail-buttons {
+  &__buttons {
     @include flex-column;
     row-gap: 20px;
+  }
+
+  &__button {
+    height: 68px;
+    border-radius: 30px;
   }
 
   &__order-detail-button {
