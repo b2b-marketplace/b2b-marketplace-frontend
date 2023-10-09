@@ -1,5 +1,5 @@
 // Api для получения информации о местоположении пользователя
-import { GEOLOCATION_API_URL } from './constants.js';
+// import { GEOLOCATION_API_URL } from './constants.js';
 
 class GeoApi {
   constructor({ serverUrl, headers }) {
@@ -24,7 +24,7 @@ class GeoApi {
 }
 
 const geoApi = new GeoApi({
-  serverUrl: GEOLOCATION_API_URL,
+  serverUrl: process.env.REACT_APP_GEOLOCATION_API_URL,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

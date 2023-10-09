@@ -1,7 +1,7 @@
 @import '../../../styles/global';
 
 .button-scroll-up {
-  max-width: 1672px;
+  max-width: $maxWidth;
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -17,9 +17,8 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    transition:
-      transform 0.3s ease,
-      scale 0.3s ease;
+    transition: transform 0.3s ease,
+    scale 0.3s ease;
 
     &.visible {
       display: flex;

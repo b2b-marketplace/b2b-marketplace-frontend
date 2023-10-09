@@ -17,7 +17,7 @@ const BannerPromo = () => {
   return (
     <section className="banner-promo">
       <div className="banner-promo__main">
-        <div className="banner-promo__figure-images">
+        <div className="banner-promo__images">
           <img
             className="banner-promo__image banner-promo__image_polygon"
             src={Polygon1}
