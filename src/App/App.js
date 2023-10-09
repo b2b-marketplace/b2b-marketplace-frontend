@@ -27,6 +27,7 @@ import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
 import EmailConfirmation from '../Pages/EmailConfirmation/EmailConfirmation';
 import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
+import AccountPaymentInfo from '../components/UI/Account/AccountPaymentInfo/AccountPaymentInfo';
 
 function App() {
   const dispatch = useDispatch();
@@ -65,6 +66,7 @@ function App() {
               <Route path=":filter/:page" element={<AccountBuyerOrderList />} />
             </Route>
             <Route index element={<Navigate to="profile" />} />
+            <Route path="payment-methods" element={<AccountPaymentInfo/>} exact/>
           </Route>
         </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
