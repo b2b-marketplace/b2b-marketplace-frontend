@@ -69,6 +69,7 @@ function App() {
             <Route path="payment-methods" element={<AccountPaymentInfo/>} exact/>
           </Route>
         </Route>
+        <Route path="payment-methods" element={<AccountPaymentInfo/>} exact/>
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
         <Route path="/portal-rules" element={<PortalRulesPage />} exact />
         <Route path="/question-page" element={<QuestionPage />} exact />

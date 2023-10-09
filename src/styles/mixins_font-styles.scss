@@ -78,6 +78,10 @@
   @include text-styles(20px, 600, 28px, $fontColor); // Используйте цвет для ссылок
 }
 
+@mixin text-M-link-styles {
+  @include text-styles(16px, 600, 24px, $fontColor); // Используйте цвет для ссылок
+}
+
 // Text M Web
 // Миксин для текста M
 @mixin text-M-bold-styles {

@@ -4,7 +4,11 @@
   @include default-font-styles;
 
   &__conteiner {
+<<<<<<< Updated upstream
     max-width: $maxWidth;
+=======
+    max-width: 1300px;
+>>>>>>> Stashed changes
     height: 400px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -16,7 +20,7 @@
   }
 
   &__control {
-    max-width: 544px;
+    max-width: 550px;
     max-height: 240px;
     display: grid;
     grid-template-columns: 1fr 1fr;
