@@ -39,7 +39,7 @@
 // Заголовок третьего уровня h3
 @mixin h3-styles {
   @include heading-default-styles;
-  @include text-styles(24px, 500, 28px, $fontColor);
+  @include text-styles(20px, 500, 28px, $fontColor);
 }
 
 @mixin h4-styles {
@@ -100,6 +100,20 @@
 // Миксин для текста S с основным начертанием
 @mixin text-S-main-styles {
   @include text-styles(14px, 400, 20px, $fontColor);
+}
+
+// Максимальное количество строк для отображения
+@mixin text-number-rows-show($count: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+@mixin text-overflow-eclipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @mixin link-hover-styles {

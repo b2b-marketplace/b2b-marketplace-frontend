@@ -2,9 +2,10 @@
 
 .product-card-horizontal {
   @include default-font-styles;
-  @include flex-space-between;
+  @include flex-container;
+  column-gap: 24px;
   @include border-radius;
-  padding: 20px 40px 20px 44px;
+  padding: 20px;
   width: 100%;
   max-height: 172px;
 
@@ -13,19 +14,19 @@
     align-self: center;
   }
 
-  &__content {
-    @include flex-container;
+  &__container {
+    @include flex-space-between;
     column-gap: 24px;
-    max-width: 500px;
     width: 100%;
   }
+
 
   &__image {
     display: block;
     @include border-radius;
     object-fit: cover;
     object-position: center;
-    width: 122px;
+    width: 104px;
     height: 108px;
   }
 
@@ -36,26 +37,43 @@
   }
 
   &__details {
-    @include flex-column;
-    justify-content: center;
-    row-gap: 16px;
-    max-width: 447px;
+    @include flex-space-between;
+    column-gap: 16px;
+
+    //max-width: 330px;
+    //min-width: 260px;
   }
 
-  &__details-header {
-    @include flex-column;
+  &__description {
+    @include flex-container(column, center);
     row-gap: 4px;
+    width: 100%;
+    max-width: 210px;
+    //white-space: nowrap;
   }
 
   &__product-title {
     @include text-S-bold-styles;
+    @include text-overflow-eclipse;
+    @include text-number-rows-show(2);
+
     margin: 0;
+    max-height: 40px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &__product-company {
     @include text-S-bold-styles;
+    @include text-overflow-eclipse;
     color: $grayColor;
     margin: 0;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &__characteristics {
@@ -74,10 +92,12 @@
     }
   }
 
-  &__price-count-like {
+  &__actions {
     @include flex-space-between;
     align-items: center;
-    row-gap: 14px;
+    row-gap: 16px;
+    column-gap: 20px;
+    max-width: 468px;
     width: 100%;
   }
 
@@ -113,9 +133,11 @@
 
   &__product-prices {
     @include flex-container(column, center, end);
+    min-width: max-content;
     //@include flex-column;
     //@include center-both;
-    //row-gap: 7px;
+    row-gap: 8px;
+    //width: 189px;
   }
 
   &__product-price {

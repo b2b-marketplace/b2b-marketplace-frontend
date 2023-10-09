@@ -235,11 +235,12 @@ const Basket = ({ extraClassName }) => {
                   productQuantity={getProductText(orderInfo.productQuantity)}
                   productSumPrice={orderInfo.productSum}
                 />
-                <div className="basket__order-detail-buttons">
+                <div className="basket__buttons">
                   {isLoggedIn ? (
                     user.company.role !== 'supplier' ? (
                       <Button
-                        size="xl"
+                        size="s"
+                        extraClass="basket__button"
                         onClick={handleNavigateToOrder}
                         primary
                         dark
@@ -250,7 +251,7 @@ const Basket = ({ extraClassName }) => {
                       </Button>
                     ) : (
                       <>
-                        <Button size="xl" primary dark disabled={true} label={'Купить'}>
+                        <Button extraClass="basket__button" size="s" primary dark disabled={true} label={'Купить'}>
                           Купить
                         </Button>
                         <div className="basket__hint basket__hint_warning">
@@ -261,7 +262,7 @@ const Basket = ({ extraClassName }) => {
                   ) : (
                     <>
                       <Button
-                        size="xl"
+                        size="s"
                         onClick={handleOpenRegisterPopup}
                         primary
                         dark
@@ -269,7 +270,7 @@ const Basket = ({ extraClassName }) => {
                       >
                         Зарегистрироваться
                       </Button>
-                      <Button size="xl" onClick={openLoginPopup} label={'Войти'} primary>
+                      <Button size="s" onClick={openLoginPopup} label={'Войти'} primary>
                         Войти
                       </Button>
                     </>
