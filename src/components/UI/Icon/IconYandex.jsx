@@ -2,7 +2,7 @@ import Icon from './Icon';
 
 const IconYandex = ({ className, ...props }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="50"
         height="50"

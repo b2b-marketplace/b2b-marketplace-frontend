@@ -2,7 +2,7 @@ import Icon from './Icon';
 
 const IconGmail = ({ className, ...props }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="50"
         height="50"

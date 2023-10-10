@@ -4,7 +4,7 @@ import Icon from './Icon';
 const IconPassword = ({ className, isVisiblePassword, ...props }) => {
   if (isVisiblePassword) {
     return (
-      <Icon {...props} className={`${className}`}>
+      <Icon className={`${className}`}>
         <svg
           width="24"
           height="24"
@@ -30,7 +30,7 @@ const IconPassword = ({ className, isVisiblePassword, ...props }) => {
     );
   }
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="24"
         height="24"

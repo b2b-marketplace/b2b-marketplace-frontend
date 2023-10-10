@@ -2,7 +2,7 @@ import Icon from './Icon';
 
 const IconNotVerified = ({ className, ...props }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="30"
         height="30"
