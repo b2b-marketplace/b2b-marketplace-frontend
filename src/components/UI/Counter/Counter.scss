@@ -6,9 +6,12 @@
   align-items: center;
   column-gap: 10px;
 
+
   &__button {
     @include reset-button;
-    border: none;
+    @include hover-transition;
+
+
   }
 
   &__input {
@@ -34,6 +37,10 @@
     color: $darkColor;
     width: 24px;
     height: 24px;
+
+    &:hover {
+      color: $blackColor;
+    }
   }
 }
 
