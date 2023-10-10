@@ -63,16 +63,16 @@ const ProductCardHorizontal = (
         </div>
         <div className="product-card-horizontal__container">
           <div className="product-card-horizontal__details">
-            <div className="product-card-horizontal__vendor-code-which-image">
+            <div className="product-card-horizontal__figcaption">
               <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name}/>
               <VendorCode vendorCode="1234567"/>
             </div>
-            <div className="product-card-horizontal__description ">
+            <div className="product-card-horizontal__product-description">
               <h3 className="product-card-horizontal__product-title">{product.name}</h3>
               <h4 className="product-card-horizontal__product-company">{product.seller.name}</h4>
             </div>
           </div>
-          <div className="product-card-horizontal__actions">
+          <div className="product-card-horizontal__product-actions">
             <div className="product-card-horizontal__product-count">
               <Counter
                 onChangeQuantity={(productQuantity) =>
@@ -111,32 +111,59 @@ const ProductCardHorizontal = (
   const orderView = () => {
     return (
       <div className={`product-card-horizontal ${className ? className : ''}`}>
-        <div className="product-card-horizontal__content">
-          <div className="product-card-horizontal__vendor-code-which-image">
-            <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name}/>
-            <VendorCode vendorCode="1234567"/>
-          </div>
+        <div className="product-card-horizontal__container">
           <div className="product-card-horizontal__details">
-            <div className="product-card-horizontal__details-header">
+            <div className="product-card-horizontal__figcaption">
+              <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name}/>
+              <VendorCode vendorCode="1234567"/>
+            </div>
+            <div className="product-card-horizontal__product-description ">
               <h3 className="product-card-horizontal__product-title">{product.name}</h3>
               <h4 className="product-card-horizontal__product-company">{product.seller.name}</h4>
             </div>
           </div>
-        </div>
-
-        <div className="product-card-horizontal__price-quantity">
-          <div className="product-card-horizontal__product-quantity">{product.quantity} шт.</div>
-          <div className="product-card-horizontal__product-prices">
-            <span className="product-card-horizontal__product-price">
-              {productInfo.productInfoPrice} ₽
-            </span>
-            <span className="product-card-horizontal__product-price-per-one">
+          <div className="product-card-horizontal__product-actions product-card-horizontal__product-actions_order-form">
+            <div className="product-card-horizontal__product-quantity">{product.quantity} шт.</div>
+            <div className="product-card-horizontal__product-prices">
+              <span className="product-card-horizontal__product-price">
+                {productInfo.productInfoPrice} ₽
+              </span>
+              <span className="product-card-horizontal__product-price-per-one">
               за ед. {productInfo.productInfoPricePerOne} ₽
-            </span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     );
+    // return (
+    //   <div className={`product-card-horizontal ${className ? className : ''}`}>
+    //     <div className="product-card-horizontal__content">
+    //       <div className="product-card-horizontal__vendor-code-which-image">
+    //         <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name}/>
+    //         <VendorCode vendorCode="1234567"/>
+    //       </div>
+    //       <div className="product-card-horizontal__details">
+    //         <div className="product-card-horizontal__details-header">
+    //           <h3 className="product-card-horizontal__product-title">{product.name}</h3>
+    //           <h4 className="product-card-horizontal__product-company">{product.seller.name}</h4>
+    //         </div>
+    //       </div>
+    //     </div>
+    //
+    //     <div className="product-card-horizontal__price-quantity">
+    //       <div className="product-card-horizontal__product-quantity">{product.quantity} шт.</div>
+    //       <div className="product-card-horizontal__product-prices">
+    //         <span className="product-card-horizontal__product-price">
+    //           {productInfo.productInfoPrice} ₽
+    //         </span>
+    //         <span className="product-card-horizontal__product-price-per-one">
+    //           за ед. {productInfo.productInfoPricePerOne} ₽
+    //         </span>
+    //       </div>
+    //     </div>
+    //   </div>
+    // );
   };
   return initView();
 };

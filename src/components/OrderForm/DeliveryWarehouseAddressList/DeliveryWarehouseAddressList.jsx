@@ -88,7 +88,7 @@ const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList })
           </ul>
         )}
         <div className="delivery-warehouse-address-list__map">
-          <img src={imageMap} alt="Карта" />
+          <img className="delivery-warehouse-address-list__map-images" src={imageMap} alt="Карта" />
         </div>
       </div>
     </div>

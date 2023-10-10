@@ -23,7 +23,7 @@ const OrderForm = ({ extraClassName, productList }) => {
         <div className="order-form__container">
           <h2 className="order-form__title order-form__title_h2">Данные получатель</h2>
           <div className="order-form__content">
-            <OrderFormReceiver />
+            <OrderFormReceiver/>
           </div>
         </div>
 
@@ -36,10 +36,14 @@ const OrderForm = ({ extraClassName, productList }) => {
                 {
                   id: 1,
                   default: true,
-                  name: 'Самовывоз со склада',
-                  element: <DeliveryWarehouseAddressList onGetStockAddr={handleGetStockAddr} />,
+                  name: 'Доставка',
+                  element: <DeliveryWarehouseAddressList onGetStockAddr={handleGetStockAddr}/>,
                 },
-                { id: 2, name: 'Доставка ', element: 'Тут что то будет' },
+                // {
+                //   id: 2,
+                //   name: 'Доставка ',
+                //   element: 'Тут что то будет'
+                // },
               ]}
             />
           </div>
@@ -54,7 +58,8 @@ const OrderForm = ({ extraClassName, productList }) => {
                   <ProductCardHorizontal
                     type="orderForm"
                     isCheckboxChecked={product.checked}
-                    onClickCheckbox={() => {}}
+                    onClickCheckbox={() => {
+                    }}
                     product={product}
                     className="basket__product"
                   />
