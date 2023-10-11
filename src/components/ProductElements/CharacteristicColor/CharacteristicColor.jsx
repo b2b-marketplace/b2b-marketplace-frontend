@@ -3,7 +3,7 @@ import './CharacteristicColor.scss';
 
 const CharacteristicColor = ({ className, characteristicValue }) => {
   const renderColor = (color) => {
-    const backgroundColor = color ? color : 'white';
+    const backgroundColor = color || 'white';
     const isWhite = color === 'white' ? 'characteristic-color__color-white' : '';
     return <div className={`characteristic-color__color ${isWhite}`} style={{ backgroundColor }} />;
   };

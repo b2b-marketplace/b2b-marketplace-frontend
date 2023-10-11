@@ -5,7 +5,7 @@ import IconMail from '../../../components/UI/Icon/Icon_mail';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
-import { Button } from '../../../../src/components/UI/Button/Button';
+import { Button } from '../../../components/UI/Button/Button';
 
 const AccountSellerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);

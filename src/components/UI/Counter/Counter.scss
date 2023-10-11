@@ -6,12 +6,9 @@
   align-items: center;
   column-gap: 10px;
 
-
   &__button {
     @include reset-button;
     @include hover-transition;
-
-
   }
 
   &__input {

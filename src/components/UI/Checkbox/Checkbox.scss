@@ -8,7 +8,6 @@
   cursor: pointer;
   @include hover-transition;
 
-
   &:hover &__checkbox {
     border: 1.5px solid $blackDarkColor;
   }
@@ -35,7 +34,6 @@
     background-position: center center;
     background-size: 50% 50%;
     z-index: -1;
-
 
     &_active {
       border-color: $blackDarkColor;

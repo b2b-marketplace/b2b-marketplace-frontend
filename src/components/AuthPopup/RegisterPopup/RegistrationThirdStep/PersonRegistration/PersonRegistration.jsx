@@ -1,4 +1,5 @@
 import Input from '../../../Input/Input';
+
 const options = [
   { value: 'moscow', label: 'Московская Область' },
   { value: 'Spb', label: 'Ленинградская Область' },

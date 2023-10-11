@@ -7,10 +7,10 @@ const RegistrationFirstStep = ({ onType }) => {
       onClick={onType}
       value1="supplier"
       value2="customer"
-      dark1={true}
+      dark1
       buttonText1="Я поставщик"
       buttonText2="Я покупатель"
-      name={'role'}
+      name="role"
     />
   );
 };

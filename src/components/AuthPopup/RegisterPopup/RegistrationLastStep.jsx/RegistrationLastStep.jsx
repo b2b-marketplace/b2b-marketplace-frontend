@@ -11,7 +11,7 @@ const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverE
 
   const isPasswordsMatch = values.password === values.repeat_password;
   const showTerms = () => {
-    window.open(window.location.origin + '/portal-rules', '_blank');
+    window.open(`${window.location.origin}/portal-rules`, '_blank');
   };
 
   return (

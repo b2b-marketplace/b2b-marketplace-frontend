@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './ProductCardHorizontal.scss';
+import { useDispatch, useSelector } from 'react-redux';
 import Checkbox from '../../UI/Checkbox/Checkbox';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import imageStub from '../../../images/basket/Stub_132_128.jpg';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import Counter from '../../UI/Counter/Counter';
-import { useDispatch, useSelector } from 'react-redux';
 import { changeQuantity, deleteProduct } from '../../../store/slices/basketSlice.js';
 import ProductCardHorizontalImage from './ProductCardHorizontalImage/ProductCardHorizontalImage';
 import VendorCode from '../VendorCode/VendorCode';
@@ -23,14 +23,13 @@ import { priceFormat } from '../../../utils/utils';
  * @constructor
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const ProductCardHorizontal = (
-  {
-    className,
-    product,
-    onClickCheckbox,
-    isCheckboxChecked,
-    type,
-  }) => {
+const ProductCardHorizontal = ({
+  className,
+  product,
+  onClickCheckbox,
+  isCheckboxChecked,
+  type,
+}) => {
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector((state) => state.auth);
   const [productInfo, setProductInfo] = useState({
@@ -39,33 +38,33 @@ const ProductCardHorizontal = (
     productInfoPricePerOne: 0,
   });
   useEffect(() => {
-    const imageSrc = product.images && product.images[ 0 ] ? product.images[ 0 ].image : imageStub;
+    const imageSrc = product.images && product.images[0] ? product.images[0].image : imageStub;
 
     const productInfoPrice = priceFormat(product.price * product.quantity);
     const productInfoPricePerOne = priceFormat(product.price);
     setProductInfo({
-      imageSrc: imageSrc,
-      productInfoPrice: productInfoPrice,
-      productInfoPricePerOne: productInfoPricePerOne,
+      imageSrc,
+      productInfoPrice,
+      productInfoPricePerOne,
     });
   }, [product]);
 
   const initView = () => {
     if (type === 'orderForm') return orderView();
-    else return basketView();
+    return basketView();
   };
 
   const basketView = () => {
     return (
-      <div className={`product-card-horizontal ${className ? className : ''}`}>
+      <div className={`product-card-horizontal ${className || ''}`}>
         <div className="product-card-horizontal__checkbox">
-          <Checkbox handleChangeCheckbox={onClickCheckbox} checked={isCheckboxChecked}/>
+          <Checkbox handleChangeCheckbox={onClickCheckbox} checked={isCheckboxChecked} />
         </div>
         <div className="product-card-horizontal__container">
           <div className="product-card-horizontal__details">
             <div className="product-card-horizontal__figcaption">
-              <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name}/>
-              <VendorCode vendorCode="1234567"/>
+              <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name} />
+              <VendorCode vendorCode="1234567" />
             </div>
             <div className="product-card-horizontal__product-description">
               <h3 className="product-card-horizontal__product-title">{product.name}</h3>
@@ -87,7 +86,7 @@ const ProductCardHorizontal = (
                 {productInfo.productInfoPrice} ₽
               </span>
               <span className="product-card-horizontal__product-price-per-one">
-              за ед. {productInfo.productInfoPricePerOne} ₽
+                за ед. {productInfo.productInfoPricePerOne} ₽
               </span>
             </div>
             <div className="product-card-horizontal__buttons">
@@ -98,24 +97,23 @@ const ProductCardHorizontal = (
                 type="button"
                 className="product-card-horizontal__button"
               >
-                <IconTrash className="product-card-horizontal__icon-button"/>
+                <IconTrash className="product-card-horizontal__icon-button" />
               </button>
             </div>
           </div>
         </div>
-
       </div>
     );
   };
 
   const orderView = () => {
     return (
-      <div className={`product-card-horizontal ${className ? className : ''}`}>
+      <div className={`product-card-horizontal ${className || ''}`}>
         <div className="product-card-horizontal__container">
           <div className="product-card-horizontal__details">
             <div className="product-card-horizontal__figcaption">
-              <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name}/>
-              <VendorCode vendorCode="1234567"/>
+              <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name} />
+              <VendorCode vendorCode="1234567" />
             </div>
             <div className="product-card-horizontal__product-description ">
               <h3 className="product-card-horizontal__product-title">{product.name}</h3>
@@ -129,7 +127,7 @@ const ProductCardHorizontal = (
                 {productInfo.productInfoPrice} ₽
               </span>
               <span className="product-card-horizontal__product-price-per-one">
-              за ед. {productInfo.productInfoPricePerOne} ₽
+                за ед. {productInfo.productInfoPricePerOne} ₽
               </span>
             </div>
           </div>

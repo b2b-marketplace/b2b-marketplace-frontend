@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Basket.scss';
-import { changeChecked, deleteProduct, updateAllProduct } from '../../store/slices/basketSlice.js';
+import { useNavigate } from 'react-router-dom';
+import { changeChecked, deleteProduct, updateAllProduct } from '../../store/slices/basketSlice';
 import Checkbox from '../UI/Checkbox/Checkbox';
 import IconTrash from '../UI/Icon/Icon_trash';
 import Tooltip from '../UI/Tooltip/Tooltip';
@@ -12,7 +13,6 @@ import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/Prod
 import productsApi from '../../utils/productsApi';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import SidebarRight from '../SidebarRight/SidebarRight';
-import { useNavigate } from 'react-router-dom';
 import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../utils/utils';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import usePopup from '../../hooks/usePopup';
@@ -64,7 +64,7 @@ const Basket = ({ extraClassName }) => {
                 productItem.quantity_in_stock >= basketItem.quantity
                   ? basketItem.quantity
                   : parseFloat(productItem.quantity_in_stock),
-              //quantity: basketItem.quantity,
+              // quantity: basketItem.quantity,
               checked: basketItem.checked,
             };
             mergedList.push(mergedItem);
@@ -177,114 +177,121 @@ const Basket = ({ extraClassName }) => {
 
   if (preloader) {
     return <Preloader />;
-  } else {
-    return (
-      <section className={`basket ${extraClassName || ''}`}>
-        {currentProductList.length > 0 ? (
-          <div className="basket__container">
-            <div className="basket__container-product">
-              <div className="basket__panel">
-                <div className="basket__panel-checkbox">
-                  <Checkbox
-                    handleChangeCheckbox={handleClickCheckboxSelectAllProduct}
-                    checked={isCheckAll}
-                    className="basket__checkbox"
-                  >
-                    <span className="basket__checkbox-text">Выбрать все</span>
-                  </Checkbox>
-                </div>
-                {isCheckAll || selectedProductId.length ? (
-                  <button
-                    onClick={handleClickDeleteSelectedProduct}
-                    className="basket__panel-button"
-                  >
-                    <IconTrash className="basket__icon-trash" />
-                    Удалить выбранные
-                  </button>
-                ) : (
-                  ''
-                )}
+  }
+  return (
+    <section className={`basket ${extraClassName || ''}`}>
+      {currentProductList.length > 0 ? (
+        <div className="basket__container">
+          <div className="basket__container-product">
+            <div className="basket__panel">
+              <div className="basket__panel-checkbox">
+                <Checkbox
+                  handleChangeCheckbox={handleClickCheckboxSelectAllProduct}
+                  checked={isCheckAll}
+                  className="basket__checkbox"
+                >
+                  <span className="basket__checkbox-text">Выбрать все</span>
+                </Checkbox>
               </div>
-              <ul className="basket__product-list">
-                {currentProductList?.map((product) => (
-                  <li className="basket__product-item" key={product.id} data-id={product.id}>
-                    <ProductCardHorizontal
-                      isCheckboxChecked={product.checked}
-                      onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
-                      product={product}
-                      className="basket__product"
-                    />
-                  </li>
-                ))}
-              </ul>
+              {isCheckAll || selectedProductId.length ? (
+                <button
+                  type="button"
+                  onClick={handleClickDeleteSelectedProduct}
+                  className="basket__panel-button"
+                >
+                  <IconTrash className="basket__icon-trash" />
+                  Удалить выбранные
+                </button>
+              ) : (
+                ''
+              )}
             </div>
-            <SidebarRight extraClassName="basket__sidebar-right">
-              <OrderDetail extraClassName="basket__order-detail-sticky">
-                <OrderDetailHeader title="Детали заказа">
-                  <Tooltip
-                    position="top"
-                    tooltipContent={
-                      <>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>
-                    }
-                  >
-                    <IconInfoFill className="basket__order-detail-icon-info" />
-                  </Tooltip>
-                </OrderDetailHeader>
-                <OrderDetailContentBasket
-                  suppliersCount={getSuppliersText(orderInfo.suppliersCount)}
-                  productQuantity={getProductText(orderInfo.productQuantity)}
-                  productSumPrice={orderInfo.productSum}
-                />
-                <div className="basket__buttons">
-                  {isLoggedIn ? (
-                    user.company.role !== 'supplier' ? (
-                      <Button
-                        size="s"
-                        extraClass="basket__button"
-                        onClick={handleNavigateToOrder}
-                        primary
-                        dark
-                        disabled={!selectedProductId.length || !orderInfo.productQuantity}
-                        label={'Купить'}
-                      >
-                        Купить
-                      </Button>
-                    ) : (
-                      <>
-                        <Button extraClass="basket__button" size="s" primary dark disabled={true} label={'Купить'}>
-                          Купить
-                        </Button>
-                        <div className="basket__hint basket__hint_warning">
-                          Оформление заказа доступно только покупателям
-                        </div>
-                      </>
-                    )
+            <ul className="basket__product-list">
+              {currentProductList?.map((product) => (
+                <li className="basket__product-item" key={product.id} data-id={product.id}>
+                  <ProductCardHorizontal
+                    isCheckboxChecked={product.checked}
+                    onClickCheckbox={() => handleClickCheckboxProduct(product.id)}
+                    product={product}
+                    className="basket__product"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <SidebarRight extraClassName="basket__sidebar-right">
+            <OrderDetail extraClassName="basket__order-detail-sticky">
+              <OrderDetailHeader title="Детали заказа">
+                <Tooltip
+                  position="top"
+                  tooltipContent={
+                    <>Выбрать способ и адрес доставки вы сможете на этапе оформления заказа</>
+                  }
+                >
+                  <IconInfoFill className="basket__order-detail-icon-info" />
+                </Tooltip>
+              </OrderDetailHeader>
+              <OrderDetailContentBasket
+                suppliersCount={getSuppliersText(orderInfo.suppliersCount)}
+                productQuantity={getProductText(orderInfo.productQuantity)}
+                productSumPrice={orderInfo.productSum}
+              />
+              <div className="basket__buttons">
+                {isLoggedIn ? (
+                  user.company.role !== 'supplier' ? (
+                    <Button
+                      size="s"
+                      extraClass="basket__button"
+                      onClick={handleNavigateToOrder}
+                      primary
+                      dark
+                      disabled={!selectedProductId.length || !orderInfo.productQuantity}
+                      label="Купить"
+                    >
+                      Купить
+                    </Button>
                   ) : (
                     <>
                       <Button
+                        extraClass="basket__button"
                         size="s"
-                        onClick={handleOpenRegisterPopup}
                         primary
                         dark
-                        label={'Зарегистрироваться'}
+                        disabled
+                        label="Купить"
                       >
-                        Зарегистрироваться
+                        Купить
                       </Button>
-                      <Button size="s" onClick={openLoginPopup} label={'Войти'} primary>
-                        Войти
-                      </Button>
+                      <div className="basket__hint basket__hint_warning">
+                        Оформление заказа доступно только покупателям
+                      </div>
                     </>
-                  )}
-                </div>
-              </OrderDetail>
-            </SidebarRight>
-          </div>
-        ) : (
-          <div className="basket__empty">Корзина Пуста</div>
-        )}
-      </section>
-    );
-  }
+                  )
+                ) : (
+                  <>
+                    <Button
+                      size="s"
+                      onClick={handleOpenRegisterPopup}
+                      primary
+                      dark
+                      label="Зарегистрироваться"
+                    >
+                      Зарегистрироваться
+                    </Button>
+                    <Button size="s" onClick={openLoginPopup} label="Войти" primary>
+                      Войти
+                    </Button>
+                  </>
+                )}
+              </div>
+            </OrderDetail>
+          </SidebarRight>
+        </div>
+      ) : (
+        <div className="basket__empty">Корзина Пуста</div>
+      )}
+    </section>
+  );
 };
 
 export default Basket;

@@ -16,7 +16,7 @@ const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType, for
             type={btnType}
             onClick={btnOnClick}
             mode="secondary"
-            dark={true}
+            dark
             disabled={formDisabled}
           >
             {btnText}

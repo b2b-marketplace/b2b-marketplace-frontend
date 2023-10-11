@@ -40,7 +40,7 @@ const MenuBar = () => {
             {item.icon}
             <Link className="menu-bar__link" to="#">
               {item.label}
-              <IconArrowCounter className={'menu-bar__icon'} />
+              <IconArrowCounter className="menu-bar__icon" />
             </Link>
           </li>
         ))}

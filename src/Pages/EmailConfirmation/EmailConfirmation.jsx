@@ -17,16 +17,14 @@ const EmailConfirmation = () => {
 
         if (response.status === 'success') {
           setConfirmationStatus('success');
+        } else if (response.error === 'Token expired') {
+          // Обработка устаревшего токена: предложите пользователю войти заново.
+          setConfirmationStatus('error');
+          setError('Ваш сеанс завершен. Пожалуйста, выполните вход снова.');
         } else {
-          if (response.error === 'Token expired') {
-            // Обработка устаревшего токена: предложите пользователю войти заново.
-            setConfirmationStatus('error');
-            setError('Ваш сеанс завершен. Пожалуйста, выполните вход снова.');
-          } else {
-            // Обработка других ошибок.
-            setConfirmationStatus('error');
-            setError(response.error || 'Произошла ошибка при выполнении запроса.');
-          }
+          // Обработка других ошибок.
+          setConfirmationStatus('error');
+          setError(response.error || 'Произошла ошибка при выполнении запроса.');
         }
       } catch (error) {
         console.error('Ошибка подтверждения почты', error);

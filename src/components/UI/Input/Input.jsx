@@ -5,13 +5,11 @@ import './Input.scss';
 const Input = ({ mode, size, border, type, extraClass, ...props }) => {
   const modeClass = `input__${mode}`;
   return (
-    <>
-      <input
-        className={['input', modeClass, `input__size_${size}`, extraClass || ''].join(' ')}
-        type={type}
-        {...props}
-      />
-    </>
+    <input
+      className={['input', modeClass, `input__size_${size}`, extraClass || ''].join(' ')}
+      type={type}
+      {...props}
+    />
   );
 };
 

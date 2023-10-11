@@ -1,6 +1,6 @@
 // Api для получения информации из общей базы данных продуктов
 import { parseErrors } from './authConstatnts.js';
-//import { PRODUCTS_BASE_URL } from './constants.js';
+// import { PRODUCTS_BASE_URL } from './constants.js';
 
 class AuthApi {
   constructor({ serverUrl, headers }) {
@@ -28,7 +28,7 @@ class AuthApi {
   _fetcher(method, path, body, isNotAuth) {
     // конфигурация объекта запроса
     const reqOptions = {
-      method: method,
+      method,
       headers: isNotAuth ? this._headers : this._authHeaders,
     };
     if (body) reqOptions.body = JSON.stringify(body);
@@ -44,13 +44,15 @@ class AuthApi {
       const keyList = Object.keys(err);
       return Promise.reject(err[keyList[0]]);
     });
+
   activate = (activationData) => this._fetcher('POST', '/users/activation/', activationData, true);
+
   restoreByEmail = (restoreData) =>
     this._fetcher('POST', '/users/reset_password/', restoreData, true);
 }
 
 const authApi = new AuthApi({
-  serverUrl: process.env.REACT_APP_API_URL + '/v1',
+  serverUrl: `${process.env.REACT_APP_API_URL}/v1`,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
