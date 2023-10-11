@@ -29,7 +29,7 @@ export const basketList = [
               image: 'http://example.org/images/image.jpeg',
             },
           ],
-          //Добавлено
+          // Добавлено
           suppliers: [
             {
               id: 1,
@@ -76,7 +76,7 @@ export const basketList = [
               image: 'http://example.org/images/image.jpeg',
             },
           ],
-          //Добавлено
+          // Добавлено
           suppliers: [
             {
               id: 0,
@@ -123,7 +123,7 @@ export const basketList = [
               image: 'http://example.org/images/image.jpeg',
             },
           ],
-          //Добавлено
+          // Добавлено
           suppliers: [
             {
               id: 0,

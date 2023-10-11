@@ -1,11 +1,7 @@
 @import '../../../styles/global';
 
 .button-scroll-up {
-<<<<<<< Updated upstream
-  max-width: $maxWidth;
-=======
   max-width: 1300px;
->>>>>>> Stashed changes
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -21,8 +17,9 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    transition: transform 0.3s ease,
-    scale 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      scale 0.3s ease;
 
     &.visible {
       display: flex;

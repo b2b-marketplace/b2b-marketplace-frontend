@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { logoutUser } from '../../store/slices/authSlice.js';
 import { resetUser } from '../../store/slices/accountSlice.js';
-import { useNavigate } from 'react-router';
 
 const Logout = () => {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import './ProductCardContainer.scss';
+import { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import { Button } from '../../UI/Button/Button';
-import { useEffect, useState } from 'react';
 
 export default function ProductCardContainer({
   title,

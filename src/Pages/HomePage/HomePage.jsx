@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './HomePage.scss';
+import { useSelector, useDispatch } from 'react-redux';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
 
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
@@ -7,8 +8,7 @@ import ProductCardContainer from '../../components/ProductElements/ProductCardCo
 import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
 import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+
 import { fetchProducts, loadMoreProducts } from '../../store/slices/productsSlice';
 
 const HomePage = () => {

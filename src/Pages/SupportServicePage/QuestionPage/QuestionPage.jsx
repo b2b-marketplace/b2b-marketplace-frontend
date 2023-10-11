@@ -202,7 +202,7 @@ const QuestionPage = () => {
               >
                 {expandedCategories[index] ? 'Скрыть' : 'Еще'}{' '}
                 {expandedCategories[index] ? (
-                  <IconArrowCounter className={'question-page__icon'} />
+                  <IconArrowCounter className="question-page__icon" />
                 ) : (
                   <IconArrowCounter />
                 )}

@@ -1,4 +1,5 @@
 import './AccountBuyerOrders.scss';
+import { Outlet } from 'react-router-dom';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import IconPencil from '../../../components/UI/Icon/Icon_pencil';
 import { Button } from '../../../components/UI/Button/Button';
@@ -6,7 +7,6 @@ import logo from '../../../images/logofooter.svg';
 import IconPlus from '../../../components/UI/Icon/Icon_plus';
 import IconCalendar from '../../../components/UI/Icon/Icon_calendar';
 import IconSearch from '../../../components/UI/Icon/Icon_search';
-import { Outlet } from 'react-router-dom';
 import AccountTabNavigation from '../../../components/Account/AccountTabNavigation/AccountTabNavigation';
 import Input from '../../../components/UI/Input/Input';
 
@@ -30,7 +30,7 @@ const AccountBuyerOrders = () => {
           <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Покупатель" />
         </div>
         <div className="account-buyer-orders__control">
-          {/*<Link to="/account/product/add">*/}
+          {/* <Link to="/account/product/add"> */}
           <Button
             extraClass="account-buyer-orders__control-button"
             primary={false}
@@ -40,7 +40,7 @@ const AccountBuyerOrders = () => {
             <IconPlus className="account-buyer-orders__icon-plus" />
             Заявка на закупку
           </Button>
-          {/*</Link>*/}
+          {/* </Link> */}
           <div className="account-buyer-orders__search">
             <IconCalendar />
             <Input mode="primary" type="text" placeholder="Поиск...." />

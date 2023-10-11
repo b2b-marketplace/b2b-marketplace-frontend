@@ -20,7 +20,7 @@ const PopupButtons = ({
         onClick={onClick}
         type="button"
         size="l"
-        extraClass={'popup__extra-button'}
+        extraClass="popup__extra-button"
         name={name}
         disabled={disabled1}
       >
@@ -32,7 +32,7 @@ const PopupButtons = ({
         onClick={onClick}
         type="button"
         size="l"
-        extraClass={'popup__extra-button'}
+        extraClass="popup__extra-button"
         name={name}
         disabled={disabled2}
       >

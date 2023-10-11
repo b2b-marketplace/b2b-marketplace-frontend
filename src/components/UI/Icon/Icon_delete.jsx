@@ -2,7 +2,7 @@ import Icon from './Icon';
 
 const IconDelete = ({ className, ...props }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="28"
         height="28"

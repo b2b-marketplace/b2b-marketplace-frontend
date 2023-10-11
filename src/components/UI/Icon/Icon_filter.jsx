@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 const IconFilter = ({ className, ...props }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="32"
         height="32"

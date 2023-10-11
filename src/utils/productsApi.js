@@ -16,7 +16,7 @@ class ProductsApi {
   }
 
   getProducts(page = 1) {
-    const url = this._serverUrl + `?page=${page}`;
+    const url = `${this._serverUrl}?page=${page}`;
     return this._request(url, {
       method: 'GET',
       headers: this._headers,
@@ -39,7 +39,7 @@ class ProductsApi {
 }
 
 const productsApi = new ProductsApi({
-  serverUrl: process.env.REACT_APP_API_URL + '/v1/products/',
+  serverUrl: `${process.env.REACT_APP_API_URL}/v1/products/`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

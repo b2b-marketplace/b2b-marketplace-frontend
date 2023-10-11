@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './OrderFormPage.scss';
+import { useDispatch, useSelector } from 'react-redux';
 import SidebarRight from '../../components/SidebarRight/SidebarRight';
 import OrderForm from '../../components/OrderForm/OrderForm';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import { useDispatch, useSelector } from 'react-redux';
 import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
 import { Button } from '../../components/UI/Button/Button';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../utils/utils';
@@ -87,7 +87,7 @@ const OrderFormPage = () => {
         );
         dispatch(updateAllProduct({ currentProductList: filteredArray1 }));
         openOrderPopup();
-        //navigate("/account/profile");
+        // navigate("/account/profile");
       })
       .catch((err) => {
         console.log(err.message);
@@ -95,34 +95,32 @@ const OrderFormPage = () => {
   };
 
   return (
-    <>
-      <section className="order-form-page">
-        <OrderForm productList={currentProductList} extraClassName="order-form-page__container" />
-        <SidebarRight>
-          <OrderDetail>
-            <OrderDetailHeader title="Ваш заказ" />
-            <OrderDetailContentOrderPage
-              deliveryDate={formatDateUnixTimestamp(orderInfo.delivery_date)}
-              deliveryName={orderInfo.delivery_name}
-              deliveryPrice={orderInfo.delivery_price}
-              productPriceTotal={orderInfo.product_price_total}
-              productQuantity={orderInfo.product_quantity}
-            />
-            <Button
-              size="s"
-              //onClick={openOrderPopup}
-              onClick={handleOrderConfirm}
-              primary
-              dark
-              // disabled={!selectedProductId.length}
-              label={'Подтвердить заказ'}
-            >
-              Подтвердить заказ
-            </Button>
-          </OrderDetail>
-        </SidebarRight>
-      </section>
-    </>
+    <section className="order-form-page">
+      <OrderForm productList={currentProductList} extraClassName="order-form-page__container" />
+      <SidebarRight>
+        <OrderDetail>
+          <OrderDetailHeader title="Ваш заказ" />
+          <OrderDetailContentOrderPage
+            deliveryDate={formatDateUnixTimestamp(orderInfo.delivery_date)}
+            deliveryName={orderInfo.delivery_name}
+            deliveryPrice={orderInfo.delivery_price}
+            productPriceTotal={orderInfo.product_price_total}
+            productQuantity={orderInfo.product_quantity}
+          />
+          <Button
+            size="s"
+            // onClick={openOrderPopup}
+            onClick={handleOrderConfirm}
+            primary
+            dark
+            // disabled={!selectedProductId.length}
+            label="Подтвердить заказ"
+          >
+            Подтвердить заказ
+          </Button>
+        </OrderDetail>
+      </SidebarRight>
+    </section>
   );
 };
 

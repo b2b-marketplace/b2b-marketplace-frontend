@@ -1,9 +1,9 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconAnimals = ({ className, ...props }) => {
+const IconAnimals = ({ className }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"

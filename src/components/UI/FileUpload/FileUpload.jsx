@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './FileUpload.scss';
-import IconPlus from '../../UI/Icon/Icon_plus';
+import IconPlus from '../Icon/Icon_plus';
 
 const FileUpload = ({ label, text, type }) => {
   const [selectedImages, setSelectedImages] = useState([]);

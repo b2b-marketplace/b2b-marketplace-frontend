@@ -1,5 +1,6 @@
 import Input from '../../../Input/Input';
 import LabelCheckbox from '../../../LabelCheckbox/LabelCheckbox';
+
 const options = [
   { value: 'moscow', label: 'Московская Область' },
   { value: 'Spb', label: 'Ленинградская Область' },

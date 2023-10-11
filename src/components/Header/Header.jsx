@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
-import IconPosition from '../../components/UI/Icon/Icon_position';
-import IconBoxRu from '../../components/UI/Icon/Icon_boxRu';
+import { useDispatch, useSelector } from 'react-redux';
+import IconPosition from '../UI/Icon/Icon_position';
+import IconBoxRu from '../UI/Icon/Icon_boxRu';
 import IconBurger from '../UI/Icon/Icon_burger';
 import IconClose from '../UI/Icon/Icon_close24';
 import IconFire from '../UI/Icon/Icon_fire';
@@ -12,8 +13,8 @@ import IconProfile from '../UI/Icon/Icon_profile';
 import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
-import { useDispatch, useSelector } from 'react-redux';
 import usePopup from '../../hooks/usePopup';
+// import IconClose from '../UI/Icon/Icon_close';
 import geoApi from '../../utils/GeoApi';
 import { getUser } from '../../store/slices/accountSlice';
 
