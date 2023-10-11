@@ -4,7 +4,7 @@ import box1 from '../../../images/banner-promo/box1.png';
 import box2 from '../../../images/banner-promo/box2.png';
 import box3 from '../../../images/banner-promo/box3.png';
 import Polygon1 from '../../../images/banner-promo/Polygon1.png';
-//import InfoCards from "../InfoCards/InfoCards";
+// import InfoCards from "../InfoCards/InfoCards";
 
 /**
  * BannerPromo компонент для отображения баннера на главной странице.

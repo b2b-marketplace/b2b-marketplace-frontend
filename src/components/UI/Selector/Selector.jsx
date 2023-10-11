@@ -20,7 +20,7 @@ const Selector = (props) => {
       options={options}
       value={getValue()}
       onChange={handleChange}
-      classNamePrefix={'custom-select'}
+      classNamePrefix="custom-select"
       {...restedProps}
     />
   );

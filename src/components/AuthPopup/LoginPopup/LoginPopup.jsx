@@ -56,13 +56,13 @@ const LoginPopup = () => {
       isOpen={isOpen}
       onClose={closePopup}
       title="Вход"
-      popupContClassMode={'popup__container_type_form'}
+      popupContClassMode="popup__container_type_form"
     >
       <Form
         className="popup__form"
         onSubmit={handleSubmit}
         btnText="Далее"
-        btnType={'submit'}
+        btnType="submit"
         formDisabled={isNotValidForm || isLoading}
       >
         <fieldset className="popup__fieldset">

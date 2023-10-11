@@ -12,7 +12,7 @@ import './Tooltip.scss';
  * @returns {JSX.Element} - Отрендеренный компонент Tooltip.
  */
 const Tooltip = ({ tooltipContent, children, sizeText, position = 'top' }) => {
-  const stylePosition = position ? 'tooltip__content_' + position : '';
+  const stylePosition = position ? `tooltip__content_${position}` : '';
   const styleSizeText = sizeText ? `tooltip__size tooltip__size_${sizeText}` : '';
   return (
     <div className="tooltip">

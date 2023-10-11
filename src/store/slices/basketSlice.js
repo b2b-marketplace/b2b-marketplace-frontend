@@ -44,7 +44,7 @@ const basketSlice = createSlice({
         if (product.id === productIds) {
           return {
             ...product,
-            quantity: quantity,
+            quantity,
           };
         }
         return product; // Если это не нужный товар, возвращаем без изменений
@@ -56,7 +56,7 @@ const basketSlice = createSlice({
         state.basket.basket_products = state.basket.basket_products.map((product) => {
           return {
             ...product,
-            checked: checked,
+            checked,
           };
         });
       } else {

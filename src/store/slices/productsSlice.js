@@ -2,11 +2,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import productsApi from '../../utils/productsApi';
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (page) => {
-  return await productsApi.getProducts(page);
+  return productsApi.getProducts(page);
 });
 
 export const fetchProductById = createAsyncThunk('products/fetchProductById', async (id) => {
-  return await productsApi.getProductById(id);
+  return productsApi.getProductById(id);
 });
 
 const initialState = {
@@ -31,6 +31,7 @@ const productsSlice = createSlice({
   reducers: {
     loadMoreProducts: (state) => {
       if (state.allProducts.nextDBPage !== null) {
+        // eslint-disable-next-line no-param-reassign
         state.allProducts.pageDB += 1;
       }
     },

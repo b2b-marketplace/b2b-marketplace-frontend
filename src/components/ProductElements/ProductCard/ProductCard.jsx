@@ -1,14 +1,14 @@
 import './ProductCard.scss';
+import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../../UI/Button/Button';
 import IconInfo from '../../UI/Icon/Icon_info';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconScales from '../../UI/Icon/Icon_scales';
 import SliderImage from '../../SliderImage/SliderImage';
-import { Link } from 'react-router-dom';
 import Tooltip from '../../UI/Tooltip/Tooltip';
 import IconInfoFil from '../../UI/Icon/Icon_info_fill';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, deleteProduct } from '../../../store/slices/basketSlice';
 
 function ProductCard({ product }) {
@@ -69,7 +69,7 @@ function ProductCard({ product }) {
             }>
             <IconInfo/>
           </Tooltip> */}
-          {/*<IconInfo className="card__shipper-icon hint-right-middle"/>*/}
+          {/* <IconInfo className="card__shipper-icon hint-right-middle"/> */}
         </div>
 
         <div className="card__min-order">

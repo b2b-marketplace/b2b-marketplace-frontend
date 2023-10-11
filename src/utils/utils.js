@@ -1,21 +1,21 @@
 export function getProductText(count) {
   if (count === 1) {
     return `${count} товар`;
-  } else if (count >= 2 && count <= 4) {
-    return `${count} товара`;
-  } else {
-    return `${count} товаров`;
   }
+  if (count >= 2 && count <= 4) {
+    return `${count} товара`;
+  }
+  return `${count} товаров`;
 }
 
 export function getSuppliersText(count) {
   if (count === 1) {
     return `${count} поставщик`;
-  } else if (count >= 2 && count <= 4) {
-    return `${count} поставщика`;
-  } else {
-    return `${count} поставщиков`;
   }
+  if (count >= 2 && count <= 4) {
+    return `${count} поставщика`;
+  }
+  return `${count} поставщиков`;
 }
 
 // Функция для преобразования Unix timestamp в строку формата "ДД Месяц"
@@ -60,12 +60,12 @@ export function getCalculateProductInfo(productList) {
     { totalQuantity: 0, totalPrice: 0 }
   );
 }
-//Форматируем цену из 10000 в 10 000, добавляем разделители разрядов
+// Форматируем цену из 10000 в 10 000, добавляем разделители разрядов
 export function priceFormat(price) {
   return new Intl.NumberFormat('ru-RU').format(parseFloat(price));
 }
 
-//Форматирование телефона с 88008000000 в 8-800-800-00-00
+// Форматирование телефона с 88008000000 в 8-800-800-00-00
 export function formatPhoneNumber(phoneNumber) {
   // Удалить все символы, кроме цифр
   const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Input from '../Input/Input';
 import Popup from '../Popup';
 import IconPassword from '../../UI/Icon/IconPassword';
@@ -6,7 +7,6 @@ import usePopup from '../../../hooks/usePopup';
 import { passwordLength } from '../../../utils/authConstatnts';
 import useShowPassword from '../../../hooks/useShowPassword';
 import useInput from '../../../hooks/useInput';
-import { useEffect } from 'react';
 
 const NewPasswordPopup = () => {
   const { isOpen, closePopup } = usePopup('newPassword');
@@ -34,7 +34,7 @@ const NewPasswordPopup = () => {
       isOpen={isOpen}
       onClose={closePopup}
       title="Придумайте новый пароль"
-      popupContClassMode={'popup__container_type_form'}
+      popupContClassMode="popup__container_type_form"
     >
       <Form
         className="popup__form"

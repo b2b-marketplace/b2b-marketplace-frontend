@@ -10,8 +10,8 @@ const ModerationNewProductPopup = () => {
       isOpen={isOpen}
       onClose={closePopup}
       title="Почти готово"
-      popupContClassMode={'popup__container_type_product'}
-      titleClassMode={'popup__title_size_l'}
+      popupContClassMode="popup__container_type_product"
+      titleClassMode="popup__title_size_l"
     >
       <div className="moderation-new-product-popup">
         <p className="moderation-new-product-popup__text">

@@ -37,7 +37,7 @@ const DropDown = ({ label, placeholder, options, className, onChange, name }) =>
           <div className="drop-down__header">
             <span className="drop-down__current">{selectedOption || placeholder}</span>
 
-            {isMenuOpen ? <IconArrowCounter className={'drop-down__icon'} /> : <IconArrowCounter />}
+            {isMenuOpen ? <IconArrowCounter className="drop-down__icon" /> : <IconArrowCounter />}
           </div>
 
           {isMenuOpen && (

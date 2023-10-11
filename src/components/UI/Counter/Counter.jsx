@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import './Counter.scss';
 import IconPlus from '../Icon/Icon_plus';
 import IconMinus from '../Icon/Icon_minus';
@@ -27,7 +27,7 @@ const Counter = ({ initCount = 0, minValue = 1, maxValue = 999, onChangeQuantity
     const productCount = parseInt(event.target.value);
 
     if (!isNaN(productCount)) {
-      //console.log(maxValue);
+      // console.log(maxValue);
       if (minValue <= productCount && maxValue >= productCount) {
         setCount(productCount);
         onChangeQuantity(productCount);
@@ -37,7 +37,7 @@ const Counter = ({ initCount = 0, minValue = 1, maxValue = 999, onChangeQuantity
   return (
     <div className="counter">
       <button className="counter__button" onClick={handleLeft}>
-        <IconMinus className={'counter__icon'} />
+        <IconMinus className="counter__icon" />
       </button>
       <input
         type="number"
@@ -48,7 +48,7 @@ const Counter = ({ initCount = 0, minValue = 1, maxValue = 999, onChangeQuantity
         onChange={handleChangeInput}
       />
       <button className="counter__button" onClick={handleRight}>
-        <IconPlus className={'counter__icon'} />
+        <IconPlus className="counter__icon" />
       </button>
     </div>
   );

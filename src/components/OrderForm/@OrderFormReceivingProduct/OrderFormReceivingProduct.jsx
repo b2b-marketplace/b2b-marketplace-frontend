@@ -5,7 +5,7 @@ import DeliveryWarehouseAddressList from '../DeliveryWarehouseAddressList/Delive
 
 const OrderFormReceivingProduct = () => {
   const handleChangeDelivery = (stock) => {
-    //console.log(stock);
+    // console.log(stock);
   };
 
   return (

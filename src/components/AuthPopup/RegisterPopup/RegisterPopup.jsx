@@ -104,7 +104,7 @@ const RegisterPopup = () => {
           role,
           vat: company.vat === 'yes',
           address: {
-            address: address,
+            address,
           },
           phone_number: {
             phone_number,
@@ -143,7 +143,7 @@ const RegisterPopup = () => {
     <Popup
       isOpen={isOpen}
       onClose={closePopup}
-      isShowStepper={true}
+      isShowStepper
       step={step}
       anim={step > 2}
       title={formParams[step - 1].title}

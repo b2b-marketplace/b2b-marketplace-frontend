@@ -23,8 +23,8 @@ const CancelAddProductPopup = ({ onConfirm, onCancel, onReset }) => {
     <Popup
       isOpen={isOpen}
       onClose={closePopup}
-      popupContClassMode={'popup__container_type_product'}
-      titleClassMode={'popup__title_size_l'}
+      popupContClassMode="popup__container_type_product"
+      titleClassMode="popup__title_size_l"
       title="Уверены, что хотите отменить?"
     >
       <p className="cancel-add-product-popup">Данные об этом товаре будут сброшены</p>

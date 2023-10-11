@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './OrderForm.scss';
+import { useDispatch, useSelector } from 'react-redux';
 import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
 import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
 import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
-import { useDispatch, useSelector } from 'react-redux';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import { addDeliveryAddress } from '../../store/slices/basketSlice';
 import usePopup from '../../hooks/usePopup';
 
 const OrderForm = ({ extraClassName, productList }) => {
   const dispatch = useDispatch();
-  //const deliveryAddressList = useSelector((state) => state.basket.basket.delivery_address || []);
+  // const deliveryAddressList = useSelector((state) => state.basket.basket.delivery_address || []);
 
   const handleGetStockAddr = useCallback((stock) => {
     dispatch(addDeliveryAddress({ deliveryAddress: stock }));
@@ -23,7 +23,7 @@ const OrderForm = ({ extraClassName, productList }) => {
         <div className="order-form__container">
           <h2 className="order-form__title order-form__title_h2">Данные получатель</h2>
           <div className="order-form__content">
-            <OrderFormReceiver/>
+            <OrderFormReceiver />
           </div>
         </div>
 
@@ -37,7 +37,7 @@ const OrderForm = ({ extraClassName, productList }) => {
                   id: 1,
                   default: true,
                   name: 'Доставка',
-                  element: <DeliveryWarehouseAddressList onGetStockAddr={handleGetStockAddr}/>,
+                  element: <DeliveryWarehouseAddressList onGetStockAddr={handleGetStockAddr} />,
                 },
                 // {
                 //   id: 2,
@@ -58,8 +58,7 @@ const OrderForm = ({ extraClassName, productList }) => {
                   <ProductCardHorizontal
                     type="orderForm"
                     isCheckboxChecked={product.checked}
-                    onClickCheckbox={() => {
-                    }}
+                    onClickCheckbox={() => {}}
                     product={product}
                     className="basket__product"
                   />

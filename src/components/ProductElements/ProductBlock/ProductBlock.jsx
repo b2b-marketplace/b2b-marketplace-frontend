@@ -1,4 +1,8 @@
 import './ProductBlock.scss';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import { useSelector, useDispatch } from 'react-redux';
 import Counter from '../../UI/Counter/Counter';
 import { Button } from '../../UI/Button/Button';
 import IconAvailable from '../../UI/Icon/Icon_available';
@@ -8,14 +12,10 @@ import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconInfo from '../../UI/Icon/Icon_info';
 import ProductRating from '../ProductRating/ProductRating';
 import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
-import { useEffect, useState } from 'react';
 import CommentsBlock from '../CommentsBlock/CommentsBlock';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
-import noPhoto from './../../../images/nophoto.png';
-import { useSelector, useDispatch } from 'react-redux';
+import noPhoto from '../../../images/nophoto.png';
 import { addProduct, deleteProduct, changeQuantity } from '../../../store/slices/basketSlice';
 
 export default function ProductBlock({ product }) {
@@ -59,8 +59,8 @@ export default function ProductBlock({ product }) {
           <Swiper
             spaceBetween={40}
             slidesPerView={4}
-            direction={'vertical'}
-            navigation={true}
+            direction="vertical"
+            navigation
             modules={[Navigation]}
             className="images__column"
           >

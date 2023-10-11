@@ -24,7 +24,7 @@ const SelectRestorePopup = () => {
         onClick={handleOpenRestorePopup}
         value1="email"
         value2="tel"
-        dark1={true}
+        dark1
         buttonText1="Через почту"
         buttonText2="По телефону"
       />

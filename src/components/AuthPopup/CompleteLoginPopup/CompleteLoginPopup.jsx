@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import usePopup from '../../../hooks/usePopup';
 import Popup from '../Popup';
 import PopupParagraph from '../PopupParagraph/PopupParagraph';
-import { useNavigate } from 'react-router-dom';
 import useCountDown from '../../../hooks/useCountDown';
 
 const CompleteLoginPopup = () => {
