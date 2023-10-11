@@ -20,6 +20,8 @@ import { getUser } from '../../store/slices/accountSlice';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [searchText, setSearchText] = useState('');
+  const [showSearchIcon, setShowSearchIcon] = useState(true);
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { openPopup: openAuthPopup } = usePopup('select');
   const [city, setCity] = useState('Дефолтсити');
@@ -31,6 +33,21 @@ const Header = () => {
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
+  };
+
+  const handleSearchInputChange = (event) => {
+    setSearchText(event.target.value);
+    setShowSearchIcon(event.target.value === ''); // Проверка на пустой ввод
+  };
+
+  const handleSearch = () => {
+    // логика поиска здесь, используя значение searchText
+    console.log('Выполняем поиск с текстом:', searchText);
+  };
+
+  const clearSearchText = () => {
+    setSearchText('');
+    setShowSearchIcon(true);
   };
 
   useEffect(() => {
@@ -85,9 +102,18 @@ const Header = () => {
         </nav>
 
         <div className="header__search">
-          <input type="text" className="header__input" placeholder="Поиск...." />
-          <button type="button" className="header__button">
-            <IconSearch />
+          <input
+            type="text"
+            className="header__input"
+            placeholder="Поиск...."
+            value={searchText}
+            onChange={handleSearchInputChange}
+          />
+          <button
+            type="button"
+            className="header__button"
+            onClick={showSearchIcon ? handleSearch : clearSearchText}>
+            {showSearchIcon ? <IconSearch /> : <IconClose />}
           </button>
         </div>
       </div>
@@ -108,8 +134,7 @@ const Header = () => {
         <Link
           onClick={!isLoggedIn && handleOpenAuthPopup}
           to="/account/profile"
-          className="header__link"
-        >
+          className="header__link">
           <IconProfile />
         </Link>
       </nav>

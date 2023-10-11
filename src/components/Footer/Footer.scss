@@ -5,7 +5,7 @@
   color: $whiteColor;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
-  padding: 80px 0 50px 0;
+  padding: 80px 0 56px 0;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -13,22 +13,19 @@
 
   &__container {
     @include max-min-width;
-    display: flex;
+    @include flex-space-between;
     width: 100%;
   }
 
   &__container-logo {
     @include flex-column;
     row-gap: 40px;
-    width: 100%;
-    max-width: 705px;
+    max-width: 310px;
   }
 
   &__logo-title {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    justify-content: flex-end;
     column-gap: 10px;
     @include h2-styles;
     margin: 0;
@@ -41,10 +38,9 @@
   }
 
   &__title {
+    @include text-L-link-styles;
+    color: $whiteColor;
     margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
   }
 
   &__container-links {
@@ -53,7 +49,7 @@
   }
 
   &__link {
-    @include text-M-bold-styles;
+    @include text-M-link-styles;
     margin: 0;
     color: $whiteColor;
   }
@@ -61,19 +57,18 @@
   &__menu {
     @include flex-space-between;
     width: 100%;
-    max-width: 826px;
+    max-width: 750px;
   }
 
   &__lists {
     @include flex-column;
     @include reset-list;
-    width: 262px;
+    width: 310px;
     row-gap: 16px;
   }
 
   &__link {
     text-decoration: none;
-    color: $whiteColor;
   }
 
   &__item {

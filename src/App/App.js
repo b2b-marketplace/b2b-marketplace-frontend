@@ -21,12 +21,12 @@ import PrivacyPolicyPage from '../Pages/SupportServicePage/PrivacyPolicyPage/Pri
 import PortalRulesPage from '../Pages/SupportServicePage/PortalRulesPage/PortalRulesPage';
 import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage';
 import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
-import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';
 import EmailConfirmation from '../Pages/EmailConfirmation/EmailConfirmation';
 import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
+import AccountPaymentInfo from '../components/UI/Account/AccountPaymentInfo/AccountPaymentInfo';
 
 function App() {
   const dispatch = useDispatch();
@@ -65,8 +65,10 @@ function App() {
               <Route path=":filter/:page" element={<AccountBuyerOrderList />} />
             </Route>
             <Route index element={<Navigate to="profile" />} />
+            <Route path="payment-methods" element={<AccountPaymentInfo/>} exact/>
           </Route>
         </Route>
+        <Route path="payment-methods" element={<AccountPaymentInfo/>} exact/>
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
         <Route path="/portal-rules" element={<PortalRulesPage />} exact />
         <Route path="/question-page" element={<QuestionPage />} exact />

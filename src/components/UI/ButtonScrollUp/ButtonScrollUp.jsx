@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ButtonScrollUp.scss';
-import IconArrowUp from '../Icon/Icon_arrow-up';
+import IconArrow from '../Icon/Icon_arrow';
 
 function ButtonScrollUp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +34,7 @@ function ButtonScrollUp() {
         onClick={scrollToTop}
         type="button"
       >
-        <IconArrowUp />
+        <IconArrow />
       </button>
     </div>
   );
