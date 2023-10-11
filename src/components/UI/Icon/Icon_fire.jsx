@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconFire = ({ className, ...props }) => {
+const IconFire = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg

@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const BiBag = ({ className, ...props }) => {
+const BiBag = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg

@@ -1,6 +1,6 @@
 import Icon from './Icon';
 
-const IconNotVerified = ({ className, ...props }) => {
+const IconNotVerified = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg

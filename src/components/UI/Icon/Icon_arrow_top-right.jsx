@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconArrowTopRight = ({ className, ...props }) => {
+const IconArrowTopRight = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg width="31" height="31" xmlns="http://www.w3.org/2000/svg">

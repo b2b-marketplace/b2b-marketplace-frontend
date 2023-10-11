@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconArrowCounter = ({ className, ...props }) => {
+const IconArrowCounter = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg
