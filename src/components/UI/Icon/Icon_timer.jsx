@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconTimer = ({ className, ...props }) => {
+const IconTimer = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg

@@ -1,6 +1,6 @@
 import Icon from './Icon';
 
-const IconAvailable = ({ className, ...props }) => {
+const IconAvailable = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg

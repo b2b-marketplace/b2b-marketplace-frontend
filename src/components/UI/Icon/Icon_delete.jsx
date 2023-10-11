@@ -1,6 +1,6 @@
 import Icon from './Icon';
 
-const IconDelete = ({ className, ...props }) => {
+const IconDelete = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg

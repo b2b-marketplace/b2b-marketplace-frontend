@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const IconHearth = ({ className, ...props }) => {
+const IconHearth = ({ className }) => {
   return (
     <Icon className={`${className}`}>
       <svg
