@@ -21,7 +21,6 @@ import PrivacyPolicyPage from '../Pages/SupportServicePage/PrivacyPolicyPage/Pri
 import PortalRulesPage from '../Pages/SupportServicePage/PortalRulesPage/PortalRulesPage';
 import QuestionPage from '../Pages/SupportServicePage/QuestionPage/QuestionPage';
 import QuestionForm from '../Pages/SupportServicePage/QuestionForm/QuestionForm';
-import Activation from '../Pages/Activation/Activation';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import { getUser } from '../store/slices/accountSlice';
 import Logout from '../components/Logout/Logout';

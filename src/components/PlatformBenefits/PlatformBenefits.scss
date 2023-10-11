@@ -3,12 +3,9 @@
 .platform-benefits {
   @include default-font-styles;
   color: $whiteColor;
-  position: relative;
 
   &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    @include reset-list;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -16,44 +13,32 @@
   }
 
   &__item {
-    max-width: 403px;
-    background-color: #23252e;
-    height: 144px;
+    max-width: 310px;
+    background: $darkColor;
+    height: 124px;
     box-sizing: border-box;
-    border: 1px solid #131313;
     border-radius: 20px;
     flex-shrink: 0;
     display: flex;
-    column-gap: 16px;
+    align-items: flex-start;
+    column-gap: 12px;
     padding: 20px;
   }
 
-  &__icon {
-    max-width: 44px;
-    width: 100%;
-    max-height: 44px;
-    height: 100%;
-  }
-
   &__content {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+    @include flex-column;
+    row-gap: 8px;
   }
 
   &__title {
-    font-family: $fontFamilyUnbounded;
+    @include  h3-styles;
+    color: $whiteColor;
     margin: 0;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 28px;
   }
 
   &__text {
+    @include text-M-main-styles;
+    color: $whiteColor;
     margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
-    //max-width: 318px;
   }
 }

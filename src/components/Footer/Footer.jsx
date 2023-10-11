@@ -11,8 +11,8 @@ const Footer = () => {
       <div className="footer__container">
         <div className="footer__container-logo">
           <h2 className="footer__logo-title">
-            B2Buy.ru
             <img className="footer__logo" src={logo} alt="Логотип." />
+            B2Buy.ru
           </h2>
           <h3 className="footer__title">ООО «БиТуБай»</h3>
           <div className="footer__container-links">
