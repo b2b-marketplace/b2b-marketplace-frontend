@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 const IconChatFill = ({ className, ...props }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="24"
         height="24"

@@ -2,7 +2,7 @@ import Icon from './Icon';
 
 const IconArrowUp = ({ className, ...props }) => {
   return (
-    <Icon {...props} className={`${className}`}>
+    <Icon className={`${className}`}>
       <svg
         width="43"
         height="44"
