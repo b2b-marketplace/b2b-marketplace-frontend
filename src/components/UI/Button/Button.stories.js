@@ -1,4 +1,4 @@
-import IconArrowUp from '../Icon/Icon_arrow-up';
+// import IconArrowUp from '../Icon/Icon_arrow-up';
 import IconBurger from '../Icon/Icon_burger';
 import { Button } from './Button';
 
@@ -80,9 +80,9 @@ export const Small = {
   },
 };
 
-export const ExtraSmall = {
-  args: {
-    size: 'xs',
-    children: <IconArrowUp />,
-  },
-};
+// export const ExtraSmall = {
+//   args: {
+//     size: 'xs',
+//     children: <IconArrowUp />,
+//   },
+// };

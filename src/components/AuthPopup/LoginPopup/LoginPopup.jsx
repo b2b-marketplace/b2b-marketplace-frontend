@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import useInput from '../../../hooks/useInput';
-import usePopup from '../../../hooks/usePopup';
+import useInput from '../../../shared/hooks/hooks/useInput';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
 import IconPassword from '../../UI/Icon/IconPassword';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
 import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
-import useShowPassword from '../../../hooks/useShowPassword';
-import { loginUser, resetLoading } from '../../../store/slices/authSlice';
-import { passwordLength } from '../../../utils/authConstatnts';
+import useShowPassword from '../../../shared/hooks/hooks/useShowPassword';
+import { loginUser, resetLoading } from '../../../shared/store/slices/authSlice';
+import { passwordLength } from '../../../shared/lib/authConstatnts';
 
 const LoginPopup = () => {
   const dispatch = useDispatch();

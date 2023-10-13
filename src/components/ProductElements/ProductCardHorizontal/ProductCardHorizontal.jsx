@@ -6,10 +6,10 @@ import IconTrash from '../../UI/Icon/Icon_trash';
 import imageStub from '../../../images/basket/Stub_132_128.jpg';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import Counter from '../../UI/Counter/Counter';
-import { changeQuantity, deleteProduct } from '../../../store/slices/basketSlice.js';
+import { changeQuantity, deleteProduct } from '../../../shared/store/slices/basketSlice.js';
 import ProductCardHorizontalImage from './ProductCardHorizontalImage/ProductCardHorizontalImage';
 import VendorCode from '../VendorCode/VendorCode';
-import { priceFormat } from '../../../utils/utils';
+import { priceFormat } from '../../../shared/lib/utils';
 
 /**
  * Компонент ProductCardHorizontal для отображения товара.

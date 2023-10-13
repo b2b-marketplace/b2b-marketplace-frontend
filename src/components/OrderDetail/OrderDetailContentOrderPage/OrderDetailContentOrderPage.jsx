@@ -1,6 +1,6 @@
 import React from 'react';
 import './OrderDetailContentOrderPage.scss';
-import { priceFormat } from '../../../utils/utils';
+import { priceFormat } from '../../../shared/lib/utils';
 
 const OrderDetailContentOrderPage = ({
   productPriceTotal,

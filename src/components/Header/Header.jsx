@@ -13,10 +13,10 @@ import IconProfile from '../UI/Icon/Icon_profile';
 import IconMessage from '../UI/Icon/Icon_message';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconSearch from '../UI/Icon/Icon_search';
-import usePopup from '../../hooks/usePopup';
+import usePopup from '../../shared/hooks/hooks/usePopup';
 // import IconClose from '../UI/Icon/Icon_close';
-import geoApi from '../../utils/GeoApi';
-import { getUser } from '../../store/slices/accountSlice';
+import geoApi from '../../shared/api/GeoApi';
+import { getUser } from '../../shared/store/slices/accountSlice';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

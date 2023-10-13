@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MenuVerticalWidget.scss';
-import { formatPhoneNumber } from '../utils/utils';
+import { formatPhoneNumber } from '../shared/lib/utils';
 import MenuVertical from '../components/Menu/MenuVertical/MenuVertical';
 import IconExit from '../components/UI/Icon/Icon_exit';
-import { PHONE_NUMBER } from '../utils/constants';
+import { PHONE_NUMBER } from '../shared/config/constants';
 
 /**
  *

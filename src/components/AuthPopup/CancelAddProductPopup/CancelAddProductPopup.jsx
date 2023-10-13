@@ -1,7 +1,7 @@
 import React from 'react';
 import Popup from '../Popup';
 import './CancelAddProductPopup.scss';
-import usePopup from '../../../hooks/usePopup';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
 import { Button } from '../../UI/Button/Button';
 
 const CancelAddProductPopup = ({ onConfirm, onCancel, onReset }) => {

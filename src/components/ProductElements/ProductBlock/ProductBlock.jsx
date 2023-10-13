@@ -16,7 +16,7 @@ import CommentsBlock from '../CommentsBlock/CommentsBlock';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import noPhoto from '../../../images/nophoto.png';
-import { addProduct, deleteProduct, changeQuantity } from '../../../store/slices/basketSlice';
+import { addProduct, deleteProduct, changeQuantity } from '../../../shared/store/slices/basketSlice';
 
 export default function ProductBlock({ product }) {
   let imagesList;

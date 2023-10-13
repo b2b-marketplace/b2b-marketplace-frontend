@@ -1,5 +1,5 @@
-import useShowPassword from '../../../../hooks/useShowPassword';
-import { passwordLength } from '../../../../utils/authConstatnts';
+import useShowPassword from '../../../../shared/hooks/hooks/useShowPassword';
+import { passwordLength } from '../../../../shared/lib/authConstatnts';
 import IconPassword from '../../../UI/Icon/IconPassword';
 import Input from '../../Input/Input';
 import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';

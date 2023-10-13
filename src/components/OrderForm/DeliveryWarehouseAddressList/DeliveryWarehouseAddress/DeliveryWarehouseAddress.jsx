@@ -1,6 +1,6 @@
 import React from 'react';
 import './DeliveryWarehouseAddress.scss';
-import { formatDateUnixTimestamp } from '../../../../utils/utils';
+import { formatDateUnixTimestamp } from '../../../../shared/lib/utils';
 
 const DeliveryWarehouseAddress = ({ children, stock }) => {
   return (

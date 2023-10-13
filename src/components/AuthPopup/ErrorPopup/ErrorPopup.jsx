@@ -1,5 +1,5 @@
-import useError from '../../../hooks/useError';
-import usePopup from '../../../hooks/usePopup';
+import useError from '../../../shared/hooks/hooks/useError';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
 import Popup from '../Popup';
 
 const ErrorPopup = () => {
