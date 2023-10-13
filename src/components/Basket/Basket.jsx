@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Basket.scss';
 import { useNavigate } from 'react-router-dom';
-import { changeChecked, deleteProduct, updateAllProduct } from '../../shared/store/slices/basketSlice';
-import Checkbox from '../UI/Checkbox/Checkbox';
-import IconTrash from '../UI/Icon/Icon_trash';
-import Tooltip from '../UI/Tooltip/Tooltip';
-import IconInfoFill from '../UI/Icon/Icon_info_fill';
-import { Button } from '../UI/Button/Button';
-import OrderDetail from '../OrderDetail/OrderDetail';
-import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
+
 import productsApi from '../../shared/api/productsApi';
-import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import SidebarRight from '../SidebarRight/SidebarRight';
-import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
-import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import usePopup from '../../shared/hooks/hooks/usePopup';
+import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
+import { changeChecked, deleteProduct, updateAllProduct } from '../../shared/store/slices/basketSlice';
+import OrderDetail from '../OrderDetail/OrderDetail';
+import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
+import SidebarRight from '../SidebarRight/SidebarRight';
+import { Button } from '../UI/Button/Button';
+import Checkbox from '../UI/Checkbox/Checkbox';
+import IconInfoFill from '../UI/Icon/Icon_info_fill';
+import IconTrash from '../UI/Icon/Icon_trash';
 import Preloader from '../UI/Preloader/Preloader';
+import Tooltip from '../UI/Tooltip/Tooltip';
 
 /**
  *

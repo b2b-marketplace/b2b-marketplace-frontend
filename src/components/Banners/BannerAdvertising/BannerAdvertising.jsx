@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './BannerAdvertising.scss';
 import { Link } from 'react-router-dom';
+
 import { BANNER_LIST } from './mock';
 
 /**

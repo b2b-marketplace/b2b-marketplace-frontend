@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+
 import './AccountSellerProfile.scss';
-import useValidation from '../../../shared/hooks/hooks/useValidation';
+import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
+import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
+import { Button } from '../../../components/UI/Button/Button';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
-import { Button } from '../../../components/UI/Button/Button';
+import useValidation from '../../../shared/hooks/hooks/useValidation';
 
 const AccountSellerProfile = () => {
   const [isEditMode, setIsEditMode] = useState(false);

@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
 import { basketList } from '../../mock/basketMock';
 
 const initialState = {

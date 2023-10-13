@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import Icon from './Icon';
 
 const IconPassword = ({ className, isVisiblePassword, ...props }) => {

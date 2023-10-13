@@ -1,7 +1,9 @@
 import React from 'react';
-import Popup from '../Popup';
-import './ModerationNewProductPopup.scss';
+
 import usePopup from '../../../shared/hooks/hooks/usePopup';
+import Popup from '../Popup';
+
+import './ModerationNewProductPopup.scss';
 
 const ModerationNewProductPopup = () => {
   const { isOpen, closePopup } = usePopup('addNewItem');

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Arrows.scss';
 import IconArrow from '../../UI/Icon/Icon_arrow';
 

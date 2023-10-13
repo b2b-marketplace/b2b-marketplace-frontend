@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './OrderFormPage.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import SidebarRight from '../../components/SidebarRight/SidebarRight';
-import OrderForm from '../../components/OrderForm/OrderForm';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
-import { Button } from '../../components/UI/Button/Button';
-import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
-import usePopup from '../../shared/hooks/hooks/usePopup';
-import accountApi from '../../shared/api/accountApi';
-import { updateAllProduct } from '../../shared/store/slices/basketSlice';
+import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import OrderForm from '../../components/OrderForm/OrderForm';
 import OrderPopup from '../../components/PopupsRedux/OrderPopup/OrderPopup';
+import SidebarRight from '../../components/SidebarRight/SidebarRight';
+import { Button } from '../../components/UI/Button/Button';
+import accountApi from '../../shared/api/accountApi';
+import usePopup from '../../shared/hooks/hooks/usePopup';
+import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
+import { updateAllProduct } from '../../shared/store/slices/basketSlice';
+
+import './OrderFormPage.scss';
 
 /**
  *

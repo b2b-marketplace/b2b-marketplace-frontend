@@ -2,11 +2,12 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './OrderPopup.scss';
 import { Link } from 'react-router-dom';
+
 import usePopup from '../../../shared/hooks/hooks/usePopup';
-import Popup from '../../AuthPopup/Popup';
 import RegistrationOpportunity from '../../AuthPopup/CompleteRegistrationPopup/RegistrationOpportunity/RegistrationOpportunity';
-import IconComplele from '../../UI/Icon/IconComplele';
+import Popup from '../../AuthPopup/Popup';
 import Icon_fire from '../../UI/Icon/Icon_fire';
+import IconComplele from '../../UI/Icon/IconComplele';
 
 const OrderPopup = () => {
   const dispatch = useDispatch();

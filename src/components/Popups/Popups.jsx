@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+
 import './Popups.scss';
 import IconClose from '../UI/Icon/Icon_close';
 

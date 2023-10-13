@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 
 // Файлы из проекта
-import SomeComponent from './SomeComponent';
 import AnotherComponent from './AnotherComponent';
+import SomeComponent from './SomeComponent';
 
 // Локальные файлы поддержки
 import './styles.scss';

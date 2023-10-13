@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './BannerPromo.scss';
 import box1 from '../../../images/banner-promo/box1.png';
 import box2 from '../../../images/banner-promo/box2.png';

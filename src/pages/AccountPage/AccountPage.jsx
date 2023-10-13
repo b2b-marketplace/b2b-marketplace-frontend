@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
+
 import './AccountPage.scss';
 import SidebarLeft from '../../components/SidebarLeft/SidebarLeft';
-import MenuVerticalWidget from '../../widgets/MenuVerticalWidget';
-import BiBag from '../../components/UI/Icon/Icon_bibag';
-import IconPackage from '../../components/UI/Icon/Icon_package';
-import IconPurchases from '../../components/UI/Icon/Icon_purchases';
-import IconHearth from '../../components/UI/Icon/Icon_hearth';
+import IconBag from '../../components/UI/Icon/Icon_bag';
 import IconBasket from '../../components/UI/Icon/Icon_basket';
-import IconMessage from '../../components/UI/Icon/Icon_message';
+import BiBag from '../../components/UI/Icon/Icon_bibag';
 import IconCreditCard from '../../components/UI/Icon/Icon_credit-card';
+import IconHearth from '../../components/UI/Icon/Icon_hearth';
 import IconLocation from '../../components/UI/Icon/Icon_location';
 import IconLock from '../../components/UI/Icon/Icon_lock';
-import IconBag from '../../components/UI/Icon/Icon_bag';
+import IconMessage from '../../components/UI/Icon/Icon_message';
+import IconPackage from '../../components/UI/Icon/Icon_package';
+import IconPurchases from '../../components/UI/Icon/Icon_purchases';
+import MenuVerticalWidget from '../../widgets/MenuVerticalWidget';
 
 /**
  *

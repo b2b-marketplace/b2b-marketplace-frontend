@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
+
 import './Popup.scss';
-import IconClose from '../UI/Icon/IconClose';
 import Stepper from './Stepper/Stepper';
+import IconClose from '../UI/Icon/IconClose';
 
 const Popup = (props) => {
   const {

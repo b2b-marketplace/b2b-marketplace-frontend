@@ -1,9 +1,10 @@
 import './ProductPage.scss';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
+import { useParams } from 'react-router-dom';
+
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
+import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import Preloader from '../../components/UI/Preloader/Preloader';
 import {

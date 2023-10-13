@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCategoryExpansion } from '../../../shared/hooks/hooks/useCategoryExpansion';
-import './QuestionPage.scss';
+
 import IconArrowCounter from '../../../components/UI/Icon/Icon_arrow-counter';
+import { useCategoryExpansion } from '../../../shared/hooks/hooks/useCategoryExpansion';
+
+import './QuestionPage.scss';
 
 const QuestionPage = () => {
   const { expandedCategories, toggleCategoryExpansion } = useCategoryExpansion();

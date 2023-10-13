@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './AccountInputField.scss';
 import IconClose from '../../Icon/Icon_close';
 

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+
 import { setError, resetError } from '../../store/slices/errorSlice';
 
 const useError = () => {

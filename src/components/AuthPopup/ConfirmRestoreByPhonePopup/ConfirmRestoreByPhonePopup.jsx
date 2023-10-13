@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+
+import usePopup from '../../../shared/hooks/hooks/usePopup';
 import Form from '../Form/Form';
+import PinCodeInput from '../PinCodeInput/PinCodeInput';
 import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
-import PinCodeInput from '../PinCodeInput/PinCodeInput';
-import usePopup from '../../../shared/hooks/hooks/usePopup';
 
 const ConfirmRestoreByPhonePopup = ({ initDigit = ['', '', '', ''] }) => {
   const { isOpen, closePopup } = usePopup('confirmRestoreByPhone');

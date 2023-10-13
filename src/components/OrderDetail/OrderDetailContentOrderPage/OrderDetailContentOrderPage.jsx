@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './OrderDetailContentOrderPage.scss';
 import { priceFormat } from '../../../shared/lib/utils';
 

@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import './Header.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import IconPosition from '../UI/Icon/Icon_position';
+import { Link, NavLink } from 'react-router-dom';
+
+import geoApi from '../../shared/api/GeoApi';
+import usePopup from '../../shared/hooks/hooks/usePopup';
+import PopupMenu from '../Popups/PopupMenu/PopupMenu';
+import IconBasket from '../UI/Icon/Icon_basket';
 import IconBoxRu from '../UI/Icon/Icon_boxRu';
 import IconBurger from '../UI/Icon/Icon_burger';
 import IconClose from '../UI/Icon/Icon_close24';
 import IconFire from '../UI/Icon/Icon_fire';
-import IconScales from '../UI/Icon/Icon_scales';
-import IconBasket from '../UI/Icon/Icon_basket';
-import IconProfile from '../UI/Icon/Icon_profile';
 import IconMessage from '../UI/Icon/Icon_message';
-import PopupMenu from '../Popups/PopupMenu/PopupMenu';
+import IconPosition from '../UI/Icon/Icon_position';
+import IconProfile from '../UI/Icon/Icon_profile';
+import IconScales from '../UI/Icon/Icon_scales';
 import IconSearch from '../UI/Icon/Icon_search';
-import usePopup from '../../shared/hooks/hooks/usePopup';
-// import IconClose from '../UI/Icon/Icon_close';
-import geoApi from '../../shared/api/GeoApi';
-import { getUser } from '../../shared/store/slices/accountSlice';
+
+import './Header.scss';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -112,7 +112,8 @@ const Header = () => {
           <button
             type="button"
             className="header__button"
-            onClick={showSearchIcon ? handleSearch : clearSearchText}>
+            onClick={showSearchIcon ? handleSearch : clearSearchText}
+          >
             {showSearchIcon ? <IconSearch /> : <IconClose />}
           </button>
         </div>
@@ -134,7 +135,8 @@ const Header = () => {
         <Link
           onClick={!isLoggedIn && handleOpenAuthPopup}
           to="/account/profile"
-          className="header__link">
+          className="header__link"
+        >
           <IconProfile />
         </Link>
       </nav>
