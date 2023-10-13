@@ -7,21 +7,12 @@
     "plugin:import/warnings",
     "prettier"
   ],
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ],
-        "moduleDirectory": [
-          ".",
-          "node_modules"
-        ]
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": [".", "node_modules"]
       }
     }
   },
@@ -80,17 +71,11 @@
     ],
     "no-var": "error",
     "semi": "error",
-    "indent": [
-      "error",
-      2
-    ],
+    "indent": ["error", 2],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "no-multi-spaces": "error",

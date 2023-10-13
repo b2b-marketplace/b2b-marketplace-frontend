@@ -13,7 +13,7 @@ import './styles.scss';
  *
  * @param {props1: string} какой-то входной параметр 1
  * @param {props2: number} какой-то входной параметр 2
- * 
+ *
  * @description Описание еслии нужно
  *
  * @returns {JSX.Element}

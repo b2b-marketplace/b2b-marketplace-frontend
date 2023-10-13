@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
-
 // Локальные импорты из проекта
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
@@ -60,40 +59,40 @@ function App() {
 
   return (
     <div className="app">
-      <Header/>
-      <ScrollToTop/>
+      <Header />
+      <ScrollToTop />
       <Routes>
-        <Route path="/" element={<HomePage/>} exact/>
-        <Route path="/product/:id" element={<ProductPage/>} exact/>
-        <Route path="/basket" element={<BasketPage/>} exact/>
-        <Route element={<ProtectedRoutes/>}>
-          <Route path="/order" element={<OrderFormPage/>} exact/>
-          <Route path="/account" element={<AccountPage/>}>
-            <Route index path="profile" element={<AccountBuyerProfile/>} exact/>
-            <Route path="product/add" element={<AccountSellerProductAdd/>} exact/>
-            <Route path="orders" element={<AccountBuyerOrders/>} exact>
-              <Route index element={<AccountBuyerOrderList/>} exact/>
-              <Route path=":filter" element={<AccountBuyerOrderList/>}/>
-              <Route path=":filter/:page" element={<AccountBuyerOrderList/>}/>
+        <Route path="/" element={<HomePage />} exact />
+        <Route path="/product/:id" element={<ProductPage />} exact />
+        <Route path="/basket" element={<BasketPage />} exact />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/order" element={<OrderFormPage />} exact />
+          <Route path="/account" element={<AccountPage />}>
+            <Route index path="profile" element={<AccountBuyerProfile />} exact />
+            <Route path="product/add" element={<AccountSellerProductAdd />} exact />
+            <Route path="orders" element={<AccountBuyerOrders />} exact>
+              <Route index element={<AccountBuyerOrderList />} exact />
+              <Route path=":filter" element={<AccountBuyerOrderList />} />
+              <Route path=":filter/:page" element={<AccountBuyerOrderList />} />
             </Route>
-            <Route index element={<Navigate to="profile"/>}/>
-            <Route path="payment-methods" element={<AccountPaymentInfo/>} exact/>
+            <Route index element={<Navigate to="profile" />} />
+            <Route path="payment-methods" element={<AccountPaymentInfo />} exact />
           </Route>
         </Route>
-        <Route path="payment-methods" element={<AccountPaymentInfo/>} exact/>
-        <Route path="/privacy-policy" element={<PrivacyPolicyPage/>} exact/>
-        <Route path="/portal-rules" element={<PortalRulesPage/>} exact/>
-        <Route path="/question-page" element={<QuestionPage/>} exact/>
-        <Route path="/question-form" element={<QuestionForm/>} exact/>
-        <Route path="/about-us" element={<AboutUsPage/>} exact/>
-        <Route path="/activate/:uid/:token" element={<EmailConfirmation/>} exact/>
-        <Route path="/logout" element={<Logout/>} exact/>
-        <Route path="*" element={<ErrorPage/>}/>
+        <Route path="payment-methods" element={<AccountPaymentInfo />} exact />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
+        <Route path="/portal-rules" element={<PortalRulesPage />} exact />
+        <Route path="/question-page" element={<QuestionPage />} exact />
+        <Route path="/question-form" element={<QuestionForm />} exact />
+        <Route path="/about-us" element={<AboutUsPage />} exact />
+        <Route path="/activate/:uid/:token" element={<EmailConfirmation />} exact />
+        <Route path="/logout" element={<Logout />} exact />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <ButtonScrollUp/>
-      <Footer/>
-      <AuthPopup/>
-      <OrderPopup/>
+      <ButtonScrollUp />
+      <Footer />
+      <AuthPopup />
+      <OrderPopup />
     </div>
   );
 }

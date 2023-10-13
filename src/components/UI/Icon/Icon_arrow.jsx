@@ -10,7 +10,8 @@ const IconArrow = ({ className }) => {
         width="48"
         height="48"
         viewBox="0 0 48 48"
-        fill="none">
+        fill="none"
+      >
         <path
           d="M12 20L24 8M24 8L36 20M24 8L24 38"
           stroke="currentColor"

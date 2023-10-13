@@ -7,7 +7,11 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import noPhoto from '../../../images/nophoto.png';
-import { addProduct, deleteProduct, changeQuantity } from '../../../shared/store/slices/basketSlice';
+import {
+  addProduct,
+  deleteProduct,
+  changeQuantity,
+} from '../../../shared/store/slices/basketSlice';
 import { Button } from '../../UI/Button/Button';
 import Counter from '../../UI/Counter/Counter';
 import IconAvailable from '../../UI/Icon/Icon_available';
