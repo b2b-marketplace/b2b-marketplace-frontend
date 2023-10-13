@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './ProductCharacteristic.scss';
 import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
+
+import './ProductCharacteristic.scss';
 
 const ProductCharacteristicsList = ({ characteristics }) => {
   const characteristicComponents = {

@@ -1,4 +1,3 @@
-import './ProductCard.scss';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -11,6 +10,8 @@ import IconInfo from '../../UI/Icon/Icon_info';
 import IconInfoFil from '../../UI/Icon/Icon_info_fill';
 import IconScales from '../../UI/Icon/Icon_scales';
 import Tooltip from '../../UI/Tooltip/Tooltip';
+
+import './ProductCard.scss';
 
 function ProductCard({ product }) {
   const [isProductSelect, setIsProductSelect] = useState(false);

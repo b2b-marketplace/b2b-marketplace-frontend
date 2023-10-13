@@ -1,4 +1,5 @@
 import ProductRating from '../ProductRating/ProductRating';
+
 import './CommentsBlock.scss';
 
 function CommentsBlock({ author, text, rating }) {

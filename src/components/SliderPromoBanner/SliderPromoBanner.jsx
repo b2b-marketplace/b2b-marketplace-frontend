@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './SliderPromoBanner.scss';
 
 import Arrows from './Arrows/Arrows';
 import Dots from './Dots/Dots';
 import BannerPromo from '../Banners/BannerPromo/BannerPromo';
+
+import './SliderPromoBanner.scss';
 
 const SliderPromoBanner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

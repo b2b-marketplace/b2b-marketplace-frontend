@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './AccountTitle.scss';
 
 const AccountTitle = ({ title, button, name }) => {

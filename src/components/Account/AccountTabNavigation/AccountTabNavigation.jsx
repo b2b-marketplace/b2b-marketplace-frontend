@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
+
 import './AccountTabNavigation.scss';
 
 const AccountTabNavigation = ({ menuList }) => {

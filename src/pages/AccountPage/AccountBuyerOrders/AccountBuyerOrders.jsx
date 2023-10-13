@@ -1,4 +1,3 @@
-import './AccountBuyerOrders.scss';
 import { Outlet } from 'react-router-dom';
 
 import AccountTabNavigation from '../../../components/Account/AccountTabNavigation/AccountTabNavigation';
@@ -10,6 +9,8 @@ import IconPlus from '../../../components/UI/Icon/Icon_plus';
 import IconSearch from '../../../components/UI/Icon/Icon_search';
 import Input from '../../../components/UI/Input/Input';
 import logo from '../../../images/logofooter.svg';
+
+import './AccountBuyerOrders.scss';
 
 const AccountBuyerOrders = () => {
   const menuItemBuyer = [

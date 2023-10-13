@@ -1,6 +1,9 @@
-import './ProductBlock.scss';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css/navigation';
 // eslint-disable-next-line import/no-unresolved
 import { Navigation } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
@@ -22,10 +25,8 @@ import IconScales from '../../UI/Icon/Icon_scales';
 import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
 import CommentsBlock from '../CommentsBlock/CommentsBlock';
 import ProductRating from '../ProductRating/ProductRating';
-// eslint-disable-next-line import/no-unresolved
-import 'swiper/css';
-// eslint-disable-next-line import/no-unresolved
-import 'swiper/css/navigation';
+
+import './ProductBlock.scss';
 
 export default function ProductBlock({ product }) {
   let imagesList;

@@ -30,8 +30,9 @@ import QuestionForm from '../pages/SupportServicePage/QuestionForm/QuestionForm'
 import QuestionPage from '../pages/SupportServicePage/QuestionPage/QuestionPage';
 import { getUser } from '../shared/store/slices/accountSlice';
 
-// Локальные импорты для CSS и ассетов
 import './App.scss';
+
+// Локальные импорты для CSS и ассетов
 
 // Компонент App
 function App() {

@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './AccountInputField.scss';
 import IconClose from '../../Icon/Icon_close';
+
+import './AccountInputField.scss';
 
 const AccountInputField = ({
   label,

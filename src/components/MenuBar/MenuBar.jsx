@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import './MenuBar.scss';
 import IconAnimals from '../UI/Icon/Icon_animals';
 import IconArrowCounter from '../UI/Icon/Icon_arrow-counter';
 import IconCar from '../UI/Icon/Icon_car';
@@ -15,6 +14,8 @@ import IconSneaker from '../UI/Icon/Icon_sneaker';
 import IconSport from '../UI/Icon/Icon_sport';
 import IconTextile from '../UI/Icon/Icon_textile';
 import IconToy from '../UI/Icon/Icon_toy';
+
+import './MenuBar.scss';
 
 const menuItems = [
   { icon: <IconClothes />, label: 'Одежда' },

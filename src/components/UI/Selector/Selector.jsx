@@ -1,4 +1,5 @@
 import CreatableSelect from 'react-select/creatable';
+
 import './Selector.scss';
 
 const Selector = (props) => {

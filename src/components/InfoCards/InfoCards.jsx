@@ -1,8 +1,9 @@
 import React from 'react';
 
-import './InfoCards.scss';
 import InfoCard from './InfoCard/InfoCard';
 import { CARD_INFO_LIST } from './mock.js';
+
+import './InfoCards.scss';
 
 /**
  * InfoCards компонент для отображения карточек с преимуществами платформы.

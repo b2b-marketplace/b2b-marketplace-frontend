@@ -3,6 +3,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 import OrderListItem from './OrderListItem/OrderListItem';
 import { PRODUCTS } from '../../../shared/api/productCardExample';
+
 import './AccountBuyerOrderList.scss';
 
 const AccountBuyerOrderList = () => {

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
-import './AccountPage.scss';
 import SidebarLeft from '../../components/SidebarLeft/SidebarLeft';
 import IconBag from '../../components/UI/Icon/Icon_bag';
 import IconBasket from '../../components/UI/Icon/Icon_basket';
@@ -15,6 +14,8 @@ import IconMessage from '../../components/UI/Icon/Icon_message';
 import IconPackage from '../../components/UI/Icon/Icon_package';
 import IconPurchases from '../../components/UI/Icon/Icon_purchases';
 import MenuVerticalWidget from '../../widgets/MenuVerticalWidget';
+
+import './AccountPage.scss';
 
 /**
  *

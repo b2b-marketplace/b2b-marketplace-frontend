@@ -1,4 +1,3 @@
-import './ProductPage.scss';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -13,6 +12,8 @@ import {
   fetchProducts,
 } from '../../shared/store/slices/productsSlice';
 import ErrorPage from '../ErrorPage/ErrorPage';
+
+import './ProductPage.scss';
 
 export default function ProductPage() {
   const { id } = useParams();

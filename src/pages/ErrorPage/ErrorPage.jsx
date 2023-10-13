@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './ErrorPage.scss';
 import { Link } from 'react-router-dom';
 
 import { Button } from '../../components/UI/Button/Button';
 import box1 from '../../images/banner-promo/box1-404.png';
 import box2 from '../../images/banner-promo/box2-404.png';
 import box3 from '../../images/banner-promo/box5-404.png';
+
+import './ErrorPage.scss';
 /**
  *
  * @param {number} code - Код ошибки.

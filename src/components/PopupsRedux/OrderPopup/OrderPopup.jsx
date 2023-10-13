@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './OrderPopup.scss';
 import { Link } from 'react-router-dom';
 
 import usePopup from '../../../shared/hooks/hooks/usePopup';
-import RegistrationOpportunity from '../../AuthPopup/CompleteRegistrationPopup/RegistrationOpportunity/RegistrationOpportunity';
 import Popup from '../../AuthPopup/Popup';
-import Icon_fire from '../../UI/Icon/Icon_fire';
-import IconComplele from '../../UI/Icon/IconComplele';
+import IconFire from '../../UI/Icon/Icon_fire';
+
+import './OrderPopup.scss';
 
 const OrderPopup = () => {
   const dispatch = useDispatch();
@@ -25,7 +24,7 @@ const OrderPopup = () => {
       onClose={closePopup}
       title={
         <>
-          <Icon_fire className="order-popup__icon" /> Заказ успешно создан!
+          <IconFire className="order-popup__icon" /> Заказ успешно создан!
         </>
       }
       titleClassMode="order-popup__title"

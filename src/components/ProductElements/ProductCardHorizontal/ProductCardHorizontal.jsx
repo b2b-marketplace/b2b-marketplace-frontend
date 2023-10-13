@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './ProductCardHorizontal.scss';
 import { useDispatch, useSelector } from 'react-redux';
 
 import ProductCardHorizontalImage from './ProductCardHorizontalImage/ProductCardHorizontalImage';
@@ -11,6 +10,8 @@ import Counter from '../../UI/Counter/Counter';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import VendorCode from '../VendorCode/VendorCode';
+
+import './ProductCardHorizontal.scss';
 
 /**
  * Компонент ProductCardHorizontal для отображения товара.

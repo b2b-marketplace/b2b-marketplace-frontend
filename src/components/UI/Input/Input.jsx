@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import './Input.scss';
 
 const Input = ({ mode, size, border, type, extraClass, ...props }) => {

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import './Basket.scss';
 import { useNavigate } from 'react-router-dom';
 
 import productsApi from '../../shared/api/productsApi';
@@ -22,6 +21,8 @@ import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import IconTrash from '../UI/Icon/Icon_trash';
 import Preloader from '../UI/Preloader/Preloader';
 import Tooltip from '../UI/Tooltip/Tooltip';
+
+import './Basket.scss';
 
 /**
  *

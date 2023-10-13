@@ -5,9 +5,10 @@
     "plugin:import/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
+    "plugin:css-import-order/recommended",
     "prettier"
   ],
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "css-import-order"],
   "settings": {
     "import/resolver": {
       "node": {
@@ -34,6 +35,7 @@
     "import/order": [
       "error",
       {
+        "warnOnUnassignedImports": true,
         "groups": [
           // Встроенные модули (например, 'react')
           "builtin",
@@ -47,10 +49,10 @@
             // Родственные директории (например, './' или '../components')
             "sibling",
             // Индексные файлы (например, './index.js')
-            "index",
-            // Неизвестные импорты
-            "unknown"
-          ]
+            "index"
+          ],
+          // Неизвестные импорты
+          "unknown"
         ],
         "newlines-between": "always",
         "alphabetize": {
@@ -59,7 +61,7 @@
         },
         "pathGroups": [
           {
-            "pattern": "*.scss",
+            "pattern": "*.{css,scss}",
             "patternOptions": {
               "matchBase": true
             },

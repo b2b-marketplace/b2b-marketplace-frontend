@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Dots.scss';
 
 const Dots = ({ slides, currentSlide, setCurrentSlide }) => {

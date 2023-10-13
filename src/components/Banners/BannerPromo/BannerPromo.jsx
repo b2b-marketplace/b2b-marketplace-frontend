@@ -1,10 +1,11 @@
 import React from 'react';
 
-import './BannerPromo.scss';
 import box1 from '../../../images/banner-promo/box1.png';
 import box2 from '../../../images/banner-promo/box2.png';
 import box3 from '../../../images/banner-promo/box3.png';
 import Polygon1 from '../../../images/banner-promo/Polygon1.png';
+
+import './BannerPromo.scss';
 // import InfoCards from "../InfoCards/InfoCards";
 
 /**

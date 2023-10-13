@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-import './AccountPaymentInfo.scss';
 import visa from '../../../../images/visa.png';
 import IconClose from '../../Icon/Icon_close';
 import IconPlus from '../../Icon/Icon_plus';
+
+import './AccountPaymentInfo.scss';
 
 const AccountPaymentInfo = ({ title }) => {
   const [isMain, setIsMain] = useState(true);

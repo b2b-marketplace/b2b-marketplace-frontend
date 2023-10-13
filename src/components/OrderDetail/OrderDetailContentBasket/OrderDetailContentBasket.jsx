@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './OrderDetailContentBasket.scss';
 
 const OrderDetailContentBasket = ({ suppliersCount, productQuantity, productSumPrice }) => {

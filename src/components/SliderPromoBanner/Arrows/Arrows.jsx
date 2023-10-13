@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './Arrows.scss';
 import IconArrow from '../../UI/Icon/Icon_arrow';
+
+import './Arrows.scss';
 
 export default function Arrows({ onLeft, onRight }) {
   return (

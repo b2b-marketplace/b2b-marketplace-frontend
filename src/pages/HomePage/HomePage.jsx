@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './HomePage.scss';
 import { useSelector, useDispatch } from 'react-redux';
 
 import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
@@ -8,6 +7,8 @@ import ProductCardContainer from '../../components/ProductElements/ProductCardCo
 import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
 import { fetchProducts, loadMoreProducts } from '../../shared/store/slices/productsSlice';
+
+import './HomePage.scss';
 
 const HomePage = () => {
   const dispatch = useDispatch();
