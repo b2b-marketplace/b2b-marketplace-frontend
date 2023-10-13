@@ -69,6 +69,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path="/order" element={<OrderFormPage />} exact />
           <Route path="/account" element={<AccountPage />}>
+            <Route path="/account/payment" element={<AccountPaymentInfo />} exact />
             <Route index path="profile" element={<AccountBuyerProfile />} exact />
             <Route path="product/add" element={<AccountSellerProductAdd />} exact />
             <Route path="orders" element={<AccountBuyerOrders />} exact>
@@ -77,10 +78,8 @@ function App() {
               <Route path=":filter/:page" element={<AccountBuyerOrderList />} />
             </Route>
             <Route index element={<Navigate to="profile" />} />
-            <Route path="payment-methods" element={<AccountPaymentInfo />} exact />
           </Route>
         </Route>
-        <Route path="payment-methods" element={<AccountPaymentInfo />} exact />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
         <Route path="/portal-rules" element={<PortalRulesPage />} exact />
         <Route path="/question-page" element={<QuestionPage />} exact />

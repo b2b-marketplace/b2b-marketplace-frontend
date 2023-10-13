@@ -34,7 +34,7 @@ const AccountPage = () => {
     { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
     { icon: <IconBasket />, link: '/basket', label: 'Корзина' },
     { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
-    { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+    { icon: <IconCreditCard />, link: 'payment', label: 'Оплата' },
     { icon: <IconLocation />, link: 'message', label: 'Адрес' },
     { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
   ];
