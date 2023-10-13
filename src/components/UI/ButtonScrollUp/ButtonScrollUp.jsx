@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './ButtonScrollUp.scss';
+
 import IconArrow from '../Icon/Icon_arrow';
+
+import './ButtonScrollUp.scss';
 
 function ButtonScrollUp() {
   const [isVisible, setIsVisible] = useState(false);

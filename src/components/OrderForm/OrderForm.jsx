@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './OrderForm.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
-import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
+
 import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
-import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
+import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
 import { addDeliveryAddress } from '../../shared/store/slices/basketSlice';
-import usePopup from '../../shared/hooks/hooks/usePopup';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
+import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
+
+import './OrderForm.scss';
 
 const OrderForm = ({ extraClassName, productList }) => {
   const dispatch = useDispatch();

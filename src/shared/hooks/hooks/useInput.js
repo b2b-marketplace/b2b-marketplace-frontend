@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { isEmail } from 'validator';
+
 import { passwordLength, passwordRegEx, phoneRegEx } from '../../lib/authConstatnts';
 
 const useInput = (initValueParams) => {

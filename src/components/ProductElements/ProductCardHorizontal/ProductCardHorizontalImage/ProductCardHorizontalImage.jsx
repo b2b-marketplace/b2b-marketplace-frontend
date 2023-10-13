@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './ProductCardHorizontalImage.scss';
 
 const ProductCardHorizontalImage = ({ imageSrc, imageAlt }) => {

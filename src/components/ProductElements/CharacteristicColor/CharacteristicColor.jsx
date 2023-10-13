@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './CharacteristicColor.scss';
 
 const CharacteristicColor = ({ className, characteristicValue }) => {

@@ -1,10 +1,11 @@
 import React from 'react';
 
-import './PlatformBenefits.scss';
+import IconCard from '../UI/Icon/Icon_card';
+import IconDiscountLight from '../UI/Icon/Icon_discount_light';
 import IconSafety from '../UI/Icon/Icon_safety';
 import IconTimer from '../UI/Icon/Icon_timer';
-import IconDiscountLight from '../UI/Icon/Icon_discount_light';
-import IconCard from '../UI/Icon/Icon_card';
+
+import './PlatformBenefits.scss';
 
 const PlatformBenefits = ({ className }) => {
   return (

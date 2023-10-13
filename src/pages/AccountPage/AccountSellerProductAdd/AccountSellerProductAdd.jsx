@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import Counter from '../../../components/UI/Counter/Counter';
-import './AccountSellerProductAdd.scss';
-import { Button } from '../../../components/UI/Button/Button';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import InputField from '../../../components/UI/InputField/InputField';
-import FileUpload from '../../../components/UI/FileUpload/FileUpload';
-import DropDown from '../../../components/UI/DropDown/DropDown';
-import usePopup from '../../../shared/hooks/hooks/usePopup';
+
 import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProductPopup/CancelAddProductPopup';
+import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
+import { Button } from '../../../components/UI/Button/Button';
+import Counter from '../../../components/UI/Counter/Counter';
+import DropDown from '../../../components/UI/DropDown/DropDown';
+import FileUpload from '../../../components/UI/FileUpload/FileUpload';
+import InputField from '../../../components/UI/InputField/InputField';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
+
+import './AccountSellerProductAdd.scss';
 
 const AccountSellerProductAdd = () => {
   const { openPopup: openModerationNewProductPopup } = usePopup('addNewItem');

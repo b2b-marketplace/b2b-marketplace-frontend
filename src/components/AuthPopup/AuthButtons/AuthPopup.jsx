@@ -1,3 +1,4 @@
+import OrderPopup from '../../PopupsRedux/OrderPopup/OrderPopup';
 import CancelAddProductPopup from '../CancelAddProductPopup/CancelAddProductPopup';
 import CompleteLoginPopup from '../CompleteLoginPopup/CompleteLoginPopup';
 import CompleteRegistrationPopup from '../CompleteRegistrationPopup/CompleteRegistrationPopup';
@@ -12,7 +13,6 @@ import RestoreByEmailPopup from '../RestoreByEmailPopup/RestoreByEmailPopup';
 import RestoreByPhonePopup from '../RestoreByPhonePopup/RestoreByPhonePopup';
 import SelectPopup from '../SelectPopup/SelectPopup';
 import SelectRestorePopup from '../SelectRestorePopup/SelectRestorePopup';
-import OrderPopup from '../../PopupsRedux/OrderPopup/OrderPopup';
 
 const AuthPopup = () => {
   return (

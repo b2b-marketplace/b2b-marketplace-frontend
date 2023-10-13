@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+
+import authApi from '../../../shared/api/authApi';
+import useError from '../../../shared/hooks/hooks/useError';
 import useInput from '../../../shared/hooks/hooks/useInput';
 import usePopup from '../../../shared/hooks/hooks/usePopup';
-import RestorePopup from '../RestorePopup/RestorePopup';
-import authApi from '../../../shared/api/authApi';
 import useRestore from '../../../shared/hooks/hooks/useRestore';
-import useError from '../../../shared/hooks/hooks/useError';
+import RestorePopup from '../RestorePopup/RestorePopup';
 
 const RestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('restoreByEmail');

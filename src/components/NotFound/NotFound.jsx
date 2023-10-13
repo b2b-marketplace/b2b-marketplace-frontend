@@ -1,10 +1,12 @@
 import React from 'react';
-import './NotFound.scss';
 import { Link } from 'react-router-dom';
-import { Button } from '../UI/Button/Button';
+
 import box1 from '../../images/banner-promo/box1-404.png';
 import box2 from '../../images/banner-promo/box2-404.png';
 import box3 from '../../images/banner-promo/box5-404.png';
+import { Button } from '../UI/Button/Button';
+
+import './NotFound.scss';
 
 const NotFound = () => {
   return (

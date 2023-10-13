@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { PRODUCTS } from '../../../shared/api/productCardExample';
+
 import OrderListItem from './OrderListItem/OrderListItem';
+import { PRODUCTS } from '../../../shared/api/productCardExample';
+
 import './AccountBuyerOrderList.scss';
 
 const AccountBuyerOrderList = () => {

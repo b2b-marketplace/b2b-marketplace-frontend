@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import './Popups.scss';
+
 import IconClose from '../UI/Icon/Icon_close';
+
+import './Popups.scss';
 
 const Popups = ({ isOpen, onClose, children }) => {
   const popupRef = useRef(null);

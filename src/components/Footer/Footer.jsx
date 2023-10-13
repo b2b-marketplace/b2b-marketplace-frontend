@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.scss';
+
 import logo from '../../images/uim_box_footer.svg';
-import IconVk from '../UI/Icon/Icon_vk';
 import IconTelegram from '../UI/Icon/Icon_telegram';
+import IconVk from '../UI/Icon/Icon_vk';
+
+import './Footer.scss';
 
 const Footer = () => {
   return (

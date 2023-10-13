@@ -10,13 +10,14 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import { accountReducer } from './slices/accountSlice';
-import { basketReducer } from './slices/basketSlice';
-import { productsReducer } from './slices/productsSlice';
-import { popupReducer } from './slices/togglePopupSlice.js';
 import { authReducer } from './slices/authSlice';
-import { restoreReducer } from './slices/restoreSlice';
+import { basketReducer } from './slices/basketSlice';
 import { errorReducer } from './slices/errorSlice';
+import { productsReducer } from './slices/productsSlice';
+import { restoreReducer } from './slices/restoreSlice';
+import { popupReducer } from './slices/togglePopupSlice.js';
 
 const rootReducer = combineReducers({
   account: accountReducer,

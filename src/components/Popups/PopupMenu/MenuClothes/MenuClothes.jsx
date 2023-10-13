@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { useCategoryExpansion } from '../../../../shared/hooks/hooks/useCategoryExpansion';
-import './MenuClothes.scss';
 import IconArrowCounter from '../../../UI/Icon/Icon_arrow-counter';
+
+import './MenuClothes.scss';
 
 const categories = [
   {

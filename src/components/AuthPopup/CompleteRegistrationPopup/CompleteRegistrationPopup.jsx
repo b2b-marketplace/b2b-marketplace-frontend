@@ -1,6 +1,6 @@
+import RegistrationOpportunity from './RegistrationOpportunity/RegistrationOpportunity';
 import usePopup from '../../../shared/hooks/hooks/usePopup';
 import Popup from '../Popup';
-import RegistrationOpportunity from './RegistrationOpportunity/RegistrationOpportunity';
 
 const CompleteRegistrationPopup = () => {
   const { isOpen, closePopup } = usePopup('completeRegistration');

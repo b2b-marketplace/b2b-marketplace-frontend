@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './OrderDetailHeader.scss';
 
 const OrderDetailHeader = ({ title, ...props }) => {

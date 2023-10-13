@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
+
+import authApi from '../../../shared/api/authApi';
+import useCountDown from '../../../shared/hooks/hooks/useCountDown';
 import usePopup from '../../../shared/hooks/hooks/usePopup';
+import useRestore from '../../../shared/hooks/hooks/useRestore';
 import Popup from '../Popup';
 import PopupButton from '../PopupButton/PopupButton';
 import PopupParagraph from '../PopupParagraph/PopupParagraph';
-import useCountDown from '../../../shared/hooks/hooks/useCountDown';
-import useRestore from '../../../shared/hooks/hooks/useRestore';
-import authApi from '../../../shared/api/authApi';
 
 const ConfirmRestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('confirmRestoreByEmail');

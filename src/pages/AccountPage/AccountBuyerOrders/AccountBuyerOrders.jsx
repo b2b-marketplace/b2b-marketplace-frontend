@@ -1,14 +1,16 @@
-import './AccountBuyerOrders.scss';
 import { Outlet } from 'react-router-dom';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import IconPencil from '../../../components/UI/Icon/Icon_pencil';
-import { Button } from '../../../components/UI/Button/Button';
-import logo from '../../../images/logofooter.svg';
-import IconPlus from '../../../components/UI/Icon/Icon_plus';
-import IconCalendar from '../../../components/UI/Icon/Icon_calendar';
-import IconSearch from '../../../components/UI/Icon/Icon_search';
+
 import AccountTabNavigation from '../../../components/Account/AccountTabNavigation/AccountTabNavigation';
+import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
+import { Button } from '../../../components/UI/Button/Button';
+import IconCalendar from '../../../components/UI/Icon/Icon_calendar';
+import IconPencil from '../../../components/UI/Icon/Icon_pencil';
+import IconPlus from '../../../components/UI/Icon/Icon_plus';
+import IconSearch from '../../../components/UI/Icon/Icon_search';
 import Input from '../../../components/UI/Input/Input';
+import logo from '../../../images/logofooter.svg';
+
+import './AccountBuyerOrders.scss';
 
 const AccountBuyerOrders = () => {
   const menuItemBuyer = [

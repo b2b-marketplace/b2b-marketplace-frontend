@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
-import Popup from '../Popup';
-import Form from '../Form/Form';
+
 import RegistrationFirstStep from './RegistrationFirstStep/RegistrationFirstStep';
+import RegistrationLastStep from './RegistrationLastStep.jsx/RegistrationLastStep';
 import RegistrationSecondStep from './RegistrationSecondStep/RegistrationSecondStep';
 import RegistrationThirdStep from './RegistrationThirdStep/RegistrationThirdStep';
-import RegistrationLastStep from './RegistrationLastStep.jsx/RegistrationLastStep';
-import usePopup from '../../../shared/hooks/hooks/usePopup';
 import authApi from '../../../shared/api/authApi';
-import useInput from '../../../shared/hooks/hooks/useInput';
 import useError from '../../../shared/hooks/hooks/useError';
+import useInput from '../../../shared/hooks/hooks/useInput';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
+import Form from '../Form/Form';
+import Popup from '../Popup';
 
 const RegisterPopup = () => {
   const { isOpen, closePopup } = usePopup('registration');

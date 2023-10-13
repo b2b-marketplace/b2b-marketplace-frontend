@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './SidebarLeft.scss';
 
 const SidebarLeft = ({ extraClassName, children }) => {

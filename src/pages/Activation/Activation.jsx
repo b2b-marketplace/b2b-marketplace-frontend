@@ -1,9 +1,11 @@
-import { useLocation, useNavigate } from 'react-router';
-import Preloader from '../../components/UI/Preloader/Preloader';
-import './Activation.scss';
 import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router';
+
+import Preloader from '../../components/UI/Preloader/Preloader';
 import authApi from '../../shared/api/authApi';
 import usePopup from '../../shared/hooks/hooks/usePopup';
+
+import './Activation.scss';
 
 const Activation = () => {
   const [init, setInit] = useState(true);

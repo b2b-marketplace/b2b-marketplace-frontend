@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
-import Input from '../Input/Input';
-import Popup from '../Popup';
+
+import useInput from '../../../shared/hooks/hooks/useInput';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
+import useShowPassword from '../../../shared/hooks/hooks/useShowPassword';
+import { passwordLength } from '../../../shared/lib/authConstatnts';
 import IconPassword from '../../UI/Icon/IconPassword';
 import Form from '../Form/Form';
-import usePopup from '../../../shared/hooks/hooks/usePopup';
-import { passwordLength } from '../../../shared/lib/authConstatnts';
-import useShowPassword from '../../../shared/hooks/hooks/useShowPassword';
-import useInput from '../../../shared/hooks/hooks/useInput';
+import Input from '../Input/Input';
+import Popup from '../Popup';
 
 const NewPasswordPopup = () => {
   const { isOpen, closePopup } = usePopup('newPassword');

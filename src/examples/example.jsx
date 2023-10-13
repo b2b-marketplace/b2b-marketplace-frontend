@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 
 // Файлы из проекта
-import SomeComponent from './SomeComponent';
 import AnotherComponent from './AnotherComponent';
+import SomeComponent from './SomeComponent';
 
 // Локальные файлы поддержки
 import './styles.scss';
@@ -13,7 +13,7 @@ import './styles.scss';
  *
  * @param {props1: string} какой-то входной параметр 1
  * @param {props2: number} какой-то входной параметр 2
- * 
+ *
  * @description Описание еслии нужно
  *
  * @returns {JSX.Element}

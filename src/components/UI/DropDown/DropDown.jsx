@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import './DropDown.scss';
+
 import IconArrowCounter from '../Icon/Icon_arrow-counter';
+
+import './DropDown.scss';
 
 const DropDown = ({ label, placeholder, options, className, onChange, name }) => {
   const [activeOption, setActiveOption] = useState(null);

@@ -1,8 +1,10 @@
 import React from 'react';
-import Popup from '../Popup';
-import './CancelAddProductPopup.scss';
+
 import usePopup from '../../../shared/hooks/hooks/usePopup';
 import { Button } from '../../UI/Button/Button';
+import Popup from '../Popup';
+
+import './CancelAddProductPopup.scss';
 
 const CancelAddProductPopup = ({ onConfirm, onCancel, onReset }) => {
   const { isOpen, closePopup } = usePopup('cancelAddnewItem');

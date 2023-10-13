@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import './Counter.scss';
-import IconPlus from '../Icon/Icon_plus';
 import IconMinus from '../Icon/Icon_minus';
+import IconPlus from '../Icon/Icon_plus';
+
+import './Counter.scss';
 
 const Counter = ({ initCount = 0, minValue = 1, maxValue = 999, onChangeQuantity = () => {} }) => {
   const [count, setCount] = useState(initCount);

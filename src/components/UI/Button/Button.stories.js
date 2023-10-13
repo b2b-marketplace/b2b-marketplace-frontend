@@ -1,6 +1,6 @@
 // import IconArrowUp from '../Icon/Icon_arrow-up';
-import IconBurger from '../Icon/Icon_burger';
 import { Button } from './Button';
+import IconBurger from '../Icon/Icon_burger';
 
 export default {
   title: 'Button',

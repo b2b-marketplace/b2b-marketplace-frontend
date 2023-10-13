@@ -1,22 +1,32 @@
-import './ProductBlock.scss';
 import { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
 import { useSelector, useDispatch } from 'react-redux';
-import Counter from '../../UI/Counter/Counter';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css/navigation';
+// eslint-disable-next-line import/no-unresolved
+import { Navigation } from 'swiper/modules';
+// eslint-disable-next-line import/no-unresolved
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import noPhoto from '../../../images/nophoto.png';
+import {
+  addProduct,
+  deleteProduct,
+  changeQuantity,
+} from '../../../shared/store/slices/basketSlice';
 import { Button } from '../../UI/Button/Button';
+import Counter from '../../UI/Counter/Counter';
 import IconAvailable from '../../UI/Icon/Icon_available';
-import IconNotAvailable from '../../UI/Icon/Icon_not-available';
-import IconScales from '../../UI/Icon/Icon_scales';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconInfo from '../../UI/Icon/Icon_info';
-import ProductRating from '../ProductRating/ProductRating';
+import IconNotAvailable from '../../UI/Icon/Icon_not-available';
+import IconScales from '../../UI/Icon/Icon_scales';
 import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
 import CommentsBlock from '../CommentsBlock/CommentsBlock';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import noPhoto from '../../../images/nophoto.png';
-import { addProduct, deleteProduct, changeQuantity } from '../../../shared/store/slices/basketSlice';
+import ProductRating from '../ProductRating/ProductRating';
+
+import './ProductBlock.scss';
 
 export default function ProductBlock({ product }) {
   let imagesList;
