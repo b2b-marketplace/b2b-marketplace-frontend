@@ -9,7 +9,7 @@ import IconScales from '../../UI/Icon/Icon_scales';
 import SliderImage from '../../SliderImage/SliderImage';
 import Tooltip from '../../UI/Tooltip/Tooltip';
 import IconInfoFil from '../../UI/Icon/Icon_info_fill';
-import { addProduct, deleteProduct } from '../../../store/slices/basketSlice';
+import { addProduct, deleteProduct } from '../../../shared/store/slices/basketSlice';
 
 function ProductCard({ product }) {
   const [isProductSelect, setIsProductSelect] = useState(false);

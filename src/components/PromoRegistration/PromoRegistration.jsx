@@ -2,7 +2,7 @@ import React from 'react';
 import './PromoRegistration.scss';
 import logo from '../../images/photo_promo-registration.jpg';
 import { Button } from '../UI/Button/Button';
-import usePopup from '../../hooks/usePopup';
+import usePopup from '../../shared/hooks/hooks/usePopup';
 
 const PromoRegistration = ({ className }) => {
   const { openPopup: openRegisterPopup } = usePopup('registration');

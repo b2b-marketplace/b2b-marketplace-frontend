@@ -5,10 +5,10 @@ import RegistrationFirstStep from './RegistrationFirstStep/RegistrationFirstStep
 import RegistrationSecondStep from './RegistrationSecondStep/RegistrationSecondStep';
 import RegistrationThirdStep from './RegistrationThirdStep/RegistrationThirdStep';
 import RegistrationLastStep from './RegistrationLastStep.jsx/RegistrationLastStep';
-import usePopup from '../../../hooks/usePopup';
-import authApi from '../../../utils/authApi';
-import useInput from '../../../hooks/useInput';
-import useError from '../../../hooks/useError';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
+import authApi from '../../../shared/api/authApi';
+import useInput from '../../../shared/hooks/hooks/useInput';
+import useError from '../../../shared/hooks/hooks/useError';
 
 const RegisterPopup = () => {
   const { isOpen, closePopup } = usePopup('registration');

@@ -3,10 +3,10 @@ import Input from '../Input/Input';
 import Popup from '../Popup';
 import IconPassword from '../../UI/Icon/IconPassword';
 import Form from '../Form/Form';
-import usePopup from '../../../hooks/usePopup';
-import { passwordLength } from '../../../utils/authConstatnts';
-import useShowPassword from '../../../hooks/useShowPassword';
-import useInput from '../../../hooks/useInput';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
+import { passwordLength } from '../../../shared/lib/authConstatnts';
+import useShowPassword from '../../../shared/hooks/hooks/useShowPassword';
+import useInput from '../../../shared/hooks/hooks/useInput';
 
 const NewPasswordPopup = () => {
   const { isOpen, closePopup } = usePopup('newPassword');

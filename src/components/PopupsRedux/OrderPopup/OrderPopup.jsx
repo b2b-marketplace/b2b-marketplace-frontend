@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './OrderPopup.scss';
 import { Link } from 'react-router-dom';
-import usePopup from '../../../hooks/usePopup';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
 import Popup from '../../AuthPopup/Popup';
 import RegistrationOpportunity from '../../AuthPopup/CompleteRegistrationPopup/RegistrationOpportunity/RegistrationOpportunity';
 import IconComplele from '../../UI/Icon/IconComplele';

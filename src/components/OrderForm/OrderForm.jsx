@@ -5,8 +5,8 @@ import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
 import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
 import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
-import { addDeliveryAddress } from '../../store/slices/basketSlice';
-import usePopup from '../../hooks/usePopup';
+import { addDeliveryAddress } from '../../shared/store/slices/basketSlice';
+import usePopup from '../../shared/hooks/hooks/usePopup';
 
 const OrderForm = ({ extraClassName, productList }) => {
   const dispatch = useDispatch();

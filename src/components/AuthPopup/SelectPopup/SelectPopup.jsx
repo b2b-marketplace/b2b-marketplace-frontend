@@ -3,7 +3,7 @@ import IconVK from '../../UI/Icon/IconVK';
 import IconGmail from '../../UI/Icon/IconGmail';
 import Popup from '../Popup';
 import PopupButtons from '../PopupButtons/PopupButtons';
-import usePopup from '../../../hooks/usePopup';
+import usePopup from '../../../shared/hooks/hooks/usePopup';
 
 const SelectPopup = () => {
   const { isOpen, closePopup } = usePopup('select');
