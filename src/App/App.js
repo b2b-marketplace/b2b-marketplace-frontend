@@ -32,8 +32,6 @@ import { getUser } from '../shared/store/slices/accountSlice';
 
 import './App.scss';
 
-// Локальные импорты для CSS и ассетов
-
 // Компонент App
 function App() {
   const dispatch = useDispatch();
