@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-import visa from '../../../../images/visa.png';
 import IconClose from '../../Icon/Icon_close';
 import IconPlus from '../../Icon/Icon_plus';
+
+import visa from '../../../../images/visa.png';
 
 import './AccountPaymentInfo.scss';
 

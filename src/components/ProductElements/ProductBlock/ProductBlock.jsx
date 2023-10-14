@@ -9,7 +9,6 @@ import { Navigation } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import noPhoto from '../../../images/nophoto.png';
 import {
   addProduct,
   deleteProduct,
@@ -25,6 +24,8 @@ import IconScales from '../../UI/Icon/Icon_scales';
 import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
 import CommentsBlock from '../CommentsBlock/CommentsBlock';
 import ProductRating from '../ProductRating/ProductRating';
+
+import noPhoto from '../../../images/nophoto.png';
 
 import './ProductBlock.scss';
 

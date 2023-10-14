@@ -67,6 +67,14 @@
             },
             "group": "unknown",
             "position": "after"
+          },
+          {
+            "pattern": "*.{jpg,png,svg}",
+            "patternOptions": {
+              "matchBase": true
+            },
+            "group": "unknown",
+            "position": "before"
           }
         ]
       }
