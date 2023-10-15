@@ -22,7 +22,6 @@ const AccountPaymentInfo = () => {
     setSavedCards(updatedCards);
   };
 
-  // Function to remove a card
   const removeCard = (id) => {
     const updatedCards = savedCards.filter((card) => card.id !== id);
     setSavedCards(updatedCards);
@@ -52,8 +51,7 @@ const AccountPaymentInfo = () => {
               </p>
               <div className="account-payment-info__container">
                 {card.cardNumber}
-                <button
-                  type="button"
+                <button type='button'
                   className="account-payment-info__button-close"
                   onClick={() => removeCard(card.id)}
                 >

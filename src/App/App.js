@@ -46,7 +46,10 @@ function App() {
   }, [isFetched, isLoggedIn]);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   // Компонент ScrollToTop для прокрутки страницы наверх при смене маршрута
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   const ScrollToTop = () => {
