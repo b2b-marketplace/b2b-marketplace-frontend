@@ -1,4 +1,5 @@
 import Dot from './Dot/Dot';
+
 import noImage from '../../images/nophoto.png';
 
 import './SliderImage.scss';

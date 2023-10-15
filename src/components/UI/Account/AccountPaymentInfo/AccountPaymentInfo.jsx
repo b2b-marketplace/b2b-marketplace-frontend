@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import './AccountPaymentInfo.scss';
 import IconClose from '../../Icon/Icon_close';
 import IconPlus from '../../Icon/Icon_plus';
 import IconVisa from '../../Icon/Icon_visa';
+import './AccountPaymentInfo.scss';
 
 const AccountPaymentInfo = () => {
+  // Define the state to store the list of saved cards
   const [savedCards, setSavedCards] = useState([
-    {
-      id: 1,
-      cardNumber: '**** **** **** 1234',
-      isDefault: true,
-    },
-    {
-      id: 2,
-      cardNumber: '**** **** **** 5678',
-      isDefault: false,
-    },
+    // Initialize your saved cards here
+    // Example:
+    // { id: 1, cardNumber: '1234 5678 9012 3456', isDefault: true },
+    // { id: 2, cardNumber: '9876 5432 1098 7654', isDefault: false },
   ]);
 
+  // Function to make a card the default payment method
   const makeDefaultCard = (id) => {
     const updatedCards = savedCards.map((card) => ({
       ...card,
@@ -26,6 +22,7 @@ const AccountPaymentInfo = () => {
     setSavedCards(updatedCards);
   };
 
+  // Function to remove a card
   const removeCard = (id) => {
     const updatedCards = savedCards.filter((card) => card.id !== id);
     setSavedCards(updatedCards);
@@ -55,7 +52,8 @@ const AccountPaymentInfo = () => {
               </p>
               <div className="account-payment-info__container">
                 {card.cardNumber}
-                <button type='button'
+                <button
+                  type="button"
                   className="account-payment-info__button-close"
                   onClick={() => removeCard(card.id)}
                 >

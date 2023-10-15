@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../../images/uim_box_footer.svg';
 import IconTelegram from '../UI/Icon/Icon_telegram';
 import IconVk from '../UI/Icon/Icon_vk';
+
+import logo from '../../images/uim_box_footer.svg';
 
 import './Footer.scss';
 

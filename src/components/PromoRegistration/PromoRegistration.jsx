@@ -1,8 +1,9 @@
 import React from 'react';
 
-import logo from '../../images/photo_promo-registration.jpg';
 import usePopup from '../../shared/hooks/hooks/usePopup';
 import { Button } from '../UI/Button/Button';
+
+import logo from '../../images/photo_promo-registration.jpg';
 
 import './PromoRegistration.scss';
 
