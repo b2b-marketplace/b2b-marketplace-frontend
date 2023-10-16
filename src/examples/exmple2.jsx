@@ -9,6 +9,14 @@ import MyLocalComponent from './MyLocalComponent';
 // Локальные файлы поддержки
 import './UserCard.css';
 
+/**
+ *
+ * @param user - Объект с данными пользователя
+ * @param onUserCardClick - Функция обратного вызова при клике на элемент
+ * @returns {JSX.Element} - Возвращает JSX-элемент компонента Checkbox.
+ * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
+ * @author
+ */
 const exampleCard = ({ user, onUserCardClick }) => {
   // Селектор для определения класса в зависимости от значения isExpanded
   // Классический пример:
