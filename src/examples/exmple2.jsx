@@ -1,38 +1,61 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+// Глобальные импорты
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import { Button } from '../components/UI/Button/Button';
+// Импорты из проекта
+import MyLocalComponent from './MyLocalComponent';
 
-import box1 from '../../images/banner-promo/box1-404.png';
-import box2 from '../../images/banner-promo/box2-404.png';
-import box3 from '../../images/banner-promo/box5-404.png';
+// Локальные файлы поддержки
+import './UserCard.css';
+import clsx from 'clsx';
 
-import './NotFound.scss';
+const exampleCard = ({ user, onUserCardClick }) => {
+  // Селектор для определения класса в зависимости от значения isExpanded
+  // Классический пример:
+  //const cardClassName = `user-card ${isExpanded ? 'expanded' : ''}`;
+  // С использованием пакета clsx пример:
+  const cardClassName = clsx('user-card', {
+    expanded: isExpanded,
+  });
+  //локальные состояния
+  const [isExpanded, setIsExpanded] = useState(false);
 
-const NotFound = () => {
+  //эффекты
+  useEffect(() => {
+    // Здесь может быть код эффекта
+  }, [isExpanded]);
+
+  //Функции
+  const handleCardClick = () => {
+    setIsExpanded(!isExpanded);
+    onUserCardClick(user.id);
+  };
+
   return (
-    <div className="not-found">
-      <div className="not-found__conteiner">
-        <div className="not-found__title">
-          <p className="not-found__figure">4</p>
-          <p className="not-found__figure">4</p>
-        </div>
-        <img className="not-found__image_box1" src={box1} alt="box1" />
-        <img className="not-found__image_box2" src={box2} alt="box2" />
-        <img className="not-found__image_box3" src={box3} alt="box3" />
+    <div className={cardClassName} onClick={handleCardClick}>
+      <div className="user-info">
+        <p>Name: {user.name}</p>
+        <p>Email: {user.email}</p>
       </div>
-      <h3 className="not-found__subtitle">Страница не найдена</h3>
-      <p className="not-found__text">
-        Возможно неправильно набран адрес или такой страницы больше не существует
-      </p>
-      <p className="not-found__text">Перейдите на главную, чтобы продолжить работу</p>
-      <Link to="/" className="not-found__link">
-        <Button size="l" primary dark>
-          На главную
-        </Button>
-      </Link>
+      {isExpanded && (
+        <div className="user-details">
+          <p>Address: {user.address}</p>
+          <p>Phone: {user.phone}</p>
+        </div>
+      )}
     </div>
   );
 };
 
-export default NotFound;
+exampleCard.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    email: PropTypes.string,
+    address: PropTypes.string,
+    phone: PropTypes.string,
+  }).isRequired,
+  onUserCardClick: PropTypes.func.isRequired,
+};
+
+export default exampleCard;
