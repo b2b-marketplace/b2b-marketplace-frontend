@@ -2,14 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { changeChecked, deleteProduct, updateAllProduct } from '../../app/store/slices/basketSlice';
 import productsApi from '../../shared/api/productsApi';
 import usePopup from '../../shared/hooks/hooks/usePopup';
 import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
-import {
-  changeChecked,
-  deleteProduct,
-  updateAllProduct,
-} from '../../shared/store/slices/basketSlice';
 import OrderDetail from '../OrderDetail/OrderDetail';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';

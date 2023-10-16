@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { addProduct, deleteProduct } from '../../../shared/store/slices/basketSlice';
+import { addProduct, deleteProduct } from '../../../app/store/slices/basketSlice';
 import SliderImage from '../../SliderImage/SliderImage';
 import { Button } from '../../UI/Button/Button';
 import IconHearth from '../../UI/Icon/Icon_hearth';

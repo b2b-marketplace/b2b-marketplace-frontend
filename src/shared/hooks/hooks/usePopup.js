@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { togglePopup } from '../../store/slices/togglePopupSlice';
+import { togglePopup } from '../../../app/store/slices/togglePopupSlice';
 
 const usePopup = (popupType) => {
   const dispatch = useDispatch();

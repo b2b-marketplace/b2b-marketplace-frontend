@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { updateAllProduct } from '../../app/store/slices/basketSlice';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
 import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
@@ -12,7 +13,6 @@ import { Button } from '../../components/UI/Button/Button';
 import accountApi from '../../shared/api/accountApi';
 import usePopup from '../../shared/hooks/hooks/usePopup';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
-import { updateAllProduct } from '../../shared/store/slices/basketSlice';
 
 import './OrderFormPage.scss';
 
