@@ -6,7 +6,7 @@ import clsx from 'clsx';
 // Импорты из проекта
 import MyLocalComponent from './MyLocalComponent';
 
-// Локальные файлы поддержки
+// Локальные файлы
 import './UserCard.css';
 
 /**
