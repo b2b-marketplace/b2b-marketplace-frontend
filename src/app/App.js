@@ -12,11 +12,12 @@ import Header from '../components/Header/Header';
 import Logout from '../components/Logout/Logout';
 import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
-import AccountPaymentInfo from '../components/UI/Account/AccountPaymentInfo/AccountPaymentInfo';
 import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
 import AccountBuyerOrders from '../pages/AccountPage/AccountBuyerOrders/AccountBuyerOrders';
 import AccountBuyerProfile from '../pages/AccountPage/AccountBuyerProfile/AccountBuyerProfile';
+import AccountFavorites from '../pages/AccountPage/AccountFavorites/AccountFavorites';
 import AccountPage from '../pages/AccountPage/AccountPage';
+import AccountPaymentInfo from '../pages/AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountSellerProductAdd from '../pages/AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import BasketPage from '../pages/BasketPage/BasketPage';
 import EmailConfirmation from '../pages/EmailConfirmation/EmailConfirmation';
@@ -45,13 +46,7 @@ function App() {
     }
   }, [isFetched, isLoggedIn]);
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   // Компонент ScrollToTop для прокрутки страницы наверх при смене маршрута
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   const ScrollToTop = () => {
     const location = useLocation();
 
@@ -73,6 +68,7 @@ function App() {
           <Route path="/order" element={<OrderFormPage />} exact />
           <Route path="/account" element={<AccountPage />}>
             <Route path="/account/payment" element={<AccountPaymentInfo />} exact />
+            <Route path="/account/favorites" element={<AccountFavorites/>} exact />
             <Route index path="profile" element={<AccountBuyerProfile />} exact />
             <Route path="product/add" element={<AccountSellerProductAdd />} exact />
             <Route path="orders" element={<AccountBuyerOrders />} exact>

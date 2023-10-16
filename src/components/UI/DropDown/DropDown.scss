@@ -87,4 +87,13 @@
   .small &__header {
     border-radius: 20px;
   }
+
+  .medium &__select {
+    width: 200px;
+    height: 44px;
+  }
+
+  .medium &__header {
+    border-radius: 20px;
+  }
 }

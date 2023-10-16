@@ -6,6 +6,7 @@ import { addProduct, deleteProduct } from '../../../app/store/slices/basketSlice
 import SliderImage from '../../SliderImage/SliderImage';
 import { Button } from '../../UI/Button/Button';
 import IconHearth from '../../UI/Icon/Icon_hearth';
+import IconHearthBlack from '../../UI/Icon/Icon_hearth-black';
 import IconInfo from '../../UI/Icon/Icon_info';
 import IconInfoFil from '../../UI/Icon/Icon_info_fill';
 import IconScales from '../../UI/Icon/Icon_scales';
@@ -39,7 +40,11 @@ function ProductCard({ product }) {
     <div className="card">
       <SliderImage images={product.images} />
       <div className="card__icons">
-        {isLoggedIn && <IconHearth />}
+        {isLoggedIn && isProductSelect ? (
+          <IconHearthBlack onClick={handleSelect} />
+        ) : (
+          <IconHearth onClick={handleSelect} />
+        )}
         <IconScales />
       </div>
 
