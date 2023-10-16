@@ -1,13 +1,13 @@
 // Глобальные импорты
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
 // Импорты из проекта
 import MyLocalComponent from './MyLocalComponent';
 
 // Локальные файлы поддержки
 import './UserCard.css';
-import clsx from 'clsx';
 
 const exampleCard = ({ user, onUserCardClick }) => {
   // Селектор для определения класса в зависимости от значения isExpanded
