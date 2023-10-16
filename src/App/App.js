@@ -59,7 +59,6 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/product/:id" element={<ProductPage />} exact />
@@ -92,6 +91,7 @@ function App() {
       <Footer />
       <AuthPopup />
       <OrderPopup />
+      <ScrollToTop />
     </div>
   );
 }
