@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { fetchProducts, loadMoreProducts } from '../../app/store/slices/productsSlice';
 import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
-import { fetchProducts, loadMoreProducts } from '../../shared/store/slices/productsSlice';
 
 import './HomePage.scss';
 

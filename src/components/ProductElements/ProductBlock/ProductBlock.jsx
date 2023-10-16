@@ -9,11 +9,7 @@ import { Navigation } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import {
-  addProduct,
-  deleteProduct,
-  changeQuantity,
-} from '../../../shared/store/slices/basketSlice';
+import { addProduct, deleteProduct, changeQuantity } from '../../../app/store/slices/basketSlice';
 import { Button } from '../../UI/Button/Button';
 import Counter from '../../UI/Counter/Counter';
 import IconAvailable from '../../UI/Icon/Icon_available';

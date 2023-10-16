@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 // Локальные импорты из проекта
+import { getUser } from './store/slices/accountSlice';
 import AccountBuyerOrderList from '../components/Account/AccountBuyerOrdersList/AccountBuyerOrderList';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 import Footer from '../components/Footer/Footer';
@@ -28,11 +29,10 @@ import PortalRulesPage from '../pages/SupportServicePage/PortalRulesPage/PortalR
 import PrivacyPolicyPage from '../pages/SupportServicePage/PrivacyPolicyPage/PrivacyPolicyPage';
 import QuestionForm from '../pages/SupportServicePage/QuestionForm/QuestionForm';
 import QuestionPage from '../pages/SupportServicePage/QuestionPage/QuestionPage';
-import { getUser } from '../shared/store/slices/accountSlice';
 
 import './App.scss';
 
-// Компонент App
+// Компонент app
 function App() {
   const dispatch = useDispatch();
   const { user, isFetched } = useSelector((state) => state.account);
