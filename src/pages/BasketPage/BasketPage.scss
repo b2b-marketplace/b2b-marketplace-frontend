@@ -1,11 +1,11 @@
-@import '../../styles/global';
+@import '/src/app/styles/global';
 
 .basket-page {
   max-width: $maxWidth;
   min-width: $minWidth;
   //padding: 0 124px;
   //margin: 64px auto 0;
-  margin: 52px 0 0;
+  margin: 60px 0 0;
   width: 100%;
 
   &__banner {

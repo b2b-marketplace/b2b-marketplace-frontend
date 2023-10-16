@@ -1,4 +1,4 @@
-@import '../../styles/global';
+@import '/src/app/styles/global';
 
 .basket {
   @include default-font-styles;
@@ -12,8 +12,8 @@
   }
 
   &__container {
-    @include flex-container;
-    column-gap: 60px;
+    @include flex-space-between;
+    column-gap: 20px;
     position: relative;
   }
 
@@ -21,6 +21,7 @@
     @include flex-column;
     width: 100%;
     row-gap: 40px;
+    max-width: 930px;
   }
 
   &__panel-checkbox {

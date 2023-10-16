@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getUser } from '../../../shared/store/slices/accountSlice';
+import { getUser } from '../../../app/store/slices/accountSlice';
 
 import './OrderFormReceiver.scss';
 

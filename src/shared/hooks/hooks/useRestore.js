@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { resetState, setState } from '../../store/slices/restoreSlice';
+import { resetState, setState } from '../../../app/store/slices/restoreSlice';
 
 const useRestore = (restoreType) => {
   const dispatch = useDispatch();

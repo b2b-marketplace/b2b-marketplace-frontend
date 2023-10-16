@@ -54,6 +54,12 @@
   min-width: $minWidth;
 }
 
+@mixin box-container {
+  @include max-min-width;
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+
 @mixin border-radius {
   box-sizing: border-box;
   border: 1px solid $grayLightColor;

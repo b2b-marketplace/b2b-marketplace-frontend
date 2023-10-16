@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setError, resetError } from '../../store/slices/errorSlice';
+import { setError, resetError } from '../../../app/store/slices/errorSlice';
 
 const useError = () => {
   const dispatch = useDispatch();

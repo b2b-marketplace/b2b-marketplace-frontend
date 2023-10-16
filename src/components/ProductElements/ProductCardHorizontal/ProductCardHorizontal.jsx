@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import ProductCardHorizontalImage from './ProductCardHorizontalImage/ProductCardHorizontalImage';
+import { changeQuantity, deleteProduct } from '../../../app/store/slices/basketSlice.js';
 import { priceFormat } from '../../../shared/lib/utils';
-import { changeQuantity, deleteProduct } from '../../../shared/store/slices/basketSlice.js';
 import Checkbox from '../../UI/Checkbox/Checkbox';
 import Counter from '../../UI/Counter/Counter';
 import IconHearth from '../../UI/Icon/Icon_hearth';

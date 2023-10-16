@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
-import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
-import Preloader from '../../components/UI/Preloader/Preloader';
 import {
   fetchProductById,
   loadMoreProducts,
   fetchProducts,
-} from '../../shared/store/slices/productsSlice';
+} from '../../app/store/slices/productsSlice';
+import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
+import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
+import Preloader from '../../components/UI/Preloader/Preloader';
 import ErrorPage from '../ErrorPage/ErrorPage';
 
 import './ProductPage.scss';

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
 import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
-import { addDeliveryAddress } from '../../shared/store/slices/basketSlice';
+import { addDeliveryAddress } from '../../app/store/slices/basketSlice';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
 
