@@ -73,6 +73,22 @@
     text-decoration: none;
   }
 
+  &__icon-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__item-count {
+    background-color: $redColor;
+    color: $whiteColor;
+    border-radius: 50%;
+    padding: 0 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -5px;
+  }
+
   &__catalog-button {
     @include text-M-bold-styles;
     width: 137px;
@@ -109,5 +125,20 @@
   }
 }
 
+/* Position the basket icon and badge container */
+.basket-icon-container {
+  position: relative;
+  display: inline-block;
+}
 
-
+/* Style the badge */
+.basket-item-count {
+  background-color: #ff6347;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  position: absolute;
+  top: -6px;
+  right: -16px; /* Adjust the right position to align it properly */
+}

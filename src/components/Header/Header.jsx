@@ -25,6 +25,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const basketList = useSelector((state) => state.basket.basket);
   const isItemsInBasket = basketList.basket_products.length > 0;
+  const basketItemCount = basketList.basket_products.length;
 
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { openPopup: openAuthPopup } = usePopup('select');
@@ -102,8 +103,15 @@ const Header = () => {
           <IconScales />
         </Link>
 
-        <Link to="/basket" className="header__link">
-          {isItemsInBasket ? <IconBasketBlack /> : <IconBasket />}
+        <Link to="/basket" className="header__link header__icon-container">
+          {isItemsInBasket ? (
+            <>
+              {basketItemCount > 0 && <span className="header__item-count">{basketItemCount}</span>}
+              <IconBasketBlack />
+            </>
+          ) : (
+            <IconBasket />
+          )}
         </Link>
 
         <Link
