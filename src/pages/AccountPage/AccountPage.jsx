@@ -30,11 +30,11 @@ const AccountPage = () => {
   const menuItemsCustomer = [
     { icon: <BiBag />, link: 'profile', label: 'Моя компания' },
     { icon: <IconPackage />, link: 'orders', label: 'Закупки' },
-    { icon: <IconPurchases />, link: 'favorites', label: 'Мои заказы' },
+    { icon: <IconPurchases />, link: 'my-orders', label: 'Мои заказы' },
     { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
     { icon: <IconBasket />, link: '/basket', label: 'Корзина' },
     { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
-    { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+    { icon: <IconCreditCard />, link: 'payment', label: 'Оплата' },
     { icon: <IconLocation />, link: 'message', label: 'Адрес' },
     { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
   ];
@@ -45,7 +45,7 @@ const AccountPage = () => {
     { icon: <IconBag />, link: 'orders', label: 'Заказы' },
     { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
     { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
-    { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+    { icon: <IconCreditCard />, link: 'payment', label: 'Оплата' },
     { icon: <IconLocation />, link: 'message', label: 'Адрес' },
     { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
   ];

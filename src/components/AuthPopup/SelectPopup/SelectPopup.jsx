@@ -30,13 +30,13 @@ const SelectPopup = () => {
           </p>
         </div>
         <div className="popup__socials">
-          <button className="popup__social">
+          <button className="popup__social" type='button'>
             <IconYandex />
           </button>
-          <button className="popup__social">
+          <button className="popup__social" type='button'>
             <IconGmail />
           </button>
-          <button className="popup__social">
+          <button className="popup__social" type='button'>
             <IconVK />
           </button>
         </div>

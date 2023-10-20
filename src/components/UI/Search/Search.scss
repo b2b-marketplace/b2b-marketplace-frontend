@@ -1,0 +1,51 @@
+@import '/src/app/styles/global';
+
+.search {
+  @include flex-space-between;
+  max-width: 183px;
+  width: 100%;
+  height: 44px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  border: 1px solid $darkColor;
+  align-items: center;
+  padding: 0 10px 0 16px;
+
+  &__input {
+    @include text-S-main-styles;
+    width: 100px;
+    color: $grayColor;
+    border: none;
+    padding: 0;
+    height: 20px;
+    outline-style: none;
+  }
+
+  &__button {
+    @include center-both;
+    width: 24px;
+    height: 24px;
+    padding: 7px 7px;
+    border-radius: 20px;
+    border: $darkColor;
+    background: $darkColor;
+    color: $whiteColor;
+    border: none;
+
+    &:hover {
+      background-color: $grayColor;
+    }
+  }
+
+  &.large {
+    max-width: 480px;
+  }
+
+  &.large &__button {
+    background: transparent;
+  }
+
+  &.large &__icon {
+    color: $darkColor;
+  }
+}

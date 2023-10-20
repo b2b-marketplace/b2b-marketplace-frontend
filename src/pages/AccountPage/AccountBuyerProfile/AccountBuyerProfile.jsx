@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
-import AccountPaymentInfo from '../../../components/UI/Account/AccountPaymentInfo/AccountPaymentInfo';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import { Button } from '../../../components/UI/Button/Button';
 import IconMail from '../../../components/UI/Icon/Icon_mail';

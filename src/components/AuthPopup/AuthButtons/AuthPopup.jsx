@@ -5,6 +5,7 @@ import CompleteRegistrationPopup from '../CompleteRegistrationPopup/CompleteRegi
 import ConfirmRestoreByEmailPopup from '../ConfirmRestoreByEmailPopup/ConfirmRestoreByEmailPopup';
 import ConfirmRestoreByPhonePopup from '../ConfirmRestoreByPhonePopup/ConfirmRestoreByPhonePopup';
 import ErrorPopup from '../ErrorPopup/ErrorPopup';
+import LinkingCardPopup from '../LinkingCardPopup/LinkingCardPopup';
 import LoginPopup from '../LoginPopup/LoginPopup';
 import ModerationNewProductPopup from '../ModerationNewProductPopup/ModerationNewProductPopup';
 import NewPasswordPopup from '../NewPasswordPopup/NewPasswordPopup';
@@ -30,6 +31,7 @@ const AuthPopup = () => {
       <NewPasswordPopup />
       <ModerationNewProductPopup />
       <ErrorPopup />
+      <LinkingCardPopup/>
       {/* <CancelAddProductPopup /> */}
     </>
   );

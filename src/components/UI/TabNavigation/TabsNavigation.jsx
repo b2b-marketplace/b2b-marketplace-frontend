@@ -15,6 +15,7 @@ const TabsNavigation = ({ extraClassName, tabElements }) => {
         {tabElements.map((element, index) => {
           return (
             <button
+              type="button"
               onClick={() => handleSwitchTab(index)}
               className={`tabs-navigation__button ${
                 selectedValue === index || (element.default && !selectedValue)
