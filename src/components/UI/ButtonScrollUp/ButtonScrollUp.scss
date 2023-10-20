@@ -22,9 +22,7 @@
       scale 0.3s ease;
 
     &.visible {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    @include center-both;
     }
 
     &:hover {

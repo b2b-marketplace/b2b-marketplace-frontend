@@ -15,6 +15,7 @@ import { accountReducer } from './slices/accountSlice';
 import { authReducer } from './slices/authSlice';
 import { basketReducer } from './slices/basketSlice';
 import { errorReducer } from './slices/errorSlice';
+import { favoritesReducer } from './slices/favoritesSlice';
 import { productsReducer } from './slices/productsSlice';
 import { restoreReducer } from './slices/restoreSlice';
 import { popupReducer } from './slices/togglePopupSlice.js';
@@ -27,12 +28,13 @@ const rootReducer = combineReducers({
   auth: authReducer,
   restore: restoreReducer,
   error: errorReducer,
+  favorites: favoritesReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['basket', 'auth', 'account'],
+  whitelist: ['basket', 'auth', 'account', 'favorites'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

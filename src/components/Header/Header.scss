@@ -50,18 +50,6 @@
     align-items: center;
   }
 
-  &__search {
-    @include flex-space-between;
-    max-width: 183px;
-    width: 100%;
-    height: 44px;
-    border-radius: 20px;
-    box-sizing: border-box;
-    border: 1px solid $blackColor;
-    align-items: center;
-    padding: 0 10px 0 20px;
-  }
-
   &__navigation {
     @include flex-space-between;
     max-width: 533px;
@@ -83,34 +71,6 @@
     align-items: center;
     gap: 4px;
     text-decoration: none;
-  }
-
-  &__input {
-    @include text-S-main-styles;
-    width: 50px;
-    color: $grayColor;
-    border: none;
-    padding: 0;
-    height: 20px;
-    outline-style: none;
-  }
-
-  &__button {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    padding: 7px 7px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    border: $blackColor;
-    background: $blackColor;
-    color: $whiteColor;
-    border: none;
-
-    &:hover {
-      background-color: $grayColor;
-    }
   }
 
   &__catalog-button {
@@ -148,3 +108,6 @@
     }
   }
 }
+
+
+

@@ -1,0 +1,18 @@
+@import '/src/app/styles/global';
+
+.account-favorites {
+  max-width: 970px;
+  width: 100%;
+  @include flex-column;
+  gap: 60px;
+
+  &__container {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__control {
+    @include flex-column;
+    gap: 40px;
+  }
+}
