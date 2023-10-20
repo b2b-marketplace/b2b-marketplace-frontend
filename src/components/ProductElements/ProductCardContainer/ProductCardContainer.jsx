@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Button } from '../../UI/Button/Button';
+import Button from '../../UI/Button/Button';
 import ProductCard from '../ProductCard/ProductCard';
 
 import './ProductCardContainer.scss';
@@ -37,7 +37,7 @@ export default function ProductCardContainer({
       </div>
       {/* {(isFull && products.length >= cardsQuantity) && ( */}
       {products.length >= cardsQuantity && (
-        <Button primary dark size="l" onClick={handleAddCards}>
+        <Button primary dark size="xl" onClick={handleAddCards}>
           Смотреть ещё
         </Button>
       )}

@@ -64,7 +64,7 @@ const Header = () => {
           <IconBoxRu />
         </Link>
         <Link to="/" className="header__title">
-          B2Buy.ru
+          B2Buy
         </Link>
         <button type="button" className="header__location">
           <IconPosition />

@@ -4,14 +4,23 @@ import { Link } from 'react-router-dom';
 
 import { addProduct, deleteProduct } from '../../../app/store/slices/basketSlice';
 import SliderImage from '../../SliderImage/SliderImage';
-import { Button } from '../../UI/Button/Button';
+import Button from '../../UI/Button/Button';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconInfo from '../../UI/Icon/Icon_info';
-import IconInfoFil from '../../UI/Icon/Icon_info_fill';
 import IconScales from '../../UI/Icon/Icon_scales';
 import Tooltip from '../../UI/Tooltip/Tooltip';
 
 import './ProductCard.scss';
+
+
+/**
+ * Карточка товара
+ *
+ * @param product - объект с данными о товаре
+ * 
+ * @returns {JSX.Element}
+ */
+
 
 function ProductCard({ product }) {
   const [isProductSelect, setIsProductSelect] = useState(false);

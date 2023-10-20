@@ -52,7 +52,6 @@ export default function ProductPage() {
         <Preloader />
       )}
 
-      <PlatformBenefits className="product-page__platform-benefits" />
       <ProductCardContainer
         title="Товары от этого поставщика"
         products={sellerProducts}

@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
 
 import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProductPopup/CancelAddProductPopup';
+import SidebarLeft from '../../../components/SidebarLeft/SidebarLeft';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import { Button } from '../../../components/UI/Button/Button';
+import Button from '../../../components/UI/Button/Button';
 import Counter from '../../../components/UI/Counter/Counter';
 import DropDown from '../../../components/UI/DropDown/DropDown';
 import FileUpload from '../../../components/UI/FileUpload/FileUpload';
+import BiBag from '../../../components/UI/Icon/Icon_bibag';
+import IconCreditCard from '../../../components/UI/Icon/Icon_credit-card';
+import IconDeliveryCar from '../../../components/UI/Icon/Icon_delivery-car';
+import IconHearth from '../../../components/UI/Icon/Icon_hearth';
+import IconLocation from '../../../components/UI/Icon/Icon_location';
+import IconLock from '../../../components/UI/Icon/Icon_lock';
+import IconMessage from '../../../components/UI/Icon/Icon_message';
+import IconOpenPackage from '../../../components/UI/Icon/Icon_open-package';
+import IconPackage from '../../../components/UI/Icon/Icon_package';
 import InputField from '../../../components/UI/InputField/InputField';
 import usePopup from '../../../shared/hooks/hooks/usePopup';
+import MenuVerticalWidget from '../../../widgets/MenuVerticalWidget';
 
 import './AccountSellerProductAdd.scss';
 
@@ -15,6 +26,19 @@ const AccountSellerProductAdd = () => {
   const { openPopup: openModerationNewProductPopup } = usePopup('addNewItem');
   const { openPopup: openCancelAddProductPopup, closePopup } = usePopup('cancelAddnewItem');
   const [formErrors, setFormErrors] = useState({});
+
+  const menuItemsSupplier = [
+    { icon: <BiBag />, link: 'profile', label: 'Моя компания' },
+    { icon: <IconPackage />, link: 'products', label: 'Товары' },
+    { icon: <IconOpenPackage />, link: 'orders', label: 'Мои заказы' },
+    { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
+    { icon: <IconMessage />, link: 'message', label: 'Сообщения' },
+    { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+    { icon: <IconLocation />, link: 'message', label: 'Адрес' },
+    { icon: <IconDeliveryCar />, link: 'message', label: 'Доставка' },
+    { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
+  ];
+
 
   // Состояние для данных формы
   const [formData, setFormData] = useState({
@@ -98,6 +122,9 @@ const AccountSellerProductAdd = () => {
 
   return (
     <section className="account-seller-product-add">
+      <SidebarLeft>
+        <MenuVerticalWidget menuItems={menuItemsSupplier} />
+      </SidebarLeft>
       <div className="account-seller-product-add__section">
         <AccountTitle name="ООО «Компания»" title="Продавец" />
         <form className="account-seller-product-add__form" onSubmit={handleSubmit}>

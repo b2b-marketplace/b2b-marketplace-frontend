@@ -1,0 +1,36 @@
+@import './../../app/styles/global.scss';
+
+.comment-rating {
+  display: flex;
+  font-display: row;
+  align-items: center;
+  gap: 20px;
+  color: $darkColor;
+
+  &__item {
+    display: flex;
+    font-display: row;
+    gap: 8px;
+
+    &-count {
+      margin: 0;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px; /* 150% */
+    }
+  }
+
+  &__btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

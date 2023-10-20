@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button } from '../UI/Button/Button';
+import Button from '../UI/Button/Button';
 
 import box1 from '../../images/banner-promo/box1-404.png';
 import box2 from '../../images/banner-promo/box2-404.png';

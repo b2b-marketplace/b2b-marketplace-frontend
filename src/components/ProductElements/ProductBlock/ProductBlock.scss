@@ -24,11 +24,11 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
-  max-width: 685px;
+  max-width: 530px;
   width: 100%;
 
   &__column {
-    min-width: 121px;
+    min-width: 90px;
     height: 520px;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@
 
   &__item {
     cursor: pointer;
-    width: 121px;
+    width: 90px;
     height: 100px;
     object-fit: cover;
     border-radius: 20px;
@@ -85,10 +85,8 @@
   }
 
   &__main {
-    width: 544px;
+    width: 420px;
     height: 520px;
-    // width: 100%;
-    // height: 100%;
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 20px;
@@ -99,25 +97,41 @@
 
 .info {
   @include default-font-styles;
-  max-width: 464px;
+  max-width: 340px;
   width: 100%;
 
   &__title {
     margin: 0;
-    max-width: 292px;
+    width: 264px;
+    // width: 100%;
     // max-height: 80px;
     color: $blackColor;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
 
     &-line {
-      margin: 0 0 16px;
+      margin: 0 0 8px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
     }
+  }
+
+  &__rating-line {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 16px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-between;
   }
 
   &__shipper {
@@ -212,7 +226,7 @@
 .order {
   display: flex;
   flex-direction: column;
-  max-width: 403px;
+  max-width: 310px;
   gap: 40px;
   justify-content: space-between;
   width: 100%;
@@ -222,13 +236,6 @@
   border-radius: 20px;
   border: 1px solid $grayLightColor;
   background: $whiteColor;
-
-  &__icons {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    justify-content: space-between;
-  }
 
   &__price {
     display: flex;
@@ -414,10 +421,12 @@
 }
 
 .comments {
+  max-width: 860px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  align-items: center;
+  gap: 60px;
+  align-items: flex-start;
 
   &__title {
     color: $blackColor;
@@ -429,24 +438,88 @@
     display: flex;
     flex-direction: row;
     margin: 0;
-    gap: 16px;
+    gap: 12px;
     align-self: flex-start;
   }
 
-  &__count {
-    color: $blueDarkColor;
-    font-family: $fontFamilyNunitoSans;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px; /* 140% */
-    margin: 0;
+  &__photos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &-title {
+      margin: 0;
+      color: $darkColor;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px; /* 116.667% */
+    }
+    &-block {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      align-items: flex-end;
+    }
+    &-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    &-item {
+      width: 90px;
+      height: 74px;
+      border-radius: 20px;
+      border: 1px solid $grayLightColor;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+      background-size: cover;
+      &_info {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // z-index: 0;
+      }
+    }
+    &-all-info {
+      display: inline-block;
+      width: 90px;
+      height: 74px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      
+      z-index: 1;
+    }
+    &-count {
+      
+      position: absolute;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      color: $whiteColor;
+      text-align: center;
+      font-family: $fontFamilyUnbounded;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 28px; /* 140% */
+      z-index: 2;
+      background: #116fc7c3;
+
+      
+    }
   }
 
   &__container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
-    gap: 20px;
+    gap: 60px;
   }
 }

@@ -11,7 +11,7 @@ import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/Or
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import SidebarRight from '../SidebarRight/SidebarRight';
-import { Button } from '../UI/Button/Button';
+import Button from '../UI/Button/Button';
 import Checkbox from '../UI/Checkbox/Checkbox';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import IconTrash from '../UI/Icon/Icon_trash';
@@ -242,7 +242,7 @@ const Basket = ({ extraClassName }) => {
                 {isLoggedIn ? (
                   user.company.role !== 'supplier' ? (
                     <Button
-                      size="s"
+                      size="m"
                       extraClass="basket__button"
                       onClick={handleNavigateToOrder}
                       primary
@@ -256,7 +256,7 @@ const Basket = ({ extraClassName }) => {
                     <>
                       <Button
                         extraClass="basket__button"
-                        size="s"
+                        size="m"
                         primary
                         dark
                         disabled
@@ -272,7 +272,7 @@ const Basket = ({ extraClassName }) => {
                 ) : (
                   <>
                     <Button
-                      size="s"
+                      size="m"
                       onClick={handleOpenRegisterPopup}
                       primary
                       dark
@@ -280,7 +280,7 @@ const Basket = ({ extraClassName }) => {
                     >
                       Зарегистрироваться
                     </Button>
-                    <Button size="s" onClick={openLoginPopup} label="Войти" primary>
+                    <Button size="m" onClick={openLoginPopup} label="Войти" primary>
                       Войти
                     </Button>
                   </>

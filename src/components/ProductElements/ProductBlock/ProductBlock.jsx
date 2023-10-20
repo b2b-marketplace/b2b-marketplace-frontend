@@ -9,8 +9,9 @@ import { Navigation } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { commentsList } from './../../../shared/mock/commentsMock';
 import { addProduct, deleteProduct, changeQuantity } from '../../../app/store/slices/basketSlice';
-import { Button } from '../../UI/Button/Button';
+import Button from '../../UI/Button/Button';
 import Counter from '../../UI/Counter/Counter';
 import IconAvailable from '../../UI/Icon/Icon_available';
 import IconHearth from '../../UI/Icon/Icon_hearth';
@@ -21,9 +22,19 @@ import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
 import CommentsBlock from '../CommentsBlock/CommentsBlock';
 import ProductRating from '../ProductRating/ProductRating';
 
+import photo from './../../../images/4.jpg';
 import noPhoto from '../../../images/nophoto.png';
 
 import './ProductBlock.scss';
+
+
+/**
+ * Блок описания товара
+ *
+ * @param product - объект с данными товара
+ * 
+ * @returns {JSX.Element}
+ */
 
 export default function ProductBlock({ product }) {
   let imagesList;
@@ -88,15 +99,21 @@ export default function ProductBlock({ product }) {
         <div className="info">
           <div className="info__title-line">
             <h2 className="info__title">{product.name}</h2>
-            <ProductRating rating={4.8} />
+            <div className="info__icons">
+              <IconHearth />
+              <IconScales />
+            </div>
+          </div>
+
+          <div className='info__rating-line'>
+            <ProductRating rating={4.8} commentsCount={10} />
           </div>
 
           <div className="info__shipper">
             <p className="info__shipper-name">{product.seller.name || ''}</p>
             <IconInfo
               className="info__shipper-icon hint-right-middle"
-              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${
-                product.seller.ogrn || ''
+              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${product.seller.ogrn || ''
               }`}
             />
           </div>
@@ -131,10 +148,10 @@ export default function ProductBlock({ product }) {
           <div className="order__price">
             <h3 className="order__price-value">
               {`${new Intl.NumberFormat('ru-RU').format(product.price * orderQuantity)} `} &#x20bd;
-              <div className="order__icons">
+              {/* <div className="order__icons">
                 <IconScales />
                 <IconHearth />
-              </div>
+              </div> */}
             </h3>
             <p className="order__price-piece">
               {`за ед. ${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
@@ -160,7 +177,7 @@ export default function ProductBlock({ product }) {
           <div className="order__delivery">
             <p className="order__delivery-title">Варианты доставки</p>
             <p className="order__delivery-subtitle">
-              Самовывоз со склада продавца — <span className="order__delivery-data">завтра</span>
+              Самовывоз со склада — <span className="order__delivery-data">завтра</span>
             </p>
             <p className="order__delivery-subtitle">
               Курьером — <span className="order__delivery-data">10 сентября</span>
@@ -177,7 +194,7 @@ export default function ProductBlock({ product }) {
                 dispatch(changeQuantity({ productIds: product.id, quantity: count }));
             }}
           />
-          <Button size="xl" primary dark onClick={handleSelect} pressed={isProductSelect}>
+          <Button size="m" primary={false} dark onClick={handleSelect} pressed={isProductSelect}>
             {isProductSelect ? 'В корзине' : 'В корзину'}
           </Button>
         </div>
@@ -207,33 +224,40 @@ export default function ProductBlock({ product }) {
         <div className="comments">
           <h3 className="comments__title">
             Отзывы
-            <p className="comments__count">15</p>
+            <ProductRating rating={4.8} commentsCount={10} />
           </h3>
-          <div className="comments__container">
-            <CommentsBlock
-              author="Андрей К."
-              rating={4.8}
-              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
-            />
-            <CommentsBlock
-              author="Андрей К."
-              rating={4.8}
-              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
-            />
-            <CommentsBlock
-              author="Андрей К."
-              rating={4.8}
-              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
-            />
-            <CommentsBlock
-              author="Андрей К."
-              rating={4.8}
-              text="Хорошие рюкзаки. В жизни цвет немного отличается, более светлый...Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки.Хорошие рюкзаки."
-            />
+
+          <div className='comments__photos'>
+            <h4 className='comments__photos-title'>
+              Фото покупателей
+            </h4>
+            <div className='comments__photos-block'>
+              <div className='comments__photos-container'>
+                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
+                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
+                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
+                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
+                <div className='comments__photos-all-info'>
+                  <img className='comments__photos-item comments__photos-item_info' src={photo} alt='фото товара от пользователя' />
+                  <p className='comments__photos-count'>+ 23</p>
+                  // TODO добавить пересчёт всех изображений для товара
+                  // TODO вычленить в отдельный компонент подборку фото
+                </div>
+              </div>
+              <Button size='m' primary={false} >Оставить отзыв</Button>
+            </div>
+
           </div>
-          <Button size="l" primary dark>
-            Смотреть все
-          </Button>
+
+
+          <div className="comments__container">
+            {commentsList.map(comment=>(<CommentsBlock
+              comment={comment}
+            />))}
+            
+
+          </div>
+
         </div>
       </div>
     </section>
