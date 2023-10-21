@@ -34,8 +34,8 @@ const Routing = () => {
           <Route index element={<Navigate to="profile" />} />
           <Route path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />
-          <Route path="/account/payment" element={<AccountPaymentInfo />} exact />
-          <Route path="/account/favorites" element={<AccountFavorites />} exact />
+          <Route path="payment" element={<AccountPaymentInfo />} exact />
+          <Route path="favorites" element={<AccountFavorites />} exact />
           <Route path="orders-list" element={<OrdersListPage />} exact>
             <Route index element={<OrdersList />} exact />
             <Route path=":filter" element={<OrdersList />} />

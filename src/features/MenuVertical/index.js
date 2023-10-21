@@ -1,1 +1,1 @@
-export { MenuVertical } from './MenuVertical';
+export * from './ui';

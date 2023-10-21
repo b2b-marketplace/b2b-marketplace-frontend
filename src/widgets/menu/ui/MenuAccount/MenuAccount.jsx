@@ -5,7 +5,7 @@ import { Container } from '../../../../shared/ui/Layout';
 import { AppLink } from '../../../../shared/ui/AppLink';
 import { USER_ROLE } from '../../../../shared/config/constants';
 import { PhoneNumberCallout } from '../../../../features/PhoneNumberCallout';
-import { MenuVertical } from '../../../../features/MenuVertical';
+import { MenuVertical } from '../../../../features/MenuVertical/ui';
 import IconExit from '../../../../components/UI/Icon/Icon_exit';
 
 import { menuItemsCustomer, menuItemsSupplier } from './mock';
