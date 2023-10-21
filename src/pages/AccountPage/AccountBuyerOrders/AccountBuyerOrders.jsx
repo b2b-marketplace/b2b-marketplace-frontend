@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import AccountTabNavigation from '../../../components/Account/AccountTabNavigation/AccountTabNavigation';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import Button from '../../../components/UI/Button/Button';
+import { Button } from '../../../components/UI/Button/Button';
 import IconCalendar from '../../../components/UI/Icon/Icon_calendar';
 import IconPencil from '../../../components/UI/Icon/Icon_pencil';
 import IconPlus from '../../../components/UI/Icon/Icon_plus';

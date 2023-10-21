@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Button from '../../UI/Button/Button';
+import { Button } from '../../UI/Button/Button';
 import ProductCard from '../ProductCard/ProductCard';
 
 import './ProductCardContainer.scss';

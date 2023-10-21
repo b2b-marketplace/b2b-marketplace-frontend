@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProductPopup/CancelAddProductPopup';
 import SidebarLeft from '../../../components/SidebarLeft/SidebarLeft';
 import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import Button from '../../../components/UI/Button/Button';
+import { Button } from '../../../components/UI/Button/Button';
 import Counter from '../../../components/UI/Counter/Counter';
 import DropDown from '../../../components/UI/DropDown/DropDown';
 import FileUpload from '../../../components/UI/FileUpload/FileUpload';

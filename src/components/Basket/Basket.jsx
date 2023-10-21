@@ -11,7 +11,7 @@ import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/Or
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import SidebarRight from '../SidebarRight/SidebarRight';
-import Button from '../UI/Button/Button';
+import { Button } from '../UI/Button/Button';
 import Checkbox from '../UI/Checkbox/Checkbox';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
 import IconTrash from '../UI/Icon/Icon_trash';

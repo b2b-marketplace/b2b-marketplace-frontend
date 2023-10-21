@@ -1,7 +1,7 @@
 import React from 'react';
 
 import usePopup from '../../../shared/hooks/hooks/usePopup';
-import Button from '../../UI/Button/Button';
+import { Button } from '../../UI/Button/Button';
 import Popup from '../Popup';
 
 import './CancelAddProductPopup.scss';

@@ -1,4 +1,4 @@
-import Button from '../../UI/Button/Button';
+import { Button } from '../../UI/Button/Button';
 
 const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType, formDisabled }) => {
   const handleSubmit = (event) => {

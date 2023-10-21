@@ -8,7 +8,7 @@ import {
   deleteProduct as deleteFavProduct,
 } from '../../../app/store/slices/favoritesSlice';
 import SliderImage from '../../SliderImage/SliderImage';
-import Button from '../../UI/Button/Button';
+import { Button } from '../../UI/Button/Button';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconHearthBlack from '../../UI/Icon/Icon_hearth-black';
 import IconInfo from '../../UI/Icon/Icon_info';

@@ -16,9 +16,7 @@ import './Button.scss';
  * @param extraClass - дополнительные классы
 
  * @returns {JSX.Element}
-
  */
-
 const Button = ({
   primary,
   dark,
@@ -47,8 +45,6 @@ const Button = ({
   );
 };
 
-export default Button;
-
 Button.propTypes = {
   primary: PropTypes.bool,
   dark: PropTypes.bool,
@@ -69,3 +65,5 @@ Button.defaultProps = {
   extraClass: '',
   onClick: undefined,
 };
+
+export { Button };

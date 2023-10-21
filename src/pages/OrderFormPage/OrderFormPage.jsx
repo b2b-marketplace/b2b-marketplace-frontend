@@ -9,7 +9,7 @@ import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/Or
 import OrderForm from '../../components/OrderForm/OrderForm';
 import OrderPopup from '../../components/PopupsRedux/OrderPopup/OrderPopup';
 import SidebarRight from '../../components/SidebarRight/SidebarRight';
-import Button from '../../components/UI/Button/Button';
+import { Button } from '../../components/UI/Button/Button';
 import accountApi from '../../shared/api/accountApi';
 import usePopup from '../../shared/hooks/hooks/usePopup';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
