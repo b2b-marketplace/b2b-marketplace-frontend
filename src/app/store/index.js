@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -9,16 +9,16 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import { accountReducer } from './slices/accountSlice';
-import { authReducer } from './slices/authSlice';
-import { basketReducer } from './slices/basketSlice';
-import { errorReducer } from './slices/errorSlice';
-import { favoritesReducer } from './slices/favoritesSlice';
-import { productsReducer } from './slices/productsSlice';
-import { restoreReducer } from './slices/restoreSlice';
 import { popupReducer } from './slices/togglePopupSlice.js';
+import { restoreReducer } from './slices/restoreSlice';
+import { productsReducer } from './slices/productsSlice';
+import { favoritesReducer } from './slices/favoritesSlice';
+import { errorReducer } from './slices/errorSlice';
+import { basketReducer } from './slices/basketSlice';
+import { authReducer } from './slices/authSlice';
+import { accountReducer } from './slices/accountSlice';
 
 const rootReducer = combineReducers({
   account: accountReducer,

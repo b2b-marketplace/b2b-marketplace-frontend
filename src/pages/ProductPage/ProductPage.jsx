@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
+import ErrorPage from '../ErrorPage/ErrorPage';
+import Preloader from '../../components/UI/Preloader/Preloader';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
+import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
+import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
 import {
   fetchProductById,
   loadMoreProducts,
   fetchProducts,
 } from '../../app/store/slices/productsSlice';
-import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
-import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
-import Preloader from '../../components/UI/Preloader/Preloader';
-import ErrorPage from '../ErrorPage/ErrorPage';
 
 import './ProductPage.scss';
 

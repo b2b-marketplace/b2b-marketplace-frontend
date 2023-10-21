@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 
-import { changeChecked, deleteProduct, updateAllProduct } from '../../app/store/slices/basketSlice';
-import productsApi from '../../shared/api/productsApi';
-import usePopup from '../../shared/hooks/hooks/usePopup';
-import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
-import OrderDetail from '../OrderDetail/OrderDetail';
-import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
-import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
-import SidebarRight from '../SidebarRight/SidebarRight';
-import { Button } from '../UI/Button/Button';
-import Checkbox from '../UI/Checkbox/Checkbox';
-import IconInfoFill from '../UI/Icon/Icon_info_fill';
-import IconTrash from '../UI/Icon/Icon_trash';
-import Preloader from '../UI/Preloader/Preloader';
 import Tooltip from '../UI/Tooltip/Tooltip';
+import Preloader from '../UI/Preloader/Preloader';
+import IconTrash from '../UI/Icon/Icon_trash';
+import IconInfoFill from '../UI/Icon/Icon_info_fill';
+import Checkbox from '../UI/Checkbox/Checkbox';
+import { Button } from '../UI/Button/Button';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
+import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import OrderDetail from '../OrderDetail/OrderDetail';
+import { Sidebar } from '../../shared/ui/Layout';
+import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
+import usePopup from '../../shared/hooks/usePopup';
+import productsApi from '../../shared/api/productsApi';
+import { changeChecked, deleteProduct, updateAllProduct } from '../../app/store/slices/basketSlice';
 
 import './Basket.scss';
 
 /**
  *
- * @param extraClassName
+ * @param className
  * @returns {JSX.Element}
  * @constructor
  *
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const Basket = ({ extraClassName }) => {
+const Basket = ({ className }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.account);
   const { openPopup: openRegisterPopup } = usePopup('registration');
@@ -181,7 +181,7 @@ const Basket = ({ extraClassName }) => {
     return <Preloader />;
   }
   return (
-    <section className={`basket ${extraClassName || ''}`}>
+    <section className={`basket ${className || ''}`}>
       {currentProductList.length > 0 ? (
         <div className="basket__container">
           <div className="basket__container-product">
@@ -221,7 +221,7 @@ const Basket = ({ extraClassName }) => {
               ))}
             </ul>
           </div>
-          <SidebarRight extraClassName="basket__sidebar-right">
+          <Sidebar type="right" className="basket__sidebar-right">
             <OrderDetail extraClassName="basket__order-detail-sticky">
               <OrderDetailHeader title="Детали заказа">
                 <Tooltip
@@ -242,7 +242,7 @@ const Basket = ({ extraClassName }) => {
                 {isLoggedIn ? (
                   user.company.role !== 'supplier' ? (
                     <Button
-                      size="m"
+                      size="l"
                       extraClass="basket__button"
                       onClick={handleNavigateToOrder}
                       primary
@@ -256,7 +256,7 @@ const Basket = ({ extraClassName }) => {
                     <>
                       <Button
                         extraClass="basket__button"
-                        size="m"
+                        size="l"
                         primary
                         dark
                         disabled
@@ -287,7 +287,7 @@ const Basket = ({ extraClassName }) => {
                 )}
               </div>
             </OrderDetail>
-          </SidebarRight>
+          </Sidebar>
         </div>
       ) : (
         <div className="basket__empty">Корзина Пуста</div>

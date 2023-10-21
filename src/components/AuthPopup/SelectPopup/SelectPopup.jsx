@@ -1,9 +1,9 @@
-import usePopup from '../../../shared/hooks/hooks/usePopup';
-import IconGmail from '../../UI/Icon/IconGmail';
-import IconVK from '../../UI/Icon/IconVK';
-import IconYandex from '../../UI/Icon/IconYandex';
-import Popup from '../Popup';
 import PopupButtons from '../PopupButtons/PopupButtons';
+import Popup from '../Popup';
+import IconYandex from '../../UI/Icon/IconYandex';
+import IconVK from '../../UI/Icon/IconVK';
+import IconGmail from '../../UI/Icon/IconGmail';
+import usePopup from '../../../shared/hooks/usePopup';
 
 const SelectPopup = () => {
   const { isOpen, closePopup } = usePopup('select');

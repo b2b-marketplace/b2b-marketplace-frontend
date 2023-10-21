@@ -1,0 +1,8 @@
+@import '/src/app/styles/global';
+
+.main {
+  @include box-container;
+  @include flex-container;
+  margin: 60px 0 0;
+  width: 100%;
+}

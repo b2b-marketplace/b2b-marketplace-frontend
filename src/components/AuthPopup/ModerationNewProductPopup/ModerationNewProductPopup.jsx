@@ -1,7 +1,7 @@
 import React from 'react';
 
-import usePopup from '../../../shared/hooks/hooks/usePopup';
 import Popup from '../Popup';
+import usePopup from '../../../shared/hooks/usePopup';
 
 import './ModerationNewProductPopup.scss';
 

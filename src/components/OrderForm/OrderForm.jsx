@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
-import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
-import { addDeliveryAddress } from '../../app/store/slices/basketSlice';
-import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
+import { addDeliveryAddress } from '../../app/store/slices/basketSlice';
+
+import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
+import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
 
 import './OrderForm.scss';
 

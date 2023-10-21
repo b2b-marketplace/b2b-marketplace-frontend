@@ -1,10 +1,18 @@
 @import './_vars.scss';
 
-@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+//@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+@mixin flex-container($direction: false, $justify: false, $align: false) {
   display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
 }
 
 // Миксин для создания flex-элемента

@@ -66,11 +66,11 @@
   }
 
   &__link {
-    @include text-M-link-styles;
+    //@include text-M-link-styles;
     display: flex;
     align-items: center;
     gap: 4px;
-    text-decoration: none;
+    //text-decoration: none;
   }
 
   &__icon-container {
@@ -79,13 +79,19 @@
   }
 
   &__item-count {
+    @include text-S-bold-styles;
     color: $redColor;
-    border-radius: 50%;
-
-    font-size: 14px;
     position: absolute;
-    top: -6px;
-    right: -1px;
+    top: 15px;
+    right: 0;
+    border: 1px solid;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
   }
 
   &__catalog-button {
@@ -110,11 +116,13 @@
       border: none;
       color: $whiteColor;
     }
+
     &_pressed {
       background-color: $blackDarkColor;
       color: $whiteColor;
       border: none;
     }
+
     &:disabled {
       background-color: $grayLightColor;
       color: $grayColor;

@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 
-import DeliveryWarehouseAddress from './DeliveryWarehouseAddress/DeliveryWarehouseAddress';
 import RadioButton from '../../UI/RadioButton/RadioButton';
 
-import logoSrc1 from '../../../images/stock/logo-1.png';
-import logoSrc2 from '../../../images/stock/logo-2.png';
+import DeliveryWarehouseAddress from './DeliveryWarehouseAddress/DeliveryWarehouseAddress';
+
 import imageMap from '../../../images/stock/map.jpg';
+import logoSrc2 from '../../../images/stock/logo-2.png';
+import logoSrc1 from '../../../images/stock/logo-1.png';
 
 import './DeliveryWarehouseAddressList.scss';
 

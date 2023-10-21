@@ -1,8 +1,9 @@
 import React from 'react';
 
-import MenuClothes from './MenuClothes/MenuClothes';
-import MenuBar from '../../MenuBar/MenuBar';
 import Popups from '../Popups';
+import MenuBar from '../../MenuBar/MenuBar';
+
+import MenuClothes from './MenuClothes/MenuClothes';
 
 import './PopupMenu.scss';
 

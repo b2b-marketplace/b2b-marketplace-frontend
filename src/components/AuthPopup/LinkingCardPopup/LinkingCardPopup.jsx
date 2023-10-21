@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import usePopup from '../../../shared/hooks/hooks/usePopup';
-import { Button } from '../../UI/Button/Button';
-import Form from '../Form/Form';
-import Input from '../Input/Input';
 import Popup from '../Popup';
+import Input from '../Input/Input';
+import Form from '../Form/Form';
+import { Button } from '../../UI/Button/Button';
+import usePopup from '../../../shared/hooks/usePopup';
 
 const LinkingCardPopup = ({ onClose, onAddCard }) => {
   const { isOpen, closePopup } = usePopup('linkingCard');

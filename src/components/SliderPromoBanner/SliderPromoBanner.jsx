@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import Arrows from './Arrows/Arrows';
-import Dots from './Dots/Dots';
 import BannerPromo from '../Banners/BannerPromo/BannerPromo';
+
+import Dots from './Dots/Dots';
+import Arrows from './Arrows/Arrows';
 
 import './SliderPromoBanner.scss';
 

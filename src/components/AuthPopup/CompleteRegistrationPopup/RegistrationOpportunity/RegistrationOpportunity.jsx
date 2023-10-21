@@ -1,5 +1,5 @@
-import IconComplele from '../../../UI/Icon/IconComplele';
 import PopupParagraph from '../../PopupParagraph/PopupParagraph';
+import IconComplele from '../../../UI/Icon/IconComplele';
 
 const RegistrationOpportunity = ({ children }) => {
   return (

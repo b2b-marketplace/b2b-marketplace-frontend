@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 // eslint-disable-next-line import/no-unresolved
-import 'swiper/css';
-// eslint-disable-next-line import/no-unresolved
-import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-unresolved
 import { Navigation } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css/navigation';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
 
-import { commentsList } from './../../../shared/mock/commentsMock';
-import { addProduct, deleteProduct, changeQuantity } from '../../../app/store/slices/basketSlice';
-import { Button } from '../../UI/Button/Button';
-import Counter from '../../UI/Counter/Counter';
-import IconAvailable from '../../UI/Icon/Icon_available';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import IconInfo from '../../UI/Icon/Icon_info';
-import IconNotAvailable from '../../UI/Icon/Icon_not-available';
-import IconScales from '../../UI/Icon/Icon_scales';
-import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
-import CommentsBlock from '../CommentsBlock/CommentsBlock';
 import ProductRating from '../ProductRating/ProductRating';
+import CommentsBlock from '../CommentsBlock/CommentsBlock';
+import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
+import IconScales from '../../UI/Icon/Icon_scales';
+import IconNotAvailable from '../../UI/Icon/Icon_not-available';
+import IconInfo from '../../UI/Icon/Icon_info';
+import IconHearth from '../../UI/Icon/Icon_hearth';
+import IconAvailable from '../../UI/Icon/Icon_available';
+import Counter from '../../UI/Counter/Counter';
+import { Button } from '../../UI/Button/Button';
+import { commentsList } from '../../../shared/mock/commentsMock';
+import { addProduct, deleteProduct, changeQuantity } from '../../../app/store/slices/basketSlice';
 
-import photo from './../../../images/4.jpg';
 import noPhoto from '../../../images/nophoto.png';
+import photo from './../../../images/4.jpg';
 
 import './ProductBlock.scss';
 

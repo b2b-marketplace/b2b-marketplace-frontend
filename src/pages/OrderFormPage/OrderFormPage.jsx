@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 
-import { updateAllProduct } from '../../app/store/slices/basketSlice';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
-import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import OrderForm from '../../components/OrderForm/OrderForm';
-import OrderPopup from '../../components/PopupsRedux/OrderPopup/OrderPopup';
-import SidebarRight from '../../components/SidebarRight/SidebarRight';
-import { Button } from '../../components/UI/Button/Button';
-import accountApi from '../../shared/api/accountApi';
-import usePopup from '../../shared/hooks/hooks/usePopup';
+import { Main, Sidebar } from '../../shared/ui/Layout';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
+import usePopup from '../../shared/hooks/usePopup';
+import accountApi from '../../shared/api/accountApi';
+import { Button } from '../../components/UI/Button/Button';
+import OrderForm from '../../components/OrderForm/OrderForm';
+import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
+import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import { updateAllProduct } from '../../app/store/slices/basketSlice';
 
 import './OrderFormPage.scss';
 
@@ -97,32 +96,34 @@ const OrderFormPage = () => {
   };
 
   return (
-    <section className="order-form-page">
-      <OrderForm productList={currentProductList} extraClassName="order-form-page__container" />
-      <SidebarRight>
-        <OrderDetail>
-          <OrderDetailHeader title="Ваш заказ" />
-          <OrderDetailContentOrderPage
-            deliveryDate={formatDateUnixTimestamp(orderInfo.delivery_date)}
-            deliveryName={orderInfo.delivery_name}
-            deliveryPrice={orderInfo.delivery_price}
-            productPriceTotal={orderInfo.product_price_total}
-            productQuantity={orderInfo.product_quantity}
-          />
-          <Button
-            size="s"
-            // onClick={openOrderPopup}
-            onClick={handleOrderConfirm}
-            primary
-            dark
-            // disabled={!selectedProductId.length}
-            label="Подтвердить заказ"
-          >
-            Подтвердить заказ
-          </Button>
-        </OrderDetail>
-      </SidebarRight>
-    </section>
+    <Main className="account-page">
+      <section className="order-form-page">
+        <OrderForm productList={currentProductList} extraClassName="order-form-page__container" />
+        <Sidebar type="right">
+          <OrderDetail>
+            <OrderDetailHeader title="Ваш заказ" />
+            <OrderDetailContentOrderPage
+              deliveryDate={formatDateUnixTimestamp(orderInfo.delivery_date)}
+              deliveryName={orderInfo.delivery_name}
+              deliveryPrice={orderInfo.delivery_price}
+              productPriceTotal={orderInfo.product_price_total}
+              productQuantity={orderInfo.product_quantity}
+            />
+            <Button
+              size="l"
+              // onClick={openOrderPopup}
+              onClick={handleOrderConfirm}
+              primary
+              dark
+              // disabled={!selectedProductId.length}
+              label="Подтвердить заказ"
+            >
+              Подтвердить заказ
+            </Button>
+          </OrderDetail>
+        </Sidebar>
+      </section>
+    </Main>
   );
 };
 

@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 
-import { fetchProducts, loadMoreProducts } from '../../app/store/slices/productsSlice';
-import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
-import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
-import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
+import { Main } from '../../shared/ui/Layout';
 import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
+import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
+import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
+import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
+import { fetchProducts, loadMoreProducts } from '../../app/store/slices/productsSlice';
 
 import './HomePage.scss';
 
@@ -37,7 +38,7 @@ const HomePage = () => {
   };
 
   return (
-    <main className="home-page">
+    <Main className="home-page">
       <SliderPromoBanner />
       <PlatformBenefits className="home-page__platform-benefits" />
       <ProductCardContainer
@@ -56,7 +57,7 @@ const HomePage = () => {
         isFull={isFull}
       />
       {!isLoggedIn && <PromoRegistration className="home-page__promo-registration" />}
-    </main>
+    </Main>
   );
 };
 

@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 
+import Preloader from '../UI/Preloader/Preloader';
+import IconTrash from '../UI/Icon/Icon_trash';
+import Checkbox from '../UI/Checkbox/Checkbox';
+import { Button } from '../UI/Button/Button';
+import ProductCardFavorites from '../ProductElements/ProductCardFavorites/ProductCardFavorites';
+import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import OrderDetail from '../OrderDetail/OrderDetail';
+import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
+import productsApi from '../../shared/api/productsApi';
 import {
   changeChecked,
   deleteProduct,
   updateAllProduct,
 } from '../../app/store/slices/favoritesSlice';
-import productsApi from '../../shared/api/productsApi';
-import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
-import OrderDetail from '../OrderDetail/OrderDetail';
-import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
-import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import ProductCardFavorites from '../ProductElements/ProductCardFavorites/ProductCardFavorites';
-import { Button } from '../UI/Button/Button';
-import Checkbox from '../UI/Checkbox/Checkbox';
-import IconTrash from '../UI/Icon/Icon_trash';
-import Preloader from '../UI/Preloader/Preloader';
 
 import './Favorites.scss';
 

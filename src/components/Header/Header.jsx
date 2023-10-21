@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
-import geoApi from '../../shared/api/GeoApi';
-import usePopup from '../../shared/hooks/hooks/usePopup';
-import PopupMenu from '../Popups/PopupMenu/PopupMenu';
-import IconBasket from '../UI/Icon/Icon_basket';
-import IconBasketBlack from '../UI/Icon/icon_basket-black';
-import IconBoxRu from '../UI/Icon/Icon_boxRu';
-import IconBurger from '../UI/Icon/Icon_burger';
-import IconFire from '../UI/Icon/Icon_fire';
-import IconMessage from '../UI/Icon/Icon_message';
-import IconPosition from '../UI/Icon/Icon_position';
-import IconProfile from '../UI/Icon/Icon_profile';
-import IconProfileBlack from '../UI/Icon/Icon_profile-black';
-import IconScales from '../UI/Icon/Icon_scales';
 import Search from '../UI/Search/Search';
+import IconScales from '../UI/Icon/Icon_scales';
+import IconProfileBlack from '../UI/Icon/Icon_profile-black';
+import IconProfile from '../UI/Icon/Icon_profile';
+import IconPosition from '../UI/Icon/Icon_position';
+import IconMessage from '../UI/Icon/Icon_message';
+import IconFire from '../UI/Icon/Icon_fire';
+import IconBurger from '../UI/Icon/Icon_burger';
+import IconBoxRu from '../UI/Icon/Icon_boxRu';
+import IconBasketBlack from '../UI/Icon/icon_basket-black';
+import IconBasket from '../UI/Icon/Icon_basket';
+import PopupMenu from '../Popups/PopupMenu/PopupMenu';
+import { AppLink, AppNavLink } from '../../shared/ui/AppLink';
+import usePopup from '../../shared/hooks/usePopup';
+import geoApi from '../../shared/api/GeoApi';
 
 import './Header.scss';
 
@@ -69,41 +70,41 @@ const Header = () => {
         </button>
 
         <nav className="header__navigation">
-          <NavLink className="header__link" to="/">
+          <AppLink type="dark" className="header__link" to="#1">
             Поставщики
-          </NavLink>
+          </AppLink>
 
-          <NavLink className="header__link" to="#">
+          <AppLink type="dark" className="header__link" to="#2">
             Закупки
-          </NavLink>
+          </AppLink>
 
-          <NavLink className="header__link" to="#">
+          <AppLink type="dark" className="header__link" to="#">
             Оплата&nbsp;и&nbsp;доставка
-          </NavLink>
+          </AppLink>
 
-          <NavLink className="header__link" to="#">
+          <AppLink type="dark" className="header__link" to="#">
             Возврат
-          </NavLink>
+          </AppLink>
 
-          <NavLink className="header__link" to="#">
+          <AppLink type="dark" className="header__link" to="#">
             <IconFire />
             Акции
-          </NavLink>
+          </AppLink>
         </nav>
 
         <Search />
       </div>
 
       <nav className="header__navigation-link">
-        <Link to="/chat" className="header__link">
+        <AppLink type="dark" to="/chat" className="header__link">
           <IconMessage />
-        </Link>
+        </AppLink>
 
-        <Link to="/scale" className="header__link">
+        <AppLink type="dark" to="/scale" className="header__link">
           <IconScales />
-        </Link>
+        </AppLink>
 
-        <Link to="/basket" className="header__link header__icon-container">
+        <AppLink type="dark" to="/basket" className="header__link header__icon-container">
           {isItemsInBasket ? (
             <>
               {basketItemCount > 0 && <span className="header__item-count">{basketItemCount}</span>}
@@ -112,15 +113,16 @@ const Header = () => {
           ) : (
             <IconBasket />
           )}
-        </Link>
+        </AppLink>
 
-        <Link
+        <AppLink
+          type="dark"
           onClick={!isLoggedIn && handleOpenAuthPopup}
           to="/account/profile"
           className="header__link"
         >
           {isLoggedIn ? <IconProfileBlack /> : <IconProfile />}
-        </Link>
+        </AppLink>
       </nav>
 
       {isPopupOpen && <PopupMenu onClose={togglePopup} />}
