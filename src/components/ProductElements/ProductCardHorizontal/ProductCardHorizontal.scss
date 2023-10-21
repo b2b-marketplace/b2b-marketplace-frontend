@@ -38,9 +38,6 @@
   &__details {
     @include flex-space-between;
     column-gap: 16px;
-
-    //max-width: 330px;
-    //min-width: 260px;
   }
 
   &__product-description {
@@ -98,6 +95,7 @@
     column-gap: 20px;
     max-width: 468px;
     width: 100%;
+
     &_order-form {
       max-width: 276px;
     }
@@ -106,7 +104,7 @@
   &__buttons {
     @include flex-container;
     column-gap: 20px;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   &__button {
@@ -134,10 +132,8 @@
   }
 
   &__product-prices {
-    @include flex-container(column, center, end);
+    @include flex-container(column, center, flex-end);
     min-width: max-content;
-    //@include flex-column;
-    //@include center-both;
     row-gap: 8px;
     //width: 189px;
   }

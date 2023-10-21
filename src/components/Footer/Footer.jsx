@@ -1,8 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
-import IconTelegram from '../UI/Icon/Icon_telegram';
 import IconVk from '../UI/Icon/Icon_vk';
+import IconTelegram from '../UI/Icon/Icon_telegram';
 
 import logo from '../../images/uim_box_footer.svg';
 

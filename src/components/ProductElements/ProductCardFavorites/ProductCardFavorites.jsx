@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 
-import { addProduct, deleteProduct } from '../../../app/store/slices/favoritesSlice';
-import { priceFormat } from '../../../shared/lib/utils';
-import { Button } from '../../UI/Button/Button';
-import Checkbox from '../../UI/Checkbox/Checkbox';
-import ProductCardHorizontalImage from '../ProductCardHorizontal/ProductCardHorizontalImage/ProductCardHorizontalImage';
 import VendorCode from '../VendorCode/VendorCode';
+import ProductCardHorizontalImage from '../ProductCardHorizontal/ProductCardHorizontalImage/ProductCardHorizontalImage';
+import Checkbox from '../../UI/Checkbox/Checkbox';
+import { Button } from '../../UI/Button/Button';
+import { priceFormat } from '../../../shared/lib/utils';
+import { addProduct, deleteProduct } from '../../../app/store/slices/favoritesSlice';
 
 import imageStub from '../../../images/basket/Stub_132_128.jpg';
 

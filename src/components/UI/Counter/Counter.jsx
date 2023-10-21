@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import IconMinus from '../Icon/Icon_minus';
 import IconPlus from '../Icon/Icon_plus';
+import IconMinus from '../Icon/Icon_minus';
 
 import './Counter.scss';
 

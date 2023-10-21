@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom/client';
+import React from 'react';
 
-import App from './app/App';
 import store, { persistor } from './app/store';
+import App from './app/App';
 
 import './index.scss';
 

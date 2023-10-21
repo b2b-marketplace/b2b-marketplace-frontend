@@ -46,17 +46,17 @@
           [
             // Родительские директории (например, '../')
             "parent",
-            // Родственные директории (например, './' или '../components')
-            "sibling",
             // Индексные файлы (например, './index.js')
             "index"
           ],
+          // Родственные директории (например, './' или '../components')
+          "sibling",
           // Неизвестные импорты
           "unknown"
         ],
         "newlines-between": "always",
         "alphabetize": {
-          "order": "asc",
+          "order": "desc",
           "caseInsensitive": true
         },
         "pathGroups": [

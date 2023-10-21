@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TabsNavigation from '../../UI/TabNavigation/TabsNavigation';
 import DeliveryWarehouseAddressList from '../DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
+import TabsNavigation from '../../UI/TabNavigation/TabsNavigation';
 
 import './OrderFormReceivingProduct.scss';
 

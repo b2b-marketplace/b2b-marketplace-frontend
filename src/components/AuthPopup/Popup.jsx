@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
-import Stepper from './Stepper/Stepper';
 import IconClose from '../UI/Icon/Icon_close';
+
+import Stepper from './Stepper/Stepper';
 
 import './Popup.scss';
 

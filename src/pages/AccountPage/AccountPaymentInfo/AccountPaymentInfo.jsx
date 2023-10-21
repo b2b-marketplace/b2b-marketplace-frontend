@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import LinkingCardPopup from '../../../components/AuthPopup/LinkingCardPopup/LinkingCardPopup';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import IconClose from '../../../components/UI/Icon/Icon_close';
-import IconPlus from '../../../components/UI/Icon/Icon_plus';
-import IconVisa from '../../../components/UI/Icon/Icon_visa';
+import usePopup from '../../../shared/hooks/usePopup';
 import RadioButton from '../../../components/UI/RadioButton/RadioButton';
-import usePopup from '../../../shared/hooks/hooks/usePopup';
+import IconVisa from '../../../components/UI/Icon/Icon_visa';
+import IconPlus from '../../../components/UI/Icon/Icon_plus';
+import IconClose from '../../../components/UI/Icon/Icon_close';
+import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
+import LinkingCardPopup from '../../../components/AuthPopup/LinkingCardPopup/LinkingCardPopup';
 
 import './AccountPaymentInfo.scss';
 

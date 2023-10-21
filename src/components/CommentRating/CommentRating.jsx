@@ -1,7 +1,7 @@
 import React from 'react';
 
-import IconCommentDislike from '../UI/Icon/Icon_comment-dislike';
 import IconCommentLike from '../UI/Icon/Icon_comment-like';
+import IconCommentDislike from '../UI/Icon/Icon_comment-dislike';
 
 import './CommentRating.scss';
 

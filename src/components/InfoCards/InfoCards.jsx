@@ -1,7 +1,7 @@
 import React from 'react';
 
-import InfoCard from './InfoCard/InfoCard';
 import { CARD_INFO_LIST } from './mock.js';
+import InfoCard from './InfoCard/InfoCard';
 
 import './InfoCards.scss';
 

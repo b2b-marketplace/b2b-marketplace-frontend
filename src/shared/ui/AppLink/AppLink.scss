@@ -1,0 +1,20 @@
+@import '/src/app/styles/global';
+
+.app-link {
+  @include text-M-main-styles;
+  @include reset-link;
+  @include hover-transition;
+
+  &_gray {
+    color: $grayColor;
+
+    &.app-link_active,
+    &:hover {
+      color: $darkColor;
+    }
+
+    //&.app-link_active:hover {
+    //  color: $grayColor;
+    //}
+  }
+}

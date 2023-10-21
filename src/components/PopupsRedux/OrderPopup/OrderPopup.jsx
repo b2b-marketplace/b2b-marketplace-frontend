@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-import usePopup from '../../../shared/hooks/hooks/usePopup';
-import Popup from '../../AuthPopup/Popup';
 import IconFire from '../../UI/Icon/Icon_fire';
+import Popup from '../../AuthPopup/Popup';
+import usePopup from '../../../shared/hooks/usePopup';
 
 import './OrderPopup.scss';
 

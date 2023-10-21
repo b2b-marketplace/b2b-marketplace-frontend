@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+
+import VendorCode from '../VendorCode/VendorCode';
+import IconTrash from '../../UI/Icon/Icon_trash';
+import IconHearth from '../../UI/Icon/Icon_hearth';
+import Counter from '../../UI/Counter/Counter';
+import Checkbox from '../../UI/Checkbox/Checkbox';
+import { priceFormat } from '../../../shared/lib/utils';
+import { changeQuantity, deleteProduct } from '../../../app/store/slices/basketSlice.js';
 
 import ProductCardHorizontalImage from './ProductCardHorizontalImage/ProductCardHorizontalImage';
-import { changeQuantity, deleteProduct } from '../../../app/store/slices/basketSlice.js';
-import { priceFormat } from '../../../shared/lib/utils';
-import Checkbox from '../../UI/Checkbox/Checkbox';
-import Counter from '../../UI/Counter/Counter';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import IconTrash from '../../UI/Icon/Icon_trash';
-import VendorCode from '../VendorCode/VendorCode';
 
 import imageStub from '../../../images/basket/Stub_132_128.jpg';
 

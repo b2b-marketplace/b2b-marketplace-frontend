@@ -1,0 +1,14 @@
+@import '/src/app/styles/global';
+
+.sidebar {
+  @include flex-column;
+  width: 100%;
+
+  &_right {
+    max-width: 310px;
+  }
+
+  &_left {
+    max-width: 270px;
+  }
+}

@@ -1,11 +1,8 @@
 @import '/src/app/styles/global';
 
 .home-page {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  max-width: $maxWidth;
-  min-width: $minWidth;
+  @include flex-column;
+
   margin-top: 52px;
 
   &__platform-benefits {

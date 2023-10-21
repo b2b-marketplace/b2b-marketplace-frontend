@@ -1,11 +1,11 @@
 import React from 'react';
 
-import AccountTabNavigation from '../../../components/Account/AccountTabNavigation/AccountTabNavigation';
-import Favorites from '../../../components/Favorites/Favorites';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
-import { Button } from '../../../components/UI/Button/Button';
-import DropDown from '../../../components/UI/DropDown/DropDown';
+import { MenuOrders } from '../../../widgets/menu';
 import Search from '../../../components/UI/Search/Search';
+import DropDown from '../../../components/UI/DropDown/DropDown';
+import { Button } from '../../../components/UI/Button/Button';
+import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
+import Favorites from '../../../components/Favorites/Favorites';
 
 import './AccountFavorites.scss';
 
@@ -31,7 +31,7 @@ const AccountFavorites = () => {
         />
       </div>
       <div className="account-favorites__control">
-        <AccountTabNavigation menuList={menuItemBuyer} />
+        <MenuOrders menuList={menuItemBuyer} />
         <Favorites />
       </div>
     </div>

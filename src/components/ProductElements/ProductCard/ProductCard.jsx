@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 
-import { addProduct, deleteProduct } from '../../../app/store/slices/basketSlice';
+import IconScales from '../../UI/Icon/Icon_scales';
+import IconInfo from '../../UI/Icon/Icon_info';
+import IconHearthBlack from '../../UI/Icon/Icon_hearth-black';
+import IconHearth from '../../UI/Icon/Icon_hearth';
+import { Button } from '../../UI/Button/Button';
+import SliderImage from '../../SliderImage/SliderImage';
 import {
   addProduct as addFavProduct,
   deleteProduct as deleteFavProduct,
 } from '../../../app/store/slices/favoritesSlice';
-import SliderImage from '../../SliderImage/SliderImage';
-import { Button } from '../../UI/Button/Button';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import IconHearthBlack from '../../UI/Icon/Icon_hearth-black';
-import IconInfo from '../../UI/Icon/Icon_info';
-import IconScales from '../../UI/Icon/Icon_scales';
+import { addProduct, deleteProduct } from '../../../app/store/slices/basketSlice';
 
 import './ProductCard.scss';
 

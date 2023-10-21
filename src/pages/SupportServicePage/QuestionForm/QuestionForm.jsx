@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
-import { Button } from '../../../components/UI/Button/Button';
-import Checkbox from '../../../components/UI/Checkbox/Checkbox';
-import DropDown from '../../../components/UI/DropDown/DropDown';
-import IconFolderAdd from '../../../components/UI/Icon/Icon_folder-add';
 import InputField from '../../../components/UI/InputField/InputField';
+import IconFolderAdd from '../../../components/UI/Icon/Icon_folder-add';
+import DropDown from '../../../components/UI/DropDown/DropDown';
+import Checkbox from '../../../components/UI/Checkbox/Checkbox';
+import { Button } from '../../../components/UI/Button/Button';
 
 import './QuestionForm.scss';
 
