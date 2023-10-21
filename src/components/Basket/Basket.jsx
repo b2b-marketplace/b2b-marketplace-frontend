@@ -242,7 +242,7 @@ const Basket = ({ className }) => {
                 {isLoggedIn ? (
                   user.company.role !== 'supplier' ? (
                     <Button
-                      size="m"
+                      size="l"
                       extraClass="basket__button"
                       onClick={handleNavigateToOrder}
                       primary
@@ -256,7 +256,7 @@ const Basket = ({ className }) => {
                     <>
                       <Button
                         extraClass="basket__button"
-                        size="m"
+                        size="l"
                         primary
                         dark
                         disabled

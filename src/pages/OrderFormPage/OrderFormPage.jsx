@@ -110,7 +110,7 @@ const OrderFormPage = () => {
               productQuantity={orderInfo.product_quantity}
             />
             <Button
-              size="s"
+              size="l"
               // onClick={openOrderPopup}
               onClick={handleOrderConfirm}
               primary
