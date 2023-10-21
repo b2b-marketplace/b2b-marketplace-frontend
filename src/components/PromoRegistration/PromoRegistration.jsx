@@ -23,7 +23,12 @@ const PromoRegistration = ({ className }) => {
           <Button size="xl" onClick={openRegisterPopup} primary dark>
             Зарегистрироваться
           </Button>
-          <Button size="xl" onClick={openLoginPopup} primary extraClass="promo-registration__button">
+          <Button
+            size="xl"
+            onClick={openLoginPopup}
+            primary
+            extraClass="promo-registration__button"
+          >
             Войти
           </Button>
         </div>

@@ -27,12 +27,11 @@ import noPhoto from '../../../images/nophoto.png';
 
 import './ProductBlock.scss';
 
-
 /**
  * Блок описания товара
  *
  * @param product - объект с данными товара
- * 
+ *
  * @returns {JSX.Element}
  */
 
@@ -105,7 +104,7 @@ export default function ProductBlock({ product }) {
             </div>
           </div>
 
-          <div className='info__rating-line'>
+          <div className="info__rating-line">
             <ProductRating rating={4.8} commentsCount={10} />
           </div>
 
@@ -113,7 +112,8 @@ export default function ProductBlock({ product }) {
             <p className="info__shipper-name">{product.seller.name || ''}</p>
             <IconInfo
               className="info__shipper-icon hint-right-middle"
-              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${product.seller.ogrn || ''
+              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${
+                product.seller.ogrn || ''
               }`}
             />
           </div>
@@ -227,37 +227,52 @@ export default function ProductBlock({ product }) {
             <ProductRating rating={4.8} commentsCount={10} />
           </h3>
 
-          <div className='comments__photos'>
-            <h4 className='comments__photos-title'>
-              Фото покупателей
-            </h4>
-            <div className='comments__photos-block'>
-              <div className='comments__photos-container'>
-                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
-                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
-                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
-                <img className='comments__photos-item' src={photo} alt='фото товара от пользователя' />
-                <div className='comments__photos-all-info'>
-                  <img className='comments__photos-item comments__photos-item_info' src={photo} alt='фото товара от пользователя' />
-                  <p className='comments__photos-count'>+ 23</p>
-                  // TODO добавить пересчёт всех изображений для товара
-                  // TODO вычленить в отдельный компонент подборку фото
+          <div className="comments__photos">
+            <h4 className="comments__photos-title">Фото покупателей</h4>
+            <div className="comments__photos-block">
+              <div className="comments__photos-container">
+                <img
+                  className="comments__photos-item"
+                  src={photo}
+                  alt="фото товара от пользователя"
+                />
+                <img
+                  className="comments__photos-item"
+                  src={photo}
+                  alt="фото товара от пользователя"
+                />
+                <img
+                  className="comments__photos-item"
+                  src={photo}
+                  alt="фото товара от пользователя"
+                />
+                <img
+                  className="comments__photos-item"
+                  src={photo}
+                  alt="фото товара от пользователя"
+                />
+                <div className="comments__photos-all-info">
+                  <img
+                    className="comments__photos-item comments__photos-item_info"
+                    src={photo}
+                    alt="фото товара от пользователя"
+                  />
+                  <p className="comments__photos-count">+ 23</p>
+                  // TODO добавить пересчёт всех изображений для товара // TODO вычленить в
+                  отдельный компонент подборку фото
                 </div>
               </div>
-              <Button size='m' primary={false} >Оставить отзыв</Button>
+              <Button size="m" primary={false}>
+                Оставить отзыв
+              </Button>
             </div>
-
           </div>
-
 
           <div className="comments__container">
-            {commentsList.map(comment=>(<CommentsBlock
-              comment={comment}
-            />))}
-            
-
+            {commentsList.map((comment) => (
+              <CommentsBlock comment={comment} />
+            ))}
           </div>
-
         </div>
       </div>
     </section>
