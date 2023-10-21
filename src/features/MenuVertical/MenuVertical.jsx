@@ -20,7 +20,7 @@ const MenuVertical = ({ menuItems }) => {
       <ul className="menu-vertical__list">
         {menuItems.map((item, index) => (
           <li key={index} className="menu-vertical__item">
-            <AppNavLink to={item.link} className="menu-vertical__link">
+            <AppNavLink type="gray" to={item.link} className="menu-vertical__link">
               {item.icon}
               {item.label}
             </AppNavLink>
