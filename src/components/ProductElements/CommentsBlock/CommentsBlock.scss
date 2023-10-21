@@ -1,38 +1,91 @@
 @import '/src/app/styles/global';
 
 .comment {
-  width: 403px;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  border: 1px solid $blueColor;
-  background: $whiteColor;
-
-  &__author {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: normal;
+  &__top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
     align-items: center;
-    color: $darkColor;
-    font-family: $fontFamilyUnbounded;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px; /* 140% */
-    margin: 0 0 6px;
+    &-avatar {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+
+    &-name {
+      width: 140px;
+      margin: 0;
+      color: $darkColor;
+      font-family: $fontFamilyNunitoSans;
+      font-size: 16px;
+      // font-style: normal;
+      font-weight: 700;
+      line-height: 24px; /* 150% */
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    max-height: 24px;
+    &-date {
+      width: 140px;
+      margin: 0;
+      color: $grayColor;
+      font-size: 14px;
+      // font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 142.857% */
+    }
   }
 
   &__text {
-    color: $darkColor;
-    font-family: $fontFamilyNunitoSans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px; /* 150% */
-    margin: 0;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &-title {
+      color: $darkColor;
+      font-size: 20px;
+      // font-style: normal;
+      font-weight: 600;
+      line-height: 28px; /* 140% */
+      margin: 0 0 8px;
+    }
+    &-content {
+      color: $darkColor;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px; /* 150% */
+      margin: 0;
+    }
+  }
+
+  &__photos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    &-item {
+      width: 90px;
+      height: 74px;
+      border-radius: 20px;
+      border: 1px solid $grayLightColor;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+      background-size: cover;
+    }
   }
 }

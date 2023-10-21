@@ -38,7 +38,11 @@ const Search = ({ size }) => {
         className="search__button"
         onClick={showSearchIcon ? handleSearch : clearSearchText}
       >
-        {showSearchIcon ? <IconSearch className="search__icon" /> : <IconClose className="search__icon"/>}
+        {showSearchIcon ? (
+          <IconSearch className="search__icon" />
+        ) : (
+          <IconClose className="search__icon" />
+        )}
       </button>
     </div>
   );

@@ -1,9 +1,13 @@
 @import '/src/app/styles/global';
 
 .account-seller-product-add {
-  @include flex-column;
+  // @include flex-container;
+  display: flex;
+  flex-direction: row;
   gap: 60px;
   justify-content: center;
+  margin-top: 52px;
+
 
   &__section {
     @include default-font-styles;

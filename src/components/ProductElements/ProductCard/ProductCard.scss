@@ -46,7 +46,6 @@
     flex-direction: row;
     color: $blueColor;
     align-items: center;
-    gap: 16px;
     height: 20px;
     margin: 0 0 16px;
 
@@ -54,12 +53,18 @@
       @include default-font-styles;
       color: $grayColor;
       font-size: 14px;
+      max-width: 138px;
       font-weight: 400;
       line-height: 20px;
+      margin: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &-icon {
       position: relative;
+      margin-left: 16px;
       cursor: default;
     }
   }
@@ -70,7 +75,7 @@
     line-height: 20px;
     display: flex;
     flex-direction: row;
-    margin: 0 0 6px;
+    margin: 0 0 8px;
 
     &-title {
       margin: 0;
@@ -80,6 +85,10 @@
     &-quantity {
       margin: 0 0 0 5px;
       font-weight: 400;
+      max-width: 80px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 
@@ -89,7 +98,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 18px;
+    margin: 0 0 16px;
   }
 
   &__price {

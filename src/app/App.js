@@ -68,7 +68,7 @@ function App() {
           <Route path="/order" element={<OrderFormPage />} exact />
           <Route path="/account" element={<AccountPage />}>
             <Route path="/account/payment" element={<AccountPaymentInfo />} exact />
-            <Route path="/account/favorites" element={<AccountFavorites/>} exact />
+            <Route path="/account/favorites" element={<AccountFavorites />} exact />
             <Route index path="profile" element={<AccountBuyerProfile />} exact />
             <Route path="product/add" element={<AccountSellerProductAdd />} exact />
             <Route path="orders" element={<AccountBuyerOrders />} exact>

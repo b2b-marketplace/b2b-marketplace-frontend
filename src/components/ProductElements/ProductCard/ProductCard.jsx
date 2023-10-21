@@ -8,13 +8,21 @@ import {
   deleteProduct as deleteFavProduct,
 } from '../../../app/store/slices/favoritesSlice';
 import SliderImage from '../../SliderImage/SliderImage';
-import { Button } from '../../UI/Button/Button';
+import Button from '../../UI/Button/Button';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconHearthBlack from '../../UI/Icon/Icon_hearth-black';
 import IconInfo from '../../UI/Icon/Icon_info';
 import IconScales from '../../UI/Icon/Icon_scales';
 
 import './ProductCard.scss';
+
+/**
+ * Карточка товара
+ *
+ * @param product - объект с данными о товаре
+ *
+ * @returns {JSX.Element}
+ */
 
 function ProductCard({ product }) {
   const [isProductSelect, setIsProductSelect] = useState(false);

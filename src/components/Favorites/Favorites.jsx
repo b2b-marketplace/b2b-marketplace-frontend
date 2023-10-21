@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { changeChecked, deleteProduct, updateAllProduct } from '../../app/store/slices/favoritesSlice';
+import {
+  changeChecked,
+  deleteProduct,
+  updateAllProduct,
+} from '../../app/store/slices/favoritesSlice';
 import productsApi from '../../shared/api/productsApi';
 import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
 import OrderDetail from '../OrderDetail/OrderDetail';

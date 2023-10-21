@@ -17,7 +17,12 @@ const IconCreditCard = ({ className }) => {
           stroke="currentColor"
           strokeWidth="1.5"
         />
-        <path d="M4.66675 14L27.3334 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path
+          d="M4.66675 14L27.3334 14"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
         <circle cx="8.66667" cy="20.6667" r="0.666667" fill="currentColor" />
       </svg>
     </Icon>

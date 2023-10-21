@@ -1,7 +1,7 @@
 import React from 'react';
 
 import usePopup from '../../shared/hooks/hooks/usePopup';
-import { Button } from '../UI/Button/Button';
+import Button from '../UI/Button/Button';
 
 import logo from '../../images/photo_promo-registration.jpg';
 
@@ -20,10 +20,10 @@ const PromoRegistration = ({ className }) => {
             Зарегистрируйтесь на нашем портале и найдите новых клиентов, заказчиков и партнёров!
           </p>
 
-          <Button size="l" onClick={openRegisterPopup} primary dark>
+          <Button size="xl" onClick={openRegisterPopup} primary dark>
             Зарегистрироваться
           </Button>
-          <Button size="l" onClick={openLoginPopup} primary extraClass="promo-registration__button">
+          <Button size="xl" onClick={openLoginPopup} primary extraClass="promo-registration__button">
             Войти
           </Button>
         </div>

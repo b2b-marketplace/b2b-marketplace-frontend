@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button } from '../../../components/UI/Button/Button';
+import Button from '../../../components/UI/Button/Button';
 import Checkbox from '../../../components/UI/Checkbox/Checkbox';
 import DropDown from '../../../components/UI/DropDown/DropDown';
 import IconFolderAdd from '../../../components/UI/Icon/Icon_folder-add';
