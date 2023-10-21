@@ -39,14 +39,14 @@ AppNavLink.propTypes = {
   children: PropTypes.node,
   target: PropTypes.string,
   to: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['gray']),
+  type: PropTypes.oneOf(['gray', 'dark']),
 };
 
 AppNavLink.defaultProps = {
   navLink: false,
   className: '',
   target: '',
-  type: 'gray',
+  type: 'dark',
   to: '#',
 };
 

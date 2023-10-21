@@ -17,4 +17,17 @@
     //  color: $grayColor;
     //}
   }
+
+  &_dark {
+    color: $darkColor;
+
+    &.app-link_active,
+    &:hover {
+      color: $grayColor;
+    }
+
+    //&.app-link_active:hover {
+    //  color: $grayColor;
+    //}
+  }
 }
