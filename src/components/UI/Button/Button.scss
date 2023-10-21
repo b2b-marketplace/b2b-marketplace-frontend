@@ -12,6 +12,15 @@
   box-sizing: border-box;
   gap: 20px;
 
+  &_size_xs {
+    width: 168px;
+    height: 44px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
   &_size_s {
     width: 168px;
     height: 44px;

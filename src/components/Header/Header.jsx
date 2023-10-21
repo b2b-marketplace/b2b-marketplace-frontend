@@ -6,22 +6,27 @@ import geoApi from '../../shared/api/GeoApi';
 import usePopup from '../../shared/hooks/hooks/usePopup';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import IconBasket from '../UI/Icon/Icon_basket';
+import IconBasketBlack from '../UI/Icon/icon_basket-black';
 import IconBoxRu from '../UI/Icon/Icon_boxRu';
 import IconBurger from '../UI/Icon/Icon_burger';
-import IconClose from '../UI/Icon/Icon_close24';
 import IconFire from '../UI/Icon/Icon_fire';
 import IconMessage from '../UI/Icon/Icon_message';
 import IconPosition from '../UI/Icon/Icon_position';
 import IconProfile from '../UI/Icon/Icon_profile';
+import IconProfileBlack from '../UI/Icon/Icon_profile-black';
 import IconScales from '../UI/Icon/Icon_scales';
-import IconSearch from '../UI/Icon/Icon_search';
+import Search from '../UI/Search/Search';
 
 import './Header.scss';
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [searchText, setSearchText] = useState('');
-  const [showSearchIcon, setShowSearchIcon] = useState(true);
+  // Проверяем, есть ли товары в корзине
+  const dispatch = useDispatch();
+  const basketList = useSelector((state) => state.basket.basket);
+  const isItemsInBasket = basketList.basket_products.length > 0;
+  const basketItemCount = basketList.basket_products.length;
+
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { openPopup: openAuthPopup } = usePopup('select');
   const [city, setCity] = useState('Дефолтсити');
@@ -33,21 +38,6 @@ const Header = () => {
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
-  };
-
-  const handleSearchInputChange = (event) => {
-    setSearchText(event.target.value);
-    setShowSearchIcon(event.target.value === ''); // Проверка на пустой ввод
-  };
-
-  const handleSearch = () => {
-    // логика поиска здесь, используя значение searchText
-    console.log('Выполняем поиск с текстом:', searchText);
-  };
-
-  const clearSearchText = () => {
-    setSearchText('');
-    setShowSearchIcon(true);
   };
 
   useEffect(() => {
@@ -74,7 +64,7 @@ const Header = () => {
 
       <div className="header__container">
         <button type="button" className="header__catalog-button" onClick={togglePopup}>
-          {isPopupOpen ? <IconClose /> : <IconBurger />}
+          <IconBurger />
           Каталог
         </button>
 
@@ -101,22 +91,7 @@ const Header = () => {
           </NavLink>
         </nav>
 
-        <div className="header__search">
-          <input
-            type="text"
-            className="header__input"
-            placeholder="Поиск...."
-            value={searchText}
-            onChange={handleSearchInputChange}
-          />
-          <button
-            type="button"
-            className="header__button"
-            onClick={showSearchIcon ? handleSearch : clearSearchText}
-          >
-            {showSearchIcon ? <IconSearch /> : <IconClose />}
-          </button>
-        </div>
+        <Search />
       </div>
 
       <nav className="header__navigation-link">
@@ -128,8 +103,15 @@ const Header = () => {
           <IconScales />
         </Link>
 
-        <Link to="/basket" className="header__link">
-          <IconBasket />
+        <Link to="/basket" className="header__link header__icon-container">
+          {isItemsInBasket ? (
+            <>
+              {basketItemCount > 0 && <span className="header__item-count">{basketItemCount}</span>}
+              <IconBasketBlack />
+            </>
+          ) : (
+            <IconBasket />
+          )}
         </Link>
 
         <Link
@@ -137,7 +119,7 @@ const Header = () => {
           to="/account/profile"
           className="header__link"
         >
-          <IconProfile />
+          {isLoggedIn ? <IconProfileBlack /> : <IconProfile />}
         </Link>
       </nav>
 

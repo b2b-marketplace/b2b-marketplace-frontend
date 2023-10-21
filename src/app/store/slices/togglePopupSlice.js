@@ -12,6 +12,7 @@ const initialState = {
     restoreByEmail: false,
     confirmRestoreByPhone: false,
     confirmRestoreByEmail: false,
+    linkingCard: false,
     newPassword: false,
     addNewItem: false,
     cancelAddnewItem: false,

@@ -39,7 +39,6 @@ const AccountSellerProductAdd = () => {
     { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
   ];
 
-
   // Состояние для данных формы
   const [formData, setFormData] = useState({
     category: 0,
@@ -172,6 +171,7 @@ const AccountSellerProductAdd = () => {
               type="number"
               onChange={handleFormChange}
             />
+
             <DropDown
               name="brand"
               label="Бренд"
@@ -179,6 +179,7 @@ const AccountSellerProductAdd = () => {
               options={['Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5']}
               onChange={handleFormChange}
             />
+
             <InputField
               name="manufacturer_country"
               label="Производитель"
@@ -227,6 +228,7 @@ const AccountSellerProductAdd = () => {
               Мин. объем заказа*
               <Counter name="wholesale_quantity" onChange={handleFormChange} required />
             </label>
+
             <DropDown
               name="orderStatus"
               label="Статус&nbsp;заказа*"

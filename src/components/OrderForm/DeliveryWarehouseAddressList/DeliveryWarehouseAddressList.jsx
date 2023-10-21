@@ -81,6 +81,7 @@ const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList })
                         (index === selectDefaultValue && !selectedValue)
                       }
                       handleChange={() => handleChangeRadioButton(stock)}
+                      color="black"
                     />
                     <DeliveryWarehouseAddress stock={stock} />
                   </div>
