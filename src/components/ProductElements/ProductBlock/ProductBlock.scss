@@ -488,11 +488,10 @@
       border-radius: 20px;
       position: relative;
       overflow: hidden;
-      
+
       z-index: 1;
     }
     &-count {
-      
       position: absolute;
       margin: 0;
       display: flex;
@@ -511,8 +510,6 @@
       line-height: 28px; /* 140% */
       z-index: 2;
       background: #116fc7c3;
-
-      
     }
   }
 

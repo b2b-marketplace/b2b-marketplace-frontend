@@ -4,16 +4,14 @@ import noImage from '../../images/nophoto.png';
 
 import './SliderImage.scss';
 
-
 /**
- * Слайдер для изображений товара. Фото перелистываются при наведении 
+ * Слайдер для изображений товара. Фото перелистываются при наведении
  * @date 10/17/2023 - 7:29:39 PM
  *
  * @export
  * @param {{ images: any; }} { images }
  * @returns {JSX.Element}
  */
-
 
 const SliderImage = ({ images }) => {
   const width = 100 / images.length;
@@ -25,7 +23,8 @@ const SliderImage = ({ images }) => {
   const handleMouseEnter = (event) => {
     const card = getCurrentSlider(event);
     if (images.length !== 0) {
-      card.querySelector('.slider__images').style.transform = `translateX(${-card.querySelector('.slider__image').width * event.target.id
+      card.querySelector('.slider__images').style.transform = `translateX(${
+        -card.querySelector('.slider__image').width * event.target.id
       }px)`;
       [...card.querySelectorAll('.dot')].map((item) => item.classList.remove('dot_fill'));
       [...card.querySelectorAll('.dot')]

@@ -3,7 +3,6 @@ import React from 'react';
 
 import './button.css';
 
-
 const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (

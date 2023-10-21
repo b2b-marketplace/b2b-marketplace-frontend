@@ -2,7 +2,7 @@ import './ProductRating.scss';
 
 export default function ProductRating({ rating, commentsCount }) {
   return (
-    <div className='product-rating'>
+    <div className="product-rating">
       <div className="rating">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export default function ProductRating({ rating, commentsCount }) {
         <span className="rating__text">{rating}</span>
       </div>
 
-      <p className='comments'>{`${commentsCount} отзывов`}</p>
+      <p className="comments">{`${commentsCount} отзывов`}</p>
     </div>
   );
 }

@@ -16,16 +16,16 @@ const CommentRating = ({ likes, dislikes }) => {
   return (
     <div className="comment-rating">
       <div className="comment-rating__item">
-        <button className='comment-rating__btn'>
+        <button className="comment-rating__btn">
           <IconCommentLike />
         </button>
-        <p className='comment-rating__item-count'>{likes}</p>
+        <p className="comment-rating__item-count">{likes}</p>
       </div>
       <div className="comment-rating__item">
-        <button className='comment-rating__btn'>
+        <button className="comment-rating__btn">
           <IconCommentDislike />
         </button>
-        <p className='comment-rating__item-count'>{dislikes}</p>
+        <p className="comment-rating__item-count">{dislikes}</p>
       </div>
     </div>
   );
