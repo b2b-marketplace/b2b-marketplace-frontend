@@ -1,5 +1,6 @@
 // Api для получения информации из общей базы данных продуктов
 import { parseErrors } from '../lib/authConstatnts.js';
+
 // import { PRODUCTS_BASE_URL } from './constants.js';
 
 class AuthApi {
@@ -52,7 +53,7 @@ class AuthApi {
 }
 
 const authApi = new AuthApi({
-  serverUrl: `${process.env.REACT_APP_API_URL || 'https://b2buy.site'}/api/v1`,
+  serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1`,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
