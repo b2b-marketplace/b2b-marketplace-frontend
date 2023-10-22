@@ -24,7 +24,9 @@ class GeoApi {
 }
 
 const geoApi = new GeoApi({
-  serverUrl: process.env.REACT_APP_GEOLOCATION_API_URL,
+  serverUrl:
+    process.env.REACT_APP_GEOLOCATION_API_URL ||
+    'https://ipwho.is/?lang=ru&output=json&fields=city',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

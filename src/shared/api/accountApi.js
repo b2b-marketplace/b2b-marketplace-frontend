@@ -44,7 +44,7 @@ class AccountApi {
 }
 
 const accountApi = new AccountApi({
-  serverUrl: `${process.env.REACT_APP_API_URL}/v1`,
+  serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1`,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
