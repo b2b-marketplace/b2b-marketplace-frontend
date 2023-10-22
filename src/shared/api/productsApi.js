@@ -39,7 +39,7 @@ class ProductsApi {
 }
 
 const productsApi = new ProductsApi({
-  serverUrl: `${process.env.REACT_APP_API_URL}/v1/products/`,
+  serverUrl: `${process.env.REACT_APP_API_URL || '/'}/api/v1/products/`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
