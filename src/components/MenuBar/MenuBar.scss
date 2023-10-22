@@ -1,0 +1,42 @@
+@import '/src/app/styles/global';
+
+.menu-bar {
+  width: 222px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+
+  &__list {
+    @include flex-column;
+    @include reset-list;
+    gap: 20px;
+  }
+
+  &__item {
+    height: 24px;
+    display: flex;
+    gap: 16px;
+    color: $grayColor;
+
+    &:hover {
+      color: $blueColor;
+    }
+  }
+
+  &__link {
+    @include flex-space-between;
+    width: 100%;
+    text-decoration: none;
+    color: $grayColor;
+
+    &:hover {
+      color: $blueColor;
+    }
+  }
+
+  &__icon {
+    transform: rotate(-90deg);
+  }
+}

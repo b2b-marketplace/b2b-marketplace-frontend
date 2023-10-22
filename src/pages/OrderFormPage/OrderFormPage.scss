@@ -1,0 +1,23 @@
+@import '/src/app/styles/global';
+
+.order-form-page {
+  @include default-font-styles;
+  display: flex;
+  width: 100%;
+  max-width: $maxWidth;
+  min-width: $minWidth;
+  margin-top: 52px;
+  column-gap: 60px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+  }
+
+  &__detail-buttons {
+  }
+
+  &__detail-content {
+  }
+}

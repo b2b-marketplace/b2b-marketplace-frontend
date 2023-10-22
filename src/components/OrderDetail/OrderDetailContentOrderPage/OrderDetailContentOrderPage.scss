@@ -1,0 +1,57 @@
+@import '/src/app/styles/global';
+
+.order-detail-content-order-page {
+  @include default-font-styles;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+
+  &__containers {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+
+  &__name-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &__name {
+    &_price {
+      font-size: 24px;
+    }
+  }
+
+  &__price {
+  }
+
+  &__price-detail {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__description {
+    color: $grayColor;
+    font-size: 14px;
+  }
+
+  &__price-total {
+    font-family: $fontFamilyUnbounded;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+  }
+}

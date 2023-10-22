@@ -1,0 +1,76 @@
+@import '/src/app/styles/global';
+
+.error-page {
+  @include flex-column;
+  max-width: 640px;
+  max-height: 812px;
+  padding: 164px 0;
+  align-items: center;
+
+  font-family: $fontFamilyUnbounded;
+  font-style: $mainStyle;
+  font-weight: 500;
+
+  &__conteiner {
+    position: relative;
+    max-width: 501px;
+    max-height: 495px;
+    padding-bottom: 103px;
+    padding-top: 224px;
+    width: 100%;
+    flex-shrink: 0;
+    font-size: 200px;
+    line-height: 80%;
+  }
+
+  &__title {
+    @include flex-space-between;
+    @include reset;
+    width: 167px;
+    height: 168px;
+  }
+
+  &__image {
+    &_box1 {
+      position: absolute;
+      left: 54px;
+      bottom: 0;
+      z-index: 3;
+    }
+
+    &_box2 {
+      position: absolute;
+      top: 71px;
+      left: 87px;
+      z-index: 2;
+    }
+
+    &_box3 {
+      position: absolute;
+      top: 0;
+      right: 98px;
+      z-index: 1;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    @include h1-styles;
+  }
+
+  &__text {
+    @include text-default-styles;
+    @include text-L-link-styles;
+    text-align: center;
+    margin: 40px 0 20px;
+    text-wrap: balance;
+
+    &:last-of-type {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

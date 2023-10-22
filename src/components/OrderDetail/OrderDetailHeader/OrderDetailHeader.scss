@@ -1,0 +1,10 @@
+@import '/src/app/styles/global';
+
+.order-detail-header {
+  @include flex-space-between;
+  align-items: center;
+
+  &__title {
+    @include text-L-bold-styles;
+  }
+}

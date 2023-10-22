@@ -1,0 +1,120 @@
+@import '/src/app/styles/global';
+
+.basket {
+  @include default-font-styles;
+  display: flex;
+  flex-direction: column;
+
+  &__empty {
+    @include text-L-bold-styles;
+    text-align: center;
+    min-height: 320px;
+  }
+
+  &__container {
+    @include flex-space-between;
+    column-gap: 20px;
+    position: relative;
+  }
+
+  &__container-product {
+    @include flex-column;
+    width: 100%;
+    row-gap: 40px;
+    max-width: 930px;
+  }
+
+  &__panel-checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &__panel {
+    @include flex-space-between;
+    align-items: center;
+    height: 52px;
+    padding: 0 20px 0 20px;
+  }
+
+  &__panel-button {
+    @include text-L-main-styles;
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    @include link-hover-styles;
+  }
+
+  &__icon-trash {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__panel-checkbox {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__checkbox-text {
+    @include text-L-main-styles;
+    @include link-hover-styles;
+  }
+
+  &__product-list {
+    @include reset-list;
+    @include flex-column;
+    row-gap: 20px;
+    flex-grow: 1;
+  }
+
+  &__product-item {
+    @include flex-container;
+  }
+
+  &__order-detail-content {
+    margin-top: 40px;
+  }
+
+  &__sidebar-right {
+    position: relative;
+  }
+
+  &__order-detail-sticky {
+    position: sticky;
+    top: 0;
+    right: 0;
+  }
+
+  &__checkbox {
+    @include flex-container;
+    column-gap: 22px;
+  }
+
+  &__order-detail-icon-info {
+    width: 32px;
+    height: 32px;
+    color: #222222;
+  }
+
+  &__buttons {
+    @include flex-column;
+    row-gap: 20px;
+  }
+
+  &__order-detail-button {
+    width: 100%;
+
+    &_disabled {
+      background-color: $grayColor;
+      cursor: default;
+    }
+  }
+
+  &__hint {
+    @include text-S-main-styles;
+
+    &_warning {
+      color: $redColor;
+    }
+  }
+}

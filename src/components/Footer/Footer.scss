@@ -1,0 +1,89 @@
+@import '/src/app/styles/global';
+
+.footer {
+  background: $darkColor;
+  color: $whiteColor;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+  padding: 80px 0 56px 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    @include max-min-width;
+    @include flex-space-between;
+    width: 100%;
+  }
+
+  &__container-logo {
+    @include flex-column;
+    row-gap: 40px;
+    max-width: 310px;
+  }
+
+  &__logo-title {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    @include h2-styles;
+    margin: 0;
+    color: $whiteColor;
+  }
+
+  &__logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__title {
+    @include text-L-link-styles;
+    color: $whiteColor;
+    margin: 0;
+  }
+
+  &__container-links {
+    @include flex-column;
+    row-gap: 16px;
+  }
+
+  &__link {
+    @include text-M-link-styles;
+    margin: 0;
+    color: $whiteColor;
+  }
+
+  &__menu {
+    @include flex-space-between;
+    width: 100%;
+    max-width: 750px;
+  }
+
+  &__lists {
+    @include flex-column;
+    @include reset-list;
+    width: 310px;
+    row-gap: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__item {
+    @include flex-column;
+    row-gap: 40px;
+    margin: 0;
+  }
+
+  &__icon-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__icon-link {
+    text-decoration: none;
+    color: inherit;
+  }
+}

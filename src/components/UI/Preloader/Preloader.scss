@@ -1,0 +1,50 @@
+@import '/src/app/styles/global';
+
+.preloader {
+  margin: 0 auto;
+}
+
+.preloader__circle {
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 30px auto;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: $darkColor;
+  animation: preloader__circle-spin 2s linear infinite;
+}
+.preloader__circle:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: $blueColor;
+  animation: preloader__circle-spin 3s linear infinite;
+}
+.preloader__circle:after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: $blueLightColor;
+  animation: preloader__circle-spin 1.5s linear infinite;
+}
+
+@keyframes preloader__circle-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,42 @@
+@import '/src/app/styles/global';
+
+.about-us-page {
+  @include flex-column;
+  padding: 52px 0 120px;
+  max-width: 1108px;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: 600;
+  line-height: 28px;
+
+  &__title {
+    @include h2-styles;
+    margin: 0 0 40px;
+  }
+
+  &__text {
+    @include text-L-regular-styles;
+    margin: 0 0 32px;
+  }
+
+  &__subtitle {
+    @include text-L-link-styles;
+    margin: 0 0 20px;
+  }
+
+  &__desc {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__lists {
+    @include text-L-regular-styles;
+    margin: 0 0 32px;
+    padding-left: 20px;
+  }
+}

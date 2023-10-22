@@ -1,0 +1,123 @@
+@import '/src/app/styles/global';
+
+.card {
+  width: $cardWidth;
+  height: $cardHeight;
+  border-radius: 20px;
+  border: 1px solid $grayLightColor;
+  font-style: $mainStyle;
+  position: relative;
+  box-sizing: border-box;
+
+  &__info {
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  &__title {
+    @include default-font-styles;
+    @include reset-link;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 0 4px;
+    padding: 0;
+    text-decoration: none;
+    height: 48px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  &__tooltip {
+    font-size: 14px;
+  }
+
+  &__shipper {
+    display: flex;
+    flex-direction: row;
+    color: $blueColor;
+    align-items: center;
+    height: 20px;
+    margin: 0 0 16px;
+
+    &-name {
+      @include default-font-styles;
+      color: $grayColor;
+      font-size: 14px;
+      max-width: 138px;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &-icon {
+      position: relative;
+      margin-left: 16px;
+      cursor: default;
+    }
+  }
+
+  &__min-order {
+    @include default-font-styles;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 8px;
+
+    &-title {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    &-quantity {
+      margin: 0 0 0 5px;
+      font-weight: 400;
+      max-width: 80px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__info-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 16px;
+  }
+
+  &__price {
+    @include default-font-styles;
+    font-family: $fontFamilyUnbounded;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__icons {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    z-index: 3;
+  }
+}

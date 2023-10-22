@@ -1,0 +1,23 @@
+@import '/src/app/styles/global';
+
+.home-page {
+  @include flex-column;
+
+  margin-top: 52px;
+
+  &__platform-benefits {
+    margin-top: 60px;
+  }
+
+  &__cards-container {
+    margin-top: 80px;
+  }
+
+  &__banner {
+    margin-top: 80px;
+  }
+
+  &__promo-registration {
+    margin-top: 80px;
+  }
+}

@@ -1,0 +1,45 @@
+@import '/src/app/styles/global';
+
+.privacy-policy-page {
+  max-width: 1249px;
+  font-family: $fontFamilyNunitoSans;
+  font-size: 20px;
+  font-style: $mainStyle;
+  font-weight: 600;
+  line-height: 28px;
+  padding: 52px 0 120px;
+
+  &__title {
+    @include h2-styles;
+    margin: 0 0 40px;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: $mainWeight;
+    margin: 0 0 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 25px;
+  }
+
+  &__lists {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  &__list {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

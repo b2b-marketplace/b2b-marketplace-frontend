@@ -1,0 +1,14 @@
+@import '/src/app/styles/global';
+
+.email-confirmation {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  height: 800px;
+  padding: 50px 50px;
+  text-align: center;
+
+  &__text {
+    @include h3-styles;
+  }
+}

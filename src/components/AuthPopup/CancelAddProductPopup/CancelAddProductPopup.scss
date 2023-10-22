@@ -1,0 +1,17 @@
+@import '/src/app/styles/global';
+
+.cancel-add-product-popup {
+  font-family: $fontFamilyNunitoSans;
+  font-size: 16px;
+  font-style: $fontStyle;
+  font-weight: 600;
+  line-height: 24px;
+  color: $darkColor;
+  margin: 0;
+
+  &__conteiner {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+  }
+}

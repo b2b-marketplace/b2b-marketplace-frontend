@@ -1,0 +1,26 @@
+@mixin hover-transition {
+  transition: all ease 0.3s;
+}
+
+/*
+Миксин для анимации появления элемента
+ */
+@mixin fade-in {
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.4s ease;
+  //animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/**
+Ключевые кадры анимации для fadeIn
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

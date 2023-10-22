@@ -1,0 +1,32 @@
+@import '/src/app/styles/global';
+
+.order-detail-content-basket {
+  @include default-font-styles;
+  @include flex-column;
+  row-gap: 16px;
+
+  &__label {
+    @include text-L-main-styles;
+  }
+
+  &__content {
+    @include flex-column;
+    row-gap: 16px;
+  }
+
+  &__suppliers {
+    @include text-L-main-styles;
+    margin: 0;
+  }
+
+  &__product {
+    @include text-L-main-styles;
+    margin: 0;
+  }
+
+  &__price-total {
+    @include h2-styles;
+    margin-top: 44px;
+    word-break: break-all;
+  }
+}

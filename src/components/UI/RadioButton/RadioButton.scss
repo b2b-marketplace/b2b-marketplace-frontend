@@ -1,0 +1,70 @@
+@import '/src/app/styles/global';
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    display: none;
+  }
+
+  &__custom {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid $darkColor;
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+  }
+
+  &.black &__custom {
+    border: 1.5px solid $darkColor;
+    transition: all 0.2s;
+
+    &.black {
+      background-color: $darkColor;
+    }
+  }
+
+  &.black &__custom_active {
+    background-color: $whiteColor;
+    border-color: $darkColor;
+
+    &::before {
+      display: block;
+      background-color: $darkColor; /* Белая точка в активной черной кнопке */
+    }
+  }
+
+  &.blue &__custom {
+    border: 1.5px solid $darkColor;
+    transition: all 0.2s;
+
+    &.blue {
+      background-color: $blueColor;
+    }
+  }
+
+  &.blue &__custom_active {
+    background-color: $blueColor;
+    border-color: $whiteColor;
+
+    &::before {
+      display: block;
+      background-color: $whiteColor;
+    }
+  }
+}

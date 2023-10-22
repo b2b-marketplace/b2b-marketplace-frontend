@@ -1,0 +1,17 @@
+@import '/src/app/styles/global';
+
+.characteristic-color {
+  display: flex;
+  column-gap: 15px;
+
+  &__color {
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+
+    &-white {
+      border: 1px solid $darkColor;
+    }
+  }
+}

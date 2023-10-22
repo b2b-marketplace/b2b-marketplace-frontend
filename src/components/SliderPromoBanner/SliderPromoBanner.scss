@@ -1,0 +1,23 @@
+@import '/src/app/styles/global';
+
+.slider-promo-banner {
+  position: relative;
+  width: 100%;
+  max-width: $maxWidth;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid $grayLightColor;
+  box-sizing: border-box;
+
+  &__container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    width: 100%;
+  }
+}

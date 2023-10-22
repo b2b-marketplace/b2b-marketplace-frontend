@@ -1,0 +1,70 @@
+@import '/src/app/styles/global';
+
+.menu-clothes {
+  @include flex-column;
+  @include text-L-link-styles;
+  font-family: $fontFamilyNunitoSans;
+  font-style: $mainStyle;
+
+  gap: 40px;
+
+  &__title {
+    display: flex;
+    gap: 60px;
+    font-size: 24px;
+    margin: 0;
+
+    &-quantity {
+      font-size: 20px;
+      color: $blueDarkColor;
+    }
+  }
+
+  &__conteiner {
+    display: grid;
+    grid-template-columns: repeat(3, 233px);
+    gap: 40px 24px;
+  }
+
+  &__lists {
+    @include reset-list;
+    @include flex-column;
+    gap: 16px;
+  }
+
+  &__list {
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    color: $grayColor;
+    text-decoration: none;
+
+    &:hover {
+      color: $blueColor;
+    }
+  }
+
+  &__button-more {
+    @include text-M-bold-styles;
+    @include reset-button;
+    display: flex;
+    gap: 8px;
+    border: none;
+    height: 24px;
+    color: $blueDarkColor;
+  }
+
+  &__icon {
+    transform: rotate(180deg);
+  }
+}

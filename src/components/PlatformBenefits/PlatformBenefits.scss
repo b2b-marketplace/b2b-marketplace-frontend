@@ -1,0 +1,44 @@
+@import '/src/app/styles/global';
+
+.platform-benefits {
+  @include default-font-styles;
+  color: $whiteColor;
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    max-width: 310px;
+    background: $darkColor;
+    height: 124px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    column-gap: 12px;
+    padding: 20px;
+  }
+
+  &__content {
+    @include flex-column;
+    row-gap: 8px;
+  }
+
+  &__title {
+    @include h3-styles;
+    color: $whiteColor;
+    margin: 0;
+  }
+
+  &__text {
+    @include text-M-main-styles;
+    color: $whiteColor;
+    margin: 0;
+  }
+}

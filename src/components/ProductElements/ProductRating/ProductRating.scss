@@ -1,0 +1,36 @@
+@import '/src/app/styles/global';
+
+.product-rating {
+  @include default-font-styles;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  column-gap: 4px;
+  margin: 4px 0;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 32px;
+  color: $blackColor;
+
+  &__text {
+    font-weight: 700;
+    line-height: 24px;
+    vertical-align: middle;
+  }
+}
+
+.comments {
+  margin: 0;
+  color: $grayColor;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}

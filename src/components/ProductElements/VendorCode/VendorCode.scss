@@ -1,0 +1,7 @@
+@import '/src/app/styles/global';
+
+.vendor-code {
+  @include default-font-styles;
+  font-size: 14px;
+  line-height: 20px;
+}

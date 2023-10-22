@@ -1,0 +1,31 @@
+@import '/src/app/styles/global';
+
+.input-field {
+  @include default-font-styles;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__label {
+    max-width: 202px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    width: 685px;
+    height: 52px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 0 52px 0 20px;
+    color: #686868;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+}

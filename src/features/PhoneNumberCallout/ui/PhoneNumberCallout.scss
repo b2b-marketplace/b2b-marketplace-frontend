@@ -1,0 +1,13 @@
+@import '/src/app/styles/global';
+
+.phone-number-callout {
+  @include default-font-styles;
+  @include flex-container(column, space-between);
+  row-gap: 12px;
+
+  &__desc {
+    @include reset;
+    @include text-M-main-styles;
+    color: $grayColor;
+  }
+}
