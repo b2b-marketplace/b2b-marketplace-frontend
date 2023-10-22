@@ -1,1 +1,0 @@
-export { MenuHorizontal } from './MenuHorizontal';

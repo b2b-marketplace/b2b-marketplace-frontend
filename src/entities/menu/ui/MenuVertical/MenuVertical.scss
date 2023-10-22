@@ -11,8 +11,7 @@
   }
 
   &__item {
-    display: flex;
-    justify-content: center;
+    @include flex-container;
   }
 
   &__link {
