@@ -3,8 +3,6 @@
 .orders-list-page {
   @include default-font-styles;
   row-gap: 60px;
-  //@include flex-column;
-  //width: 100%;
 
   &__control-button {
     column-gap: 4px;
@@ -16,13 +14,6 @@
     row-gap: 40px;
     width: 100%;
   }
-
-  //&__profile-info {
-  //  display: flex;
-  //  align-items: center;
-  //  max-width: 833px;
-  //  gap: 265px;
-  //}
 
   &__control {
     @include flex-space-between;
@@ -42,7 +33,6 @@
     box-sizing: border-box;
     border: 1px solid $darkColor;
     border-radius: 30px;
-    //max-width: 519px;
     width: 100%;
     align-items: center;
     padding-left: 30px;
@@ -65,8 +55,8 @@
     border: none;
   }
 
-  &__navigation {
-    //margin-top: 60px;
-    margin-bottom: 40px;
+  &__main {
+    @include flex-container(column);
+    row-gap: 40px;
   }
 }

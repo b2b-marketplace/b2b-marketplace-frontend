@@ -88,7 +88,7 @@
   }
 
   &__product-prices {
-    @include flex-container(column, center, end);
+    @include flex-container(column, center, flex-end);
     min-width: max-content;
     row-gap: 8px;
   }

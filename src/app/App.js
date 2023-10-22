@@ -5,12 +5,12 @@ import React, { useEffect } from 'react';
 
 // Локальные импорты из проекта
 import Routing from '../pages';
+import OrdersList from '../entities/user-orders/ui/OrdersList/OrdersList';
 import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
 import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
-import OrdersList from '../components/Account/OrdersList/OrdersList';
 
 import { getUser } from './store/slices/accountSlice';
 

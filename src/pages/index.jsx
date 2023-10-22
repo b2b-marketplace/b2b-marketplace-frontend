@@ -1,10 +1,11 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
 
+import OrdersList from '../entities/user-orders/ui/OrdersList/OrdersList';
 import AccountPaymentInfo from '../components/UI/Account/AccountPaymentInfo/AccountPaymentInfo';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import Logout from '../components/Logout/Logout';
-import OrdersList from '../components/Account/OrdersList/OrdersList';
+import Favorites from '../components/Favorites/Favorites';
 
 import QuestionPage from './SupportServicePage/QuestionPage/QuestionPage';
 import QuestionForm from './SupportServicePage/QuestionForm/QuestionForm';
@@ -35,7 +36,11 @@ const Routing = () => {
           <Route path="profile" element={<AccountBuyerProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />
           <Route path="payment" element={<AccountPaymentInfo />} exact />
-          <Route path="favorites" element={<AccountFavorites />} exact />
+          <Route path="favorites" element={<AccountFavorites />} exact>
+            <Route index element={<Favorites />} exact />
+            <Route path=":filter" element={<Favorites />} />
+            <Route path=":filter/:page" element={<Favorites />} />
+          </Route>
           <Route path="orders-list" element={<OrdersListPage />} exact>
             <Route index element={<OrdersList />} exact />
             <Route path=":filter" element={<OrdersList />} />
