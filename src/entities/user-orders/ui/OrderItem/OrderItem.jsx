@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './OrderListItem.scss';
+import './OrderItem.scss';
 
 const OrderItem = ({ order }) => {
   return <div className="order-item"></div>;
 };
 
-export default OrderItem;
+export { OrderItem };

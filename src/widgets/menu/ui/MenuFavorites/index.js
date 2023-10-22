@@ -1,0 +1,1 @@
+export { MenuFavorites } from './MenuFavorites';

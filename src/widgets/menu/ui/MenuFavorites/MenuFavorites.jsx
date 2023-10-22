@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 import { MenuHorizontal } from '../../../../entities/menu/ui/MenuHorizontal';
 
-import './MenuOrders.scss';
+import './MenuFavorites.scss';
 
 /**
  * Компонент навигации для вкладки "Мои Заказы" в личном кабинете.
@@ -15,21 +15,14 @@ import './MenuOrders.scss';
  * @returns {JSX.Element}
  * @constructor
  */
-const MenuOrders = ({ className }) => {
+const MenuFavorites = ({ className }) => {
   const { user } = useSelector((state) => state.account);
   const [menuItems, setMenuItems] = useState([]);
-  const menuItemsCustomer = [
+  const menuItemBuyer = [
     { key: 1, name: 'Все', link: '' },
-    { key: 2, name: 'В пути', link: 'in-transit' },
-    { key: 3, name: 'Полученные', link: 'received' },
-    { key: 4, name: 'Отмененные', link: 'canceled' },
+    { key: 2, name: 'Нет в наличии', link: 'out-of-stock' },
+    { key: 3, name: 'Сравнение', link: 'comparison' },
   ];
-  const menuItemsSupplier = [
-    { key: 1, name: 'Все', link: '' },
-    { key: 2, name: 'На модерации', link: '' },
-    { key: 3, name: 'Опубликованные', link: '' },
-  ];
-
   const { filter } = useParams();
 
   const currentClassName = (isActive, item) =>
@@ -39,16 +32,15 @@ const MenuOrders = ({ className }) => {
 
   useEffect(() => {
     return () => {
-      const currentMenu = user?.company.role === 'supplier' ? menuItemsSupplier : menuItemsCustomer;
-      setMenuItems(currentMenu);
+      setMenuItems(menuItemBuyer);
     };
   }, []);
 
   return <MenuHorizontal onLinkClassName={currentClassName} menuItems={menuItems} />;
 };
 
-MenuOrders.propTypes = {
+MenuFavorites.propTypes = {
   className: PropTypes.string,
 };
 
-export { MenuOrders };
+export { MenuFavorites };
