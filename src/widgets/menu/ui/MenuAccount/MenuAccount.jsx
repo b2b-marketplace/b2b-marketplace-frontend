@@ -27,7 +27,7 @@ const MenuAccount = () => {
   useEffect(() => {
     return () => {
       const currentMenu =
-        user && user.company.role === USER_ROLE.supplier ? menuItemsSupplier : menuItemsCustomer;
+        user && (user.company.role === USER_ROLE.supplier) ? menuItemsSupplier : menuItemsCustomer;
       console.log(user.company.role);
       console.log(currentMenu);
       setMenuItems(currentMenu);
