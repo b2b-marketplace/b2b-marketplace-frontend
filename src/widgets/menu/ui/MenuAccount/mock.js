@@ -15,7 +15,7 @@ export const menuItemsCustomer = [
   { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
   { icon: <IconBasket />, link: '/basket', label: 'Корзина' },
   //{ icon: <IconMessage />, link: 'message', label: 'Сообщения' },
-  { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+  { icon: <IconCreditCard />, link: 'payment', label: 'Оплата' },
   { icon: <IconLocation />, link: 'address', label: 'Адрес' },
   { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
 ];
@@ -26,7 +26,7 @@ export const menuItemsSupplier = [
   { icon: <IconBag />, link: 'orders-list', label: 'Заказы' },
   { icon: <IconHearth />, link: 'favorites', label: 'Избранное' },
   //{ icon: <IconMessage />, link: 'message', label: 'Сообщения' },
-  { icon: <IconCreditCard />, link: 'message', label: 'Оплата' },
+  { icon: <IconCreditCard />, link: 'payment', label: 'Оплата' },
   { icon: <IconLocation />, link: 'address', label: 'Адрес' },
   { icon: <IconLock />, link: 'secure', label: 'Безопасность' },
 ];
