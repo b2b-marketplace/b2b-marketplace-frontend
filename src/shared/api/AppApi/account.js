@@ -1,6 +1,6 @@
 // import { PRODUCTS_BASE_URL } from './constants';
 
-class AccountApi {
+class Account {
   constructor({ serverUrl, headers }) {
     this._serverUrl = serverUrl;
     this._headers = headers;
@@ -43,11 +43,11 @@ class AccountApi {
   }
 }
 
-const accountApi = new AccountApi({
+const account = new Account({
   serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1`,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
 });
 
-export default accountApi;
+export { account };

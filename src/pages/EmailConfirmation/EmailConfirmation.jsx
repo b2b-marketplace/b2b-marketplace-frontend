@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
-import authApi from '../../shared/api/authApi';
+import { AppApi } from '../../shared/api';
 
 import './EmailConfirmation.scss';
 
@@ -15,7 +15,7 @@ const EmailConfirmation = () => {
     const confirmEmail = async () => {
       try {
         // Используйте метод activate из AuthApi для подтверждения почты
-        const response = await authApi.activate({ token, uid });
+        const response = await AppApi.auth.activate({ token, uid });
 
         if (response.status === 'success') {
           setConfirmationStatus('success');
