@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import productsApi from '../../../shared/api/productsApi';
+import { AppApi } from '../../../shared/api';
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (page) => {
-  return productsApi.getProducts(page);
+  return AppApi.products.getProducts(page);
 });
 
 export const fetchProductById = createAsyncThunk('products/fetchProductById', async (id) => {
-  return productsApi.getProductById(id);
+  return AppApi.products.getProductById(id);
 });
 
 const initialState = {

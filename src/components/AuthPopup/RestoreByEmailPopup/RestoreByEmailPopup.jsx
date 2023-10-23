@@ -5,7 +5,7 @@ import useRestore from '../../../shared/hooks/useRestore';
 import usePopup from '../../../shared/hooks/usePopup';
 import useInput from '../../../shared/hooks/useInput';
 import useError from '../../../shared/hooks/useError';
-import authApi from '../../../shared/api/authApi';
+import { AppApi } from '../../../shared/api';
 
 const RestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('restoreByEmail');
@@ -23,7 +23,7 @@ const RestoreByEmailPopup = () => {
 
   const handleSubmit = () => {
     setIsRequesting(true);
-    authApi
+    AppApi.auth
       .restoreByEmail(values)
       .then(() => {
         closePopup();

@@ -16,7 +16,7 @@ import IconBasket from '../UI/Icon/Icon_basket';
 import PopupMenu from '../Popups/PopupMenu/PopupMenu';
 import { AppLink, AppNavLink } from '../../shared/ui/AppLink';
 import usePopup from '../../shared/hooks/usePopup';
-import geoApi from '../../shared/api/GeoApi';
+import { geoApi } from '../../shared/api';
 
 import './Header.scss';
 

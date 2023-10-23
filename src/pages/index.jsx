@@ -1,7 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
 
-import OrdersList from '../entities/user-orders/ui/OrdersList/OrdersList';
+import OrdersList from '../entities/orders/ui/OrdersList/OrdersList';
+import AccountPaymentInfo from '../components/UI/Account/AccountPaymentInfo/AccountPaymentInfo';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import Logout from '../components/Logout/Logout';
 import Favorites from '../components/Favorites/Favorites';

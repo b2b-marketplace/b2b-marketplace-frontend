@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { OrderItem } from '../OrderItem';
 
 import './OrdersList.scss';
 
-const OrdersList = ({ ordersList }) => {
+const OrdersList = () => {
   // const { filter } = useParams();
   // const { page } = useParams();
   // const navigate = useNavigate();
-  // const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   // useEffect(() => {
   //   if (filter === undefined) {
@@ -24,11 +24,11 @@ const OrdersList = ({ ordersList }) => {
   //   }
   // }, [filter]);
 
-  const viewOrdersList = ({ ordersList }) => {
+  const viewOrdersList = () => {
     return (
       <div>
         <ul className="orders-list">
-          {ordersList.map((order) => (
+          {orders?.map((order) => (
             <li className="orders-list__item" key={order.id}>
               <OrderItem order={order} />
             </li>
@@ -42,7 +42,7 @@ const OrdersList = ({ ordersList }) => {
     return <div className="favorites__empty">Мои заказы пусто</div>;
   };
 
-  return ordersList ? viewOrdersList(ordersList) : viewNotFound();
+  return orders ? viewOrdersList() : viewNotFound();
 };
 
 export default OrdersList;

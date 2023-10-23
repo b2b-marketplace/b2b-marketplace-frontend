@@ -5,13 +5,9 @@ import React, { useEffect, useState } from 'react';
 import Preloader from '../UI/Preloader/Preloader';
 import IconTrash from '../UI/Icon/Icon_trash';
 import Checkbox from '../UI/Checkbox/Checkbox';
-import { Button } from '../UI/Button/Button';
 import ProductCardFavorites from '../ProductElements/ProductCardFavorites/ProductCardFavorites';
-import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
-import OrderDetail from '../OrderDetail/OrderDetail';
-import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
-import productsApi from '../../shared/api/productsApi';
+import { getCalculateProductInfo } from '../../shared/lib/utils';
+import { AppApi } from '../../shared/api';
 import {
   changeChecked,
   deleteProduct,
@@ -44,7 +40,7 @@ const Favorites = ({ extraClassName }) => {
       const mergedList = [];
       const selectedList = [];
       try {
-        const { results } = await productsApi.getProductById(productBasketIds);
+        const { results } = await AppApi.products.getProductById(productBasketIds);
         for (const basketItem of basketList.favorites_products) {
           const productItem = results.find((product) => product.id === basketItem.id);
           if (productItem) {

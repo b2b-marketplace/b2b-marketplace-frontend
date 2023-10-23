@@ -5,7 +5,7 @@ import Form from '../Form/Form';
 import usePopup from '../../../shared/hooks/usePopup';
 import useInput from '../../../shared/hooks/useInput';
 import useError from '../../../shared/hooks/useError';
-import authApi from '../../../shared/api/authApi';
+import { AppApi } from '../../../shared/api';
 
 import RegistrationThirdStep from './RegistrationThirdStep/RegistrationThirdStep';
 import RegistrationSecondStep from './RegistrationSecondStep/RegistrationSecondStep';
@@ -94,7 +94,7 @@ const RegisterPopup = () => {
 
     const { email, phone_number, address, ...company } = entityValidation.values;
     const { password } = lastStepValidation.values;
-    authApi
+    AppApi.auth
       .registerCompany({
         email,
         password,

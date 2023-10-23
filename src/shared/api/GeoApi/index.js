@@ -1,0 +1,1 @@
+export { geoApi } from './geoApi';

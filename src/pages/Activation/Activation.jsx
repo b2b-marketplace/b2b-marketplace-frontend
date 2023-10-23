@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
 
 import usePopup from '../../shared/hooks/usePopup';
-import authApi from '../../shared/api/authApi';
+import { AppApi } from '../../shared/api';
 import Preloader from '../../components/UI/Preloader/Preloader';
 
 import './Activation.scss';
@@ -21,7 +21,7 @@ const Activation = () => {
   useEffect(() => {
     if (init) return;
     const [uid, token] = pathname.replace('/activate/', '').split('/');
-    authApi
+    AppApi.auth
       .activate({ uid, token })
       .then(() => {
         navigate('/', { replace: true });
