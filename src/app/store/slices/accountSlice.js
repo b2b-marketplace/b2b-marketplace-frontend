@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import accountApi from '../../../shared/api/accountApi';
+import { AppApi } from '../../../shared/api';
 
 export const getUser = createAsyncThunk('account/getData', async (token) => {
-  return accountApi.getUser(token);
+  return AppApi.account.getUser(token);
 });
 
 const initialState = {
