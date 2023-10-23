@@ -19,6 +19,7 @@ import ErrorPage from './ErrorPage/ErrorPage';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation';
 import BasketPage from './BasketPage/BasketPage';
 import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
+import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
 import AccountBuyerProfile from './AccountPage/AccountBuyerProfile/AccountBuyerProfile';
 import { AccountPage, OrdersListPage } from './AccountPage';
@@ -46,7 +47,6 @@ const Routing = () => {
             <Route path=":filter" element={<OrdersList />} />
             <Route path=":filter/:page" element={<OrdersList />} />
           </Route>
-          <Route path="payment-methods" element={<AccountPaymentInfo />} exact />
         </Route>
       </Route>
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />
