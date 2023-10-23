@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 
 // Локальные импорты из проекта
 import Routing from '../pages';
-import OrdersList from '../entities/user-orders/ui/OrdersList/OrdersList';
+import OrdersList from '../entities/orders/ui/OrdersList/OrdersList';
 import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
 import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
 import Header from '../components/Header/Header';

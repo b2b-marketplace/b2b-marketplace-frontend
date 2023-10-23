@@ -33,4 +33,4 @@ const geoApi = new GeoApi({
   },
 });
 
-export default geoApi;
+export { geoApi };

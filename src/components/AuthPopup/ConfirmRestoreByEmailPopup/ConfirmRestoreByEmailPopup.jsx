@@ -6,7 +6,7 @@ import Popup from '../Popup';
 import useRestore from '../../../shared/hooks/useRestore';
 import usePopup from '../../../shared/hooks/usePopup';
 import useCountDown from '../../../shared/hooks/useCountDown';
-import authApi from '../../../shared/api/authApi';
+import { AppApi } from '../../../shared/api';
 
 const ConfirmRestoreByEmailPopup = () => {
   const { isOpen, closePopup } = usePopup('confirmRestoreByEmail');
@@ -18,7 +18,7 @@ const ConfirmRestoreByEmailPopup = () => {
   const { restoreValue, resetType } = useRestore('email');
 
   const handleResend = () =>
-    authApi
+    AppApi.auth
       .restoreByEmail({ email: restoreValue })
       .then(() => {
         resetTimer();

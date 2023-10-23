@@ -10,12 +10,12 @@
   }
 
   &__header {
-    @include flex-column;
-    row-gap: 40px;
-    width: 100%;
+    //@include flex-column;
+    //row-gap: 40px;
+    //width: 100%;
   }
 
-  &__control {
+  &__actions {
     @include flex-space-between;
     width: 100%;
     column-gap: 20px;

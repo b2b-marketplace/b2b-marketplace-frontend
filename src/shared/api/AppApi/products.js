@@ -1,7 +1,7 @@
 // Api для получения информации из общей базы данных продуктов
 // import { PRODUCTS_BASE_URL } from './constants.js';
 
-class ProductsApi {
+class Products {
   constructor({ serverUrl, headers }) {
     this._serverUrl = serverUrl;
     this._headers = headers;
@@ -38,7 +38,7 @@ class ProductsApi {
   }
 }
 
-const productsApi = new ProductsApi({
+const products = new Products({
   serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1/products/`,
   headers: {
     Accept: 'application/json',
@@ -46,4 +46,4 @@ const productsApi = new ProductsApi({
   },
 });
 
-export default productsApi;
+export { products };

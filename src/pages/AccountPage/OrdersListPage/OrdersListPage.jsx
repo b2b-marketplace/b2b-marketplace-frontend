@@ -13,10 +13,8 @@ import './OrdersListPage.scss';
 const OrdersListPage = () => {
   return (
     <Container className="orders-list-page">
-      <div className="orders-list-page__header">
-        <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Покупатель" />
-      </div>
-      <div className="orders-list-page__control">
+      <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Покупатель" />
+      <div className="orders-list-page__actions">
         <form onSubmit={(e) => e.preventDefault()} className="orders-list-page__search">
           <AppInput mode="primary" type="text" placeholder="Поиск" />
           <button className="orders-list-page__search-button" type="submit">

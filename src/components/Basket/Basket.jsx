@@ -15,7 +15,7 @@ import OrderDetail from '../OrderDetail/OrderDetail';
 import { Sidebar } from '../../shared/ui/Layout';
 import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
 import usePopup from '../../shared/hooks/usePopup';
-import productsApi from '../../shared/api/productsApi';
+import { AppApi } from '../../shared/api';
 import { changeChecked, deleteProduct, updateAllProduct } from '../../app/store/slices/basketSlice';
 
 import './Basket.scss';
@@ -53,7 +53,7 @@ const Basket = ({ className }) => {
       const mergedList = [];
       const selectedList = [];
       try {
-        const { results } = await productsApi.getProductById(productBasketIds);
+        const { results } = await AppApi.products.getProductById(productBasketIds);
         for (const basketItem of basketList.basket_products) {
           const productItem = results.find((product) => product.id === basketItem.id);
           if (productItem) {
