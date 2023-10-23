@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { Container } from '../../../shared/ui/Layout';
 import usePopup from '../../../shared/hooks/usePopup';
 import RadioButton from '../../../components/UI/RadioButton/RadioButton';
 import IconVisa from '../../../components/UI/Icon/Icon_visa';
@@ -38,7 +39,7 @@ const AccountPaymentInfo = () => {
   };
 
   return (
-    <div className="account-payment-info">
+    <Container className="account-payment-info">
       <AccountTitle name="ООО «Компания»" title="Продавец" />
 
       <h2 className="account-payment-info__title">Способы оплаты</h2>
@@ -85,7 +86,7 @@ const AccountPaymentInfo = () => {
       </ul>
 
       <LinkingCardPopup onClose={closeLinkingCardPopup} onAddCard={handleAddCard} />
-    </div>
+    </Container>
   );
 };
 

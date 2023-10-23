@@ -1,9 +1,9 @@
 @import '/src/app/styles/global';
 
 .account-payment-info {
-  max-width: 860px;
+  //max-width: 860px;
   @include flex-column;
-  gap: 60px;
+  row-gap: 60px;
 
   &__title {
     @include text-L-bold-styles;
