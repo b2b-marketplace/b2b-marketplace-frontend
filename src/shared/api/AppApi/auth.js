@@ -1,9 +1,7 @@
 // Api для получения информации из общей базы данных продуктов
-import { parseErrors } from '../lib/authConstatnts.js';
+import { parseErrors } from '../../lib/authConstatnts.js';
 
-// import { PRODUCTS_BASE_URL } from './constants.js';
-
-class AuthApi {
+class Auth {
   constructor({ serverUrl, headers }) {
     this._serverUrl = serverUrl;
     this._headers = headers;
@@ -52,11 +50,11 @@ class AuthApi {
     this._fetcher('POST', '/users/reset_password/', restoreData, true);
 }
 
-const authApi = new AuthApi({
+const auth = new Auth({
   serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1`,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
 });
 
-export default authApi;
+export { auth };

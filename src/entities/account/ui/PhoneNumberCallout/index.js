@@ -1,1 +1,1 @@
-export * from './ui';
+export { PhoneNumberCallout } from './PhoneNumberCallout.jsx';

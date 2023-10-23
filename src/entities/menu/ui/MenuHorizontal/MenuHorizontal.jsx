@@ -6,14 +6,13 @@ import clsx from 'clsx';
 import './MenuHorizontal.scss';
 
 /**
- * Вертикальное меню.
+ * Компонент горизонтального меню.
  *
  * @param {Array} menuItems - Массив элементов меню.
- * @param className
- * @param onLinkClassName
+ * @param {string} className - Дополнительные классы CSS для контейнера меню.
+ * @param {function} onLinkClassName - Функция для определения классов для элементов меню.
  * @returns {JSX.Element}
  * @constructor
- *
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
 const MenuHorizontal = ({ menuItems, className, onLinkClassName }) => {
@@ -25,6 +24,7 @@ const MenuHorizontal = ({ menuItems, className, onLinkClassName }) => {
       'menu-horizontal__link_active': isActive,
     });
   };
+
   return (
     <ul className={clsx('menu-horizontal', className)}>
       {menuItems.map((item) => (
@@ -40,6 +40,8 @@ const MenuHorizontal = ({ menuItems, className, onLinkClassName }) => {
 
 MenuHorizontal.propTypes = {
   menuItems: PropTypes.array.isRequired,
+  className: PropTypes.string,
+  onLinkClassName: PropTypes.func,
 };
 
 export { MenuHorizontal };

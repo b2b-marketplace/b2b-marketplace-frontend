@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Main, Sidebar } from '../../shared/ui/Layout';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
 import usePopup from '../../shared/hooks/usePopup';
-import accountApi from '../../shared/api/accountApi';
+import { AppApi } from '../../shared/api';
 import { Button } from '../../components/UI/Button/Button';
 import OrderForm from '../../components/OrderForm/OrderForm';
 import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
@@ -80,7 +80,7 @@ const OrderFormPage = () => {
     const order = {
       order_products: orderProductList,
     };
-    accountApi
+    AppApi.account
       .addOrder(auth_token, order)
       .then(() => {
         const filteredArray1 = basketList.basket_products.filter(

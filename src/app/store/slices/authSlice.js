@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import authApi from '../../../shared/api/authApi';
+import { AppApi } from '../../../shared/api';
 
-export const loginUser = createAsyncThunk('auth/loginUser', authApi.login);
+export const loginUser = createAsyncThunk('auth/loginUser', AppApi.auth.login);
 
 const initialState = {
   isLoggedIn: false,
