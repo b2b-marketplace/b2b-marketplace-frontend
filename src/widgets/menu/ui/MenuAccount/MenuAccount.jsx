@@ -25,11 +25,11 @@ const MenuAccount = () => {
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
-    console.log(menuItemsSupplier);
-    console.log(menuItemsCustomer);
     return () => {
       const currentMenu =
-        user?.company.role === USER_ROLE.supplier ? menuItemsSupplier : menuItemsCustomer;
+        user && user.company.role === USER_ROLE.supplier ? menuItemsSupplier : menuItemsCustomer;
+      console.log(user.company.role);
+      console.log(currentMenu);
       setMenuItems(currentMenu);
     };
   }, []);
