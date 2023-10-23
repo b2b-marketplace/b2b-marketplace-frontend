@@ -16,9 +16,10 @@ import './AppLink.scss';
  * @returns {JSX.Element}
  * @constructor
  */
-const AppLink = ({ className, children, target, to, type }) => {
+const AppLink = ({ className, children, target, to, type, onClick }) => {
   return (
     <Link
+      onClick={onClick}
       target={target}
       className={clsx('app-link', type && `app-link_${type}`, className)}
       to={to}
