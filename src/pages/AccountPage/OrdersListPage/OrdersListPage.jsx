@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
 
 import { MenuOrders } from '../../../widgets/menu';
+import { AccountHeader } from '../../../widgets/account';
 import { Container } from '../../../shared/ui/Layout';
 import { AppInput } from '../../../shared/ui/AppInput';
 import IconSearch from '../../../components/UI/Icon/Icon_search';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 
 import logo from '../../../images/logofooter.svg';
 
@@ -13,7 +13,7 @@ import './OrdersListPage.scss';
 const OrdersListPage = () => {
   return (
     <Container className="orders-list-page">
-      <AccountTitle logoSrc={logo} name="ООО «Компания»" title="Покупатель" />
+      <AccountHeader logoSrc={logo} name="ООО «Компания»" title="Покупатель" />
       <div className="orders-list-page__actions">
         <form onSubmit={(e) => e.preventDefault()} className="orders-list-page__search">
           <AppInput mode="primary" type="text" placeholder="Поиск" />

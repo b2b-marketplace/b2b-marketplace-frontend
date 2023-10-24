@@ -1,0 +1,53 @@
+@import '/src/app/styles/global';
+
+.account-header {
+  @include flex-container;
+  @include default-font-styles;
+  gap: 20px;
+
+  &__container-logo {
+    @include flex-container;
+    @include center-both;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    overflow: hidden;
+    @include hover-transition;
+
+    //&:hover {
+    //  background-color: $darkColor;
+    //  background-image: url('../../../../images/editAvatar.png');
+    //  background-repeat: no-repeat;
+    //  background-position: center;
+    //}
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  //&__logo:hover {
+  //  cursor: pointer;
+  //  opacity: 0.2;
+  //}
+
+  &__container {
+    @include flex-container(column, center);
+    gap: 4px;
+  }
+
+  &__name {
+    @include flex-container;
+    @include h3-styles;
+    @include reset;
+  }
+
+  &__role {
+    @include text-M-main-styles;
+    @include reset;
+    color: $grayColor;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { MenuAccount } from '../../../widgets/menu';
+import { AccountHeader } from '../../../widgets/account';
 import { Sidebar } from '../../../shared/ui/Layout';
 import usePopup from '../../../shared/hooks/usePopup';
 import InputField from '../../../components/UI/InputField/InputField';
@@ -8,7 +9,6 @@ import FileUpload from '../../../components/UI/FileUpload/FileUpload';
 import DropDown from '../../../components/UI/DropDown/DropDown';
 import Counter from '../../../components/UI/Counter/Counter';
 import { Button } from '../../../components/UI/Button/Button';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProductPopup/CancelAddProductPopup';
 
 import './AccountSellerProductAdd.scss';
@@ -105,7 +105,7 @@ const AccountSellerProductAdd = () => {
         {/*<MenuVerticalWidget menuItems={menuItemsSupplier} />*/}
       </Sidebar>
       <div className="account-seller-product-add__section">
-        <AccountTitle name="ООО «Компания»" title="Продавец" />
+        <AccountHeader name="ООО «Компания»" title="Продавец" />
         <form className="account-seller-product-add__form" onSubmit={handleSubmit}>
           <FileUpload
             name="images"

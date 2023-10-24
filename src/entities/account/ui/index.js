@@ -1,1 +1,1 @@
-export { PhoneNumberCallout } from './PhoneNumberCallout';
+export { PhoneNumberCallout } from '../../../widgets/menu/ui/MenuAccount/PhoneNumberCallout';
