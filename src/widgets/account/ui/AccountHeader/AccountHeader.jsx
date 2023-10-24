@@ -11,12 +11,10 @@ import './AccountHeader.scss';
 /**
  * Компонент заголовка компании.
  *
- * @param {string} title - Заголовок компании.
- * @param {string} name - Название компании.
  * @returns {JSX.Element}
  * @constructor
  */
-const AccountHeader = ({ title, name }) => {
+const AccountHeader = () => {
   const { user } = useSelector((state) => state.account);
   const { company } = user;
   const userRoleName = USER_ROLE_NAME[company.role];
@@ -30,19 +28,10 @@ const AccountHeader = ({ title, name }) => {
         <h3 className="account-header__name">{company.name}</h3>
         <p className="account-header__role">{userRoleName}</p>
       </div>
-      {/*      {button && (*/}
-      {/*  <button className="account-header__button" type="button">*/}
-      {/*    {button}*/}
-      {/*  </button>*/}
-      {/*)}*/}
     </section>
   );
 };
 
-AccountHeader.propTypes = {
-  title: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  button: PropTypes.string,
-};
+AccountHeader.propTypes = {};
 
 export { AccountHeader };

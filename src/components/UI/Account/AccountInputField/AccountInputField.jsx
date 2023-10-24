@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import IconClose from '../../Icon/Icon_close';
 
@@ -50,7 +51,6 @@ const AccountInputField = ({
                 minLength={minLength}
                 maxLength={maxLength}
                 required={required}
-                errors={errors}
               />
               <button type="reset" className="account-input-field__input-button">
                 <IconClose className="account-input-field__input-button-icon" />
@@ -60,8 +60,11 @@ const AccountInputField = ({
         </label>
       </div>
       <span
-        className={`${isValid} ? account-input-field__error : account-input-field__error account-input-field__error_visible
-        `}
+        // className={`${isValid} ? account-input-field__error : account-input-field__error
+        className={clsx(
+          'account-input-field__error',
+          isValid && 'account-input-field__error_visible'
+        )}
       >
         {errors}
       </span>

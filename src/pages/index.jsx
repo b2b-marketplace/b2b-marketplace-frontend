@@ -20,7 +20,7 @@ import BasketPage from './BasketPage/BasketPage';
 import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
-import AccountBuyerProfile from './AccountPage/AccountBuyerProfile/AccountBuyerProfile';
+import AccountProfile from './AccountPage/AccountBuyerProfile/AccountProfile';
 import { AccountPage, OrdersListPage } from './AccountPage';
 
 const Routing = () => {
@@ -33,7 +33,7 @@ const Routing = () => {
         <Route path="/order" element={<OrderFormPage />} exact />
         <Route path="/account" element={<AccountPage />} exact>
           <Route index element={<Navigate to="profile" />} />
-          <Route path="profile" element={<AccountBuyerProfile />} exact />
+          <Route path="profile" element={<AccountProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />
           <Route path="payment" element={<AccountPaymentInfo />} exact />
           <Route path="favorites" element={<AccountFavorites />} exact>

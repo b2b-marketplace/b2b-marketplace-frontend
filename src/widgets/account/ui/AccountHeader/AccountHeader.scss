@@ -13,7 +13,7 @@
     border-radius: 50%;
     overflow: hidden;
     @include hover-transition;
-
+    border: 1px solid $grayLightColor;
     //&:hover {
     //  background-color: $darkColor;
     //  background-image: url('../../../../images/editAvatar.png');
