@@ -20,9 +20,9 @@ const EmailConfirmation = () => {
         } else if (response.error === 'Token expired') {
           setConfirmationStatus('error');
           setError('Ваш токен активации истек. Пожалуйста, запросите новый.');
-        } else if (response.error) {
+        } else if (response.detail) {
           setConfirmationStatus('error');
-          setError(response.error);
+          setError(response.detail);
         } else {
           setConfirmationStatus('error');
           setError('Произошла ошибка при выполнении запроса.');
@@ -30,7 +30,7 @@ const EmailConfirmation = () => {
       } catch (error) {
         console.error('Ошибка подтверждения почты', error);
         setConfirmationStatus('error');
-        setError('Произошла ошибка при выполнении запроса.');
+        setError(error.messages.error || 'Произошла ошибка при выполнении запроса.');
       }
     };
 
