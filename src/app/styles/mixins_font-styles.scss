@@ -95,6 +95,10 @@
   //font-weight: bold;
 }
 
+@mixin text-XS-bold-styles {
+  @include text-styles(10px, 700, 20px, $fontColor);
+  //font-weight: bold;
+}
 // Text S Web/main
 // Миксин для текста S с основным начертанием
 @mixin text-S-main-styles {

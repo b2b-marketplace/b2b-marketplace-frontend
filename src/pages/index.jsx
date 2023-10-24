@@ -55,7 +55,7 @@ const Routing = () => {
       <Route path="/about-us" element={<AboutUsPage />} exact />
       <Route path="/activate/:uid/:token" element={<EmailConfirmation />} exact />
       <Route path="/logout" element={<Logout />} exact />
-      <Route path="*" element={<ErrorPage />} />>
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 };

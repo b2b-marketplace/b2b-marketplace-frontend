@@ -79,7 +79,7 @@
   }
 
   &__item-count {
-    @include text-S-bold-styles;
+    @include text-XS-bold-styles;
     color: $whiteColor;
     position: absolute;
     top: 15px;

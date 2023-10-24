@@ -7,26 +7,25 @@ import './EmailConfirmation.scss';
 
 const EmailConfirmation = () => {
   const [confirmationStatus, setConfirmationStatus] = useState('pending');
-  const [error, setError] = useState(null); // Добавляем состояние для отслеживания ошибки
-  const { token } = useParams();
-  const { uid } = useParams();
+  const [error, setError] = useState(null);
+  const { token, uid } = useParams();
 
   useEffect(() => {
     const confirmEmail = async () => {
       try {
-        // Используйте метод activate из AuthApi для подтверждения почты
         const response = await AppApi.auth.activate({ token, uid });
 
         if (response.status === 'success') {
           setConfirmationStatus('success');
         } else if (response.error === 'Token expired') {
-          // Обработка устаревшего токена: предложите пользователю войти заново.
           setConfirmationStatus('error');
-          setError('Ваш сеанс завершен. Пожалуйста, выполните вход снова.');
+          setError('Ваш токен активации истек. Пожалуйста, запросите новый.');
+        } else if (response.error) {
+          setConfirmationStatus('error');
+          setError(response.error);
         } else {
-          // Обработка других ошибок.
           setConfirmationStatus('error');
-          setError(response.error || 'Произошла ошибка при выполнении запроса.');
+          setError('Произошла ошибка при выполнении запроса.');
         }
       } catch (error) {
         console.error('Ошибка подтверждения почты', error);
@@ -46,7 +45,8 @@ const EmailConfirmation = () => {
         </p>
       ) : confirmationStatus === 'error' ? (
         <div>
-          {error === 'Ваш сеанс завершен. Пожалуйста, выполните вход снова.' ? (
+          <p className="email-confirmation__error">{error}</p>
+          {error === 'Ваш токен активации истек. Пожалуйста, запросите новый.' ? (
             <p className="email-confirmation__text">{error}</p>
           ) : (
             <p className="email-confirmation__text">

@@ -48,7 +48,7 @@ const Button = ({
 Button.propTypes = {
   primary: PropTypes.bool,
   dark: PropTypes.bool,
-  size: PropTypes.oneOf(['s', 'm', 'l', 'xl']),
+  size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
   disabled: PropTypes.bool,
   pressed: PropTypes.bool,
   type: PropTypes.oneOf(['button', 'submit']),
