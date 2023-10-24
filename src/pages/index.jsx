@@ -18,9 +18,9 @@ import ErrorPage from './ErrorPage/ErrorPage';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation';
 import BasketPage from './BasketPage/BasketPage';
 import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
+import AccountProfile from './AccountPage/AccountProfile/AccountProfile';
 import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
-import AccountProfile from './AccountPage/AccountBuyerProfile/AccountProfile';
 import { AccountPage, OrdersListPage } from './AccountPage';
 
 const Routing = () => {
