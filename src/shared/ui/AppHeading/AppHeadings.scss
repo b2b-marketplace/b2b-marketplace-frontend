@@ -1,0 +1,13 @@
+@import '/src/app/styles/global';
+
+.app-h1 {
+  @include h1-styles;
+}
+
+.app-h2 {
+  @include h2-styles;
+}
+
+.app-h3 {
+  @include h3-styles;
+}
