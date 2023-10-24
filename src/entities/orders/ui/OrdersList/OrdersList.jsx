@@ -42,7 +42,7 @@ const OrdersList = () => {
     return <div className="favorites__empty">Мои заказы пусто</div>;
   };
 
-  return orders ? viewOrdersList() : viewNotFound();
+  return orders.length ? viewOrdersList() : viewNotFound();
 };
 
 export default OrdersList;

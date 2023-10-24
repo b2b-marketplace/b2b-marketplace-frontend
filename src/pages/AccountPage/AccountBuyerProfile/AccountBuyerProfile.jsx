@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
+import { AccountHeader } from '../../../widgets/account';
 import useValidation from '../../../shared/hooks/useValidation';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import { Button } from '../../../components/UI/Button/Button';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
 
 import './AccountBuyerProfile.scss';
@@ -40,7 +40,7 @@ const AccountBuyerProfile = () => {
   return (
     <section className="account-buyer-profile">
       <div className="account-buyer-profile__blok">
-        <AccountTitle name="ООО «Планета»" title="Покупатель" />
+        <AccountHeader name="ООО «Планета»" title="Покупатель" />
 
         <form className="account-buyer-profile__form" onSubmit={handleEdit} noValidate>
           <div className="account-buyer-profile__form-block">

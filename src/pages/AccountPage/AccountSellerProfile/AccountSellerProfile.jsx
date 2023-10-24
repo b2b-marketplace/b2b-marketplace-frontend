@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
+import { AccountHeader } from '../../../widgets/account';
 import useValidation from '../../../shared/hooks/useValidation';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import { Button } from '../../../components/UI/Button/Button';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
 
 import './AccountSellerProfile.scss';
@@ -36,7 +36,7 @@ const AccountSellerProfile = () => {
   return (
     <section className="account-seller-profile">
       <div className="account-seller-profile__blok">
-        <AccountTitle
+        <AccountHeader
           name="ООО «ОРСО»"
           title="Продавец"
           button="Редактировать" /* icon={<IconPencil />} */

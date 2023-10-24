@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
+import { AccountHeader } from '../../../widgets/account';
 import { Container } from '../../../shared/ui/Layout';
 import usePopup from '../../../shared/hooks/usePopup';
 import RadioButton from '../../../components/UI/RadioButton/RadioButton';
 import IconVisa from '../../../components/UI/Icon/Icon_visa';
 import IconPlus from '../../../components/UI/Icon/Icon_plus';
 import IconClose from '../../../components/UI/Icon/Icon_close';
-import AccountTitle from '../../../components/UI/Account/AccountTitle/AccountTitle';
 import LinkingCardPopup from '../../../components/AuthPopup/LinkingCardPopup/LinkingCardPopup';
 
 import './AccountPaymentInfo.scss';
@@ -40,7 +40,7 @@ const AccountPaymentInfo = () => {
 
   return (
     <Container className="account-payment-info">
-      <AccountTitle name="ООО «Компания»" title="Продавец" />
+      <AccountHeader name="ООО «Компания»" title="Продавец" />
 
       <h2 className="account-payment-info__title">Способы оплаты</h2>
       <ul className="account-payment-info__lists">
