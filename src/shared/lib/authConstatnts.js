@@ -11,11 +11,13 @@ export const parseErrors = (errors) => {
         parsedErrors[key] = obj[key].join(' ');
       } else if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
         traverseErrors(obj[key]);
+      } else if (typeof obj[key] === 'string') {
+        parsedErrors['error'] = obj[key];
       }
     }
   };
 
   traverseErrors(errors);
-
+  
   return parsedErrors;
 };
