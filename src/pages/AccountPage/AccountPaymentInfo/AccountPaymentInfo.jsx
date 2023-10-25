@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import { AccountHeader } from '../../../widgets/account';
+import { RadioButton } from '../../../shared/ui/RadioButton';
 import { Container } from '../../../shared/ui/Layout';
 import usePopup from '../../../shared/hooks/usePopup';
-import RadioButton from '../../../components/UI/RadioButton/RadioButton';
 import IconVisa from '../../../components/UI/Icon/Icon_visa';
 import IconPlus from '../../../components/UI/Icon/Icon_plus';
 import IconClose from '../../../components/UI/Icon/Icon_close';

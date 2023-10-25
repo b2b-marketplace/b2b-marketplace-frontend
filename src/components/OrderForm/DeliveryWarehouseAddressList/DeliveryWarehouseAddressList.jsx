@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
-import RadioButton from '../../UI/RadioButton/RadioButton';
+import { RadioButton } from '../../../shared/ui/RadioButton';
 
 import DeliveryWarehouseAddress from './DeliveryWarehouseAddress/DeliveryWarehouseAddress';
 
@@ -10,6 +10,7 @@ import logoSrc2 from '../../../images/stock/logo-2.png';
 import logoSrc1 from '../../../images/stock/logo-1.png';
 
 import './DeliveryWarehouseAddressList.scss';
+
 
 const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList }) => {
   const date1 = Date.now() / 1000 + 10 * 24 * 60 * 60;

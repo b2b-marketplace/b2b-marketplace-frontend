@@ -17,8 +17,8 @@ import IconNotAvailable from '../../UI/Icon/Icon_not-available';
 import IconInfo from '../../UI/Icon/Icon_info';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconAvailable from '../../UI/Icon/Icon_available';
-import Counter from '../../UI/Counter/Counter';
 import { Button } from '../../UI/Button/Button';
+import { Counter } from '../../../shared/ui/Counter/Counter';
 import { commentsList } from '../../../shared/mock/commentsMock';
 import { addProduct, deleteProduct, changeQuantity } from '../../../app/store/slices/basketSlice';
 
@@ -26,6 +26,7 @@ import noPhoto from '../../../images/nophoto.png';
 import photo from './../../../images/4.jpg';
 
 import './ProductBlock.scss';
+
 
 /**
  * Блок описания товара

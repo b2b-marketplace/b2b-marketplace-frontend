@@ -1,14 +1,11 @@
 @import '/src/app/styles/global';
 
 .button-scroll-up {
-  max-width: $maxWidth;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 7px 0 16px 0;
+  position: fixed;
+  right: 20px;
+  bottom: 0;
 
   &__button {
-    display: none;
     width: 92px;
     height: 92px;
     border-radius: 50%;
@@ -17,6 +14,8 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    display: none;
+
     transition:
       transform 0.3s ease,
       scale 0.3s ease;
@@ -27,7 +26,6 @@
 
     &:hover {
       background-color: $blueDarkColor;
-      transform: scale(1.1);
     }
   }
 }
