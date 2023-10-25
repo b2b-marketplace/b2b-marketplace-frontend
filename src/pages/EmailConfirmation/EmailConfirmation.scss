@@ -11,4 +11,9 @@
   &__text {
     @include h3-styles;
   }
+
+  &__error {
+    @include h3-styles;
+    color: red;
+  }
 }
