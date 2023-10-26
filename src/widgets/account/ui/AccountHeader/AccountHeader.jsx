@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import React from 'react';
-import PropTypes from 'prop-types';
 
+import { AppH3 } from '../../../../shared/ui/AppHeading';
 import { USER_ROLE_NAME } from '../../../../shared/config/constants';
+import { accountModel } from '../../../../entities/account';
 
 import noImage from '../../../../images/basket/Stub_132_128.jpg';
 
 import './AccountHeader.scss';
-
 /**
  * Компонент заголовка компании.
  *
@@ -15,7 +15,7 @@ import './AccountHeader.scss';
  * @constructor
  */
 const AccountHeader = () => {
-  const { user } = useSelector((state) => state.account);
+  const { user } = accountModel.useAccount();
   const { company } = user;
   const userRoleName = USER_ROLE_NAME[company.role];
 
@@ -25,7 +25,7 @@ const AccountHeader = () => {
         <img className="account-header__logo" src={noImage} alt="Логотип" />
       </div>
       <div className="account-header__container">
-        <h3 className="account-header__name">{company.name}</h3>
+        <AppH3>{company.name}</AppH3>
         <p className="account-header__role">{userRoleName}</p>
       </div>
     </section>

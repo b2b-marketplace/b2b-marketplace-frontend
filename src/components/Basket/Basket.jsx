@@ -16,6 +16,7 @@ import { Sidebar } from '../../shared/ui/Layout';
 import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
 import usePopup from '../../shared/hooks/usePopup';
 import { AppApi } from '../../shared/api';
+import { accountModel } from '../../entities/account';
 import { changeChecked, deleteProduct, updateAllProduct } from '../../app/store/slices/basketSlice';
 
 import './Basket.scss';
@@ -30,7 +31,7 @@ import './Basket.scss';
  */
 const Basket = ({ className }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
-  const { user } = useSelector((state) => state.account);
+  const { user } = accountModel.useAccount();
   const { openPopup: openRegisterPopup } = usePopup('registration');
   const { openPopup: openLoginPopup } = usePopup('login');
 

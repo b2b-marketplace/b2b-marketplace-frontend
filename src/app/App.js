@@ -5,27 +5,25 @@ import React, { useEffect } from 'react';
 
 // Локальные импорты из проекта
 import Routing from '../pages';
-import OrdersList from '../entities/orders/ui/OrdersList/OrdersList';
+import { accountModel } from '../entities/account';
 import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
 import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 
-import { getUser } from './store/slices/accountSlice';
-
 import './App.scss';
 
 // Компонент app
 function App() {
   const dispatch = useDispatch();
-  const { user, isFetched } = useSelector((state) => state.account);
+  const { user, isFetched } = accountModel.useAccount();
   const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
 
   // Эффект, который вызывает getUser, если пользователь авторизован
   useEffect(() => {
     if (isLoggedIn && auth_token && !isFetched) {
-      dispatch(getUser(auth_token));
+      dispatch(accountModel.getUser(auth_token));
     }
   }, [isFetched, isLoggedIn]);
 
