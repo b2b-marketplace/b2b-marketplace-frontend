@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import VendorCode from '../VendorCode/VendorCode';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import IconHearth from '../../UI/Icon/Icon_hearth';
-import Counter from '../../UI/Counter/Counter';
 import Checkbox from '../../UI/Checkbox/Checkbox';
+import { Counter } from '../../../shared/ui/Counter/Counter';
 import { priceFormat } from '../../../shared/lib/utils';
 import { changeQuantity, deleteProduct } from '../../../app/store/slices/basketSlice.js';
 
@@ -14,6 +14,7 @@ import ProductCardHorizontalImage from './ProductCardHorizontalImage/ProductCard
 import imageStub from '../../../images/basket/Stub_132_128.jpg';
 
 import './ProductCardHorizontal.scss';
+
 
 /**
  * Компонент ProductCardHorizontal для отображения товара.

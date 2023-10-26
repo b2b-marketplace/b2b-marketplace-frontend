@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-import IconArrow from '../Icon/Icon_arrow';
+import IconArrow from '../../../components/UI/Icon/Icon_arrow';
 
 import './ButtonScrollUp.scss';
+
+/**
+ * Компонент кнопки для прокрутки наверх.
+ *
+ * @returns {JSX.Element} JSX элемент кнопки прокрутки наверх.
+ */
 
 function ButtonScrollUp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,4 +48,4 @@ function ButtonScrollUp() {
   );
 }
 
-export default ButtonScrollUp;
+export { ButtonScrollUp };

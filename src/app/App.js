@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 
 // Локальные импорты из проекта
+import { ButtonScrollUp, ScrollToTop } from '../shared/ui/ButtonScrollUp';
 import Routing from '../pages';
 import { accountModel } from '../entities/account';
 import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
@@ -13,6 +14,7 @@ import Footer from '../components/Footer/Footer';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
 
 import './App.scss';
+
 
 // Компонент app
 function App() {
@@ -26,17 +28,6 @@ function App() {
       dispatch(accountModel.getUser(auth_token));
     }
   }, [isFetched, isLoggedIn]);
-
-  // Компонент ScrollToTop для прокрутки страницы наверх при смене маршрута
-  const ScrollToTop = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [location.pathname]);
-
-    return null;
-  };
 
   return (
     <div className="app">
