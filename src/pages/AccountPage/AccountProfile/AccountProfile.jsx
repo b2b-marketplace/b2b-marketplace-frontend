@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import { AccountHeader } from '../../../widgets/account';
 import useValidation from '../../../shared/hooks/useValidation';
+import { accountModel } from '../../../entities/account';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
@@ -10,7 +11,7 @@ import AccountInputField from '../../../components/UI/Account/AccountInputField/
 import './AccountProfile.scss';
 
 const AccountProfile = () => {
-  const { user } = useSelector((state) => state.account);
+  const { user } = accountModel.useAccount();
   const { company } = user;
 
   const [isEditMode, setIsEditMode] = useState(false);
@@ -18,7 +19,7 @@ const AccountProfile = () => {
 
   const { values, handleChange, setValues, errors, isValid, resetForm } = useValidation({});
   useEffect(() => {
-    console.log(company);
+    //console.log(user);
     //values.inn = company.inn.toString();
     setValues(values);
   }, []);

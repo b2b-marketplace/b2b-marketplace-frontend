@@ -39,11 +39,11 @@
     gap: 4px;
   }
 
-  &__name {
-    @include flex-container;
-    @include h3-styles;
-    @include reset;
-  }
+  //&__name {
+  //  @include flex-container;
+  //  @include h3-styles;
+  //  @include reset;
+  //}
 
   &__role {
     @include text-M-main-styles;

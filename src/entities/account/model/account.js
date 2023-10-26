@@ -1,10 +1,7 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit';
 
 import { AppApi } from '../../../shared/api';
-
-export const getUser = createAsyncThunk('account/getData', async (token) => {
-  return AppApi.account.getUser(token);
-});
 
 const initialState = {
   user: {
@@ -32,7 +29,13 @@ const initialState = {
   error: null,
 };
 
-const accountSlice = createSlice({
+//Асинхронные операции
+export const getUser = createAsyncThunk('account/getData', async (token) => {
+  return AppApi.account.getUser(token);
+});
+
+//Слайлсы
+const account = createSlice({
   name: 'account',
   initialState,
   reducers: {
@@ -58,7 +61,17 @@ const accountSlice = createSlice({
       });
   },
 });
+//Селекторы
+export const useAccount = () => useSelector((state) => state.account);
 
-export const { resetUser } = accountSlice.actions;
+export const useAccount2 = () =>
+  useSelector(
+    createSelector(
+      (state) => state.account,
+      (user) => user
+    )
+  );
 
-export const accountReducer = accountSlice.reducer;
+export const { resetUser } = account.actions;
+
+export const reducer = account.reducer;

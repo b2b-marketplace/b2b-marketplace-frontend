@@ -1,18 +1,11 @@
 // Api для получения информации из общей базы данных продуктов
 // import { PRODUCTS_BASE_URL } from './constants.js';
 
-class Products {
+import BaseApi from './BaseApi';
+
+class Products extends BaseApi {
   constructor({ serverUrl, headers }) {
-    this._serverUrl = serverUrl;
-    this._headers = headers;
-  }
-
-  _checkResponse(res) {
-    return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`);
-  }
-
-  _request(url, options) {
-    return fetch(url, options).then(this._checkResponse);
+    super({ serverUrl, headers });
   }
 
   getProducts(page = 1) {
