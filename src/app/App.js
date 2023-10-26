@@ -7,7 +7,6 @@ import React, { useEffect } from 'react';
 import { ButtonScrollUp, ScrollToTop } from '../shared/ui/ButtonScrollUp';
 import Routing from '../pages';
 import { accountModel } from '../entities/account';
-import ButtonScrollUp from '../components/UI/ButtonScrollUp/ButtonScrollUp';
 import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
