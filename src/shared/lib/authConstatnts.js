@@ -18,6 +18,6 @@ export const parseErrors = (errors) => {
   };
 
   traverseErrors(errors);
-  
+
   return parsedErrors;
 };
