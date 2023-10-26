@@ -2,15 +2,15 @@ import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 
+import { accountModel } from '../../entities/account';
 import { logoutUser } from '../../app/store/slices/authSlice.js';
-import { resetUser } from '../../app/store/slices/accountSlice.js';
 
 const Logout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
     dispatch(logoutUser());
-    dispatch(resetUser());
+    dispatch(accountModel.resetUser());
     navigate('/', { replace: true });
   }, []);
 };

@@ -1,13 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { getUser } from '../../../app/store/slices/accountSlice';
+import { accountModel } from '../../../entities/account';
 
 import './OrderFormReceiver.scss';
 
 const OrderFormReceiver = () => {
   // const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.account);
+  const { user } = accountModel.useAccount();
   // const { auth_token } = useSelector((state) => state.auth);
   // useEffect(() => {
   //   if (!isFetched) {

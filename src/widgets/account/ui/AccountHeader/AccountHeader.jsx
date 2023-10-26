@@ -3,11 +3,11 @@ import React from 'react';
 
 import { AppH3 } from '../../../../shared/ui/AppHeading';
 import { USER_ROLE_NAME } from '../../../../shared/config/constants';
+import { accountModel } from '../../../../entities/account';
 
 import noImage from '../../../../images/basket/Stub_132_128.jpg';
 
 import './AccountHeader.scss';
-
 /**
  * Компонент заголовка компании.
  *
@@ -15,7 +15,7 @@ import './AccountHeader.scss';
  * @constructor
  */
 const AccountHeader = () => {
-  const { user } = useSelector((state) => state.account);
+  const { user } = accountModel.useAccount();
   const { company } = user;
   const userRoleName = USER_ROLE_NAME[company.role];
 

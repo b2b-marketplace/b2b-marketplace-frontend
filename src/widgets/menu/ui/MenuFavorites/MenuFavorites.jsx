@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import { MenuHorizontal } from '../../../../entities/menu/ui/MenuHorizontal';
+import { MenuHorizontal } from '../../../../entities/menu';
+import { accountModel } from '../../../../entities/account';
 
 import './MenuFavorites.scss';
 
@@ -16,7 +17,7 @@ import './MenuFavorites.scss';
  * @constructor
  */
 const MenuFavorites = ({ className }) => {
-  const { user } = useSelector((state) => state.account);
+  //const { user } = accountModel.useAccount();
   const [menuItems, setMenuItems] = useState([]);
   const menuItemBuyer = [
     { key: 1, name: 'Все', link: '' },

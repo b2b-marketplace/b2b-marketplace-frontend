@@ -5,6 +5,7 @@ import { Container } from '../../../../shared/ui/Layout';
 import { AppLink } from '../../../../shared/ui/AppLink';
 import { USER_ROLE } from '../../../../shared/config/constants';
 import { MenuVertical } from '../../../../entities/menu';
+import { accountModel } from '../../../../entities/account';
 import IconExit from '../../../../components/UI/Icon/Icon_exit';
 
 import { PhoneNumberCallout } from './PhoneNumberCallout';
@@ -21,7 +22,7 @@ import './MenuAccount.scss';
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
 const MenuAccount = () => {
-  const { user } = useSelector((state) => state.account);
+  const { user } = accountModel.useAccount();
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
