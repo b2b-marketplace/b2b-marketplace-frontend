@@ -15,17 +15,14 @@ const EmailConfirmation = () => {
       try {
         const response = await AppApi.auth.activate({ token, uid });
 
-        if (response.status === 'success') {
-          setConfirmationStatus('success');
-        } else if (response.error === 'Token expired') {
+        if (response.token) {
           setConfirmationStatus('error');
           setError('Ваш токен активации истек. Пожалуйста, запросите новый.');
-        } else if (response.detail) {
+        } else if (response.uid) {
           setConfirmationStatus('error');
-          setError(response.detail);
+          setError('Неверный идентификатор пользователя или пользователь не существует.');
         } else {
-          setConfirmationStatus('error');
-          setError('Произошла ошибка при выполнении запроса.');
+          setConfirmationStatus('success');
         }
       } catch (error) {
         console.error('Ошибка подтверждения почты', error);
