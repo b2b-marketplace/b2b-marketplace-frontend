@@ -1,10 +1,8 @@
 @import '/src/app/styles/global';
 
 .portal-rules-page {
-  max-width: 1249px;
-  font-family: $fontFamilyNunitoSans;
-  font-style: $mainStyle;
-  line-height: 28px;
+  @include text-default-styles;
+  max-width: 1300px;
   padding: 52px 0 120px;
 
   &__title {
@@ -13,9 +11,13 @@
   }
 
   &__subtitle {
-    font-size: 24px;
-    font-weight: 600;
+    @include text-L-bold-styles;
     margin: 0;
+  }
+
+  &__desc {
+    @include text-L-main-styles;
+    margin: 0 0 20px;
   }
 
   &__text {
