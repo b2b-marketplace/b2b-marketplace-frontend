@@ -1,0 +1,16 @@
+@mixin max-min-width {
+  max-width: $maxWidth;
+  min-width: $minWidth;
+}
+
+@mixin box-container {
+  @include max-min-width;
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+
+@mixin border-radius($radius: 20px, $color: $grayLightColor) {
+  box-sizing: border-box;
+  border: 1px solid $color;
+  border-radius: $radius;
+}

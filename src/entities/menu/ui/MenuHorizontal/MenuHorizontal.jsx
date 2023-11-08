@@ -26,15 +26,17 @@ const MenuHorizontal = ({ menuItems, className, onLinkClassName }) => {
   };
 
   return (
-    <ul className={clsx('menu-horizontal', className)}>
-      {menuItems.map((item) => (
-        <li key={item.key} className="menu-horizontal__item">
-          <NavLink className={({ isActive }) => currentClassName(isActive, item)} to={item.link}>
-            {item.name}
-          </NavLink>
-        </li>
-      ))}
-    </ul>
+    <nav className="menu-horizontal">
+      <ul className={clsx('menu-horizontal__list', className)}>
+        {menuItems.map((item) => (
+          <li key={item.key} className="menu-horizontal__item">
+            <NavLink className={({ isActive }) => currentClassName(isActive, item)} to={item.link}>
+              {item.name}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

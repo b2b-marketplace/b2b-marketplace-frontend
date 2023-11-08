@@ -8,35 +8,38 @@
   padding: 20px;
   width: 100%;
   max-height: 172px;
+  position: relative;
 
   &__checkbox {
-    @include center-both;
+    @include flex-container(row, center, center);
     align-self: center;
+    max-width: 24px;
+    width: 100%;
   }
 
   &__container {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     column-gap: 24px;
     width: 100%;
   }
 
   &__image {
-    display: block;
-    @include border-radius;
-    object-fit: cover;
-    object-position: center;
+    width: 104px;
+    height: 108px;
+  }
+
+  &__image {
     width: 104px;
     height: 108px;
   }
 
   &__figcaption {
-    @include flex-column;
-    @include center-both;
+    @include flex-container(column, center, center);
     row-gap: 4px;
   }
 
   &__details {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     column-gap: 16px;
   }
 
@@ -45,7 +48,6 @@
     row-gap: 4px;
     width: 100%;
     max-width: 210px;
-    //white-space: nowrap;
   }
 
   &__product-title {
@@ -73,7 +75,7 @@
   }
 
   &__characteristics {
-    @include flex-column;
+    @include flex-container(column);
     justify-content: center;
     row-gap: 4px;
   }
@@ -89,7 +91,7 @@
   }
 
   &__product-actions {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     align-items: center;
     row-gap: 16px;
     column-gap: 20px;
@@ -99,6 +101,10 @@
     &_order-form {
       max-width: 276px;
     }
+  }
+
+  &__product-count {
+    width: 100%;
   }
 
   &__buttons {
@@ -118,8 +124,14 @@
     @include link-hover-styles;
   }
 
+  &__sold-out {
+    @include text-M-bold-styles($redColor);
+    width: 100%;
+    text-align: right;
+  }
+
   //&__price-quantity {
-  //  @include flex-space-between;
+  //  @include flex-container(row, space-between);
   //  align-items: center;
   //  column-gap: 138px;
   //  max-width: 400px;

@@ -84,4 +84,4 @@ Counter.propTypes = {
   extraClassName: PropTypes.string,
 };
 
-export {Counter};
+export { Counter };

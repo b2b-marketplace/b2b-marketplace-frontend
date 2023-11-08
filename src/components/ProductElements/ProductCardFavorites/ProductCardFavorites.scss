@@ -10,12 +10,12 @@
   max-height: 172px;
 
   &__checkbox {
-    @include center-both;
+    @include flex-container(row, center, center);
     align-self: center;
   }
 
   &__container {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     column-gap: 24px;
     width: 100%;
   }
@@ -30,13 +30,13 @@
   }
 
   &__figcaption {
-    @include flex-column;
-    @include center-both;
+    @include flex-container(column);
+    @include flex-container(row, center, center);
     row-gap: 4px;
   }
 
   &__details {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     column-gap: 16px;
   }
 
@@ -72,7 +72,7 @@
   }
 
   &__product-actions {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     align-items: center;
     row-gap: 16px;
     column-gap: 10px;

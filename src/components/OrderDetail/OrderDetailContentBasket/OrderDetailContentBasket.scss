@@ -2,7 +2,7 @@
 
 .order-detail-content-basket {
   @include default-font-styles;
-  @include flex-column;
+  @include flex-container(column);
   row-gap: 16px;
 
   &__label {
@@ -10,7 +10,7 @@
   }
 
   &__content {
-    @include flex-column;
+    @include flex-container(column);
     row-gap: 16px;
   }
 

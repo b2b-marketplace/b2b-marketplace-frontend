@@ -47,7 +47,7 @@ const AccountProfile = () => {
   }
 
   return (
-    <section className="account-profile">
+    <div className="account-profile">
       <div className="account-profile__blok">
         <AccountHeader />
         <form className="account-profile__form" onSubmit={handleEdit} noValidate>
@@ -64,7 +64,7 @@ const AccountProfile = () => {
               {/*  placeholder="7209176529 0000"*/}
               {/*  id="bankaccount"*/}
               {/*  name="bankaccount"*/}
-              {/*  type="text"*/}
+              {/*  mode="text"*/}
               {/*  minLength={8}*/}
               {/*  required*/}
               {/*  isDisabled={isDisadled}*/}
@@ -91,7 +91,7 @@ const AccountProfile = () => {
               {/*  placeholder="Москва, Россия"*/}
               {/*  id="region"*/}
               {/*  name="region"*/}
-              {/*  type="text"*/}
+              {/*  mode="text"*/}
               {/*  isDisabled={isDisadled}*/}
               {/*  onChange={handleChange}*/}
               {/*  value={values.region || ''}*/}
@@ -145,17 +145,17 @@ const AccountProfile = () => {
             </fieldset>
           </div>
           {/*{isEditMode ? (*/}
-          {/*  <div className="account-profile__button-container">*/}
-          {/*    <Button size="l" primary dark type="submit" onClick={handleEdit} disabled={!isValid}>*/}
+          {/*  <div className="account-profile__button-section">*/}
+          {/*    <Button size="l" primary dark mode="submit" onClick={handleEdit} disabled={!isValid}>*/}
           {/*      Сохранить*/}
           {/*    </Button>*/}
-          {/*    <Button size="l" primary dark type="button" onClick={cancelEdit}>*/}
+          {/*    <Button size="l" primary dark mode="button" onClick={cancelEdit}>*/}
           {/*      Отменить*/}
           {/*    </Button>*/}
           {/*  </div>*/}
           {/*) : (*/}
-          {/*  <div className="account-profile__button-container">*/}
-          {/*    <Button disabled={true} size="l" primary dark type="button" onClick={editInfo}>*/}
+          {/*  <div className="account-profile__button-section">*/}
+          {/*    <Button disabled={true} size="l" primary dark mode="button" onClick={editInfo}>*/}
           {/*      Редактировать*/}
           {/*    </Button>*/}
           {/*  </div>*/}
@@ -164,7 +164,7 @@ const AccountProfile = () => {
 
         {/* <AccountPaymentInfo title="Способы оплаты" />  */}
       </div>
-    </section>
+    </div>
   );
 };
 

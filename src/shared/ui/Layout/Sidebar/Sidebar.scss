@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .sidebar {
-  @include flex-column;
+  @include flex-container(column);
   width: 100%;
 
   &_right {

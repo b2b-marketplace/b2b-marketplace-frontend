@@ -1,11 +1,7 @@
 @import '/src/app/styles/global';
 
 .order-form-page {
-  @include default-font-styles;
-  display: flex;
-  width: 100%;
-  max-width: $maxWidth;
-  min-width: $minWidth;
+  @include flex-container;
   margin-top: 52px;
   column-gap: 60px;
 

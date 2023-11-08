@@ -58,7 +58,7 @@ const OrderForm = ({ extraClassName, productList }) => {
               {productList?.map((product) => (
                 <li className="basket__product-item" key={product.id} data-id={product.id}>
                   <ProductCardHorizontal
-                    type="orderForm"
+                    mode="orderForm"
                     isCheckboxChecked={product.checked}
                     onClickCheckbox={() => {}}
                     product={product}

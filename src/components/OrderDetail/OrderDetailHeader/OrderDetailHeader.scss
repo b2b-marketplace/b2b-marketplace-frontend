@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .order-detail-header {
-  @include flex-space-between;
+  @include flex-container(row, space-between);
   align-items: center;
 
   &__title {

@@ -1,0 +1,134 @@
+@import '../vars';
+@import 'mixins';
+@import 'animation';
+
+@mixin default-font-styles {
+  font-family: $fontFamilyNunitoSans;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+// Общие стили для текста
+@mixin text-styles($font-size, $font-weight, $line-height, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+%heading-default-styles {
+  font-family: $fontFamilyUnbounded;
+}
+
+%heading-reset {
+  @include reset;
+}
+
+// Стили по умолчанию для заголовков
+
+// Основной заголовок h1
+@mixin h1-styles($color: $fontColor) {
+  @extend %heading-default-styles;
+  @extend %heading-reset;
+  @include text-styles(36px, 500, 44px, $color);
+}
+
+// Заголовок второго уровня h2
+@mixin h2-styles($color: $fontColor) {
+  @extend %heading-default-styles;
+  @extend %heading-reset;
+  @include text-styles(28px, 500, 36px, $color);
+}
+
+// Заголовок третьего уровня h3
+@mixin h3-styles($color: $fontColor) {
+  @extend %heading-default-styles;
+  @extend %heading-reset;
+
+  @include text-styles(20px, 500, 28px, $color);
+}
+
+// T L Web/bold
+// Миксин для текста L с жирным начертанием
+@mixin text-L-bold-styles($color: $fontColor) {
+  @include text-styles(24px, 600, 28px, $color);
+}
+
+// T L Web/main
+// Миксин для текста L с основным начертанием
+@mixin text-L-main-styles($color: $fontColor) {
+  @include text-styles(20px, 600, 28px, $color);
+}
+
+//T L Web/regular
+// Миксин для текста L с обычным начертанием
+@mixin text-L-regular-styles($color: $fontColor) {
+  @include text-styles(20px, 400, 28px, $color);
+}
+
+// T L Web/link
+// Миксин для текста L, предназначенного для ссылок
+@mixin text-L-link-styles($color: $fontColor) {
+  @include text-styles(20px, 600, 28px, $color);
+}
+
+@mixin text-M-link-styles($color: $fontColor) {
+  @include text-styles(16px, 600, 24px, $color);
+}
+
+// Text M Web
+// Миксин для текста M
+@mixin text-M-bold-styles($color: $fontColor) {
+  @include text-styles(16px, 700, 24px, $color);
+}
+
+// Text M Web
+@mixin text-M-main-styles($color: $fontColor) {
+  @include text-styles(16px, 600, 24px, $color);
+}
+
+// Text S Web/bold
+// Миксин для текста S с жирным начертанием
+@mixin text-S-bold-styles($color: $fontColor) {
+  @include text-styles(14px, 700, 20px, $color);
+  //font-weight: bold;
+}
+
+@mixin text-XS-bold-styles($color: $fontColor) {
+  @include text-styles(10px, 700, 20px, $color);
+  //font-weight: bold;
+}
+
+// Text S Web/main
+// Миксин для текста S с основным начертанием
+@mixin text-S-main-styles($color: $fontColor) {
+  @include text-styles(14px, 400, 20px, $color);
+}
+
+// Максимальное количество строк для отображения
+@mixin text-number-rows-show($count: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+@mixin text-overflow-eclipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin hover-transition {
+  transition: all ease 0.3s;
+}
+
+@mixin link-hover-styles {
+  @include hover-transition;
+  opacity: 1;
+  &:hover {
+    opacity: 0.7;
+  }
+}

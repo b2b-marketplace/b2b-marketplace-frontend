@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { basketList } from '../../../shared/mock/basketMock';
-
 const initialState = {
   basket: {
     id: '',
@@ -17,17 +15,21 @@ const basketSlice = createSlice({
       const { deliveryAddress } = action.payload;
       state.basket.delivery_address = deliveryAddress;
     },
+
     updateDeliveryAddress: (state, action) => {
       const { deliveryAddress } = action.payload;
     },
+
     updateAllProduct: (state, action) => {
-      const { currentProductList } = action.payload;
-      state.basket.basket_products = currentProductList;
+      const { currentProductList: productsList } = action.payload;
+      state.basket.basket_products = productsList;
     },
+
     addProduct: (state, action) => {
       const { productIds, quantity } = action.payload;
       state.basket.basket_products.push({ id: productIds, quantity });
     },
+
     deleteProduct: (state, action) => {
       if (Array.isArray(action.payload.productIds)) {
         state.basket.basket_products = state.basket.basket_products.filter(
@@ -39,6 +41,7 @@ const basketSlice = createSlice({
         });
       }
     },
+
     changeQuantity: (state, action) => {
       const { productIds, quantity } = action.payload;
       state.basket.basket_products = state.basket.basket_products.map((product) => {
@@ -51,26 +54,26 @@ const basketSlice = createSlice({
         return product; // Если это не нужный товар, возвращаем без изменений
       });
     },
+
     changeChecked: (state, action) => {
-      const { productIds, checked } = action.payload;
-      if (Array.isArray(productIds)) {
-        state.basket.basket_products = state.basket.basket_products.map((product) => {
+      const { productId, checked } = action.payload;
+      state.basket.basket_products = state.basket.basket_products.map((product) => {
+        if (product.id === productId) {
           return {
             ...product,
-            checked,
+            checked: !product.checked,
           };
-        });
-      } else {
-        state.basket.basket_products = state.basket.basket_products.map((product) => {
-          if (product.id === productIds) {
-            return {
-              ...product,
-              checked: !product.checked,
-            };
-          }
-          return product; // Если это не нужный товар, возвращаем без изменений
-        });
-      }
+        }
+        return product; // Если это не нужный товар, возвращаем без изменений
+      });
+    },
+
+    changeCheckedAll: (state, action) => {
+      const { productIds, checked } = action.payload;
+      state.basket.basket_products = state.basket.basket_products.map((product) => ({
+        ...product,
+        checked: productIds.includes(product.id) ? checked : product.checked || false,
+      }));
     },
   },
 });
@@ -82,6 +85,7 @@ export const {
   updateAllProduct,
   changeQuantity,
   changeChecked,
+  changeCheckedAll,
 } = basketSlice.actions;
 
 export const basketReducer = basketSlice.reducer;

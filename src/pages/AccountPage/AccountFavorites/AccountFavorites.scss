@@ -3,7 +3,7 @@
 .account-favorites {
   max-width: 970px;
   width: 100%;
-  @include flex-column;
+  @include flex-container(column);
   gap: 60px;
 
   &__container {
@@ -12,7 +12,7 @@
   }
 
   &__control {
-    @include flex-column;
+    @include flex-container(column);
     gap: 40px;
   }
 }

@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .about-us-page {
-  @include flex-column;
+  @include flex-container(column);
   padding: 52px 0 120px;
   max-width: 1300px;
   font-family: $fontFamilyNunitoSans;

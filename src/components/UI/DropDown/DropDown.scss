@@ -15,7 +15,7 @@
   }
 
   &__select {
-    @include flex-column;
+    @include flex-container(column);
 
     width: 100%;
     font-size: 16px;
@@ -24,7 +24,7 @@
   }
 
   &__header {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     box-sizing: border-box;
     align-items: center;
     border: 1px solid $blackColor;

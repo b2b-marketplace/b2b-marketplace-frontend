@@ -1,9 +1,101 @@
 @import '/src/app/styles/global';
 
 .order-item {
-  box-sizing: border-box;
-  border: 1px solid $darkColor;
-  border-radius: 20px;
-  width: 100%;
-  height: 216px;
+  @include flex-container(row, space-between);
+  @include border-radius;
+  padding: 20px;
+  height: 172px;
+  column-gap: 28px;
+
+  &__header {
+    @include flex-container(column);
+    row-gap: 32px;
+  }
+
+  &__additional-info {
+    @include flex-container(column);
+    row-gap: 8px;
+  }
+
+  &__order-date {
+    @include text-M-bold-styles;
+  }
+
+  &__order-number {
+    @include text-M-main-styles($blueDarkColor);
+  }
+
+  &__company-info {
+    @include flex-container(row, flex-start, center);
+    column-gap: 8px;
+  }
+
+  &__company-name {
+    @include text-M-bold-styles($grayColor);
+  }
+
+  &__company-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__delivery-container {
+    @include flex-container(column);
+    max-width: 316px;
+    row-gap: 16px;
+  }
+
+  &__delivery-date-info {
+  }
+
+  &__delivery-title {
+    @include text-M-bold-styles($blackColor);
+  }
+
+  &__delivery-text {
+    @include text-S-main-styles($blackColor);
+  }
+
+  &__product-images-container {
+    @include flex-container(row, center, center);
+    column-gap: 8px;
+  }
+
+  &__product-image {
+    //@include flex-section(row, center, center);
+    position: relative;
+  }
+
+  &__product-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__product-image-overlay {
+    @include flex-container(row, center, center);
+    @include border-radius;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $blueDarkColor;
+    opacity: 0.6;
+  }
+
+  &__product-image-quantity {
+    @include flex-container(row, center, center);
+    @include h3-styles($whiteColor);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__total-price-container {
+    @include text-L-main-styles($blackColor);
+    @include flex-container(row, center, center);
+  }
 }

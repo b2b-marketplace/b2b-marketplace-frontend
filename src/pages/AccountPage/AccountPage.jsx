@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 
-import { MenuAccount } from '../../widgets/menu';
+import { AccountMenu } from '../../widgets/menu';
 import { Main, Sidebar } from '../../shared/ui/Layout';
 
 import './AccountPage.scss';
@@ -17,7 +17,7 @@ const AccountPage = () => {
   return (
     <Main className="account-page">
       <Sidebar type="left">
-        <MenuAccount />
+        <AccountMenu />
       </Sidebar>
       <Outlet />
     </Main>

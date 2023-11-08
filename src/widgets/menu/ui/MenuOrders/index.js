@@ -1,1 +1,0 @@
-export { MenuOrders } from './MenuOrders';

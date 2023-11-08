@@ -1,11 +1,13 @@
 @import '/src/app/styles/global';
 
 .menu-horizontal {
-  display: flex;
-  column-gap: 60px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  @include default-font-styles;
+
+  &__list {
+    @include flex-container;
+    @include reset-list;
+    column-gap: 60px;
+  }
 
   &__link {
     @include text-L-bold-styles;

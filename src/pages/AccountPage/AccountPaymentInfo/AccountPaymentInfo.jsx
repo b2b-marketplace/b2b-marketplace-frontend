@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { AccountHeader } from '../../../widgets/account';
 import { RadioButton } from '../../../shared/ui/RadioButton';
-import { Container } from '../../../shared/ui/Layout';
 import usePopup from '../../../shared/hooks/usePopup';
 import IconVisa from '../../../components/UI/Icon/Icon_visa';
 import IconPlus from '../../../components/UI/Icon/Icon_plus';
@@ -39,7 +38,7 @@ const AccountPaymentInfo = () => {
   };
 
   return (
-    <Container className="account-payment-info">
+    <div className="account-payment-info">
       <AccountHeader name="ООО «Компания»" title="Продавец" />
 
       <h2 className="account-payment-info__title">Способы оплаты</h2>
@@ -86,7 +85,7 @@ const AccountPaymentInfo = () => {
       </ul>
 
       <LinkingCardPopup onClose={closeLinkingCardPopup} onAddCard={handleAddCard} />
-    </Container>
+    </div>
   );
 };
 

@@ -11,7 +11,6 @@ import logoSrc1 from '../../../images/stock/logo-1.png';
 
 import './DeliveryWarehouseAddressList.scss';
 
-
 const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList }) => {
   const date1 = Date.now() / 1000 + 10 * 24 * 60 * 60;
   const date2 = Date.now() / 1000 + 20 * 24 * 60 * 60;
