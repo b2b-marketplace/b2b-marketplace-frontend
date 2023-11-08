@@ -21,7 +21,7 @@ import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/Accou
 import AccountProfile from './AccountPage/AccountProfile/AccountProfile';
 import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
-import { AccountPage, OrdersListPage } from './AccountPage';
+import { AccountPage, Orders } from './AccountPage';
 
 const Routing = () => {
   return (
@@ -41,10 +41,10 @@ const Routing = () => {
             <Route path=":filter" element={<Favorites />} />
             <Route path=":filter/:page" element={<Favorites />} />
           </Route>
-          <Route path="orders-list" element={<OrdersListPage />} exact>
-            <Route index element={<OrdersList />} exact />
-            <Route path=":filter" element={<OrdersList />} />
-            <Route path=":filter/:page" element={<OrdersList />} />
+          <Route path="orders" element={<Orders />} exact>
+            <Route index element={<Orders />} exact />
+            <Route path=":filter" element={<Orders />} />
+            <Route path=":filter/:page" element={<Orders />} />
           </Route>
         </Route>
       </Route>

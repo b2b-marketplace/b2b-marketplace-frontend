@@ -51,15 +51,15 @@ export function getCalculateProductInfo(productList) {
     (result, currentProduct) => {
       const productPrice = parseFloat(currentProduct.price.replace(/\s/g, ''));
       const productQuantity = parseFloat(currentProduct.quantity);
-
       result.totalQuantity += productQuantity;
       result.totalPrice += productPrice * productQuantity;
-
+      result.totalPrice += Math.round(result.totalPrice);
       return result;
     },
     { totalQuantity: 0, totalPrice: 0 }
   );
 }
+
 // Форматируем цену из 10000 в 10 000, добавляем разделители разрядов
 export function priceFormat(price) {
   return new Intl.NumberFormat('ru-RU').format(parseFloat(price));
@@ -72,6 +72,14 @@ export function formatPhoneNumber(phoneNumber) {
 
   // Разбить строку на части и объединить их с дефисами
   return cleanPhoneNumber.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1-$2-$3-$4-$5');
+}
+
+export function formatDateAsDDMMYY(originalDate) {
+  const date = new Date(originalDate);
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear().toString().slice(-2);
+  return `${day}.${month}.${year}`;
 }
 
 //

@@ -1,7 +1,5 @@
-import { useSelector } from 'react-redux';
 import React from 'react';
 
-import { AppH3 } from '../../../../shared/ui/AppHeading';
 import { USER_ROLE_NAME } from '../../../../shared/config/constants';
 import { accountModel } from '../../../../entities/account';
 
@@ -25,7 +23,7 @@ const AccountHeader = () => {
         <img className="account-header__logo" src={noImage} alt="Логотип" />
       </div>
       <div className="account-header__container">
-        <AppH3>{company.name}</AppH3>
+        <h1 className="account-header__title">{company.name}</h1>
         <p className="account-header__role">{userRoleName}</p>
       </div>
     </section>

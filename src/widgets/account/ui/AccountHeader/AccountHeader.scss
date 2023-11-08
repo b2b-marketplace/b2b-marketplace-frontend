@@ -7,7 +7,7 @@
 
   &__container-logo {
     @include flex-container;
-    @include center-both;
+    @include flex-container(row, center, center);
     width: 92px;
     height: 92px;
     border-radius: 50%;
@@ -40,14 +40,18 @@
   }
 
   //&__name {
-  //  @include flex-container;
+  //  @include flex-section;
   //  @include h3-styles;
-  //  @include reset;
+  //  @blocks .reset;
   //}
 
   &__role {
     @include text-M-main-styles;
     @include reset;
     color: $grayColor;
+  }
+
+  &__title {
+    @include h3-styles;
   }
 }

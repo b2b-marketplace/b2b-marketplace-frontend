@@ -4,7 +4,17 @@ import clsx from 'clsx';
 
 import './AppInput.scss';
 
-const AppInput = ({ className, mode, size, type, value, placeholder, onClick, onChange }) => {
+const AppInput = ({
+  className,
+  mode,
+  disabled,
+  size,
+  type,
+  value,
+  placeholder,
+  onClick,
+  onChange,
+}) => {
   return (
     <input
       type={type}
@@ -12,6 +22,7 @@ const AppInput = ({ className, mode, size, type, value, placeholder, onClick, on
       onClick={onClick}
       onChange={onChange}
       placeholder={placeholder}
+      disabled={disabled}
       className={clsx(
         'app-input',
         mode && `app-input_${mode}`,
@@ -27,6 +38,7 @@ AppInput.propTypes = {
   size: PropTypes.oneOf(['auto']),
   type: PropTypes.oneOf(['text', 'number', 'password', 'email']),
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func,
   onChange: PropTypes.func,
 };
@@ -36,6 +48,7 @@ AppInput.defaultProps = {
   size: 'auto',
   type: 'text',
   className: '',
+  disabled: false,
   onClick: undefined,
   onChange: undefined,
 };

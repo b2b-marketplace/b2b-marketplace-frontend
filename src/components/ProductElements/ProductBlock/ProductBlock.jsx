@@ -27,7 +27,6 @@ import photo from './../../../images/4.jpg';
 
 import './ProductBlock.scss';
 
-
 /**
  * Блок описания товара
  *

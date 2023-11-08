@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .moderation-new-product-popup {
-  @include flex-column;
+  @include flex-container(column);
   font-family: $fontFamilyNunitoSans;
   font-size: 16px;
   font-style: $fontStyle;

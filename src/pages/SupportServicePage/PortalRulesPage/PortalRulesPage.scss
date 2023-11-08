@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .portal-rules-page {
-  @include text-default-styles;
+  @include default-font-styles;
   max-width: 1300px;
   padding: 52px 0 120px;
 

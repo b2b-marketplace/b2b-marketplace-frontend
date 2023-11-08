@@ -1,8 +1,8 @@
 {
-  "name": "b2b-marketplace-frontend",
+  "name": "B2Buy Marketplace",
   "version": "0.1.0",
   "private": true,
-  "author": "B2B Frontend Team",
+  "author": "B2Buy Frontend Team",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "clsx": "^2.0.0",

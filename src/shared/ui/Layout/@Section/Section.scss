@@ -1,0 +1,14 @@
+@import '/src/app/styles/global';
+
+.section {
+  @include default-font-styles;
+  width: 100%;
+
+  &_row {
+    @include flex-container;
+  }
+
+  &_column {
+    @include flex-container(column);
+  }
+}

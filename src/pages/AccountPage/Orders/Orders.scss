@@ -1,0 +1,12 @@
+@import '/src/app/styles/global';
+
+.orders {
+  @include default-font-styles;
+  @include flex-container(column);
+  row-gap: 60px;
+  width: 100%;
+
+  &__title {
+    @include h1-styles($darkColor);
+  }
+}

@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .question-page {
-  @include flex-column;
+  @include flex-container(column);
   row-gap: 40px;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
@@ -20,7 +20,7 @@
   }
 
   &__lists {
-    @include flex-column;
+    @include flex-container(column);
     @include reset-list;
     max-width: 420px;
     gap: 20px;

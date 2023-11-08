@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { MenuAccount } from '../../../widgets/menu';
+import { AccountMenu } from '../../../widgets/menu';
 import { AccountHeader } from '../../../widgets/account';
 import { Sidebar } from '../../../shared/ui/Layout';
 import { Counter } from '../../../shared/ui/Counter/Counter';
@@ -101,7 +101,7 @@ const AccountSellerProductAdd = () => {
   return (
     <section className="account-seller-product-add">
       <Sidebar type="left">
-        <MenuAccount />
+        <AccountMenu />
         {/*<MenuVerticalWidget menuItems={menuItemsSupplier} />*/}
       </Sidebar>
       <div className="account-seller-product-add__section">

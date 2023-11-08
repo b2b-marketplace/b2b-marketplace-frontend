@@ -1,0 +1,15 @@
+@import '../vars';
+
+@mixin flex-container($direction: false, $justify: false, $align: false) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+}

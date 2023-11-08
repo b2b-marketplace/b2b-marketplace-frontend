@@ -1,1 +1,0 @@
-export { MenuAccount } from './MenuAccount';

@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
 import VendorCode from '../VendorCode/VendorCode';
-import ProductCardHorizontalImage from '../ProductCardHorizontal/ProductCardHorizontalImage/ProductCardHorizontalImage';
 import Checkbox from '../../UI/Checkbox/Checkbox';
 import { Button } from '../../UI/Button/Button';
+import { AppImage } from '../../../shared/ui/AppImage';
 import { priceFormat } from '../../../shared/lib/utils';
 import { addProduct, deleteProduct } from '../../../app/store/slices/favoritesSlice';
 
@@ -64,7 +64,12 @@ const ProductCardFavorites = ({ className, product, onClickCheckbox, isCheckboxC
         <div className="product-card-favorites__container">
           <div className="product-card-favorites__details">
             <div className="product-card-favorites__figcaption">
-              <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name} />
+              <AppImage
+                radius="radius-50"
+                border
+                imageSrc={productInfo.imageSrc}
+                imageAlt={product.name}
+              />
               <VendorCode vendorCode="1234567" />
             </div>
             <div className="product-card-favorites__product-description">
@@ -96,7 +101,12 @@ const ProductCardFavorites = ({ className, product, onClickCheckbox, isCheckboxC
         <div className="product-card-favorites__container">
           <div className="product-card-favorites__details">
             <div className="product-card-favorites__figcaption">
-              <ProductCardHorizontalImage imageSrc={productInfo.imageSrc} imageAlt={product.name} />
+              <AppImage
+                radius="radius-50"
+                border
+                imageSrc={productInfo.imageSrc}
+                imageAlt={product.name}
+              />
               <VendorCode vendorCode="1234567" />
             </div>
             <div className="product-card-favorites__product-description ">

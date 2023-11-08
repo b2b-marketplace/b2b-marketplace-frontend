@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .account-seller-product-add {
-  // @include flex-container;
+  // @include flex-section;
   display: flex;
   flex-direction: row;
   gap: 60px;
@@ -11,18 +11,18 @@
   &__section {
     @include default-font-styles;
     @include text-L-link-styles;
-    @include flex-column;
+    @include flex-container(column);
     max-width: 927px;
     gap: 60px;
   }
 
   &__form {
-    @include flex-column;
+    @include flex-container(column);
     row-gap: 56px;
   }
 
   &__field {
-    @include flex-column;
+    @include flex-container(column);
     row-gap: 24px;
   }
 
@@ -64,18 +64,18 @@
 
   &__label-counter {
     height: 48px;
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     align-items: center;
   }
 
   &__drop-down {
     height: 48px;
-    @include flex-space-between;
+    @include flex-container(row, space-between);
   }
 
   &__control {
     margin-top: 24px;
-    @include flex-column;
+    @include flex-container(column);
     align-items: center;
     row-gap: 40px;
   }

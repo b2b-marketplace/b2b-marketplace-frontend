@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .menu-clothes {
-  @include flex-column;
+  @include flex-container(column);
   @include text-L-link-styles;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
@@ -28,7 +28,7 @@
 
   &__lists {
     @include reset-list;
-    @include flex-column;
+    @include flex-container(column);
     gap: 16px;
   }
 

@@ -3,3 +3,4 @@ public
 .eslintrc.js
 .idea
 src/examples
+/build/

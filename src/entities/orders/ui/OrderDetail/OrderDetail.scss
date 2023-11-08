@@ -1,0 +1,18 @@
+@import '/src/app/styles/global';
+
+.order-details {
+  @include flex-container(row, space-between);
+  @include border-radius;
+  padding: 10px 20px;
+
+  &__list {
+    @include flex-container(column);
+    @include reset-list;
+    row-gap: 20px;
+  }
+
+  &__label {
+    @include text-L-regular-styles;
+    color: $grayColor;
+  }
+}

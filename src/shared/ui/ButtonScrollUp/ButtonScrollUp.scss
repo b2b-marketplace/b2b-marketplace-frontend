@@ -21,7 +21,7 @@
       scale 0.3s ease;
 
     &.visible {
-      @include center-both;
+      @include flex-container(row, center, center);
     }
 
     &:hover {

@@ -2,7 +2,7 @@
 
 .favorites {
   @include default-font-styles;
-  @include flex-column;
+  @include flex-container(column);
 
   &__empty {
     @include text-L-bold-styles;
@@ -11,13 +11,13 @@
   }
 
   &__container {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     column-gap: 20px;
     position: relative;
   }
 
   &__container-product {
-    @include flex-column;
+    @include flex-container(column);
     width: 100%;
     row-gap: 32px;
     max-width: 970px;
@@ -29,7 +29,7 @@
   }
 
   &__panel {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     align-items: center;
     height: 52px;
     padding: 0 40px;
@@ -63,7 +63,7 @@
 
   &__product-list {
     @include reset-list;
-    @include flex-column;
+    @include flex-container(column);
     row-gap: 20px;
     flex-grow: 1;
   }
@@ -98,7 +98,7 @@
   }
 
   &__buttons {
-    @include flex-column;
+    @include flex-container(column);
     row-gap: 20px;
   }
 
