@@ -63,15 +63,5 @@ const account = createSlice({
 });
 //Селекторы
 export const useAccount = () => useSelector((state) => state.account);
-
-export const useAccount2 = () =>
-  useSelector(
-    createSelector(
-      (state) => state.account,
-      (user) => user
-    )
-  );
-
 export const { resetUser } = account.actions;
-
 export const reducer = account.reducer;

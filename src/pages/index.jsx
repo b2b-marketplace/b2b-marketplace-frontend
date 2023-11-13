@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
 
-import OrdersList from '../entities/orders/ui/OrdersList/OrdersList';
+import { OrdersDashboard } from '../widgets/orders';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
 import Logout from '../components/Logout/Logout';
 import Favorites from '../components/Favorites/Favorites';
@@ -17,6 +17,7 @@ import HomePage from './HomePage/HomePage';
 import ErrorPage from './ErrorPage/ErrorPage';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation';
 import BasketPage from './BasketPage/BasketPage';
+import { Order } from './AccountPage/Orders/Order';
 import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountProfile from './AccountPage/AccountProfile/AccountProfile';
 import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
@@ -41,11 +42,9 @@ const Routing = () => {
             <Route path=":filter" element={<Favorites />} />
             <Route path=":filter/:page" element={<Favorites />} />
           </Route>
-          <Route path="orders" element={<Orders />} exact>
-            <Route index element={<Orders />} exact />
-            <Route path=":filter" element={<Orders />} />
-            <Route path=":filter/:page" element={<Orders />} />
-          </Route>
+          {/*Список Заказов*/}
+          <Route path="orders/:filter?/:page?" element={<Orders />} />
+          <Route path="order/:id" element={<Order />} />
         </Route>
       </Route>
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />

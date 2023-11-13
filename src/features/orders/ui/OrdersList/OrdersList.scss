@@ -1,0 +1,14 @@
+@import '/src/app/styles/global';
+
+%flex-column {
+  @include flex-container(column);
+  row-gap: 20px;
+}
+
+.orders-list {
+  @extend %flex-column;
+
+  &__button {
+    align-self: center;
+  }
+}

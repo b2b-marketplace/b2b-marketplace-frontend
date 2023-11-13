@@ -1,1 +1,0 @@
-export { OrderDetail } from './OrderDetail';

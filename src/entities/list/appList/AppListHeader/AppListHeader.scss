@@ -1,6 +1,7 @@
 @import '/src/app/styles/global';
 
-.order-details {
+.app-list-header {
+  @include default-font-styles;
   @include flex-container(row, space-between);
   @include border-radius;
   padding: 10px 20px;
