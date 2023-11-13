@@ -13,6 +13,7 @@ import './AppLink.scss';
  * @param {string} target - Атрибут target для ссылки.
  * @param {string} to - URL, на который будет осуществлена ссылка.
  * @param {string} type - Тип ссылки (например, 'gray', 'active').
+ * @param {function} onClick - CallBack функция
  * @returns {JSX.Element}
  * @constructor
  */

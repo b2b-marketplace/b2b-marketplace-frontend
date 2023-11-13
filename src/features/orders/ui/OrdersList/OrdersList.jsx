@@ -2,9 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { OrderItem } from '../OrderItem';
-import { OrderDetail } from '../OrderDetail';
+import { AppList, AppListItem, AppListHeader } from '../../../../entities/list';
 
 import './OrdersList.scss';
+
+//const labels = ['№ / дата / поставщик', 'Доставка / адрес', 'Товары', 'Стоимость', 'Статус'];
+const labels = [
+  { name: 'Дата/№', class: '', style: {} },
+  { name: 'Поставщик', class: '', style: {} },
+  { name: 'Доставка', class: '', style: {} },
+  { name: 'Адрес', class: '', style: { width: '246px' } },
+  'Стоимость',
+  'Статус',
+];
 
 /**
  * Компонент для отображения списка заказов.
@@ -16,15 +26,14 @@ const OrdersList = ({ orders }) => {
   const viewOrdersList = (orders) => {
     return (
       <div className="orders-list">
-        <OrderDetail />
-        {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
-        <ul role="list" className="orders-list__list">
+        <AppListHeader list={labels} />
+        <AppList>
           {orders.map((order) => (
-            <li className="orders-list__item" key={order.id}>
-              <OrderItem order={order} />
-            </li>
+            <AppListItem key={order.id}>
+              <OrderItem item={order} />
+            </AppListItem>
           ))}
-        </ul>
+        </AppList>
       </div>
     );
   };

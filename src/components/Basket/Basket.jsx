@@ -13,7 +13,7 @@ import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeade
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import OrderDetail from '../OrderDetail/OrderDetail';
 import { Sidebar } from '../../shared/ui/Layout';
-import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
+import { getCalculateProductInfo } from '../../shared/lib/utils';
 import usePopup from '../../shared/hooks/usePopup';
 import { AppApi } from '../../shared/api';
 import { accountModel } from '../../entities/account';
@@ -249,8 +249,8 @@ const Basket = ({ className }) => {
                 </Tooltip>
               </OrderDetailHeader>
               <OrderDetailContentBasket
-                suppliersCount={getSuppliersText(orderInfo.suppliersCount)}
-                productQuantity={getProductText(orderInfo.productQuantity)}
+                suppliersCount={orderInfo.suppliersCount}
+                productQuantity={orderInfo.productQuantity}
                 productSumPrice={orderInfo.productSum}
               />
               <div className="basket__buttons">
