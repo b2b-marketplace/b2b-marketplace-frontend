@@ -94,7 +94,7 @@ const OrderFormPage = () => {
         );
         dispatch(updateAllProduct({ currentProductList: filteredArray1 }));
         openOrderPopup();
-        navigate('/account/orders');
+        navigate('/account/order');
       })
       .catch((err) => {
         console.log(err);
