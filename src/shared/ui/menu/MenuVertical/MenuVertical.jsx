@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { AppLink, AppNavLink } from '../../../../shared/ui/AppLink';
+import { AppLink, AppNavLink } from '../../AppLink';
 
 import './MenuVertical.scss';
 

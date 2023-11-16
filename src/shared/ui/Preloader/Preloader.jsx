@@ -7,4 +7,4 @@ function Preloader() {
     </div>
   );
 }
-export default Preloader;
+export { Preloader };
