@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import IconArrow from '../../../components/UI/Icon/Icon_arrow';
+import { ScrollToTop } from '../model';
+import IconArrow from '../../../../../components/UI/Icon/Icon_arrow';
 
 import './ButtonScrollUp.scss';
 
@@ -9,7 +10,7 @@ import './ButtonScrollUp.scss';
  *
  * @returns {JSX.Element} JSX элемент кнопки прокрутки наверх.
  */
-
+//@TODO Разбить Комопонент согласно методологии FSD, в shared не может быть логики, логика должна быть или в features или widgets
 function ButtonScrollUp() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -44,6 +45,7 @@ function ButtonScrollUp() {
       >
         <IconArrow />
       </button>
+      <ScrollToTop />
     </div>
   );
 }
