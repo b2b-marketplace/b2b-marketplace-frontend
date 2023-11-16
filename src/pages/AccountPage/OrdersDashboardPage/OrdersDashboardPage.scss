@@ -1,6 +1,6 @@
 @import '/src/app/styles/global';
 
-.orders-dashboard {
+.orders-dashboard-page {
   @include flex-container(column);
   row-gap: 40px;
 
