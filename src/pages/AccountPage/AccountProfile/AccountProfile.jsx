@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import { AccountHeader } from '../../../widgets/account';
 import useValidation from '../../../shared/hooks/useValidation';
-import { accountModel } from '../../../entities/account';
+import { userModel } from '../../../entities/user';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
@@ -11,7 +11,7 @@ import AccountInputField from '../../../components/UI/Account/AccountInputField/
 import './AccountProfile.scss';
 
 const AccountProfile = () => {
-  const { user } = accountModel.useAccount();
+  const { user } = userModel.useGetUser();
   const { company } = user;
 
   const [isEditMode, setIsEditMode] = useState(false);

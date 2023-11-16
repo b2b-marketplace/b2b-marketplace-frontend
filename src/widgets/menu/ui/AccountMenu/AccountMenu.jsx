@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
+import { MenuVertical } from '../../../../shared/ui/menu';
 import { AppLink } from '../../../../shared/ui/AppLink';
 import { USER_ROLE } from '../../../../shared/config/constants';
-import { MenuVertical } from '../../../../entities/menu';
-import { accountModel } from '../../../../entities/account';
+import { userModel } from '../../../../entities/user';
 import IconExit from '../../../../components/UI/Icon/Icon_exit';
 
 import { PhoneNumberCallout } from './PhoneNumberCallout';
@@ -21,7 +21,7 @@ import './AccountMenu.scss';
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
 const AccountMenu = () => {
-  const { user } = accountModel.useAccount();
+  const { user } = userModel.useGetUser();
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {

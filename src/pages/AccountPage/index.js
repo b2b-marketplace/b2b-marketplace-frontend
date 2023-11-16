@@ -1,2 +1,2 @@
 export { AccountPage } from './AccountPage';
-export { Orders } from './Orders';
+export { OrdersListPage } from './OrdersListPage';

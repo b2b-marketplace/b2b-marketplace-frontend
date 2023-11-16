@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import { MenuHorizontal } from '../../../../entities/menu';
-import { accountModel } from '../../../../entities/account';
+import { MenuHorizontal } from '../../../../shared/ui/menu';
+import { userModel } from '../../../../entities/user';
 
 import './OrdersSortingMenu.scss';
 
@@ -17,7 +17,7 @@ import './OrdersSortingMenu.scss';
  * @constructor
  */
 const OrdersSortingMenu = ({ className }) => {
-  const { user } = accountModel.useAccount();
+  const { user } = userModel.useGetUser();
   const [menuItems, setMenuItems] = useState([]);
   const menuItemsCustomer = [
     { key: 1, name: 'Все', link: '' },

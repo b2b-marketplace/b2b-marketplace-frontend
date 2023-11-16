@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import { accountModel } from '../../entities/account';
+import { userModel } from '../../entities/user';
 
 import { popupReducer } from './slices/togglePopupSlice.js';
 import { restoreReducer } from './slices/restoreSlice';
@@ -22,7 +22,7 @@ import { basketReducer } from './slices/basketSlice';
 import { authReducer } from './slices/authSlice';
 
 const rootReducer = combineReducers({
-  account: accountModel.reducer,
+  account: userModel.reducer,
   basket: basketReducer,
   products: productsReducer,
   popup: popupReducer,
