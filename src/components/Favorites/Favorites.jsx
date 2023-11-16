@@ -2,10 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
-import Preloader from '../UI/Preloader/Preloader';
 import IconTrash from '../UI/Icon/Icon_trash';
-import Checkbox from '../UI/Checkbox/Checkbox';
 import ProductCardFavorites from '../ProductElements/ProductCardFavorites/ProductCardFavorites';
+import { Preloader } from '../../shared/ui/Preloader';
+import Checkbox from '../../shared/ui/Checkbox/Checkbox';
 import { getCalculateProductInfo } from '../../shared/lib/utils';
 import { AppApi } from '../../shared/api';
 import {
