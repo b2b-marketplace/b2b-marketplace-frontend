@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { AppLink } from '../../../../shared/ui/AppLink';
-import { AppImage } from '../../../../shared/ui/AppImage';
+import { AppLink } from '../../../../../shared/ui/AppLink';
+import { AppImage } from '../../../../../shared/ui/AppImage';
 import {
   formatDateAsDDMMYY,
   getCalculateProductInfo,
   getStatusName,
-} from '../../../../shared/lib/utils';
+} from '../../../../../shared/lib/utils';
 
-import imageStub from '../../../../images/basket/Stub_132_128.jpg';
+import imageStub from '../../../../../images/basket/Stub_132_128.jpg';
 
 import './OrderItem.scss';
 
@@ -26,7 +26,7 @@ const OrderItem = ({ item }) => {
     <div className="order-item">
       <div className="order-item__date-order">
         <div className="order-item__order-date-create">{formatDateAsDDMMYY(created_at)}</div>
-        <AppLink to={`/account/order/${id}`}>
+        <AppLink to={`/account/orders/${id}`}>
           <div className="order-item__order-number">№{id}</div>
         </AppLink>
       </div>

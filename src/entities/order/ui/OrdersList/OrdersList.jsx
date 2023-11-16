@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { OrderItem } from '../OrderItem';
-import { AppList, AppListItem, AppListHeader } from '../../../../entities/list';
+import { AppListHeader, AppListItem, AppList } from '../../../../shared/ui/AppList';
+
+import { OrderItem } from './OrderItem';
 
 import './OrdersList.scss';
 
-//const labels = ['№ / дата / поставщик', 'Доставка / адрес', 'Товары', 'Стоимость', 'Статус'];
 const labels = [
   { name: 'Дата/№', class: '', style: {} },
   { name: 'Поставщик', class: '', style: {} },

@@ -30,12 +30,12 @@ const initialState = {
 };
 
 //Асинхронные операции
-export const getUser = createAsyncThunk('account/getData', async (token) => {
+export const getUser = createAsyncThunk('userState/getData', async (token) => {
   return AppApi.account.getUser(token);
 });
 
 //Слайлсы
-const account = createSlice({
+const userState = createSlice({
   name: 'account',
   initialState,
   reducers: {
@@ -62,6 +62,6 @@ const account = createSlice({
   },
 });
 //Селекторы
-export const useAccount = () => useSelector((state) => state.account);
-export const { resetUser } = account.actions;
-export const reducer = account.reducer;
+export const useGetUser = () => useSelector((state) => state.account);
+export const { resetUser } = userState.actions;
+export const reducer = userState.reducer;
