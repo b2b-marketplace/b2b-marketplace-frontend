@@ -3,6 +3,8 @@ import clsx from 'clsx';
 
 import { Button } from '../../../../../components/UI/Button/Button';
 
+import './ButtonLoadMore.scss';
+
 const ButtonLoadMore = ({ onClick, disabled, className }) => {
   return (
     <Button
