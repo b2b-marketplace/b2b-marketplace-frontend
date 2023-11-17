@@ -23,26 +23,18 @@ const labels = [
  * @returns {JSX.Element}
  */
 const OrdersList = ({ orders }) => {
-  const viewOrdersList = (orders) => {
-    return (
-      <div className="orders-list">
-        <AppListHeader list={labels} />
-        <AppList>
-          {orders.map((order) => (
-            <AppListItem key={order.id}>
-              <OrderItem item={order} />
-            </AppListItem>
-          ))}
-        </AppList>
-      </div>
-    );
-  };
-
-  const viewNotFound = () => {
-    return <div className="favorites__empty">Мои заказы пусто</div>;
-  };
-
-  return orders && orders.length ? viewOrdersList(orders) : viewNotFound();
+  return (
+    <div className="orders-list">
+      <AppListHeader list={labels} />
+      <AppList>
+        {orders.map((order) => (
+          <AppListItem key={order.id}>
+            <OrderItem item={order} />
+          </AppListItem>
+        ))}
+      </AppList>
+    </div>
+  );
 };
 
 OrdersList.propTypes = {

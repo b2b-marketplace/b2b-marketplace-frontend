@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import React from 'react';
 
 import { Preloader } from '../../../shared/ui/Preloader';
+import { EmptyListMessage } from '../../../shared/ui/EmptyListMessage';
 import { ButtonLoadMore } from '../../../features/app/Button';
 import { OrdersList, useGetOrderList } from '../../../entities/order';
 
@@ -19,7 +20,11 @@ const OrdersDashboardPage = () => {
 
   return (
     <div className="orders-dashboard-page">
-      <OrdersList orders={orders} />
+      {orders && orders.length ? (
+        <OrdersList orders={orders} />
+      ) : (
+        <EmptyListMessage>Список заказов пуст</EmptyListMessage>
+      )}
 
       {isFetchingNextPage && <Preloader />}
 
