@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 import { Button } from '../../components/UI/Button/Button';
@@ -8,6 +8,7 @@ import box2 from '../../images/banner-promo/box2-404.png';
 import box1 from '../../images/banner-promo/box1-404.png';
 
 import './ErrorPage.scss';
+
 /**
  *
  * @param {number} code - Код ошибки.
@@ -24,6 +25,7 @@ const ErrorPage = ({
   text = 'Возможно неправильно набран адрес или такой страницы больше не существует',
 }) => {
   const [error, setError] = useState({ code, title, text });
+  const navigate = useNavigate();
   useEffect(() => {
     setError((prevError) => ({
       ...prevError,
@@ -48,6 +50,19 @@ const ErrorPage = ({
           На главную
         </Button>
       </Link>
+      //@TODO Дать пользователю выбор, вернуться на главную страницу или назад
+      {/*<div className="error-page__button-back">*/}
+      {/*  <Button*/}
+      {/*    onClick={() => {*/}
+      {/*      return navigate(-1);*/}
+      {/*    }}*/}
+      {/*    size="l"*/}
+      {/*    primary*/}
+      {/*    dark*/}
+      {/*  >*/}
+      {/*    Назад*/}
+      {/*  </Button>*/}
+      {/*</div>*/}
     </div>
   );
 };
