@@ -1,1 +1,1 @@
-export { OrdersListPage } from './OrdersListPage.jsx';
+export { OrderListPage } from './OrderListPage.jsx';

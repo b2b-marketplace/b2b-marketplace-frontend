@@ -20,7 +20,7 @@ import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/Accou
 import AccountProfile from './AccountPage/AccountProfile/AccountProfile';
 import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
-import { AccountPage, OrderDetailsPage, OrdersDashboardPage, OrdersListPage } from './AccountPage';
+import { AccountPage, OrderDetailsPage, OrdersDashboardPage, OrderListPage } from './AccountPage';
 
 const Routing = () => {
   return (
@@ -41,7 +41,7 @@ const Routing = () => {
             <Route path=":filter/:page" element={<Favorites />} />
           </Route>
           {/*Список Заказов*/}
-          <Route path="orders" element={<OrdersListPage />}>
+          <Route path="orders" element={<OrderListPage />}>
             <Route index path="filter?/page?" element={<OrdersDashboardPage />} />
             <Route path=":id" element={<OrderDetailsPage />} />
           </Route>

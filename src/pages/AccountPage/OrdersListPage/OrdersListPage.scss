@@ -1,6 +1,6 @@
 @import '/src/app/styles/global';
 
-.orders-list-page {
+.order-list-page {
   @include default-font-styles;
   @include flex-container(column);
   row-gap: 60px;
