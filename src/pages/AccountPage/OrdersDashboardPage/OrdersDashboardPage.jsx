@@ -29,7 +29,11 @@ const OrdersDashboardPage = () => {
       {isFetchingNextPage && <Preloader />}
 
       {hasNextPage && !isFetchingNextPage && (
-        <ButtonLoadMore onClick={() => fetchNextPage()} disabled={isFetching}>
+        <ButtonLoadMore
+          className="orders-dashboard-page__button-load-more"
+          onClick={fetchNextPage}
+          disabled={isFetching}
+        >
           Смотреть ещё
         </ButtonLoadMore>
       )}
