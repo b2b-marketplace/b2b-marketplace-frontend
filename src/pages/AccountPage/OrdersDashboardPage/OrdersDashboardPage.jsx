@@ -4,7 +4,7 @@ import React from 'react';
 import { Preloader } from '../../../shared/ui/Preloader';
 import { EmptyListMessage } from '../../../shared/ui/EmptyListMessage';
 import { ButtonLoadMore } from '../../../features/app/Button';
-import { OrdersList, useGetOrderList } from '../../../entities/order';
+import { OrderList, useGetOrderList } from '../../../entities/order';
 
 import './OrdersDashboardPage.scss';
 
@@ -21,7 +21,7 @@ const OrdersDashboardPage = () => {
   return (
     <div className="orders-dashboard-page">
       {orders && orders.length ? (
-        <OrdersList orders={orders} />
+        <OrderList orders={orders} />
       ) : (
         <EmptyListMessage>Список заказов пуст</EmptyListMessage>
       )}

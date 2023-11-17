@@ -5,7 +5,7 @@ import { AppListHeader, AppListItem, AppList } from '../../../../shared/ui/AppLi
 
 import { OrderItem } from './OrderItem';
 
-import './OrdersList.scss';
+import './OrderList.scss';
 
 const labels = [
   { name: 'Дата/№', class: '', style: {} },
@@ -22,9 +22,9 @@ const labels = [
  * @param {Array} orders - Массив заказов для отображения.
  * @returns {JSX.Element}
  */
-const OrdersList = ({ orders }) => {
+const OrderList = ({ orders }) => {
   return (
-    <div className="orders-list">
+    <div className="order-list">
       <AppListHeader list={labels} />
       <AppList>
         {orders.map((order) => (
@@ -37,8 +37,8 @@ const OrdersList = ({ orders }) => {
   );
 };
 
-OrdersList.propTypes = {
+OrderList.propTypes = {
   orders: PropTypes.array.isRequired,
 };
 
-export { OrdersList };
+export { OrderList };
