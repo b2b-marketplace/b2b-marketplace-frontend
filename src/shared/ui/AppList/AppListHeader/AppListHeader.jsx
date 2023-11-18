@@ -7,27 +7,39 @@ import './AppListHeader.scss';
 /**
  * Компонент для отображения заголовка списка.
  *
- * @param {Array} list - Массив элементов заголовка списка. Каждый элемент может быть строкой или объектом с полями: name (текст), class (дополнительный класс), style (стили).
+ * @param {Array} fieldset - Массив элементов заголовка списка. Каждый элемент может быть строкой или объектом с полями: name (текст), class (дополнительный класс), style (стили).
  * @returns {JSX.Element}
  * @constructor
  * @example
  * // Пример использования:
  * const headerList = [
  *   'Название',
- *   { name: 'Количество', class: 'quantity', style: { color: 'red' } },
+ *     {
+ *     name: 'Стоимость',
+ *     options: {
+ *       onClick: () => {},
+ *       class: 'order-product-item__quantity',
+ *       style: {},
+ *     },
+ *   },
  *   'Цена',
  * ];
- * <AppListHeader list={headerList} />
+ * <AppListHeader fieldset={headerList} />
  *
  * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
-const AppListHeader = ({ list }) => {
+const AppListHeader = React.memo(({ fieldset }) => {
   return (
     <div className="app-list-header">
-      {list.map((item, index) => {
+      {fieldset.map((item, index) => {
         if (typeof item === 'object') {
           return (
-            <span key={index} className={clsx('list-header__label', item.class)} style={item.style}>
+            <span
+              key={index}
+              onClick={item.options?.onClick}
+              className={clsx('list-header__label', item.options?.class)}
+              style={item.options?.style}
+            >
               {item.name}
             </span>
           );
@@ -40,10 +52,10 @@ const AppListHeader = ({ list }) => {
       })}
     </div>
   );
-};
+});
 
 AppListHeader.propTypes = {
-  list: PropTypes.arrayOf(
+  fieldset: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.string, // Если элемент - строка
       PropTypes.shape({

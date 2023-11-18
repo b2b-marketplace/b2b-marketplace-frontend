@@ -9,22 +9,19 @@ import { OrderList, useGetOrderList } from '../../../entities/order';
 import './OrdersDashboardPage.scss';
 
 const OrdersDashboardPage = () => {
-  const { auth_token } = useSelector((state) => state.auth);
+  const { orders, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage } = useGetOrderList();
 
-  const { orders, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage } =
-    useGetOrderList(auth_token);
+  const isLoading = isFetching && !orders.length;
 
-  if (isFetching && !orders.length) {
-    return <Preloader />;
-  }
+  const renderOrders = () => {
+    if (isLoading) return <Preloader />;
+    if (!orders || !orders.length) return <EmptyListMessage>Список заказов пуст</EmptyListMessage>;
+    return <OrderList orders={orders} />;
+  };
 
   return (
     <div className="orders-dashboard-page">
-      {orders && orders.length ? (
-        <OrderList orders={orders} />
-      ) : (
-        <EmptyListMessage>Список заказов пуст</EmptyListMessage>
-      )}
+      {renderOrders()}
 
       {isFetchingNextPage && <Preloader />}
 

@@ -16,6 +16,6 @@ const EmptyListMessage = ({ className, children }) => {
 };
 EmptyListMessage.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.any,
 };
 export { EmptyListMessage };

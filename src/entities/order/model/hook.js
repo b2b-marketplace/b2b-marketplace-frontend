@@ -1,14 +1,14 @@
-import { useInfiniteQuery, UseInfiniteQueryResult } from 'react-query';
+import { useSelector } from 'react-redux';
+import { useInfiniteQuery, useQuery } from 'react-query';
 
 import * as AppApi from '../../../shared/api/AppApi';
 
 /**
  * Хук для получения списка заказов.
  *
- * @param {string} authToken - Токен аутентификации пользователя.
- * @returns {UseInfiniteQueryResult<{ nextPage: string | null, orders: any[] }, unknown>} - Результат запроса на получение списка заказов.
  */
-const useGetOrderList = (authToken) => {
+const useGetOrderList = () => {
+  const { auth_token: authToken } = useSelector((state) => state.auth);
   /**
    * Получение параметра следующей страницы.
    *
@@ -31,11 +31,16 @@ const useGetOrderList = (authToken) => {
    * @returns {Promise<{ nextPage: string | null, orders: any[] }>} - Объект с информацией о следующей странице и списком заказов.
    */
   const fetchOrders = async ({ pageParam }) => {
-    const response = await AppApi.orders.getOrders(authToken, pageParam);
-    return {
-      nextPage: response.next,
-      orders: response.results,
-    };
+    try {
+      const response = await AppApi.orders.getOrders(authToken, pageParam);
+
+      return {
+        nextPage: response.next,
+        orders: response.results,
+      };
+    } catch (error) {
+      throw new Error('Failed to fetch orders List: ' + error.message);
+    }
   };
 
   /**
@@ -68,4 +73,46 @@ const useGetOrderList = (authToken) => {
   };
 };
 
-export { useGetOrderList };
+/**
+ * Хук для получения информации о заказе
+ *
+ * @param {number} orderId - Номер заказа
+ */
+const useGetOrder = (orderId) => {
+  const { auth_token: authToken } = useSelector((state) => state.auth);
+
+  const fetchOrder = async (authToken, orderId) => {
+    if (isNaN(orderId)) {
+      throw new Error('Order ID should be a number');
+    }
+    try {
+      return await AppApi.orders.getOrder(authToken, orderId);
+    } catch (error) {
+      throw new Error('Failed to fetch order: ' + error.message);
+    }
+  };
+
+  const getProductList = (data) => {
+    return data?.order_products.flatMap((page) => page) ?? [];
+  };
+
+  const getCompanyName = (data) => {
+    return data?.order_products[0].product.supplier.name || '';
+  };
+
+  const { data, isError, isSuccess, isLoading, error } = useQuery(
+    ['order', authToken, orderId],
+    () => fetchOrder(authToken, orderId),
+    {
+      retry: false,
+      retryDelay: false,
+      //enabled: !!orderId,
+    }
+  );
+
+  const productList = getProductList(data);
+  const companyName = getCompanyName(data);
+  return { data, isError, isSuccess, isLoading, error, productList, companyName };
+};
+
+export { useGetOrderList, useGetOrder };

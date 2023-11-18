@@ -1,0 +1,49 @@
+@import '/src/app/styles/global';
+
+.order-product-item {
+  @include default-font-styles;
+  @include text-M-main-styles($blackColor);
+  @include flex-container(row, space-between, center);
+  @include border-radius;
+  padding: 20px;
+  column-gap: 20px;
+  position: relative;
+
+  &__number {
+    align-self: flex-start;
+    max-width: 32px;
+    width: 100%;
+  }
+
+  &__details {
+    @include flex-container(column, center, center);
+    row-gap: 4px;
+    max-width: 104px;
+    width: 100%;
+  }
+
+  &__image {
+    width: 90px;
+    height: 90px;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  &__description {
+    width: 100%;
+    max-width: 446px;
+    align-self: start;
+
+  }
+
+  &__price {
+    width: 100%;
+    max-width: 140px;
+  }
+
+  &__quantity {
+    width: 100%;
+    max-width: 140px;
+  }
+
+}

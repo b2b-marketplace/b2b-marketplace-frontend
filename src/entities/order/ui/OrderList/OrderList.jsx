@@ -7,15 +7,6 @@ import { OrderItem } from './OrderItem';
 
 import './OrderList.scss';
 
-const labels = [
-  { name: 'Дата/№', class: '', style: {} },
-  { name: 'Поставщик', class: '', style: {} },
-  { name: 'Доставка', class: '', style: {} },
-  { name: 'Адрес', class: '', style: { width: '246px' } },
-  'Стоимость',
-  'Статус',
-];
-
 /**
  * Компонент для отображения списка заказов.
  *
@@ -23,9 +14,60 @@ const labels = [
  * @returns {JSX.Element}
  */
 const OrderList = ({ orders }) => {
+  const fieldset = [
+    {
+      name: 'Дата/№',
+      options: {
+        onClick: () => {},
+        class: 'order-item__date-order',
+        style: {},
+      },
+    },
+    {
+      name: 'Поставщик',
+      options: {
+        onClick: () => {},
+        class: 'order-item__company-info',
+        style: {},
+      },
+    },
+    {
+      name: 'Доставка',
+      options: {
+        onClick: () => {},
+        class: 'order-item__delivery-date',
+        style: {},
+      },
+    },
+    {
+      name: 'Адрес',
+      options: {
+        onClick: () => {},
+        class: 'order-item__delivery-address',
+        style: {},
+      },
+    },
+    {
+      name: 'Стоимость',
+      options: {
+        onClick: () => {},
+        class: 'order-item__total-price',
+        style: {},
+      },
+    },
+    {
+      name: 'Статус',
+      options: {
+        onClick: () => {},
+        class: 'order-item__status',
+        style: {},
+      },
+    },
+  ];
+
   return (
     <div className="order-list">
-      <AppListHeader list={labels} />
+      <AppListHeader fieldset={fieldset} />
       <AppList>
         {orders.map((order) => (
           <AppListItem key={order.id}>

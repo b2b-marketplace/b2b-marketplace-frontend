@@ -1,60 +1,59 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Preloader } from '../../../shared/ui/Preloader';
-import { formatDateAsDDMMYY } from '../../../shared/lib/utils';
-import * as AppApi from '../../../shared/api/AppApi';
-import { ButtonBack } from '../../../features/app/Button';
+import { EmptyListMessage } from '../../../shared/ui/EmptyListMessage';
+import { getCalculateProductInfo } from '../../../shared/lib/utils';
+import { ButtonBack } from '../../../features/order';
+import {
+  OrderDetailsInfo,
+  OrderProductList,
+  OrderTotalDetails,
+  useGetOrder,
+} from '../../../entities/order';
 
 import './OrderDetailsPage.scss';
 
 const OrderDetailsPage = () => {
-  const { auth_token } = useSelector((state) => state.auth);
   const { id } = useParams();
-  const [order, setOrder] = useState({});
-  // const { search } = useLocation();
-  // const params = new URLSearchParams(search);
-  // const orderId = params.get('id');
 
-  const [preloaderPage, setPreloaderPage] = useState(true);
-  useEffect(() => {
-    AppApi.orders
-      .getOrder(auth_token, id)
-      .then((res) => {
-        if (res) {
-          console.log(res);
-          setOrder(res);
-        }
-      })
-      .catch((err) => console.log(err))
-      .finally(() => setPreloaderPage(false));
-  }, [id]);
+  const { data: order, isError, isLoading, productList, companyName } = useGetOrder(+id);
 
-  if (preloaderPage) return <Preloader />;
+  if (isLoading) return <Preloader />;
+
+  if (isError || !order) {
+    return (
+      <>
+        <ButtonBack />
+        <EmptyListMessage>Заказ не найден</EmptyListMessage>
+      </>
+    );
+  }
+
+  const { totalPrice, totalQuantity } = getCalculateProductInfo(productList);
 
   return (
     <div className="order-details-page">
       <div className="order-details-page__header">
         <div className="order-details-page__header-container">
           <ButtonBack />
-          <div className="order-details-page__order-info">
-            <div className="order-details-page__order-info-date-number">
-              <span>Заказ № {order.id}</span>
-              <span className="order-details-page__order-info-date">
-                {formatDateAsDDMMYY(order.created_at)}
-              </span>
-            </div>
-            <div className="order-details-page__order-info-supplier">
-              Поставщик: <span className="order-details-page__supplier_name">Планета</span>
-            </div>
-          </div>
+          <OrderDetailsInfo companyName={companyName} order={order} />
         </div>
-        <div className="order-details-page__repeat-order">Повторить заказ</div>
+        {/*<div className="order-details-page__repeat-order">Повторить заказ</div>*/}
       </div>
+
       <div className="order-details-page__products-container">
         <h2 className="order-details-page__products-title">Детали заказа</h2>
-        <div className="order-details-page__product-list"></div>
+        <OrderProductList products={productList} />
+        <div className="order-details-page__summary-info">
+          <OrderTotalDetails totalQuantity={totalQuantity} totalPrice={totalPrice} />
+          <div className="order-details-page__comment">
+            <h3 className="order-details-page__comment-title">Комментарий к заказу</h3>
+            <div className="order-details-page__comment-text">Пусто</div>
+          </div>
+          <div className="order-details-page__delivery"></div>
+        </div>
       </div>
     </div>
   );

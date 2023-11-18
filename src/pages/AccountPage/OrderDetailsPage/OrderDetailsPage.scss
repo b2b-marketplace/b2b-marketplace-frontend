@@ -12,6 +12,14 @@
   @include text-M-main-styles();
 }
 
+%width-100 {
+  width: 100%;
+}
+
+%reset {
+  @include reset;
+}
+
 .order-details-page {
   @extend %flex-col;
   @include text-L-main-styles;
@@ -39,10 +47,15 @@
 
   &__order-info-supplier {
     @extend %typography-main;
+    @include flex-container();
   }
 
-  &__order-info-date {
-    color: $grayColor;
+  &__order-info-supplier_name {
+    @extend %reset;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &__repeat-order {
@@ -51,10 +64,38 @@
   }
 
   &__products-container {
+    @extend %flex-col;
+    row-gap: 40px;
   }
 
   &__products-title {
     @include text-L-bold-styles();
-    @include reset;
+    @extend %reset;
   }
+
+  &__summary-info {
+    @include text-M-bold-styles();
+    @extend %flex-col;
+    row-gap: 60px;
+  }
+
+  &__comment {
+    @extend %flex-col;
+    max-width: 646px;
+    row-gap: 20px;
+  }
+
+  &__comment-title {
+    @extend %reset;
+    @include text-L-bold-styles();
+
+  }
+
+  &__comment-text {
+    @extend %typography-main;
+  }
+
+  &__delivery {
+  }
+
 }

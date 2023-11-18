@@ -1,11 +1,11 @@
 @import '/src/app/styles/global';
 
 .app-list-header {
-  @include default-font-styles;
+  @include text-M-link-styles($grayColor);
   @include flex-container(row, space-between);
   @include border-radius;
   padding: 10px 20px;
-
+  column-gap: 20px;
   &__list {
     @include flex-container(column);
     @include reset-list;

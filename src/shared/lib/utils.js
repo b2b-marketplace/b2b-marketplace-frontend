@@ -67,9 +67,9 @@ export function getCalculateProductInfo(productList) {
     (result, currentProduct) => {
       const productPrice = parseFloat(currentProduct.price.replace(/\s/g, ''));
       const productQuantity = parseFloat(currentProduct.quantity);
+
       result.totalQuantity += productQuantity;
-      result.totalPrice += productPrice * productQuantity;
-      result.totalPrice += Math.round(result.totalPrice);
+      result.totalPrice += Math.round(productPrice * productQuantity);
       return result;
     },
     { totalQuantity: 0, totalPrice: 0 }

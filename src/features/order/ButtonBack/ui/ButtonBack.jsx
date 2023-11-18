@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IconArrow from '../../../../../components/UI/Icon/Icon_arrow';
-import { Button } from '../../../../../components/UI/Button/Button';
+import IconArrow from '../../../../components/UI/Icon/Icon_arrow';
+import { Button } from '../../../../components/UI/Button/Button';
 
 import './ButtonBack.scss';
 
