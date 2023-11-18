@@ -12,9 +12,10 @@ import './AppImage.scss';
  * @param {string} className - Дополнительные классы CSS.
  * @param {boolean} border - Добавить рамку вокруг изображения (опционально).
  * @param {string} radius - Округлить изображение (опционально, варианты:'radius-20', 'radius-30', 'radius-50').
+ * @param loading
  * @returns {JSX.Element}
  */
-const AppImage = ({ imageSrc, imageAlt, className, border, radius }) => {
+const AppImage = ({ imageSrc, imageAlt, className, border, radius, loading }) => {
   return (
     <img
       className={clsx(
@@ -24,6 +25,7 @@ const AppImage = ({ imageSrc, imageAlt, className, border, radius }) => {
         border && `app-image_border`
       )}
       src={imageSrc}
+      loading={loading}
       alt={imageAlt}
     />
   );
