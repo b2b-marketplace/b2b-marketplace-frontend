@@ -17,7 +17,7 @@ class Orders extends BaseApi {
   }
 
   getOrder(token, orderId) {
-    const url = `${this._serverUrl}orders/${orderId}`;
+    const url = `${this._serverUrl}orders/${orderId}/`;
     return this._request(url, {
       method: 'GET',
       headers: {
