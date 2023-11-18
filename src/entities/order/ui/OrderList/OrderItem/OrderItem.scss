@@ -21,7 +21,6 @@
     @extend %width-100;
     row-gap: 10px;
     max-width: 75px;
-
   }
 
   &__order-number {
@@ -78,23 +77,25 @@
     border-radius: 50%;
 
     &_transit {
-      background-color: $greenColor
+      background-color: $greenColor;
     }
 
     &_paid {
       background-color: $blueDarkColor;
     }
 
-    &_updated, &_created {
-      background-color: $yellowColor
+    &_updated,
+    &_created {
+      background-color: $yellowColor;
     }
 
-    &_canceled, &_returned {
-      background-color: $redColor
+    &_canceled,
+    &_returned {
+      background-color: $redColor;
     }
 
     &_returned {
-      background-color: $redColor
+      background-color: $redColor;
     }
   }
 }

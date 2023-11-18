@@ -12,7 +12,6 @@
   @extend %flex-space;
   @extend %width-100;
 
-
   &__price-quantity-value {
     @extend %flex-space;
     @extend %width-100;
@@ -20,7 +19,8 @@
     max-width: 314px;
   }
 
-  &__quantity, &__price {
+  &__quantity,
+  &__price {
     max-width: 140px;
     @extend %width-100;
   }
