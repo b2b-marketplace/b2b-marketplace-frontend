@@ -5,7 +5,7 @@
   padding: 52px 0 120px;
   max-width: 1300px;
   font-family: $fontFamilyNunitoSans;
- 
+
   &__title {
     @include h2-styles;
     margin: 0 0 40px;
@@ -22,7 +22,7 @@
   }
 
   &__desc {
-  @include text-L-main-styles;
+    @include text-L-main-styles;
     margin: 0 0 32px;
 
     &:last-child {

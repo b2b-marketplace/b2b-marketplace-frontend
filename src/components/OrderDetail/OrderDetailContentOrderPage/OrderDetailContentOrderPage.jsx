@@ -18,7 +18,7 @@ const OrderDetailContentOrderPage = ({
           <div className="order-detail-content-order-page__name-price">
             <div className="order-detail-content-order-page__name">Товары</div>
             <div className="order-detail-content-order-page__price">
-              {priceFormat(productPriceTotal)} ₽
+              {priceFormat(productPriceTotal)} &#8381;
             </div>
           </div>
           <div className="order-detail-content-order-page__description">{productQuantity} ед.</div>
@@ -27,7 +27,7 @@ const OrderDetailContentOrderPage = ({
           <div className="order-detail-content-order-page__name-price">
             <div className="order-detail-content-order-page__name">Доставка</div>
             <div className="order-detail-content-order-page__price">
-              {priceFormat(deliveryPrice)} ₽
+              {priceFormat(deliveryPrice)} &#8381;
             </div>
           </div>
           <div className="order-detail-content-order-page__description">
@@ -38,7 +38,7 @@ const OrderDetailContentOrderPage = ({
       <div className="order-detail-content-order-page__price-detail">
         <div className="order-detail-content-order-page__name_price">Итого</div>
         <span className="order-detail-content-order-page__price-total">
-          {priceFormat(parseFloat(productPriceTotal) + parseFloat(deliveryPrice))} ₽
+          {priceFormat(parseFloat(productPriceTotal) + parseFloat(deliveryPrice))} &#8381;
         </span>
       </div>
     </div>

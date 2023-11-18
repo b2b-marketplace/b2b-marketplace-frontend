@@ -30,8 +30,8 @@
   }
 
   &__figcaption {
-    @include flex-container(column);
-    @include flex-container(row, center, center);
+    //@include flex-container(column);
+    @include flex-container(column, center, center);
     row-gap: 4px;
   }
 

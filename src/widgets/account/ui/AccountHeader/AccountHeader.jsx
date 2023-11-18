@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { USER_ROLE_NAME } from '../../../../shared/config/constants';
-import { accountModel } from '../../../../entities/account';
+import { userModel } from '../../../../entities/user';
 
 import noImage from '../../../../images/basket/Stub_132_128.jpg';
 
@@ -13,7 +13,7 @@ import './AccountHeader.scss';
  * @constructor
  */
 const AccountHeader = () => {
-  const { user } = accountModel.useAccount();
+  const { user } = userModel.useGetUser();
   const { company } = user;
   const userRoleName = USER_ROLE_NAME[company.role];
 

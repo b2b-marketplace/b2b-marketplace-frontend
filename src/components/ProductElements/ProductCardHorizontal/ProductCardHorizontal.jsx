@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import VendorCode from '../VendorCode/VendorCode';
 import IconTrash from '../../UI/Icon/Icon_trash';
 import IconHearth from '../../UI/Icon/Icon_hearth';
-import Checkbox from '../../UI/Checkbox/Checkbox';
 import { Counter } from '../../../shared/ui/Counter';
+import Checkbox from '../../../shared/ui/Checkbox/Checkbox';
 import { AppImage } from '../../../shared/ui/AppImage';
 import { priceFormat } from '../../../shared/lib/utils';
 import { changeQuantity, deleteProduct } from '../../../app/store/slices/basketSlice.js';
@@ -114,10 +114,10 @@ const ProductCardHorizontal = ({
             {!disable && (
               <div className="product-card-horizontal__product-prices">
                 <span className="product-card-horizontal__product-price">
-                  {productInfo.productInfoPrice} ₽
+                  {productInfo.productInfoPrice} &#8381;
                 </span>
                 <span className="product-card-horizontal__product-price-per-one">
-                  за ед. {productInfo.productInfoPricePerOne} ₽
+                  за ед. {productInfo.productInfoPricePerOne} &#8381;
                 </span>
               </div>
             )}
@@ -164,10 +164,10 @@ const ProductCardHorizontal = ({
             <div className="product-card-horizontal__product-quantity">{product.quantity} шт.</div>
             <div className="product-card-horizontal__product-prices">
               <span className="product-card-horizontal__product-price">
-                {productInfo.productInfoPrice} ₽
+                {productInfo.productInfoPrice} &#8381;
               </span>
               <span className="product-card-horizontal__product-price-per-one">
-                за ед. {productInfo.productInfoPricePerOne} ₽
+                за ед. {productInfo.productInfoPricePerOne} &#8381;
               </span>
             </div>
           </div>

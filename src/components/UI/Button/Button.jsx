@@ -13,7 +13,7 @@ import './Button.scss';
  * @param children - для передачи иконок и текста на кнопке
  * @param disabled - свойство неактивности
  * @param pressed - свойство нажата, например для отображения того, что товар уже в корзине
- * @param extraClass - дополнительные классы
+ * @param className - дополнительные классы
 
  * @returns {JSX.Element}
  */
@@ -25,7 +25,7 @@ const Button = ({
   children,
   disabled,
   pressed,
-  extraClass,
+  className,
   ...props
 }) => {
   const mode = primary ? 'button_primary' : 'button_secondary';
@@ -35,7 +35,7 @@ const Button = ({
     <button
       disabled={disabled}
       type={type}
-      className={['button', `button_size_${size}`, mode, isDark, isPressed, extraClass || ''].join(
+      className={['button', `button_size_${size}`, mode, isDark, isPressed, className || ''].join(
         ' '
       )}
       {...props}
@@ -52,7 +52,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   pressed: PropTypes.bool,
   type: PropTypes.oneOf(['button', 'submit']),
-  extraClass: PropTypes.string,
+  className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
@@ -60,9 +60,10 @@ Button.defaultProps = {
   primary: true,
   dark: false,
   size: 'm',
+  type: 'button',
   disabled: false,
   pressed: false,
-  extraClass: '',
+  className: '',
   onClick: undefined,
 };
 

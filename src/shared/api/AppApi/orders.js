@@ -5,8 +5,19 @@ class Orders extends BaseApi {
     super({ serverUrl, headers });
   }
 
-  getOrders(token, page = 0) {
+  getOrders(token, page) {
     const url = `${this._serverUrl}orders/${page ? '?page=' + page : ''}`;
+    return this._request(url, {
+      method: 'GET',
+      headers: {
+        ...this._headers,
+        Authorization: `Token ${token}`,
+      },
+    });
+  }
+
+  getOrder(token, orderId) {
+    const url = `${this._serverUrl}orders/${orderId}/`;
     return this._request(url, {
       method: 'GET',
       headers: {

@@ -1,1 +1,0 @@
-export { OrdersList } from './OrdersList';

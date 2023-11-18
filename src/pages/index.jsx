@@ -1,9 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
 
-import { OrdersDashboard } from '../widgets/orders';
+import { Logout } from '../features/app/Logout';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
-import Logout from '../components/Logout/Logout';
 import Favorites from '../components/Favorites/Favorites';
 
 import QuestionPage from './SupportServicePage/QuestionPage/QuestionPage';
@@ -17,12 +16,11 @@ import HomePage from './HomePage/HomePage';
 import ErrorPage from './ErrorPage/ErrorPage';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation';
 import BasketPage from './BasketPage/BasketPage';
-import { Order } from './AccountPage/Orders/Order';
 import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
 import AccountProfile from './AccountPage/AccountProfile/AccountProfile';
 import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
-import { AccountPage, Orders } from './AccountPage';
+import { AccountPage, OrderDetailsPage, OrdersDashboardPage, OrderListPage } from './AccountPage';
 
 const Routing = () => {
   return (
@@ -43,8 +41,10 @@ const Routing = () => {
             <Route path=":filter/:page" element={<Favorites />} />
           </Route>
           {/*Список Заказов*/}
-          <Route path="orders/:filter?/:page?" element={<Orders />} />
-          <Route path="order/:id" element={<Order />} />
+          <Route path="orders" element={<OrderListPage />}>
+            <Route index path="filter?/page?" element={<OrdersDashboardPage />} />
+            <Route path=":id" element={<OrderDetailsPage />} />
+          </Route>
         </Route>
       </Route>
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} exact />

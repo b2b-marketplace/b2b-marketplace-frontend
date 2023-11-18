@@ -86,7 +86,9 @@ const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList })
                     />
                     <DeliveryWarehouseAddress stock={stock} />
                   </div>
-                  <span className="delivery-warehouse-address-list__price">от {stock.price} ₽</span>
+                  <span className="delivery-warehouse-address-list__price">
+                    от {stock.price} &#8381;
+                  </span>
                 </li>
               );
             })}

@@ -31,23 +31,23 @@ export function getNoun(number, one, two, few) {
  */
 export function formatDateUnixTimestamp(unixTimestamp) {
   const months = [
-    "января",
-    "февраля",
-    "марта",
-    "апреля",
-    "мая",
-    "июня",
-    "июля",
-    "августа",
-    "сентября",
-    "октября",
-    "ноября",
-    "декабря"
+    'января',
+    'февраля',
+    'марта',
+    'апреля',
+    'мая',
+    'июня',
+    'июля',
+    'августа',
+    'сентября',
+    'октября',
+    'ноября',
+    'декабря',
   ];
 
   const date = new Date(unixTimestamp * 1000); // Преобразуем в миллисекунды
   const day = date.getDate();
-  const month = months[ date.getMonth() ];
+  const month = months[date.getMonth()];
 
   return `${day} ${month}`;
 }
@@ -65,11 +65,11 @@ export function getCalculateProductInfo(productList) {
 
   return productList.reduce(
     (result, currentProduct) => {
-      const productPrice = parseFloat(currentProduct.price.replace(/\s/g, ""));
+      const productPrice = parseFloat(currentProduct.price.replace(/\s/g, ''));
       const productQuantity = parseFloat(currentProduct.quantity);
+
       result.totalQuantity += productQuantity;
-      result.totalPrice += productPrice * productQuantity;
-      result.totalPrice += Math.round(result.totalPrice);
+      result.totalPrice += Math.round(productPrice * productQuantity);
       return result;
     },
     { totalQuantity: 0, totalPrice: 0 }
@@ -83,7 +83,7 @@ export function getCalculateProductInfo(productList) {
  * @returns {string}
  */
 export function priceFormat(price) {
-  return new Intl.NumberFormat("ru-RU").format(parseFloat(price));
+  return new Intl.NumberFormat('ru-RU').format(parseFloat(price));
 }
 
 /**
@@ -94,10 +94,10 @@ export function priceFormat(price) {
  */
 export function formatPhoneNumber(phoneNumber) {
   // Удалить все символы, кроме цифр
-  const cleanPhoneNumber = phoneNumber.replace(/\D/g, "");
+  const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');
 
   // Разбить строку на части и объединить их с дефисами
-  return cleanPhoneNumber.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, "$1-$2-$3-$4-$5");
+  return cleanPhoneNumber.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1-$2-$3-$4-$5');
 }
 
 /**
@@ -108,8 +108,8 @@ export function formatPhoneNumber(phoneNumber) {
  */
 export function formatDateAsDDMMYY(originalDate) {
   const date = new Date(originalDate);
-  const day = date.getDate().toString().padStart(2, "0");
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
   const year = date.getFullYear().toString().slice(-2);
   return `${day}.${month}.${year}`;
 }
@@ -122,19 +122,19 @@ export function formatDateAsDDMMYY(originalDate) {
  */
 export function getStatusName(status) {
   const statusMap = {
-    Created: "Создан",
-    Updated: "Обновлен",
-    Paid: "Оплачен",
-    Transit: "В пути",
-    Received: "Получен",
-    Canceled: "Отменен",
-    Returned: "Возврат"
+    Created: 'Создан',
+    Updated: 'Обновлен',
+    Paid: 'Оплачен',
+    Transit: 'В пути',
+    Received: 'Получен',
+    Canceled: 'Отменен',
+    Returned: 'Возврат',
   };
 
   // Проверяем, есть ли статус в объекте statusMap
   if (status in statusMap) {
-    return statusMap[ status ];
+    return statusMap[status];
   } else {
-    return "Неизвестный статус";
+    return 'Неизвестный статус';
   }
 }

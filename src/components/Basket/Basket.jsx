@@ -2,21 +2,21 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
-import Tooltip from '../UI/Tooltip/Tooltip';
-import Preloader from '../UI/Preloader/Preloader';
 import IconTrash from '../UI/Icon/Icon_trash';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
-import Checkbox from '../UI/Checkbox/Checkbox';
 import { Button } from '../UI/Button/Button';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import OrderDetail from '../OrderDetail/OrderDetail';
+import Tooltip from '../../shared/ui/Tooltip/Tooltip';
+import { Preloader } from '../../shared/ui/Preloader';
 import { Sidebar } from '../../shared/ui/Layout';
+import Checkbox from '../../shared/ui/Checkbox/Checkbox';
 import { getCalculateProductInfo } from '../../shared/lib/utils';
 import usePopup from '../../shared/hooks/usePopup';
 import { AppApi } from '../../shared/api';
-import { accountModel } from '../../entities/account';
+import { userModel } from '../../entities/user';
 import {
   changeChecked,
   changeCheckedAll,
@@ -37,7 +37,7 @@ import './Basket.scss';
 const Basket = ({ className }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const basketList = useSelector((state) => state.basket.basket);
-  const { user } = accountModel.useAccount();
+  const { user } = userModel.useGetUser();
 
   const { openPopup: openRegisterPopup } = usePopup('registration');
   const { openPopup: openLoginPopup } = usePopup('login');
@@ -258,7 +258,7 @@ const Basket = ({ className }) => {
                   user.company.role !== 'supplier' ? (
                     <Button
                       size="l"
-                      extraClass="basket__button"
+                      className="basket__button"
                       onClick={handleNavigateToOrder}
                       primary
                       dark
@@ -270,7 +270,7 @@ const Basket = ({ className }) => {
                   ) : (
                     <>
                       <Button
-                        extraClass="basket__button"
+                        className="basket__button"
                         size="l"
                         primary
                         dark

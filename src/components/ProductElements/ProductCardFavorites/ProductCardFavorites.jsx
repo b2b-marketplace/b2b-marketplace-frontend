@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
 import VendorCode from '../VendorCode/VendorCode';
-import Checkbox from '../../UI/Checkbox/Checkbox';
 import { Button } from '../../UI/Button/Button';
+import Checkbox from '../../../shared/ui/Checkbox/Checkbox';
 import { AppImage } from '../../../shared/ui/AppImage';
 import { priceFormat } from '../../../shared/lib/utils';
 import { addProduct, deleteProduct } from '../../../app/store/slices/favoritesSlice';
@@ -83,7 +83,7 @@ const ProductCardFavorites = ({ className, product, onClickCheckbox, isCheckboxC
             </div>
 
             <span className="product-card-favorites__product-price">
-              {productInfo.productInfoPrice} ₽
+              {productInfo.productInfoPrice} &#8381;
             </span>
 
             <Button size="xs" primary={false} onClick={handleSelect} pressed={isProductSelect}>
@@ -118,10 +118,10 @@ const ProductCardFavorites = ({ className, product, onClickCheckbox, isCheckboxC
             <div className="product-card-favorites__product-quantity">{product.quantity} шт.</div>
             <div className="product-card-favorites__product-prices">
               <span className="product-card-favorites__product-price">
-                {productInfo.productInfoPrice} ₽
+                {productInfo.productInfoPrice} &#8381;
               </span>
               <span className="product-card-favorites__product-price-per-one">
-                за ед. {productInfo.productInfoPricePerOne} ₽
+                за ед. {productInfo.productInfoPricePerOne} &#8381;
               </span>
             </div>
           </div>

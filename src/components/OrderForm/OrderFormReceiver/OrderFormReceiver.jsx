@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { accountModel } from '../../../entities/account';
+import { userModel } from '../../../entities/user';
 
 import './OrderFormReceiver.scss';
 
 const OrderFormReceiver = () => {
   // const dispatch = useDispatch();
-  const { user } = accountModel.useAccount();
+  const { user } = userModel.useGetUser();
   // const { auth_token } = useSelector((state) => state.auth);
   // useEffect(() => {
   //   if (!isFetched) {
