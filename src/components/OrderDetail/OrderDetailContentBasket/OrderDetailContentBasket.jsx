@@ -22,7 +22,7 @@ const OrderDetailContentBasket = ({ suppliersCount, productQuantity, productSumP
           'товаров'
         )}`}</p>
       </div>
-      <div className="order-detail-content-basket__price-total">{productSumPrice} ₽</div>
+      <div className="order-detail-content-basket__price-total">{productSumPrice} &#8381;</div>
     </div>
   );
 };

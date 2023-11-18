@@ -114,10 +114,10 @@ const ProductCardHorizontal = ({
             {!disable && (
               <div className="product-card-horizontal__product-prices">
                 <span className="product-card-horizontal__product-price">
-                  {productInfo.productInfoPrice} ₽
+                  {productInfo.productInfoPrice} &#8381;
                 </span>
                 <span className="product-card-horizontal__product-price-per-one">
-                  за ед. {productInfo.productInfoPricePerOne} ₽
+                  за ед. {productInfo.productInfoPricePerOne} &#8381;
                 </span>
               </div>
             )}
@@ -164,10 +164,10 @@ const ProductCardHorizontal = ({
             <div className="product-card-horizontal__product-quantity">{product.quantity} шт.</div>
             <div className="product-card-horizontal__product-prices">
               <span className="product-card-horizontal__product-price">
-                {productInfo.productInfoPrice} ₽
+                {productInfo.productInfoPrice} &#8381;
               </span>
               <span className="product-card-horizontal__product-price-per-one">
-                за ед. {productInfo.productInfoPricePerOne} ₽
+                за ед. {productInfo.productInfoPricePerOne} &#8381;
               </span>
             </div>
           </div>
