@@ -12,12 +12,13 @@
   &__button {
     @include reset-button;
     width: 44px;
+    min-width: 44px;
     height: 44px;
+    min-height: 44px;
     border: 1px solid $darkColor;
     border-radius: 50%;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+    transition: transform 0.3s ease,
+    box-shadow 0.3s ease;
 
     &:hover {
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
