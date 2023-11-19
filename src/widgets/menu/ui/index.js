@@ -1,3 +1,3 @@
-export { MenuAccount } from './MenuAccount';
-export { MenuOrders } from './MenuOrders';
+export { AccountMenu } from './AccountMenu';
+export { OrdersSortingMenu } from './OrdersSortingMenu';
 export { MenuFavorites } from './MenuFavorites';

@@ -2,21 +2,27 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
-import Tooltip from '../UI/Tooltip/Tooltip';
-import Preloader from '../UI/Preloader/Preloader';
 import IconTrash from '../UI/Icon/Icon_trash';
 import IconInfoFill from '../UI/Icon/Icon_info_fill';
-import Checkbox from '../UI/Checkbox/Checkbox';
 import { Button } from '../UI/Button/Button';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
 import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
 import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
 import OrderDetail from '../OrderDetail/OrderDetail';
+import Tooltip from '../../shared/ui/Tooltip/Tooltip';
+import { Preloader } from '../../shared/ui/Preloader';
 import { Sidebar } from '../../shared/ui/Layout';
-import { getProductText, getSuppliersText, getCalculateProductInfo } from '../../shared/lib/utils';
+import Checkbox from '../../shared/ui/Checkbox/Checkbox';
+import { getCalculateProductInfo } from '../../shared/lib/utils';
 import usePopup from '../../shared/hooks/usePopup';
 import { AppApi } from '../../shared/api';
-import { changeChecked, deleteProduct, updateAllProduct } from '../../app/store/slices/basketSlice';
+import { userModel } from '../../entities/user';
+import {
+  changeChecked,
+  changeCheckedAll,
+  deleteProduct,
+  updateAllProduct,
+} from '../../app/store/slices/basketSlice';
 
 import './Basket.scss';
 
@@ -30,12 +36,14 @@ import './Basket.scss';
  */
 const Basket = ({ className }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
-  const { user } = useSelector((state) => state.account);
+  const basketList = useSelector((state) => state.basket.basket);
+  const { user } = userModel.useGetUser();
+
   const { openPopup: openRegisterPopup } = usePopup('registration');
   const { openPopup: openLoginPopup } = usePopup('login');
 
   const [preloader, setPreloader] = useState(true);
-  const [currentProductList, setCurrentProductList] = useState([]);
+  const [basketListProducts, setBasketListProducts] = useState([]);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState([]);
   const [orderInfo, setOrderInfo] = useState({
@@ -43,43 +51,46 @@ const Basket = ({ className }) => {
     productQuantity: 0,
     suppliersCount: 0,
   });
-  const basketList = useSelector((state) => state.basket.basket);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //Забираем с сервера описание продуктов в корзине
   const fetchBasketProducts = async () => {
-    if (basketList.basket_products.length) {
-      const productBasketIds = basketList.basket_products.map((product) => product.id);
-      const mergedList = [];
-      const selectedList = [];
-      try {
-        const { results } = await AppApi.products.getProductById(productBasketIds);
-        for (const basketItem of basketList.basket_products) {
-          const productItem = results.find((product) => product.id === basketItem.id);
-          if (productItem) {
-            if (basketItem.checked) {
-              selectedList.push(basketItem.id);
-            }
-            const mergedItem = {
-              ...productItem,
-              quantity:
-                productItem.quantity_in_stock >= basketItem.quantity
-                  ? basketItem.quantity
-                  : parseFloat(productItem.quantity_in_stock),
-              // quantity: basketItem.quantity,
-              checked: basketItem.checked,
-            };
-            mergedList.push(mergedItem);
+    if (!basketList.basket_products.length) {
+      setPreloader(false);
+      return;
+    }
+
+    const basketProductIds = basketList.basket_products.map((product) => product.id);
+    const selectedList = [];
+
+    try {
+      const { results } = await AppApi.products.getProductById(basketProductIds);
+
+      const mergedList = basketList.basket_products.reduce((accumulator, basketItem) => {
+        const productDescription = results.find((product) => product.id === basketItem.id);
+
+        if (productDescription) {
+          if (basketItem.checked) {
+            selectedList.push(basketItem.id);
           }
+
+          accumulator.push({
+            ...productDescription,
+            quantity: basketItem.quantity,
+            checked: basketItem.checked,
+          });
         }
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setCurrentProductList(mergedList);
-        setSelectedProductId(selectedList);
-        setPreloader(false);
-      }
-    } else {
+
+        return accumulator;
+      }, []);
+
+      setBasketListProducts(mergedList);
+      setSelectedProductId(selectedList);
+    } catch (err) {
+      console.error(err);
+    } finally {
       setPreloader(false);
     }
   };
@@ -94,40 +105,37 @@ const Basket = ({ className }) => {
   }, []);
 
   useEffect(() => {
-    if (currentProductList.length === 0) return;
+    if (basketListProducts.length === 0) return;
+
     setPreloader(true);
-    const mergedList = [];
 
-    for (const basketItem of basketList.basket_products) {
-      const productItem = currentProductList.find((product) => product.id === basketItem.id);
+    const mergedList = basketList.basket_products.map((basketProduct) => {
+      const productItem = basketListProducts.find((product) => product.id === basketProduct.id);
 
-      if (productItem) {
-        if (basketItem.checked) {
-          setSelectedProductId([...selectedProductId, basketItem.id]);
-        }
-        const mergedItem = {
-          ...productItem,
-          quantity:
-            productItem.quantity_in_stock >= basketItem.quantity
-              ? basketItem.quantity
-              : parseFloat(productItem.quantity_in_stock),
-          checked: basketItem.checked,
-        };
-        mergedList.push(mergedItem);
+      if (!productItem) return null;
+
+      if (basketProduct.checked) {
+        setSelectedProductId((prevSelected) => [...prevSelected, basketProduct.id]);
       }
-    }
-    setCurrentProductList(mergedList);
+
+      return {
+        ...productItem,
+        quantity: basketProduct.quantity,
+        checked: basketProduct.checked,
+      };
+    });
+
+    setBasketListProducts(mergedList.filter(Boolean));
     setPreloader(false);
   }, [basketList]);
 
   useEffect(() => {
-    const selectedProducts = currentProductList.filter((product) =>
+    const selectedProducts = basketListProducts.filter((product) =>
       selectedProductId.includes(product.id)
     );
     const { totalPrice, totalQuantity } = getCalculateProductInfo(selectedProducts);
-    const suppliersId = new Set(
-      selectedProducts.map((currentProduct) => currentProduct.seller[0]?.id)
-    );
+
+    const suppliersId = new Set(selectedProducts.map((currentProduct) => currentProduct.seller.id));
 
     setOrderInfo({
       suppliersCount: suppliersId.size,
@@ -137,7 +145,7 @@ const Basket = ({ className }) => {
   }, [selectedProductId]);
 
   const handleClickCheckboxProduct = (productId) => {
-    dispatch(changeChecked({ productIds: productId }));
+    dispatch(changeChecked({ productId }));
     const updatedSelectedProductIds = selectedProductId.includes(productId)
       ? selectedProductId.filter((id) => id !== productId)
       : [...selectedProductId, productId];
@@ -145,12 +153,19 @@ const Basket = ({ className }) => {
   };
 
   const handleClickCheckboxSelectAllProduct = () => {
+    const allProductIds = basketListProducts
+      .filter(
+        (product) =>
+          product.quantity_in_stock >= product.quantity &&
+          product.quantity >= product.wholesale_quantity
+      )
+      .map((product) => product.id);
+
     if (isCheckAll) {
-      dispatch(changeChecked({ productIds: [], checked: false }));
+      dispatch(changeCheckedAll({ productIds: allProductIds, checked: false }));
       setSelectedProductId([]);
     } else {
-      const allProductIds = currentProductList.map((product) => product.id);
-      dispatch(changeChecked({ productIds: [], checked: true }));
+      dispatch(changeCheckedAll({ productIds: allProductIds, checked: true }));
       setSelectedProductId(allProductIds);
     }
     setIsCheckAll(!isCheckAll);
@@ -162,7 +177,7 @@ const Basket = ({ className }) => {
 
   const handleNavigateToOrder = () => {
     if (selectedProductId.length) {
-      dispatch(updateAllProduct({ currentProductList }));
+      dispatch(updateAllProduct({ currentProductList: basketListProducts }));
       navigate('/order', {
         state: { cameFromBasket: true },
       });
@@ -182,7 +197,7 @@ const Basket = ({ className }) => {
   }
   return (
     <section className={`basket ${className || ''}`}>
-      {currentProductList.length > 0 ? (
+      {basketListProducts.length > 0 ? (
         <div className="basket__container">
           <div className="basket__container-product">
             <div className="basket__panel">
@@ -209,7 +224,7 @@ const Basket = ({ className }) => {
               )}
             </div>
             <ul className="basket__product-list">
-              {currentProductList?.map((product) => (
+              {basketListProducts?.map((product) => (
                 <li className="basket__product-item" key={product.id} data-id={product.id}>
                   <ProductCardHorizontal
                     isCheckboxChecked={product.checked}
@@ -234,8 +249,8 @@ const Basket = ({ className }) => {
                 </Tooltip>
               </OrderDetailHeader>
               <OrderDetailContentBasket
-                suppliersCount={getSuppliersText(orderInfo.suppliersCount)}
-                productQuantity={getProductText(orderInfo.productQuantity)}
+                suppliersCount={orderInfo.suppliersCount}
+                productQuantity={orderInfo.productQuantity}
                 productSumPrice={orderInfo.productSum}
               />
               <div className="basket__buttons">
@@ -243,7 +258,7 @@ const Basket = ({ className }) => {
                   user.company.role !== 'supplier' ? (
                     <Button
                       size="l"
-                      extraClass="basket__button"
+                      className="basket__button"
                       onClick={handleNavigateToOrder}
                       primary
                       dark
@@ -255,7 +270,7 @@ const Basket = ({ className }) => {
                   ) : (
                     <>
                       <Button
-                        extraClass="basket__button"
+                        className="basket__button"
                         size="l"
                         primary
                         dark

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 
-import RadioButton from '../../UI/RadioButton/RadioButton';
+import { RadioButton } from '../../../shared/ui/RadioButton';
 
 import DeliveryWarehouseAddress from './DeliveryWarehouseAddress/DeliveryWarehouseAddress';
 
@@ -86,7 +86,9 @@ const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList })
                     />
                     <DeliveryWarehouseAddress stock={stock} />
                   </div>
-                  <span className="delivery-warehouse-address-list__price">от {stock.price} ₽</span>
+                  <span className="delivery-warehouse-address-list__price">
+                    от {stock.price} &#8381;
+                  </span>
                 </li>
               );
             })}

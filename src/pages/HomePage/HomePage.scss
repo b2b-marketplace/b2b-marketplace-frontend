@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .home-page {
-  @include flex-column;
+  @include flex-container(column);
 
   margin-top: 52px;
 

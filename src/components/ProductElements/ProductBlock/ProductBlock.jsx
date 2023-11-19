@@ -17,8 +17,8 @@ import IconNotAvailable from '../../UI/Icon/Icon_not-available';
 import IconInfo from '../../UI/Icon/Icon_info';
 import IconHearth from '../../UI/Icon/Icon_hearth';
 import IconAvailable from '../../UI/Icon/Icon_available';
-import Counter from '../../UI/Counter/Counter';
 import { Button } from '../../UI/Button/Button';
+import { Counter } from '../../../shared/ui/Counter/Counter';
 import { commentsList } from '../../../shared/mock/commentsMock';
 import { addProduct, deleteProduct, changeQuantity } from '../../../app/store/slices/basketSlice';
 
@@ -144,43 +144,43 @@ export default function ProductBlock({ product }) {
           </div> */}
         </div>
 
-        <div className="order">
-          <div className="order__price">
-            <h3 className="order__price-value">
+        <div className="product-order">
+          <div className="product-order__price">
+            <h3 className="product-order__price-value">
               {`${new Intl.NumberFormat('ru-RU').format(product.price * orderQuantity)} `} &#x20bd;
-              {/* <div className="order__icons">
+              {/* <div className="product-order__icons">
                 <IconScales />
                 <IconHearth />
               </div> */}
             </h3>
-            <p className="order__price-piece">
+            <p className="product-order__price-piece">
               {`за ед. ${new Intl.NumberFormat('ru-RU').format(product.price)} `} &#x20bd;
             </p>
 
-            {/* <div className="order__price-quantity">
+            {/* <div className="product-order__price-quantity">
               <div
-                className="order__price-quantity-now"
+                className="product-order__price-quantity-now"
                 style={{
                   width: (product.quantity_in_stock / product.quantity_in_stock) * 100 + '%',
                 }}
               />
             </div> */}
 
-            {/* <p className="order__price-remainder">
+            {/* <p className="product-order__price-remainder">
               Осталось:{' '}
-              <span className="order__price-remainder-now">{`${product.quantity_in_stock} шт.`}</span>
+              <span className="product-order__price-remainder-now">{`${product.quantity_in_stock} шт.`}</span>
             </p> */}
 
-            <p className="order__price-min-order">{`Минимальное количество товара для заказа: ${product.wholesale_quantity}`}</p>
+            <p className="product-order__price-min-order">{`Минимальное количество товара для заказа: ${product.wholesale_quantity}`}</p>
           </div>
 
-          <div className="order__delivery">
-            <p className="order__delivery-title">Варианты доставки</p>
-            <p className="order__delivery-subtitle">
-              Самовывоз со склада — <span className="order__delivery-data">завтра</span>
+          <div className="product-order__delivery">
+            <p className="product-order__delivery-title">Варианты доставки</p>
+            <p className="product-order__delivery-subtitle">
+              Самовывоз со склада — <span className="product-order__delivery-data">завтра</span>
             </p>
-            <p className="order__delivery-subtitle">
-              Курьером — <span className="order__delivery-data">10 сентября</span>
+            <p className="product-order__delivery-subtitle">
+              Курьером — <span className="product-order__delivery-data">10 сентября</span>
             </p>
           </div>
 

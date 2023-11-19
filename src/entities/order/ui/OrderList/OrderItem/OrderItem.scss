@@ -1,0 +1,101 @@
+@import '/src/app/styles/global';
+
+%flex-col-center {
+  @include flex-container(column, center, center);
+}
+
+%width-100 {
+  width: 100%;
+}
+
+.order-item {
+  @include default-font-styles;
+  @include text-M-main-styles($blackColor);
+  @include flex-container(row, space-between, center);
+  @include border-radius;
+  padding: 20px;
+  column-gap: 20px;
+
+  &__date-order {
+    @extend %flex-col-center;
+    @extend %width-100;
+    row-gap: 10px;
+    max-width: 75px;
+  }
+
+  &__order-number {
+    color: $blueDarkColor;
+    //@include text-M-main-styles($blueDarkColor);
+  }
+
+  &__company-info {
+    @extend %flex-col-center;
+    @extend %width-100;
+    row-gap: 4px;
+    max-width: 108px;
+  }
+
+  &__company-name {
+    @extend %width-100;
+    @include text-overflow-eclipse;
+    text-align: center;
+  }
+
+  &__company-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__delivery-date {
+    @extend %width-100;
+    max-width: 90px;
+  }
+
+  &__delivery-address {
+    @include flex-container(column, center, flex-start);
+    @extend %width-100;
+    max-width: 246px;
+    row-gap: 16px;
+  }
+
+  &__total-price {
+    @extend %width-100;
+    max-width: 146px;
+    white-space: nowrap;
+  }
+
+  &__status {
+    @include flex-container(row, center, center);
+    @extend %width-100;
+    max-width: 93px;
+    column-gap: 8px;
+  }
+
+  &__box {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+
+    &_transit {
+      background-color: $greenColor;
+    }
+
+    &_paid {
+      background-color: $blueDarkColor;
+    }
+
+    &_updated,
+    &_created {
+      background-color: $yellowColor;
+    }
+
+    &_canceled,
+    &_returned {
+      background-color: $redColor;
+    }
+
+    &_returned {
+      background-color: $redColor;
+    }
+  }
+}

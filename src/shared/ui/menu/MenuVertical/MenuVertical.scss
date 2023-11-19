@@ -1,0 +1,39 @@
+@import '/src/app/styles/global';
+
+.menu-vertical {
+  @include default-font-styles;
+
+  &__list {
+    @include flex-container(column);
+    @include reset-list;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__item {
+    @include flex-container;
+  }
+
+  &__link {
+    @include text-L-main-styles;
+    @include flex-container;
+    @include flex-container(row, center, center);
+    color: $grayColor;
+    column-gap: 16px;
+  }
+
+  &__contact {
+    text-decoration: none;
+    color: $grayColor;
+    font-size: 20px;
+  }
+
+  &__text {
+    margin: 12px 0 0;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+}

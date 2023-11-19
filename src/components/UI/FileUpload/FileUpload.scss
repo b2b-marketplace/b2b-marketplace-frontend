@@ -13,7 +13,7 @@
   gap: 40px;
 
   &__label {
-    @include flex-column;
+    @include flex-container(column);
     width: 202px;
     gap: 4px;
     margin: 0;
@@ -48,7 +48,7 @@
   }
 
   &__container-img {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     flex-wrap: wrap;
     gap: 4px;
   }

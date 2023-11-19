@@ -1,0 +1,26 @@
+@import '../vars';
+
+/**
+ * Создает контейнер с использованием flex-модели и опциональными свойствами.
+ *
+ * @param {string|false} $direction - Направление контейнера flex (например, 'row', 'column').
+ * @param {string|false} $justify - Свойство justify-content контейнера flex (например, 'center', 'space-between').
+ * @param {string|false} $align - Свойство align-items контейнера flex (например, 'center', 'flex-start').
+ *
+ * @example
+ *   // Создать контейнер flex с направлением 'row' и выравниванием по центру
+ *   @include flex-container('row', 'center');
+ */
+@mixin flex-container($direction: false, $justify: false, $align: false) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+}

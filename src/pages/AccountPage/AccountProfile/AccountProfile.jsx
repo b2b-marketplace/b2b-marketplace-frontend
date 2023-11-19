@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import { AccountHeader } from '../../../widgets/account';
 import useValidation from '../../../shared/hooks/useValidation';
+import { userModel } from '../../../entities/user';
 import IconPhone from '../../../components/UI/Icon/Icon_phone';
 import IconMail from '../../../components/UI/Icon/Icon_mail';
 import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
@@ -10,7 +11,7 @@ import AccountInputField from '../../../components/UI/Account/AccountInputField/
 import './AccountProfile.scss';
 
 const AccountProfile = () => {
-  const { user } = useSelector((state) => state.account);
+  const { user } = userModel.useGetUser();
   const { company } = user;
 
   const [isEditMode, setIsEditMode] = useState(false);
@@ -18,7 +19,7 @@ const AccountProfile = () => {
 
   const { values, handleChange, setValues, errors, isValid, resetForm } = useValidation({});
   useEffect(() => {
-    console.log(company);
+    //console.log(user);
     //values.inn = company.inn.toString();
     setValues(values);
   }, []);
@@ -46,7 +47,7 @@ const AccountProfile = () => {
   }
 
   return (
-    <section className="account-profile">
+    <div className="account-profile">
       <div className="account-profile__blok">
         <AccountHeader />
         <form className="account-profile__form" onSubmit={handleEdit} noValidate>
@@ -63,7 +64,7 @@ const AccountProfile = () => {
               {/*  placeholder="7209176529 0000"*/}
               {/*  id="bankaccount"*/}
               {/*  name="bankaccount"*/}
-              {/*  type="text"*/}
+              {/*  mode="text"*/}
               {/*  minLength={8}*/}
               {/*  required*/}
               {/*  isDisabled={isDisadled}*/}
@@ -90,7 +91,7 @@ const AccountProfile = () => {
               {/*  placeholder="Москва, Россия"*/}
               {/*  id="region"*/}
               {/*  name="region"*/}
-              {/*  type="text"*/}
+              {/*  mode="text"*/}
               {/*  isDisabled={isDisadled}*/}
               {/*  onChange={handleChange}*/}
               {/*  value={values.region || ''}*/}
@@ -144,17 +145,17 @@ const AccountProfile = () => {
             </fieldset>
           </div>
           {/*{isEditMode ? (*/}
-          {/*  <div className="account-profile__button-container">*/}
-          {/*    <Button size="l" primary dark type="submit" onClick={handleEdit} disabled={!isValid}>*/}
+          {/*  <div className="account-profile__button-section">*/}
+          {/*    <Button size="l" primary dark mode="submit" onClick={handleEdit} disabled={!isValid}>*/}
           {/*      Сохранить*/}
           {/*    </Button>*/}
-          {/*    <Button size="l" primary dark type="button" onClick={cancelEdit}>*/}
+          {/*    <Button size="l" primary dark mode="button" onClick={cancelEdit}>*/}
           {/*      Отменить*/}
           {/*    </Button>*/}
           {/*  </div>*/}
           {/*) : (*/}
-          {/*  <div className="account-profile__button-container">*/}
-          {/*    <Button disabled={true} size="l" primary dark type="button" onClick={editInfo}>*/}
+          {/*  <div className="account-profile__button-section">*/}
+          {/*    <Button disabled={true} size="l" primary dark mode="button" onClick={editInfo}>*/}
           {/*      Редактировать*/}
           {/*    </Button>*/}
           {/*  </div>*/}
@@ -163,7 +164,7 @@ const AccountProfile = () => {
 
         {/* <AccountPaymentInfo title="Способы оплаты" />  */}
       </div>
-    </section>
+    </div>
   );
 };
 

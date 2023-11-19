@@ -1,0 +1,13 @@
+@import '/src/app/styles/global';
+
+.account-menu {
+  @include flex-container(column, space-between);
+  @include border-radius;
+  padding: 32px;
+  row-gap: 142px;
+
+  &__container {
+    @include flex-container(column);
+    row-gap: 12px;
+  }
+}

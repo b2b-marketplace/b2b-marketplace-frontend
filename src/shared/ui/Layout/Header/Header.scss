@@ -1,0 +1,133 @@
+@import '/src/app/styles/global';
+
+.header {
+  @include flex-container(row, space-between);
+  @include default-font-styles;
+  @include max-min-width;
+  margin: 16px 0;
+  align-items: center;
+  width: 100%;
+  row-gap: 20px;
+
+  &__container-logo {
+    display: grid;
+    grid-template-columns: 60px auto;
+    align-items: end;
+    max-width: 191px;
+  }
+
+  &__logo {
+    grid-row: span 2;
+    text-decoration: none;
+    height: 60px;
+    width: 60px;
+  }
+
+  &__title {
+    @include reset-link;
+    @include h3-styles;
+    margin: 0;
+  }
+
+  &__location {
+    @include reset-button;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border: none;
+    color: $grayColor;
+
+    &-text {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+
+  &__container {
+    @include flex-container(row, space-between);
+    max-width: 893px;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__navigation {
+    @include flex-container(row, space-between);
+    max-width: 533px;
+    height: 32px;
+    width: 100%;
+    align-items: center;
+
+    &-link {
+      @include flex-container(row, space-between);
+      max-width: 176px;
+      height: 32px;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    //@include text-M-link-styles;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    //text-decoration: none;
+  }
+
+  &__icon-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__item-count {
+    @include text-XS-bold-styles;
+    color: $whiteColor;
+    position: absolute;
+    top: 15px;
+    right: -4px;
+    border: 3px solid $whiteColor;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    border-radius: 50%;
+  }
+
+  &__catalog-button {
+    @include text-M-bold-styles;
+    width: 137px;
+    height: 44px;
+    border-radius: 20px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 10px;
+    background-color: $darkColor;
+    border: none;
+    color: $whiteColor;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $grayColor;
+      border: none;
+      color: $whiteColor;
+    }
+
+    &_pressed {
+      background-color: $blackDarkColor;
+      color: $whiteColor;
+      border: none;
+    }
+
+    &:disabled {
+      background-color: $grayLightColor;
+      color: $grayColor;
+      border: none;
+      cursor: default;
+    }
+  }
+}

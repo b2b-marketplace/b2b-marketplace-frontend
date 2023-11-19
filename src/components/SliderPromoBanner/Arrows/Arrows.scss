@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .arrows {
-  @include flex-space-between;
+  @include flex-container(row, space-between);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -12,7 +12,9 @@
   &__button {
     @include reset-button;
     width: 44px;
+    min-width: 44px;
     height: 44px;
+    min-height: 44px;
     border: 1px solid $darkColor;
     border-radius: 50%;
     transition:

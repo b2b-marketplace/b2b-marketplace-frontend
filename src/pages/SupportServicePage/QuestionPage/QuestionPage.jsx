@@ -199,6 +199,7 @@ const QuestionPage = () => {
             ))}
             {section.questions.length > 4 && (
               <button
+                type="button"
                 className="question-page__button-more"
                 onClick={() => toggleCategoryExpansion(index)}
               >

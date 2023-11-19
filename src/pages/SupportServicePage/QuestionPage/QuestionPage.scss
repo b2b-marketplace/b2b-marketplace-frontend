@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .question-page {
-  @include flex-column;
+  @include flex-container(column);
   row-gap: 40px;
   font-family: $fontFamilyNunitoSans;
   font-style: $mainStyle;
@@ -16,13 +16,13 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px 160px;
+    gap: 60px 20px;
   }
 
   &__lists {
-    @include flex-column;
+    @include flex-container(column);
     @include reset-list;
-    max-width: 403px;
+    max-width: 420px;
     gap: 20px;
   }
 
@@ -31,12 +31,12 @@
   }
 
   &__paragraph {
-    @include text-L-link-styles;
+    @include text-L-bold-styles;
     margin: 0 0 12px;
   }
 
   &__link {
-    @include text-L-regular-styles;
+    @include text-M-link-styles;
     color: $blueDarkColor;
     text-decoration: none;
 
@@ -47,7 +47,7 @@
 
   &__button-more {
     @include reset-button;
-    @include text-L-link-styles;
+    @include text-M-link-styles;
     display: flex;
     gap: 8px;
     align-items: center;

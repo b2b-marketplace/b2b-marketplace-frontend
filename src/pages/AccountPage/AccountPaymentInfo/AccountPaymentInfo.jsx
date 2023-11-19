@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
 import { AccountHeader } from '../../../widgets/account';
-import { Container } from '../../../shared/ui/Layout';
+import { RadioButton } from '../../../shared/ui/RadioButton';
 import usePopup from '../../../shared/hooks/usePopup';
-import RadioButton from '../../../components/UI/RadioButton/RadioButton';
 import IconVisa from '../../../components/UI/Icon/Icon_visa';
 import IconPlus from '../../../components/UI/Icon/Icon_plus';
 import IconClose from '../../../components/UI/Icon/Icon_close';
@@ -39,7 +38,7 @@ const AccountPaymentInfo = () => {
   };
 
   return (
-    <Container className="account-payment-info">
+    <div className="account-payment-info">
       <AccountHeader name="ООО «Компания»" title="Продавец" />
 
       <h2 className="account-payment-info__title">Способы оплаты</h2>
@@ -86,7 +85,7 @@ const AccountPaymentInfo = () => {
       </ul>
 
       <LinkingCardPopup onClose={closeLinkingCardPopup} onAddCard={handleAddCard} />
-    </Container>
+    </div>
   );
 };
 

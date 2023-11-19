@@ -11,6 +11,8 @@ import {
 } from 'redux-persist';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
+import { userModel } from '../../entities/user';
+
 import { popupReducer } from './slices/togglePopupSlice.js';
 import { restoreReducer } from './slices/restoreSlice';
 import { productsReducer } from './slices/productsSlice';
@@ -18,10 +20,9 @@ import { favoritesReducer } from './slices/favoritesSlice';
 import { errorReducer } from './slices/errorSlice';
 import { basketReducer } from './slices/basketSlice';
 import { authReducer } from './slices/authSlice';
-import { accountReducer } from './slices/accountSlice';
 
 const rootReducer = combineReducers({
-  account: accountReducer,
+  account: userModel.reducer,
   basket: basketReducer,
   products: productsReducer,
   popup: popupReducer,

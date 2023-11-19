@@ -1,0 +1,7 @@
+@import '/src/app/styles/global';
+
+.app-list {
+  @include flex-container(column);
+  row-gap: 20px;
+  @include reset-list;
+}

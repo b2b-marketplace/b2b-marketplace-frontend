@@ -1,13 +1,10 @@
 @import '/src/app/styles/global';
 
 .about-us-page {
-  @include flex-column;
+  @include flex-container(column);
   padding: 52px 0 120px;
-  max-width: 1108px;
+  max-width: 1300px;
   font-family: $fontFamilyNunitoSans;
-  font-style: $fontStyle;
-  font-weight: 600;
-  line-height: 28px;
 
   &__title {
     @include h2-styles;
@@ -20,13 +17,12 @@
   }
 
   &__subtitle {
-    @include text-L-link-styles;
+    @include text-L-bold-styles;
     margin: 0 0 20px;
   }
 
   &__desc {
-    font-weight: 600;
-    font-size: 20px;
+    @include text-L-main-styles;
     margin: 0 0 32px;
 
     &:last-child {

@@ -1,10 +1,9 @@
-# B2B-маркетплейс B2Buy
-
-Frontend часть проекта B2Buy
+# B2Buy-маркетплейс (Frontend)
 
 ## Описание проекта
 
-B2Buy - представляет собой онлайн-платформу, созданную для облегчения взаимодействия между поставщиками и оптовыми покупателями. Он предоставляет централизованное место, где поставщики могут предлагать свои товары, а покупатели могут находить и приобретать их в больших объемах.
+**B2Buy** - представляет собой онлайн-платформу, созданную для облегчения взаимодействия между поставщиками и оптовыми покупателями. 
+Он предоставляет централизованное место, где поставщики могут предлагать свои товары, а покупатели могут находить и приобретать их в больших объемах.
 
 ## Функциональность
 
@@ -30,7 +29,26 @@ B2Buy - представляет собой онлайн-платформу, с�
 
 ## Используемые технологии:
 
-<img src="https://simpleicons.org/icons/javascript.svg" alt="javascript" width="50" height="50"/> <img src="https://simpleicons.org/icons/react.svg" alt="react" width="50" height="50"/> <img src="https://simpleicons.org/icons/redux.svg" alt="redux" width="50" height="50"/> <img src="https://simpleicons.org/icons/sass.svg" alt="scss" width="50" height="50"/>
+### Фронтенд:
+
+- [React](https://ru.legacy.reactjs.org/): Основной фреймворк.
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start): Для управления маршрутами.
+- [Redux Toolkit и React Redux](https://redux.js.org/): Для управления состоянием.
+- [React Query](https://tanstack.com/query/latest): Для работы с данными и запросов к API.
+- React Select, Swiper: Дополнительные компоненты UI.
+
+### Архитектура:
+
+- [Feature Side Design](https://feature-sliced.design/ru/): Архитектурная методология для проектирования.
+- [GitFlow](https://www.atlassian.com/ru/git/tutorials/comparing-workflows/gitflow-workflow): Управление ветвлениями Git.
+- [BEM](https://ru.bem.info/): Методология именования классов в CSS.
+
+### Сборка и инструменты:
+
+- React Scripts, [Webpack](https://webpack.js.org/): Для сборки и управления модулями.
+- [Sass и Sass Loader](https://sass-scss.ru/): Для работы с CSS и препроцессором Sass.
+- [Prettier](https://prettier.io/), [ESLint](https://eslint.org/): Инструменты для форматирования кода.
+- [Husky](https://typicode.github.io/husky/), [Lint-Staged](https://www.npmjs.com/package/lint-staged): Для предотвращения коммита кода с ошибками или несоответствиями стилю.
 
 ## Развёртывание проекта
 
@@ -58,26 +76,25 @@ npm run start
 Проект приложения B2Buy разработано командой выпускников Яндекс.Практикума:
 
 - Project managers
-  - [Аджиева Авельдина](https://github.com/aveldinaa)
-  - [Силинг Анна](https://github.com/AnnaSiling)
+    - [Аджиева Авельдина](https://github.com/aveldinaa)
+    - [Силинг Анна](https://github.com/AnnaSiling)
 - Frontend developers
-  - [Типсин Дмитрий](https://github.com/TIPDMR)
-  - [Сулим Михаил](https://github.com/MikhailSulim)
-  - [Воеводин Пётр](https://github.com/VoevodinPetr)
-  - [Ярцева Ольга](https://github.com/Iartseva)
-  - [Алексеев Евгений](https://github.com/0R8-9dzcl)
+    - [Типсин Дмитрий](https://github.com/TIPDMR)
+    - [Сулим Михаил](https://github.com/MikhailSulim)
+    - [Воеводин Пётр](https://github.com/VoevodinPetr)
+    - [Алексеев Евгений](https://github.com/0R8-9dzcl)
 - Backend developer
-  - [Скворцов Иван](https://github.com/Ivan-Skvortsov)
-  - [Ротбардт Ольга](https://github.com/esfiro4ka)
-  - [Ушаков Дмитрий](https://github.com/voyager1744)
-  - [Росманов Илья](https://github.com/Rikworkco)
-  - [Габдуллин Булат](https://github.com/ByJIaT)
+    - [Скворцов Иван](https://github.com/Ivan-Skvortsov)
+    - [Ротбардт Ольга](https://github.com/esfiro4ka)
+    - [Ушаков Дмитрий](https://github.com/voyager1744)
+    - [Росманов Илья](https://github.com/Rikworkco)
+    - [Габдуллин Булат](https://github.com/ByJIaT)
 - Quality Assurance (QA) engineers
-  - [Симонова Александра](https://github.com/AISimonova)
-  - [Ильенко-Ван Нилен Екатерина](https://github.com/bakaniva)
-  - [Минич Мария](https://github.com/MariaMinich)
-  - [Усаинова Татьяна](https://github.com/TatianaUsainova)
-  - [Жохова Юлия](https://github.com/Juliyasname)
+    - [Симонова Александра](https://github.com/AISimonova)
+    - [Ильенко-Ван Нилен Екатерина](https://github.com/bakaniva)
+    - [Минич Мария](https://github.com/MariaMinich)
+    - [Усаинова Татьяна](https://github.com/TatianaUsainova)
+    - [Жохова Юлия](https://github.com/Juliyasname)
 - UI/UX Designers
-  - [Молокова Зоя](https://github.com/ZoiaStar)
-  - [Егорова Ольга](https://github.com/helgaegrva)
+    - [Молокова Зоя](https://github.com/ZoiaStar)
+    - [Егорова Ольга](https://github.com/helgaegrva)

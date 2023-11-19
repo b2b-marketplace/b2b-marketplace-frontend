@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import { MenuAccount } from '../../../widgets/menu';
+import { AccountMenu } from '../../../widgets/menu';
 import { AccountHeader } from '../../../widgets/account';
 import { Sidebar } from '../../../shared/ui/Layout';
+import { Counter } from '../../../shared/ui/Counter/Counter';
 import usePopup from '../../../shared/hooks/usePopup';
 import InputField from '../../../components/UI/InputField/InputField';
 import FileUpload from '../../../components/UI/FileUpload/FileUpload';
 import DropDown from '../../../components/UI/DropDown/DropDown';
-import Counter from '../../../components/UI/Counter/Counter';
 import { Button } from '../../../components/UI/Button/Button';
 import CancelAddProductPopup from '../../../components/AuthPopup/CancelAddProductPopup/CancelAddProductPopup';
 
@@ -101,7 +101,7 @@ const AccountSellerProductAdd = () => {
   return (
     <section className="account-seller-product-add">
       <Sidebar type="left">
-        <MenuAccount />
+        <AccountMenu />
         {/*<MenuVerticalWidget menuItems={menuItemsSupplier} />*/}
       </Sidebar>
       <div className="account-seller-product-add__section">

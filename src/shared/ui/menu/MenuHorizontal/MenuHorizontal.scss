@@ -1,0 +1,20 @@
+@import '/src/app/styles/global';
+
+.menu-horizontal {
+  @include default-font-styles;
+
+  &__list {
+    @include flex-container;
+    @include reset-list;
+    column-gap: 60px;
+  }
+
+  &__link {
+    @include text-L-bold-styles;
+    @include reset-link;
+
+    &_active {
+      text-decoration: underline;
+    }
+  }
+}

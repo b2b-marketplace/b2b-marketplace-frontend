@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { Main, Sidebar } from '../../shared/ui/Layout';
 import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
@@ -16,16 +17,19 @@ import { updateAllProduct } from '../../app/store/slices/basketSlice';
 import './OrderFormPage.scss';
 
 /**
+ * Страница оформления заказа.
  *
  * @returns {JSX.Element}
- * @constructor
- *
- * @author Дмитрий Типсин | https://t.me/Chia_Rio_Ru
  */
 const OrderFormPage = () => {
+  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
+  const basketList = useSelector((state) => state.basket.basket);
+  const { openPopup: openOrderPopup } = usePopup('order');
+
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
+
   const [orderInfo, setOrderInfo] = useState({
     product_price_total: 0,
     product_quantity: 0,
@@ -33,22 +37,30 @@ const OrderFormPage = () => {
     delivery_price: 0,
     delivery_date: 0,
   });
-  const basketList = useSelector((state) => state.basket.basket);
   const [currentProductList, setCurrentProductList] = useState([]);
-  const { openPopup: openOrderPopup } = usePopup('order');
-  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
 
+  // Эффект, выполняющийся при инициализации страницы
   useEffect(() => {
-    const productList = basketList.basket_products.filter(
+    const cameFromBasket = location.state?.cameFromBasket;
+    if (!cameFromBasket) {
+      navigate('/basket');
+    }
+
+    return () => {};
+  }, []);
+
+  // Эффект, выполняющийся при изменении корзины
+  useEffect(() => {
+    const basketProductsList = basketList.basket_products.filter(
       (product) => product.checked && product.name
     );
     if (
-      !productList.length ||
-      (currentProductList.length && productList.length !== currentProductList.length)
+      !basketProductsList.length ||
+      (currentProductList.length && basketProductsList.length !== currentProductList.length)
     ) {
       navigate('/basket');
     }
-    const { totalPrice, totalQuantity } = getCalculateProductInfo(productList);
+    const { totalPrice, totalQuantity } = getCalculateProductInfo(basketProductsList);
 
     if (basketList.delivery_address) {
       const { name, price, deliveryDate } = basketList.delivery_address;
@@ -60,44 +72,38 @@ const OrderFormPage = () => {
         delivery_date: deliveryDate,
       });
     }
-    setCurrentProductList(productList);
+    setCurrentProductList(basketProductsList);
   }, [basketList]);
 
-  useEffect(() => {
-    const cameFromBasket = location.state?.cameFromBasket;
-    if (!cameFromBasket) {
-      navigate('/basket');
-    }
-
-    return () => {};
-  }, []);
-
+  // Обработчик подтверждения заказа
   const handleOrderConfirm = () => {
-    const orderProductList = currentProductList.map((product) => {
+    const orderProductsList = currentProductList.map((product) => {
       return { product: product.id, quantity: product.quantity };
     });
 
     const order = {
-      order_products: orderProductList,
+      order_products: orderProductsList,
     };
+
     AppApi.account
       .addOrder(auth_token, order)
-      .then(() => {
+      .then((res) => {
+        //console.log(res);
         const filteredArray1 = basketList.basket_products.filter(
-          (item1) => !orderProductList.some((item2) => item2.product === item1.id)
+          (item1) => !orderProductsList.some((item2) => item2.product === item1.id)
         );
         dispatch(updateAllProduct({ currentProductList: filteredArray1 }));
         openOrderPopup();
-        // navigate("/account/profile");
+        navigate('/account/order');
       })
       .catch((err) => {
-        console.log(err.message);
+        console.log(err);
       });
   };
 
   return (
-    <Main className="account-page">
-      <section className="order-form-page">
+    <Main>
+      <div className="order-form-page">
         <OrderForm productList={currentProductList} extraClassName="order-form-page__container" />
         <Sidebar type="right">
           <OrderDetail>
@@ -109,22 +115,16 @@ const OrderFormPage = () => {
               productPriceTotal={orderInfo.product_price_total}
               productQuantity={orderInfo.product_quantity}
             />
-            <Button
-              size="l"
-              // onClick={openOrderPopup}
-              onClick={handleOrderConfirm}
-              primary
-              dark
-              // disabled={!selectedProductId.length}
-              label="Подтвердить заказ"
-            >
+            <Button size="l" onClick={handleOrderConfirm} primary dark label="Подтвердить заказ">
               Подтвердить заказ
             </Button>
           </OrderDetail>
         </Sidebar>
-      </section>
+      </div>
     </Main>
   );
 };
+
+OrderFormPage.propTypes = {};
 
 export default OrderFormPage;

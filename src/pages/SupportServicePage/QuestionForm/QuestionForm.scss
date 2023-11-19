@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .question-form {
-  @include flex-column;
+  @include flex-container(column);
   max-width: 967px;
   width: 100%;
   gap: 40px;
@@ -29,7 +29,7 @@
   }
 
   &__form {
-    @include flex-column;
+    @include flex-container(column);
     gap: 24px;
   }
 
@@ -45,7 +45,7 @@
   }
 
   &__textarea {
-    @include flex-column;
+    @include flex-container(column);
     box-sizing: border-box;
     max-width: 685px;
     height: 200px;

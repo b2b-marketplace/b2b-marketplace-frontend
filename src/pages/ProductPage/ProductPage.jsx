@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 import ErrorPage from '../ErrorPage/ErrorPage';
-import Preloader from '../../components/UI/Preloader/Preloader';
+import { Preloader } from '../../shared/ui/Preloader';
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
 import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';

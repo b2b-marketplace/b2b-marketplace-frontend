@@ -1,7 +1,7 @@
 @import '/src/app/styles/global';
 
 .error-page {
-  @include flex-column;
+  @include flex-container(column);
   max-width: 640px;
   max-height: 812px;
   padding: 164px 0;
@@ -24,7 +24,7 @@
   }
 
   &__title {
-    @include flex-space-between;
+    @include flex-container(row, space-between);
     @include reset;
     width: 167px;
     height: 168px;
@@ -59,7 +59,6 @@
   }
 
   &__text {
-    @include text-default-styles;
     @include text-L-link-styles;
     text-align: center;
     margin: 40px 0 20px;
@@ -70,7 +69,9 @@
     }
   }
 
+  &__button-back,
   &__link {
+    margin-top: 10px;
     text-decoration: none;
   }
 }

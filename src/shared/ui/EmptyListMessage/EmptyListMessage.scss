@@ -1,0 +1,7 @@
+@import '/src/app/styles/global';
+
+.empty-list-message {
+  @include text-L-bold-styles;
+  text-align: center;
+  min-height: 320px;
+}

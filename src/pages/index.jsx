@@ -1,9 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
 
-import OrdersList from '../entities/orders/ui/OrdersList/OrdersList';
+import { Logout } from '../features/app/Logout';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
-import Logout from '../components/Logout/Logout';
 import Favorites from '../components/Favorites/Favorites';
 
 import QuestionPage from './SupportServicePage/QuestionPage/QuestionPage';
@@ -21,7 +20,7 @@ import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/Accou
 import AccountProfile from './AccountPage/AccountProfile/AccountProfile';
 import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
 import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
-import { AccountPage, OrdersListPage } from './AccountPage';
+import { AccountPage, OrderDetailsPage, OrdersDashboardPage, OrderListPage } from './AccountPage';
 
 const Routing = () => {
   return (
@@ -41,10 +40,10 @@ const Routing = () => {
             <Route path=":filter" element={<Favorites />} />
             <Route path=":filter/:page" element={<Favorites />} />
           </Route>
-          <Route path="orders-list" element={<OrdersListPage />} exact>
-            <Route index element={<OrdersList />} exact />
-            <Route path=":filter" element={<OrdersList />} />
-            <Route path=":filter/:page" element={<OrdersList />} />
+          {/*Список Заказов*/}
+          <Route path="orders" element={<OrderListPage />}>
+            <Route index path="filter?/page?" element={<OrdersDashboardPage />} />
+            <Route path=":id" element={<OrderDetailsPage />} />
           </Route>
         </Route>
       </Route>
