@@ -73,8 +73,8 @@
     @extend %reset;
   }
 
-  &__summary-info {
-    @include text-M-bold-styles();
+  &__total-details {
+    //@include text-M-bold-styles();
     @extend %flex-col;
     row-gap: 60px;
   }

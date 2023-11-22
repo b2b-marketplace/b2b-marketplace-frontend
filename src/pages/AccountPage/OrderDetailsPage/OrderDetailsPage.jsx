@@ -46,7 +46,7 @@ const OrderDetailsPage = () => {
       <div className="order-details-page__products-container">
         <h2 className="order-details-page__products-title">Детали заказа</h2>
         <OrderProductList products={productList} />
-        <div className="order-details-page__summary-info">
+        <div className="order-details-page__total-details">
           <OrderTotalDetails totalQuantity={totalQuantity} totalPrice={totalPrice} />
           <div className="order-details-page__comment">
             <h3 className="order-details-page__comment-title">Комментарий к заказу</h3>
