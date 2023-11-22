@@ -77,6 +77,7 @@ const useGetOrderList = () => {
  * Хук для получения информации о заказе
  *
  * @param {number} orderId - Номер заказа
+ * @returns {{isLoading: boolean, isError: boolean, data: *, companyName: *, error: unknown, productList: *, isSuccess: boolean}}
  */
 const useGetOrder = (orderId) => {
   const { auth_token: authToken } = useSelector((state) => state.auth);
