@@ -31,7 +31,7 @@ const initialState = {
 
 //Асинхронные операции
 export const getUser = createAsyncThunk('userState/getData', async (token) => {
-  return AppApi.account.getUser(token);
+  return AppApi.user.getUser(token);
 });
 
 //Слайлсы

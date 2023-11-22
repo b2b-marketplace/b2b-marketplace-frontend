@@ -85,7 +85,7 @@ const OrderFormPage = () => {
       order_products: orderProductsList,
     };
 
-    AppApi.account
+    AppApi.user
       .addOrder(auth_token, order)
       .then((res) => {
         //console.log(res);

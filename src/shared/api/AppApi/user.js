@@ -2,7 +2,7 @@
 
 import BaseApi from './BaseApi';
 
-class Account extends BaseApi {
+class User extends BaseApi {
   constructor({ serverUrl, headers }) {
     super({ serverUrl, headers });
   }
@@ -31,11 +31,11 @@ class Account extends BaseApi {
   }
 }
 
-const account = new Account({
+const user = new User({
   serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1`,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
 });
 
-export { account };
+export { user };

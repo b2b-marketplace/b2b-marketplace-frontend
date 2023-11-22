@@ -29,6 +29,14 @@ class Products extends BaseApi {
       headers: this._headers,
     });
   }
+
+  getProductsFavorites(page = 1) {
+    const url = `${this._serverUrl}?page=${page}`;
+    return this._request(url, {
+      method: 'GET',
+      headers: this._headers,
+    });
+  }
 }
 
 const products = new Products({
