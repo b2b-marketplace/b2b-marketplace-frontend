@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-import { AccountInputField } from '../AccountInputField/AccountInputField';
-import { USER_ROLE_NAME } from '../../../../shared/config/constants';
-import { userModel } from '../../../../entities/user';
 import IconPencil from '../../../../components/UI/Icon/Icon_pencil';
+import { userModel } from '../../../../entities/user';
+import { USER_ROLE_NAME } from '../../../../shared/config/constants';
+import { AccountInputField } from '../AccountInputField/AccountInputField';
 
 import './AccountHeader.scss';
 

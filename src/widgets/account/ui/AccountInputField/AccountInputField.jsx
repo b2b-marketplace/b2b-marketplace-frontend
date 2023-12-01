@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-import { AppInput } from '../../../../shared/ui/AppInput/AppInput';
 import IconClose from '../../../../components/UI/Icon/Icon_close';
+import { AppInput } from '../../../../shared/ui/AppInput';
 
 import './AccountInputField.scss';
 

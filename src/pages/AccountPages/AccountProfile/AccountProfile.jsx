@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import { AccountHeader, AccountInputField } from '../../../widgets/account';
-import Tooltip from '../../../shared/ui/Tooltip/Tooltip';
-import useInput from '../../../shared/hooks/useInput';
-import { userModel } from '../../../entities/user';
-import IconPhone from '../../../components/UI/Icon/Icon_phone';
-import IconMail from '../../../components/UI/Icon/Icon_mail';
-import IconInfoFill from '../../../components/UI/Icon/Icon_info_fill';
 import { Button } from '../../../components/UI/Button/Button';
+import IconInfoFill from '../../../components/UI/Icon/Icon_info_fill';
+import IconMail from '../../../components/UI/Icon/Icon_mail';
+import IconPhone from '../../../components/UI/Icon/Icon_phone';
+import { userModel } from '../../../entities/user';
+import useInput from '../../../shared/hooks/useInput';
+import Tooltip from '../../../shared/ui/Tooltip/Tooltip';
+import { AccountHeader, AccountInputField } from '../../../widgets/account';
 
 import './AccountProfile.scss';
 
