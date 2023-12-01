@@ -1,168 +1,235 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
-import AccountInputField from '../../../components/UI/Account/AccountInputField/AccountInputField';
-import IconMail from '../../../components/UI/Icon/Icon_mail';
-import IconPhone from '../../../components/UI/Icon/Icon_phone';
+import { AccountHeader, AccountInputField } from '../../../widgets/account';
+import Tooltip from '../../../shared/ui/Tooltip/Tooltip';
+import useInput from '../../../shared/hooks/useInput';
 import { userModel } from '../../../entities/user';
-import useValidation from '../../../shared/hooks/useValidation';
-import { AccountHeader } from '../../../widgets/account';
+import IconPhone from '../../../components/UI/Icon/Icon_phone';
+import IconMail from '../../../components/UI/Icon/Icon_mail';
+import IconInfoFill from '../../../components/UI/Icon/Icon_info_fill';
+import { Button } from '../../../components/UI/Button/Button';
 
 import './AccountProfile.scss';
+
+/**
+ * Компонент AccountProfile отображает и управляет информацией учетной записи пользователя,
+ * позволяя пользователю редактировать и сохранять детали, такие как информация о компании, контактные данные
+ * и другие связанные с профилем данные.
+ *
+ * @component
+ * @returns {JSX.Element} Возвращает JSX для компонента AccountProfile.
+ */
 
 const AccountProfile = () => {
   const { user } = userModel.useGetUser();
   const { company } = user;
+  const isSupplier = company.role === 'supplier';
+
   const [isEditMode, setIsEditMode] = useState(false);
-  const [isDisadled, setIsDisadled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(true);
 
-  const { values, handleChange, setValues, errors, isValid, resetForm } = useValidation({});
+  const initialFormValues = {
+    account: '',
+    inn: company.inn.toString(),
+    deliveryRegion: '',
+    email: user.email,
+    phone: company.phone_number.phone_number.toString(),
+    ...(company.role === 'supplier' && {
+      ogrn: '',
+      comment: '',
+    }),
+  };
+
+  const { values, errors, isNotValidForm, handleChange, resetValues } = useInput(
+    initialFormValues,
+    user.role
+  );
+
   useEffect(() => {
-    //console.log(user);
-    //values.inn = company.inn.toString();
-    setValues(values);
-  }, []);
-
-  // useEffect(() => {
-  //   setValues(values);
-  // }, [values]);
+    resetValues({
+      account: '',
+      inn: company.inn.toString(),
+      deliveryRegion: '',
+      email: user.email,
+      phone: company.phone_number.phone_number.toString(),
+    });
+  }, [company, user, resetValues]);
 
   function editInfo(e) {
     e.preventDefault();
     setIsEditMode(true);
-    setIsDisadled(false);
+    setIsDisabled(false);
   }
 
   function handleEdit(e) {
     e.preventDefault();
-    setIsEditMode(false);
-    setIsDisadled(true);
+
+    if (!isNotValidForm) {
+      setIsEditMode(false);
+      setIsDisabled(true);
+    }
   }
 
   function cancelEdit(e) {
     e.preventDefault();
     setIsEditMode(false);
-    setIsDisadled(true);
+
+    resetValues(initialFormValues);
+    setIsDisabled(true);
   }
 
   return (
     <div className="account-profile">
-      <div className="account-profile__blok">
-        <AccountHeader />
-        <form className="account-profile__form" onSubmit={handleEdit} noValidate>
+      <form className="account-profile__form" onSubmit={handleEdit} noValidate>
+        <AccountHeader isEditMode={isEditMode} />
+        {isSupplier && (
           <div className="account-profile__form-block">
             <div className="account-profile__title-group">
-              <h2 className="account-profile__title">Данные покупателя</h2>
+              <h2 className="account-profile__title">О компании</h2>
               <p className="account-profile__info">
-                Их видите только вы и служба поддержки B2Buy.ru
+                Эта информация отображается на странице вашей компании
               </p>
             </div>
-            <fieldset className="account-profile__field" disabled={isDisadled}>
-              <AccountInputField
-                label="Счет"
-                // placeholder="7209176529 0000"
-                id="account_name"
-                name="account_name"
-                mode="text"
-                minLength={8}
-                required
-                isDisabled={isDisadled}
-                onChange={handleChange}
-                value={values.account_name || company.company_account || '---------- ----'}
-                isValid={isValid}
-                errors={errors.account_name}
-              />
-              <AccountInputField
-                label="ИНН"
-                placeholder="0000000000"
-                id="inn"
-                name="inn"
-                type="text"
-                minLength={10}
-                isDisabled={isDisadled}
-                onChange={handleChange}
-                value={values.inn || company.inn.toString() || ''}
-                isValid={isValid}
-                errors={errors.inn}
-              />
-              {/*<AccountInputField*/}
-              {/*  label="Регион доставки"*/}
-              {/*  placeholder="Москва, Россия"*/}
-              {/*  id="region"*/}
-              {/*  name="region"*/}
-              {/*  mode="text"*/}
-              {/*  isDisabled={isDisadled}*/}
-              {/*  onChange={handleChange}*/}
-              {/*  value={values.region || ''}*/}
-              {/*  isValid={isValid}*/}
-              {/*  minLength={3}*/}
-              {/*  maxLength={25}*/}
-              {/*  errors={errors.region}*/}
-              {/*/>*/}
-            </fieldset>
-          </div>
-          <div className="account-profile__form-block">
-            <div className="account-profile__title-group">
-              <h2 className="account-profile__title">
-                Контакты
-                {/* <Tooltip
-                  position="right"
-                  tooltipContent={
-                    <>Эти данные видите только&nbsp;вы, они скрыты от&nbsp;покупателей</>
-                  }>
-                  <IconInfoFil />
-                </Tooltip> */}
-              </h2>
-            </div>
-            <fieldset className="account-profile__field" disabled={isDisadled}>
-              <AccountInputField
-                label="Почта"
-                placeholder="E-mail"
-                id="email"
-                name="email"
-                type="email"
-                isDisabled={isDisadled}
-                onChange={handleChange}
-                value={values.email || user.email || ''}
-                icon={<IconMail />}
-                isValid={isValid}
-                errors={errors.email}
-              />
-              <AccountInputField
-                label="Телефон"
-                placeholder="Телефон"
-                id="phone"
-                name="phone"
-                type="text"
-                isDisabled={isDisadled}
-                onChange={handleChange}
-                icon={<IconPhone />}
-                value={values.phone || company.phone_number.phone_number.toString() || ''}
-                isValid={isValid}
-                errors={errors.phone}
-              />
-            </fieldset>
-          </div>
-          {/*{isEditMode ? (*/}
-          {/*  <div className="user-profile__button-section">*/}
-          {/*    <Button size="l" primary dark mode="submit" onClick={handleEdit} disabled={!isValid}>*/}
-          {/*      Сохранить*/}
-          {/*    </Button>*/}
-          {/*    <Button size="l" primary dark mode="button" onClick={cancelEdit}>*/}
-          {/*      Отменить*/}
-          {/*    </Button>*/}
-          {/*  </div>*/}
-          {/*) : (*/}
-          {/*  <div className="user-profile__button-section">*/}
-          {/*    <Button disabled={true} size="l" primary dark mode="button" onClick={editInfo}>*/}
-          {/*      Редактировать*/}
-          {/*    </Button>*/}
-          {/*  </div>*/}
-          {/*)}*/}
-        </form>
 
-        {/* <AccountPaymentInfo title="Способы оплаты" />  */}
-      </div>
+            <textarea
+              className="account-profile__description"
+              name="comment"
+              cols="40"
+              rows="7"
+              placeholder="Описание компании"
+              disabled={!isEditMode}
+              value={values.comment || ''}
+              onChange={handleChange}
+            />
+          </div>
+        )}
+        <div className="account-profile__form-block">
+          <div className="account-profile__title-group">
+            <h2 className="account-profile__title">
+              {isSupplier ? 'Данные продавца' : 'Данные покупателя'}
+            </h2>
+            <p className="account-profile__info">Их видите только вы и служба поддержки B2Buy.ru</p>
+          </div>
+
+          <fieldset className="account-profile__field" disabled={isDisabled}>
+            {isSupplier && (
+              <AccountInputField
+                label="ОГРН"
+                placeholder="000000000 0000"
+                id="ogrn"
+                name="ogrn"
+                type="number"
+                minLength={10}
+                isDisabled={isDisabled}
+                onChange={handleChange}
+                value={values.ogrn || ''}
+                isError={errors.ogrn}
+              />
+            )}
+            <AccountInputField
+              label="Счет"
+              placeholder="Номер счета"
+              id="account"
+              name="account"
+              type="text"
+              isDisabled={isDisabled}
+              onChange={handleChange}
+              value={values.account || ''}
+              isError={errors.account}
+            />
+            <AccountInputField
+              label="ИНН"
+              placeholder="0000000000"
+              id="inn"
+              name="inn"
+              type="number"
+              minLength={10}
+              required
+              isDisabled={isDisabled}
+              onChange={handleChange}
+              value={values.inn || ''}
+              isError={errors.inn}
+            />
+            <AccountInputField
+              label="Регион доставки"
+              placeholder="Регион"
+              id="deliveryRegion"
+              name="deliveryRegion"
+              type="text"
+              isDisabled={isDisabled}
+              onChange={handleChange}
+              value={values.deliveryRegion || ''}
+              isError={errors.deliveryRegion}
+            />
+          </fieldset>
+        </div>
+        <div className="account-profile__form-block">
+          <div className="account-profile__title-group">
+            <h2 className="account-profile__title">
+              Контакты
+              <Tooltip
+                position="right"
+                tooltipContent={
+                  <>Эти данные видите только&nbsp;вы, они скрыты от&nbsp;покупателей</>
+                }
+              >
+                <IconInfoFill />
+              </Tooltip>
+            </h2>
+          </div>
+          <fieldset className="account-profile__field" disabled={isDisabled}>
+            <AccountInputField
+              label="Почта"
+              placeholder="E-mail"
+              id="email"
+              name="email"
+              type="email"
+              required
+              isDisabled={isDisabled}
+              onChange={handleChange}
+              value={values.email || ''}
+              icon={<IconMail />}
+              isError={errors.email}
+            />
+            <AccountInputField
+              label="Телефон"
+              placeholder="Телефон"
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              isDisabled={isDisabled}
+              onChange={handleChange}
+              icon={<IconPhone />}
+              value={values.phone || ''}
+              isError={errors.phone}
+            />
+          </fieldset>
+        </div>
+        {isEditMode ? (
+          <div className="account-profile__button-container">
+            <Button
+              size="xl"
+              primary
+              dark
+              mode="submit"
+              onClick={handleEdit}
+              disabled={isNotValidForm}
+            >
+              Сохранить
+            </Button>
+            <Button size="xl" primary dark mode="button" onClick={cancelEdit}>
+              Отменить
+            </Button>
+          </div>
+        ) : (
+          <div className="account-profile__button-container">
+            <Button size="xl" primary dark mode="button" onClick={editInfo}>
+              Редактировать
+            </Button>
+          </div>
+        )}
+      </form>
     </div>
   );
 };

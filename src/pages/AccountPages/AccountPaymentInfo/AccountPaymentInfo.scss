@@ -4,11 +4,15 @@
   @include default-font-styles;
   @include flex-container(column);
   width: 100%;
-  row-gap: 60px;
 
   &__title {
+    @include h2-styles;
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
     @include text-L-bold-styles;
-    margin: 0;
+    margin: 0 0 40px;
   }
 
   &__lists {
