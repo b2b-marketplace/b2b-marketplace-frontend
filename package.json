@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "author": "B2Buy Frontend Team",
-  "homepage": ".",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "clsx": "^2.0.0",
