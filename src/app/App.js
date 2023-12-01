@@ -1,12 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Header, Footer } from '../shared/ui/Layout';
-import Routing from '../pages';
-import { ButtonScrollUp } from '../features/app/Button';
-import { userModel } from '../entities/user';
-import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
 import AuthPopup from '../components/AuthPopup/AuthButtons/AuthPopup';
+import OrderPopup from '../components/PopupsRedux/OrderPopup/OrderPopup';
+import { userModel } from '../entities/user';
+import { ScrollUpButton } from '../features/app/Button';
+import Routing from '../pages';
+import { Header, Footer } from '../shared/ui/Layout';
 
 import './App.scss';
 
@@ -27,7 +27,7 @@ function App() {
     <div className="app">
       <Header />
       <Routing />
-      <ButtonScrollUp />
+      <ScrollUpButton />
       <Footer />
       <AuthPopup />
       <OrderPopup />

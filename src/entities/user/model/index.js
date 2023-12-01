@@ -1,1 +1,1 @@
-export * from './user.state';
+export * as userModel from './userSlice';

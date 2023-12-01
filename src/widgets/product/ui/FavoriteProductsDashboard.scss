@@ -1,0 +1,8 @@
+@import '/src/app/styles/global';
+
+.favorite-products-dashboard {
+  @include default-font-styles;
+  @include flex-container(column);
+  row-gap: 20px;
+  width: 100%;
+}

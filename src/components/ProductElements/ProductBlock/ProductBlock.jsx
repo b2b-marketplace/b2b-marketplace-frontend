@@ -1,29 +1,31 @@
-// eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 // eslint-disable-next-line import/no-unresolved
 import { Navigation } from 'swiper/modules';
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved,import/order
+import { Swiper, SwiperSlide } from 'swiper/react';
+// eslint-disable-next-line import/no-unresolved,import/order
 import 'swiper/css/navigation';
-// eslint-disable-next-line import/no-unresolved
-import 'swiper/css';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
 
-import ProductRating from '../ProductRating/ProductRating';
-import CommentsBlock from '../CommentsBlock/CommentsBlock';
-import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
-import IconScales from '../../UI/Icon/Icon_scales';
-import IconNotAvailable from '../../UI/Icon/Icon_not-available';
-import IconInfo from '../../UI/Icon/Icon_info';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import IconAvailable from '../../UI/Icon/Icon_available';
-import { Button } from '../../UI/Button/Button';
-import { Counter } from '../../../shared/ui/Counter/Counter';
+import { basketModel } from '../../../entities/basket';
+import { ToggleBasketItemButton } from '../../../features/product';
 import { commentsList } from '../../../shared/mock/commentsMock';
-import { addProduct, deleteProduct, changeQuantity } from '../../../app/store/slices/basketSlice';
+import { Counter } from '../../../shared/ui/Counter';
+import { Button } from '../../UI/Button/Button';
+import IconAvailable from '../../UI/Icon/Icon_available';
+import IconHearth from '../../UI/Icon/Icon_hearth';
+import IconInfo from '../../UI/Icon/Icon_info';
+import IconNotAvailable from '../../UI/Icon/Icon_not-available';
+import IconScales from '../../UI/Icon/Icon_scales';
+import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
+import CommentsBlock from '../CommentsBlock/CommentsBlock';
+import ProductRating from '../ProductRating/ProductRating';
 
-import noPhoto from '../../../images/nophoto.png';
 import photo from './../../../images/4.jpg';
+import noPhoto from '../../../images/nophoto.png';
+
+// eslint-disable-next-line import/no-unresolved,import/order
+import 'swiper/css';
 
 import './ProductBlock.scss';
 
@@ -39,27 +41,11 @@ export default function ProductBlock({ product }) {
   let imagesList;
   product.images.length === 0 ? (imagesList = [{ image: noPhoto }]) : (imagesList = product.images);
 
-  const [mainImage, setMainImage] = useState();
-  const [isProductSelect, setIsProductSelect] = useState(false);
+  const isItemInBasket = basketModel.useGetBasketItem(product.id);
+
   const dispatch = useDispatch();
-  const basketList = useSelector((state) => state.basket.basket);
+  const [mainImage, setMainImage] = useState();
   const [orderQuantity, setOrderQuantity] = useState(product.wholesale_quantity);
-
-  useEffect(() => {
-    if (
-      basketList.basket_products.length &&
-      basketList.basket_products.find((item) => item.id === product.id)
-    )
-      setIsProductSelect(true);
-    else setIsProductSelect(false);
-  }, [basketList.basket_products, product.id]);
-
-  const handleSelect = () => {
-    isProductSelect
-      ? dispatch(deleteProduct({ productIds: product.id }))
-      : dispatch(addProduct({ productIds: product.id, quantity: orderQuantity }));
-    setIsProductSelect(!isProductSelect);
-  };
 
   useEffect(() => {
     setMainImage(imagesList[0].image);
@@ -190,13 +176,11 @@ export default function ProductBlock({ product }) {
             maxValue={product.quantity_in_stock}
             onChangeQuantity={(count) => {
               setOrderQuantity(count);
-              if (isProductSelect)
-                dispatch(changeQuantity({ productIds: product.id, quantity: count }));
+              if (isItemInBasket)
+                dispatch(basketModel.changeQuantity({ productIds: product.id, quantity: count }));
             }}
           />
-          <Button size="m" primary={false} dark onClick={handleSelect} pressed={isProductSelect}>
-            {isProductSelect ? 'В корзине' : 'В корзину'}
-          </Button>
+          <ToggleBasketItemButton productId={product.id} quantity={orderQuantity} />
         </div>
       </div>
 
@@ -258,19 +242,17 @@ export default function ProductBlock({ product }) {
                     alt="фото товара от пользователя"
                   />
                   <p className="comments__photos-count">+ 23</p>
-                  // TODO добавить пересчёт всех изображений для товара // TODO вычленить в
-                  отдельный компонент подборку фото
+                  {/*TODO добавить пересчёт всех изображений для товара
+                  // TODO вычленить в отдельный компонент подборку фото*/}
                 </div>
               </div>
-              <Button size="m" primary={false}>
-                Оставить отзыв
-              </Button>
+              <Button size="m">Оставить отзыв</Button>
             </div>
           </div>
 
           <div className="comments__container">
-            {commentsList.map((comment) => (
-              <CommentsBlock comment={comment} />
+            {commentsList.map((comment, index) => (
+              <CommentsBlock key={index} comment={comment} />
             ))}
           </div>
         </div>

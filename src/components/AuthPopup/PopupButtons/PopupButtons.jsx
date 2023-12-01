@@ -15,6 +15,7 @@ const PopupButtons = ({
   return (
     <div className="popup__buttons">
       <Button
+        primary
         dark={dark1}
         value={value1}
         onClick={onClick}
@@ -27,6 +28,7 @@ const PopupButtons = ({
         {buttonText1}
       </Button>
       <Button
+        primary
         dark={dark2}
         value={value2}
         onClick={onClick}

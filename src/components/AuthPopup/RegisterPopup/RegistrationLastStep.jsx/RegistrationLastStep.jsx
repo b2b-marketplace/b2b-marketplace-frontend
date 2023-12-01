@@ -1,9 +1,9 @@
-import PopupButton from '../../PopupButton/PopupButton';
-import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
-import Input from '../../Input/Input';
-import IconPassword from '../../../UI/Icon/IconPassword';
-import { passwordLength } from '../../../../shared/lib/authConstatnts';
 import useShowPassword from '../../../../shared/hooks/useShowPassword';
+import { passwordLength } from '../../../../shared/lib/authConstatnts';
+import IconPassword from '../../../UI/Icon/IconPassword';
+import Input from '../../Input/Input';
+import LabelCheckbox from '../../LabelCheckbox/LabelCheckbox';
+import PopupButton from '../../PopupButton/PopupButton';
 
 const RegistrationLastStep = ({ onChange, values, errors, isDirtyInputs, serverErrors }) => {
   const { isShow, handleShow } = useShowPassword(false);

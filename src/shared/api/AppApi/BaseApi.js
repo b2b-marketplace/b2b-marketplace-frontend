@@ -5,16 +5,14 @@ export default class BaseApi {
     this._token = false;
   }
 
-  setToken(token) {
-    this._token = token;
-  }
-
-  getToken() {
-    return this._token;
-  }
-
-  _checkResponse(res) {
-    return res.ok ? res.json() : Promise.reject(res);
+  async _checkResponse(res) {
+    if (res.ok) {
+      const contentLength = res.headers.get('content-length');
+      return contentLength === '0' ? {} : res.json();
+    } else {
+      const error = await res.json();
+      throw new Error(error);
+    }
   }
 
   _request(url, options) {

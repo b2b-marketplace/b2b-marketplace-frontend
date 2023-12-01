@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './AppLink.scss';
 

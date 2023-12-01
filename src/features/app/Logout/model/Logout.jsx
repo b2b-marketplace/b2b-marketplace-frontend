@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router';
-import { useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 
-import { userModel } from '../../../../entities/user';
 import { logoutUser } from '../../../../app/store/slices/authSlice.js';
+import { userModel } from '../../../../entities/user';
 
 const Logout = () => {
   const dispatch = useDispatch();

@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 
-import IconToy from '../UI/Icon/Icon_toy';
-import IconTextile from '../UI/Icon/Icon_textile';
-import IconSport from '../UI/Icon/Icon_sport';
-import IconSneaker from '../UI/Icon/Icon_sneaker';
-import IconRollerBrush from '../UI/Icon/Icon_roller-brush';
-import IconJul from '../UI/Icon/Icon_jul';
-import IconHome from '../UI/Icon/Icon_home';
-import IconGift from '../UI/Icon/Icon_gift';
-import IconEatDrink from '../UI/Icon/Icon_eat-drink';
-import IconComputer from '../UI/Icon/Icon_computer';
-import IconClothes from '../UI/Icon/Icon_clothes';
-import IconCar from '../UI/Icon/Icon_car';
-import IconArrowCounter from '../UI/Icon/Icon_arrow-counter';
 import IconAnimals from '../UI/Icon/Icon_animals';
+import IconArrowCounter from '../UI/Icon/Icon_arrow-counter';
+import IconCar from '../UI/Icon/Icon_car';
+import IconClothes from '../UI/Icon/Icon_clothes';
+import IconComputer from '../UI/Icon/Icon_computer';
+import IconEatDrink from '../UI/Icon/Icon_eat-drink';
+import IconGift from '../UI/Icon/Icon_gift';
+import IconHome from '../UI/Icon/Icon_home';
+import IconJul from '../UI/Icon/Icon_jul';
+import IconRollerBrush from '../UI/Icon/Icon_roller-brush';
+import IconSneaker from '../UI/Icon/Icon_sneaker';
+import IconSport from '../UI/Icon/Icon_sport';
+import IconTextile from '../UI/Icon/Icon_textile';
+import IconToy from '../UI/Icon/Icon_toy';
 
 import './MenuBar.scss';
 

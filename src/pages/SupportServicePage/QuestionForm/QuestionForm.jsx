@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import Checkbox from '../../../shared/ui/Checkbox/Checkbox';
-import InputField from '../../../components/UI/InputField/InputField';
-import IconFolderAdd from '../../../components/UI/Icon/Icon_folder-add';
-import DropDown from '../../../components/UI/DropDown/DropDown';
 import { Button } from '../../../components/UI/Button/Button';
+import DropDown from '../../../components/UI/DropDown/DropDown';
+import IconFolderAdd from '../../../components/UI/Icon/Icon_folder-add';
+import InputField from '../../../components/UI/InputField/InputField';
+import { Checkbox } from '../../../shared/ui/Checkbox';
 
 import './QuestionForm.scss';
 
@@ -135,7 +135,7 @@ const QuestionForm = () => {
           <Checkbox
             name="agreeTerms"
             checked={formData.agreeTerms}
-            handleChangeCheckbox={handleCheckboxChange}
+            onClick={handleCheckboxChange}
             required
           />
           <p className="question-form__text">

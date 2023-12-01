@@ -1,18 +1,17 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { Main, Sidebar } from '../../shared/ui/Layout';
-import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
-import usePopup from '../../shared/hooks/usePopup';
-import { AppApi } from '../../shared/api';
-import { Button } from '../../components/UI/Button/Button';
-import OrderForm from '../../components/OrderForm/OrderForm';
-import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import { updateAllProduct } from '../../app/store/slices/basketSlice';
+import OrderDetailContentOrderPage from '../../components/OrderDetail/OrderDetailContentOrderPage/OrderDetailContentOrderPage';
+import OrderDetailHeader from '../../components/OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import OrderForm from '../../components/OrderForm/OrderForm';
+import { Button } from '../../components/UI/Button/Button';
+import { basketModel } from '../../entities/basket';
+import { AppApi } from '../../shared/api';
+import usePopup from '../../shared/hooks/usePopup';
+import { formatDateUnixTimestamp, getCalculateProductInfo } from '../../shared/lib/utils';
+import { Main, Sidebar } from '../../shared/ui/Layout';
 
 import './OrderFormPage.scss';
 
@@ -23,7 +22,7 @@ import './OrderFormPage.scss';
  */
 const OrderFormPage = () => {
   const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
-  const basketList = useSelector((state) => state.basket.basket);
+  const basketList = basketModel.useGetBasketItems();
   const { openPopup: openOrderPopup } = usePopup('order');
 
   const dispatch = useDispatch();
@@ -92,9 +91,9 @@ const OrderFormPage = () => {
         const filteredArray1 = basketList.basket_products.filter(
           (item1) => !orderProductsList.some((item2) => item2.product === item1.id)
         );
-        dispatch(updateAllProduct({ currentProductList: filteredArray1 }));
+        dispatch(basketModel.updateAllProduct({ currentProductList: filteredArray1 }));
         openOrderPopup();
-        navigate('/account/order');
+        navigate('/user/order');
       })
       .catch((err) => {
         console.log(err);

@@ -1,0 +1,29 @@
+@import '/src/app/styles/global';
+
+.multi-select-panel {
+  @include flex-container(row, space-between);
+  align-items: center;
+  height: 52px;
+  padding: 0 20px 0 20px;
+
+  &__checkbox {
+    &-text {
+      @include text-L-main-styles;
+      @include link-hover-styles;
+    }
+  }
+
+  &__button {
+    @include text-L-main-styles;
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    @include link-hover-styles;
+  }
+
+  &__icon-trash {
+    width: 32px;
+    height: 32px;
+  }
+}

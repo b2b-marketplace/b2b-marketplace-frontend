@@ -1,22 +1,23 @@
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { AppLink, AppNavLink } from '../../AppLink';
-import usePopup from '../../../hooks/usePopup';
-import { geoApi } from '../../../api';
-import Search from '../../../../components/UI/Search/Search';
-import IconScales from '../../../../components/UI/Icon/Icon_scales';
-import IconProfileBlack from '../../../../components/UI/Icon/Icon_profile-black';
-import IconProfile from '../../../../components/UI/Icon/Icon_profile';
-import IconPosition from '../../../../components/UI/Icon/Icon_position';
-import IconMessage from '../../../../components/UI/Icon/Icon_message';
-import IconFire from '../../../../components/UI/Icon/Icon_fire';
-import IconBurger from '../../../../components/UI/Icon/Icon_burger';
-import IconBoxRu from '../../../../components/UI/Icon/Icon_boxRu';
-import IconBasketBlack from '../../../../components/UI/Icon/icon_basket-black';
-import IconBasket from '../../../../components/UI/Icon/Icon_basket';
 import PopupMenu from '../../../../components/Popups/PopupMenu/PopupMenu';
+import IconBasket from '../../../../components/UI/Icon/Icon_basket';
+import IconBasketBlack from '../../../../components/UI/Icon/icon_basket-black';
+import IconBoxRu from '../../../../components/UI/Icon/Icon_boxRu';
+import IconBurger from '../../../../components/UI/Icon/Icon_burger';
+import IconFire from '../../../../components/UI/Icon/Icon_fire';
+import IconMessage from '../../../../components/UI/Icon/Icon_message';
+import IconPosition from '../../../../components/UI/Icon/Icon_position';
+import IconProfile from '../../../../components/UI/Icon/Icon_profile';
+import IconProfileBlack from '../../../../components/UI/Icon/Icon_profile-black';
+import IconScales from '../../../../components/UI/Icon/Icon_scales';
+import Search from '../../../../components/UI/Search/Search';
+import { basketModel } from '../../../../entities/basket';
+import { geoApi } from '../../../api';
+import usePopup from '../../../hooks/usePopup';
+import { AppLink, AppNavLink } from '../../AppLink';
 
 import './Header.scss';
 
@@ -24,7 +25,7 @@ const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   // Проверяем, есть ли товары в корзине
   const dispatch = useDispatch();
-  const basketList = useSelector((state) => state.basket.basket);
+  const basketList = basketModel.useGetBasketItems();
   const isItemsInBasket = basketList.basket_products.length > 0;
   const basketItemCount = basketList.basket_products.length;
 

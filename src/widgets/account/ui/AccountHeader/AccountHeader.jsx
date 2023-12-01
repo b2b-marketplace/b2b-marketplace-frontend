@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { USER_ROLE_NAME } from '../../../../shared/config/constants';
 import { userModel } from '../../../../entities/user';
+import { USER_ROLE_NAME } from '../../../../shared/config/constants';
 
 import noImage from '../../../../images/basket/Stub_132_128.jpg';
 

@@ -1,12 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
-import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
+import { basketModel } from '../../entities/basket';
 import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
-import { addDeliveryAddress } from '../../app/store/slices/basketSlice';
+import TabsNavigation from '../UI/TabNavigation/TabsNavigation';
 
-import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
 import DeliveryWarehouseAddressList from './DeliveryWarehouseAddressList/DeliveryWarehouseAddressList';
+import OrderFormReceiver from './OrderFormReceiver/OrderFormReceiver';
 
 import './OrderForm.scss';
 
@@ -15,7 +15,7 @@ const OrderForm = ({ extraClassName, productList }) => {
   // const deliveryAddressList = useSelector((state) => state.basket.basket.delivery_address || []);
 
   const handleGetStockAddr = useCallback((stock) => {
-    dispatch(addDeliveryAddress({ deliveryAddress: stock }));
+    dispatch(basketModel.addDeliveryAddress({ deliveryAddress: stock }));
   }, []);
 
   return (

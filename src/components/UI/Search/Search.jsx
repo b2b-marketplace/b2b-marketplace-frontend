@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import IconSearch from '../Icon/Icon_search';
 import IconClose from '../Icon/Icon_close';
+import IconSearch from '../Icon/Icon_search';
 
 import './Search.scss';
 

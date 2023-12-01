@@ -1,28 +1,23 @@
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import IconTrash from '../UI/Icon/Icon_trash';
-import IconInfoFill from '../UI/Icon/Icon_info_fill';
-import { Button } from '../UI/Button/Button';
-import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
-import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
-import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
-import OrderDetail from '../OrderDetail/OrderDetail';
-import Tooltip from '../../shared/ui/Tooltip/Tooltip';
-import { Preloader } from '../../shared/ui/Preloader';
-import { Sidebar } from '../../shared/ui/Layout';
-import Checkbox from '../../shared/ui/Checkbox/Checkbox';
-import { getCalculateProductInfo } from '../../shared/lib/utils';
-import usePopup from '../../shared/hooks/usePopup';
-import { AppApi } from '../../shared/api';
+import { basketModel } from '../../entities/basket';
 import { userModel } from '../../entities/user';
-import {
-  changeChecked,
-  changeCheckedAll,
-  deleteProduct,
-  updateAllProduct,
-} from '../../app/store/slices/basketSlice';
+import { AppApi } from '../../shared/api';
+import usePopup from '../../shared/hooks/usePopup';
+import { getCalculateProductInfo } from '../../shared/lib/utils';
+import { Checkbox } from '../../shared/ui/Checkbox';
+import { Sidebar } from '../../shared/ui/Layout';
+import { Preloader } from '../../shared/ui/Preloader';
+import Tooltip from '../../shared/ui/Tooltip/Tooltip';
+import OrderDetail from '../OrderDetail/OrderDetail';
+import OrderDetailContentBasket from '../OrderDetail/OrderDetailContentBasket/OrderDetailContentBasket';
+import OrderDetailHeader from '../OrderDetail/OrderDetailHeader/OrderDetailHeader';
+import ProductCardHorizontal from '../ProductElements/ProductCardHorizontal/ProductCardHorizontal';
+import { Button } from '../UI/Button/Button';
+import IconInfoFill from '../UI/Icon/Icon_info_fill';
+import IconTrash from '../UI/Icon/Icon_trash';
 
 import './Basket.scss';
 
@@ -36,7 +31,7 @@ import './Basket.scss';
  */
 const Basket = ({ className }) => {
   const { isLoggedIn } = useSelector((state) => state.auth);
-  const basketList = useSelector((state) => state.basket.basket);
+  const basketList = basketModel.useGetBasketItems();
   const { user } = userModel.useGetUser();
 
   const { openPopup: openRegisterPopup } = usePopup('registration');
@@ -145,7 +140,7 @@ const Basket = ({ className }) => {
   }, [selectedProductId]);
 
   const handleClickCheckboxProduct = (productId) => {
-    dispatch(changeChecked({ productId }));
+    dispatch(basketModel.changeChecked({ productId }));
     const updatedSelectedProductIds = selectedProductId.includes(productId)
       ? selectedProductId.filter((id) => id !== productId)
       : [...selectedProductId, productId];
@@ -162,22 +157,22 @@ const Basket = ({ className }) => {
       .map((product) => product.id);
 
     if (isCheckAll) {
-      dispatch(changeCheckedAll({ productIds: allProductIds, checked: false }));
+      dispatch(basketModel.changeCheckedAll({ productIds: allProductIds, checked: false }));
       setSelectedProductId([]);
     } else {
-      dispatch(changeCheckedAll({ productIds: allProductIds, checked: true }));
+      dispatch(basketModel.changeCheckedAll({ productIds: allProductIds, checked: true }));
       setSelectedProductId(allProductIds);
     }
     setIsCheckAll(!isCheckAll);
   };
 
   const handleClickDeleteSelectedProduct = () => {
-    dispatch(deleteProduct({ productIds: selectedProductId }));
+    dispatch(basketModel.deleteProduct({ productIds: selectedProductId }));
   };
 
   const handleNavigateToOrder = () => {
     if (selectedProductId.length) {
-      dispatch(updateAllProduct({ currentProductList: basketListProducts }));
+      dispatch(basketModel.updateAllProduct({ currentProductList: basketListProducts }));
       navigate('/order', {
         state: { cameFromBasket: true },
       });
@@ -203,7 +198,7 @@ const Basket = ({ className }) => {
             <div className="basket__panel">
               <div className="basket__panel-checkbox">
                 <Checkbox
-                  handleChangeCheckbox={handleClickCheckboxSelectAllProduct}
+                  onClick={handleClickCheckboxSelectAllProduct}
                   checked={isCheckAll}
                   className="basket__checkbox"
                 >

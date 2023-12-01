@@ -1,5 +1,5 @@
-import ProductRatingStars from '../ProductRatingStars/ProductRatingStars';
 import CommentRating from '../../CommentRating/CommentRating';
+import ProductRatingStars from '../ProductRatingStars/ProductRatingStars';
 
 import userLogo from './../../../images/defaultUserLogo.png';
 

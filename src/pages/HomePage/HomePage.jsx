@@ -1,13 +1,13 @@
-import { useSelector, useDispatch } from 'react-redux';
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { Main } from '../../shared/ui/Layout';
-import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
-import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
-import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
-import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
 import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
-import { fetchProducts, loadMoreProducts } from '../../app/store/slices/productsSlice';
+import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
+import PromoRegistration from '../../components/PromoRegistration/PromoRegistration';
+import SliderPromoBanner from '../../components/SliderPromoBanner/SliderPromoBanner';
+import { productModel } from '../../entities/product';
+import { Main } from '../../shared/ui/Layout';
 
 import './HomePage.scss';
 
@@ -21,11 +21,11 @@ const HomePage = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(productModel.fetchProducts({ pageDB: 1 }));
   }, []);
 
   useEffect(() => {
-    dispatch(fetchProducts(pageDB));
+    dispatch(productModel.fetchProducts({ pageDB }));
   }, [pageDB]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const HomePage = () => {
   }, [allProducts]);
 
   const handleClickMore = () => {
-    dispatch(loadMoreProducts());
+    dispatch(productModel.loadMoreProducts());
   };
 
   return (

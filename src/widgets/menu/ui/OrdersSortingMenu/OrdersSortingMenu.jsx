@@ -1,11 +1,11 @@
-import { NavLink, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
 
-import { MenuHorizontal } from '../../../../shared/ui/menu';
 import { userModel } from '../../../../entities/user';
+import { MenuHorizontal } from '../../../../shared/ui/menu';
 
 import './OrdersSortingMenu.scss';
 

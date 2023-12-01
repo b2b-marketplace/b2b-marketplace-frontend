@@ -1,6 +1,6 @@
-import PopupButtons from '../PopupButtons/PopupButtons';
-import Popup from '../Popup';
 import usePopup from '../../../shared/hooks/usePopup';
+import Popup from '../Popup';
+import PopupButtons from '../PopupButtons/PopupButtons';
 
 const SelectRestorePopup = () => {
   const { isOpen, closePopup } = usePopup('selectRestore');
