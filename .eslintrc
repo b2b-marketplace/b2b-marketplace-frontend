@@ -56,7 +56,7 @@
         ],
         "newlines-between": "always",
         "alphabetize": {
-          "order": "desc",
+          "order": "asc",
           "caseInsensitive": true
         },
         "pathGroups": [

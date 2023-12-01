@@ -1,0 +1,5 @@
+@import '/src/app/styles/global';
+
+.toggle-favorite-button {
+  @include reset-button;
+}

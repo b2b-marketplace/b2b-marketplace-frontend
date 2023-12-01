@@ -1,4 +1,4 @@
-import storage from 'redux-persist/lib/storage';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -9,33 +9,31 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
 
+import { basketModel } from '../../entities/basket';
+import { productModel } from '../../entities/product';
 import { userModel } from '../../entities/user';
 
-import { popupReducer } from './slices/togglePopupSlice.js';
-import { restoreReducer } from './slices/restoreSlice';
-import { productsReducer } from './slices/productsSlice';
-import { favoritesReducer } from './slices/favoritesSlice';
-import { errorReducer } from './slices/errorSlice';
-import { basketReducer } from './slices/basketSlice';
 import { authReducer } from './slices/authSlice';
+import { errorReducer } from './slices/errorSlice';
+import { restoreReducer } from './slices/restoreSlice';
+import { popupReducer } from './slices/togglePopupSlice.js';
 
 const rootReducer = combineReducers({
-  account: userModel.reducer,
-  basket: basketReducer,
-  products: productsReducer,
+  user: userModel.reducer,
+  basket: basketModel.basketReducer,
+  products: productModel.reducer,
   popup: popupReducer,
   auth: authReducer,
   restore: restoreReducer,
   error: errorReducer,
-  favorites: favoritesReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['basket', 'auth', 'account', 'favorites'],
+  whitelist: ['basket', 'auth', 'user'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -47,7 +45,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat([]),
 });
 
 export const persistor = persistStore(store);

@@ -6,7 +6,7 @@ class Orders extends BaseApi {
   }
 
   getOrders(token, page) {
-    const url = `${this._serverUrl}orders/${page ? '?page=' + page : ''}`;
+    const url = `${this._serverUrl}/orders/${page ? '?page=' + page : ''}`;
     return this._request(url, {
       method: 'GET',
       headers: {
@@ -17,7 +17,7 @@ class Orders extends BaseApi {
   }
 
   getOrder(token, orderId) {
-    const url = `${this._serverUrl}orders/${orderId}/`;
+    const url = `${this._serverUrl}/orders/${orderId}/`;
     return this._request(url, {
       method: 'GET',
       headers: {
@@ -29,7 +29,7 @@ class Orders extends BaseApi {
 }
 
 const orders = new Orders({
-  serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1/`,
+  serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

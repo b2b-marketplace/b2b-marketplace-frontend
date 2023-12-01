@@ -1,6 +1,6 @@
-import Popup from '../Popup';
-import Input from '../Input/Input';
 import Form from '../Form/Form';
+import Input from '../Input/Input';
+import Popup from '../Popup';
 
 const RestorePopup = (props) => {
   const {

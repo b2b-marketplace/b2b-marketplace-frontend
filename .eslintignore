@@ -1,6 +1,8 @@
 node_modules
 public
+.storybook
 .eslintrc.js
 .idea
 src/examples
 /build/
+/src/stories/

@@ -1,17 +1,12 @@
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-import ErrorPage from '../ErrorPage/ErrorPage';
-import { Preloader } from '../../shared/ui/Preloader';
-import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
-import PlatformBenefits from '../../components/PlatformBenefits/PlatformBenefits';
-import {
-  fetchProductById,
-  loadMoreProducts,
-  fetchProducts,
-} from '../../app/store/slices/productsSlice';
+import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
+import { productModel } from '../../entities/product';
+import { Preloader } from '../../shared/ui/Preloader';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 import './ProductPage.scss';
 
@@ -25,11 +20,11 @@ export default function ProductPage() {
   const { pageDB, isFull } = allProducts;
 
   useEffect(() => {
-    dispatch(fetchProductById(id));
+    dispatch(productModel.fetchProductById({ id }));
   }, [dispatch, id]);
 
   useEffect(() => {
-    dispatch(fetchProducts(pageDB));
+    dispatch(productModel.fetchProducts({ pageDB }));
   }, [dispatch, pageDB]);
 
   useEffect(() => {
@@ -37,7 +32,7 @@ export default function ProductPage() {
   }, [allProducts.allProducts]);
 
   const handleClickMore = () => {
-    dispatch(loadMoreProducts());
+    dispatch(productModel.loadMoreProducts());
   };
 
   return (

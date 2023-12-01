@@ -1,9 +1,9 @@
-import { useLocation, useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router';
 
-import { Preloader } from '../../shared/ui/Preloader';
-import usePopup from '../../shared/hooks/usePopup';
 import { AppApi } from '../../shared/api';
+import usePopup from '../../shared/hooks/usePopup';
+import { Preloader } from '../../shared/ui/Preloader';
 
 import './Activation.scss';
 

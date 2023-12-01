@@ -6,6 +6,7 @@
   font-family: $fontFamilyNunitoSans;
   font-style: $fontStyle;
   font-weight: $fontWeight;
+  line-height: $fontLineHeight;
   font-size: $fontSize;
   color: $fontColor;
 }
@@ -50,26 +51,30 @@
   @include text-styles(20px, 500, 28px, $color);
 }
 
+// Заголовок третьего уровня h4
+@mixin h4-styles($color: $fontColor) {
+  @extend %heading-default-styles;
+  @extend %heading-reset;
+
+  @include text-styles(18px, 500, 28px, $color);
+}
+
 // T L Web/bold
-// Миксин для текста L с жирным начертанием
 @mixin text-L-bold-styles($color: $fontColor) {
   @include text-styles(24px, 600, 28px, $color);
 }
 
 // T L Web/main
-// Миксин для текста L с основным начертанием
 @mixin text-L-main-styles($color: $fontColor) {
   @include text-styles(20px, 600, 28px, $color);
 }
 
 //T L Web/regular
-// Миксин для текста L с обычным начертанием
 @mixin text-L-regular-styles($color: $fontColor) {
   @include text-styles(20px, 400, 28px, $color);
 }
 
 // T L Web/link
-// Миксин для текста L, предназначенного для ссылок
 @mixin text-L-link-styles($color: $fontColor) {
   @include text-styles(20px, 600, 28px, $color);
 }
@@ -79,7 +84,6 @@
 }
 
 // Text M Web
-// Миксин для текста M
 @mixin text-M-bold-styles($color: $fontColor) {
   @include text-styles(16px, 700, 24px, $color);
 }
@@ -90,21 +94,19 @@
 }
 
 // Text S Web/bold
-// Миксин для текста S с жирным начертанием
 @mixin text-S-bold-styles($color: $fontColor) {
   @include text-styles(14px, 700, 20px, $color);
-  //font-weight: bold;
-}
-
-@mixin text-XS-bold-styles($color: $fontColor) {
-  @include text-styles(10px, 700, 20px, $color);
-  //font-weight: bold;
 }
 
 // Text S Web/main
-// Миксин для текста S с основным начертанием
 @mixin text-S-main-styles($color: $fontColor) {
   @include text-styles(14px, 400, 20px, $color);
+}
+
+// Text S Web/main
+@mixin text-XS-bold-styles($color: $fontColor) {
+  @include text-styles(10px, 700, 20px, $color);
+  //font-weight: bold;
 }
 
 // Максимальное количество строк для отображения
@@ -115,6 +117,7 @@
   white-space: normal;
 }
 
+//Многоточие в конце строки
 @mixin text-overflow-eclipse {
   overflow: hidden;
   text-overflow: ellipsis;

@@ -1,26 +1,30 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { Logout } from '../features/app/Logout';
 import ProtectedRoutes from '../components/ProtectedRoutes/ProtectedRoutes';
-import Favorites from '../components/Favorites/Favorites';
+import { Logout } from '../features/app/Logout';
 
-import QuestionPage from './SupportServicePage/QuestionPage/QuestionPage';
-import QuestionForm from './SupportServicePage/QuestionForm/QuestionForm';
-import PrivacyPolicyPage from './SupportServicePage/PrivacyPolicyPage/PrivacyPolicyPage';
-import PortalRulesPage from './SupportServicePage/PortalRulesPage/PortalRulesPage';
-import AboutUsPage from './SupportServicePage/AboutUsPage/AboutUsPage';
-import ProductPage from './ProductPage/ProductPage';
-import OrderFormPage from './OrderFormPage/OrderFormPage';
-import HomePage from './HomePage/HomePage';
-import ErrorPage from './ErrorPage/ErrorPage';
-import EmailConfirmation from './EmailConfirmation/EmailConfirmation';
+import {
+  AccountPage,
+  OrderDetailsPage,
+  OrdersDashboardPage,
+  OrderListPage,
+  FavoriteListPage,
+} from './AccountPages';
+import AccountPaymentInfo from './AccountPages/AccountPaymentInfo/AccountPaymentInfo';
+import AccountProfile from './AccountPages/AccountProfile/AccountProfile';
+import AccountSellerProductAdd from './AccountPages/AccountSellerProductAdd/AccountSellerProductAdd';
 import BasketPage from './BasketPage/BasketPage';
-import AccountSellerProductAdd from './AccountPage/AccountSellerProductAdd/AccountSellerProductAdd';
-import AccountProfile from './AccountPage/AccountProfile/AccountProfile';
-import AccountPaymentInfo from './AccountPage/AccountPaymentInfo/AccountPaymentInfo';
-import AccountFavorites from './AccountPage/AccountFavorites/AccountFavorites';
-import { AccountPage, OrderDetailsPage, OrdersDashboardPage, OrderListPage } from './AccountPage';
+import EmailConfirmation from './EmailConfirmation/EmailConfirmation';
+import ErrorPage from './ErrorPage/ErrorPage';
+import HomePage from './HomePage/HomePage';
+import OrderFormPage from './OrderFormPage/OrderFormPage';
+import ProductPage from './ProductPage/ProductPage';
+import AboutUsPage from './SupportServicePage/AboutUsPage/AboutUsPage';
+import PortalRulesPage from './SupportServicePage/PortalRulesPage/PortalRulesPage';
+import PrivacyPolicyPage from './SupportServicePage/PrivacyPolicyPage/PrivacyPolicyPage';
+import QuestionForm from './SupportServicePage/QuestionForm/QuestionForm';
+import QuestionPage from './SupportServicePage/QuestionPage/QuestionPage';
 
 const Routing = () => {
   return (
@@ -35,11 +39,8 @@ const Routing = () => {
           <Route path="profile" element={<AccountProfile />} exact />
           <Route path="product/add" element={<AccountSellerProductAdd />} exact />
           <Route path="payment" element={<AccountPaymentInfo />} exact />
-          <Route path="favorites" element={<AccountFavorites />} exact>
-            <Route index element={<Favorites />} exact />
-            <Route path=":filter" element={<Favorites />} />
-            <Route path=":filter/:page" element={<Favorites />} />
-          </Route>
+          {/*Список Избранного*/}
+          <Route path="favorites" element={<FavoriteListPage />} />
           {/*Список Заказов*/}
           <Route path="orders" element={<OrderListPage />}>
             <Route index path="filter?/page?" element={<OrdersDashboardPage />} />

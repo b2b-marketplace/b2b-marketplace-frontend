@@ -1,4 +1,4 @@
 export { auth } from './auth';
-export { account } from './account';
+export { user } from './user';
 export { products } from './products';
 export { orders } from './orders';

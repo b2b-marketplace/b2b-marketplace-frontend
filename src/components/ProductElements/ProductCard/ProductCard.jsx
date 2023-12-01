@@ -1,18 +1,12 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect, useState } from 'react';
 
-import IconScales from '../../UI/Icon/Icon_scales';
-import IconInfo from '../../UI/Icon/Icon_info';
-import IconHearthBlack from '../../UI/Icon/Icon_hearth-black';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import { Button } from '../../UI/Button/Button';
+import { basketModel } from '../../../entities/basket';
+import { ToggleBasketItemButton, ToggleFavoriteButton } from '../../../features/product';
 import SliderImage from '../../SliderImage/SliderImage';
-import {
-  addProduct as addFavProduct,
-  deleteProduct as deleteFavProduct,
-} from '../../../app/store/slices/favoritesSlice';
-import { addProduct, deleteProduct } from '../../../app/store/slices/basketSlice';
+import IconInfo from '../../UI/Icon/Icon_info';
+import IconScales from '../../UI/Icon/Icon_scales';
 
 import './ProductCard.scss';
 
@@ -25,60 +19,21 @@ import './ProductCard.scss';
  */
 
 function ProductCard({ product }) {
-  const [isProductSelect, setIsProductSelect] = useState(false);
-  const [isProductfav, setIsProductfav] = useState(false);
-  const dispatch = useDispatch();
-  const basketList = useSelector((state) => state.basket.basket);
-  const favoritesList = useSelector((state) => state.favorites.favorites);
-
-  const { isLoggedIn } = useSelector((state) => state.auth);
-
-  useEffect(() => {
-    if (
-      basketList.basket_products.length &&
-      basketList.basket_products.find((item) => item.id === product.id)
-    )
-      setIsProductSelect(true);
-  }, [basketList.basket_products, product.id]);
-
-  useEffect(() => {
-    if (
-      favoritesList.favorites_products.length &&
-      favoritesList.favorites_products.find((item) => item.id === product.id)
-    )
-      setIsProductfav(true);
-  }, [favoritesList.favorites_products, product.id]);
-
-  const handleSelect = () => {
-    isProductSelect
-      ? dispatch(deleteProduct({ productIds: product.id }))
-      : dispatch(addProduct({ productIds: product.id, quantity: product.wholesale_quantity }));
-    setIsProductSelect(!isProductSelect);
-  };
-
-  const handleSelect2 = () => {
-    isProductfav
-      ? dispatch(deleteFavProduct({ productIds: product.id }))
-      : dispatch(addFavProduct({ productIds: product.id, quantity: product.wholesale_quantity }));
-    setIsProductfav(!isProductfav);
-  };
+  const { auth_token, isLoggedIn } = useSelector((state) => state.auth);
 
   return (
     <div className="card">
       <SliderImage images={product.images} />
       <div className="card__icons">
-        {isLoggedIn && isProductfav ? (
-          <button className="card__button" onClick={handleSelect2} type="button">
-            <IconHearthBlack />
-          </button>
-        ) : (
-          <button className="card__button" onClick={handleSelect2} type="button">
-            <IconHearth />
-          </button>
+        {isLoggedIn && (
+          <ToggleFavoriteButton
+            authToken={auth_token}
+            productId={product.id}
+            isFavorite={product.is_favorited}
+          />
         )}
         <IconScales />
       </div>
-
       <div className="card__info">
         <Link
           to={`/product/${product.id}`}
@@ -119,9 +74,7 @@ function ProductCard({ product }) {
           <p className="card__price">{`${product.price} `}&#x20bd;</p>
         </div>
 
-        <Button size="s" primary={false} onClick={handleSelect} pressed={isProductSelect}>
-          {isProductSelect ? 'В корзине' : 'В корзину'}
-        </Button>
+        <ToggleBasketItemButton productId={product.id} quantity={product.wholesale_quantity} />
       </div>
     </div>
   );

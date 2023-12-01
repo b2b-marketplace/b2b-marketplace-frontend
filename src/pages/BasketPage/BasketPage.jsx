@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Main } from '../../shared/ui/Layout';
-import Basket from '../../components/Basket/Basket';
 import BannerAdvertising from '../../components/Banners/BannerAdvertising/BannerAdvertising';
+import Basket from '../../components/Basket/Basket';
+import { Main } from '../../shared/ui/Layout';
 
 import './BasketPage.scss';
 

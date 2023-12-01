@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import { AppLink } from '../../../../../shared/ui/AppLink';
-import { AppImage } from '../../../../../shared/ui/AppImage';
 import {
   formatDateAsDDMMYY,
   getCalculateProductInfo,
   getStatusName,
   priceFormat,
 } from '../../../../../shared/lib/utils';
+import { AppImage } from '../../../../../shared/ui/AppImage';
+import { AppLink } from '../../../../../shared/ui/AppLink';
 
 import imageStub from '../../../../../images/basket/Stub_132_128.jpg';
 

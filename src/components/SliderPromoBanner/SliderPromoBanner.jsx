@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import BannerPromo from '../Banners/BannerPromo/BannerPromo';
 
-import Dots from './Dots/Dots';
 import Arrows from './Arrows/Arrows';
+import Dots from './Dots/Dots';
 
 import './SliderPromoBanner.scss';
 

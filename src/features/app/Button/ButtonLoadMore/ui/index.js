@@ -1,1 +1,0 @@
-export { ButtonLoadMore } from './ButtonLoadMore';

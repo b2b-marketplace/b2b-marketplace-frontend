@@ -5,20 +5,17 @@ export default class BaseApi {
     this._token = false;
   }
 
-  _checkResponse(res) {
-    // return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`);
-    return res.ok ? res.json() : Promise.reject(res);
+  async _checkResponse(res) {
+    if (res.ok) {
+      const contentLength = res.headers.get('content-length');
+      return contentLength === '0' ? {} : res.json();
+    } else {
+      const error = await res.json();
+      throw new Error(error);
+    }
   }
 
   _request(url, options) {
-    return fetch(url, options).then(this._checkResponse);
-  }
-
-  setToken(token) {
-    this._token = token;
-  }
-
-  getToken(token) {
-    return this._token;
+    return fetch(url, options).then((res) => this._checkResponse(res));
   }
 }

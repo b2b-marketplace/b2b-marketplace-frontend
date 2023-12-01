@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
 import clsx from 'clsx';
+import React, { Suspense } from 'react';
 
 import { AppList, AppListHeader, AppListItem } from '../../../../shared/ui/AppList';
 

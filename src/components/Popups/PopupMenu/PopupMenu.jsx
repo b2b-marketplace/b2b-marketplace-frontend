@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Popups from '../Popups';
 import MenuBar from '../../MenuBar/MenuBar';
+import Popups from '../Popups';
 
 import MenuClothes from './MenuClothes/MenuClothes';
 

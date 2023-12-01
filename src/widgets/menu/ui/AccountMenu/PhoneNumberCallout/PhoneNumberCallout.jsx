@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { AppLink } from '../../../../../shared/ui/AppLink';
-import { formatPhoneNumber } from '../../../../../shared/lib/utils';
 import { PHONE_NUMBER } from '../../../../../shared/config/constants';
+import { formatPhoneNumber } from '../../../../../shared/lib/utils';
+import { AppLink } from '../../../../../shared/ui/AppLink';
 
 import './PhoneNumberCallout.scss';
 
