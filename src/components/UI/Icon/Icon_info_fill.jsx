@@ -7,19 +7,19 @@ const IconInfoFill = ({ className }) => {
     <Icon className={`${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
         fill="none"
       >
-        <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="12" cy="12" r="9" stroke="#222222" strokeWidth="1.5" />
         <path
-          d="M17.3332 10.6666C17.3332 11.403 16.7362 11.9999 15.9998 11.9999C15.2635 11.9999 14.6665 11.403 14.6665 10.6666C14.6665 9.93021 15.2635 9.33325 15.9998 9.33325C16.7362 9.33325 17.3332 9.93021 17.3332 10.6666Z"
-          fill="currentColor"
+          d="M13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8Z"
+          fill="#222222"
         />
         <path
-          d="M16 22.6666V13.3333"
-          stroke="currentColor"
+          d="M12 17V10"
+          stroke="#222222"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

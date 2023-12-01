@@ -39,9 +39,8 @@ const AccountPaymentInfo = () => {
 
   return (
     <div className="account-payment-info">
-      <AccountHeader name="ООО «Компания»" title="Продавец" />
-
-      <h2 className="account-payment-info__title">Способы оплаты</h2>
+      <h2 className="account-payment-info__title">Оплата</h2>
+      <h3 className="account-payment-info__subtitle">Способы оплаты</h3>
       <ul className="account-payment-info__lists">
         {savedCards.map((card) => (
           <li

@@ -9,6 +9,7 @@ const initialState = {
     email: '',
     username: '',
     is_company: false,
+    role: '',
     company: {
       id: '',
       role: 'guest',
