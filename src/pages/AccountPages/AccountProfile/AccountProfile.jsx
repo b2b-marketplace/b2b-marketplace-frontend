@@ -98,7 +98,7 @@ const AccountProfile = () => {
               rows="7"
               placeholder="Описание компании"
               disabled={!isEditMode}
-              value={values.comment || ''}
+              value={values.comment}
               onChange={handleChange}
             />
           </div>

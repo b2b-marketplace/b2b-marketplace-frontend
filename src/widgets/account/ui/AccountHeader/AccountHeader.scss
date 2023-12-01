@@ -14,7 +14,7 @@
     border-radius: 50%;
     overflow: hidden;
     @include hover-transition;
-    border: 1px solid $grayLightColor;
+    border: 1px solid $darkColor;
   }
 
   &__logo {

@@ -1,34 +1,42 @@
 @import '/src/app/styles/global';
 
 .account-profile {
-  //@include default-font-styles;
-  //display: flex;
-  max-width: 970px;
+  @include default-font-styles;
+  max-width: 640px;
   width: 100%;
 
   &__blok {
-    display: flex;
-    flex-direction: column;
+    @include flex-container(column);
     gap: 60px;
     width: 100%;
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
+    @include flex-container(column);
     gap: 48px;
   }
 
   &__form-block {
-    display: flex;
-    flex-direction: column;
+    @include flex-container(column);
     gap: 40px;
   }
 
   &__title-group {
-    display: flex;
-    flex-direction: column;
+    @include flex-container(column);
     gap: 12px;
+  }
+
+  &__description {
+    @include text-L-regular-styles;
+    padding: 0;
+    background: transparent;
+    border: none;
+    resize: none;
+    overflow: auto;
+    border: 1px solid $grayColor;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   &__title {
@@ -43,24 +51,20 @@
   }
 
   &__info {
+    @include text-S-main-styles;
     margin: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
     color: $grayColor;
   }
 
   &__field {
-    display: flex;
-    flex-direction: column;
+    @include flex-container(column);
+    @include reset;
     gap: 8px;
-    padding: 0;
-    margin: 0;
     border: none;
   }
 
   &__button-container {
-    margin: 40px 0 157px;
+    margin-top: 40px;
     display: flex;
     gap: 20px;
   }
