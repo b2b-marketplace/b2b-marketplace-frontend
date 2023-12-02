@@ -28,7 +28,7 @@ const BackButton = ({ className }) => {
   };
 
   return (
-    <Button type="button" onClick={handleButtonBack} className="back-button">
+    <Button primary type="button" onClick={handleButtonBack} className="back-button">
       <IconArrow className="back-button__icon" />
     </Button>
   );
