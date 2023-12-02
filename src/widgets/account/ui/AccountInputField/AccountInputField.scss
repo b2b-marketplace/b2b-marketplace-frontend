@@ -1,6 +1,7 @@
 @import '/src/app/styles/global';
 
 .account-input-field {
+  @include default-font-styles;
   display: flex;
   flex-direction: column;
 
@@ -12,7 +13,6 @@
 
   &__label {
     @include text-L-link-styles;
-    max-width: 530px;
     width: 100%;
     display: flex;
     align-items: center;
