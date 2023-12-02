@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +29,12 @@ const BackButton = ({ className }) => {
   };
 
   return (
-    <Button primary type="button" onClick={handleButtonBack} className="back-button">
+    <Button
+      primary
+      type="button"
+      onClick={handleButtonBack}
+      className={clsx('back-button', className)}
+    >
       <IconArrow className="back-button__icon" />
     </Button>
   );
