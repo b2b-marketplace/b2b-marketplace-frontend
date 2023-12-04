@@ -83,7 +83,7 @@ export default function ProductBlock({ product }) {
 
         <div className="info">
           <div className="info__title-line">
-            <h2 className="info__title">{product.name}</h2>
+            <h2 className="info__title ">{product.name}</h2>
             <div className="info__icons">
               <IconHearth />
               <IconScales />

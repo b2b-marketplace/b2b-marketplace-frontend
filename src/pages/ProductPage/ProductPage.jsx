@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import ProductBlock from '../../components/ProductElements/ProductBlock/ProductBlock';
+import ProductBlockSceleton from '../../components/ProductElements/ProductBlock/ProductBlockSceleton';
 import ProductCardContainer from '../../components/ProductElements/ProductCardContainer/ProductCardContainer';
 import { productModel } from '../../entities/product';
 import { Preloader } from '../../shared/ui/Preloader';
@@ -44,7 +45,8 @@ export default function ProductPage() {
           <ProductBlock product={productById.product} className="product-page__product-block" />
         )
       ) : (
-        <Preloader />
+        <ProductBlockSceleton className="product-page__product-block" />
+        // <Preloader />
       )}
 
       <ProductCardContainer
