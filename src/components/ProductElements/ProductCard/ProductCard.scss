@@ -76,6 +76,7 @@
     display: flex;
     flex-direction: row;
     margin: 0 0 8px;
+    min-height: 20px;
 
     &-title {
       margin: 0;
@@ -99,6 +100,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 0 16px;
+    min-height: 28px;
   }
 
   &__price {
@@ -119,5 +121,28 @@
     justify-content: space-between;
     gap: 5px;
     z-index: 3;
+  }
+
+  &__image {
+    width: 100%;
+    height: 164px;
+    border-radius: 20px;
+  }
+
+  &__button {
+    width: 100%;
+    min-height: 44px;
+    border-radius: 20px;
+  }
+
+  &-loading {
+    .card__image,
+    .card__title,
+    .card__shipper,
+    .card__min-order,
+    .card__info-bottom,
+    .card__button {
+      @include sceleton;
+    }
   }
 }

@@ -1,0 +1,19 @@
+/**
+ * Миксин для скелетона элементов
+ */
+@mixin sceleton {
+  background: linear-gradient(
+    110deg,
+    $grayColorSceleton1 18%,
+    $grayColorSceleton2 28%,
+    $grayColorSceleton1 38%
+  );
+  background-size: 300% 100%;
+  animation: 2.5s shine linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -300%;
+  }
+}

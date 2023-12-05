@@ -43,8 +43,8 @@ function CommentsBlock({ comment }) {
 
       {comment.images.length > 0 && (
         <div className="comment__photos">
-          {comment.images.map((image) => (
-            <img className="comment__photos-item" src={image} alt="фото товара от пользователя" />
+          {comment.images.map((image, idx) => (
+            <img key={idx} className="comment__photos-item" src={image} alt="фото товара от пользователя" />
           ))}
         </div>
       )}
