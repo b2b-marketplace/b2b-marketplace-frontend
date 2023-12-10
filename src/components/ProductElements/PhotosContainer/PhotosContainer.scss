@@ -1,0 +1,48 @@
+@import './../../../app/styles/global.scss';
+
+.photos {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  &-item {
+    width: 90px;
+    height: 74px;
+    border-radius: 20px;
+    border: 1px solid $grayLightColor;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-size: cover;
+  }
+
+  &-all-info {
+    display: inline-block;
+    width: 90px;
+    height: 74px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+  }
+  &-count {
+    position: absolute;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: $whiteColor;
+    text-align: center;
+    font-family: $fontFamilyUnbounded;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+    z-index: 2;
+    background: $blueDarkColorOverlay;
+  }
+}

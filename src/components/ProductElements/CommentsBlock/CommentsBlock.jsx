@@ -1,7 +1,6 @@
 import CommentRating from '../../CommentRating/CommentRating';
+import PhotosContainer from '../PhotosContainer/PhotosContainer';
 import ProductRatingStars from '../ProductRatingStars/ProductRatingStars';
-
-import userLogo from './../../../images/defaultUserLogo.png';
 
 import './CommentsBlock.scss';
 
@@ -17,8 +16,12 @@ function CommentsBlock({ comment }) {
     <div className="comment">
       <div className="comment__top">
         <div className="comment__user">
-          <img src={userLogo} alt="аватар пользователя" className="comment__user-avatar" />
-          <p className="comment__user-name">{comment.author}</p>
+          <img
+            src={comment.author.avatar}
+            alt="аватар пользователя"
+            className="comment__user-avatar"
+          />
+          <p className="comment__user-name">{comment.author.name}</p>
         </div>
         <div className="comment__info">
           <p className="comment__info-date">{comment.date}</p>
@@ -41,18 +44,11 @@ function CommentsBlock({ comment }) {
         </div>
       </div>
 
-      {comment.images.length > 0 && (
-        <div className="comment__photos">
-          {comment.images.map((image, idx) => (
-            <img key={idx} className="comment__photos-item" src={image} alt="фото товара от пользователя" />
-          ))}
-        </div>
-      )}
+      {comment.images.length > 0 && <PhotosContainer photos={comment.images} />}
 
-      <CommentRating likes={comment.likeCount} dislikes={comment.dislikeCount} />
+      <CommentRating likes={comment.likes} dislikes={comment.dislikes} />
     </div>
   );
 }
-// TODO заменить на компонент с подборкой фото
 
 export default CommentsBlock;

@@ -1,6 +1,9 @@
+import { getNoun } from '../../../shared/lib/utils';
+
 import './ProductRating.scss';
 
 export default function ProductRating({ rating, commentsCount }) {
+
   return (
     <div className="product-rating">
       <div className="rating">
@@ -21,7 +24,7 @@ export default function ProductRating({ rating, commentsCount }) {
         <span className="rating__text">{rating}</span>
       </div>
 
-      <p className="comments">{`${commentsCount} отзывов`}</p>
+      <p className="comments">{`${commentsCount} ${getNoun(commentsCount, 'отзыв', 'отзыва', 'отзывов')}`}</p>
     </div>
   );
 }

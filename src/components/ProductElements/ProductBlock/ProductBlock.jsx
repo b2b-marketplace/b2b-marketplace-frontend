@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 
 import { basketModel } from '../../../entities/basket';
 import { ToggleBasketItemButton } from '../../../features/product';
-import { commentsList } from '../../../shared/mock/commentsMock';
+import { PRODUCT_COMMENTS } from '../../../shared/mock/commentsMock';
 import { Counter } from '../../../shared/ui/Counter';
 import { Button } from '../../UI/Button/Button';
 import IconAvailable from '../../UI/Icon/Icon_available';
@@ -19,6 +19,7 @@ import IconNotAvailable from '../../UI/Icon/Icon_not-available';
 import IconScales from '../../UI/Icon/Icon_scales';
 import CharacteristicColor from '../CharacteristicColor/CharacteristicColor';
 import CommentsBlock from '../CommentsBlock/CommentsBlock';
+import PhotosContainer from '../PhotosContainer/PhotosContainer';
 import ProductRating from '../ProductRating/ProductRating';
 
 import photo from './../../../images/4.jpg';
@@ -46,6 +47,9 @@ export default function ProductBlock({ product }) {
   const dispatch = useDispatch();
   const [mainImage, setMainImage] = useState();
   const [orderQuantity, setOrderQuantity] = useState(product.wholesale_quantity);
+
+  const rating = (PRODUCT_COMMENTS.reduce((sum, item) => sum + item.rating, 0) / PRODUCT_COMMENTS.length).toFixed(1);
+  const customersImages = PRODUCT_COMMENTS.flatMap(item=>item.images);
 
   useEffect(() => {
     setMainImage(imagesList[0].image);
@@ -83,7 +87,7 @@ export default function ProductBlock({ product }) {
 
         <div className="info">
           <div className="info__title-line">
-            <h2 className="info__title ">{product.name}</h2>
+            <h2 className="info__title">{product.name}</h2>
             <div className="info__icons">
               <IconHearth />
               <IconScales />
@@ -91,15 +95,14 @@ export default function ProductBlock({ product }) {
           </div>
 
           <div className="info__rating-line">
-            <ProductRating rating={4.8} commentsCount={10} />
+            <ProductRating rating={rating} commentsCount={PRODUCT_COMMENTS.length} />
           </div>
 
           <div className="info__shipper">
             <p className="info__shipper-name">{product.seller.name || ''}</p>
             <IconInfo
               className="info__shipper-icon hint-right-middle"
-              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${
-                product.seller.ogrn || ''
+              data-hint={`${product.seller.name || ''}, ИНН:${product.seller.inn || ''}, ОГРН:${product.seller.ogrn || ''
               }`}
             />
           </div>
@@ -208,50 +211,19 @@ export default function ProductBlock({ product }) {
         <div className="comments">
           <h3 className="comments__title">
             Отзывы
-            <ProductRating rating={4.8} commentsCount={10} />
+            <ProductRating rating={rating} commentsCount={PRODUCT_COMMENTS.length} />
           </h3>
 
           <div className="comments__photos">
             <h4 className="comments__photos-title">Фото покупателей</h4>
             <div className="comments__photos-block">
-              <div className="comments__photos-container">
-                <img
-                  className="comments__photos-item"
-                  src={photo}
-                  alt="фото товара от пользователя"
-                />
-                <img
-                  className="comments__photos-item"
-                  src={photo}
-                  alt="фото товара от пользователя"
-                />
-                <img
-                  className="comments__photos-item"
-                  src={photo}
-                  alt="фото товара от пользователя"
-                />
-                <img
-                  className="comments__photos-item"
-                  src={photo}
-                  alt="фото товара от пользователя"
-                />
-                <div className="comments__photos-all-info">
-                  <img
-                    className="comments__photos-item comments__photos-item_info"
-                    src={photo}
-                    alt="фото товара от пользователя"
-                  />
-                  <p className="comments__photos-count">+ 23</p>
-                  {/*TODO добавить пересчёт всех изображений для товара
-                  // TODO вычленить в отдельный компонент подборку фото*/}
-                </div>
-              </div>
+              <PhotosContainer photos={customersImages}/>
               <Button size="m">Оставить отзыв</Button>
             </div>
           </div>
 
           <div className="comments__container">
-            {commentsList.map((comment, index) => (
+            {PRODUCT_COMMENTS.map((comment, index) => (
               <CommentsBlock key={index} comment={comment} />
             ))}
           </div>

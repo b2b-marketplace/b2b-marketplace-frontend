@@ -36,6 +36,9 @@ export default function ProductPage() {
     dispatch(productModel.loadMoreProducts());
   };
 
+
+  //TODO исправить ошибку с загрузкой товаров от продавца при обновлении страницы
+  
   return (
     <div className="product-page">
       {isProductByIdLoaded ? (
