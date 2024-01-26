@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { MultiSelectPanel } from '../../../entities/app';
 import {
   FavoriteProductsList,
   useCheckBoxList,
@@ -9,6 +8,7 @@ import {
 import { LoadMoreButton } from '../../../features/app/Button';
 import { EmptyListMessage } from '../../../shared/ui/EmptyListMessage';
 import { Preloader } from '../../../shared/ui/Preloader';
+import { MultiSelectPanel } from '../../app';
 
 import './FavoriteProductsDashboard.scss';
 
