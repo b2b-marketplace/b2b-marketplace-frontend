@@ -1,16 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import PopupButton from '../PopupButton/PopupButton';
-import Popup from '../Popup';
-import Input from '../Input/Input';
-import Form from '../Form/Form';
-import IconPassword from '../../UI/Icon/IconPassword';
-import { passwordLength } from '../../../shared/lib/authConstatnts';
-import useShowPassword from '../../../shared/hooks/useShowPassword';
-import usePopup from '../../../shared/hooks/usePopup';
-import useInput from '../../../shared/hooks/useInput';
 import { loginUser, resetLoading } from '../../../app/store/slices/authSlice';
+import useInput from '../../../shared/hooks/useInput';
+import usePopup from '../../../shared/hooks/usePopup';
+import useShowPassword from '../../../shared/hooks/useShowPassword';
+import { passwordLength } from '../../../shared/lib/authConstatnts';
+import IconPassword from '../../UI/Icon/IconPassword';
+import Form from '../Form/Form';
+import Input from '../Input/Input';
+import Popup from '../Popup';
+import PopupButton from '../PopupButton/PopupButton';
 
 const LoginPopup = () => {
   const dispatch = useDispatch();

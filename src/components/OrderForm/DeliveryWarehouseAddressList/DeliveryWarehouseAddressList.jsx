@@ -1,13 +1,14 @@
-import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
+import { basketModel } from '../../../entities/basket';
 import { RadioButton } from '../../../shared/ui/RadioButton';
 
 import DeliveryWarehouseAddress from './DeliveryWarehouseAddress/DeliveryWarehouseAddress';
 
-import imageMap from '../../../images/stock/map.jpg';
-import logoSrc2 from '../../../images/stock/logo-2.png';
 import logoSrc1 from '../../../images/stock/logo-1.png';
+import logoSrc2 from '../../../images/stock/logo-2.png';
+import imageMap from '../../../images/stock/map.jpg';
 
 import './DeliveryWarehouseAddressList.scss';
 
@@ -34,7 +35,8 @@ const DeliveryWarehouseAddressList = ({ onGetStockAddr, isDeliveryAddressList })
       deliveryDate: date2.toString(),
     },
   ];
-  const deliveryAddressList = useSelector((state) => state.basket.basket.delivery_address);
+  const basketList = basketModel.useGetBasketItems();
+  const { deliveryAddressList } = basketList;
   const selectDefaultValue = 0;
   const [selectedValue, setSelectedValue] = useState(selectDefaultValue);
   const [listStock, setListStock] = useState([]);

@@ -1,0 +1,1 @@
+export { DeleteMultipleFavoriteButton } from './DeleteMultipleFavoriteButton';

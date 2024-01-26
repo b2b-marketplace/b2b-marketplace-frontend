@@ -1,9 +1,9 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
-import { AppImage } from '../../../../../shared/ui/AppImage';
 import { priceFormat } from '../../../../../shared/lib/utils';
-import VendorCode from '../../../../../components/ProductElements/VendorCode/VendorCode';
+import { AppImage } from '../../../../../shared/ui/AppImage';
+import { VendorCode } from '../../../../../shared/ui/VendorCode';
 
 import imageStub from '../../../../../images/basket/Stub_132_128.jpg';
 
@@ -11,7 +11,7 @@ import './OrderProductItem.scss';
 
 const OrderProductItem = React.memo(({ item, className, index }) => {
   const { product } = item;
-  const imageSrc = product.image && product.image ? product.image : imageStub;
+  const imageSrc = product.image ? product.image : imageStub;
   //console.log(item);
   // console.log(product);
   return (

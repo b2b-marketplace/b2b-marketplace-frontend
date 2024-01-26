@@ -1,14 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import VendorCode from '../VendorCode/VendorCode';
-import IconTrash from '../../UI/Icon/Icon_trash';
-import IconHearth from '../../UI/Icon/Icon_hearth';
-import { Counter } from '../../../shared/ui/Counter';
-import Checkbox from '../../../shared/ui/Checkbox/Checkbox';
-import { AppImage } from '../../../shared/ui/AppImage';
+import { basketModel } from '../../../entities/basket';
 import { priceFormat } from '../../../shared/lib/utils';
-import { changeQuantity, deleteProduct } from '../../../app/store/slices/basketSlice.js';
+import { AppImage } from '../../../shared/ui/AppImage';
+import { Checkbox } from '../../../shared/ui/Checkbox';
+import { Counter } from '../../../shared/ui/Counter';
+import { VendorCode } from '../../../shared/ui/VendorCode';
+import IconTrash from '../../UI/Icon/Icon_trash';
 
 import imageStub from '../../../images/basket/Stub_132_128.jpg';
 
@@ -43,10 +42,6 @@ const ProductCardHorizontal = ({
 
   useEffect(() => {
     const imageSrc = product.images && product.images[0] ? product.images[0].image : imageStub;
-    // console.log();
-    // console.log(`Мин Кол-во товара к покупке ${product.wholesale_quantity}`);
-    // console.log(`Кол-во товара на складе ${product.quantity_in_stock}`);
-    // console.log(`Кол-во товара в корзине ${product.quantity}`);
     if (product.quantity_in_stock < product.quantity) {
       setDisable(true);
     }
@@ -65,7 +60,7 @@ const ProductCardHorizontal = ({
   };
 
   const changeProductQuantity = (productId, productQuantity) => {
-    dispatch(changeQuantity({ productIds: productId, quantity: productQuantity }));
+    dispatch(basketModel.changeQuantity({ productIds: productId, quantity: productQuantity }));
   };
 
   const basketView = () => {
@@ -73,11 +68,7 @@ const ProductCardHorizontal = ({
       <div className={`product-card-horizontal ${className || ''}`}>
         <div className="product-card-horizontal__checkbox">
           {!disable && (
-            <Checkbox
-              disabled={disable}
-              handleChangeCheckbox={onClickCheckbox}
-              checked={isCheckboxChecked}
-            />
+            <Checkbox disabled={disable} onClick={onClickCheckbox} checked={isCheckboxChecked} />
           )}
         </div>
         <div className="product-card-horizontal__container">
@@ -126,7 +117,7 @@ const ProductCardHorizontal = ({
             <div className="product-card-horizontal__buttons">
               <button
                 onClick={() => {
-                  dispatch(deleteProduct({ productIds: product.id }));
+                  dispatch(basketModel.deleteProduct({ productIds: product.id }));
                 }}
                 type="button"
                 className="product-card-horizontal__button"

@@ -1,5 +1,5 @@
-import RestorePopup from '../RestorePopup/RestorePopup';
 import usePopup from '../../../shared/hooks/usePopup';
+import RestorePopup from '../RestorePopup/RestorePopup';
 
 const RestoreByPhonePopup = () => {
   const { isOpen, closePopup } = usePopup('restoreByPhone');

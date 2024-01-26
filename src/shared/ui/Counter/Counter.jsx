@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
-import IconPlus from '../../../components/UI/Icon/Icon_plus';
 import IconMinus from '../../../components/UI/Icon/Icon_minus';
+import IconPlus from '../../../components/UI/Icon/Icon_plus';
 
 import './Counter.scss';
 

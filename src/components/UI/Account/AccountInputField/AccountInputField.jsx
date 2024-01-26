@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
 import IconClose from '../../Icon/Icon_close';
 
@@ -60,11 +60,8 @@ const AccountInputField = ({
         </label>
       </div>
       <span
-        // className={`${isValid} ? account-input-field__error : account-input-field__error
-        className={clsx(
-          'account-input-field__error',
-          isValid && 'account-input-field__error_visible'
-        )}
+        // className={`${isValid} ? user-input-field__error : user-input-field__error
+        className={clsx('user-input-field__error', isValid && 'user-input-field__error_visible')}
       >
         {errors}
       </span>

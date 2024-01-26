@@ -1,1 +1,1 @@
-export * from './hook.js';
+export * from './hooks.js';

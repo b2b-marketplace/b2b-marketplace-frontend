@@ -1,5 +1,5 @@
-import Popup from '../Popup';
 import usePopup from '../../../shared/hooks/usePopup';
+import Popup from '../Popup';
 
 import RegistrationOpportunity from './RegistrationOpportunity/RegistrationOpportunity';
 

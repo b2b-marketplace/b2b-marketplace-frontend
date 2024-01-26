@@ -2,7 +2,7 @@
 
 ## Описание проекта
 
-**B2Buy** - представляет собой онлайн-платформу, созданную для облегчения взаимодействия между поставщиками и оптовыми покупателями. 
+**B2Buy** - представляет собой онлайн-платформу, созданную для облегчения взаимодействия между поставщиками и оптовыми покупателями.
 Он предоставляет централизованное место, где поставщики могут предлагать свои товары, а покупатели могут находить и приобретать их в больших объемах.
 
 ## Функциональность
@@ -76,25 +76,25 @@ npm run start
 Проект приложения B2Buy разработано командой выпускников Яндекс.Практикума:
 
 - Project managers
-    - [Аджиева Авельдина](https://github.com/aveldinaa)
-    - [Силинг Анна](https://github.com/AnnaSiling)
+  - [Аджиева Авельдина](https://github.com/aveldinaa)
+  - [Силинг Анна](https://github.com/AnnaSiling)
 - Frontend developers
-    - [Типсин Дмитрий](https://github.com/TIPDMR)
-    - [Сулим Михаил](https://github.com/MikhailSulim)
-    - [Воеводин Пётр](https://github.com/VoevodinPetr)
-    - [Алексеев Евгений](https://github.com/0R8-9dzcl)
+  - [Типсин Дмитрий](https://github.com/TIPDMR)
+  - [Сулим Михаил](https://github.com/MikhailSulim)
+  - [Воеводин Пётр](https://github.com/VoevodinPetr)
+  - [Алексеев Евгений](https://github.com/0R8-9dzcl)
 - Backend developer
-    - [Скворцов Иван](https://github.com/Ivan-Skvortsov)
-    - [Ротбардт Ольга](https://github.com/esfiro4ka)
-    - [Ушаков Дмитрий](https://github.com/voyager1744)
-    - [Росманов Илья](https://github.com/Rikworkco)
-    - [Габдуллин Булат](https://github.com/ByJIaT)
+  - [Скворцов Иван](https://github.com/Ivan-Skvortsov)
+  - [Ротбардт Ольга](https://github.com/esfiro4ka)
+  - [Ушаков Дмитрий](https://github.com/voyager1744)
+  - [Росманов Илья](https://github.com/Rikworkco)
+  - [Габдуллин Булат](https://github.com/ByJIaT)
 - Quality Assurance (QA) engineers
-    - [Симонова Александра](https://github.com/AISimonova)
-    - [Ильенко-Ван Нилен Екатерина](https://github.com/bakaniva)
-    - [Минич Мария](https://github.com/MariaMinich)
-    - [Усаинова Татьяна](https://github.com/TatianaUsainova)
-    - [Жохова Юлия](https://github.com/Juliyasname)
+  - [Симонова Александра](https://github.com/AISimonova)
+  - [Ильенко-Ван Нилен Екатерина](https://github.com/bakaniva)
+  - [Минич Мария](https://github.com/MariaMinich)
+  - [Усаинова Татьяна](https://github.com/TatianaUsainova)
+  - [Жохова Юлия](https://github.com/Juliyasname)
 - UI/UX Designers
-    - [Молокова Зоя](https://github.com/ZoiaStar)
-    - [Егорова Ольга](https://github.com/helgaegrva)
+  - [Молокова Зоя](https://github.com/ZoiaStar)
+  - [Егорова Ольга](https://github.com/helgaegrva)

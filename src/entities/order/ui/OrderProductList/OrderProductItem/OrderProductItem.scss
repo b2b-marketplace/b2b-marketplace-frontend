@@ -18,7 +18,7 @@
   &__details {
     @include flex-container(column, center, center);
     row-gap: 4px;
-    max-width: 104px;
+    max-width: 90px;
     width: 100%;
   }
 

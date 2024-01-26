@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import PopupParagraph from '../PopupParagraph/PopupParagraph';
-import Popup from '../Popup';
-import usePopup from '../../../shared/hooks/usePopup';
 import useCountDown from '../../../shared/hooks/useCountDown';
+import usePopup from '../../../shared/hooks/usePopup';
+import Popup from '../Popup';
+import PopupParagraph from '../PopupParagraph/PopupParagraph';
 
 const CompleteLoginPopup = () => {
   const { isOpen, closePopup } = usePopup('completeLogin');

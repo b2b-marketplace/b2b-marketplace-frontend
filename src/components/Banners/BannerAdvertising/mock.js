@@ -1,8 +1,8 @@
-import img5 from '../../../images/banner/5.jpg';
-import img4 from '../../../images/banner/4.jpg';
-import img3 from '../../../images/banner/3.jpg';
-import img2 from '../../../images/banner/2.jpg';
 import img1 from '../../../images/banner/1.jpg';
+import img2 from '../../../images/banner/2.jpg';
+import img3 from '../../../images/banner/3.jpg';
+import img4 from '../../../images/banner/4.jpg';
+import img5 from '../../../images/banner/5.jpg';
 
 export const BANNER_LIST = [
   { key: '1', src: img1, alt: 'Описание 1', link: '#' },

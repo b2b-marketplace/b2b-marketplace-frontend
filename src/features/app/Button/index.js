@@ -1,2 +1,2 @@
-export * from './ButtonScrollUp';
-export * from './ButtonLoadMore';
+export * from './ScrollUpButton';
+export * from './LoadMoreButton';

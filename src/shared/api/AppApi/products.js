@@ -9,7 +9,7 @@ class Products extends BaseApi {
   }
 
   getProducts(page = 1) {
-    const url = `${this._serverUrl}?page=${page}`;
+    const url = `${this._serverUrl}/?page=${page}`;
     return this._request(url, {
       method: 'GET',
       headers: this._headers,
@@ -17,11 +17,11 @@ class Products extends BaseApi {
   }
 
   getProductById(productIds) {
-    let path = `${this._serverUrl}?ids=${productIds}`;
+    let path = `${this._serverUrl}/?ids=${productIds}`;
 
     if (Array.isArray(productIds)) {
       const productIdsString = productIds.join(',');
-      path = `${this._serverUrl}?ids=${productIdsString}`;
+      path = `${this._serverUrl}/?ids=${productIdsString}`;
     }
 
     return this._request(path, {
@@ -29,10 +29,43 @@ class Products extends BaseApi {
       headers: this._headers,
     });
   }
+
+  getFavoritesProducts(token, page) {
+    const url = `${this._serverUrl}/?is_favorited=true${page ? '&page=' + page : ''}`;
+    return this._request(url, {
+      method: 'GET',
+      headers: {
+        ...this._headers,
+        Authorization: `Token ${token}`,
+      },
+    });
+  }
+
+  setFavoritesProduct(token, productId) {
+    const url = `${this._serverUrl}/${productId}/favorite/`;
+    return this._request(url, {
+      method: 'POST',
+      headers: {
+        ...this._headers,
+        Authorization: `Token ${token}`,
+      },
+    });
+  }
+
+  delFavoritesProduct(token, productId) {
+    const url = `${this._serverUrl}/${productId}/favorite/`;
+    return this._request(url, {
+      method: 'DELETE',
+      headers: {
+        ...this._headers,
+        Authorization: `Token ${token}`,
+      },
+    });
+  }
 }
 
 const products = new Products({
-  serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1/products/`,
+  serverUrl: `${process.env.REACT_APP_API_URL || ''}/api/v1/products`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

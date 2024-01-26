@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import './Checkbox.scss';
 
@@ -11,28 +11,21 @@ import './Checkbox.scss';
  * @param {Object} props - Свойства компонента.
  * @param {string} props.className - Дополнительные CSS классы для настройки внешнего вида.
  * @param {string} props.name - Имя чекбокса.
- * @param {function} props.handleChangeCheckbox - Функция обратного вызова при клике на элемент чекбокса.
+ * @param {function} props.onClick - Функция обратного вызова при клике на элемент чекбокса.
  * @param {boolean} props.checked - Состояние выбора чекбокса.
  * @param {boolean} props.disabled - Определяет, должен ли чекбокс быть заблокирован.
  * @param {ReactNode} props.children - Дочерние элементы.
  * @returns {JSX.Element} - Возвращает JSX-элемент компонента Checkbox.
  */
-const Checkbox = ({
-  className,
-  name,
-  handleChangeCheckbox,
-  children,
-  checked = false,
-  disabled = false,
-}) => {
+const Checkbox = ({ className, name, onClick, children, checked = false, disabled = false }) => {
   /**
    * Обработчик клика на компоненте чекбокса.
    * @param {Event} event - Событие клика.
    */
   const handleClick = (event) => {
     if (disabled) return;
-    if (handleChangeCheckbox && event.target.tagName.toLowerCase() !== 'input') {
-      handleChangeCheckbox(event);
+    if (onClick && event.target.tagName.toLowerCase() !== 'input') {
+      onClick(event);
     }
   };
 
@@ -64,10 +57,10 @@ const Checkbox = ({
 Checkbox.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
-  handleChangeCheckbox: PropTypes.func,
+  onClick: PropTypes.func,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.node,
 };
 
-export default Checkbox;
+export { Checkbox };

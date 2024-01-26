@@ -1,14 +1,14 @@
-import { useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { MenuVertical } from '../../../../shared/ui/menu';
-import { AppLink } from '../../../../shared/ui/AppLink';
-import { USER_ROLE } from '../../../../shared/config/constants';
-import { userModel } from '../../../../entities/user';
 import IconExit from '../../../../components/UI/Icon/Icon_exit';
+import { userModel } from '../../../../entities/user';
+import { USER_ROLE } from '../../../../shared/config/constants';
+import { AppLink } from '../../../../shared/ui/AppLink';
+import { MenuVertical } from '../../../../shared/ui/menu';
 
-import { PhoneNumberCallout } from './PhoneNumberCallout';
 import { menuItemsCustomer, menuItemsSupplier } from './mock';
+import { PhoneNumberCallout } from './PhoneNumberCallout';
 
 import './AccountMenu.scss';
 

@@ -1,11 +1,11 @@
-import { isEmail } from 'validator';
 import { useCallback, useEffect, useState } from 'react';
+import { isEmail } from 'validator';
 
 import { passwordLength, passwordRegEx, phoneRegEx } from '../lib/authConstatnts';
 
 const useInput = (initValueParams) => {
   const [values, setValues] = useState(initValueParams);
-  const [errors, setErrors] = useState(initValueParams);
+  const [errors, setErrors] = useState({});
   const [isNotValidForm, setIsNotValidForm] = useState(true);
 
   const initDirtyStates = Object.keys(initValueParams).reduce((states, inputName) => {
@@ -30,6 +30,7 @@ const useInput = (initValueParams) => {
     }
     return input.checkValidity();
   };
+
   const getCustomMessage = (input) => {
     if (input.type === 'email') {
       return 'Неверный формат почты';
@@ -47,22 +48,30 @@ const useInput = (initValueParams) => {
   };
 
   const handleChange = ({ target: input }) => {
-    if (!isDirtyInputs[input.name]) {
+    if (input.value === '') {
+      setValues((state) => ({
+        ...state,
+        [input.name]: '',
+      }));
+      return;
+    }
+    setValues((state) => ({
+      ...state,
+      [input.name]: input.type === 'checkbox' ? input.checked : input.value,
+    }));
+
+    setErrors((state) => ({
+      ...state,
+      [input.name]: checkValidity(input) ? input.validationMessage ?? '' : getCustomMessage(input),
+    }));
+
+    if (!isDirtyInputs[input.name] && values[input.name] !== input.value) {
       setIsDirtyInputs((state) => ({
         ...state,
         [input.name]: true,
       }));
     }
-    setErrors((state) => ({
-      ...state,
-      [input.name]: checkValidity(input) ? input.validationMessage ?? '' : getCustomMessage(input),
-    }));
-    setValues((state) => ({
-      ...state,
-      [input.name]: input.type === 'checkbox' ? input.checked : input.value,
-    }));
   };
-
   useEffect(() => {
     const checkFormIsNotValid = Object.values(errors).some((error) => error);
     const checkFormIsNotFullFilled = Object.values(values).some(
@@ -71,15 +80,12 @@ const useInput = (initValueParams) => {
     setIsNotValidForm(checkFormIsNotFullFilled || checkFormIsNotValid);
   }, [values, errors, isDirtyInputs]);
 
-  const resetValues = useCallback(
-    (newValues = initValueParams, newErrors = initValueParams, newNotIsVaild = false) => {
-      setValues(newValues);
-      setErrors(newErrors);
-      setIsNotValidForm(newNotIsVaild);
-      setIsDirtyInputs(initDirtyStates);
-    },
-    []
-  );
+  const resetValues = useCallback((newValues = initValueParams, newNotIsValid = false) => {
+    setValues(newValues);
+    setErrors({});
+    setIsNotValidForm(newNotIsValid);
+    setIsDirtyInputs(initDirtyStates);
+  }, []);
 
   return { values, errors, isNotValidForm, isDirtyInputs, handleChange, resetValues };
 };

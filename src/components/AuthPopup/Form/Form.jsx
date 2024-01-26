@@ -12,6 +12,7 @@ const Form = ({ children, onSubmit, btnOnClick, className, btnText, btnType, for
       {btnText && (
         <div className="popup__buttons">
           <Button
+            primary
             size="l"
             type={btnType}
             onClick={btnOnClick}

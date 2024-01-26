@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import IconArrowCounter from '../../../UI/Icon/Icon_arrow-counter';
 import { useCategoryExpansion } from '../../../../shared/hooks/useCategoryExpansion';
+import IconArrowCounter from '../../../UI/Icon/Icon_arrow-counter';
 
 import './MenuClothes.scss';
 

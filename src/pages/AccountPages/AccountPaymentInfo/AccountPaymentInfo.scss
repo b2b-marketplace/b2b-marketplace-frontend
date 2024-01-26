@@ -1,0 +1,100 @@
+@import '/src/app/styles/global';
+
+.account-payment-info {
+  @include default-font-styles;
+  @include flex-container(column);
+  width: 100%;
+
+  &__title {
+    @include h2-styles;
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
+    @include text-L-bold-styles;
+    margin: 0 0 40px;
+  }
+
+  &__lists {
+    @include reset-list;
+    display: flex;
+    gap: 20px;
+    color: $darkColor;
+
+    &.active {
+      color: $whiteColor;
+    }
+  }
+
+  &__list {
+    padding: 16px;
+    width: 241px;
+    height: 136px;
+    box-sizing: border-box;
+    border: 1px solid $darkColor;
+    border-radius: 20px;
+    margin: 0;
+
+    &.active {
+      background: $blueColor;
+      border: none;
+    }
+  }
+
+  &__icon {
+    border-radius: 50%;
+    border: 1px solid $grayLightColor;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    background: $whiteColor;
+    display: flex;
+    align-items: center;
+    color: #116fc7;
+  }
+
+  &__button-close {
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  &__input {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  &__text {
+    margin: 16px 0 6px;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &__button-add {
+    width: 40px;
+    height: 132px;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid $darkColor;
+    padding: 0;
+  }
+}

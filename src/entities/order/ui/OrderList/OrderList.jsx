@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import { AppListHeader, AppListItem, AppList } from '../../../../shared/ui/AppList';
 
@@ -10,10 +10,10 @@ import './OrderList.scss';
 /**
  * Компонент для отображения списка заказов.
  *
- * @param {Array} orders - Массив заказов для отображения.
+ * @param {Array} list - Массив заказов для отображения.
  * @returns {JSX.Element}
  */
-const OrderList = ({ orders }) => {
+const OrderList = ({ list }) => {
   const fieldset = [
     {
       name: 'Дата/№',
@@ -69,7 +69,7 @@ const OrderList = ({ orders }) => {
     <div className="order-list">
       <AppListHeader fieldset={fieldset} />
       <AppList>
-        {orders.map((order) => (
+        {list?.map((order) => (
           <AppListItem key={order.id}>
             <OrderItem item={order} />
           </AppListItem>
@@ -80,7 +80,7 @@ const OrderList = ({ orders }) => {
 };
 
 OrderList.propTypes = {
-  orders: PropTypes.array.isRequired,
+  list: PropTypes.array.isRequired,
 };
 
 export { OrderList };

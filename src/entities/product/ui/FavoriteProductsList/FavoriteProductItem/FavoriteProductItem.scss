@@ -1,0 +1,69 @@
+@import '/src/app/styles/global';
+
+%flex-col-center {
+  @include flex-container(column, center, center);
+}
+
+%width-100 {
+  width: 100%;
+}
+
+%text-M-main-styles {
+}
+
+.favorite-product-item {
+  @include default-font-styles;
+  @include flex-container(row);
+  @include border-radius;
+  padding: 20px;
+  column-gap: 20px;
+
+  &__container {
+    @include flex-container(row, space-between, center);
+    column-gap: 12px;
+    @extend %width-100;
+  }
+
+  &__image {
+    width: 108px;
+    height: 108px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__product-info {
+    @extend %flex-col-center;
+    row-gap: 4px;
+    max-width: 122px;
+  }
+
+  &__company-product-info {
+    @include text-S-bold-styles;
+    max-width: 248px;
+    @extend %width-100;
+    //@extend %width-100;
+  }
+
+  &__company_name {
+    color: $grayColor;
+    @include text-overflow-eclipse;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  &__quantity,
+  &__price {
+    @extend %width-100;
+    max-width: 140px;
+    text-align: center;
+  }
+
+  &__sold-out {
+    @include text-M-bold-styles($redColor);
+    @extend %width-100;
+    max-width: 168px;
+    text-align: center;
+  }
+}
